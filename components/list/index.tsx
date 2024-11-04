@@ -5,6 +5,7 @@ import { Card, CardActions, CardTitle } from '@/components/card';
 import { useQueryState } from 'nuqs';
 import { ICONS_MAP } from '@/icons';
 import { ListSearch } from './search';
+import { ListEmpty } from './empty';
 
 type Props = {
   icons: Icon[];
@@ -20,6 +21,7 @@ const IconsList = ({ icons }: Props) => {
   return (
     <div className="flex flex-col sm:my-20 my-10 gap-6">
       <ListSearch count={icons.length} />
+      {filteredIcons.length === 0 && <ListEmpty />}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(165px,1fr))] gap-3">
         {filteredIcons.map((icon) => {
           const IconComponent = ICONS_MAP[icon.title as keyof typeof ICONS_MAP];
