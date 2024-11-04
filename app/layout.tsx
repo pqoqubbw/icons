@@ -7,6 +7,7 @@ import { CommandMenu } from '@/components/command-menu';
 
 import ogImage from './og.png';
 import { Analytics } from '@/components/analytics';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -88,7 +89,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <NuqsAdapter>{children}</NuqsAdapter>
           <CommandMenu />
           <Analytics />
         </ThemeProvider>

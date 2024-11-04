@@ -22,6 +22,7 @@
     "lucide-react": "^0.454.0",
     "next": "15.0.2",
     "next-themes": "^0.3.0",
+    "nuqs": "^2.1.1",
     "react": "18",
     "react-dom": "18",
     "tailwind-merge": "^2.5.4",

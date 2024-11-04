@@ -1,3 +1,4 @@
+import { ICONS_MAP } from '@/icons';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -10,19 +11,16 @@ type Icon = {
 
 const getIcons = async (): Promise<Icon[]> => {
   const iconsDir = path.join(process.cwd(), ICONS_DIRECTORY);
-  const files = await fs.readdir(iconsDir);
 
   const icons = await Promise.all(
-    files
-      .filter((file) => file.endsWith('.tsx'))
-      .map(async (file) => {
-        const filePath = path.join(iconsDir, file);
-        const content = await fs.readFile(filePath, 'utf-8');
-        return {
-          title: path.parse(file).name,
-          content,
-        };
-      })
+    Object.entries(ICONS_MAP).map(async ([title]) => {
+      const content = await fs.readFile(
+        path.join(iconsDir, `${title}.tsx`),
+        'utf-8'
+      );
+
+      return { title, content };
+    })
   );
 
   return icons;

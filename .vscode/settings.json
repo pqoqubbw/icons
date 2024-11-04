@@ -1,4 +1,9 @@
 {
-  "cSpell.words": ["LUCIDE", "pqoqubbw"],
+  "cSpell.words": [
+    "Downvote",
+    "LUCIDE",
+    "pqoqubbw",
+    "Upvote"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
