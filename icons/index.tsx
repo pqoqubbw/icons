@@ -40,9 +40,12 @@ import { UnplugIcon } from '@/icons/unplug';
 import { UpvoteIcon } from '@/icons/upvote';
 import { UsersIcon } from '@/icons/users';
 import { VolumeIcon } from '@/icons/volume';
+import { AttachFileIcon } from '@/icons/attach-file';
+import { GaugeIcon } from '@/icons/gauge';
+import { MenuIcon } from '@/icons/menu';
+import { ClockIcon } from '@/icons/clock';
 
 const ICONS_MAP = {
-  // Navigation and interface
   'home': HomeIcon,
   'arrow-left': ArrowLeftIcon,
   'arrow-right': ArrowRightIcon,
@@ -50,8 +53,6 @@ const ICONS_MAP = {
   'refresh': RefreshIcon,
   'undo': UndoIcon,
   'cursor-click': CursorClickIcon,
-
-  // File and data actions
   'file-stack': FileStackIcon,
   'file-pen-line': FilePenLineIcon,
   'archive': ArchiveIcon,
@@ -59,34 +60,24 @@ const ICONS_MAP = {
   'copy': CopyIcon,
   'edit': EditIcon,
   'delete': DeleteIcon,
-
-  // Text formatting
   'bold': BoldIcon,
   'italic': ItalicIcon,
   'underline': UnderlineIcon,
   'scan-text': ScanTextIcon,
   'languages': LanguagesIcon,
-
-  // Communication and social features
   'at-sign': AtSignIcon,
   'bell': BellIcon,
   'users': UsersIcon,
   'upvote': UpvoteIcon,
   'downvote': DownvoteIcon,
-
-  // Finance and business
   'circle-dollar-sign': CircleDollarSignIcon,
   'hand-coins': HandCoinsIcon,
   'badge-percent': BadgePercentIcon,
   'chart-pie': ChartPieIcon,
-
-  // Settings and tools
   'settings': SettingsIcon,
   'settings-gear': SettingsGearIcon,
   'calendar-cog': CalendarCogIcon,
   'pen-tool': PenToolIcon,
-
-  // Miscellaneous
   'fingerprint': FingerprintIcon,
   'link': LinkIcon,
   'layers': LayersIcon,
@@ -97,6 +88,10 @@ const ICONS_MAP = {
   'volume': VolumeIcon,
   'sun': SunIcon,
   'party-popper': PartyPopperIcon,
+  'attach-file': AttachFileIcon,
+  'gauge': GaugeIcon,
+  'menu': MenuIcon,
+  'clock': ClockIcon,
 } as const;
 
 export { ICONS_MAP };

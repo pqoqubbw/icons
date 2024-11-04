@@ -1,34 +1,36 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, Transition, useAnimation, Variants } from 'framer-motion';
+
+const handTransition: Transition = {
+  duration: 0.6,
+  ease: [0.4, 0, 0.2, 1],
+};
 
 const handVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: "50%",
-    originY: "50%",
+    originX: '50%',
+    originY: '50%',
   },
   animate: {
     rotate: 360,
-    transition: {
-      duration: 1,
-      ease: [0.4, 0, 0.2, 1],
-    },
   },
+};
+
+const minuteHandTransition: Transition = {
+  duration: 0.5,
+  ease: 'easeInOut',
 };
 
 const minuteHandVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: "50%",
-    originY: "50%",
+    originX: '50%',
+    originY: '50%',
   },
   animate: {
     rotate: 45,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
   },
 };
 
@@ -38,8 +40,8 @@ const ClockIcon = () => {
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +63,7 @@ const ClockIcon = () => {
           variants={handVariants}
           animate={controls}
           initial="normal"
+          transition={handTransition}
         />
         <motion.line
           x1="12"
@@ -70,6 +73,7 @@ const ClockIcon = () => {
           variants={minuteHandVariants}
           animate={controls}
           initial="normal"
+          transition={minuteHandTransition}
         />
       </svg>
     </div>

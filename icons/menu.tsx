@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from 'framer-motion';
 
 const lineVariants: Variants = {
   normal: {
@@ -13,7 +13,7 @@ const lineVariants: Variants = {
     y: custom === 1 ? 6 : custom === 3 ? -6 : 0,
     opacity: custom === 2 ? 0 : 1,
     transition: {
-      type: "spring",
+      type: 'spring',
       stiffness: 260,
       damping: 20,
     },
@@ -26,8 +26,8 @@ const MenuIcon = () => {
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
