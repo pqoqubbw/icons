@@ -4,7 +4,7 @@ import { cubicBezier, motion, useAnimation } from 'framer-motion';
 
 const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
 
-const Undo = () => {
+const UndoIcon = () => {
   const controls = useAnimation();
 
   return (
@@ -57,4 +57,4 @@ const Undo = () => {
   );
 };
 
-export { Undo };
+export { UndoIcon };

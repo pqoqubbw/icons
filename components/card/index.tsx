@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { IconType } from '@/lib/icon-import';
 import { Check, Copy, Download, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -13,6 +12,7 @@ import {
 import Link from 'next/link';
 import { useOpenPanel } from '@openpanel/nextjs';
 import { ANALYTIC_EVENT } from '../analytics';
+import { Icon } from '@/actions/get-icons';
 
 const ACTION_CLASS_NAMES =
   'cursor-pointer p-2 size-8 hover:bg-accent rounded-md transition-colors duration-200';
@@ -27,7 +27,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="text-xs text-muted-foreground mt-4 mb-1 text-center">
+    <p className="text-xs text-muted-foreground mt-5 mb-3 text-center">
       {children}
     </p>
   );
@@ -37,28 +37,25 @@ const SIDE_OFFSET = 10;
 const TOOLTIP_DELAY_DURATION = 500;
 const TOOLTIP_SIDE = 'bottom';
 
-const Actions = ({
-  content,
-  fileName,
-}: Pick<IconType, 'content' | 'fileName'>) => {
+const Actions = ({ content, title }: Icon) => {
   const op = useOpenPanel();
 
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    op.track(ANALYTIC_EVENT.ICON_COPY, { icon: fileName });
+    op.track(ANALYTIC_EVENT.ICON_COPY, { icon: title });
     await navigator.clipboard.writeText(content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleDownload = () => {
-    op.track(ANALYTIC_EVENT.ICON_DOWNLOAD, { icon: fileName });
+    op.track(ANALYTIC_EVENT.ICON_DOWNLOAD, { icon: title });
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = fileName;
+    a.download = title;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -66,7 +63,7 @@ const Actions = ({
   };
 
   return (
-    <div className="flex items-center justify-center gap-1">
+    <div className="flex items-center justify-center gap-2">
       <TooltipProvider delayDuration={TOOLTIP_DELAY_DURATION}>
         <Tooltip>
           <TooltipTrigger>
@@ -107,10 +104,10 @@ const Actions = ({
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${fileName}`}
+              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${title}`}
               target="_blank"
               onClick={() =>
-                op.track(ANALYTIC_EVENT.ICON_LINK, { icon: fileName })
+                op.track(ANALYTIC_EVENT.ICON_LINK, { icon: title })
               }
             >
               <ExternalLink className={ACTION_CLASS_NAMES} />

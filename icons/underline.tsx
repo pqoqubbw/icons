@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from 'framer-motion';
 
 const variants: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
@@ -11,14 +11,14 @@ const variants: Variants = {
   },
 };
 
-const Underline = () => {
+const UnderlineIcon = () => {
   const controls = useAnimation();
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,4 +54,4 @@ const Underline = () => {
   );
 };
 
-export { Underline };
+export { UnderlineIcon };

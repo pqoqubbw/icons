@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from 'framer-motion';
 
 const svgVariants: Variants = {
   normal: { rotate: 0, translateX: 0, translateY: 0 },
@@ -19,14 +19,14 @@ const pathVariants: Variants = {
   },
 };
 
-const PainTool = () => {
+const PenToolIcon = () => {
   const controls = useAnimation();
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,4 +60,4 @@ const PainTool = () => {
   );
 };
 
-export { PainTool };
+export { PenToolIcon };

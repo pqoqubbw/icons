@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from 'framer-motion';
 
 const pathVariants: Variants = {
-  normal: { d: "M5 12h14" },
+  normal: { d: 'M5 12h14' },
   animate: {
-    d: ["M5 12h14", "M5 12h9", "M5 12h14"],
+    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
     transition: {
       duration: 0.4,
     },
@@ -13,9 +13,9 @@ const pathVariants: Variants = {
 };
 
 const secondaryPathVariants: Variants = {
-  normal: { d: "m12 5 7 7-7 7", translateX: 0 },
+  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
   animate: {
-    d: "m12 5 7 7-7 7",
+    d: 'm12 5 7 7-7 7',
     translateX: [0, -3, 0],
     transition: {
       duration: 0.4,
@@ -23,14 +23,14 @@ const secondaryPathVariants: Variants = {
   },
 };
 
-const ArrowRight = () => {
+const ArrowRightIcon = () => {
   const controls = useAnimation();
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start("animate")}
-      onMouseLeave={() => controls.start("normal")}
+      onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,4 +54,4 @@ const ArrowRight = () => {
   );
 };
 
-export { ArrowRight };
+export { ArrowRightIcon };

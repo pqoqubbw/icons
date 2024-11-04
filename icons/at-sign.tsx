@@ -44,7 +44,7 @@ const pathVariants: Variants = {
   },
 };
 
-const AtSign = () => {
+const AtSignIcon = () => {
   const controls = useAnimation();
 
   return (
@@ -81,4 +81,4 @@ const AtSign = () => {
   );
 };
 
-export { AtSign };
+export { AtSignIcon };
