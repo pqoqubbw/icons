@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from '@/providers/theme';
 import { Header } from '@/components/header';
-import { CommandMenu } from '@/components/command-menu';
 
 import ogImage from './og.png';
 import { Analytics } from '@/components/analytics';
@@ -90,7 +89,6 @@ export default function RootLayout({
         >
           <Header />
           <NuqsAdapter>{children}</NuqsAdapter>
-          <CommandMenu />
           <Analytics />
         </ThemeProvider>
       </body>
