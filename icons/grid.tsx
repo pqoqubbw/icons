@@ -67,6 +67,11 @@ const GridIcon = () => {
               cy={circle.cy}
               r="1"
               initial="initial"
+              variants={{
+                initial: {
+                  opacity: 1,
+                },
+              }}
               animate={controls}
               exit="initial"
               custom={index}

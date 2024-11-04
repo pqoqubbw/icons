@@ -3,7 +3,7 @@
 import { Icon } from '@/actions/get-icons';
 import { Card, CardActions, CardTitle } from '@/components/card';
 import { useQueryState } from 'nuqs';
-import { ICONS_MAP } from '@/icons';
+import { ICON_LIST } from '@/icons';
 import { ListSearch } from './search';
 import { ListEmpty } from './empty';
 
@@ -15,7 +15,7 @@ const IconsList = ({ icons }: Props) => {
   const [search] = useQueryState('q');
 
   const filteredIcons = icons.filter((icon) =>
-    icon.title.toLowerCase().includes(search?.toLowerCase() ?? '')
+    icon.name.toLowerCase().includes(search?.toLowerCase() ?? '')
   );
 
   return (
@@ -24,12 +24,14 @@ const IconsList = ({ icons }: Props) => {
       {filteredIcons.length === 0 && <ListEmpty />}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-[repeat(auto-fill,minmax(165px,1fr))] gap-3">
         {filteredIcons.map((icon) => {
-          const IconComponent = ICONS_MAP[icon.title as keyof typeof ICONS_MAP];
+          const IconComponent = ICON_LIST.find(
+            ({ name }) => name === icon.name
+          )!.icon;
 
           return (
-            <Card key={icon.title}>
+            <Card key={icon.name}>
               <IconComponent />
-              <CardTitle>{icon.title}</CardTitle>
+              <CardTitle>{icon.name}</CardTitle>
               <CardActions {...icon} />
             </Card>
           );

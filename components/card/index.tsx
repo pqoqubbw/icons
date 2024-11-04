@@ -37,25 +37,25 @@ const SIDE_OFFSET = 10;
 const TOOLTIP_DELAY_DURATION = 500;
 const TOOLTIP_SIDE = 'bottom';
 
-const Actions = ({ content, title }: Icon) => {
+const Actions = ({ content, name }: Icon) => {
   const op = useOpenPanel();
 
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    op.track(ANALYTIC_EVENT.ICON_COPY, { icon: title });
+    op.track(ANALYTIC_EVENT.ICON_COPY, { icon: name });
     await navigator.clipboard.writeText(content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleDownload = () => {
-    op.track(ANALYTIC_EVENT.ICON_DOWNLOAD, { icon: title });
+    op.track(ANALYTIC_EVENT.ICON_DOWNLOAD, { icon: name });
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = title;
+    a.download = name;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -104,11 +104,9 @@ const Actions = ({ content, title }: Icon) => {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${title}`}
+              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${name}`}
               target="_blank"
-              onClick={() =>
-                op.track(ANALYTIC_EVENT.ICON_LINK, { icon: title })
-              }
+              onClick={() => op.track(ANALYTIC_EVENT.ICON_LINK, { icon: name })}
             >
               <ExternalLink className={ACTION_CLASS_NAMES} />
             </Link>
