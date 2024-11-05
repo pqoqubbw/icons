@@ -104,7 +104,7 @@ const Actions = ({ content, name }: Icon) => {
         <Tooltip>
           <TooltipTrigger asChild>
             <Link
-              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${name}`}
+              href={`https://github.com/pqoqubbw/icons/blob/main/icons/${name}.tsx`}
               target="_blank"
               onClick={() => op.track(ANALYTIC_EVENT.ICON_LINK, { icon: name })}
             >
