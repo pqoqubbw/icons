@@ -31,6 +31,7 @@ import { FingerprintIcon } from '@/icons/fingerprint';
 import { FrameIcon } from '@/icons/frame';
 import { GaugeIcon } from '@/icons/gauge';
 import { GitPullRequestIcon } from '@/icons/git-pull-request';
+import { GithubIcon } from '@/icons/github';
 import { GripIcon } from '@/icons/grip';
 import { HandCoinsIcon } from '@/icons/hand-coins';
 import { HomeIcon } from '@/icons/home';
@@ -618,6 +619,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'git-pull-request',
     icon: GitPullRequestIcon,
     keywords: ['code', 'version control', 'open'],
+  },
+  {
+    name: 'github',
+    icon: GithubIcon,
+    keywords: ['logo', 'version control', 'repository', 'source code', 'git'],
   },
   {
     name: 'connect',
