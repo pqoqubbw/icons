@@ -27,9 +27,13 @@ export function ModeToggle() {
     document.startViewTransition(() => setTheme(theme));
   };
 
-  useHotkeys(KEYS, () => {
-    handleChangeTheme(currentTheme === 'light' ? 'dark' : 'light');
-  });
+  useHotkeys(
+    KEYS,
+    () => {
+      handleChangeTheme(currentTheme === 'light' ? 'dark' : 'light');
+    },
+    { preventDefault: true }
+  );
 
   return (
     <DropdownMenu>

@@ -15,7 +15,7 @@ const ListSearch = ({ count }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useQueryState('q', parseAsString.withDefault(''));
 
-  useHotkeys(KEYS, () => inputRef.current?.focus());
+  useHotkeys(KEYS, () => inputRef.current?.focus(), { preventDefault: true });
 
   return (
     <div className="relative">
