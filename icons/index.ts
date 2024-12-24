@@ -153,6 +153,7 @@ import { TwitchIcon } from '@/icons/twitch';
 import { DribbbleIcon } from '@/icons/dribbble';
 import { XIcon } from './x';
 import { MoonIcon } from './moon';
+import { MobileIcon } from './MobileIcon';
 
 type IconListItem = {
   name: string;
@@ -161,6 +162,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'mobile',
+    icon: MobileIcon,
+    keywords: ['mobile', 'device', 'phone', 'technology'],
+  },
   {
     name: 'moon',
     icon: MoonIcon,
