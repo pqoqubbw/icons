@@ -165,7 +165,7 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'mobile',
     icon: MobileIcon,
-    keywords: ['mobile', 'device', 'phone', 'technology'],
+    keywords: ['mobile', 'device', 'phone', 'mobile app'],
   },
   {
     name: 'moon',
