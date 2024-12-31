@@ -65,8 +65,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'arrow-down-0-1',
+    'path': path.join(__dirname, '../icons/arrow-down-0-1.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'arrow-down-1-0',
     'path': path.join(__dirname, '../icons/arrow-down-1-0.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-down-a-z',
+    'path': path.join(__dirname, '../icons/arrow-down-a-z.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -881,9 +893,75 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'x',
+    'path': path.join(__dirname, '../icons/x.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'workflow',
     'path': path.join(__dirname, '../icons/workflow.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'youtube',
+    'path': path.join(__dirname, '../icons/youtube.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'dribbble',
+    'path': path.join(__dirname, '../icons/dribbble.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'instagram',
+    'path': path.join(__dirname, '../icons/instagram.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'linkedin',
+    'path': path.join(__dirname, '../icons/linkedin.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'twitch',
+    'path': path.join(__dirname, '../icons/twitch.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'facebook',
+    'path': path.join(__dirname, '../icons/facebook.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'moon',
+    'path': path.join(__dirname, '../icons/moon.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'vibrate',
+    'path': path.join(__dirname, '../icons/vibrate.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'smartphone-charging',
+    'path': path.join(__dirname, '../icons/smartphone-charging.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cast',
+    'path': path.join(__dirname, '../icons/cast.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];

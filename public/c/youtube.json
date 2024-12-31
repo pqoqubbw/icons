@@ -1,0 +1,21 @@
+{
+  "name": "youtube",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "youtube.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst triangleVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst YoutubeIcon = () => {\n  const pathControls = useAnimation();\n  const triangleControls = useAnimation();\n\n  const handleMouseEnter = () => {\n    pathControls.start('animate');\n    triangleControls.start('animate');\n  };\n\n  const handleMouseLeave = () => {\n    pathControls.start('normal');\n    triangleControls.start('normal');\n  };\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={pathControls}\n          d=\"M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17\"\n        />\n        <motion.path\n          variants={triangleVariants}\n          initial=\"normal\"\n          animate={triangleControls}\n          d=\"M10 15l5-3-5-3z\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { YoutubeIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

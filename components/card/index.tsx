@@ -72,7 +72,7 @@ const Actions = ({ content, name }: Icon) => {
   const handleCopyTerminal = () => {
     op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
     navigator.clipboard.writeText(
-      `npx shadcn add "https://icons.pqoqubbw.dev/c/${name}.json"`
+      `npx shadcn@latest add "https://icons.pqoqubbw.dev/c/${name}.json"`
     );
     setCopiedTerminal(true);
     setTimeout(() => setCopiedTerminal(false), 2000);

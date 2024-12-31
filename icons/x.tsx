@@ -4,23 +4,17 @@ import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 
 const pathVariants: Variants = {
-  normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+  },
   animate: {
-    pathLength: [0, 1],
     opacity: [0, 1],
-    pathOffset: [1, 0],
+    pathLength: [0, 1],
   },
 };
 
-const offlineVariants: Variants = {
-  normal: { pathLength: 1, opacity: 1 },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-  },
-};
-
-const BluetoothOffIcon = () => {
+const XIcon = () => {
   const controls = useAnimation();
 
   return (
@@ -31,8 +25,8 @@ const BluetoothOffIcon = () => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -43,31 +37,17 @@ const BluetoothOffIcon = () => {
         <motion.path
           variants={pathVariants}
           animate={controls}
-          transition={{
-            duration: 0.3,
-          }}
-          d="m17 17-5 5V12l-5 5"
+          d="M18 6 6 18"
         />
         <motion.path
-          variants={offlineVariants}
-          animate={controls}
-          transition={{
-            duration: 0.2,
-            delay: 0.3,
-          }}
-          d="m2 2 20 20"
-        />
-        <motion.path
+          transition={{ delay: 0.2 }}
           variants={pathVariants}
           animate={controls}
-          transition={{
-            duration: 0.3,
-          }}
-          d="M14.5 9.5 17 7l-5-5v4.5"
+          d="m6 6 12 12"
         />
       </svg>
     </div>
   );
 };
 
-export { BluetoothOffIcon };
+export { XIcon };

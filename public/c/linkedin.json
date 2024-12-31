@@ -1,0 +1,21 @@
+{
+  "name": "linkedin",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "linkedin.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst rectVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst circleVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst LinkedinIcon = () => {\n  const pathControls = useAnimation();\n  const rectControls = useAnimation();\n  const circleControls = useAnimation();\n\n  const handleMouseEnter = () => {\n    pathControls.start('animate');\n    rectControls.start('animate');\n    circleControls.start('animate');\n  };\n\n  const handleMouseLeave = () => {\n    pathControls.start('normal');\n    rectControls.start('normal');\n    circleControls.start('normal');\n  };\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        viewBox=\"0 0 24 24\"\n      >\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={pathControls}\n          d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"\n        />\n        <motion.rect\n          variants={rectVariants}\n          initial=\"normal\"\n          animate={rectControls}\n          x=\"2\"\n          y=\"9\"\n          width=\"4\"\n          height=\"12\"\n        />\n        <motion.circle\n          variants={circleVariants}\n          initial=\"normal\"\n          animate={circleControls}\n          cx=\"4\"\n          cy=\"4\"\n          r=\"2\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { LinkedinIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

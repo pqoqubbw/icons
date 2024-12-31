@@ -17,6 +17,7 @@ const useSearch = (items: Icon[]) => {
         ignoreLocation: true,
         findAllMatches: true,
         isCaseSensitive: false,
+        minMatchCharLength: 2,
       }),
     [items]
   );

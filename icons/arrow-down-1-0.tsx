@@ -1,6 +1,6 @@
 'use client';
 
-import type { Transition } from 'motion/react';
+import type { Transition, Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 
 const swapTransition: Transition = {
@@ -9,17 +9,17 @@ const swapTransition: Transition = {
   damping: 24,
 };
 
+const swapVariants: Variants = {
+  normal: {
+    translateY: 0,
+  },
+  animate: (custom: number) => ({
+    translateY: custom * 10,
+  }),
+};
+
 const ArrowDown10con = () => {
   const controls = useAnimation();
-
-  const swapVariants = {
-    normal: {
-      translateY: 0,
-    },
-    animate: (custom: number) => ({
-      translateY: custom * 10,
-    }),
-  };
 
   return (
     <div

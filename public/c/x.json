@@ -1,0 +1,21 @@
+{
+  "name": "x",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "x.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n  },\n};\n\nconst XIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.path\n          variants={pathVariants}\n          animate={controls}\n          d=\"M18 6 6 18\"\n        />\n        <motion.path\n          transition={{ delay: 0.2 }}\n          variants={pathVariants}\n          animate={controls}\n          d=\"m6 6 12 12\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { XIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

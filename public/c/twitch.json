@@ -1,0 +1,21 @@
+{
+  "name": "twitch",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "twitch.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst lineVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst TwitchIcon = () => {\n  const pathControls = useAnimation();\n  const line1Controls = useAnimation();\n  const line2Controls = useAnimation();\n\n  const handleMouseEnter = () => {\n    pathControls.start('animate');\n    line1Controls.start('animate');\n    line2Controls.start('animate');\n  };\n\n  const handleMouseLeave = () => {\n    pathControls.start('normal');\n    line1Controls.start('normal');\n    line2Controls.start('normal');\n  };\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={pathControls}\n          d=\"M21 2H3v16h5v4l4-4h5l4-4V2z\"\n        />\n        <motion.path\n          variants={lineVariants}\n          initial=\"normal\"\n          animate={line1Controls}\n          d=\"M11 11V7\"\n        />\n        <motion.path\n          variants={lineVariants}\n          initial=\"normal\"\n          animate={line2Controls}\n          d=\"M16 11V7\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { TwitchIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

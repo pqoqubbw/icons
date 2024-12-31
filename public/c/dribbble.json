@@ -1,0 +1,21 @@
+{
+  "name": "dribbble",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "dribbble.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\n\nconst circleVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst pathVariants: Variants = {\n  normal: {\n    opacity: 1,\n    pathLength: 1,\n    pathOffset: 0,\n    transition: {\n      duration: 0.4,\n      opacity: { duration: 0.1 },\n    },\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    pathOffset: [1, 0],\n    transition: {\n      duration: 0.6,\n      ease: 'linear',\n      opacity: { duration: 0.1 },\n    },\n  },\n};\n\nconst DribbbleIcon = () => {\n  const circleControls = useAnimation();\n  const path1Controls = useAnimation();\n  const path2Controls = useAnimation();\n  const path3Controls = useAnimation();\n\n  const handleMouseEnter = () => {\n    circleControls.start('animate');\n    path1Controls.start('animate');\n    path2Controls.start('animate');\n    path3Controls.start('animate');\n  };\n\n  const handleMouseLeave = () => {\n    circleControls.start('normal');\n    path1Controls.start('normal');\n    path2Controls.start('normal');\n    path3Controls.start('normal');\n  };\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.circle\n          variants={circleVariants}\n          initial=\"normal\"\n          animate={circleControls}\n          cx=\"12\"\n          cy=\"12\"\n          r=\"10\"\n        />\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={path1Controls}\n          d=\"M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94\"\n        />\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={path2Controls}\n          d=\"M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32\"\n        />\n        <motion.path\n          variants={pathVariants}\n          initial=\"normal\"\n          animate={path3Controls}\n          d=\"M8.56 2.75c4.37 6 6 9.42 8 17.72\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { DribbbleIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

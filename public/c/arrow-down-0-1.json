@@ -1,0 +1,21 @@
+{
+  "name": "arrow-down-0-1",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "arrow-down-0-1.tsx",
+      "content": "'use client';\n\nimport type { Transition, Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst swapTransition: Transition = {\n  type: 'spring',\n  stiffness: 240,\n  damping: 24,\n};\n\nconst swapVariants: Variants = {\n  normal: {\n    translateY: 0,\n  },\n  animate: (custom: number) => ({\n    translateY: custom * 10,\n  }),\n};\n\nconst ArrowDown01con = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <path d=\"m3 16 4 4 4-4\" />\n        <path d=\"M7 20V4\" />\n        <motion.rect\n          x=\"15\"\n          y=\"4\"\n          width=\"4\"\n          height=\"6\"\n          ry=\"2\"\n          variants={swapVariants}\n          initial=\"normal\"\n          animate={controls}\n          custom={1}\n          transition={swapTransition}\n        />\n        <motion.g\n          variants={swapVariants}\n          initial=\"normal\"\n          animate={controls}\n          custom={-1}\n          transition={swapTransition}\n        >\n          <path d=\"M17 20v-6h-2\" />\n          <path d=\"M15 20h4\" />\n        </motion.g>\n      </svg>\n    </div>\n  );\n};\n\nexport { ArrowDown01con };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

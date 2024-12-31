@@ -1,0 +1,21 @@
+{
+  "name": "cast",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "cast.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst variants: Variants = {\n  normal: { opacity: 1 },\n  animate: (custom: number) => ({\n    opacity: [0, 1],\n    transition: {\n      delay: custom,\n      duration: 0.5,\n    },\n  }),\n};\n\nconst CastIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => {\n        controls.start('animate');\n      }}\n      onMouseLeave={() => {\n        controls.start('normal');\n      }}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <path d=\"M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6\" />\n        <motion.path\n          variants={variants}\n          animate={controls}\n          custom={0.2}\n          d=\"M2 12a9 9 0 0 1 8 8\"\n        />\n        <motion.path\n          variants={variants}\n          animate={controls}\n          custom={0.1}\n          d=\"M2 16a5 5 0 0 1 4 4\"\n        />\n        <motion.line\n          variants={variants}\n          custom={0}\n          animate={controls}\n          x1=\"2\"\n          x2=\"2.01\"\n          y1=\"20\"\n          y2=\"20\"\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { CastIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

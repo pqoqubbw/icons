@@ -1,0 +1,21 @@
+{
+  "name": "smartphone-charging",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "smartphone-charging.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'framer-motion';\n\nconst SmartphoneChargingIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => {\n        controls.start('animate');\n      }}\n      onMouseLeave={() => {\n        controls.start('normal');\n      }}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" />\n        <motion.path\n          d=\"M12.667 8 10 12h4l-2.667 4\"\n          variants={{\n            normal: { opacity: 1 },\n            animate: {\n              opacity: [1, 0.4, 1],\n              transition: {\n                duration: 1,\n                repeat: Infinity,\n                ease: 'easeInOut',\n              },\n            },\n          }}\n          initial=\"normal\"\n          animate={controls}\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { SmartphoneChargingIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

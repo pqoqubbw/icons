@@ -2,6 +2,10 @@
 
 YES/NO
 
+## I have run `yarn gen-cli` to generate the necessary files
+
+YES/NO
+
 ## What kind of change does this PR introduce?
 
 Bug fix, feature, docs update, ...

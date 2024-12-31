@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write . && eslint --fix .",
-    "build:registry": "tsx scripts/registry-build.ts"
+    "gen-cli": "tsx scripts/sync-registry.ts && tsx scripts/registry-build.ts"
   },
   "dependencies": {
     "@openpanel/nextjs": "^1.0.5",
@@ -31,7 +31,8 @@
     "react-snowfall": "^2.2.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "use-debounce": "^10.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",

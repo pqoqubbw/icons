@@ -18,7 +18,7 @@ const swapVariants: Variants = {
   }),
 };
 
-const ArrowDownZAIcon = () => {
+const ArrowDown01con = () => {
   const controls = useAnimation();
 
   return (
@@ -40,8 +40,12 @@ const ArrowDownZAIcon = () => {
       >
         <path d="m3 16 4 4 4-4" />
         <path d="M7 20V4" />
-        <motion.path
-          d="M15 4h5l-5 6h5"
+        <motion.rect
+          x="15"
+          y="4"
+          width="4"
+          height="6"
+          ry="2"
           variants={swapVariants}
           initial="normal"
           animate={controls}
@@ -55,12 +59,12 @@ const ArrowDownZAIcon = () => {
           custom={-1}
           transition={swapTransition}
         >
-          <path d="M20 18h-5" />
-          <path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" />
+          <path d="M17 20v-6h-2" />
+          <path d="M15 20h4" />
         </motion.g>
       </svg>
     </div>
   );
 };
 
-export { ArrowDownZAIcon };
+export { ArrowDown01con };

@@ -1,0 +1,21 @@
+{
+  "name": "moon",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "moon.tsx",
+      "content": "'use client';\n\nimport type { Transition, Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst svgVariants: Variants = {\n  normal: {\n    rotate: 0,\n  },\n  animate: {\n    rotate: [0, -10, 10, -5, 5, 0],\n  },\n};\n\nconst svgTransition: Transition = {\n  duration: 1.2,\n  ease: 'easeInOut',\n};\n\nconst MoonIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center overflow-hidden\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <motion.svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        variants={svgVariants}\n        animate={controls}\n        transition={svgTransition}\n      >\n        <path d=\"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z\" />\n      </motion.svg>\n    </div>\n  );\n};\n\nexport { MoonIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

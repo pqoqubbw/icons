@@ -15,7 +15,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
     const text = currentIconName.current || icons[0].name;
     try {
       await navigator.clipboard.writeText(
-        `npx shadcn add "https://icons.pqoqubbw.dev/c/${text}.json"`
+        `npx shadcn@latest add "https://icons.pqoqubbw.dev/c/${text}.json"`
       );
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -33,7 +33,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
         <div className="flex items-center min-w-0">
           <span className="shrink-0 mr-2">npx</span>{' '}
           <span className="text-muted-foreground shrink-0">
-            shadcn add &quot;https://icons.pqoqubbw.dev/c/
+            shadcn@latest add &quot;https://icons.pqoqubbw.dev/c/
           </span>
           <TextLoop
             onIndexChange={(index) => {
