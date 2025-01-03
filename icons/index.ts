@@ -157,6 +157,7 @@ import { MoonIcon } from '@/icons/moon';
 import { VibrateIcon } from '@/icons/vibrate';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
+import { HeartCrackIcon } from '@/icons/heart-crack';
 
 type IconListItem = {
   name: string;
@@ -1576,6 +1577,11 @@ const ICON_LIST: IconListItem[] = [
     icon: CastIcon,
     keywords: ['cast', 'screen', 'chromecast', 'airplay'],
   },
+  {
+    name: 'heart-crack',
+    icon: HeartCrackIcon,
+    keywords: ['heart', 'love', 'like', 'emotion', 'crack'],
+  }
 ];
 
 export { ICON_LIST };
