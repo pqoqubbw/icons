@@ -5,7 +5,7 @@ import type { Variants } from 'motion/react';
 const checkVariants: Variants = {
   normal: {
     pathLength: 1,
-    opacity: 0,
+    opacity: 1,
     transition: {
       duration: 0.3,
     },

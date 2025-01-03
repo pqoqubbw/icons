@@ -159,6 +159,7 @@ import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
 import { HeartCrackIcon } from '@/icons/heart-crack';
 import { HeartIcon } from '@/icons/heart';
+import { LockIcon } from '@/icons/lock';
 
 type IconListItem = {
   name: string;
@@ -1587,6 +1588,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'heart',
     icon: HeartIcon,
     keywords: ['heart', 'love', 'like', 'emotion'],
+  },
+  {
+    name: 'lock',
+    icon: LockIcon,
+    keywords: ['lock', 'secure', 'safe', 'security', 'password'],
   }
 ];
 
