@@ -158,6 +158,7 @@ import { VibrateIcon } from '@/icons/vibrate';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
 import { HeartCrackIcon } from '@/icons/heart-crack';
+import { HeartIcon } from '@/icons/heart';
 
 type IconListItem = {
   name: string;
@@ -1580,7 +1581,12 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'heart-crack',
     icon: HeartCrackIcon,
-    keywords: ['heart', 'love', 'like', 'emotion', 'crack'],
+    keywords: ['heart', 'love', 'sadness', 'emotion', 'heartbreak'],
+  },
+  {
+    name: 'heart',
+    icon: HeartIcon,
+    keywords: ['heart', 'love', 'like', 'emotion'],
   }
 ];
 
