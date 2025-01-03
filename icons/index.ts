@@ -145,7 +145,7 @@ import { ArrowDownZAIcon } from '@/icons/arrow-down-z-a';
 import { ArrowDownAZIcon } from '@/icons/arrow-down-a-z';
 import { ArrowDown01con } from '@/icons/arrow-down-0-1';
 import { ArrowDown10con } from '@/icons/arrow-down-1-0';
-import {ClipboardCheckIcon} from '@/icons/clipboard-check';
+import { ClipboardCheckIcon } from '@/icons/clipboard-check';
 import { FacebookIcon } from '@/icons/facebook';
 import { LinkedinIcon } from '@/icons/linkedin';
 import { YoutubeIcon } from '@/icons/youtube';
@@ -389,9 +389,9 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-   name: "clipboard-check",
+    name: 'clipboard-check',
     icon: ClipboardCheckIcon,
-    keywords: ["clipboard", "check", "clipboard-check", "clipboard-checkmark"],
+    keywords: ['clipboard', 'check', 'clipboard-check', 'clipboard-checkmark'],
   },
   {
     name: 'home',
@@ -1593,7 +1593,7 @@ const ICON_LIST: IconListItem[] = [
     name: 'lock',
     icon: LockIcon,
     keywords: ['lock', 'secure', 'safe', 'security', 'password'],
-  }
+  },
 ];
 
 export { ICON_LIST };
