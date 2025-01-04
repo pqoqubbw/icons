@@ -963,5 +963,11 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/cast.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'clipboard-check',
+    'path': path.join(__dirname, '../icons/clipboard-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];

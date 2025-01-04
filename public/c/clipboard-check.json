@@ -1,0 +1,21 @@
+{
+  "name": "clipboard-check",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "clipboard-check.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\n\nconst checkVariants: Variants = {\n  normal: {\n    pathLength: 1,\n    opacity: 0,\n    transition: {\n      duration: 0.3,\n    },\n  },\n  animate: {\n    pathLength: [0, 1],\n    opacity: [0, 1],\n    transition: {\n      pathLength: { duration: 0.4, ease: 'easeInOut' },\n      opacity: { duration: 0.4, ease: 'easeInOut' },\n    },\n  },\n};\n\nconst ClipboardCheckIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        className=\"text-gray-700 hover:text-gray-900 transition-colors duration-200\"\n      >\n        <rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" />\n        <path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />\n        <motion.path\n          animate={controls}\n          initial=\"normal\"\n          variants={checkVariants}\n          d=\"m9 14 2 2 4-4\"\n          style={{ transformOrigin: 'center' }}\n        />\n      </svg>\n    </div>\n  );\n};\n\nexport { ClipboardCheckIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
