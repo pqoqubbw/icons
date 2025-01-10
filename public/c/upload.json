@@ -1,0 +1,21 @@
+{
+  "name": "upload",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "upload.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst arrowVariants: Variants = {\n  normal: { y: 0 },\n  animate: {\n    y: -2,\n    transition: {\n      type: 'spring',\n      stiffness: 200,\n      damping: 10,\n      mass: 1,\n    },\n  },\n};\n\nconst UploadIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"28\"\n        height=\"28\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />\n        <motion.g variants={arrowVariants} animate={controls}>\n          <polyline points=\"17 8 12 3 7 8\" />\n          <line x1=\"12\" x2=\"12\" y1=\"3\" y2=\"15\" />\n        </motion.g>\n      </svg>\n    </div>\n  );\n};\n\nexport { UploadIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

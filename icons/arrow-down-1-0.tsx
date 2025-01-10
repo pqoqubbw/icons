@@ -18,7 +18,7 @@ const swapVariants: Variants = {
   }),
 };
 
-const ArrowDown10con = () => {
+const ArrowDown10Icon = () => {
   const controls = useAnimation();
 
   return (
@@ -67,4 +67,4 @@ const ArrowDown10con = () => {
   );
 };
 
-export { ArrowDown10con };
+export { ArrowDown10Icon };

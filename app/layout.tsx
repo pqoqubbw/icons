@@ -8,6 +8,7 @@ import ogImage from './og.png';
 import { Analytics } from '@/components/analytics';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { SnowfallComponent } from '@/components/snowfall';
+import { Toaster } from 'sonner';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -99,6 +100,7 @@ export default function RootLayout({
           <Header />
           <NuqsAdapter>
             {children}
+            <Toaster theme="light" position="bottom-right" />
             <SnowfallComponent />
           </NuqsAdapter>
           <Analytics />

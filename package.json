@@ -29,6 +29,7 @@
     "react-dom": "18",
     "react-hotkeys-hook": "^4.6.1",
     "react-snowfall": "^2.2.0",
+    "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",

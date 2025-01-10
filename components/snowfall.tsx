@@ -21,8 +21,8 @@ const SnowfallComponent = memo(() => {
   return (
     <div className="fixed inset-0 pointer-events-none z-50">
       <Snowfall
-        snowflakeCount={150}
-        changeFrequency={400}
+        snowflakeCount={90}
+        changeFrequency={300}
         opacity={[0.3, 0.8]}
         wind={[-2, 5]}
       />
