@@ -8,7 +8,7 @@
 		"start": "next start",
 		"lint": "prettier --write . && eslint --fix .",
 		"gen-cli": "tsx scripts/sync-registry.ts && tsx scripts/registry-build.ts",
-		"build:registry": "npx jsrepo build "
+		"build:registry": "npx jsrepo build"
 	},
 	"dependencies": {
 		"@openpanel/nextjs": "^1.0.5",

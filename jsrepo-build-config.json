@@ -12,5 +12,5 @@
 	"includeCategories": ["icons"],
 	"excludeBlocks": [],
 	"excludeCategories": [],
-	"preview": false
+	"preview": true
 }
