@@ -1,0 +1,3064 @@
+[
+	{
+		"name": "icons",
+		"blocks": [
+			{
+				"name": "activity",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"activity.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "airplane",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"airplane.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "alarm-clock",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"alarm-clock.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "align-center",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"align-center.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "align-horizontal",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"align-horizontal.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "align-vertical",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"align-vertical.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "angry",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"angry.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "archive",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"archive.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-down-0-1",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-down-0-1.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-down-1-0",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-down-1-0.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-down-a-z",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-down-a-z.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-down-z-a",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-down-z-a.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-left",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-left.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "arrow-right",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"arrow-right.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "at-sign",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"at-sign.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "attach-file",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"attach-file.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "audio-lines",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"audio-lines.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "badge-alert",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"badge-alert.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "badge-percent",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"badge-percent.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "ban",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"ban.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "banana",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"banana.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "battery-full",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"battery-full.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bell",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bell.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bluetooth-connected",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bluetooth-connected.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bluetooth-off",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bluetooth-off.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bluetooth-searching",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bluetooth-searching.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bold",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bold.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "bone",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"bone.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "book-text",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"book-text.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "calendar-cog",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"calendar-cog.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cart",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cart.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cast",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cast.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cctv",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cctv.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-bar-decreasing",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-bar-decreasing.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-bar-increasing",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-bar-increasing.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-column-decreasing",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-column-decreasing.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-column-increasing",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-column-increasing.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-pie",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-pie.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chart-scatter",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chart-scatter.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "check-check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"check-check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chevrons-down-up",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chevrons-down-up.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chevrons-left-right",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chevrons-left-right.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chevrons-right-left",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chevrons-right-left.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chevrons-up-down",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chevrons-up-down.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "chrome",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"chrome.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-chevron-down",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-chevron-down.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-chevron-left",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-chevron-left.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-chevron-right",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-chevron-right.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-chevron-up",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-chevron-up.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-dollar-sign",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-dollar-sign.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "circle-help",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"circle-help.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "clap",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"clap.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "clipboard-check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"clipboard-check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "clock",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"clock.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "coffee",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"coffee.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cog",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cog.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "compass",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"compass.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "connect",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"connect.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "copy",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"copy.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cpu",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cpu.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "cursor-click",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"cursor-click.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "delete",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"delete.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "download",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"download.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "downvote",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"downvote.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "dribbble",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"dribbble.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "drum",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"drum.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "earth",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"earth.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "expand",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"expand.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "eye-off",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"eye-off.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "facebook",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"facebook.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "figma",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"figma.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "file-pen-line",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"file-pen-line.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "file-stack",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"file-stack.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "fingerprint",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"fingerprint.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "fish-symbol",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"fish-symbol.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "flame",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"flame.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "flask",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"flask.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "frame",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"frame.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "gauge",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"gauge.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "git-commit-horizontal",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"git-commit-horizontal.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "git-commit-vertical",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"git-commit-vertical.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "git-pull-request",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"git-pull-request.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "github",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"github.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "grip",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"grip.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "hand-coins",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"hand-coins.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "home",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"home.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "id-card",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"id-card.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "index",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"index.ts"
+				],
+				"localDependencies": [
+					"icons/alarm-clock",
+					"icons/align-center",
+					"icons/align-horizontal",
+					"icons/align-vertical",
+					"icons/angry",
+					"icons/archive",
+					"icons/arrow-left",
+					"icons/arrow-right",
+					"icons/at-sign",
+					"icons/attach-file",
+					"icons/badge-percent",
+					"icons/bell",
+					"icons/bold",
+					"icons/bone",
+					"icons/calendar-cog",
+					"icons/chart-pie",
+					"icons/chart-scatter",
+					"icons/circle-check",
+					"icons/circle-dollar-sign",
+					"icons/clock",
+					"icons/copy",
+					"icons/cursor-click",
+					"icons/delete",
+					"icons/download",
+					"icons/downvote",
+					"icons/square-pen",
+					"icons/expand",
+					"icons/file-pen-line",
+					"icons/file-stack",
+					"icons/fingerprint",
+					"icons/frame",
+					"icons/gauge",
+					"icons/git-pull-request",
+					"icons/github",
+					"icons/grip",
+					"icons/hand-coins",
+					"icons/home",
+					"icons/italic",
+					"icons/languages",
+					"icons/layers",
+					"icons/link",
+					"icons/menu",
+					"icons/party-popper",
+					"icons/pen-tool",
+					"icons/refresh",
+					"icons/route",
+					"icons/scan-text",
+					"icons/settings",
+					"icons/settings-gear",
+					"icons/sun",
+					"icons/underline",
+					"icons/undo",
+					"icons/connect",
+					"icons/upvote",
+					"icons/users",
+					"icons/volume",
+					"icons/cart",
+					"icons/stethoscope",
+					"icons/earth",
+					"icons/workflow",
+					"icons/logout",
+					"icons/circle-help",
+					"icons/user",
+					"icons/audio-lines",
+					"icons/flame",
+					"icons/eye-off",
+					"icons/square-stack",
+					"icons/badge-alert",
+					"icons/message-circle",
+					"icons/message-circle-more",
+					"icons/search",
+					"icons/shield-check",
+					"icons/timer",
+					"icons/bluetooth-searching",
+					"icons/bluetooth-connected",
+					"icons/bluetooth-off",
+					"icons/flask",
+					"icons/syringe",
+					"icons/compass",
+					"icons/trending-down",
+					"icons/trending-up",
+					"icons/trending-up-down",
+					"icons/play",
+					"icons/pause",
+					"icons/chevrons-up-down",
+					"icons/chevrons-down-up",
+					"icons/chevrons-left-right",
+					"icons/chevrons-right-left",
+					"icons/circle-chevron-down",
+					"icons/circle-chevron-left",
+					"icons/circle-chevron-right",
+					"icons/circle-chevron-up",
+					"icons/check",
+					"icons/check-check",
+					"icons/id-card",
+					"icons/loader-pinwheel",
+					"icons/rocking-chair",
+					"icons/chart-column-decreasing",
+					"icons/chart-column-increasing",
+					"icons/chart-bar-decreasing",
+					"icons/chart-bar-increasing",
+					"icons/banana",
+					"icons/ban",
+					"icons/wifi",
+					"icons/chrome",
+					"icons/figma",
+					"icons/fish-symbol",
+					"icons/git-commit-vertical",
+					"icons/git-commit-horizontal",
+					"icons/waypoints",
+					"icons/ship",
+					"icons/roller-coaster",
+					"icons/airplane",
+					"icons/drum",
+					"icons/train-track",
+					"icons/sparkles",
+					"icons/webhook",
+					"icons/rabbit",
+					"icons/cog",
+					"icons/cpu",
+					"icons/rocket",
+					"icons/activity",
+					"icons/map-pin",
+					"icons/map-pin-check-inside",
+					"icons/map-pin-minus-inside",
+					"icons/map-pin-plus-inside",
+					"icons/map-pin-off",
+					"icons/map-pin-check",
+					"icons/map-pin-house",
+					"icons/map-pin-minus",
+					"icons/map-pin-plus",
+					"icons/map-pin-x-inside",
+					"icons/battery-full",
+					"icons/terminal",
+					"icons/keyboard",
+					"icons/clap",
+					"icons/layout-panel-top",
+					"icons/book-text",
+					"icons/shower-head",
+					"icons/telescope",
+					"icons/wind",
+					"icons/cctv",
+					"icons/coffee",
+					"icons/arrow-down-z-a",
+					"icons/arrow-down-a-z",
+					"icons/arrow-down-0-1",
+					"icons/arrow-down-1-0",
+					"icons/clipboard-check",
+					"icons/facebook",
+					"icons/linkedin",
+					"icons/youtube",
+					"icons/instagram",
+					"icons/twitch",
+					"icons/dribbble",
+					"icons/x",
+					"icons/moon",
+					"icons/vibrate",
+					"icons/smartphone-charging",
+					"icons/cast",
+					"icons/upload"
+				],
+				"_imports_": {
+					"@/icons/alarm-clock": "{{icons/alarm-clock}}",
+					"@/icons/align-center": "{{icons/align-center}}",
+					"@/icons/align-horizontal": "{{icons/align-horizontal}}",
+					"@/icons/align-vertical": "{{icons/align-vertical}}",
+					"@/icons/angry": "{{icons/angry}}",
+					"@/icons/archive": "{{icons/archive}}",
+					"@/icons/arrow-left": "{{icons/arrow-left}}",
+					"@/icons/arrow-right": "{{icons/arrow-right}}",
+					"@/icons/at-sign": "{{icons/at-sign}}",
+					"@/icons/attach-file": "{{icons/attach-file}}",
+					"@/icons/badge-percent": "{{icons/badge-percent}}",
+					"@/icons/bell": "{{icons/bell}}",
+					"@/icons/bold": "{{icons/bold}}",
+					"@/icons/bone": "{{icons/bone}}",
+					"@/icons/calendar-cog": "{{icons/calendar-cog}}",
+					"@/icons/chart-pie": "{{icons/chart-pie}}",
+					"@/icons/chart-scatter": "{{icons/chart-scatter}}",
+					"@/icons/circle-check": "{{icons/circle-check}}",
+					"@/icons/circle-dollar-sign": "{{icons/circle-dollar-sign}}",
+					"@/icons/clock": "{{icons/clock}}",
+					"@/icons/copy": "{{icons/copy}}",
+					"@/icons/cursor-click": "{{icons/cursor-click}}",
+					"@/icons/delete": "{{icons/delete}}",
+					"@/icons/download": "{{icons/download}}",
+					"@/icons/downvote": "{{icons/downvote}}",
+					"@/icons/square-pen": "{{icons/square-pen}}",
+					"@/icons/expand": "{{icons/expand}}",
+					"@/icons/file-pen-line": "{{icons/file-pen-line}}",
+					"@/icons/file-stack": "{{icons/file-stack}}",
+					"@/icons/fingerprint": "{{icons/fingerprint}}",
+					"@/icons/frame": "{{icons/frame}}",
+					"@/icons/gauge": "{{icons/gauge}}",
+					"@/icons/git-pull-request": "{{icons/git-pull-request}}",
+					"@/icons/github": "{{icons/github}}",
+					"@/icons/grip": "{{icons/grip}}",
+					"@/icons/hand-coins": "{{icons/hand-coins}}",
+					"@/icons/home": "{{icons/home}}",
+					"@/icons/italic": "{{icons/italic}}",
+					"@/icons/languages": "{{icons/languages}}",
+					"@/icons/layers": "{{icons/layers}}",
+					"@/icons/link": "{{icons/link}}",
+					"@/icons/menu": "{{icons/menu}}",
+					"@/icons/party-popper": "{{icons/party-popper}}",
+					"@/icons/pen-tool": "{{icons/pen-tool}}",
+					"@/icons/refresh": "{{icons/refresh}}",
+					"@/icons/route": "{{icons/route}}",
+					"@/icons/scan-text": "{{icons/scan-text}}",
+					"@/icons/settings": "{{icons/settings}}",
+					"@/icons/settings-gear": "{{icons/settings-gear}}",
+					"@/icons/sun": "{{icons/sun}}",
+					"@/icons/underline": "{{icons/underline}}",
+					"@/icons/undo": "{{icons/undo}}",
+					"@/icons/connect": "{{icons/connect}}",
+					"@/icons/upvote": "{{icons/upvote}}",
+					"@/icons/users": "{{icons/users}}",
+					"@/icons/volume": "{{icons/volume}}",
+					"@/icons/cart": "{{icons/cart}}",
+					"@/icons/stethoscope": "{{icons/stethoscope}}",
+					"@/icons/earth": "{{icons/earth}}",
+					"@/icons/workflow": "{{icons/workflow}}",
+					"@/icons/logout": "{{icons/logout}}",
+					"@/icons/circle-help": "{{icons/circle-help}}",
+					"@/icons/user": "{{icons/user}}",
+					"@/icons/audio-lines": "{{icons/audio-lines}}",
+					"@/icons/flame": "{{icons/flame}}",
+					"@/icons/eye-off": "{{icons/eye-off}}",
+					"@/icons/square-stack": "{{icons/square-stack}}",
+					"@/icons/badge-alert": "{{icons/badge-alert}}",
+					"@/icons/message-circle": "{{icons/message-circle}}",
+					"@/icons/message-circle-more": "{{icons/message-circle-more}}",
+					"@/icons/search": "{{icons/search}}",
+					"@/icons/shield-check": "{{icons/shield-check}}",
+					"@/icons/timer": "{{icons/timer}}",
+					"@/icons/bluetooth-searching": "{{icons/bluetooth-searching}}",
+					"@/icons/bluetooth-connected": "{{icons/bluetooth-connected}}",
+					"@/icons/bluetooth-off": "{{icons/bluetooth-off}}",
+					"@/icons/flask": "{{icons/flask}}",
+					"@/icons/syringe": "{{icons/syringe}}",
+					"@/icons/compass": "{{icons/compass}}",
+					"@/icons/trending-down": "{{icons/trending-down}}",
+					"@/icons/trending-up": "{{icons/trending-up}}",
+					"@/icons/trending-up-down": "{{icons/trending-up-down}}",
+					"@/icons/play": "{{icons/play}}",
+					"@/icons/pause": "{{icons/pause}}",
+					"@/icons/chevrons-up-down": "{{icons/chevrons-up-down}}",
+					"@/icons/chevrons-down-up": "{{icons/chevrons-down-up}}",
+					"@/icons/chevrons-left-right": "{{icons/chevrons-left-right}}",
+					"@/icons/chevrons-right-left": "{{icons/chevrons-right-left}}",
+					"@/icons/circle-chevron-down": "{{icons/circle-chevron-down}}",
+					"@/icons/circle-chevron-left": "{{icons/circle-chevron-left}}",
+					"@/icons/circle-chevron-right": "{{icons/circle-chevron-right}}",
+					"@/icons/circle-chevron-up": "{{icons/circle-chevron-up}}",
+					"@/icons/check": "{{icons/check}}",
+					"@/icons/check-check": "{{icons/check-check}}",
+					"@/icons/id-card": "{{icons/id-card}}",
+					"@/icons/loader-pinwheel": "{{icons/loader-pinwheel}}",
+					"@/icons/rocking-chair": "{{icons/rocking-chair}}",
+					"@/icons/chart-column-decreasing": "{{icons/chart-column-decreasing}}",
+					"@/icons/chart-column-increasing": "{{icons/chart-column-increasing}}",
+					"@/icons/chart-bar-decreasing": "{{icons/chart-bar-decreasing}}",
+					"@/icons/chart-bar-increasing": "{{icons/chart-bar-increasing}}",
+					"@/icons/banana": "{{icons/banana}}",
+					"@/icons/ban": "{{icons/ban}}",
+					"@/icons/wifi": "{{icons/wifi}}",
+					"@/icons/chrome": "{{icons/chrome}}",
+					"@/icons/figma": "{{icons/figma}}",
+					"@/icons/fish-symbol": "{{icons/fish-symbol}}",
+					"@/icons/git-commit-vertical": "{{icons/git-commit-vertical}}",
+					"@/icons/git-commit-horizontal": "{{icons/git-commit-horizontal}}",
+					"@/icons/waypoints": "{{icons/waypoints}}",
+					"@/icons/ship": "{{icons/ship}}",
+					"@/icons/roller-coaster": "{{icons/roller-coaster}}",
+					"@/icons/airplane": "{{icons/airplane}}",
+					"@/icons/drum": "{{icons/drum}}",
+					"@/icons/train-track": "{{icons/train-track}}",
+					"@/icons/sparkles": "{{icons/sparkles}}",
+					"@/icons/webhook": "{{icons/webhook}}",
+					"@/icons/rabbit": "{{icons/rabbit}}",
+					"@/icons/cog": "{{icons/cog}}",
+					"@/icons/cpu": "{{icons/cpu}}",
+					"@/icons/rocket": "{{icons/rocket}}",
+					"@/icons/activity": "{{icons/activity}}",
+					"@/icons/map-pin": "{{icons/map-pin}}",
+					"@/icons/map-pin-check-inside": "{{icons/map-pin-check-inside}}",
+					"@/icons/map-pin-minus-inside": "{{icons/map-pin-minus-inside}}",
+					"@/icons/map-pin-plus-inside": "{{icons/map-pin-plus-inside}}",
+					"@/icons/map-pin-off": "{{icons/map-pin-off}}",
+					"@/icons/map-pin-check": "{{icons/map-pin-check}}",
+					"@/icons/map-pin-house": "{{icons/map-pin-house}}",
+					"@/icons/map-pin-minus": "{{icons/map-pin-minus}}",
+					"@/icons/map-pin-plus": "{{icons/map-pin-plus}}",
+					"@/icons/map-pin-x-inside": "{{icons/map-pin-x-inside}}",
+					"@/icons/battery-full": "{{icons/battery-full}}",
+					"@/icons/terminal": "{{icons/terminal}}",
+					"@/icons/keyboard": "{{icons/keyboard}}",
+					"@/icons/clap": "{{icons/clap}}",
+					"@/icons/layout-panel-top": "{{icons/layout-panel-top}}",
+					"@/icons/book-text": "{{icons/book-text}}",
+					"@/icons/shower-head": "{{icons/shower-head}}",
+					"@/icons/telescope": "{{icons/telescope}}",
+					"@/icons/wind": "{{icons/wind}}",
+					"@/icons/cctv": "{{icons/cctv}}",
+					"@/icons/coffee": "{{icons/coffee}}",
+					"@/icons/arrow-down-z-a": "{{icons/arrow-down-z-a}}",
+					"@/icons/arrow-down-a-z": "{{icons/arrow-down-a-z}}",
+					"@/icons/arrow-down-0-1": "{{icons/arrow-down-0-1}}",
+					"@/icons/arrow-down-1-0": "{{icons/arrow-down-1-0}}",
+					"@/icons/clipboard-check": "{{icons/clipboard-check}}",
+					"@/icons/facebook": "{{icons/facebook}}",
+					"@/icons/linkedin": "{{icons/linkedin}}",
+					"@/icons/youtube": "{{icons/youtube}}",
+					"@/icons/instagram": "{{icons/instagram}}",
+					"@/icons/twitch": "{{icons/twitch}}",
+					"@/icons/dribbble": "{{icons/dribbble}}",
+					"@/icons/x": "{{icons/x}}",
+					"@/icons/moon": "{{icons/moon}}",
+					"@/icons/vibrate": "{{icons/vibrate}}",
+					"@/icons/smartphone-charging": "{{icons/smartphone-charging}}",
+					"@/icons/cast": "{{icons/cast}}",
+					"@/icons/upload": "{{icons/upload}}"
+				},
+				"dependencies": [],
+				"devDependencies": []
+			},
+			{
+				"name": "instagram",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"instagram.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "italic",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"italic.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "keyboard",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"keyboard.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "languages",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"languages.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "layers",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"layers.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "layout-panel-top",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"layout-panel-top.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "link",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"link.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "linkedin",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"linkedin.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "loader-pinwheel",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"loader-pinwheel.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "logout",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"logout.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-check-inside",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-check-inside.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-house",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-house.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-minus-inside",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-minus-inside.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-minus",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-minus.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-off",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-off.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-plus-inside",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-plus-inside.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-plus",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-plus.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin-x-inside",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin-x-inside.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "map-pin",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"map-pin.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "menu",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"menu.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "message-circle-more",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"message-circle-more.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "message-circle",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"message-circle.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "moon",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"moon.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "party-popper",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"party-popper.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "pause",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"pause.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "pen-tool",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"pen-tool.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "play",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"play.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "rabbit",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"rabbit.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "refresh",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"refresh.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "rocket",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"rocket.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "rocking-chair",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"rocking-chair.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "roller-coaster",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"roller-coaster.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "route",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"route.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "scan-text",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"scan-text.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "search",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"search.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "settings-gear",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"settings-gear.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "settings",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"settings.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "shield-check",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"shield-check.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "ship",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"ship.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "shower-head",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"shower-head.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "smartphone-charging",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"smartphone-charging.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "sparkles",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"sparkles.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "square-pen",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"square-pen.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "square-stack",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"square-stack.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "stethoscope",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"stethoscope.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "sun",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"sun.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "syringe",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"syringe.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "telescope",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"telescope.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "terminal",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"terminal.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "timer",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"timer.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "train-track",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"train-track.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "trending-down",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"trending-down.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "trending-up-down",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"trending-up-down.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "trending-up",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"trending-up.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "twitch",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"twitch.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "underline",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"underline.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "undo",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"undo.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "upload",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"upload.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "upvote",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"upvote.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "user",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"user.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "users",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"users.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "vibrate",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"vibrate.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "volume",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"volume.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "waypoints",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"waypoints.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "webhook",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"webhook.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "wifi",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"wifi.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "wind",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"wind.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "workflow",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"workflow.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "x",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"x.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "youtube",
+				"directory": "icons",
+				"category": "icons",
+				"tests": false,
+				"subdirectory": false,
+				"list": true,
+				"files": [
+					"youtube.tsx"
+				],
+				"localDependencies": [],
+				"_imports_": {},
+				"dependencies": [
+					"motion@^11.15.0"
+				],
+				"devDependencies": []
+			}
+		]
+	}
+]
