@@ -11,7 +11,7 @@ const leftHalfVariants: Variants = {
   },
   animate: {
     rotate: -3,
-    x: -2,
+    x: -1,
     opacity: 1,
     transition: {
       duration: 0.9,
@@ -19,6 +19,7 @@ const leftHalfVariants: Variants = {
     },
   },
 };
+
 const rightHalfVariants: Variants = {
   normal: {
     rotate: 0,
@@ -26,8 +27,8 @@ const rightHalfVariants: Variants = {
     opacity: 1,
   },
   animate: {
-    rotate:3,
-    x: 2,
+    rotate: 3,
+    x: 1,
     opacity: 1,
     transition: {
       duration: 0.9,
@@ -35,6 +36,7 @@ const rightHalfVariants: Variants = {
     },
   },
 };
+
 const HeartCrackIcon = () => {
   const controls = useAnimation();
 
@@ -57,12 +59,14 @@ const HeartCrackIcon = () => {
         initial="normal"
         animate={controls}
       >
+       
         <motion.path
-          d="M12 5C10.5 3.5 9.26 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7 L11 13 L13 11 L10 8 L12 5"
+          d="M12 5C10.5 3.5 9.26 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
           variants={leftHalfVariants}
         />
+
         <motion.path
-          d="M12 5c1.5-1.5 2.74-2 4.5-2A5.5 5.5 0 0 1 22 8.5c0 2.3-1.5 4.05-3 5.5l-7 7 L13 13 L11 11 L14 8 L12 5"
+          d="M12 5c1.5-1.5 2.74-2 4.5-2A5.5 5.5 0 0 1 22 8.5c0 2.3-1.5 4.05-3 5.5l-7 7Z"
           variants={rightHalfVariants}
         />
       </motion.svg>

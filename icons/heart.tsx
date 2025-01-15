@@ -5,14 +5,12 @@ import { motion, useAnimation } from 'motion/react';
 const pulseVariants: Variants = {
   normal: {
     scale: 1,
-    opacity: 1,
     transition: {
       duration: 0.2,
     },
   },
   animate: {
-    scale: [1, 1.2, 1],
-    opacity: [1, 0.8, 1],
+    scale: [1, 1.05, 1],
     transition: {
       duration: 0.9,
       ease: 'easeInOut',
