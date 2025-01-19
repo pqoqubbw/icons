@@ -975,5 +975,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/upload.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

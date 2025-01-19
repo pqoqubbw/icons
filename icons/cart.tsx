@@ -3,11 +3,6 @@
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 
-const lidVariants: Variants = {
-  normal: { y: 0 },
-  animate: { y: -1.1 },
-};
-
 const cartVariants: Variants = {
   normal: { scale: 1 },
   hover: {
@@ -19,12 +14,6 @@ const cartVariants: Variants = {
       y: { repeat: 1, delay: 0.1, duration: 0.4 },
     },
   },
-};
-
-const springTransition = {
-  type: 'spring',
-  stiffness: 500,
-  damping: 30,
 };
 
 const CartIcon = () => {
@@ -54,12 +43,7 @@ const CartIcon = () => {
         animate={controls}
         transition={{ duration: 0.2 }}
       >
-        <motion.path
-          d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-          variants={lidVariants}
-          animate={controls}
-          transition={springTransition}
-        />
+        <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" />
       </motion.svg>
     </div>
   );
