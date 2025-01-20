@@ -4,7 +4,6 @@ import { type Variants, motion, useAnimation } from 'motion/react';
 
 const dotVariants: Variants = {
   visible: (i: number) => ({
-    scale: 1,
     opacity: 1,
     transition: {
       delay: i * 0.15,
@@ -12,13 +11,12 @@ const dotVariants: Variants = {
     },
   }),
   hidden: {
-    scale: 1,
     opacity: 0,
     transition: {
       duration: 0.2,
     },
   },
-  default: { scale: 1, opacity: 1 },
+  default: { opacity: 1 },
 };
 
 const ChartScatterIcon = () => {
