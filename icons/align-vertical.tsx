@@ -21,12 +21,12 @@ const AlignVerticalIcon = () => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={28}
-        height={28}
+        width="28"
+        height="28"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth={2}
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -36,11 +36,11 @@ const AlignVerticalIcon = () => {
             animate: { scaleY: 0.8 },
           }}
           animate={controls}
-          width={10}
-          height={6}
-          x={7}
-          y={9}
-          rx={2}
+          width="10"
+          height="6"
+          x="7"
+          y="9"
+          rx="2"
           transition={defaultTransition}
         />
         <motion.path

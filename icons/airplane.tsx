@@ -55,7 +55,7 @@ const AirplaneIcon = () => {
             x2={line.x2}
             y2={line.y2}
             stroke="currentColor"
-            strokeWidth={1}
+            strokeWidth="1"
             initial={{ opacity: 0, pathLength: 1, pathSpacing: 1 }}
             variants={{
               normal: {
