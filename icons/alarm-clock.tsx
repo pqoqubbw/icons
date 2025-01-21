@@ -82,6 +82,7 @@ const AlarmClockIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ overflow: 'visible' }}
       >
         <motion.path
           variants={pathVariants}

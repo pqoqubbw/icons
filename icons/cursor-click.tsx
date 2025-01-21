@@ -22,7 +22,6 @@ const lineVariants: Variants = {
     x: [0, custom.x, 0, 0],
     y: [0, custom.y, 0, 0],
     transition: {
-      duration: 2,
       type: 'spring',
       stiffness: 70,
       damping: 10,
