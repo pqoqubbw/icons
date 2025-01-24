@@ -46,6 +46,7 @@ const VibrateIcon = () => {
           rx="1"
           variants={rectVariants}
           animate={controls}
+          style={{ transformOrigin: 'center' }}
         />
       </svg>
     </div>
