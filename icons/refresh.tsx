@@ -1,15 +1,58 @@
 'use client';
 
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
-const RefreshIcon = () => {
+export interface RefreshIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
+
+const RefreshIcon = forwardRef<
+  RefreshIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -39,6 +82,8 @@ const RefreshIcon = () => {
       </motion.svg>
     </div>
   );
-};
+});
+
+RefreshIcon.displayName = 'RefreshIcon';
 
 export { RefreshIcon };

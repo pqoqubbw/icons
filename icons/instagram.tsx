@@ -2,6 +2,13 @@
 
 import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface InstagramIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const rectVariants: Variants = {
   normal: {
@@ -69,28 +76,64 @@ const lineVariants: Variants = {
   },
 };
 
-const InstagramIcon = () => {
+const InstagramIcon = forwardRef<
+  InstagramIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const rectControls = useAnimation();
   const pathControls = useAnimation();
   const lineControls = useAnimation();
+  const isControlledRef = useRef(false);
 
-  const handleMouseEnter = () => {
-    rectControls.start('animate');
-    pathControls.start('animate');
-    lineControls.start('animate');
-  };
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
 
-  const handleMouseLeave = () => {
-    rectControls.start('normal');
-    pathControls.start('normal');
-    lineControls.start('normal');
-  };
+    return {
+      startAnimation: () => {
+        rectControls.start('animate');
+        pathControls.start('animate');
+        lineControls.start('animate');
+      },
+      stopAnimation: () => {
+        rectControls.start('normal');
+        pathControls.start('normal');
+        lineControls.start('normal');
+      },
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        rectControls.start('animate');
+        pathControls.start('animate');
+        lineControls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [lineControls, onMouseEnter, pathControls, rectControls]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        rectControls.start('normal');
+        pathControls.start('normal');
+        lineControls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [rectControls, pathControls, lineControls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +175,8 @@ const InstagramIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+InstagramIcon.displayName = 'InstagramIcon';
 
 export { InstagramIcon };

@@ -2,9 +2,16 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface LanguagesIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const pathVariants: Variants = {
-  initial: { opacity: 1, pathLength: 1, pathOffset: 0 },
+  normal: { opacity: 1, pathLength: 1, pathOffset: 0 },
   animate: (custom: number) => ({
     opacity: [0, 1],
     pathLength: [0, 1],
@@ -22,7 +29,7 @@ const pathVariants: Variants = {
 };
 
 const svgVariants: Variants = {
-  initial: { opacity: 1 },
+  normal: { opacity: 1 },
   animate: {
     opacity: 1,
     transition: {
@@ -32,25 +39,60 @@ const svgVariants: Variants = {
   },
 };
 
-const LanguagesIcon = () => {
+const LanguagesIcon = forwardRef<
+  LanguagesIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const svgControls = useAnimation();
   const pathControls = useAnimation();
 
-  const onAnimationStart = () => {
-    svgControls.start('animate');
-    pathControls.start('animate');
-  };
+  const isControlledRef = useRef(false);
 
-  const onAnimationEnd = () => {
-    svgControls.start('initial');
-    pathControls.start('initial');
-  };
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => {
+        svgControls.start('animate');
+        pathControls.start('animate');
+      },
+      stopAnimation: () => {
+        svgControls.start('normal');
+        pathControls.start('normal');
+      },
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        svgControls.start('animate');
+        pathControls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [onMouseEnter, pathControls, svgControls]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        svgControls.start('normal');
+        pathControls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [svgControls, pathControls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={onAnimationStart}
-      onMouseLeave={onAnimationEnd}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +146,8 @@ const LanguagesIcon = () => {
       </motion.svg>
     </div>
   );
-};
+});
+
+LanguagesIcon.displayName = 'LanguagesIcon';
 
 export { LanguagesIcon };
