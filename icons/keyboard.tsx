@@ -42,12 +42,12 @@ const KeyboardIcon = forwardRef<
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!isControlledRef.current) {
-        controls.start('animate');
+        setIsHovered(true);
       } else {
         onMouseEnter?.(e);
       }
     },
-    [controls, onMouseEnter]
+    [onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
