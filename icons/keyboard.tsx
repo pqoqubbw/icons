@@ -2,8 +2,15 @@
 
 import { AnimatePresence, motion, useAnimation } from 'motion/react';
 import { useEffect, useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
-const keyboardPaths = [
+export interface KeyboardIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
+
+const KEYBOARD_PATHS = [
   { id: 'key1', d: 'M10 8h.01' },
   { id: 'key2', d: 'M12 12h.01' },
   { id: 'key3', d: 'M14 8h.01' },
@@ -14,9 +21,45 @@ const keyboardPaths = [
   { id: 'key8', d: 'M8 12h.01' },
 ];
 
-const KeyboardIcon = () => {
+const KeyboardIcon = forwardRef<
+  KeyboardIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const controls = useAnimation();
+
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => setIsHovered(true),
+      stopAnimation: () => setIsHovered(false),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        setIsHovered(true);
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        setIsHovered(false);
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [onMouseLeave]
+  );
 
   useEffect(() => {
     const animateKeys = async () => {
@@ -27,7 +70,7 @@ const KeyboardIcon = () => {
             duration: 1.5,
             times: [0, 0.5, 1],
             delay: i * 0.2 * Math.random(),
-            repeat: Infinity,
+            repeat: 1,
             repeatType: 'reverse',
           },
         }));
@@ -41,10 +84,11 @@ const KeyboardIcon = () => {
   }, [isHovered, controls]);
 
   return (
-    <motion.div
+    <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +103,7 @@ const KeyboardIcon = () => {
       >
         <rect width="20" height="16" x="2" y="4" rx="2" />
         <AnimatePresence>
-          {keyboardPaths.map((path, index) => (
+          {KEYBOARD_PATHS.map((path, index) => (
             <motion.path
               key={path.id}
               d={path.d}
@@ -70,8 +114,10 @@ const KeyboardIcon = () => {
           ))}
         </AnimatePresence>
       </svg>
-    </motion.div>
+    </div>
   );
-};
+});
+
+KeyboardIcon.displayName = 'KeyboardIcon';
 
 export { KeyboardIcon };

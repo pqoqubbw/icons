@@ -2,6 +2,13 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface ShowerHeadIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const dropVariants: Variants = {
   animate: {
@@ -35,14 +42,50 @@ const dropPath = [
   { id: 'drop7', d: 'M20 11v.01' },
 ];
 
-const ShowerHeadIcon = () => {
+const ShowerHeadIcon = forwardRef<
+  ShowerHeadIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +113,8 @@ const ShowerHeadIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+ShowerHeadIcon.displayName = 'ShowerHeadIcon';
 
 export { ShowerHeadIcon };

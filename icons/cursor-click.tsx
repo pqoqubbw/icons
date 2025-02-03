@@ -2,6 +2,13 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface CursorClickIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const cursorVariants: Variants = {
   initial: { x: 0, y: 0 },
@@ -30,21 +37,59 @@ const lineVariants: Variants = {
   }),
 };
 
-const CursorClickIcon = () => {
+const CursorClickIcon = forwardRef<
+  CursorClickIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const clickControls = useAnimation();
   const cursorControls = useAnimation();
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => {
+        cursorControls.start('hover');
+        clickControls.start('spread', { delay: 1.3 });
+      },
+      stopAnimation: () => {
+        cursorControls.start('initial');
+        clickControls.start('initial');
+      },
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        cursorControls.start('hover');
+        clickControls.start('spread', { delay: 1.3 });
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [clickControls, cursorControls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        cursorControls.start('initial');
+        clickControls.start('initial');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [cursorControls, clickControls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => {
-        cursorControls.start('hover');
-        clickControls.start('spread', { delay: 1.3 });
-      }}
-      onMouseLeave={() => {
-        cursorControls.start('initial');
-        clickControls.start('initial');
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -89,6 +134,8 @@ const CursorClickIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+CursorClickIcon.displayName = 'CursorClickIcon';
 
 export { CursorClickIcon };
