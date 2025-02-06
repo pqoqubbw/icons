@@ -976,4 +976,16 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'calendar-days',
+    'path': path.join(__dirname, '../icons/calendar-days.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-cog',
+    'path': path.join(__dirname, '../icons/file-cog.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
