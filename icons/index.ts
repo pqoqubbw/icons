@@ -158,6 +158,8 @@ import { VibrateIcon } from '@/icons/vibrate';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
 import { UploadIcon } from '@/icons/upload';
+import { FileCogIcon } from '@/icons/file-cog';
+import { CalendarDaysIcon } from '@/icons/calendar-days';
 
 type IconListItem = {
   name: string;
@@ -1581,6 +1583,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'upload',
     icon: UploadIcon,
     keywords: ['upload', 'send', 'share'],
+  },
+  {
+    name: 'file-cog',
+    icon: FileCogIcon,
+    keywords: ['file', 'cog', 'settings', 'preferences', 'controls'],
+  },
+  {
+    name: 'calendar-days',
+    icon: CalendarDaysIcon,
+    keywords: ['calendar', 'days', 'days of the week', 'week', 'month'],
   },
 ];
 
