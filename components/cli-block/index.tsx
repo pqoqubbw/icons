@@ -26,11 +26,11 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
 
   return (
     <div
-      className="w-full max-w-3xl bg-input/50 rounded-lg overflow-hidden cursor-pointer mt-8 border border-input"
+      className="w-full max-w-3xl bg-input/50 rounded-lg overflow-hidden cursor-pointer mt-8 border border-input relative"
       onClick={copyToClipboard}
     >
-      <div className="p-3 relative font-mono text-sm flex items-center justify-between gap-2 overflow-x-auto whitespace-nowrap">
-        <div className="flex items-center min-w-0">
+      <div className="px-3 py-4 font-mono text-sm flex items-center gap-2 overflow-x-auto whitespace-nowrap pr-14">
+        <div className="flex items-center min-w-0 overflow-hidden">
           <span className="shrink-0 mr-2">npx</span>{' '}
           <span className="text-muted-foreground shrink-0">
             shadcn@latest add &quot;https://icons.pqoqubbw.dev/c/
@@ -55,6 +55,8 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
             ))}
           </TextLoop>
         </div>
+      </div>
+      <div className="absolute right-3 top-1/2 -translate-y-1/2">
         <AnimatePresence mode="wait" initial={false}>
           {copied ? (
             <motion.div
