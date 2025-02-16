@@ -29,7 +29,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
       className="w-full max-w-3xl bg-input/50 rounded-lg overflow-hidden cursor-pointer mt-8 border border-input relative"
       onClick={copyToClipboard}
     >
-      <div className="px-3 py-4 font-mono text-sm md:max-w-full max-w-[calc(100%-56px)] flex items-center gap-2 overflow-x-auto whitespace-nowrap pr-14">
+      <div className="pl-5 py-4 font-mono text-sm md:max-w-full max-w-[calc(100%-56px)] flex items-center gap-2 overflow-x-auto whitespace-nowrap pr-14">
         <div className="flex items-center min-w-0">
           <span className="shrink-0 mr-2">npx</span>{' '}
           <span className="text-muted-foreground shrink-0">
