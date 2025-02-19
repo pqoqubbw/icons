@@ -946,4 +946,40 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'cloud-sun',
+    'path': path.join(__dirname, '../icons/cloud-sun.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-dim',
+    'path': path.join(__dirname, '../icons/sun-dim.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-medium',
+    'path': path.join(__dirname, '../icons/sun-medium.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-moon',
+    'path': path.join(__dirname, '../icons/sun-moon.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sunset',
+    'path': path.join(__dirname, '../icons/sunset.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'twitter',
+    'path': path.join(__dirname, '../icons/twitter.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
