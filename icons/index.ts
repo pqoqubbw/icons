@@ -155,6 +155,7 @@ import { DribbbleIcon } from '@/icons/dribbble';
 import { XIcon } from './x';
 import { MoonIcon } from './moon';
 import { CloudSunIcon } from '@/icons/cloud-sun';
+import { SunsetIcon } from '@/icons/sunset';
 
 type IconListItem = {
   name: string;
@@ -212,6 +213,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'cloud-sun',
     icon: CloudSunIcon,
     keywords: ['weather', 'sun', 'cloud', 'light', 'bright'],
+  },
+  {
+    name: 'sunset',
+    icon: SunsetIcon,
+    keywords: ['sun', 'sunset', 'weather', 'bright', 'dawn', 'evening'],
   },
   {
     name: 'cart',
