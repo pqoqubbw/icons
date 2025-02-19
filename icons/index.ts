@@ -147,6 +147,7 @@ import { ArrowDown01con } from '@/icons/arrow-down-0-1';
 import { ArrowDown10con } from '@/icons/arrow-down-1-0';
 import { FacebookIcon } from '@/icons/facebook';
 import { LinkedinIcon } from '@/icons/linkedin';
+import { TwitterIcon } from '@/icons/twitter';
 import { YoutubeIcon } from '@/icons/youtube';
 import { InstagramIcon } from '@/icons/instagram';
 import { TwitchIcon } from '@/icons/twitch';
@@ -170,6 +171,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'facebook',
     icon: FacebookIcon,
     keywords: ['social', 'network', 'facebook'],
+  },
+  {
+    name: 'twitter',
+    icon: TwitterIcon,
+    keywords: ['social', 'network', 'twitter', 'X'],
   },
   {
     name: 'linkedin',
