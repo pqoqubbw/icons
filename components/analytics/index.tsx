@@ -3,9 +3,8 @@ import { OpenPanelComponent } from '@openpanel/nextjs';
 enum ANALYTIC_EVENT {
   HEADER_GITHUB = 'header-github',
   ICON_COPY = 'icon-copy',
-  ICON_DOWNLOAD = 'icon-download',
-  ICON_LINK = 'icon-link',
   ICON_COPY_TERMINAL = 'icon-copy-terminal',
+  ICON_OPEN_IN_V0 = 'icon-open-in-v0',
 }
 
 const Analytics = () => {

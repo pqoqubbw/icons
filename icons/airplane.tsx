@@ -1,6 +1,13 @@
 'use client';
 
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface AirplaneIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const SPEED_LINES = [
   { x1: 5, y1: 15, x2: 1, y2: 19, delay: 0.1 },
@@ -8,14 +15,50 @@ const SPEED_LINES = [
   { x1: 9, y1: 19, x2: 5, y2: 23, delay: 0.3 },
 ];
 
-const AirplaneIcon = () => {
+const AirplaneIcon = forwardRef<
+  AirplaneIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +98,7 @@ const AirplaneIcon = () => {
             x2={line.x2}
             y2={line.y2}
             stroke="currentColor"
-            strokeWidth={1}
+            strokeWidth="1"
             initial={{ opacity: 0, pathLength: 1, pathSpacing: 1 }}
             variants={{
               normal: {
@@ -85,6 +128,8 @@ const AirplaneIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+AirplaneIcon.displayName = 'AirplaneIcon';
 
 export { AirplaneIcon };

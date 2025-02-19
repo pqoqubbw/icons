@@ -947,6 +947,36 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'vibrate',
+    'path': path.join(__dirname, '../icons/vibrate.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'smartphone-charging',
+    'path': path.join(__dirname, '../icons/smartphone-charging.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cast',
+    'path': path.join(__dirname, '../icons/cast.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'clipboard-check',
+    'path': path.join(__dirname, '../icons/clipboard-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'upload',
+    'path': path.join(__dirname, '../icons/upload.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+];
     'name': 'cloud-sun',
     'path': path.join(__dirname, '../icons/cloud-sun.tsx'),
     'registryDependencies': [],

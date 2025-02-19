@@ -1,6 +1,13 @@
 'use client';
 
 import { type Variants, motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface BatteryFullIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const lineVariants: Variants = {
   initial: { opacity: 1 },
@@ -21,23 +28,54 @@ const lineVariants: Variants = {
   }),
 };
 
-const BatteryFullIcon = () => {
+const BatteryFullIcon = forwardRef<
+  BatteryFullIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
+  const isControlledRef = useRef(false);
 
-  const handleHoverStart = async () => {
-    await controls.start('fadeOut');
-    controls.start('fadeIn');
-  };
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
 
-  const handleHoverEnd = () => {
-    controls.start('initial');
-  };
+    return {
+      startAnimation: async () => {
+        await controls.start('fadeOut');
+        controls.start('fadeIn');
+      },
+      stopAnimation: () => controls.start('initial'),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    async (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        await controls.start('fadeOut');
+        controls.start('fadeIn');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('initial');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={handleHoverStart}
-      onMouseLeave={handleHoverEnd}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +123,8 @@ const BatteryFullIcon = () => {
       </motion.svg>
     </div>
   );
-};
+});
+
+BatteryFullIcon.displayName = 'BatteryFullIcon';
 
 export { BatteryFullIcon };

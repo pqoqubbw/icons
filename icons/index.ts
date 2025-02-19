@@ -144,7 +144,8 @@ import { CoffeeIcon } from '@/icons/coffee';
 import { ArrowDownZAIcon } from '@/icons/arrow-down-z-a';
 import { ArrowDownAZIcon } from '@/icons/arrow-down-a-z';
 import { ArrowDown01con } from '@/icons/arrow-down-0-1';
-import { ArrowDown10con } from '@/icons/arrow-down-1-0';
+import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
+import { ClipboardCheckIcon } from '@/icons/clipboard-check';
 import { FacebookIcon } from '@/icons/facebook';
 import { LinkedinIcon } from '@/icons/linkedin';
 import { TwitterIcon } from '@/icons/twitter';
@@ -154,11 +155,18 @@ import { TwitchIcon } from '@/icons/twitch';
 import { DribbbleIcon } from '@/icons/dribbble';
 import { XIcon } from './x';
 import { MoonIcon } from './moon';
+import { XIcon } from '@/icons/x';
+import { MoonIcon } from '@/icons/moon';
+import { VibrateIcon } from '@/icons/vibrate';
+import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
+import { CastIcon } from '@/icons/cast';
+import { UploadIcon } from '@/icons/upload';
 import { CloudSunIcon } from '@/icons/cloud-sun';
 import { SunsetIcon } from '@/icons/sunset';
 import { SunDimIcon } from '@/icons/sun-dim';
 import { SunMediumIcon } from '@/icons/sun-medium';
 import { SunMoonIcon } from '@/icons/sun-moon';
+
 
 type IconListItem = {
   name: string;
@@ -167,6 +175,22 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'smartphone-charging',
+    icon: SmartphoneChargingIcon,
+    keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'vibrate',
+    icon: VibrateIcon,
+    keywords: [
+      'smartphone',
+      'notification',
+      'rumble',
+      'haptic feedback',
+      'screen',
+    ],
+  },
   {
     name: 'moon',
     icon: MoonIcon,
@@ -400,6 +424,11 @@ const ICON_LIST: IconListItem[] = [
       'ellipsis',
       'etc',
     ],
+  },
+  {
+    name: 'clipboard-check',
+    icon: ClipboardCheckIcon,
+    keywords: ['clipboard', 'check', 'clipboard-check', 'clipboard-checkmark'],
   },
   {
     name: 'home',
@@ -1564,7 +1593,7 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'arrow-down-1-0',
-    icon: ArrowDown10con,
+    icon: ArrowDown10Icon,
     keywords: [
       'filter',
       'sort',
@@ -1581,6 +1610,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'x',
     icon: XIcon,
     keywords: ['x', 'close', 'delete', 'remove', 'cancel', 'exit', 'stop'],
+  },
+  {
+    name: 'cast',
+    icon: CastIcon,
+    keywords: ['cast', 'screen', 'chromecast', 'airplay'],
+  },
+  {
+    name: 'upload',
+    icon: UploadIcon,
+    keywords: ['upload', 'send', 'share'],
   },
 ];
 

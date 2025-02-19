@@ -2,12 +2,17 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface TelescopeIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const scopeVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: '12px',
-    originY: '13px',
     transition: {
       duration: 0.6,
       ease: 'easeInOut',
@@ -22,14 +27,50 @@ const scopeVariants: Variants = {
   },
 };
 
-const TelescopeIcon = () => {
+const TelescopeIcon = forwardRef<
+  TelescopeIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
+  const isControlledRef = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +83,11 @@ const TelescopeIcon = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <motion.g variants={scopeVariants} animate={controls}>
+        <motion.g
+          variants={scopeVariants}
+          animate={controls}
+          style={{ transformOrigin: '12px 13px' }}
+        >
           <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44" />
           <path d="m13.56 11.747 4.332-.924" />
           <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44" />
@@ -56,6 +101,8 @@ const TelescopeIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+TelescopeIcon.displayName = 'TelescopeIcon';
 
 export { TelescopeIcon };

@@ -2,6 +2,13 @@
 
 import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface LinkedinIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const pathVariants: Variants = {
   normal: {
@@ -69,28 +76,65 @@ const circleVariants: Variants = {
   },
 };
 
-const LinkedinIcon = () => {
+const LinkedinIcon = forwardRef<
+  LinkedinIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const pathControls = useAnimation();
   const rectControls = useAnimation();
   const circleControls = useAnimation();
 
-  const handleMouseEnter = () => {
-    pathControls.start('animate');
-    rectControls.start('animate');
-    circleControls.start('animate');
-  };
+  const isControlledRef = useRef(false);
 
-  const handleMouseLeave = () => {
-    pathControls.start('normal');
-    rectControls.start('normal');
-    circleControls.start('normal');
-  };
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => {
+        pathControls.start('animate');
+        rectControls.start('animate');
+        circleControls.start('animate');
+      },
+      stopAnimation: () => {
+        pathControls.start('normal');
+        rectControls.start('normal');
+        circleControls.start('normal');
+      },
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        pathControls.start('animate');
+        rectControls.start('animate');
+        circleControls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [circleControls, onMouseEnter, pathControls, rectControls]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        pathControls.start('normal');
+        rectControls.start('normal');
+        circleControls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [pathControls, rectControls, circleControls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -129,6 +173,8 @@ const LinkedinIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+LinkedinIcon.displayName = 'LinkedinIcon';
 
 export { LinkedinIcon };

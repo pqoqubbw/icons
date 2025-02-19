@@ -2,6 +2,13 @@
 
 import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+
+export interface DribbbleIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
 
 const circleVariants: Variants = {
   normal: {
@@ -47,31 +54,70 @@ const pathVariants: Variants = {
   },
 };
 
-const DribbbleIcon = () => {
+const DribbbleIcon = forwardRef<
+  DribbbleIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const circleControls = useAnimation();
   const path1Controls = useAnimation();
   const path2Controls = useAnimation();
   const path3Controls = useAnimation();
 
-  const handleMouseEnter = () => {
-    circleControls.start('animate');
-    path1Controls.start('animate');
-    path2Controls.start('animate');
-    path3Controls.start('animate');
-  };
+  const isControlledRef = useRef(false);
 
-  const handleMouseLeave = () => {
-    circleControls.start('normal');
-    path1Controls.start('normal');
-    path2Controls.start('normal');
-    path3Controls.start('normal');
-  };
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
+
+    return {
+      startAnimation: () => {
+        circleControls.start('animate');
+        path1Controls.start('animate');
+        path2Controls.start('animate');
+        path3Controls.start('animate');
+      },
+      stopAnimation: () => {
+        circleControls.start('normal');
+        path1Controls.start('normal');
+        path2Controls.start('normal');
+        path3Controls.start('normal');
+      },
+    };
+  });
+
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        circleControls.start('animate');
+        path1Controls.start('animate');
+        path2Controls.start('animate');
+        path3Controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [circleControls, onMouseEnter, path1Controls, path2Controls, path3Controls]
+  );
+
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        circleControls.start('normal');
+        path1Controls.start('normal');
+        path2Controls.start('normal');
+        path3Controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [circleControls, path1Controls, path2Controls, path3Controls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -113,6 +159,8 @@ const DribbbleIcon = () => {
       </svg>
     </div>
   );
-};
+});
+
+DribbbleIcon.displayName = 'DribbbleIcon';
 
 export { DribbbleIcon };

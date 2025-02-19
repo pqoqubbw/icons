@@ -1,5 +1,7 @@
 # Contributing
 
+**IMPORTANT:** This project only accepts contributions based on [lucide icons](https://lucide.dev/). Pull requests containing custom icons or icons from other icon packs will be closed.
+
 We welcome contributions to our project! Please follow these steps to contribute:
 
 1. Fork the repository on GitHub.
@@ -36,11 +38,12 @@ We welcome contributions to our project! Please follow these steps to contribute
    yarn build
    ```
 
-8. Test the application to ensure your changes work as expected.
+8. Test the application to ensure your changes work as expected:
 
    ```
    yarn lint
    yarn build
+   yarn gen-cli
    ```
 
 9. Commit your changes:
