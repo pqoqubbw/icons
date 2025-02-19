@@ -157,6 +157,7 @@ import { MoonIcon } from './moon';
 import { CloudSunIcon } from '@/icons/cloud-sun';
 import { SunsetIcon } from '@/icons/sunset';
 import { SunDimIcon } from '@/icons/sun-dim';
+import { SunMediumIcon } from '@/icons/sun-medium';
 
 type IconListItem = {
   name: string;
@@ -224,6 +225,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'sun-dim',
     icon: SunDimIcon,
     keywords: ['sun', 'dim', 'weather', 'light', 'day'],
+  },
+  {
+    name: 'sun-medium',
+    icon: SunMediumIcon,
+    keywords: ['sun', 'medium', 'weather', 'light', 'day'],
   },
   {
     name: 'cart',
