@@ -154,6 +154,7 @@ import { TwitchIcon } from '@/icons/twitch';
 import { DribbbleIcon } from '@/icons/dribbble';
 import { XIcon } from './x';
 import { MoonIcon } from './moon';
+import { CloudSunIcon } from '@/icons/cloud-sun';
 
 type IconListItem = {
   name: string;
@@ -206,6 +207,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'search',
     icon: SearchIcon,
     keywords: ['find', 'scan', 'magnifier', 'magnifying glass'],
+  },
+  {
+    name: 'cloud-sun',
+    icon: CloudSunIcon,
+    keywords: ['weather', 'sun', 'cloud', 'light', 'bright'],
   },
   {
     name: 'cart',
