@@ -945,5 +945,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/moon.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

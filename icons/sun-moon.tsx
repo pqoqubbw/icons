@@ -1,6 +1,6 @@
 'use client';
 
-import type { Transition, Variants } from 'motion/react';
+import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
@@ -30,7 +30,7 @@ const moonVariants: Variants = {
   }),
 };
 
-const SunMoonIcon = forwardRef<SunMoonIconHandle, {}>(({}, ref) => {
+const SunMoonIcon = forwardRef<SunMoonIconHandle, object>((props, ref) => {
   const sunControls = useAnimation();
   const moonControls = useAnimation();
   const isControlledRef = useRef(false);
