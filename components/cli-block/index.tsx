@@ -56,7 +56,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
           </TextLoop>
         </div>
       </div>
-      <div className="absolute md:right-3 right-0 md:px-0 px-3 top-1/2 -translate-y-1/2 md:bg-transparent bg-[#1D1D1D]">
+      <div className="absolute md:right-3 right-0 md:px-0 px-3 top-1/2 -translate-y-1/2 md:bg-transparent dark:bg-[#1D1D1D]">
         <AnimatePresence mode="wait" initial={false}>
           {copied ? (
             <motion.div
