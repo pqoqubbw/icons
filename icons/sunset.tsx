@@ -10,19 +10,14 @@ export interface SunsetIconHandle {
   stopAnimation: () => void;
 }
 
-const sunVariants: Variants = {
+const arrowVariants: Variants = {
   normal: {
     y: 0,
   },
   animate: {
-    y: [0, -5, 0],
-    transition: {
-      duration: 1.5,
-      ease: 'easeInOut',
-    },
+    y: [0, 1, 0],
   },
 };
-
 const raysVariants: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
@@ -33,7 +28,7 @@ const raysVariants: Variants = {
 
 const SunsetIcon = forwardRef<SunsetIconHandle, HTMLAttributes<HTMLDivElement>>(
   ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
-    const sunControls = useAnimation();
+    const arrowControls = useAnimation();
     const raysControls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -42,11 +37,11 @@ const SunsetIcon = forwardRef<SunsetIconHandle, HTMLAttributes<HTMLDivElement>>(
 
       return {
         startAnimation: () => {
-          sunControls.start('animate');
+          arrowControls.start('animate');
           raysControls.start('animate');
         },
         stopAnimation: () => {
-          sunControls.start('normal');
+          arrowControls.start('normal');
           raysControls.start('normal');
         },
       };
@@ -55,25 +50,25 @@ const SunsetIcon = forwardRef<SunsetIconHandle, HTMLAttributes<HTMLDivElement>>(
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          sunControls.start('animate');
+          arrowControls.start('animate');
           raysControls.start('animate');
         } else {
           onMouseEnter?.(e);
         }
       },
-      [sunControls, raysControls, onMouseEnter]
+      [arrowControls, raysControls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          sunControls.start('normal');
+          arrowControls.start('normal');
           raysControls.start('normal');
         } else {
           onMouseLeave?.(e);
         }
       },
-      [sunControls, raysControls, onMouseLeave]
+      [arrowControls, raysControls, onMouseLeave]
     );
 
     return (
@@ -85,29 +80,31 @@ const SunsetIcon = forwardRef<SunsetIconHandle, HTMLAttributes<HTMLDivElement>>(
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="28"
+          height="28"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-sunset"
         >
-          <motion.path
-            d="M12 10V2"
-            animate={sunControls}
-            variants={sunVariants}
+          <motion.g
+            animate={arrowControls}
             initial="normal"
-          />
+            variants={arrowVariants}
+          >
+            <path d="M12 10V2" />
+            <path d="m16 6-4 4-4-4" />
+          </motion.g>
+
           {[
             'm4.93 10.93 1.41 1.41',
             'M2 18h2',
             'M20 18h2',
             'm19.07 10.93-1.41 1.41',
             'M22 22H2',
-            'm16 6-4 4-4-4',
+            ,
           ].map((d, index) => (
             <motion.path
               key={d}

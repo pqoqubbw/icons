@@ -976,7 +976,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-];
+  {
     'name': 'cloud-sun',
     'path': path.join(__dirname, '../icons/cloud-sun.tsx'),
     'registryDependencies': [],
@@ -1011,5 +1011,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/twitter.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

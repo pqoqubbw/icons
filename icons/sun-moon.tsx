@@ -2,6 +2,7 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
 export interface SunMoonIconHandle {
@@ -30,7 +31,10 @@ const moonVariants: Variants = {
   }),
 };
 
-const SunMoonIcon = forwardRef<SunMoonIconHandle, object>((props, ref) => {
+const SunMoonIcon = forwardRef<
+  SunMoonIconHandle,
+  HTMLAttributes<HTMLDivElement>
+>(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const sunControls = useAnimation();
   const moonControls = useAnimation();
   const isControlledRef = useRef(false);
@@ -50,37 +54,47 @@ const SunMoonIcon = forwardRef<SunMoonIconHandle, object>((props, ref) => {
     };
   });
 
-  const handleMouseEnter = useCallback(() => {
-    if (!isControlledRef.current) {
-      sunControls.start('animate');
-      moonControls.start('animate');
-    }
-  }, [sunControls, moonControls]);
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        sunControls.start('animate');
+        moonControls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [sunControls, moonControls, onMouseEnter]
+  );
 
-  const handleMouseLeave = useCallback(() => {
-    if (!isControlledRef.current) {
-      sunControls.start('normal');
-      moonControls.start('normal');
-    }
-  }, [sunControls, moonControls]);
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        sunControls.start('normal');
+        moonControls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [sunControls, moonControls, onMouseLeave]
+  );
 
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="28"
+        height="28"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="lucide lucide-sun-moon"
       >
         <motion.g variants={sunVariants} animate={sunControls} initial="normal">
           <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4" />
