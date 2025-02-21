@@ -1,0 +1,21 @@
+{
+  "name": "sun-dim",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "sun-dim.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: { opacity: 1 },\n  animate: (i: number) => ({\n    opacity: [0, 1],\n    transition: { delay: i * 0.1, duration: 0.3 },\n  }),\n};\n\nconst SunDimIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        className=\"lucide lucide-sun-dim\"\n      >\n        <circle cx=\"12\" cy=\"12\" r=\"4\" />\n        {[\n          'M12 4h.01',\n          'M20 12h.01',\n          'M12 20h.01',\n          'M4 12h.01',\n          'M17.657 6.343h.01',\n          'M17.657 17.657h.01',\n          'M6.343 17.657h.01',\n          'M6.343 6.343h.01',\n        ].map((d, index) => (\n          <motion.path\n            key={d}\n            d={d}\n            animate={controls}\n            variants={pathVariants}\n            custom={index + 1}\n          />\n        ))}\n      </svg>\n    </div>\n  );\n};\n\nexport { SunDimIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

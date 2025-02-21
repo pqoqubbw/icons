@@ -1,0 +1,21 @@
+{
+  "name": "sun-medium",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "sun-medium.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\n\nconst pathVariants: Variants = {\n  normal: { opacity: 1 },\n  animate: (i: number) => ({\n    opacity: [0, 1],\n    transition: { delay: i * 0.1, duration: 0.3 },\n  }),\n};\n\nconst SunMediumIcon = () => {\n  const controls = useAnimation();\n\n  return (\n    <div\n      className=\"cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center\"\n      onMouseEnter={() => controls.start('animate')}\n      onMouseLeave={() => controls.start('normal')}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width=\"24\"\n        height=\"24\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        className=\"lucide lucide-sun-medium\"\n      >\n        <circle cx=\"12\" cy=\"12\" r=\"4\" />\n        {[\n          'M12 3v1',\n          'M12 20v1',\n          'M3 12h1',\n          'M20 12h1',\n          'm18.364 5.636-.707.707',\n          'm6.343 17.657-.707.707',\n          'm5.636 5.636.707.707',\n          'm17.657 17.657.707.707',\n        ].map((d, index) => (\n          <motion.path\n            key={d}\n            d={d}\n            animate={controls}\n            variants={pathVariants}\n            custom={index + 1}\n          />\n        ))}\n      </svg>\n    </div>\n  );\n};\n\nexport { SunMediumIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
