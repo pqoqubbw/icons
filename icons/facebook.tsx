@@ -4,11 +4,16 @@ import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface FacebookIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
+
+interface FacebookIconProps extends HTMLAttributes<HTMLDivElement> {
+  size: number;
+};
 
 const facebookVariants: Variants = {
   normal: {
@@ -34,10 +39,11 @@ const facebookVariants: Variants = {
 
 const FacebookIcon = forwardRef<
   FacebookIconHandle,
-  HTMLAttributes<HTMLDivElement>
+  FacebookIconProps
 >(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
+    const size = props.size || 28;
 
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
@@ -72,15 +78,15 @@ const FacebookIcon = forwardRef<
 
   return (
     <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, props.className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width={size}
+        height={size}
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

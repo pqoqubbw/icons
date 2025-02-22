@@ -3,16 +3,24 @@
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface FlaskIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-const FlaskIcon = forwardRef<FlaskIconHandle, HTMLAttributes<HTMLDivElement>>(
+interface FlaskIconProps extends HTMLAttributes<HTMLDivElement> {
+  size: number;
+};
+
+const FlaskIcon = forwardRef<
+  FlaskIconHandle,
+  FlaskIconProps>(
   ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
+    const size = props.size || 28;
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
@@ -47,15 +55,15 @@ const FlaskIcon = forwardRef<FlaskIconHandle, HTMLAttributes<HTMLDivElement>>(
 
     return (
       <div
-        className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, props.className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width={size}
+          height={size}
           fill="currentColor"
           viewBox="0 0 512 512"
           strokeWidth="5.632"
