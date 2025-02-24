@@ -62,7 +62,7 @@ const lineVariants: Variants = {
 const TwitchIcon = forwardRef<
   TwitchIconHandle,
   TwitchIconProps>(
-  ({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const pathControls = useAnimation();
     const line1Controls = useAnimation();
     const line2Controls = useAnimation();
@@ -120,8 +120,8 @@ const TwitchIcon = forwardRef<
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={size || 28}
-          height={size || 28}
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

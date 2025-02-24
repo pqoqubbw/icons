@@ -45,7 +45,7 @@ const lineVariants: Variants = {
 const CursorClickIcon = forwardRef<
   CursorClickIconHandle,
   CursorClickIconProps
->(({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const clickControls = useAnimation();
   const cursorControls = useAnimation();
   const isControlledRef = useRef(false);
@@ -98,8 +98,8 @@ const CursorClickIcon = forwardRef<
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size || 28}
-        height={size || 28}
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

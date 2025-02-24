@@ -29,7 +29,7 @@ const KEYBOARD_PATHS = [
 const KeyboardIcon = forwardRef<
   KeyboardIconHandle,
   KeyboardIconProps
->(({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const controls = useAnimation();
 
@@ -97,8 +97,8 @@ const KeyboardIcon = forwardRef<
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size || 28}
-        height={size || 28}
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

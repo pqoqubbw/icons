@@ -40,7 +40,7 @@ const facebookVariants: Variants = {
 const FacebookIcon = forwardRef<
   FacebookIconHandle,
   FacebookIconProps
->(({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
     
@@ -84,8 +84,8 @@ const FacebookIcon = forwardRef<
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size || 28}
-        height={size || 28}
+        width={size}
+        height={size}
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

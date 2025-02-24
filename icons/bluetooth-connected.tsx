@@ -31,7 +31,7 @@ const pathVariants: Variants = {
 const BluetoothConnectedIcon = forwardRef<
   BluetoothConnectedIconHandle,
   BluetoothConnectedIconProps
->(({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
     
@@ -75,8 +75,8 @@ const BluetoothConnectedIcon = forwardRef<
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size || 28}
-        height={size || 28}
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
