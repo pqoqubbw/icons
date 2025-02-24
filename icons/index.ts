@@ -148,6 +148,7 @@ import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
 import { ClipboardCheckIcon } from '@/icons/clipboard-check';
 import { FacebookIcon } from '@/icons/facebook';
 import { LinkedinIcon } from '@/icons/linkedin';
+import { TwitterIcon } from '@/icons/twitter';
 import { YoutubeIcon } from '@/icons/youtube';
 import { InstagramIcon } from '@/icons/instagram';
 import { TwitchIcon } from '@/icons/twitch';
@@ -158,6 +159,11 @@ import { VibrateIcon } from '@/icons/vibrate';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
 import { UploadIcon } from '@/icons/upload';
+import { CloudSunIcon } from '@/icons/cloud-sun';
+import { SunsetIcon } from '@/icons/sunset';
+import { SunDimIcon } from '@/icons/sun-dim';
+import { SunMediumIcon } from '@/icons/sun-medium';
+import { SunMoonIcon } from '@/icons/sun-moon';
 
 type IconListItem = {
   name: string;
@@ -193,6 +199,11 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['social', 'network', 'facebook'],
   },
   {
+    name: 'twitter',
+    icon: TwitterIcon,
+    keywords: ['social', 'network', 'twitter', 'X'],
+  },
+  {
     name: 'linkedin',
     icon: LinkedinIcon,
     keywords: ['social', 'network', 'linkedin'],
@@ -221,6 +232,31 @@ const ICON_LIST: IconListItem[] = [
     name: 'search',
     icon: SearchIcon,
     keywords: ['find', 'scan', 'magnifier', 'magnifying glass'],
+  },
+  {
+    name: 'cloud-sun',
+    icon: CloudSunIcon,
+    keywords: ['weather', 'sun', 'cloud', 'light', 'bright'],
+  },
+  {
+    name: 'sunset',
+    icon: SunsetIcon,
+    keywords: ['sun', 'sunset', 'weather', 'bright', 'dawn', 'evening'],
+  },
+  {
+    name: 'sun-dim',
+    icon: SunDimIcon,
+    keywords: ['sun', 'dim', 'weather', 'light', 'day'],
+  },
+  {
+    name: 'sun-medium',
+    icon: SunMediumIcon,
+    keywords: ['sun', 'medium', 'weather', 'light', 'day'],
+  },
+  {
+    name: 'sun-moon',
+    icon: SunMoonIcon,
+    keywords: ['sun', 'moon', 'day', 'night', 'evening'],
   },
   {
     name: 'cart',

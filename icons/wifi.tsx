@@ -1,64 +1,103 @@
 'use client';
 
 import { motion, useAnimation } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
-const WifiIcon = () => {
-  const controls = useAnimation();
+export interface WifiIconHandle {
+  startAnimation: () => void;
+}
 
-  const wifiLevels = [
-    { d: 'M12 20h.01', initialOpacity: 1, delay: 0 },
-    { d: 'M8.5 16.429a5 5 0 0 1 7 0', initialOpacity: 1, delay: 0.1 },
-    { d: 'M5 12.859a10 10 0 0 1 14 0', initialOpacity: 1, delay: 0.2 },
-    { d: 'M2 8.82a15 15 0 0 1 20 0', initialOpacity: 1, delay: 0.3 },
-  ];
+interface WifiIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+}
 
-  const handleHover = async () => {
-    await controls.start('fadeOut');
-    controls.start('fadeIn');
-  };
+const WIFI_LEVELS = [
+  { d: 'M12 20h.01', initialOpacity: 1, delay: 0 },
+  { d: 'M8.5 16.429a5 5 0 0 1 7 0', initialOpacity: 1, delay: 0.1 },
+  { d: 'M5 12.859a10 10 0 0 1 14 0', initialOpacity: 1, delay: 0.2 },
+  { d: 'M2 8.82a15 15 0 0 1 20 0', initialOpacity: 1, delay: 0.3 },
+];
 
-  return (
-    <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={handleHover}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+const WifiIcon = forwardRef<WifiIconHandle, WifiIconProps>(
+  ({ onMouseEnter, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+
+    const isControlledRef = useRef(false);
+
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
+
+      return {
+        startAnimation: async () => {
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
+        },
+      };
+    });
+
+    const handleMouseEnter = useCallback(
+      async (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [controls, onMouseEnter]
+    );
+
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        {...props}
       >
-        {wifiLevels.map((level, index) => (
-          <motion.path
-            key={index}
-            d={level.d}
-            initial={{ opacity: level.initialOpacity }}
-            animate={controls}
-            variants={{
-              fadeOut: {
-                opacity: index === 0 ? 1 : 0,
-                transition: { duration: 0.2 },
-              },
-              fadeIn: {
-                opacity: 1,
-                transition: {
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 20,
-                  delay: level.delay,
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {WIFI_LEVELS.map((level, index) => (
+            <motion.path
+              key={index}
+              d={level.d}
+              initial={{ opacity: level.initialOpacity }}
+              animate={controls}
+              variants={{
+                fadeOut: {
+                  opacity: index === 0 ? 1 : 0,
+                  transition: { duration: 0.2 },
                 },
-              },
-            }}
-          />
-        ))}
-      </svg>
-    </div>
-  );
-};
+                fadeIn: {
+                  opacity: 1,
+                  transition: {
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 20,
+                    delay: level.delay,
+                  },
+                },
+              }}
+            />
+          ))}
+        </svg>
+      </div>
+    );
+  }
+);
+
+WifiIcon.displayName = 'WifiIcon';
 
 export { WifiIcon };
