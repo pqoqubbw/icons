@@ -12,7 +12,7 @@ export interface CursorClickIconHandle {
 }
 
 interface CursorClickIconProps extends HTMLAttributes<HTMLDivElement> {
-  size: number;
+  size?: number;
 };
 
 const cursorVariants: Variants = {
@@ -45,12 +45,11 @@ const lineVariants: Variants = {
 const CursorClickIcon = forwardRef<
   CursorClickIconHandle,
   CursorClickIconProps
->(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, size, className, ...props }, ref) => {
   const clickControls = useAnimation();
   const cursorControls = useAnimation();
   const isControlledRef = useRef(false);
-    const size = props.size || 28;
-
+    
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
 
@@ -92,15 +91,15 @@ const CursorClickIcon = forwardRef<
 
   return (
     <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, props.className)}
+      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
+        width={size || 28}
+        height={size || 28}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
