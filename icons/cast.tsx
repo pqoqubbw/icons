@@ -13,7 +13,7 @@ export interface CastIconHandle {
 
 interface CastIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const variants: Variants = {
   normal: { opacity: 1 },
@@ -26,13 +26,11 @@ const variants: Variants = {
   }),
 };
 
-const CastIcon = forwardRef<
-  CastIconHandle,
-  CastIconProps>(
+const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -65,7 +63,10 @@ const CastIcon = forwardRef<
     );
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

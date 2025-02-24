@@ -13,7 +13,7 @@ export interface CheckCheckIconHandle {
 
 interface CheckCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const pathVariants: Variants = {
   normal: {
@@ -37,80 +37,82 @@ const pathVariants: Variants = {
   }),
 };
 
-const CheckCheckIcon = forwardRef<
-  CheckCheckIconHandle,
-  CheckCheckIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const controls = useAnimation();
-  const isControlledRef = useRef(false);
-    
-  useImperativeHandle(ref, () => {
-    isControlledRef.current = true;
+const CheckCheckIcon = forwardRef<CheckCheckIconHandle, CheckCheckIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+    const isControlledRef = useRef(false);
 
-    return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
-    };
-  });
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
 
-  const handleMouseEnter = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
-        onMouseEnter?.(e);
-      }
-    },
-    [controls, onMouseEnter]
-  );
+      return {
+        startAnimation: () => controls.start('animate'),
+        stopAnimation: () => controls.start('normal'),
+      };
+    });
 
-  const handleMouseLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
-        onMouseLeave?.(e);
-      }
-    },
-    [controls, onMouseLeave]
-  );
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [controls, onMouseEnter]
+    );
 
-  return (
-    <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
+      },
+      [controls, onMouseLeave]
+    );
+
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
       >
-        <motion.path
-          variants={pathVariants}
-          initial="normal"
-          animate={controls}
-          d="M2 12 7 17L18 6"
-          custom={0}
-        />
-        <motion.path
-          variants={pathVariants}
-          initial="normal"
-          animate={controls}
-          d="M13 16L14.5 17.5L22 10"
-          custom={1}
-        />
-      </svg>
-    </div>
-  );
-});
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <motion.path
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+            d="M2 12 7 17L18 6"
+            custom={0}
+          />
+          <motion.path
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+            d="M13 16L14.5 17.5L22 10"
+            custom={1}
+          />
+        </svg>
+      </div>
+    );
+  }
+);
 
 CheckCheckIcon.displayName = 'CheckCheckIcon';
 

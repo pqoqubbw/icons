@@ -13,7 +13,7 @@ export interface ClockIconHandle {
 
 interface ClockIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const handTransition: Transition = {
   duration: 0.6,
@@ -47,13 +47,11 @@ const minuteHandVariants: Variants = {
   },
 };
 
-const ClockIcon = forwardRef<
-  ClockIconHandle,
-  ClockIconProps>(
+const ClockIcon = forwardRef<ClockIconHandle, ClockIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -87,7 +85,10 @@ const ClockIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

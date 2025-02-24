@@ -13,7 +13,7 @@ export interface TimerIconHandle {
 
 interface TimerIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const handVariants: Variants = {
   normal: {
@@ -50,13 +50,11 @@ const buttonVariants: Variants = {
   },
 };
 
-const TimerIcon = forwardRef<
-  TimerIconHandle,
-  TimerIconProps>(
+const TimerIcon = forwardRef<TimerIconHandle, TimerIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -90,7 +88,10 @@ const TimerIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

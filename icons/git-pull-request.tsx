@@ -12,7 +12,7 @@ export interface GitPullRequestIconHandle {
 
 interface GitPullRequestIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const DURATION = 0.3;
 
@@ -28,7 +28,7 @@ const GitPullRequestIcon = forwardRef<
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
-    
+
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
 
@@ -62,7 +62,10 @@ const GitPullRequestIcon = forwardRef<
 
   return (
     <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+      className={cn(
+        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+        className
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

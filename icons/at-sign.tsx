@@ -13,7 +13,7 @@ export interface AtSignIconHandle {
 
 interface AtSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const circleVariants: Variants = {
   normal: {
@@ -57,13 +57,11 @@ const pathVariants: Variants = {
   },
 };
 
-const AtSignIcon = forwardRef<
-  AtSignIconHandle,
-  AtSignIconProps>(
+const AtSignIcon = forwardRef<AtSignIconHandle, AtSignIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -97,7 +95,10 @@ const AtSignIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

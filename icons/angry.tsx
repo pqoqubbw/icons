@@ -13,7 +13,7 @@ export interface AngryIconHandle {
 
 interface AngryIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const EYEBROW_ROTATION = 20;
 const DURATION = 0.6;
@@ -71,13 +71,11 @@ const pathVariantsMouth: Variants = {
   },
 };
 
-const AngryIcon = forwardRef<
-  AngryIconHandle,
-  AngryIconProps>(
+const AngryIcon = forwardRef<AngryIconHandle, AngryIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -111,7 +109,10 @@ const AngryIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

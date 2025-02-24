@@ -13,7 +13,7 @@ export interface GithubIconHandle {
 
 interface GithubIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const bodyVariants: Variants = {
   normal: {
@@ -60,14 +60,12 @@ const tailVariants: Variants = {
   },
 };
 
-const GithubIcon = forwardRef<
-  GithubIconHandle,
-  GithubIconProps>(
+const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const bodyControls = useAnimation();
     const tailControls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -111,7 +109,10 @@ const GithubIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

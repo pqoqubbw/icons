@@ -13,7 +13,7 @@ export interface GripIconHandle {
 
 interface GripIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const CIRCLES = [
   { cx: 19, cy: 5 }, // Top right
@@ -27,14 +27,12 @@ const CIRCLES = [
   { cx: 5, cy: 19 }, // Bottom left
 ];
 
-const GripIcon = forwardRef<
-  GripIconHandle,
-  GripIconProps>(
+const GripIcon = forwardRef<GripIconHandle, GripIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const [isHovered, setIsHovered] = useState(false);
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -91,7 +89,10 @@ const GripIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

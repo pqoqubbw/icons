@@ -13,7 +13,7 @@ export interface MapPinPlusInsideIconHandle {
 
 interface MapPinPlusInsideIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const svgVariants: Variants = {
   normal: {
@@ -67,7 +67,7 @@ const MapPinPlusInsideIcon = forwardRef<
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
-    
+
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
 
@@ -101,7 +101,10 @@ const MapPinPlusInsideIcon = forwardRef<
 
   return (
     <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+      className={cn(
+        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+        className
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

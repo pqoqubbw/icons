@@ -13,7 +13,7 @@ export interface UploadIconHandle {
 
 interface UploadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const arrowVariants: Variants = {
   normal: { y: 0 },
@@ -28,13 +28,11 @@ const arrowVariants: Variants = {
   },
 };
 
-const UploadIcon = forwardRef<
-  UploadIconHandle,
-  UploadIconProps>(
+const UploadIcon = forwardRef<UploadIconHandle, UploadIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -68,7 +66,10 @@ const UploadIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

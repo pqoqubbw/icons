@@ -12,17 +12,15 @@ export interface UndoIconHandle {
 
 interface UndoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
 
-const UndoIcon = forwardRef<
-  UndoIconHandle,
-  UndoIconProps>(
+const UndoIcon = forwardRef<UndoIconHandle, UndoIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -55,7 +53,10 @@ const UndoIcon = forwardRef<
     );
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

@@ -13,7 +13,7 @@ export interface SunIconHandle {
 
 interface SunIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const pathVariants: Variants = {
   normal: { opacity: 1 },
@@ -23,13 +23,11 @@ const pathVariants: Variants = {
   }),
 };
 
-const SunIcon = forwardRef<
-  SunIconHandle,
-  SunIconProps>(
+const SunIcon = forwardRef<SunIconHandle, SunIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -62,7 +60,10 @@ const SunIcon = forwardRef<
     );
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

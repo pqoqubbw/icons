@@ -10,9 +10,10 @@ export interface ChartColumnIncreasingIconHandle {
   stopAnimation: () => void;
 }
 
-interface ChartColumnIncreasingIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ChartColumnIncreasingIconProps
+  extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const lineVariants: Variants = {
   visible: { pathLength: 1, opacity: 1 },
@@ -25,7 +26,7 @@ const ChartColumnIncreasingIcon = forwardRef<
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
-    
+
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
 
@@ -79,7 +80,10 @@ const ChartColumnIncreasingIcon = forwardRef<
 
   return (
     <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+      className={cn(
+        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+        className
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

@@ -13,7 +13,7 @@ export interface LinkedinIconHandle {
 
 interface LinkedinIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const pathVariants: Variants = {
   normal: {
@@ -81,104 +81,106 @@ const circleVariants: Variants = {
   },
 };
 
-const LinkedinIcon = forwardRef<
-  LinkedinIconHandle,
-  LinkedinIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const pathControls = useAnimation();
-  const rectControls = useAnimation();
-  const circleControls = useAnimation();
+const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const pathControls = useAnimation();
+    const rectControls = useAnimation();
+    const circleControls = useAnimation();
 
-  const isControlledRef = useRef(false);
-    
-  useImperativeHandle(ref, () => {
-    isControlledRef.current = true;
+    const isControlledRef = useRef(false);
 
-    return {
-      startAnimation: () => {
-        pathControls.start('animate');
-        rectControls.start('animate');
-        circleControls.start('animate');
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
+
+      return {
+        startAnimation: () => {
+          pathControls.start('animate');
+          rectControls.start('animate');
+          circleControls.start('animate');
+        },
+        stopAnimation: () => {
+          pathControls.start('normal');
+          rectControls.start('normal');
+          circleControls.start('normal');
+        },
+      };
+    });
+
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          pathControls.start('animate');
+          rectControls.start('animate');
+          circleControls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
       },
-      stopAnimation: () => {
-        pathControls.start('normal');
-        rectControls.start('normal');
-        circleControls.start('normal');
+      [circleControls, onMouseEnter, pathControls, rectControls]
+    );
+
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          pathControls.start('normal');
+          rectControls.start('normal');
+          circleControls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
       },
-    };
-  });
+      [pathControls, rectControls, circleControls, onMouseLeave]
+    );
 
-  const handleMouseEnter = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        pathControls.start('animate');
-        rectControls.start('animate');
-        circleControls.start('animate');
-      } else {
-        onMouseEnter?.(e);
-      }
-    },
-    [circleControls, onMouseEnter, pathControls, rectControls]
-  );
-
-  const handleMouseLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        pathControls.start('normal');
-        rectControls.start('normal');
-        circleControls.start('normal');
-      } else {
-        onMouseLeave?.(e);
-      }
-    },
-    [pathControls, rectControls, circleControls, onMouseLeave]
-  );
-
-  return (
-    <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        viewBox="0 0 24 24"
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
       >
-        <motion.path
-          variants={pathVariants}
-          initial="normal"
-          animate={pathControls}
-          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-        />
-        <motion.rect
-          variants={rectVariants}
-          initial="normal"
-          animate={rectControls}
-          x="2"
-          y="9"
-          width="4"
-          height="12"
-        />
-        <motion.circle
-          variants={circleVariants}
-          initial="normal"
-          animate={circleControls}
-          cx="4"
-          cy="4"
-          r="2"
-        />
-      </svg>
-    </div>
-  );
-});
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <motion.path
+            variants={pathVariants}
+            initial="normal"
+            animate={pathControls}
+            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+          />
+          <motion.rect
+            variants={rectVariants}
+            initial="normal"
+            animate={rectControls}
+            x="2"
+            y="9"
+            width="4"
+            height="12"
+          />
+          <motion.circle
+            variants={circleVariants}
+            initial="normal"
+            animate={circleControls}
+            cx="4"
+            cy="4"
+            r="2"
+          />
+        </svg>
+      </div>
+    );
+  }
+);
 
 LinkedinIcon.displayName = 'LinkedinIcon';
 

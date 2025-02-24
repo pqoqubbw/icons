@@ -13,7 +13,7 @@ export interface DeleteIconHandle {
 
 interface DeleteIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const lidVariants: Variants = {
   normal: { y: 0 },
@@ -26,13 +26,11 @@ const springTransition = {
   damping: 30,
 };
 
-const DeleteIcon = forwardRef<
-  DeleteIconHandle,
-  DeleteIconProps>(
+const DeleteIcon = forwardRef<DeleteIconHandle, DeleteIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -66,7 +64,10 @@ const DeleteIcon = forwardRef<
 
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}

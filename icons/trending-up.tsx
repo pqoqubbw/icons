@@ -13,7 +13,7 @@ export interface TrendingUpIconHandle {
 
 interface TrendingUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const svgVariants: Variants = {
   animate: {
@@ -69,81 +69,83 @@ const arrowVariants: Variants = {
   },
 };
 
-const TrendingUpIcon = forwardRef<
-  TrendingUpIconHandle,
-  TrendingUpIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const controls = useAnimation();
-  const isControlledRef = useRef(false);
-    
-  useImperativeHandle(ref, () => {
-    isControlledRef.current = true;
+const TrendingUpIcon = forwardRef<TrendingUpIconHandle, TrendingUpIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+    const isControlledRef = useRef(false);
 
-    return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
-    };
-  });
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
 
-  const handleMouseEnter = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
-        onMouseEnter?.(e);
-      }
-    },
-    [controls, onMouseEnter]
-  );
+      return {
+        startAnimation: () => controls.start('animate'),
+        stopAnimation: () => controls.start('normal'),
+      };
+    });
 
-  const handleMouseLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
-        onMouseLeave?.(e);
-      }
-    },
-    [controls, onMouseLeave]
-  );
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [controls, onMouseEnter]
+    );
 
-  return (
-    <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        variants={svgVariants}
-        initial="normal"
-        animate={controls}
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
+      },
+      [controls, onMouseLeave]
+    );
+
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
       >
-        <motion.polyline
-          points="22 7 13.5 15.5 8.5 10.5 2 17"
-          variants={pathVariants}
+        <motion.svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          variants={svgVariants}
           initial="normal"
           animate={controls}
-        />
-        <motion.polyline
-          points="16 7 22 7 22 13"
-          variants={arrowVariants}
-          initial="normal"
-          animate={controls}
-        />
-      </motion.svg>
-    </div>
-  );
-});
+        >
+          <motion.polyline
+            points="22 7 13.5 15.5 8.5 10.5 2 17"
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+          />
+          <motion.polyline
+            points="16 7 22 7 22 13"
+            variants={arrowVariants}
+            initial="normal"
+            animate={controls}
+          />
+        </motion.svg>
+      </div>
+    );
+  }
+);
 
 TrendingUpIcon.displayName = 'TrendingUpIcon';
 

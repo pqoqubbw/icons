@@ -13,7 +13,7 @@ export interface ShowerHeadIconHandle {
 
 interface ShowerHeadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const dropVariants: Variants = {
   animate: {
@@ -47,78 +47,80 @@ const dropPath = [
   { id: 'drop7', d: 'M20 11v.01' },
 ];
 
-const ShowerHeadIcon = forwardRef<
-  ShowerHeadIconHandle,
-  ShowerHeadIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const controls = useAnimation();
-  const isControlledRef = useRef(false);
-    
-  useImperativeHandle(ref, () => {
-    isControlledRef.current = true;
+const ShowerHeadIcon = forwardRef<ShowerHeadIconHandle, ShowerHeadIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+    const isControlledRef = useRef(false);
 
-    return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
-    };
-  });
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
 
-  const handleMouseEnter = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
-        onMouseEnter?.(e);
-      }
-    },
-    [controls, onMouseEnter]
-  );
+      return {
+        startAnimation: () => controls.start('animate'),
+        stopAnimation: () => controls.start('normal'),
+      };
+    });
 
-  const handleMouseLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
-        onMouseLeave?.(e);
-      }
-    },
-    [controls, onMouseLeave]
-  );
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [controls, onMouseEnter]
+    );
 
-  return (
-    <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
+      },
+      [controls, onMouseLeave]
+    );
+
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
       >
-        <path d="m4 4 2.5 2.5" />
-        <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
-        <path d="M15 5 5 15" />
-        <motion.g variants={dropVariants} animate={controls} initial="normal">
-          {dropPath.map((path) => (
-            <motion.path
-              variants={dropChildVariants}
-              key={path.id}
-              d={path.d}
-            />
-          ))}
-        </motion.g>
-      </svg>
-    </div>
-  );
-});
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m4 4 2.5 2.5" />
+          <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+          <path d="M15 5 5 15" />
+          <motion.g variants={dropVariants} animate={controls} initial="normal">
+            {dropPath.map((path) => (
+              <motion.path
+                variants={dropChildVariants}
+                key={path.id}
+                d={path.d}
+              />
+            ))}
+          </motion.g>
+        </svg>
+      </div>
+    );
+  }
+);
 
 ShowerHeadIcon.displayName = 'ShowerHeadIcon';
 

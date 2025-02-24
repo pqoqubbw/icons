@@ -13,7 +13,7 @@ export interface KeyboardIconHandle {
 
 interface KeyboardIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const KEYBOARD_PATHS = [
   { id: 'key1', d: 'M10 8h.01' },
@@ -26,102 +26,104 @@ const KEYBOARD_PATHS = [
   { id: 'key8', d: 'M8 12h.01' },
 ];
 
-const KeyboardIcon = forwardRef<
-  KeyboardIconHandle,
-  KeyboardIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const controls = useAnimation();
+const KeyboardIcon = forwardRef<KeyboardIconHandle, KeyboardIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const controls = useAnimation();
 
-  const isControlledRef = useRef(false);
-    
-  useImperativeHandle(ref, () => {
-    isControlledRef.current = true;
+    const isControlledRef = useRef(false);
 
-    return {
-      startAnimation: () => setIsHovered(true),
-      stopAnimation: () => setIsHovered(false),
-    };
-  });
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
 
-  const handleMouseEnter = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        setIsHovered(true);
-      } else {
-        onMouseEnter?.(e);
-      }
-    },
-    [onMouseEnter]
-  );
+      return {
+        startAnimation: () => setIsHovered(true),
+        stopAnimation: () => setIsHovered(false),
+      };
+    });
 
-  const handleMouseLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        setIsHovered(false);
-      } else {
-        onMouseLeave?.(e);
-      }
-    },
-    [onMouseLeave]
-  );
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          setIsHovered(true);
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [onMouseEnter]
+    );
 
-  useEffect(() => {
-    const animateKeys = async () => {
-      if (isHovered) {
-        await controls.start((i) => ({
-          opacity: [1, 0.2, 1],
-          transition: {
-            duration: 1.5,
-            times: [0, 0.5, 1],
-            delay: i * 0.2 * Math.random(),
-            repeat: 1,
-            repeatType: 'reverse',
-          },
-        }));
-      } else {
-        controls.stop();
-        controls.set({ opacity: 1 });
-      }
-    };
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          setIsHovered(false);
+        } else {
+          onMouseLeave?.(e);
+        }
+      },
+      [onMouseLeave]
+    );
 
-    animateKeys();
-  }, [isHovered, controls]);
+    useEffect(() => {
+      const animateKeys = async () => {
+        if (isHovered) {
+          await controls.start((i) => ({
+            opacity: [1, 0.2, 1],
+            transition: {
+              duration: 1.5,
+              times: [0, 0.5, 1],
+              delay: i * 0.2 * Math.random(),
+              repeat: 1,
+              repeatType: 'reverse',
+            },
+          }));
+        } else {
+          controls.stop();
+          controls.set({ opacity: 1 });
+        }
+      };
 
-  return (
-    <div
-      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...props}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      animateKeys();
+    }, [isHovered, controls]);
+
+    return (
+      <div
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
       >
-        <rect width="20" height="16" x="2" y="4" rx="2" />
-        <AnimatePresence>
-          {KEYBOARD_PATHS.map((path, index) => (
-            <motion.path
-              key={path.id}
-              d={path.d}
-              initial={{ opacity: 1 }}
-              animate={controls}
-              custom={index}
-            />
-          ))}
-        </AnimatePresence>
-      </svg>
-    </div>
-  );
-});
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <AnimatePresence>
+            {KEYBOARD_PATHS.map((path, index) => (
+              <motion.path
+                key={path.id}
+                d={path.d}
+                initial={{ opacity: 1 }}
+                animate={controls}
+                custom={index}
+              />
+            ))}
+          </AnimatePresence>
+        </svg>
+      </div>
+    );
+  }
+);
 
 KeyboardIcon.displayName = 'KeyboardIcon';
 

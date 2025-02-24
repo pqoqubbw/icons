@@ -13,7 +13,7 @@ export interface CartIconHandle {
 
 interface CartIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
-};
+}
 
 const cartVariants: Variants = {
   normal: { scale: 1 },
@@ -28,13 +28,11 @@ const cartVariants: Variants = {
   },
 };
 
-const CartIcon = forwardRef<
-  CartIconHandle,
-  CartIconProps>(
+const CartIcon = forwardRef<CartIconHandle, CartIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-    
+
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -67,7 +65,10 @@ const CartIcon = forwardRef<
     );
     return (
       <div
-        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
