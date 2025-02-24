@@ -4,22 +4,29 @@ import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface BellIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
+interface BellIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+};
+
 const svgVariants: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: [0, -10, 10, -10, 0] },
 };
 
-const BellIcon = forwardRef<BellIconHandle, HTMLAttributes<HTMLDivElement>>(
-  ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+const BellIcon = forwardRef<
+  BellIconHandle,
+  BellIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
-
+    
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -52,15 +59,15 @@ const BellIcon = forwardRef<BellIconHandle, HTMLAttributes<HTMLDivElement>>(
     );
     return (
       <div
-        className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

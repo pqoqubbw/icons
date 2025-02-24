@@ -4,11 +4,16 @@ import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface DribbbleIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
+
+interface DribbbleIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+};
 
 const circleVariants: Variants = {
   normal: {
@@ -56,15 +61,15 @@ const pathVariants: Variants = {
 
 const DribbbleIcon = forwardRef<
   DribbbleIconHandle,
-  HTMLAttributes<HTMLDivElement>
->(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+  DribbbleIconProps
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const circleControls = useAnimation();
   const path1Controls = useAnimation();
   const path2Controls = useAnimation();
   const path3Controls = useAnimation();
 
   const isControlledRef = useRef(false);
-
+    
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
 
@@ -114,15 +119,15 @@ const DribbbleIcon = forwardRef<
 
   return (
     <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+      className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"

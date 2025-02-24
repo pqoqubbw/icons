@@ -4,11 +4,16 @@ import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface TwitchIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
+
+interface TwitchIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+};
 
 const pathVariants: Variants = {
   normal: {
@@ -54,13 +59,15 @@ const lineVariants: Variants = {
   },
 };
 
-const TwitchIcon = forwardRef<TwitchIconHandle, HTMLAttributes<HTMLDivElement>>(
-  ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+const TwitchIcon = forwardRef<
+  TwitchIconHandle,
+  TwitchIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const pathControls = useAnimation();
     const line1Controls = useAnimation();
     const line2Controls = useAnimation();
     const isControlledRef = useRef(false);
-
+    
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
 
@@ -106,15 +113,15 @@ const TwitchIcon = forwardRef<TwitchIconHandle, HTMLAttributes<HTMLDivElement>>(
 
     return (
       <div
-        className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+        className={cn(`cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`, className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
