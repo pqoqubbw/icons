@@ -1012,4 +1012,28 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'message-circle-dashed',
+    'path': path.join(__dirname, '../icons/message-circle-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square-dashed',
+    'path': path.join(__dirname, '../icons/message-square-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square-more',
+    'path': path.join(__dirname, '../icons/message-square-more.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square',
+    'path': path.join(__dirname, '../icons/message-square.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];

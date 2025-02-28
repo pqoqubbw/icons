@@ -164,6 +164,10 @@ import { SunsetIcon } from '@/icons/sunset';
 import { SunDimIcon } from '@/icons/sun-dim';
 import { SunMediumIcon } from '@/icons/sun-medium';
 import { SunMoonIcon } from '@/icons/sun-moon';
+import { MessageSquareIcon } from '@/icons/message-square';
+import { MessageSquareMoreIcon } from '@/icons/message-square-more';
+import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
+import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 
 type IconListItem = {
   name: string;
@@ -417,6 +421,73 @@ const ICON_LIST: IconListItem[] = [
       'speech bubble',
       'typing',
       'writing',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-square',
+    icon: MessageSquareIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'message',
+    ],
+  },
+  {
+    name: 'message-square-more',
+    icon: MessageSquareMoreIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-circle-dashed',
+    icon: MessageCircleDashedIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-square-dashed',
+    icon: MessageSquareDashedIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
       'responding',
       'ellipsis',
       'etc',
