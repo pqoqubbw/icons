@@ -1041,5 +1041,11 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/message-square.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'a-arrow-down',
+    'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];
