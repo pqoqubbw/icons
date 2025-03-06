@@ -168,6 +168,7 @@ import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
+import { DiscordIcon } from './discord';
 
 type IconListItem = {
   name: string;
@@ -231,6 +232,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'dribbble',
     icon: DribbbleIcon,
     keywords: ['social', 'network', 'dribbble'],
+  },
+  {
+    name: 'discord',
+    icon: DiscordIcon,
+    keywords: ['social', 'network', 'discord'],
   },
   {
     name: 'search',
