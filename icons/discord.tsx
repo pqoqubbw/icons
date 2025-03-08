@@ -17,22 +17,19 @@ interface DiscordIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const variants: Variants = {
   normal: {
+    translateX: 0,
     opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
     transition: {
-      duration: 0.4,
-      opacity: { duration: 0.1 },
+      duration: 0.2,
     },
   },
   animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    pathOffset: [1, 0],
+    translateX: [0, -2, 2, -2, 2, 0],
+    opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: 'linear',
-      opacity: { duration: 0.1 },
+      duration: 0.4,
+      times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+      ease: "easeInOut",
     },
   },
 };
