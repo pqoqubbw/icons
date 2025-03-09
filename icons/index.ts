@@ -155,6 +155,7 @@ import { YoutubeIcon } from '@/icons/youtube';
 import { InstagramIcon } from '@/icons/instagram';
 import { TwitchIcon } from '@/icons/twitch';
 import { DribbbleIcon } from '@/icons/dribbble';
+import { DiscordIcon } from '@/icons/discord';
 import { XIcon } from '@/icons/x';
 import { MoonIcon } from '@/icons/moon';
 import { VibrateIcon } from '@/icons/vibrate';
@@ -233,6 +234,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'dribbble',
     icon: DribbbleIcon,
     keywords: ['social', 'network', 'dribbble'],
+  },
+  {
+    name: 'discord',
+    icon: DiscordIcon,
+    keywords: ['social', 'network', 'discord'],
   },
   {
     name: 'search',

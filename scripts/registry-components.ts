@@ -923,6 +923,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'discord',
+    'path': path.join(__dirname, '../icons/discord.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'instagram',
     'path': path.join(__dirname, '../icons/instagram.tsx'),
     'registryDependencies': [],
