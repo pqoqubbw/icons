@@ -1053,5 +1053,17 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    'name': 'calendar-days',
+    'path': path.join(__dirname, '../icons/calendar-days.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-cog',
+    'path': path.join(__dirname, '../icons/file-cog.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
