@@ -76,6 +76,7 @@ import { BluetoothConnectedIcon } from '@/icons/bluetooth-connected';
 import { BluetoothOffIcon } from '@/icons/bluetooth-off';
 import { FlaskIcon } from '@/icons/flask';
 import { SyringeIcon } from '@/icons/syringe';
+import { AArrowDownIcon } from '@/icons/a-arrow-down';
 import { CompassIcon } from '@/icons/compass';
 import { TrendingDownIcon } from '@/icons/trending-down';
 import { TrendingUpIcon } from '@/icons/trending-up';
@@ -90,6 +91,7 @@ import { CircleChevronDownIcon } from '@/icons/circle-chevron-down';
 import { CircleChevronLeftIcon } from '@/icons/circle-chevron-left';
 import { CircleChevronRightIcon } from '@/icons/circle-chevron-right';
 import { CircleChevronUpIcon } from '@/icons/circle-chevron-up';
+import { CircleDashedIcon } from '@/icons/circle-dashed';
 import { CheckIcon } from '@/icons/check';
 import { CheckCheckIcon } from '@/icons/check-check';
 import { IdCardIcon } from '@/icons/id-card';
@@ -1045,6 +1047,16 @@ const ICON_LIST: IconListItem[] = [
       '>',
       'chevron',
     ],
+  },
+  {
+    name: 'a-arrow-down',
+    icon: AArrowDownIcon,
+    keywords: ['arrow', 'down', 'a'],
+  },
+  {
+    name: 'circle-dashed',
+    icon: CircleDashedIcon,
+    keywords: ['dashed', 'circle', 'dashed circle'],
   },
   {
     name: 'circle-chevron-up',

@@ -317,6 +317,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'circle-dashed',
+    'path': path.join(__dirname, '../icons/circle-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'circle-dollar-sign',
     'path': path.join(__dirname, '../icons/circle-dollar-sign.tsx'),
     'registryDependencies': [],
@@ -1042,4 +1048,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'a-arrow-down',
+    'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
