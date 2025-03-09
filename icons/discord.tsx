@@ -29,7 +29,7 @@ const variants: Variants = {
     transition: {
       duration: 0.4,
       times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-      ease: "easeInOut",
+      ease: 'easeInOut',
     },
   },
 };
@@ -90,6 +90,7 @@ const DiscordIcon = forwardRef<DiscordIconHandle, DiscordIconProps>(
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
+          style={{ overflow: 'visible' }}
         >
           <motion.path
             variants={variants}
