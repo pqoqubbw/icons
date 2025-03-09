@@ -3,6 +3,7 @@ const LINK = {
   GITHUB: 'https://github.com/pqoqubbw/icons',
   LUCIDE: 'https://lucide.dev',
   MOTION: 'https://motion.dev',
+  HELPY_UI: 'https://helpy-ui.com',
 };
 
 export { LINK };

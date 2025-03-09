@@ -4,10 +4,15 @@ import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface UploadIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
+}
+
+interface UploadIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
 }
 
 const arrowVariants: Variants = {
@@ -23,8 +28,8 @@ const arrowVariants: Variants = {
   },
 };
 
-const UploadIcon = forwardRef<UploadIconHandle, HTMLAttributes<HTMLDivElement>>(
-  ({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+const UploadIcon = forwardRef<UploadIconHandle, UploadIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -61,15 +66,18 @@ const UploadIcon = forwardRef<UploadIconHandle, HTMLAttributes<HTMLDivElement>>(
 
     return (
       <div
-        className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+        className={cn(
+          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          className
+        )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

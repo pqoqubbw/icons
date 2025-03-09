@@ -317,6 +317,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'circle-dashed',
+    'path': path.join(__dirname, '../icons/circle-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'circle-dollar-sign',
     'path': path.join(__dirname, '../icons/circle-dollar-sign.tsx'),
     'registryDependencies': [],
@@ -917,6 +923,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'discord',
+    'path': path.join(__dirname, '../icons/discord.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'instagram',
     'path': path.join(__dirname, '../icons/instagram.tsx'),
     'registryDependencies': [],
@@ -977,6 +989,72 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'cloud-sun',
+    'path': path.join(__dirname, '../icons/cloud-sun.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-dim',
+    'path': path.join(__dirname, '../icons/sun-dim.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-medium',
+    'path': path.join(__dirname, '../icons/sun-medium.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sun-moon',
+    'path': path.join(__dirname, '../icons/sun-moon.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'sunset',
+    'path': path.join(__dirname, '../icons/sunset.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'twitter',
+    'path': path.join(__dirname, '../icons/twitter.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-circle-dashed',
+    'path': path.join(__dirname, '../icons/message-circle-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square-dashed',
+    'path': path.join(__dirname, '../icons/message-square-dashed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square-more',
+    'path': path.join(__dirname, '../icons/message-square-more.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'message-square',
+    'path': path.join(__dirname, '../icons/message-square.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'a-arrow-down',
+    'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'calendar-days',
     'path': path.join(__dirname, '../icons/calendar-days.tsx'),
     'registryDependencies': [],
@@ -987,5 +1065,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/file-cog.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

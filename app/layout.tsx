@@ -9,6 +9,9 @@ import { Analytics } from '@/components/analytics';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 // import { SnowfallComponent } from '@/components/snowfall';
 import { Toaster } from 'sonner';
+import { Banner } from '@/components/ui/banner';
+import { LINK } from '@/constants';
+import { ArrowUpRight } from 'lucide-react';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -97,6 +100,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a href={LINK.HELPY_UI} target="_blank" className="group">
+            <Banner variant="rainbow" className="h-[2.5rem] md:text-sm text-xs">
+              <p className="group-hover:underline underline-offset-4">
+                🎉 helpy-ui - warm blanket for your projects
+              </p>
+              <ArrowUpRight
+                className="size-3.5 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 ease-out shrink-0"
+                strokeWidth={2}
+              />
+            </Banner>
+          </a>
           <Header />
           <NuqsAdapter>
             {children}

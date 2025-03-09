@@ -1,19 +1,19 @@
 'use client';
 
 import { AnimatePresence, motion, useAnimation } from 'motion/react';
-import {
-  useEffect,
-  useState,
-  useCallback,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import type { Variants } from 'motion/react';
+import { useCallback, useImperativeHandle, useRef } from 'react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
+import { cn } from '@/lib/utils';
 
 export interface CalendarDaysIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
+}
+
+interface CalendarDaysIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
 }
 
 const DOTS = [
@@ -25,78 +25,74 @@ const DOTS = [
   { cx: 16, cy: 18 },
 ];
 
+const variants: Variants = {
+  normal: {
+    opacity: 1,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  animate: (i: number) => ({
+    opacity: [1, 0.3, 1],
+    transition: {
+      delay: i * 0.1,
+      duration: 0.4,
+      times: [0, 0.5, 1],
+    },
+  }),
+};
+
 const CalendarDaysIcon = forwardRef<
   CalendarDaysIconHandle,
-  HTMLAttributes<HTMLDivElement>
->(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
-  const [isHovered, setIsHovered] = useState(false);
+  CalendarDaysIconProps
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
 
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => setIsHovered(true),
-      stopAnimation: () => setIsHovered(false),
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!isControlledRef.current) {
-        setIsHovered(true);
+        controls.start('animate');
       } else {
         onMouseEnter?.(e);
       }
     },
-    [onMouseEnter]
+    [controls, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!isControlledRef.current) {
-        setIsHovered(false);
+        controls.start('normal');
       } else {
         onMouseLeave?.(e);
       }
     },
-    [onMouseLeave]
+    [controls, onMouseLeave]
   );
-
-  useEffect(() => {
-    const animateDots = async () => {
-      if (isHovered) {
-        await controls.start((i) => ({
-          opacity: 0.3,
-          transition: {
-            delay: i * 0.1,
-            duration: 0.2,
-          },
-        }));
-        await controls.start((i) => ({
-          opacity: 1,
-          transition: {
-            delay: i * 0.1,
-            duration: 0.2,
-          },
-        }));
-      }
-    };
-
-    animateDots();
-  }, [isHovered, controls]);
 
   return (
     <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+      className={cn(
+        'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
+        className
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -117,9 +113,9 @@ const CalendarDaysIcon = forwardRef<
               r="1"
               fill="currentColor"
               stroke="none"
-              initial={{ opacity: 1 }}
+              initial="normal"
+              variants={variants}
               animate={controls}
-              exit={{ opacity: 1 }}
               custom={index}
             />
           ))}

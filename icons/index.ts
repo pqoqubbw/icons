@@ -76,6 +76,7 @@ import { BluetoothConnectedIcon } from '@/icons/bluetooth-connected';
 import { BluetoothOffIcon } from '@/icons/bluetooth-off';
 import { FlaskIcon } from '@/icons/flask';
 import { SyringeIcon } from '@/icons/syringe';
+import { AArrowDownIcon } from '@/icons/a-arrow-down';
 import { CompassIcon } from '@/icons/compass';
 import { TrendingDownIcon } from '@/icons/trending-down';
 import { TrendingUpIcon } from '@/icons/trending-up';
@@ -90,6 +91,7 @@ import { CircleChevronDownIcon } from '@/icons/circle-chevron-down';
 import { CircleChevronLeftIcon } from '@/icons/circle-chevron-left';
 import { CircleChevronRightIcon } from '@/icons/circle-chevron-right';
 import { CircleChevronUpIcon } from '@/icons/circle-chevron-up';
+import { CircleDashedIcon } from '@/icons/circle-dashed';
 import { CheckIcon } from '@/icons/check';
 import { CheckCheckIcon } from '@/icons/check-check';
 import { IdCardIcon } from '@/icons/id-card';
@@ -148,16 +150,27 @@ import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
 import { ClipboardCheckIcon } from '@/icons/clipboard-check';
 import { FacebookIcon } from '@/icons/facebook';
 import { LinkedinIcon } from '@/icons/linkedin';
+import { TwitterIcon } from '@/icons/twitter';
 import { YoutubeIcon } from '@/icons/youtube';
 import { InstagramIcon } from '@/icons/instagram';
 import { TwitchIcon } from '@/icons/twitch';
 import { DribbbleIcon } from '@/icons/dribbble';
+import { DiscordIcon } from '@/icons/discord';
 import { XIcon } from '@/icons/x';
 import { MoonIcon } from '@/icons/moon';
 import { VibrateIcon } from '@/icons/vibrate';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { CastIcon } from '@/icons/cast';
 import { UploadIcon } from '@/icons/upload';
+import { CloudSunIcon } from '@/icons/cloud-sun';
+import { SunsetIcon } from '@/icons/sunset';
+import { SunDimIcon } from '@/icons/sun-dim';
+import { SunMediumIcon } from '@/icons/sun-medium';
+import { SunMoonIcon } from '@/icons/sun-moon';
+import { MessageSquareIcon } from '@/icons/message-square';
+import { MessageSquareMoreIcon } from '@/icons/message-square-more';
+import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
+import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
 
@@ -195,6 +208,11 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['social', 'network', 'facebook'],
   },
   {
+    name: 'twitter',
+    icon: TwitterIcon,
+    keywords: ['social', 'network', 'twitter', 'X'],
+  },
+  {
     name: 'linkedin',
     icon: LinkedinIcon,
     keywords: ['social', 'network', 'linkedin'],
@@ -220,9 +238,39 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['social', 'network', 'dribbble'],
   },
   {
+    name: 'discord',
+    icon: DiscordIcon,
+    keywords: ['social', 'network', 'discord'],
+  },
+  {
     name: 'search',
     icon: SearchIcon,
     keywords: ['find', 'scan', 'magnifier', 'magnifying glass'],
+  },
+  {
+    name: 'cloud-sun',
+    icon: CloudSunIcon,
+    keywords: ['weather', 'sun', 'cloud', 'light', 'bright'],
+  },
+  {
+    name: 'sunset',
+    icon: SunsetIcon,
+    keywords: ['sun', 'sunset', 'weather', 'bright', 'dawn', 'evening'],
+  },
+  {
+    name: 'sun-dim',
+    icon: SunDimIcon,
+    keywords: ['sun', 'dim', 'weather', 'light', 'day'],
+  },
+  {
+    name: 'sun-medium',
+    icon: SunMediumIcon,
+    keywords: ['sun', 'medium', 'weather', 'light', 'day'],
+  },
+  {
+    name: 'sun-moon',
+    icon: SunMoonIcon,
+    keywords: ['sun', 'moon', 'day', 'night', 'evening'],
   },
   {
     name: 'cart',
@@ -383,6 +431,73 @@ const ICON_LIST: IconListItem[] = [
       'speech bubble',
       'typing',
       'writing',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-square',
+    icon: MessageSquareIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'message',
+    ],
+  },
+  {
+    name: 'message-square-more',
+    icon: MessageSquareMoreIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-circle-dashed',
+    icon: MessageCircleDashedIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
+      'responding',
+      'ellipsis',
+      'etc',
+    ],
+  },
+  {
+    name: 'message-square-dashed',
+    icon: MessageSquareDashedIcon,
+    keywords: [
+      'comment',
+      'chat',
+      'conversation',
+      'dialog',
+      'feedback',
+      'speech bubble',
+      'typing',
+      'writing',
+      'message',
       'responding',
       'ellipsis',
       'etc',
@@ -934,6 +1049,16 @@ const ICON_LIST: IconListItem[] = [
       '>',
       'chevron',
     ],
+  },
+  {
+    name: 'a-arrow-down',
+    icon: AArrowDownIcon,
+    keywords: ['arrow', 'down', 'a'],
+  },
+  {
+    name: 'circle-dashed',
+    icon: CircleDashedIcon,
+    keywords: ['dashed', 'circle', 'dashed circle'],
   },
   {
     name: 'circle-chevron-up',
