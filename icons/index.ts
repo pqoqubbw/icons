@@ -171,6 +171,8 @@ import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
+import { FileCogIcon } from '@/icons/file-cog';
+import { CalendarDaysIcon } from '@/icons/calendar-days';
 
 type IconListItem = {
   name: string;
@@ -1706,6 +1708,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'upload',
     icon: UploadIcon,
     keywords: ['upload', 'send', 'share'],
+  },
+  {
+    name: 'file-cog',
+    icon: FileCogIcon,
+    keywords: ['file', 'cog', 'settings', 'preferences', 'controls'],
+  },
+  {
+    name: 'calendar-days',
+    icon: CalendarDaysIcon,
+    keywords: ['calendar', 'days', 'days of the week', 'week', 'month'],
   },
 ];
 

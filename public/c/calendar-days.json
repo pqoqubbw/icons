@@ -1,0 +1,21 @@
+{
+  "name": "calendar-days",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "calendar-days.tsx",
+      "content": "'use client';\n\nimport { AnimatePresence, motion, useAnimation } from 'motion/react';\nimport type { Variants } from 'motion/react';\nimport { useCallback, useImperativeHandle, useRef } from 'react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface CalendarDaysIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface CalendarDaysIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst DOTS = [\n  { cx: 8, cy: 14 },\n  { cx: 12, cy: 14 },\n  { cx: 16, cy: 14 },\n  { cx: 8, cy: 18 },\n  { cx: 12, cy: 18 },\n  { cx: 16, cy: 18 },\n];\n\nconst variants: Variants = {\n  normal: {\n    opacity: 1,\n    transition: {\n      duration: 0.2,\n    },\n  },\n  animate: (i: number) => ({\n    opacity: [1, 0.3, 1],\n    transition: {\n      delay: i * 0.1,\n      duration: 0.4,\n      times: [0, 0.5, 1],\n    },\n  }),\n};\n\nconst CalendarDaysIcon = forwardRef<\n  CalendarDaysIconHandle,\n  CalendarDaysIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n    return {\n      startAnimation: () => controls.start('animate'),\n      stopAnimation: () => controls.start('normal'),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('animate');\n      } else {\n        onMouseEnter?.(e);\n      }\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('normal');\n      } else {\n        onMouseLeave?.(e);\n      }\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(\n        'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',\n        className\n      )}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <path d=\"M8 2v4\" />\n        <path d=\"M16 2v4\" />\n        <rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\" />\n        <path d=\"M3 10h18\" />\n        <AnimatePresence>\n          {DOTS.map((dot, index) => (\n            <motion.circle\n              key={`${dot.cx}-${dot.cy}`}\n              cx={dot.cx}\n              cy={dot.cy}\n              r=\"1\"\n              fill=\"currentColor\"\n              stroke=\"none\"\n              initial=\"normal\"\n              variants={variants}\n              animate={controls}\n              custom={index}\n            />\n          ))}\n        </AnimatePresence>\n      </svg>\n    </div>\n  );\n});\n\nCalendarDaysIcon.displayName = 'CalendarDaysIcon';\n\nexport { CalendarDaysIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
