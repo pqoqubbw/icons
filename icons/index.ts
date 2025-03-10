@@ -171,6 +171,7 @@ import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
+import { ChartSplineIcon } from './chart-spline';
 
 type IconListItem = {
   name: string;
@@ -183,6 +184,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'Chart-Spline',
+    icon: ChartSplineIcon,
+    keywords: ['chart', 'spline', 'graph', 'statistics', 'analytics', 'diagram', 'presentation', 'analytics'],
   },
   {
     name: 'vibrate',
