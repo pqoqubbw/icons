@@ -173,6 +173,11 @@ import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
+import { ChartLineIcon } from './chart-line';
+import { ChartSplineIcon } from './chart-spline';
+import { FileChartLineIcon } from './file-chart-line';
+import { ChartNoAxesColumnIncreasingIcon } from './chart-no-axes-column-increasing';
+import { ChartNoAxesColumnDecreasingIcon } from './chart-no-axes-column-decreasing';
 
 type IconListItem = {
   name: string;
@@ -1718,6 +1723,45 @@ const ICON_LIST: IconListItem[] = [
     name: 'calendar-days',
     icon: CalendarDaysIcon,
     keywords: ['calendar', 'days', 'days of the week', 'week', 'month'],
+  },
+  {
+    name: 'chart-line',
+    icon: ChartLineIcon,
+    keywords: ['chart', 'line', 'increasing', 'linechart', 'chartline'],
+  },
+  {
+    name: 'chart-spline',
+    icon: ChartSplineIcon,
+    keywords: [
+      'chart',
+      'spline',
+      'increasing',
+      'splinechart',
+      'chartspline',
+      'line',
+    ],
+  },
+  {
+    name: 'file-chart-line',
+    icon: FileChartLineIcon,
+    keywords: [
+      'file',
+      'chart',
+      'line',
+      'increasing',
+      'filechartline',
+      'filechartline',
+    ],
+  },
+  {
+    name: 'chart-no-axes-column-increasing',
+    icon: ChartNoAxesColumnIncreasingIcon,
+    keywords: ['chart', 'column', 'increasing', 'chartnoaxes'],
+  },
+  {
+    name: 'chart-no-axes-column-decreasing',
+    icon: ChartNoAxesColumnDecreasingIcon,
+    keywords: ['chart', 'column', 'decreasing', 'chartnoaxes'],
   },
 ];
 

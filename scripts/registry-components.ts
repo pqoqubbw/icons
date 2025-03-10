@@ -1066,4 +1066,34 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'chart-line',
+    'path': path.join(__dirname, '../icons/chart-line.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-no-axes-column-decreasing',
+    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-no-axes-column-increasing',
+    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-spline',
+    'path': path.join(__dirname, '../icons/chart-spline.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-chart-line',
+    'path': path.join(__dirname, '../icons/file-chart-line.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
