@@ -1053,5 +1053,29 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'a-arrow-up',
+    'path': path.join(__dirname, '../icons/a-arrow-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-down',
+    'path': path.join(__dirname, '../icons/arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-up',
+    'path': path.join(__dirname, '../icons/arrow-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-spline',
+    'path': path.join(__dirname, '../icons/chart-spline.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];

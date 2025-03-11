@@ -173,6 +173,9 @@ import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { ChartSplineIcon } from '@/icons/chart-spline';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
+import { ArrowDownIcon } from '@/icons/arrow-down';
+import { ArrowUpIcon } from '@/icons/arrow-up';
+
 
 type IconListItem = {
   name: string;
@@ -187,14 +190,24 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   {
-    name: "a-arrow-up", 
-    icon: AArrowUpIcon, 
+    name: "a-arrow-up",
+    icon: AArrowUpIcon,
     keywords: ['arrow', 'up', 'a']
-  }, 
+  },
   {
     name: 'chart-spline',
     icon: ChartSplineIcon,
     keywords: ['chart', 'spline', 'graph', 'statistics', 'analytics', 'diagram', 'presentation', 'analytics'],
+  },
+  {
+    name: 'arrow-up', 
+    icon: ArrowUpIcon, 
+    keywords: ['up', 'above', 'direction', 'north', 'top'],
+    },
+  {
+    name: 'arrow-down', 
+    icon: ArrowDownIcon, 
+    keywords: ['down', 'below', 'direction', 'south', 'bottom'],
   },
   {
     name: 'vibrate',
@@ -1057,7 +1070,7 @@ const ICON_LIST: IconListItem[] = [
       'greater',
       'menu',
       '>',
-      'chevron', ],
+      'chevron',],
   },
   {
     name: 'a-arrow-down',
