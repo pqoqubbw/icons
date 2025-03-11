@@ -173,6 +173,8 @@ import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { ChartSplineIcon } from '@/icons/chart-spline';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
+import { FileCogIcon } from '@/icons/file-cog';
+import { CalendarDaysIcon } from '@/icons/calendar-days';
 import { ArrowDownIcon } from '@/icons/arrow-down';
 import { ArrowUpIcon } from '@/icons/arrow-up';
 
@@ -1730,6 +1732,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'upload',
     icon: UploadIcon,
     keywords: ['upload', 'send', 'share'],
+  },
+  {
+    name: 'file-cog',
+    icon: FileCogIcon,
+    keywords: ['file', 'cog', 'settings', 'preferences', 'controls'],
+  },
+  {
+    name: 'calendar-days',
+    icon: CalendarDaysIcon,
+    keywords: ['calendar', 'days', 'days of the week', 'week', 'month'],
   },
 ];
 
