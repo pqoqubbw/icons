@@ -1,0 +1,21 @@
+{
+  "name": "radio-tower",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "radio-tower.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface RadioTowerIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface RadioTowerIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst variants: Variants = {\n  normal: {\n    opacity: 1,\n    transition: {\n      duration: 0.4,\n    },\n  },\n  fadeOut: {\n    opacity: 0,\n    transition: { duration: 0.3 },\n  },\n  fadeIn: (i: number) => ({\n    opacity: 1,\n    transition: {\n      type: 'spring',\n      stiffness: 300,\n      damping: 20,\n      delay: i * 0.1,\n    },\n  }),\n};\n\nconst RadioTowerIcon = forwardRef<RadioTowerIconHandle, RadioTowerIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: async () => {\n          await controls.start('fadeOut');\n          controls.start('fadeIn');\n        },\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      async (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          await controls.start('fadeOut');\n          controls.start('fadeIn');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(\n          'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',\n          className\n        )}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        >\n          <motion.path\n            d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\"\n            initial={{ opacity: 1 }}\n            variants={variants}\n            animate={controls}\n            custom={1}\n          />\n          <motion.path\n            d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\"\n            initial={{ opacity: 1 }}\n            variants={variants}\n            animate={controls}\n            custom={0}\n          />\n          <circle cx=\"12\" cy=\"9\" r=\"2\" />\n          <motion.path\n            d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\"\n            initial={{ opacity: 1 }}\n            variants={variants}\n            animate={controls}\n            custom={0}\n          />\n          <motion.path\n            d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\"\n            initial={{ opacity: 1 }}\n            variants={variants}\n            animate={controls}\n            custom={1}\n          />\n          <path d=\"M9.5 18h5\" />\n          <path d=\"m8 22 4-11 4 11\" />\n        </svg>\n      </div>\n    );\n  }\n);\n\nRadioTowerIcon.displayName = 'RadioTowerIcon';\n\nexport { RadioTowerIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
