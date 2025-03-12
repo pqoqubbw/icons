@@ -177,7 +177,7 @@ import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
 import { ArrowDownIcon } from '@/icons/arrow-down';
 import { ArrowUpIcon } from '@/icons/arrow-up';
-
+import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 
 type IconListItem = {
   name: string;
@@ -191,6 +191,13 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  {
+    name: 'arrow-big-down',
+    icon: ArrowBigDownIcon,
+    keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom'],
+
+  }, 
+
   {
     name: "a-arrow-up",
     icon: AArrowUpIcon,
