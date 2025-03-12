@@ -6,25 +6,27 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowIconHandle {
+export interface ArrowBigDownIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowBigDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const arrowBigDownVariants: Variants = {
+const pathVariants: Variants = {
   normal: { d: 'M15 6v6h4l-7 7-7-7h4V6h6z', translateY: 0 },
   animate: {
     d: 'M15 6v6h4l-7 7-7-7h4V6h6z',
     translateY: [0, -3, 0],
-    transition: { duration: 0.4 },
+    transition: {
+      duration: 0.4,
+    },
   },
 };
 
-const ArrowBigDownIcon = forwardRef<ArrowIconHandle, ArrowIconProps>(
+const ArrowBigDownIcon = forwardRef<ArrowBigDownIconHandle, ArrowBigDownIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -39,16 +41,22 @@ const ArrowBigDownIcon = forwardRef<ArrowIconHandle, ArrowIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('animate');
-        else onMouseEnter?.(e);
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('normal');
-        else onMouseLeave?.(e);
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
       },
       [controls, onMouseLeave]
     );
@@ -74,12 +82,17 @@ const ArrowBigDownIcon = forwardRef<ArrowIconHandle, ArrowIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path variants={arrowBigDownVariants} animate={controls} />
+          <motion.path
+            d="M15 6v6h4l-7 7-7-7h4V6h6z"
+            variants={pathVariants}
+            animate={controls}
+          />
         </svg>
       </div>
     );
   }
 );
+
 ArrowBigDownIcon.displayName = 'ArrowBigDownIcon';
 
-export {ArrowBigDownIcon}
+export { ArrowBigDownIcon };
