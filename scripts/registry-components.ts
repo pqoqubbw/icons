@@ -1080,13 +1080,19 @@ export const components: ComponentDefinition[] = [
   },
   {
     'name': 'chart-no-axes-column-decreasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-decreasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'chart-no-axes-column-increasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-increasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1105,6 +1111,48 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'radio',
     'path': path.join(__dirname, '../icons/radio.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'calendar-check-2',
+    'path': path.join(__dirname, '../icons/calendar-check-2.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'calendar-check',
+    'path': path.join(__dirname, '../icons/calendar-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-check-2',
+    'path': path.join(__dirname, '../icons/file-check-2.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-check',
+    'path': path.join(__dirname, '../icons/file-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'laptop-minimal-check',
+    'path': path.join(__dirname, '../icons/laptop-minimal-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'mail-check',
+    'path': path.join(__dirname, '../icons/mail-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'monitor-check',
+    'path': path.join(__dirname, '../icons/monitor-check.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   }
