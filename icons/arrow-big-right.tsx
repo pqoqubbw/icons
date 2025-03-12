@@ -29,7 +29,7 @@ const pathVariants: Variants = {
 const ArrowBigRightIcon = forwardRef<
   ArrowBigRightIconHandle,
   ArrowBigRightIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
 
