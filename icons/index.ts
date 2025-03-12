@@ -180,7 +180,7 @@ import { ArrowUpIcon } from '@/icons/arrow-up';
 import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
-import { ArrowBigUpIcon } from '@/icons/arrow-big-up'; 
+import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 
 type IconListItem = {
   name: string;
@@ -198,41 +198,49 @@ const ICON_LIST: IconListItem[] = [
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
     keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom'],
-
-  }, 
+  },
   {
     name: 'arrow-big-left',
-    icon: ArrowBigLeftIcon,   
-    keywords: ['arrow', 'left', 'big', 'west', 'previous', '<-'], 
+    icon: ArrowBigLeftIcon,
+    keywords: ['arrow', 'left', 'big', 'west', 'previous', '<-'],
   },
   {
     name: 'arrow-big-right',
-    icon: ArrowBigRightIcon,    
-    keywords: ['arrow', 'right', 'big', 'east', 'next', '->'],  
+    icon: ArrowBigRightIcon,
+    keywords: ['arrow', 'right', 'big', 'east', 'next', '->'],
   },
   {
     name: 'arrow-big-up',
-    icon: ArrowBigUpIcon, 
+    icon: ArrowBigUpIcon,
     keywords: ['arrow', 'up', 'big', 'north', 'top'],
-  }, 
+  },
   {
-    name: "a-arrow-up",
+    name: 'a-arrow-up',
     icon: AArrowUpIcon,
-    keywords: ['arrow', 'up', 'a']
+    keywords: ['arrow', 'up', 'a'],
   },
   {
     name: 'chart-spline',
     icon: ChartSplineIcon,
-    keywords: ['chart', 'spline', 'graph', 'statistics', 'analytics', 'diagram', 'presentation', 'analytics'],
+    keywords: [
+      'chart',
+      'spline',
+      'graph',
+      'statistics',
+      'analytics',
+      'diagram',
+      'presentation',
+      'analytics',
+    ],
   },
   {
-    name: 'arrow-up', 
-    icon: ArrowUpIcon, 
+    name: 'arrow-up',
+    icon: ArrowUpIcon,
     keywords: ['up', 'above', 'direction', 'north', 'top'],
-    },
+  },
   {
-    name: 'arrow-down', 
-    icon: ArrowDownIcon, 
+    name: 'arrow-down',
+    icon: ArrowDownIcon,
     keywords: ['down', 'below', 'direction', 'south', 'bottom'],
   },
   {
@@ -1096,7 +1104,8 @@ const ICON_LIST: IconListItem[] = [
       'greater',
       'menu',
       '>',
-      'chevron',],
+      'chevron',
+    ],
   },
   {
     name: 'a-arrow-down',

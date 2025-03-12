@@ -101,5 +101,3 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
 ChartSplineIcon.displayName = 'ChartSplineIcon';
 
 export { ChartSplineIcon };
-
-

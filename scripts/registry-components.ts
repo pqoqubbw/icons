@@ -1053,31 +1053,32 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/a-arrow-down.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  },  
-    {
-      'name': 'a-arrow-up',
-      'path': path.join(__dirname, '../icons/a-arrow-up.tsx'),
-      'registryDependencies': [],
-      'dependencies': ['motion'],
-    },
-    {
-      'name': 'arrow-down',
-      'path': path.join(__dirname, '../icons/arrow-down.tsx'),
-      'registryDependencies': [],
-      'dependencies': ['motion'],
-    },
-    {
-      'name': 'arrow-up',
-      'path': path.join(__dirname, '../icons/arrow-up.tsx'),
-      'registryDependencies': [],
-      'dependencies': ['motion'],
-    },
-    {
-      'name': 'chart-spline',
-      'path': path.join(__dirname, '../icons/chart-spline.tsx'),
-      'registryDependencies': [],
-      'dependencies': ['motion'],
-  },   {
+  },
+  {
+    'name': 'a-arrow-up',
+    'path': path.join(__dirname, '../icons/a-arrow-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-down',
+    'path': path.join(__dirname, '../icons/arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-up',
+    'path': path.join(__dirname, '../icons/arrow-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-spline',
+    'path': path.join(__dirname, '../icons/chart-spline.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'calendar-days',
     'path': path.join(__dirname, '../icons/calendar-days.tsx'),
     'registryDependencies': [],
@@ -1088,7 +1089,29 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/file-cog.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
-
-  
+  },
+  {
+    'name': 'arrow-big-down',
+    'path': path.join(__dirname, '../icons/arrow-big-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-big-left',
+    'path': path.join(__dirname, '../icons/arrow-big-left.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-big-right',
+    'path': path.join(__dirname, '../icons/arrow-big-right.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-big-up',
+    'path': path.join(__dirname, '../icons/arrow-big-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
