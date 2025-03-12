@@ -179,6 +179,7 @@ import { ArrowDownIcon } from '@/icons/arrow-down';
 import { ArrowUpIcon } from '@/icons/arrow-up';
 import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
+import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 
 type IconListItem = {
   name: string;
@@ -202,6 +203,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'arrow-big-left',
     icon: ArrowBigLeftIcon,   
     keywords: ['arrow', 'left', 'big', 'west', 'previous', '<-'], 
+  },
+  {
+    name: 'arrow-big-right',
+    icon: ArrowBigRightIcon,    
+    keywords: ['arrow', 'right', 'big', 'east', 'next', '->'],  
   }, 
   {
     name: "a-arrow-up",
