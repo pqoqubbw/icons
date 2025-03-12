@@ -1067,6 +1067,54 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'chart-line',
+    'path': path.join(__dirname, '../icons/chart-line.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'radio-tower',
+    'path': path.join(__dirname, '../icons/radio-tower.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-no-axes-column-decreasing',
+    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'arrow-big-up-dash',
+    'path': path.join(__dirname, '../icons/arrow-big-up-dash.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+    {
+    'name': 'chart-no-axes-column-increasing',
+    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chart-spline',
+    'path': path.join(__dirname, '../icons/chart-spline.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'file-chart-line',
+    'path': path.join(__dirname, '../icons/file-chart-line.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'radio',
+    'path': path.join(__dirname, '../icons/radio.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
+  {
     'name': 'arrow-big-down-dash',
     'path': path.join(__dirname, '../icons/arrow-big-down-dash.tsx'),
     'registryDependencies': [],
@@ -1081,13 +1129,9 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'arrow-big-right-dash',
     'path': path.join(__dirname, '../icons/arrow-big-right-dash.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'arrow-big-up-dash',
-    'path': path.join(__dirname, '../icons/arrow-big-up-dash.tsx'),
+
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
 ];
+
