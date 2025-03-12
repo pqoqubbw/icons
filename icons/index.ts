@@ -173,11 +173,13 @@ import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
-import { ChartLineIcon } from './chart-line';
-import { ChartSplineIcon } from './chart-spline';
-import { FileChartLineIcon } from './file-chart-line';
-import { ChartNoAxesColumnIncreasingIcon } from './chart-no-axes-column-increasing';
-import { ChartNoAxesColumnDecreasingIcon } from './chart-no-axes-column-decreasing';
+import { ChartLineIcon } from '@/icons/chart-line';
+import { ChartSplineIcon } from '@/icons/chart-spline';
+import { FileChartLineIcon } from '@/icons/file-chart-line';
+import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-increasing';
+import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
+import { RadioIcon } from '@/icons/radio';
+import { RadioTowerIcon } from '@/icons/radio-tower';
 
 type IconListItem = {
   name: string;
@@ -1762,6 +1764,34 @@ const ICON_LIST: IconListItem[] = [
     name: 'chart-no-axes-column-decreasing',
     icon: ChartNoAxesColumnDecreasingIcon,
     keywords: ['chart', 'column', 'decreasing', 'chartnoaxes'],
+  },
+  {
+    name: 'radio',
+    icon: RadioIcon,
+    keywords: [
+      'radio',
+      'signal',
+      'broadcast',
+      'wireless',
+      'frequency',
+      'connectivity',
+      'live',
+    ],
+  },
+  {
+    name: 'radio-tower',
+    icon: RadioTowerIcon,
+    keywords: [
+      'radio',
+      'tower',
+      'radio tower',
+      'signal',
+      'broadcast',
+      'wireless',
+      'frequency',
+      'connectivity',
+      'live',
+    ],
   },
 ];
 

@@ -1073,6 +1073,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'radio-tower',
+    'path': path.join(__dirname, '../icons/radio-tower.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'chart-no-axes-column-decreasing',
     'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
     'registryDependencies': [],
@@ -1093,6 +1099,12 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'file-chart-line',
     'path': path.join(__dirname, '../icons/file-chart-line.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'radio',
+    'path': path.join(__dirname, '../icons/radio.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   }
