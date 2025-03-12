@@ -180,6 +180,7 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { AirVentIcon } from '@/icons/air-vent';
 
 type IconListItem = {
   name: string;
@@ -204,6 +205,11 @@ const ICON_LIST: IconListItem[] = [
       'screen',
     ],
   },
+  {
+    name: 'air-vent',
+    icon: AirVentIcon,
+    keywords: ['air', 'vent', 'fan', 'air conditioning', 'wind', 'cooling'],
+  }, 
   {
     name: 'moon',
     icon: MoonIcon,
