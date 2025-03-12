@@ -1089,5 +1089,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/arrow-big-up-dash.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
