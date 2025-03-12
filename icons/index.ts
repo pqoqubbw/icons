@@ -176,6 +176,7 @@ import { CalendarDaysIcon } from '@/icons/calendar-days';
 import { ArrowBigDownDashIcon } from '@/icons/arrow-big-down-dash';
 import { ArrowBigLeftDashIcon } from '@/icons/arrow-big-left-dash';  
 import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
+import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash'; 
 
 type IconListItem = {
   name: string;
@@ -215,6 +216,11 @@ const ICON_LIST: IconListItem[] = [
     icon: ArrowBigRightDashIcon,  
     keywords: ['arrow', 'right', 'big', 'below', 'east', 'dash'],
   }, 
+  { 
+    name: 'arrow-big-up-dash',
+    icon: ArrowBigUpDashIcon,  
+    keywords: ['arrow', 'up', 'big', 'above', 'north', 'dash'],
+  },  
   {
     name: 'moon',
     icon: MoonIcon,
