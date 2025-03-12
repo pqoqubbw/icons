@@ -19,7 +19,7 @@ const pathVariants: Variants = {
   normal: { d: 'M9 18v-6H5l7-7 7 7h-4v6H9z', translateY: 0 },
   animate: {
     d: 'M9 18v-6H5l7-7 7 7h-4v6H9z',
-    translateY: [0, 3, 0],
+    translateY: [0, -3, 0],
     transition: {
       duration: 0.4,
     },
