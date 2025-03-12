@@ -18,7 +18,7 @@ interface ArrowBigUpDashIconProps extends HTMLAttributes<HTMLDivElement> {
 const dashVariants: Variants = {
   normal: { translateY: 0 },
   animate: {
-    translateY: [0, 1, 0],
+    translateY: [0, -1, 0],
     transition: {
       duration: 0.4,
     },
@@ -28,7 +28,7 @@ const dashVariants: Variants = {
 const arrowVariants: Variants = {
   normal: { translateY: 0 },
   animate: {
-    translateY: [0, 3, 0],
+    translateY: [0, -3, 0],
     transition: {
       duration: 0.4,
     },

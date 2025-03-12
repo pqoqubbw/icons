@@ -18,7 +18,7 @@ interface ArrowBigRightDashIconProps extends HTMLAttributes<HTMLDivElement> {
 const dashVariants: Variants = {
   normal: { translateX: 0 },
   animate: {
-    translateX: [0, -1, 0],
+    translateX: [0, 1, 0],
     transition: {
       duration: 0.4,
     },
@@ -28,7 +28,7 @@ const dashVariants: Variants = {
 const arrowVariants: Variants = {
   normal: { translateX: 0 },
   animate: {
-    translateX: [0, -3, 0],
+    translateX: [0, 3, 0],
     transition: {
       duration: 0.4,
     },
