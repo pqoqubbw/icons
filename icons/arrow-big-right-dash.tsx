@@ -38,7 +38,7 @@ const arrowVariants: Variants = {
 const ArrowBigRightDashIcon = forwardRef<
   ArrowBigRightDashIconHandle,
   ArrowBigRightDashIconProps
->(({ onMouseEnter, onMouseLeave, className, size = 32, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
 
