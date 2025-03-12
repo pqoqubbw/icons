@@ -91,7 +91,6 @@ const LaptopMinimalCheckIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
       >
         <path d="M2 20h20" />
         <rect x="3" y="4" width="18" height="12" rx="2" />

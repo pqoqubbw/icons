@@ -91,7 +91,6 @@ const CalendarCheck2Icon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
       >
         <path d="M8 2v4" />
         <path d="M16 2v4" />

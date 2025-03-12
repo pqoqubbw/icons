@@ -89,7 +89,6 @@ const FileCheckIcon = forwardRef<FileCheckIconHandle, FileCheckIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
         >
           <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
           <path d="M14 2v4a2 2 0 0 0 2 2h4" />
