@@ -173,6 +173,8 @@ import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
+import { RadioIcon } from './radio';
+import { RadioTowerIcon } from './radio-tower';
 
 type IconListItem = {
   name: string;
@@ -1718,6 +1720,34 @@ const ICON_LIST: IconListItem[] = [
     name: 'calendar-days',
     icon: CalendarDaysIcon,
     keywords: ['calendar', 'days', 'days of the week', 'week', 'month'],
+  },
+  {
+    name: 'radio',
+    icon: RadioIcon,
+    keywords: [
+      'radio',
+      'signal',
+      'broadcast',
+      'wireless',
+      'frequency',
+      'connectivity',
+      'live',
+    ],
+  },
+  {
+    name: 'radio-tower',
+    icon: RadioTowerIcon,
+    keywords: [
+      'radio',
+      'tower',
+      'radio tower',
+      'signal',
+      'broadcast',
+      'wireless',
+      'frequency',
+      'connectivity',
+      'live',
+    ],
   },
 ];
 

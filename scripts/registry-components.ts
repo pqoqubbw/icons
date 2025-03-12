@@ -1066,4 +1066,16 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'radio-tower',
+    'path': path.join(__dirname, '../icons/radio-tower.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'radio',
+    'path': path.join(__dirname, '../icons/radio.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
