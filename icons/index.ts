@@ -191,6 +191,11 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { AirVentIcon } from '@/icons/air-vent';
+import { TornadoIcon } from '@/icons/tornado';
+import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
+import { CloudRainIcon } from '@/icons/cloud-rain';
+import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
 import { BlocksIcon } from '@/icons/blocks';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -283,6 +288,29 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'wind-arrow-down',
+    icon: WindArrowDownIcon,
+    keywords: ['wind', 'arrow', 'down', 'wind arrow down'],
+  },
+  {
+    name: 'air-vent',
+    icon: AirVentIcon,
+    keywords: ['air', 'vent', 'fan', 'air conditioning', 'wind', 'cooling'],
+  },
+  {
+    name: 'tornado',
+    icon: TornadoIcon,
+    keywords: ['tornado', 'wind', 'weather', 'spin', 'twister', 'whirlwind'],
+  },
+  {
+    name: 'cloud-rain',
+    icon: CloudRainIcon,
+    keywords: ['cloud', 'rain', 'weather', 'cloud rain'],
+  },
+  {
+    name: 'cloud-rain-wind',
+    icon: CloudRainWindIcon,
+    keywords: ['cloud', 'rain', 'wind', 'weather', 'cloud rain wind'],
     name: 'arrow-big-down-dash',
     icon: ArrowBigDownDashIcon,
     keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom', 'dash'],

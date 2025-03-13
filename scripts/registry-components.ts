@@ -1151,8 +1151,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'air-vent',
+    'path': path.join(__dirname, '../icons/air-vent.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'blocks',
     'path': path.join(__dirname, '../icons/blocks.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cloud-rain-wind',
+    'path': path.join(__dirname, '../icons/cloud-rain-wind.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1163,8 +1175,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'cloud-rain',
+    'path': path.join(__dirname, '../icons/cloud-rain.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'chevron-down',
     'path': path.join(__dirname, '../icons/chevron-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'tornado',
+    'path': path.join(__dirname, '../icons/tornado.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1175,6 +1199,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'wind-arrow-down',
+    'path': path.join(__dirname, '../icons/wind-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+    {
     'name': 'gallery-horizontal-end',
     'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
     'registryDependencies': [],
