@@ -180,6 +180,7 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { BoxesIcon } from '@/icons/boxes';
 
 type IconListItem = {
   name: string;
@@ -1793,6 +1794,11 @@ const ICON_LIST: IconListItem[] = [
       'live',
     ],
   },
+  {
+    name: 'boxes',
+    icon: BoxesIcon,
+    keywords: ['box', 'boxes', 'cubes', 'packages', 'parts', 'group', 'units', 'collection', 'cluster', 'geometry']
+  }
 ];
 
 export { ICON_LIST };
