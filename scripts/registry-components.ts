@@ -1080,13 +1080,19 @@ export const components: ComponentDefinition[] = [
   },
   {
     'name': 'chart-no-axes-column-decreasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-decreasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'chart-no-axes-column-increasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-increasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1105,6 +1111,18 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'radio',
     'path': path.join(__dirname, '../icons/radio.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'gallery-horizontal-end',
+    'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'gallery-vertical-end',
+    'path': path.join(__dirname, '../icons/gallery-vertical-end.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   }

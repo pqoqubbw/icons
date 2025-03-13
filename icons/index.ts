@@ -180,7 +180,8 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
-
+import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
+import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 type IconListItem = {
   name: string;
   icon: React.ElementType;
@@ -1791,6 +1792,44 @@ const ICON_LIST: IconListItem[] = [
       'frequency',
       'connectivity',
       'live',
+    ],
+  },
+  {
+    name: 'gallery-horizontal-end',
+    icon: GalleryHorizontalEndIcon,
+    keywords: [
+      'gallery',
+      'horizontal',
+      'end',
+      'last',
+      'carousel',
+      'pictures',
+      'images',
+      'scroll',
+      'swipe',
+      'album',
+      'portfolio',
+      'history',
+      'versions',
+      'backup',
+      'time machine',
+    ],
+  },
+  {
+    name: 'gallery-vertical-end',
+    icon: GalleryVerticalEndIcon,
+    keywords: [
+      'carousel',
+      'pictures',
+      'images',
+      'scroll',
+      'swipe',
+      'album',
+      'portfolio',
+      'history',
+      'versions',
+      'backup',
+      'time machine',
     ],
   },
 ];
