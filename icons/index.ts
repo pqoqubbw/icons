@@ -181,11 +181,11 @@ import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-de
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
 import { ChevronDownIcon } from '@/icons/chevron-down';
-import { ChevronUpIcon } from '@/icons/chevron-up'; 
+import { ChevronUpIcon } from '@/icons/chevron-up';
 import { ChevronLeftIcon } from '@/icons/chevron-left';
 import { ChevronRightIcon } from '@/icons/chevron-right';
 import { SquareChevronDownIcon } from '@/icons/square-chevron-down';
-import { SquareChevronUpIcon } from '@/icons/square-chevron-up';  
+import { SquareChevronUpIcon } from '@/icons/square-chevron-up';
 import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 
@@ -1016,24 +1016,24 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'chevron-down',
-    icon: ChevronDownIcon,  
-    keywords: ['chevron', 'down', 'expand', 'unfold', 'vertical'], 
-  }, 
+    icon: ChevronDownIcon,
+    keywords: ['chevron', 'down', 'expand', 'unfold', 'vertical'],
+  },
   {
     name: 'chevron-up',
-    icon: ChevronUpIcon,  
-    keywords: ['chevron', 'up', 'collapse', 'fold', 'vertical'], 
-  },  
+    icon: ChevronUpIcon,
+    keywords: ['chevron', 'up', 'collapse', 'fold', 'vertical'],
+  },
   {
     name: 'chevron-left',
-    icon: ChevronLeftIcon,  
+    icon: ChevronLeftIcon,
     keywords: ['chevron', 'left', 'previous', 'back', 'direction'],
-  }, 
+  },
   {
     name: 'chevron-right',
-    icon: ChevronRightIcon, 
-    keywords: ['chevron', 'right', 'next', 'forward', 'direction'], 
-  }, 
+    icon: ChevronRightIcon,
+    keywords: ['chevron', 'right', 'next', 'forward', 'direction'],
+  },
   {
     name: 'chevrons-up-down',
     icon: ChevronsUpDownIcon,
@@ -1088,23 +1088,23 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'square-chevron-down',
     icon: SquareChevronDownIcon,
-    keywords: ['chevron', 'down', 'expand']
-  }, 
+    keywords: ['chevron', 'down', 'expand'],
+  },
   {
     name: 'square-chevron-up',
     icon: SquareChevronUpIcon,
-    keywords: ['chevron', 'up', 'collapse']
-  }, 
+    keywords: ['chevron', 'up', 'collapse'],
+  },
   {
     name: 'square-chevron-right',
     icon: SquareChevronRightIcon,
-    keywords: ['chevron', 'right', 'next']
-  }, 
+    keywords: ['chevron', 'right', 'next'],
+  },
   {
     name: 'square-chevron-left',
     icon: SquareChevronLeftIcon,
-    keywords: ['chevron', 'left', 'previous']
-  }, 
+    keywords: ['chevron', 'left', 'previous'],
+  },
   {
     name: 'a-arrow-down',
     icon: AArrowDownIcon,

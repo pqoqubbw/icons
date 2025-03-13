@@ -78,7 +78,7 @@ const SquareChevronDownIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect width="18" height="18" x="3" y="3" rx="2"/>
+        <rect width="18" height="18" x="3" y="3" rx="2" />
         <motion.path
           variants={{
             normal: { y: 0 },
