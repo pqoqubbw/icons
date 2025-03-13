@@ -6,33 +6,37 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface ArrowUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
-const variants: Variants = {
-  normal: {
-    pathLength: 1,
-    opacity: 1,
-  },
+const pathVariants: Variants = {
+  normal: { d: 'm5 12 7-7 7 7', translateY: 0 },
   animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
+    d: 'm5 12 7-7 7 7',
+    translateY: [0, 3, 0],
     transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
+      duration: 0.4,
     },
   },
 };
 
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
+const secondPathVariants: Variants = {
+  normal: { d: 'M12 19V5' },
+  animate: {
+    d: ['M12 19V5', 'M12 19V10', 'M12 19V5'],
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+
+const ArrowUpIcon = forwardRef<ArrowUpIconHandle, ArrowUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -41,15 +45,12 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
       isControlledRef.current = true;
 
       return {
-
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
-
       };
     });
 
     const handleMouseEnter = useCallback(
-
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
           controls.start('animate');
@@ -92,10 +93,14 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
           <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7
-            variants={variants}
+            d="m5 12 7-7 7 7"
+            variants={pathVariants}
+            animate={controls}
+          />
+          <motion.path
+            d="M12 19V5"
+            variants={secondPathVariants}
             animate={controls}
           />
         </svg>
@@ -104,6 +109,6 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
+ArrowUpIcon.displayName = 'ArrowUpIcon';
 
-export { ChartSplineIcon };
+export { ArrowUpIcon };

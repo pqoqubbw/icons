@@ -6,50 +6,40 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface ArrowBigUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowBigUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
-const variants: Variants = {
-  normal: {
-    pathLength: 1,
-    opacity: 1,
-  },
+const pathVariants: Variants = {
+  normal: { d: 'M9 18v-6H5l7-7 7 7h-4v6H9z', translateY: 0 },
   animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
+    d: 'M9 18v-6H5l7-7 7 7h-4v6H9z',
+    translateY: [0, -3, 0],
     transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
+      duration: 0.4,
     },
   },
 };
 
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
+const ArrowBigUpIcon = forwardRef<ArrowBigUpIconHandle, ArrowBigUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
-
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
-
       };
     });
 
     const handleMouseEnter = useCallback(
-
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
           controls.start('animate');
@@ -74,7 +64,7 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -92,10 +82,9 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
           <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7
-            variants={variants}
+            d="M9 18v-6H5l7-7 7 7h-4v6H9z"
+            variants={pathVariants}
             animate={controls}
           />
         </svg>
@@ -104,6 +93,6 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
+ArrowBigUpIcon.displayName = 'ArrowBigUpIcon';
 
-export { ChartSplineIcon };
+export { ArrowBigUpIcon };
