@@ -1,48 +1,51 @@
 'use client';
+
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface TornadoIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface TornadoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
 const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
-  animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
+  normal: {
+    x: 0,
+    opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
+      ease: 'easeInOut',
     },
   },
-};
-
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
-  animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
+  animate: (custom: number) => ({
+    x: [0, custom * 1, 0],
+    opacity: 1,
     transition: {
-      duration: 0.4,
+      x: {
+        duration: 0.6,
+        repeat: 0.7,
+        repeatType: 'reverse',
+        ease: 'easeInOut',
+        delay: custom * 0.1,
+      },
     },
-  },
+  }),
 };
 
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -93,14 +96,39 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            d="M5 12h14"
+            d="M21 4H3"
             variants={pathVariants}
+            initial="normal"
             animate={controls}
+            custom={1}
           />
           <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
+            d="M18 8H6"
+            variants={pathVariants}
+            initial="normal"
             animate={controls}
+            custom={2}
+          />
+          <motion.path
+            d="M19 12H9"
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+            custom={3}
+          />
+          <motion.path
+            d="M16 16h-6"
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+            custom={4}
+          />
+          <motion.path
+            d="M11 20H9"
+            variants={pathVariants}
+            initial="normal"
+            animate={controls}
+            custom={5}
           />
         </svg>
       </div>
@@ -108,6 +136,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+TornadoIcon.displayName = 'TornadoIcon';
 
-export { ArrowRightIcon };
+export { TornadoIcon };

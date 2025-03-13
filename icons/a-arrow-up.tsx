@@ -1,41 +1,39 @@
 'use client';
+
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface AArrowUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface AArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
+const letterVariants: Variants = {
+  normal: { opacity: 1, scale: 1 },
   animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
-    transition: {
-      duration: 0.4,
-    },
+    opacity: [0, 1],
+    scale: [0.8, 1],
+    transition: { duration: 0.3 },
   },
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
+const arrowVariants: Variants = {
+  normal: { opacity: 1, y: 0 },
   animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
-    transition: {
-      duration: 0.4,
-    },
+    opacity: [0, 1],
+    y: [10, 0], // Changed from [-10, 0] to animate upward
+    transition: { duration: 0.3, delay: 0.2 },
   },
 };
 
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const AArrowUpIcon = forwardRef<AArrowUpIconHandle, AArrowUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -92,15 +90,27 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          {/* Letter A - unchanged */}
           <motion.path
-            d="M5 12h14"
-            variants={pathVariants}
+            d="M3.5 13h6"
             animate={controls}
+            variants={letterVariants}
           />
           <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
+            d="m2 16 4.5-9 4.5 9"
             animate={controls}
+            variants={letterVariants}
+          />
+          {/* Arrow pointing up - modified */}
+          <motion.path
+            d="M18 16V7" // Vertical line from bottom to top
+            animate={controls}
+            variants={arrowVariants}
+          />
+          <motion.path
+            d="m14 11 4-4 4 4" // Arrowhead pointing up
+            animate={controls}
+            variants={arrowVariants}
           />
         </svg>
       </div>
@@ -108,6 +118,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+AArrowUpIcon.displayName = 'AArrowUpIcon';
 
-export { ArrowRightIcon };
+export { AArrowUpIcon };
