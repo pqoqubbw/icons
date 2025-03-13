@@ -191,6 +191,13 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { CalendarCheckIcon } from '@/icons/calendar-check';
+import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
+import { FileCheckIcon } from '@/icons/file-check';
+import { FileCheck2Icon } from '@/icons/file-check-2';
+import { MailCheckIcon } from '@/icons/mail-check';
+import { MonitorCheckIcon } from '@/icons/monitor-check';
+import { LaptopMinimalCheckIcon } from '@/icons/laptop-minimal-check';
 import { ChevronDownIcon } from '@/icons/chevron-down';
 import { ChevronUpIcon } from '@/icons/chevron-up';
 import { ChevronLeftIcon } from '@/icons/chevron-left';
@@ -1910,6 +1917,117 @@ const ICON_LIST: IconListItem[] = [
       'connectivity',
       'live',
     ],
+  },
+  {
+    name: 'calendar-check',
+    icon: CalendarCheckIcon,
+    keywords: [
+      'calendar',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'calendar-check-2',
+    icon: CalendarCheck2Icon,
+    keywords: [
+      'calendar',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'file-check',
+    icon: FileCheckIcon,
+    keywords: [
+      'file',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'document',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'file-check-2',
+    icon: FileCheck2Icon,
+    keywords: [
+      'file',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'document',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'mail-check',
+    icon: MailCheckIcon,
+    keywords: [
+      'mail',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'email',
+      'confirm',
+      'complete',
+      'delivered',
+      'message',
+      'sent',
+    ],
+  },
+  {
+    name: 'monitor-check',
+    icon: MonitorCheckIcon,
+    keywords: [
+      'monitor',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+      'tv',
+      'screen',
+      'display',
+      'desktop',
+      'running',
+      'active',
+      'virtual machine',
+      'vm',
+    ],
+  },
+  {
+    name: 'laptop-minimal-check',
+    icon: LaptopMinimalCheckIcon,
+    keywords: [
+      'laptop',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+      'computer',
+      'laptop',
+      'running',
+      'active',
+      'virtual machine',
+      'vm',
+      ],
   },
   {
     name: 'gallery-horizontal-end',
