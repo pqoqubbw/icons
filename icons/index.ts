@@ -171,8 +171,19 @@ import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
+import { AArrowUpIcon } from '@/icons/a-arrow-up';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
+import { ArrowBigDownDashIcon } from '@/icons/arrow-big-down-dash';
+import { ArrowBigLeftDashIcon } from '@/icons/arrow-big-left-dash';
+import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
+import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash';
+import { ArrowDownIcon } from '@/icons/arrow-down';
+import { ArrowUpIcon } from '@/icons/arrow-up';
+import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
+import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
+import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
+import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { ChartLineIcon } from '@/icons/chart-line';
 import { ChartSplineIcon } from '@/icons/chart-spline';
 import { FileChartLineIcon } from '@/icons/file-chart-line';
@@ -188,6 +199,8 @@ import { SquareChevronDownIcon } from '@/icons/square-chevron-down';
 import { SquareChevronUpIcon } from '@/icons/square-chevron-up';
 import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
+import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
+import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 
 type IconListItem = {
   name: string;
@@ -202,6 +215,55 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   {
+    name: 'arrow-big-down',
+    icon: ArrowBigDownIcon,
+    keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom'],
+  },
+  {
+    name: 'arrow-big-left',
+    icon: ArrowBigLeftIcon,
+    keywords: ['arrow', 'left', 'big', 'west', 'previous', '<-'],
+  },
+  {
+    name: 'arrow-big-right',
+    icon: ArrowBigRightIcon,
+    keywords: ['arrow', 'right', 'big', 'east', 'next', '->'],
+  },
+  {
+    name: 'arrow-big-up',
+    icon: ArrowBigUpIcon,
+    keywords: ['arrow', 'up', 'big', 'north', 'top'],
+  },
+  {
+    name: 'a-arrow-up',
+    icon: AArrowUpIcon,
+    keywords: ['arrow', 'up', 'a'],
+  },
+  {
+    name: 'chart-spline',
+    icon: ChartSplineIcon,
+    keywords: [
+      'chart',
+      'spline',
+      'graph',
+      'statistics',
+      'analytics',
+      'diagram',
+      'presentation',
+      'analytics',
+    ],
+  },
+  {
+    name: 'arrow-up',
+    icon: ArrowUpIcon,
+    keywords: ['up', 'above', 'direction', 'north', 'top'],
+  },
+  {
+    name: 'arrow-down',
+    icon: ArrowDownIcon,
+    keywords: ['down', 'below', 'direction', 'south', 'bottom'],
+  },
+  {
     name: 'vibrate',
     icon: VibrateIcon,
     keywords: [
@@ -211,6 +273,26 @@ const ICON_LIST: IconListItem[] = [
       'haptic feedback',
       'screen',
     ],
+  },
+  {
+    name: 'arrow-big-down-dash',
+    icon: ArrowBigDownDashIcon,
+    keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom', 'dash'],
+  },
+  {
+    name: 'arrow-big-left-dash',
+    icon: ArrowBigLeftDashIcon,
+    keywords: ['arrow', 'left', 'big', 'below', 'west', 'dash'],
+  },
+  {
+    name: 'arrow-big-right-dash',
+    icon: ArrowBigRightDashIcon,
+    keywords: ['arrow', 'right', 'big', 'below', 'east', 'dash'],
+  },
+  {
+    name: 'arrow-big-up-dash',
+    icon: ArrowBigUpDashIcon,
+    keywords: ['arrow', 'up', 'big', 'above', 'north', 'dash'],
   },
   {
     name: 'moon',
@@ -1780,18 +1862,6 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['chart', 'line', 'increasing', 'linechart', 'chartline'],
   },
   {
-    name: 'chart-spline',
-    icon: ChartSplineIcon,
-    keywords: [
-      'chart',
-      'spline',
-      'increasing',
-      'splinechart',
-      'chartspline',
-      'line',
-    ],
-  },
-  {
     name: 'file-chart-line',
     icon: FileChartLineIcon,
     keywords: [
@@ -1839,6 +1909,44 @@ const ICON_LIST: IconListItem[] = [
       'frequency',
       'connectivity',
       'live',
+    ],
+  },
+  {
+    name: 'gallery-horizontal-end',
+    icon: GalleryHorizontalEndIcon,
+    keywords: [
+      'gallery',
+      'horizontal',
+      'end',
+      'last',
+      'carousel',
+      'pictures',
+      'images',
+      'scroll',
+      'swipe',
+      'album',
+      'portfolio',
+      'history',
+      'versions',
+      'backup',
+      'time machine',
+    ],
+  },
+  {
+    name: 'gallery-vertical-end',
+    icon: GalleryVerticalEndIcon,
+    keywords: [
+      'carousel',
+      'pictures',
+      'images',
+      'scroll',
+      'swipe',
+      'album',
+      'portfolio',
+      'history',
+      'versions',
+      'backup',
+      'time machine',
     ],
   },
 ];

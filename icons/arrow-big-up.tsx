@@ -1,48 +1,38 @@
 'use client';
+
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface ArrowBigUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowBigUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
 const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
+  normal: { d: 'M9 18v-6H5l7-7 7 7h-4v6H9z', translateY: 0 },
   animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
+    d: 'M9 18v-6H5l7-7 7 7h-4v6H9z',
+    translateY: [0, -3, 0],
     transition: {
       duration: 0.4,
     },
   },
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
-  animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const ArrowBigUpIcon = forwardRef<ArrowBigUpIconHandle, ArrowBigUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -74,7 +64,7 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -93,13 +83,8 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            d="M5 12h14"
+            d="M9 18v-6H5l7-7 7 7h-4v6H9z"
             variants={pathVariants}
-            animate={controls}
-          />
-          <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
             animate={controls}
           />
         </svg>
@@ -108,6 +93,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+ArrowBigUpIcon.displayName = 'ArrowBigUpIcon';
 
-export { ArrowRightIcon };
+export { ArrowBigUpIcon };
