@@ -1151,12 +1151,24 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'gallery-horizontal-end',
+    'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'arrow-big-down-dash',
     'path': path.join(__dirname, '../icons/arrow-big-down-dash.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
+    'name': 'gallery-vertical-end',
+    'path': path.join(__dirname, '../icons/gallery-vertical-end.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+    {
     'name': 'arrow-big-down',
     'path': path.join(__dirname, '../icons/arrow-big-down.tsx'),
     'registryDependencies': [],
