@@ -1,48 +1,32 @@
 'use client';
-import type { Variants } from 'motion/react';
+
+import type { Transition } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface ChevronUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ChevronUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
-  animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
-    transition: {
-      duration: 0.4,
-    },
-  },
+const defaultTransition: Transition = {
+  times: [0, 0.4, 1],
+  duration: 0.5,
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
-  animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const ChevronUpIcon = forwardRef<ChevronUpIconHandle, ChevronUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -93,14 +77,13 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            d="M5 12h14"
-            variants={pathVariants}
+            variants={{
+              normal: { y: 0 },
+              animate: { y: [0, -2, 0] },
+            }}
+            transition={defaultTransition}
             animate={controls}
-          />
-          <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
-            animate={controls}
+            d="m18 15-6-6-6 6"
           />
         </svg>
       </div>
@@ -108,6 +91,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+ChevronUpIcon.displayName = 'ChevronUpIcon';
 
-export { ArrowRightIcon };
+export { ChevronUpIcon };
