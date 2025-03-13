@@ -180,6 +180,7 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { BlocksIcon } from '@/icons/blocks';
 
 type IconListItem = {
   name: string;
@@ -1791,6 +1792,25 @@ const ICON_LIST: IconListItem[] = [
       'frequency',
       'connectivity',
       'live',
+    ],
+  },
+  {
+    name: 'blocks',
+    icon: BlocksIcon,
+    keywords: [
+      'block',
+      'blocks',
+      'addon',
+      'plugin',
+      'integration',
+      'extension',
+      'package',
+      'build',
+      'stack',
+      'toys',
+      'kids',
+      'children',
+      'learning',
     ],
   },
 ];
