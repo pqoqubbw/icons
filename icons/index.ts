@@ -183,9 +183,8 @@ import { RadioTowerIcon } from '@/icons/radio-tower';
 import { AirVentIcon } from '@/icons/air-vent';
 import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
-import { CloudRainIcon } from '@/icons/cloud-rain'; 
+import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
-
 
 type IconListItem = {
   name: string;
@@ -210,7 +209,11 @@ const ICON_LIST: IconListItem[] = [
       'screen',
     ],
   },
-  { name: 'wind-arrow-down', icon: WindArrowDownIcon, keywords: ['wind', 'arrow', 'down', 'wind arrow down'] },
+  {
+    name: 'wind-arrow-down',
+    icon: WindArrowDownIcon,
+    keywords: ['wind', 'arrow', 'down', 'wind arrow down'],
+  },
   {
     name: 'air-vent',
     icon: AirVentIcon,
@@ -223,14 +226,14 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'cloud-rain',
-    icon: CloudRainIcon,  
-    keywords: ['cloud', 'rain', 'weather', 'cloud rain'], 
-  },  
+    icon: CloudRainIcon,
+    keywords: ['cloud', 'rain', 'weather', 'cloud rain'],
+  },
   {
-    name: 'cloud-rain-wind',  
-    icon: CloudRainWindIcon,  
-    keywords: ['cloud', 'rain', 'wind', 'weather', 'cloud rain wind'],  
-  }, 
+    name: 'cloud-rain-wind',
+    icon: CloudRainWindIcon,
+    keywords: ['cloud', 'rain', 'wind', 'weather', 'cloud rain wind'],
+  },
   {
     name: 'moon',
     icon: MoonIcon,

@@ -25,7 +25,7 @@ const pathVariants: Variants = {
     },
   },
   animate: (custom: number) => ({
-    x: [0, custom * 1, 0], 
+    x: [0, custom * 1, 0],
     opacity: 1,
     transition: {
       x: {
@@ -33,7 +33,7 @@ const pathVariants: Variants = {
         repeat: 0.7,
         repeatType: 'reverse',
         ease: 'easeInOut',
-        delay: custom * 0.1, 
+        delay: custom * 0.1,
       },
     },
   }),

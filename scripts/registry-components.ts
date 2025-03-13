@@ -1080,13 +1080,19 @@ export const components: ComponentDefinition[] = [
   },
   {
     'name': 'chart-no-axes-column-decreasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-decreasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'chart-no-axes-column-increasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-increasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1107,5 +1113,35 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/radio.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    'name': 'air-vent',
+    'path': path.join(__dirname, '../icons/air-vent.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cloud-rain-wind',
+    'path': path.join(__dirname, '../icons/cloud-rain-wind.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cloud-rain',
+    'path': path.join(__dirname, '../icons/cloud-rain.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'tornado',
+    'path': path.join(__dirname, '../icons/tornado.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'wind-arrow-down',
+    'path': path.join(__dirname, '../icons/wind-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
