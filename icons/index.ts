@@ -181,6 +181,11 @@ import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-de
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
 import { AirVentIcon } from '@/icons/air-vent';
+import { TornadoIcon } from '@/icons/tornado';
+import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
+import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { CloudRainIcon } from '@/icons/cloud-rain'; 
+
 
 type IconListItem = {
   name: string;
@@ -205,11 +210,12 @@ const ICON_LIST: IconListItem[] = [
       'screen',
     ],
   },
+  { name: 'wind-arrow-down', icon: WindArrowDownIcon, keywords: ['wind', 'arrow', 'down', 'wind arrow down'] },
   {
     name: 'air-vent',
     icon: AirVentIcon,
     keywords: ['air', 'vent', 'fan', 'air conditioning', 'wind', 'cooling'],
-  }, 
+  },
   {
     name: 'moon',
     icon: MoonIcon,
