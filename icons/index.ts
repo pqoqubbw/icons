@@ -187,6 +187,7 @@ import { ChevronRightIcon } from '@/icons/chevron-right';
 import { SquareChevronDownIcon } from '@/icons/square-chevron-down';
 import { SquareChevronUpIcon } from '@/icons/square-chevron-up';  
 import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
+import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 
 type IconListItem = {
   name: string;
@@ -1098,6 +1099,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'square-chevron-right',
     icon: SquareChevronRightIcon,
     keywords: ['chevron', 'right', 'next']
+  }, 
+  {
+    name: 'square-chevron-left',
+    icon: SquareChevronLeftIcon,
+    keywords: ['chevron', 'left', 'previous']
   }, 
   {
     name: 'a-arrow-down',
