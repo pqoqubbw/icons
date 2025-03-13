@@ -180,6 +180,7 @@ import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-in
 import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
 import { RadioIcon } from '@/icons/radio';
 import { RadioTowerIcon } from '@/icons/radio-tower';
+import { ChevronDownIcon } from '@/icons/chevron-down';
 
 type IconListItem = {
   name: string;
@@ -1006,6 +1007,11 @@ const ICON_LIST: IconListItem[] = [
     icon: ChartBarIncreasingIcon,
     keywords: ['chart', 'bar', 'increasing'],
   },
+  {
+    name: 'chevron-down',
+    icon: ChevronDownIcon,  
+    keywords: ['chevron', 'down', 'expand', 'unfold', 'vertical'], 
+  }, 
   {
     name: 'chevrons-up-down',
     icon: ChevronsUpDownIcon,
