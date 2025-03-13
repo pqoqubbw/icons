@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation, type Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
@@ -13,6 +13,28 @@ export interface BoxesIconHandle {
 interface BoxesIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
+
+const boxVariants: Variants = {
+  normal: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 25
+    }
+  },
+  animate: (i: number) => ({
+    y: [-20, 0],
+    opacity: [0, 1],
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 30,
+      delay: 0.1 * (2 - i)
+    }
+  })
+};
 
 const BoxesIcon = forwardRef<BoxesIconHandle, BoxesIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -72,28 +94,25 @@ const BoxesIcon = forwardRef<BoxesIconHandle, BoxesIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z m4.03 3.58 -4.74 -2.85 m4.74 2.85 5-3 m-5 3v5.17"
-            variants={{
-              normal: { translateX: 0, translateY: 0 },
-              animate: { translateX: -1.5, translateY: 1.5 },
-            }}
+            d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z M12 8 7.26 5.15 m4.74 2.85 4.74-2.85 M12 13.5V8"
+            variants={boxVariants}
+            initial="normal"
             animate={controls}
+            custom={0}
           />
           <motion.path
             d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z m5 3-5-3 m5 3 4.74-2.85 M17 16.5v5.17"
-            variants={{
-              normal: { translateX: 0, translateY: 0 },
-              animate: { translateX: 1.5, translateY: 1.5 },
-            }}
+            variants={boxVariants}
+            initial="normal"
             animate={controls}
+            custom={1}
           />
           <motion.path
-            d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z M12 8 7.26 5.15 m4.74 2.85 4.74-2.85 M12 13.5V8"
-            variants={{
-              normal: { translateX: 0, translateY: 0 },
-              animate: { translateX: 0, translateY: -1.5 },
-            }}
+            d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z m4.03 3.58 -4.74 -2.85 m4.74 2.85 5-3 m-5 3v5.17"
+            variants={boxVariants}
+            initial="normal"
             animate={controls}
+            custom={2}
           />
         </svg>
       </div>
