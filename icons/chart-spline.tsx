@@ -15,7 +15,6 @@ interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
 const variants: Variants = {
   normal: {
     pathLength: 1,
@@ -41,15 +40,12 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
       isControlledRef.current = true;
 
       return {
-
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
-
       };
     });
 
     const handleMouseEnter = useCallback(
-
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
           controls.start('animate');
@@ -94,7 +90,7 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
         >
           <path d="M3 3v16a2 2 0 0 0 2 2h16" />
           <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7
+            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"
             variants={variants}
             animate={controls}
           />

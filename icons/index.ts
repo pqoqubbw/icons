@@ -171,7 +171,6 @@ import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
-import { ChartSplineIcon } from '@/icons/chart-spline';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
@@ -1787,18 +1786,6 @@ const ICON_LIST: IconListItem[] = [
     name: 'chart-line',
     icon: ChartLineIcon,
     keywords: ['chart', 'line', 'increasing', 'linechart', 'chartline'],
-  },
-  {
-    name: 'chart-spline',
-    icon: ChartSplineIcon,
-    keywords: [
-      'chart',
-      'spline',
-      'increasing',
-      'splinechart',
-      'chartspline',
-      'line',
-    ],
   },
   {
     name: 'file-chart-line',

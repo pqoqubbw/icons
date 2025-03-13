@@ -138,8 +138,7 @@ body {
   }
 
   .rainbow-banner-gradient-1 {
-    mask-image:
-      linear-gradient(to bottom, white, transparent),
+    mask-image: linear-gradient(to bottom, white, transparent),
       radial-gradient(circle at top center, white, transparent);
     mask-composite: intersect;
     animation: moving-banner 16s linear infinite reverse;
@@ -168,8 +167,7 @@ body {
   }
 
   .rainbow-banner-gradient-2 {
-    mask-image:
-      linear-gradient(to bottom, white, transparent),
+    mask-image: linear-gradient(to bottom, white, transparent),
       radial-gradient(circle at top center, white, transparent);
     mask-composite: intersect;
     animation: moving-banner 20s linear infinite;
