@@ -1797,8 +1797,19 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'boxes',
     icon: BoxesIcon,
-    keywords: ['box', 'boxes', 'cubes', 'packages', 'parts', 'group', 'units', 'collection', 'cluster', 'geometry']
-  }
+    keywords: [
+      'box',
+      'boxes',
+      'cubes',
+      'packages',
+      'parts',
+      'group',
+      'units',
+      'collection',
+      'cluster',
+      'geometry',
+    ],
+  },
 ];
 
 export { ICON_LIST };
