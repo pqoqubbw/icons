@@ -174,6 +174,10 @@ import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
 import { FileCogIcon } from '@/icons/file-cog';
 import { CalendarDaysIcon } from '@/icons/calendar-days';
+import { ArrowBigDownDashIcon } from '@/icons/arrow-big-down-dash';
+import { ArrowBigLeftDashIcon } from '@/icons/arrow-big-left-dash';
+import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
+import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash';
 import { ArrowDownIcon } from '@/icons/arrow-down';
 import { ArrowUpIcon } from '@/icons/arrow-up';
 import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
@@ -259,6 +263,26 @@ const ICON_LIST: IconListItem[] = [
       'haptic feedback',
       'screen',
     ],
+  },
+  {
+    name: 'arrow-big-down-dash',
+    icon: ArrowBigDownDashIcon,
+    keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom', 'dash'],
+  },
+  {
+    name: 'arrow-big-left-dash',
+    icon: ArrowBigLeftDashIcon,
+    keywords: ['arrow', 'left', 'big', 'below', 'west', 'dash'],
+  },
+  {
+    name: 'arrow-big-right-dash',
+    icon: ArrowBigRightDashIcon,
+    keywords: ['arrow', 'right', 'big', 'below', 'east', 'dash'],
+  },
+  {
+    name: 'arrow-big-up-dash',
+    icon: ArrowBigUpDashIcon,
+    keywords: ['arrow', 'up', 'big', 'above', 'north', 'dash'],
   },
   {
     name: 'moon',
