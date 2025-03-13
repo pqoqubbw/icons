@@ -1,41 +1,42 @@
 'use client';
+
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface ArrowUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
 const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
+  normal: { d: 'm5 12 7-7 7 7', translateY: 0 },
   animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
+    d: 'm5 12 7-7 7 7',
+    translateY: [0, 3, 0],
     transition: {
       duration: 0.4,
     },
   },
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
+const secondPathVariants: Variants = {
+  normal: { d: 'M12 19V5' },
   animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
+    d: ['M12 19V5', 'M12 19V10', 'M12 19V5'],
     transition: {
       duration: 0.4,
     },
   },
 };
 
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const ArrowUpIcon = forwardRef<ArrowUpIconHandle, ArrowUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -93,13 +94,13 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            d="M5 12h14"
+            d="m5 12 7-7 7 7"
             variants={pathVariants}
             animate={controls}
           />
           <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
+            d="M12 19V5"
+            variants={secondPathVariants}
             animate={controls}
           />
         </svg>
@@ -108,6 +109,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+ArrowUpIcon.displayName = 'ArrowUpIcon';
 
-export { ArrowRightIcon };
+export { ArrowUpIcon };
