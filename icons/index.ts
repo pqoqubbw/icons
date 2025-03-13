@@ -183,6 +183,7 @@ import { RadioTowerIcon } from '@/icons/radio-tower';
 import { ChevronDownIcon } from '@/icons/chevron-down';
 import { ChevronUpIcon } from '@/icons/chevron-up'; 
 import { ChevronLeftIcon } from '@/icons/chevron-left';
+import { ChevronRightIcon } from '@/icons/chevron-right';
 
 type IconListItem = {
   name: string;
@@ -1023,6 +1024,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'chevron-left',
     icon: ChevronLeftIcon,  
     keywords: ['chevron', 'left', 'previous', 'back', 'direction'],
+  }, 
+  {
+    name: 'chevron-right',
+    icon: ChevronRightIcon, 
+    keywords: ['chevron', 'right', 'next', 'forward', 'direction'], 
   }, 
   {
     name: 'chevrons-up-down',
