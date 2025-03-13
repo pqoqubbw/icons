@@ -183,8 +183,6 @@ import { RadioTowerIcon } from '@/icons/radio-tower';
 import { AirVentIcon } from '@/icons/air-vent';
 import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
-import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
-import { CloudRainIcon } from '@/icons/cloud-rain'; 
 
 
 type IconListItem = {
@@ -215,6 +213,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'air-vent',
     icon: AirVentIcon,
     keywords: ['air', 'vent', 'fan', 'air conditioning', 'wind', 'cooling'],
+  },
+  {
+    name: 'tornado',
+    icon: TornadoIcon,
+    keywords: ['tornado', 'wind', 'weather', 'spin', 'twister', 'whirlwind'],
   },
   {
     name: 'moon',
