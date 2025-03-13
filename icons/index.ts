@@ -311,6 +311,8 @@ const ICON_LIST: IconListItem[] = [
     name: 'cloud-rain-wind',
     icon: CloudRainWindIcon,
     keywords: ['cloud', 'rain', 'wind', 'weather', 'cloud rain wind'],
+  },
+  {
     name: 'arrow-big-down-dash',
     icon: ArrowBigDownDashIcon,
     keywords: ['arrow', 'down', 'big', 'below', 'south', 'bottom', 'dash'],
@@ -1964,7 +1966,7 @@ const ICON_LIST: IconListItem[] = [
       'kids',
       'children',
       'learning',
-],
+    ],
   },
   {
     name: 'calendar-check',
@@ -2075,7 +2077,7 @@ const ICON_LIST: IconListItem[] = [
       'active',
       'virtual machine',
       'vm',
-      ],
+    ],
   },
   {
     name: 'gallery-horizontal-end',

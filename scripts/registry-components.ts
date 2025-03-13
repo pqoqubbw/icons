@@ -1123,7 +1123,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    {
+  {
     'name': 'chart-no-axes-column-increasing',
     'path': path.join(
       __dirname,
@@ -1204,7 +1204,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    {
+  {
     'name': 'gallery-horizontal-end',
     'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
     'registryDependencies': [],
@@ -1270,7 +1270,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    {
+  {
     'name': 'arrow-big-down',
     'path': path.join(__dirname, '../icons/arrow-big-down.tsx'),
     'registryDependencies': [],
