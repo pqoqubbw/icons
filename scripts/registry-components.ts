@@ -1325,6 +1325,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'gallery-thumbnails',
+    'path': path.join(__dirname, '../icons/gallery-thumbnails.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'user-check',
     'path': path.join(__dirname, '../icons/user-check.tsx'),
     'registryDependencies': [],

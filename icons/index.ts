@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
@@ -2118,6 +2119,20 @@ const ICON_LIST: IconListItem[] = [
       'versions',
       'backup',
       'time machine',
+    ],
+  },
+  {
+    name: 'gallery-thumbnails',
+    icon: GalleryThumbnailsIcon,
+    keywords: [
+      'gallery',
+      'thumbnails',
+      'images',
+      'carousel',
+      'pictures',
+      'album',
+      'portfolio',
+      'preview',
     ],
   },
   {
