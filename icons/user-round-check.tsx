@@ -33,77 +33,78 @@ const checkVariants: Variants = {
   },
 };
 
-const UserRoundCheckIcon = forwardRef<UserRoundCheckIconHandle, UserRoundCheckIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const controls = useAnimation();
-    const isControlledRef = useRef(false);
+const UserRoundCheckIcon = forwardRef<
+  UserRoundCheckIconHandle,
+  UserRoundCheckIconProps
+>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+  const controls = useAnimation();
+  const isControlledRef = useRef(false);
 
-    useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+  useImperativeHandle(ref, () => {
+    isControlledRef.current = true;
 
-      return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
-      };
-    });
+    return {
+      startAnimation: () => controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
 
-    const handleMouseEnter = useCallback(
-      (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
-          onMouseEnter?.(e);
-        }
-      },
-      [controls, onMouseEnter]
-    );
+  const handleMouseEnter = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('animate');
+      } else {
+        onMouseEnter?.(e);
+      }
+    },
+    [controls, onMouseEnter]
+  );
 
-    const handleMouseLeave = useCallback(
-      (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
-          onMouseLeave?.(e);
-        }
-      },
-      [controls, onMouseLeave]
-    );
+  const handleMouseLeave = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!isControlledRef.current) {
+        controls.start('normal');
+      } else {
+        onMouseLeave?.(e);
+      }
+    },
+    [controls, onMouseLeave]
+  );
 
-    return (
-      <div
-        className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
-          className
-        )}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        {...props}
+  return (
+    <div
+      className={cn(
+        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+        className
+      )}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...props}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M2 21a8 8 0 0 1 13.292-6" />
-          <circle cx="10" cy="8" r="5" />
-          <motion.path
-            animate={controls}
-            initial="normal"
-            variants={checkVariants}
-            d="m16 19 2 2 4-4"
-            style={{ transformOrigin: 'center' }}
-          />
-        </svg>
-      </div >
-    );
-  }
-);
+        <path d="M2 21a8 8 0 0 1 13.292-6" />
+        <circle cx="10" cy="8" r="5" />
+        <motion.path
+          animate={controls}
+          initial="normal"
+          variants={checkVariants}
+          d="m16 19 2 2 4-4"
+          style={{ transformOrigin: 'center' }}
+        />
+      </svg>
+    </div>
+  );
+});
 
 UserRoundCheckIcon.displayName = 'UserRoundCheckIcon';
 

@@ -1785,7 +1785,7 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'cctv',
-    icon: CctvIcon,   
+    icon: CctvIcon,
     keywords: [
       'cctv',
       'camera',
@@ -2122,12 +2122,28 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'user-check',
     icon: UserCheckIcon,
-    keywords: ['user', 'check', 'checkmark', 'tick', 'done', 'confirm', 'complete'],
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
   },
   {
     name: 'user-round-check',
     icon: UserRoundCheckIcon,
-    keywords: ['user', 'check', 'checkmark', 'tick', 'done', 'confirm', 'complete'],
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
   },
 ];
 

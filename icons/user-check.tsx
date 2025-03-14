@@ -100,7 +100,7 @@ const UserCheckIcon = forwardRef<UserCheckIconHandle, UserCheckIconProps>(
             style={{ transformOrigin: 'center' }}
           />
         </svg>
-      </div >
+      </div>
     );
   }
 );
