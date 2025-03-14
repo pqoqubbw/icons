@@ -214,6 +214,8 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { UserCheckIcon } from '@/icons/user-check';
+import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
 
 type IconListItem = {
@@ -2116,6 +2118,32 @@ const ICON_LIST: IconListItem[] = [
       'versions',
       'backup',
       'time machine',
+    ],
+  },
+  {
+    name: 'user-check',
+    icon: UserCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'user-round-check',
+    icon: UserRoundCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
     ],
   },
   {
