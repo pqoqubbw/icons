@@ -2121,7 +2121,15 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'hand-heart',
     icon: HandHeartIcon,
-    keywords: ['hand', 'heart', 'love', 'affection', 'hug', 'cuddle', 'emotion'],
+    keywords: [
+      'hand',
+      'heart',
+      'love',
+      'affection',
+      'hug',
+      'cuddle',
+      'emotion',
+    ],
   },
 ];
 
