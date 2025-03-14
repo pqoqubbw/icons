@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { UserCheckIcon } from '@/icons/user-check';
 
 type IconListItem = {
   name: string;
@@ -1783,7 +1784,7 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'cctv',
-    icon: CctvIcon,
+    icon: CctvIcon,   
     keywords: [
       'cctv',
       'camera',
@@ -2116,6 +2117,11 @@ const ICON_LIST: IconListItem[] = [
       'backup',
       'time machine',
     ],
+  },
+  {
+    name: 'user-check',
+    icon: UserCheckIcon,
+    keywords: ['user', 'check', 'checkmark', 'tick', 'done', 'confirm', 'complete'],
   },
 ];
 
