@@ -1,41 +1,39 @@
 'use client';
-import type { Variants } from 'motion/react';
+
 import { motion, useAnimation } from 'motion/react';
+import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface FileCheck2IconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface FileCheck2IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
-  animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
+const checkVariants: Variants = {
+  normal: {
+    pathLength: 1,
+    opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
+    },
+  },
+  animate: {
+    pathLength: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      pathLength: { duration: 0.4, ease: 'easeInOut' },
+      opacity: { duration: 0.4, ease: 'easeInOut' },
     },
   },
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
-  animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
-    transition: {
-      duration: 0.4,
-    },
-  },
-};
-
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
+const FileCheck2Icon = forwardRef<FileCheck2IconHandle, FileCheck2IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -92,15 +90,14 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+          <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
           <motion.path
-            d="M5 12h14"
-            variants={pathVariants}
             animate={controls}
-          />
-          <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
-            animate={controls}
+            initial="normal"
+            variants={checkVariants}
+            d="m3 15 2 2 4-4"
+            style={{ transformOrigin: 'center' }}
           />
         </svg>
       </div>
@@ -108,6 +105,6 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+FileCheck2Icon.displayName = 'FileCheck2Icon';
 
-export { ArrowRightIcon };
+export { FileCheck2Icon };

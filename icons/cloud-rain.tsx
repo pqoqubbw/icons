@@ -1,48 +1,49 @@
 'use client';
+
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ArrowRightIconHandle {
+export interface CloudRainIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
+interface CloudRainIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: { d: 'M5 12h14' },
+const rainVariants: Variants = {
   animate: {
-    d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
     transition: {
-      duration: 0.4,
+      staggerChildren: 0.2,
     },
   },
 };
 
-const secondaryPathVariants: Variants = {
-  normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
+const rainChildVariants: Variants = {
+  normal: {
+    opacity: 1,
+  },
   animate: {
-    d: 'm12 5 7 7-7 7',
-    translateX: [0, -3, 0],
+    opacity: [1, 0.2, 1],
     transition: {
-      duration: 0.4,
+      duration: 1,
+      repeat: Infinity,
+      ease: 'easeInOut',
     },
   },
 };
 
-const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+const CloudRainIcon = forwardRef<CloudRainIconHandle, CloudRainIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -92,22 +93,20 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            d="M5 12h14"
-            variants={pathVariants}
-            animate={controls}
-          />
-          <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
-            animate={controls}
-          />
+          {/* Cloud - static */}
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+          {/* Rain lines - opacity animation */}
+          <motion.g variants={rainVariants} animate={controls} initial="normal">
+            <motion.path variants={rainChildVariants} d="M16 14v6" />
+            <motion.path variants={rainChildVariants} d="M8 14v6" />
+            <motion.path variants={rainChildVariants} d="M12 16v6" />
+          </motion.g>
         </svg>
       </div>
     );
   }
 );
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+CloudRainIcon.displayName = 'CloudRainIcon';
 
-export { ArrowRightIcon };
+export { CloudRainIcon };
