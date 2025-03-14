@@ -1324,4 +1324,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'hand-heart',
+    'path': path.join(__dirname, '../icons/hand-heart.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
