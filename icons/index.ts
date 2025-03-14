@@ -215,6 +215,9 @@ import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
+import { UserCheckIcon } from '@/icons/user-check';
+import { UserRoundCheckIcon } from '@/icons/user-round-check';
+import { BoxesIcon } from '@/icons/boxes';
 
 type IconListItem = {
   name: string;
@@ -2131,6 +2134,37 @@ const ICON_LIST: IconListItem[] = [
       'portfolio',
       'preview',
     ],
+  },
+  {
+    name: 'user-check',
+    icon: UserCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'user-round-check',
+    icon: UserRoundCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'boxes',
+    icon: BoxesIcon,
+    keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
   },
 ];
 
