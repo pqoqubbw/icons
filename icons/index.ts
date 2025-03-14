@@ -216,6 +216,7 @@ import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
+import { BoxesIcon } from '@/icons/boxes';
 
 type IconListItem = {
   name: string;
@@ -2144,6 +2145,11 @@ const ICON_LIST: IconListItem[] = [
       'confirm',
       'complete',
     ],
+  },
+  {
+    name: 'boxes',
+    icon: BoxesIcon,
+    keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
   },
 ];
 
