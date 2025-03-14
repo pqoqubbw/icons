@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { BoxesIcon } from '@/icons/boxes';
 
 type IconListItem = {
   name: string;
@@ -2116,6 +2117,11 @@ const ICON_LIST: IconListItem[] = [
       'backup',
       'time machine',
     ],
+  },
+  {
+    name: 'boxes',
+    icon: BoxesIcon,
+    keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
   },
 ];
 
