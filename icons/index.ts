@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { HandHeartIcon } from '@/icons/hand-heart';
 
 type IconListItem = {
   name: string;
@@ -2115,6 +2116,19 @@ const ICON_LIST: IconListItem[] = [
       'versions',
       'backup',
       'time machine',
+    ],
+  },
+  {
+    name: 'hand-heart',
+    icon: HandHeartIcon,
+    keywords: [
+      'hand',
+      'heart',
+      'love',
+      'affection',
+      'hug',
+      'cuddle',
+      'emotion',
     ],
   },
 ];
