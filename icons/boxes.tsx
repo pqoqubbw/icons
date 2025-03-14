@@ -19,21 +19,21 @@ const boxVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 400,
-      damping: 25,
-    },
+      damping: 25
+    }
   },
   animate: (i: number) => ({
     y: [-20, 0],
     opacity: [0, 1],
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 400,
       damping: 30,
-      delay: 0.1 * (2 - i),
-    },
-  }),
+      delay: 0.1 * (2 - i)
+    }
+  })
 };
 
 const BoxesIcon = forwardRef<BoxesIconHandle, BoxesIconProps>(
