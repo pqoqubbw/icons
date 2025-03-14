@@ -1324,4 +1324,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'gallery-thumbnails',
+    'path': path.join(__dirname, '../icons/gallery-thumbnails.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
