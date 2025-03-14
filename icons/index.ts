@@ -2130,8 +2130,8 @@ const ICON_LIST: IconListItem[] = [
       'album',
       'portfolio',
       'preview',
-    ]
-  }
+    ],
+  },
 ];
 
 export { ICON_LIST };
