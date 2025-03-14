@@ -215,6 +215,7 @@ import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 import { UserCheckIcon } from '@/icons/user-check';
+import { UserRoundCheckIcon } from '@/icons/user-round-check';
 
 type IconListItem = {
   name: string;
@@ -2121,6 +2122,11 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'user-check',
     icon: UserCheckIcon,
+    keywords: ['user', 'check', 'checkmark', 'tick', 'done', 'confirm', 'complete'],
+  },
+  {
+    name: 'user-round-check',
+    icon: UserRoundCheckIcon,
     keywords: ['user', 'check', 'checkmark', 'tick', 'done', 'confirm', 'complete'],
   },
 ];
