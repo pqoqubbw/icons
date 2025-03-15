@@ -213,14 +213,14 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'waves-ladder',
-    icon: WavesLadderIcon,  
+    icon: WavesLadderIcon,
     keywords: ['waves', 'ladder', 'water', 'ocean', 'sea'],
-  }, 
+  },
   {
     name: 'waves',
     icon: WavesIcon,
     keywords: ['waves', 'water', 'ocean', 'sea', 'wave', 'sea wave'],
-  }, 
+  },
   {
     name: 'wind-arrow-down',
     icon: WindArrowDownIcon,

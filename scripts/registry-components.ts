@@ -1144,4 +1144,16 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'waves-ladder',
+    'path': path.join(__dirname, '../icons/waves-ladder.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'waves',
+    'path': path.join(__dirname, '../icons/waves.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

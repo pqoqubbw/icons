@@ -75,8 +75,8 @@ const WavesIcon = forwardRef<WavesIconHandle, WavesIconProps>(
               normal: { pathLength: 1 },
               animate: {
                 pathLength: [0, 1],
-                transition: { duration: 1.25, ease: 'linear' }
-              }
+                transition: { duration: 1.25, ease: 'linear' },
+              },
             }}
             animate={controls}
           />
@@ -87,8 +87,8 @@ const WavesIcon = forwardRef<WavesIconHandle, WavesIconProps>(
               normal: { pathLength: 1 },
               animate: {
                 pathLength: [0, 1],
-                transition: { duration: 1.25, ease: 'linear' }
-              }
+                transition: { duration: 1.25, ease: 'linear' },
+              },
             }}
             animate={controls}
           />
@@ -99,8 +99,8 @@ const WavesIcon = forwardRef<WavesIconHandle, WavesIconProps>(
               normal: { pathLength: 1 },
               animate: {
                 pathLength: [0, 1],
-                transition: { duration: 1.25, ease: 'linear' }
-              }
+                transition: { duration: 1.25, ease: 'linear' },
+              },
             }}
             animate={controls}
           />
