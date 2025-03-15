@@ -185,6 +185,7 @@ import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { WavesIcon } from '@/icons/waves';
 
 type IconListItem = {
   name: string;
@@ -209,6 +210,11 @@ const ICON_LIST: IconListItem[] = [
       'screen',
     ],
   },
+  {
+    name: 'waves',
+    icon: WavesIcon,
+    keywords: ['waves', 'water', 'ocean', 'sea', 'wave', 'sea wave'],
+  }, 
   {
     name: 'wind-arrow-down',
     icon: WindArrowDownIcon,
