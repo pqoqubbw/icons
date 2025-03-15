@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { SquareActivityIcon } from '@/icons/square-activity';
 
 type IconListItem = {
   name: string;
@@ -227,6 +228,7 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
