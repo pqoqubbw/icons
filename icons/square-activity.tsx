@@ -39,13 +39,11 @@ const pathVariants: Variants = {
 
 const squareVariants: Variants = {
   normal: {
-    scale: 1,
     transition: {
       duration: 0.4,
     },
   },
   animate: {
-    scale: 1.1,
     transition: {
       duration: 0.6,
       ease: 'easeInOut',
