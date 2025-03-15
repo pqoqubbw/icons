@@ -72,7 +72,7 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
               animate: {
                 y: [13, 0],
                 opacity: [0, 0, 1],
-                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
+                transition: { duration: 0.4, times: [0, 0.5, 1], repeat: 0 },
               },
             }}
             animate={controls}
