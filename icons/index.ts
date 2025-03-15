@@ -189,7 +189,7 @@ import { WavesIcon } from '@/icons/waves';
 import { WavesLadderIcon } from './waves-ladder';
 import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
 import { SquareArrowLeftIcon } from '@/icons/square-arrow-left';
-import { SquareArrowUpIcon } from '@/icons/square-arrow-up';    
+import { SquareArrowUpIcon } from '@/icons/square-arrow-up';
 import { SquareArrowRightIcon } from '@/icons/square-arrow-right';
 
 type IconListItem = {
@@ -204,10 +204,26 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
-  { name: 'square-arrow-down', icon: SquareArrowDownIcon, keywords: ['arrow', 'down', 'a'] },
-  { name: 'square-arrow-left', icon: SquareArrowLeftIcon, keywords: ['arrow', 'left', 'a'] }, 
-  { name: 'square-arrow-right', icon: SquareArrowRightIcon, keywords: ['arrow', 'right', 'a'] },
-  { name: 'square-arrow-up', icon: SquareArrowUpIcon, keywords: ['arrow', 'up', 'a'] },
+  {
+    name: 'square-arrow-down',
+    icon: SquareArrowDownIcon,
+    keywords: ['arrow', 'down', 'a'],
+  },
+  {
+    name: 'square-arrow-left',
+    icon: SquareArrowLeftIcon,
+    keywords: ['arrow', 'left', 'a'],
+  },
+  {
+    name: 'square-arrow-right',
+    icon: SquareArrowRightIcon,
+    keywords: ['arrow', 'right', 'a'],
+  },
+  {
+    name: 'square-arrow-up',
+    icon: SquareArrowUpIcon,
+    keywords: ['arrow', 'up', 'a'],
+  },
   {
     name: 'vibrate',
     icon: VibrateIcon,

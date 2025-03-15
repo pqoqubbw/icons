@@ -1179,5 +1179,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/square-arrow-up.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
