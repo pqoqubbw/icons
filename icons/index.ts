@@ -188,7 +188,7 @@ import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
 import { WavesIcon } from '@/icons/waves';
 import { WavesLadderIcon } from './waves-ladder';
 import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
-
+import { SquareArrowUpIcon } from '@/icons/square-arrow-up';    
 
 type IconListItem = {
   name: string;
@@ -203,7 +203,8 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   { name: 'square-arrow-down', icon: SquareArrowDownIcon, keywords: ['arrow', 'down', 'a'] },
-{
+  { name: 'square-arrow-up', icon: SquareArrowUpIcon, keywords: ['arrow', 'up', 'a'] },
+  {
     name: 'vibrate',
     icon: VibrateIcon,
     keywords: [
