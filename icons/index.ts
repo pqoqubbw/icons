@@ -196,6 +196,8 @@ import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { WavesIcon } from '@/icons/waves';
+import { WavesLadderIcon } from './waves-ladder';
 import { BlocksIcon } from '@/icons/blocks';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -290,6 +292,16 @@ const ICON_LIST: IconListItem[] = [
       'haptic feedback',
       'screen',
     ],
+  },
+  {
+    name: 'waves-ladder',
+    icon: WavesLadderIcon,
+    keywords: ['waves', 'ladder', 'water', 'ocean', 'sea'],
+  },
+  {
+    name: 'waves',
+    icon: WavesIcon,
+    keywords: ['waves', 'water', 'ocean', 'sea', 'wave', 'sea wave'],
   },
   {
     name: 'wind-arrow-down',
