@@ -181,6 +181,7 @@ import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
+import { KeyIcon } from './key';
 
 type IconListItem = {
   name: string;
@@ -194,6 +195,11 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  {
+    name: 'key', 
+    icon: KeyIcon, 
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  }, 
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
