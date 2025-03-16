@@ -182,6 +182,8 @@ import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { KeyIcon } from './key';
+import { KeyCircleIcon } from './key-circle';
+import { KeySquareIcon } from './key-square';
 
 type IconListItem = {
   name: string;
@@ -199,6 +201,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'key', 
     icon: KeyIcon, 
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  }, 
+  {
+    name: 'key-square',
+    icon: KeySquareIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  }, 
+  {
+    name: 'key-circle',
+    icon: KeyCircleIcon, 
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],  
   }, 
   {
     name: 'arrow-big-down',
