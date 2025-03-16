@@ -198,20 +198,20 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   {
-    name: 'key', 
-    icon: KeyIcon, 
+    name: 'key',
+    icon: KeyIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
-  }, 
+  },
   {
     name: 'key-square',
     icon: KeySquareIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
-  }, 
+  },
   {
     name: 'key-circle',
-    icon: KeyCircleIcon, 
-    keywords: ['key', 'authentication', 'security', 'access', 'password'],  
-  }, 
+    icon: KeyCircleIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
