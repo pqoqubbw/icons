@@ -237,18 +237,18 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'refresh-cw-off',
     icon: RefreshCWOffIcon,
-    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'], 
-  }, 
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
   {
     name: 'refresh-cw',
     icon: RefreshCWIcon,
-    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'],
-  }, 
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
   {
     name: 'refresh-ccw-dot',
     icon: RefreshCCWDotIcon,
-    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'],
-  }, 
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
