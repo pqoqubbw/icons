@@ -218,6 +218,9 @@ import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
+import { RedoIcon } from '@/icons/redo';
+import { UndoDotIcon } from '@/icons/undo-dot';
+import { RedoDotIcon } from '@/icons/redo-dot';
 
 type IconListItem = {
   name: string;
@@ -230,6 +233,21 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'redo',
+    icon: RedoIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'undo-dot',
+    icon: UndoDotIcon,
+    keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'redo-dot',
+    icon: RedoDotIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
   },
   {
     name: 'arrow-big-down',
