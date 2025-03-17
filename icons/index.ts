@@ -214,6 +214,8 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { RotateCWIcon } from '@/icons/rotate-cw';
+import { RotateCCWIcon } from '@/icons/rotate-ccw';
 import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
@@ -236,6 +238,32 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'rotate-cw',
+    icon: RotateCWIcon,
+    keywords: [
+      'rotate',
+      'clockwise',
+      'turn',
+      'degrees',
+      'degrees',
+      'clockwise',
+      'counterclockwise',
+    ],
+  },
+  {
+    name: 'rotate-ccw',
+    icon: RotateCCWIcon,
+    keywords: [
+      'rotate',
+      'counterclockwise',
+      'turn',
+      'degrees',
+      'degrees',
+      'clockwise',
+      'counterclockwise',
+    ],
   },
   {
     name: 'refresh-cw-off',

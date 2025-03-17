@@ -1325,6 +1325,18 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'rotate-ccw',
+    'path': path.join(__dirname, '../icons/rotate-ccw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'rotate-cw',
+    'path': path.join(__dirname, '../icons/rotate-cw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'user-check',
     'path': path.join(__dirname, '../icons/user-check.tsx'),
     'registryDependencies': [],
