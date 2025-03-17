@@ -214,6 +214,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { RotateCWIcon } from '@/icons/rotate-cw'; 
 
 type IconListItem = {
   name: string;
@@ -227,6 +228,11 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  {
+    name: 'rotate-cw',
+    icon: RotateCWIcon,
+    keywords: ['rotate', 'clockwise', 'turn', 'degrees', 'degrees', 'clockwise', 'counterclockwise'],
+  }, 
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
