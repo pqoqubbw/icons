@@ -1396,4 +1396,22 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'key-circle',
+    'path': path.join(__dirname, '../icons/key-circle.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'key-square',
+    'path': path.join(__dirname, '../icons/key-square.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'key',
+    'path': path.join(__dirname, '../icons/key.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];

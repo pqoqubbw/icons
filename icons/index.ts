@@ -184,6 +184,9 @@ import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
+import { KeyIcon } from '@/icons/key';
+import { KeyCircleIcon } from '@/icons/key-circle';
+import { KeySquareIcon } from '@/icons/key-square';
 import { ChartLineIcon } from '@/icons/chart-line';
 import { ChartSplineIcon } from '@/icons/chart-spline';
 import { FileChartLineIcon } from '@/icons/file-chart-line';
@@ -238,6 +241,21 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'key',
+    icon: KeyIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'key-square',
+    icon: KeySquareIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'key-circle',
+    icon: KeyCircleIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
   },
   {
     name: 'rotate-cw',
