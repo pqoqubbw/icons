@@ -221,6 +221,9 @@ import { BoxesIcon } from '@/icons/boxes';
 import { RefreshCWIcon } from '@/icons/refresh-cw';
 import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
 import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
+import { RedoIcon } from '@/icons/redo';
+import { UndoDotIcon } from '@/icons/undo-dot';
+import { RedoDotIcon } from '@/icons/redo-dot';
 
 type IconListItem = {
   name: string;
@@ -248,6 +251,21 @@ const ICON_LIST: IconListItem[] = [
     name: 'refresh-ccw-dot',
     icon: RefreshCCWDotIcon,
     keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'redo',
+    icon: RedoIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'undo-dot',
+    icon: UndoDotIcon,
+    keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'redo-dot',
+    icon: RedoDotIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
   },
   {
     name: 'arrow-big-down',
