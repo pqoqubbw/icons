@@ -1199,12 +1199,25 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'waves-ladder',
+    'path': path.join(__dirname, '../icons/waves-ladder.tsx'), 
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+    
+  {
     'name': 'gallery-horizontal-end',
     'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
+    'name': 'waves',
+    'path': path.join(__dirname, '../icons/waves.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+    {
     'name': 'file-check-2',
     'path': path.join(__dirname, '../icons/file-check-2.tsx'),
     'registryDependencies': [],
