@@ -1200,11 +1200,11 @@ export const components: ComponentDefinition[] = [
   },
   {
     'name': 'waves-ladder',
-    'path': path.join(__dirname, '../icons/waves-ladder.tsx'), 
+    'path': path.join(__dirname, '../icons/waves-ladder.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    
+
   {
     'name': 'gallery-horizontal-end',
     'path': path.join(__dirname, '../icons/gallery-horizontal-end.tsx'),
@@ -1217,7 +1217,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    {
+  {
     'name': 'file-check-2',
     'path': path.join(__dirname, '../icons/file-check-2.tsx'),
     'registryDependencies': [],
@@ -1242,7 +1242,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-      {
+  {
     'name': 'waves-ladder',
     'path': path.join(__dirname, '../icons/waves-ladder.tsx'),
     'registryDependencies': [],
@@ -1374,7 +1374,7 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-    {
+  {
     'name': 'gallery-thumbnails',
     'path': path.join(__dirname, '../icons/gallery-thumbnails.tsx'),
     'registryDependencies': [],
@@ -1469,5 +1469,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/key.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
