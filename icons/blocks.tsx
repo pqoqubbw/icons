@@ -1,20 +1,26 @@
 'use client';
 
+import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface RefreshIconHandle {
+export interface BlocksIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface RefreshIconProps extends HTMLAttributes<HTMLDivElement> {
+interface BlocksIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const RefreshIcon = forwardRef<RefreshIconHandle, RefreshIconProps>(
+const variants: Variants = {
+  normal: { translateX: 0, translateY: 0 },
+  animate: { translateX: -4, translateY: 4 },
+};
+
+const BlocksIcon = forwardRef<BlocksIconHandle, BlocksIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -60,7 +66,7 @@ const RefreshIcon = forwardRef<RefreshIconHandle, RefreshIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <motion.svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -70,27 +76,19 @@ const RefreshIcon = forwardRef<RefreshIconHandle, RefreshIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          transition={{ type: 'spring', stiffness: 250, damping: 25 }}
-          variants={{
-            normal: {
-              rotate: '0deg',
-            },
-            animate: {
-              rotate: '-50deg',
-            },
-          }}
-          animate={controls}
         >
-          <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-          <path d="M3 3v5h5" />
-          <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
-          <path d="M16 16h5v5" />
-        </motion.svg>
+          <path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3" />
+          <motion.path
+            d="M14 3h7v7h-7z"
+            variants={variants}
+            animate={controls}
+          />
+        </svg>
       </div>
     );
   }
 );
 
-RefreshIcon.displayName = 'RefreshIcon';
+BlocksIcon.displayName = 'BlocksIcon';
 
-export { RefreshIcon };
+export { BlocksIcon };
