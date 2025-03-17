@@ -6,45 +6,44 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface AirVentIconHandle {
+export interface ArrowUpIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface AirVentIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const windVariants: Variants = {
-  normal: (custom: number) => ({
-    pathLength: 1,
-    opacity: 1,
-    pathOffset: 0,
+const pathVariants: Variants = {
+  normal: { d: 'm5 12 7-7 7 7', translateY: 0 },
+  animate: {
+    d: 'm5 12 7-7 7 7',
+    translateY: [0, 3, 0],
     transition: {
-      duration: 0.3,
-      ease: 'easeInOut',
-      delay: custom,
+      duration: 0.4,
     },
-  }),
-  animate: (custom: number) => ({
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    pathOffset: [1, 0],
-    transition: {
-      duration: 0.5,
-      ease: 'easeInOut',
-      delay: custom,
-    },
-  }),
+  },
 };
 
-const AirVentIcon = forwardRef<AirVentIconHandle, AirVentIconProps>(
+const secondPathVariants: Variants = {
+  normal: { d: 'M12 19V5' },
+  animate: {
+    d: ['M12 19V5', 'M12 19V10', 'M12 19V5'],
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+
+const ArrowUpIcon = forwardRef<ArrowUpIconHandle, ArrowUpIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
+
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -94,21 +93,15 @@ const AirVentIcon = forwardRef<AirVentIconHandle, AirVentIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-          <path d="M6 8h12" />
           <motion.path
-            d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12"
-            variants={windVariants}
-            initial="normal"
+            d="m5 12 7-7 7 7"
+            variants={pathVariants}
             animate={controls}
-            custom={0}
           />
           <motion.path
-            d="M6.6 15.6A2 2 0 1 0 10 17v-5"
-            variants={windVariants}
-            initial="normal"
+            d="M12 19V5"
+            variants={secondPathVariants}
             animate={controls}
-            custom={0.2}
           />
         </svg>
       </div>
@@ -116,6 +109,6 @@ const AirVentIcon = forwardRef<AirVentIconHandle, AirVentIconProps>(
   }
 );
 
-AirVentIcon.displayName = 'AirVentIcon';
+ArrowUpIcon.displayName = 'ArrowUpIcon';
 
-export { AirVentIcon };
+export { ArrowUpIcon };
