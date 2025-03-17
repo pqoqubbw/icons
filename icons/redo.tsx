@@ -1,20 +1,22 @@
 'use client';
 
-import { motion, useAnimation } from 'motion/react';
+import { cubicBezier, motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface WavesLadderIconHandle {
+export interface RedoIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface WavesLadderIconProps extends HTMLAttributes<HTMLDivElement> {
+interface RedoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
+const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
+
+const RedoIcon = forwardRef<RedoIconHandle, RedoIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -29,16 +31,22 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('animate');
-        onMouseEnter?.(e);
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('normal');
-        onMouseLeave?.(e);
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
       },
       [controls, onMouseLeave]
     );
@@ -64,29 +72,34 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
-          <motion.g
-            initial={{ y: 0, opacity: 1 }}
+          <motion.path
+            transition={{ duration: 0.6, ease: customEasing }}
             variants={{
-              normal: { y: 0, opacity: 1 },
+              normal: { translateX: 0, translateY: 0, rotate: 0 },
               animate: {
-                y: [13, 0],
-                opacity: [0, 0, 1],
-                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
+                translateX: [0, -2.1, 0],
+                translateY: [0, -1.4, 0],
+                rotate: [0, -12, 0],
               },
             }}
             animate={controls}
-          >
-            <path d="M19 5a2 2 0 0 0-2 2v11" />
-            <path d="M7 13h10" />
-            <path d="M7 9h10" />
-            <path d="M9 5a2 2 0 0 0-2 2v11" />
-          </motion.g>
+            d="M21 7v6h-6"
+          />
+          <motion.path
+            transition={{ duration: 0.6, ease: customEasing }}
+            variants={{
+              normal: { pathLength: 1 },
+              animate: { pathLength: [1, 0.8, 1] },
+            }}
+            animate={controls}
+            d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"
+          />
         </svg>
       </div>
     );
   }
 );
 
-WavesLadderIcon.displayName = 'WavesLadderIcon';
-export { WavesLadderIcon };
+RedoIcon.displayName = 'RedoIcon';
+
+export { RedoIcon };

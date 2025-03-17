@@ -1,20 +1,57 @@
 'use client';
 
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface WavesLadderIconHandle {
+export interface ActivityIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface WavesLadderIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ActivityIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
+const pathVariants: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    pathOffset: 0,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
+  },
+  animate: {
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    pathOffset: [1, 0],
+    transition: {
+      duration: 0.6,
+      ease: 'linear',
+      opacity: { duration: 0.1 },
+    },
+  },
+};
+
+const squareVariants: Variants = {
+  normal: {
+    transition: {
+      duration: 0.4,
+    },
+  },
+  animate: {
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const SquareActivityIcon = forwardRef<ActivityIconHandle, ActivityIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -29,16 +66,22 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('animate');
-        onMouseEnter?.(e);
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('normal');
-        onMouseLeave?.(e);
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
       },
       [controls, onMouseLeave]
     );
@@ -64,29 +107,28 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
-          <motion.g
-            initial={{ y: 0, opacity: 1 }}
-            variants={{
-              normal: { y: 0, opacity: 1 },
-              animate: {
-                y: [13, 0],
-                opacity: [0, 0, 1],
-                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
-              },
-            }}
+          <motion.rect
+            width="18"
+            height="18"
+            x="3"
+            y="3"
+            rx="2"
+            variants={squareVariants}
             animate={controls}
-          >
-            <path d="M19 5a2 2 0 0 0-2 2v11" />
-            <path d="M7 13h10" />
-            <path d="M7 9h10" />
-            <path d="M9 5a2 2 0 0 0-2 2v11" />
-          </motion.g>
+            initial="normal"
+          />
+          <motion.path
+            variants={pathVariants}
+            animate={controls}
+            initial="normal"
+            d="M17 12h-2l-2 5-2-10-2 5H7"
+          />
         </svg>
       </div>
     );
   }
 );
 
-WavesLadderIcon.displayName = 'WavesLadderIcon';
-export { WavesLadderIcon };
+SquareActivityIcon.displayName = 'SquareActivityIcon';
+
+export { SquareActivityIcon };

@@ -1,0 +1,21 @@
+{
+  "name": "redo-dot",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "redo-dot.tsx",
+      "content": "'use client';\n\nimport { cubicBezier, motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface RedoDotIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface RedoDotIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst customEasing = cubicBezier(0.25, 0.1, 0.25, 1);\n\nconst RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(\n          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\n          className\n        )}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        >\n          <motion.path\n            transition={{ duration: 0.6, ease: customEasing }}\n            variants={{\n              normal: { translateX: 0, translateY: 0, rotate: 0 },\n              animate: {\n                translateX: [0, -2.1, 0],\n                translateY: [0, -1.4, 0],\n                rotate: [0, -12, 0],\n              },\n            }}\n            animate={controls}\n            d=\"M21 7v6h-6\"\n          />\n          <motion.path\n            transition={{ duration: 0.6, ease: customEasing }}\n            variants={{\n              normal: { pathLength: 1 },\n              animate: { pathLength: [1, 0.8, 1] },\n            }}\n            animate={controls}\n            d=\"M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7\"\n          />\n          <motion.circle\n            transition={{ duration: 0.6, ease: customEasing }}\n            variants={{\n              normal: { scale: 1 },\n              animate: { scale: [1, 1.2, 1] },\n            }}\n            animate={controls}\n            cx=\"12\"\n            cy=\"17\"\n            r=\"1\"\n          />\n        </svg>\n      </div>\n    );\n  }\n);\n\nRedoDotIcon.displayName = 'RedoDotIcon';\n\nexport { RedoDotIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

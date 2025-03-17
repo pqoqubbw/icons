@@ -5,16 +5,16 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface WavesLadderIconHandle {
+export interface RefreshCCWIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface WavesLadderIconProps extends HTMLAttributes<HTMLDivElement> {
+interface RefreshCCWIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
+const RefreshCCWIcon = forwardRef<RefreshCCWIconHandle, RefreshCCWIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -30,7 +30,7 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) controls.start('animate');
-        onMouseEnter?.(e);
+        else onMouseEnter?.(e);
       },
       [controls, onMouseEnter]
     );
@@ -38,7 +38,7 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) controls.start('normal');
-        onMouseLeave?.(e);
+        else onMouseLeave?.(e);
       },
       [controls, onMouseLeave]
     );
@@ -46,7 +46,7 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -64,23 +64,18 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
           <motion.g
-            initial={{ y: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 250, damping: 25 }}
             variants={{
-              normal: { y: 0, opacity: 1 },
-              animate: {
-                y: [13, 0],
-                opacity: [0, 0, 1],
-                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
-              },
+              normal: { rotate: '0deg' },
+              animate: { rotate: '-50deg' },
             }}
             animate={controls}
           >
-            <path d="M19 5a2 2 0 0 0-2 2v11" />
-            <path d="M7 13h10" />
-            <path d="M7 9h10" />
-            <path d="M9 5a2 2 0 0 0-2 2v11" />
+            <path d="M3 2v6h6" />
+            <path d="M21 12A9 9 0 0 0 6 5.3L3 8" />
+            <path d="M21 22v-6h-6" />
+            <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7" />
           </motion.g>
         </svg>
       </div>
@@ -88,5 +83,6 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
   }
 );
 
-WavesLadderIcon.displayName = 'WavesLadderIcon';
-export { WavesLadderIcon };
+RefreshCCWIcon.displayName = 'RefreshCCWIcon';
+
+export { RefreshCCWIcon };

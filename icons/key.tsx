@@ -1,20 +1,20 @@
 'use client';
 
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from 'framer-motion';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface WavesLadderIconHandle {
+export interface KeyIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface WavesLadderIconProps extends HTMLAttributes<HTMLDivElement> {
+interface KeyIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
+const KeyIcon = forwardRef<KeyIconHandle, KeyIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -29,16 +29,22 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('animate');
-        onMouseEnter?.(e);
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('normal');
-        onMouseLeave?.(e);
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
       },
       [controls, onMouseLeave]
     );
@@ -53,7 +59,7 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -63,30 +69,38 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-        >
-          <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
-          <motion.g
-            initial={{ y: 0, opacity: 1 }}
-            variants={{
-              normal: { y: 0, opacity: 1 },
-              animate: {
-                y: [13, 0],
-                opacity: [0, 0, 1],
-                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
+          animate={controls}
+          initial="normal"
+          variants={{
+            normal: {
+              rotate: 0,
+              transition: {
+                type: 'spring',
+                stiffness: 120,
+                damping: 14,
+                duration: 0.8,
               },
-            }}
-            animate={controls}
-          >
-            <path d="M19 5a2 2 0 0 0-2 2v11" />
-            <path d="M7 13h10" />
-            <path d="M7 9h10" />
-            <path d="M9 5a2 2 0 0 0-2 2v11" />
-          </motion.g>
-        </svg>
+            },
+            animate: {
+              rotate: [-3, -33, -25, -28],
+              transition: {
+                duration: 0.6,
+                times: [0, 0.6, 0.8, 1],
+                ease: 'easeInOut',
+              },
+            },
+          }}
+          style={{ originX: 0.3, originY: 0.7 }}
+        >
+          <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4" />
+          <path d="m21 2-9.6 9.6" />
+          <circle cx="7.5" cy="15.5" r="5.5" />
+        </motion.svg>
       </div>
     );
   }
 );
 
-WavesLadderIcon.displayName = 'WavesLadderIcon';
-export { WavesLadderIcon };
+KeyIcon.displayName = 'KeyIcon';
+
+export { KeyIcon };

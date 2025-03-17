@@ -100,6 +100,7 @@ const WavesIcon = forwardRef<WavesIconHandle, WavesIconProps>(
               animate: {
                 pathLength: [0, 1],
                 transition: { duration: 0.4, ease: 'linear' },
+
               },
             }}
             animate={controls}
