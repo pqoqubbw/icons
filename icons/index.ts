@@ -42,7 +42,7 @@ import { LinkIcon } from '@/icons/link';
 import { MenuIcon } from '@/icons/menu';
 import { PartyPopperIcon } from '@/icons/party-popper';
 import { PenToolIcon } from '@/icons/pen-tool';
-import { RefreshIcon } from '@/icons/refresh';
+import { RefreshCCWIcon } from '@/icons/refresh-ccw';
 import { RouteIcon } from '@/icons/route';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SettingsIcon } from '@/icons/settings';
@@ -698,8 +698,8 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: 'refresh',
-    icon: RefreshIcon,
+    name: 'refresh-ccw',
+    icon: RefreshCCWIcon,
     keywords: [
       'arrows',
       'rotate',
