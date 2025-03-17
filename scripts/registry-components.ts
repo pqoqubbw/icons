@@ -1347,5 +1347,23 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/boxes.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo-dot',
+    'path': path.join(__dirname, '../icons/redo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo',
+    'path': path.join(__dirname, '../icons/redo.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'undo-dot',
+    'path': path.join(__dirname, '../icons/undo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];
