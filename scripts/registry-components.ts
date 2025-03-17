@@ -1335,5 +1335,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/rotate-cw.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
