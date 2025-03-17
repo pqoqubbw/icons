@@ -218,6 +218,7 @@ import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
+import { RefreshCWIcon } from '@/icons/refresh-cw';
 
 type IconListItem = {
   name: string;
@@ -231,6 +232,11 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  {
+    name: 'refresh-cw',
+    icon: RefreshCWIcon,
+    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  }, 
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
