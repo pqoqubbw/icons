@@ -15,7 +15,7 @@ interface RotateCWIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const RotateCWIcon = forwardRef<RotateCWIconHandle, RotateCWIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
