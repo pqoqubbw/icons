@@ -215,6 +215,7 @@ import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 import { RotateCWIcon } from '@/icons/rotate-cw'; 
+import { RotateCCWIcon } from '@/icons/rotate-ccw';
 
 type IconListItem = {
   name: string;
@@ -233,6 +234,11 @@ const ICON_LIST: IconListItem[] = [
     icon: RotateCWIcon,
     keywords: ['rotate', 'clockwise', 'turn', 'degrees', 'degrees', 'clockwise', 'counterclockwise'],
   }, 
+  {
+    name: 'rotate-ccw',
+    icon: RotateCCWIcon,  
+    keywords: ['rotate', 'counterclockwise', 'turn', 'degrees', 'degrees', 'clockwise', 'counterclockwise'],
+  },
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
