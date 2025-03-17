@@ -42,7 +42,7 @@ import { LinkIcon } from '@/icons/link';
 import { MenuIcon } from '@/icons/menu';
 import { PartyPopperIcon } from '@/icons/party-popper';
 import { PenToolIcon } from '@/icons/pen-tool';
-import { RefreshIcon } from '@/icons/refresh';
+import { RefreshCCWIcon } from '@/icons/refresh-ccw';
 import { RouteIcon } from '@/icons/route';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SettingsIcon } from '@/icons/settings';
@@ -218,6 +218,9 @@ import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
+import { RefreshCWIcon } from '@/icons/refresh-cw';
+import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
+import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
 import { RedoIcon } from '@/icons/redo';
 import { UndoDotIcon } from '@/icons/undo-dot';
 import { RedoDotIcon } from '@/icons/redo-dot';
@@ -233,6 +236,21 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'refresh-cw-off',
+    icon: RefreshCWOffIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-cw',
+    icon: RefreshCWIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-ccw-dot',
+    icon: RefreshCCWDotIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
   },
   {
     name: 'redo',
@@ -704,8 +722,8 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: 'refresh',
-    icon: RefreshIcon,
+    name: 'refresh-ccw',
+    icon: RefreshCCWIcon,
     keywords: [
       'arrows',
       'rotate',
