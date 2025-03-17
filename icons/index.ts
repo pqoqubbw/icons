@@ -199,6 +199,12 @@ import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { WavesIcon } from '@/icons/waves';
+import { WavesLadderIcon } from './waves-ladder';
+import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
+import { SquareArrowLeftIcon } from '@/icons/square-arrow-left';
+import { SquareArrowUpIcon } from '@/icons/square-arrow-up';
+import { SquareArrowRightIcon } from '@/icons/square-arrow-right';
 import { BlocksIcon } from '@/icons/blocks';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -243,6 +249,27 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   {
+    name: 'square-arrow-down',
+    icon: SquareArrowDownIcon,
+    keywords: ['arrow', 'down', 'a'],
+  },
+  {
+    name: 'square-arrow-left',
+    icon: SquareArrowLeftIcon,
+    keywords: ['arrow', 'left', 'a'],
+  },
+  {
+    name: 'square-arrow-right',
+    icon: SquareArrowRightIcon,
+    keywords: ['arrow', 'right', 'a'],
+  },
+  {
+    name: 'square-arrow-up',
+    icon: SquareArrowUpIcon,
+    keywords: ['arrow', 'up', 'a'],
+  },
+  {
+    name: 'arrow-big-down',
     name: 'key',
     icon: KeyIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
@@ -372,6 +399,16 @@ const ICON_LIST: IconListItem[] = [
       'haptic feedback',
       'screen',
     ],
+  },
+  {
+    name: 'waves-ladder',
+    icon: WavesLadderIcon,
+    keywords: ['waves', 'ladder', 'water', 'ocean', 'sea'],
+  },
+  {
+    name: 'waves',
+    icon: WavesIcon,
+    keywords: ['waves', 'water', 'ocean', 'sea', 'wave', 'sea wave'],
   },
   {
     name: 'wind-arrow-down',
