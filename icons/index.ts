@@ -219,6 +219,7 @@ import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
 import { RefreshCWIcon } from '@/icons/refresh-cw';
+import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
 
 type IconListItem = {
   name: string;
@@ -235,6 +236,11 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'refresh-cw',
     icon: RefreshCWIcon,
+    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  }, 
+  {
+    name: 'refresh-ccw-dot',
+    icon: RefreshCCWDotIcon,
     keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'],
   }, 
   {
