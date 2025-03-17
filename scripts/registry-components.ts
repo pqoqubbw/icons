@@ -1365,5 +1365,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/undo-dot.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

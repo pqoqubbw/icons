@@ -238,17 +238,17 @@ const ICON_LIST: IconListItem[] = [
     name: 'redo',
     icon: RedoIcon,
     keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
-  }, 
+  },
   {
     name: 'undo-dot',
     icon: UndoDotIcon,
     keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
-  }, 
+  },
   {
     name: 'redo-dot',
     icon: RedoDotIcon,
     keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
-  }, 
+  },
   {
     name: 'arrow-big-down',
     icon: ArrowBigDownIcon,
