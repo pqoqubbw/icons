@@ -223,6 +223,7 @@ import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
 import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
+import { SquareActivityIcon } from '@/icons/square-activity';
 import { RotateCWIcon } from '@/icons/rotate-cw';
 import { RotateCCWIcon } from '@/icons/rotate-ccw';
 import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
@@ -248,6 +249,7 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
     name: 'square-arrow-down',
     icon: SquareArrowDownIcon,
