@@ -220,6 +220,7 @@ import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
 import { RefreshCWIcon } from '@/icons/refresh-cw';
 import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
+import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
 
 type IconListItem = {
   name: string;
@@ -233,6 +234,11 @@ const ICON_LIST: IconListItem[] = [
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
+  {
+    name: 'refresh-cw-off',
+    icon: RefreshCWOffIcon,
+    keywords: ['refresh','rotate', 'reload', 'rerun', 'circular', 'cycle'], 
+  }, 
   {
     name: 'refresh-cw',
     icon: RefreshCWIcon,
