@@ -220,6 +220,7 @@ import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
 import { RedoIcon } from '@/icons/redo';
 import { UndoDotIcon } from '@/icons/undo-dot';
+import { RedoDotIcon } from '@/icons/redo-dot';
 
 type IconListItem = {
   name: string;
@@ -242,6 +243,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'undo-dot',
     icon: UndoDotIcon,
     keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
+  }, 
+  {
+    name: 'redo-dot',
+    icon: RedoDotIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
   }, 
   {
     name: 'arrow-big-down',
