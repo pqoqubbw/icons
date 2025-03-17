@@ -689,12 +689,6 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'refresh',
-    'path': path.join(__dirname, '../icons/refresh.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
     'name': 'rocket',
     'path': path.join(__dirname, '../icons/rocket.tsx'),
     'registryDependencies': [],
@@ -1359,6 +1353,47 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/boxes.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    'name': 'refresh-ccw-dot',
+    'path': path.join(__dirname, '../icons/refresh-ccw-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo-dot',
+    'path': path.join(__dirname, '../icons/redo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-ccw',
+    'path': path.join(__dirname, '../icons/refresh-ccw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo',
+    'path': path.join(__dirname, '../icons/redo.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-cw-off',
+    'path': path.join(__dirname, '../icons/refresh-cw-off.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-cw',
+    'path': path.join(__dirname, '../icons/refresh-cw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'undo-dot',
+    'path': path.join(__dirname, '../icons/undo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
-

@@ -42,7 +42,7 @@ import { LinkIcon } from '@/icons/link';
 import { MenuIcon } from '@/icons/menu';
 import { PartyPopperIcon } from '@/icons/party-popper';
 import { PenToolIcon } from '@/icons/pen-tool';
-import { RefreshIcon } from '@/icons/refresh';
+import { RefreshCCWIcon } from '@/icons/refresh-ccw';
 import { RouteIcon } from '@/icons/route';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SettingsIcon } from '@/icons/settings';
@@ -220,6 +220,12 @@ import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
 import { UserCheckIcon } from '@/icons/user-check';
 import { UserRoundCheckIcon } from '@/icons/user-round-check';
 import { BoxesIcon } from '@/icons/boxes';
+import { RefreshCWIcon } from '@/icons/refresh-cw';
+import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
+import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
+import { RedoIcon } from '@/icons/redo';
+import { UndoDotIcon } from '@/icons/undo-dot';
+import { RedoDotIcon } from '@/icons/redo-dot';
 
 type IconListItem = {
   name: string;
@@ -258,6 +264,36 @@ const ICON_LIST: IconListItem[] = [
       'clockwise',
       'counterclockwise',
     ],
+  },
+  {
+    name: 'refresh-cw-off',
+    icon: RefreshCWOffIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-cw',
+    icon: RefreshCWIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-ccw-dot',
+    icon: RefreshCCWDotIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'redo',
+    icon: RedoIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'undo-dot',
+    icon: UndoDotIcon,
+    keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'redo-dot',
+    icon: RedoDotIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
   },
   {
     name: 'arrow-big-down',
@@ -714,8 +750,8 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: 'refresh',
-    icon: RefreshIcon,
+    name: 'refresh-ccw',
+    icon: RefreshCCWIcon,
     keywords: [
       'arrows',
       'rotate',
