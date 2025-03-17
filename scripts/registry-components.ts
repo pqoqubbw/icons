@@ -689,12 +689,6 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'refresh',
-    'path': path.join(__dirname, '../icons/refresh.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
     'name': 'rocket',
     'path': path.join(__dirname, '../icons/rocket.tsx'),
     'registryDependencies': [],
@@ -1231,6 +1225,43 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'arrow-big-down-dash',
     'path': path.join(__dirname, '../icons/arrow-big-down-dash.tsx'),
+
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+      {
+    'name': 'waves-ladder',
+    'path': path.join(__dirname, '../icons/waves-ladder.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'waves',
+    'path': path.join(__dirname, '../icons/waves.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'square-arrow-down',
+    'path': path.join(__dirname, '../icons/square-arrow-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'square-arrow-left',
+    'path': path.join(__dirname, '../icons/square-arrow-left.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'square-arrow-right',
+    'path': path.join(__dirname, '../icons/square-arrow-right.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'square-arrow-up',
+    'path': path.join(__dirname, '../icons/square-arrow-up.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1337,6 +1368,18 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'rotate-ccw',
+    'path': path.join(__dirname, '../icons/rotate-ccw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'rotate-cw',
+    'path': path.join(__dirname, '../icons/rotate-cw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'user-check',
     'path': path.join(__dirname, '../icons/user-check.tsx'),
     'registryDependencies': [],
@@ -1351,6 +1394,66 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'boxes',
     'path': path.join(__dirname, '../icons/boxes.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-ccw-dot',
+    'path': path.join(__dirname, '../icons/refresh-ccw-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo-dot',
+    'path': path.join(__dirname, '../icons/redo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-ccw',
+    'path': path.join(__dirname, '../icons/refresh-ccw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'redo',
+    'path': path.join(__dirname, '../icons/redo.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-cw-off',
+    'path': path.join(__dirname, '../icons/refresh-cw-off.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'refresh-cw',
+    'path': path.join(__dirname, '../icons/refresh-cw.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'undo-dot',
+    'path': path.join(__dirname, '../icons/undo-dot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'key-circle',
+    'path': path.join(__dirname, '../icons/key-circle.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'key-square',
+    'path': path.join(__dirname, '../icons/key-square.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'key',
+    'path': path.join(__dirname, '../icons/key.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   }
