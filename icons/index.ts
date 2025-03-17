@@ -271,7 +271,6 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['arrow', 'up', 'a'],
   },
   {
-    name: 'arrow-big-down',
     name: 'key',
     icon: KeyIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
