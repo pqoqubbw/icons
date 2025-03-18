@@ -1114,4 +1114,34 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'apple',
+    'path': path.join(__dirname, '../icons/apple.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cherry',
+    'path': path.join(__dirname, '../icons/cherry.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'citrus',
+    'path': path.join(__dirname, '../icons/citrus.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'grape',
+    'path': path.join(__dirname, '../icons/grape.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'vegan',
+    'path': path.join(__dirname, '../icons/vegan.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
