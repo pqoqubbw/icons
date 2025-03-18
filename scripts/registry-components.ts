@@ -1143,5 +1143,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/vegan.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

@@ -69,17 +69,93 @@ const GrapeIcon = forwardRef<GrapeIconHandle, GrapeIconProps>(
             animate={controls}
             variants={{
               normal: { pathLength: 1, opacity: 1 },
-              animate: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.3 } },
+              animate: {
+                pathLength: [0, 1],
+                opacity: [0, 1],
+                transition: { duration: 0.3 },
+              },
             }}
           />
-          <motion.circle cx="16.6" cy="15.89" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.3 } } }} />
-          <motion.circle cx="8.11" cy="7.4" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.4 } } }} />
-          <motion.circle cx="12.35" cy="11.65" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.5 } } }} />
-          <motion.circle cx="13.91" cy="5.85" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.6 } } }} />
-          <motion.circle cx="18.15" cy="10.09" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.7 } } }} />
-          <motion.circle cx="6.56" cy="13.2" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.8 } } }} />
-          <motion.circle cx="10.8" cy="17.44" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 0.9 } } }} />
-          <motion.circle cx="5" cy="19" r="3" animate={controls} variants={{ normal: { opacity: 1 }, animate: { opacity: [0, 1], transition: { delay: 1 } } }} />
+          <motion.circle
+            cx="16.6"
+            cy="15.89"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.3 } },
+            }}
+          />
+          <motion.circle
+            cx="8.11"
+            cy="7.4"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.4 } },
+            }}
+          />
+          <motion.circle
+            cx="12.35"
+            cy="11.65"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.5 } },
+            }}
+          />
+          <motion.circle
+            cx="13.91"
+            cy="5.85"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.6 } },
+            }}
+          />
+          <motion.circle
+            cx="18.15"
+            cy="10.09"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.7 } },
+            }}
+          />
+          <motion.circle
+            cx="6.56"
+            cy="13.2"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.8 } },
+            }}
+          />
+          <motion.circle
+            cx="10.8"
+            cy="17.44"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 0.9 } },
+            }}
+          />
+          <motion.circle
+            cx="5"
+            cy="19"
+            r="3"
+            animate={controls}
+            variants={{
+              normal: { opacity: 1 },
+              animate: { opacity: [0, 1], transition: { delay: 1 } },
+            }}
+          />
         </svg>
       </div>
     );

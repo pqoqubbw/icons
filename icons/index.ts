@@ -182,7 +182,7 @@ import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { AppleIcon } from '@/icons/apple';
-import { CherryIcon } from '@/icons/cherry';  
+import { CherryIcon } from '@/icons/cherry';
 import { GrapeIcon } from '@/icons/grape';
 import { CitrusIcon } from '@/icons/citrus';
 import { VeganIcon } from '@/icons/vegan';
@@ -222,28 +222,28 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'apple',
     icon: AppleIcon,
-    keywords: ['fruit', 'apple', 'healthy', 'food'],        
-  }, 
+    keywords: ['fruit', 'apple', 'healthy', 'food'],
+  },
   {
     name: 'cherry',
     icon: CherryIcon,
-    keywords: ['fruit', 'cherry', 'healthy', 'food'],        
-  },  
+    keywords: ['fruit', 'cherry', 'healthy', 'food'],
+  },
   {
     name: 'grape',
     icon: GrapeIcon,
-    keywords: ['fruit', 'grape', 'healthy', 'food'],  
-  }, 
+    keywords: ['fruit', 'grape', 'healthy', 'food'],
+  },
   {
-    name: 'citrus', 
-    icon: CitrusIcon, 
-    keywords: ['fruit', 'citrus', 'healthy', 'food'],       
-  }, 
+    name: 'citrus',
+    icon: CitrusIcon,
+    keywords: ['fruit', 'citrus', 'healthy', 'food'],
+  },
   {
-    name: 'vegan',  
+    name: 'vegan',
     icon: VeganIcon,
-    keywords: ['vegan', 'healthy', 'food', 'plant', 'vegetarian'], 
-  }, 
+    keywords: ['vegan', 'healthy', 'food', 'plant', 'vegetarian'],
+  },
   {
     name: 'a-arrow-up',
     icon: AArrowUpIcon,

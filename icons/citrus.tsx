@@ -69,7 +69,11 @@ const CitrusIcon = forwardRef<CitrusIconHandle, CitrusIconProps>(
             animate={controls}
             variants={{
               normal: { pathLength: 1, opacity: 1 },
-              animate: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.6 } },
+              animate: {
+                pathLength: [0, 1],
+                opacity: [0, 1],
+                transition: { duration: 0.6 },
+              },
             }}
           />
           <motion.path
@@ -77,7 +81,11 @@ const CitrusIcon = forwardRef<CitrusIconHandle, CitrusIconProps>(
             animate={controls}
             variants={{
               normal: { pathLength: 1, opacity: 1 },
-              animate: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 0.6 } },
+              animate: {
+                pathLength: [0, 1],
+                opacity: [0, 1],
+                transition: { duration: 0.4, delay: 0.6 },
+              },
             }}
           />
           <motion.path
@@ -85,7 +93,11 @@ const CitrusIcon = forwardRef<CitrusIconHandle, CitrusIconProps>(
             animate={controls}
             variants={{
               normal: { pathLength: 1, opacity: 1 },
-              animate: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.3, delay: 0.8 } },
+              animate: {
+                pathLength: [0, 1],
+                opacity: [0, 1],
+                transition: { duration: 0.3, delay: 0.8 },
+              },
             }}
           />
           <motion.path
@@ -93,7 +105,11 @@ const CitrusIcon = forwardRef<CitrusIconHandle, CitrusIconProps>(
             animate={controls}
             variants={{
               normal: { pathLength: 1, opacity: 1 },
-              animate: { pathLength: [0, 1], opacity: [0, 1], transition: { duration: 0.4, delay: 1 } },
+              animate: {
+                pathLength: [0, 1],
+                opacity: [0, 1],
+                transition: { duration: 0.4, delay: 1 },
+              },
             }}
           />
         </svg>

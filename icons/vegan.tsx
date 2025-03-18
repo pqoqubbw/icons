@@ -50,7 +50,7 @@ const pathVariantsLeftToRight: Variants = {
   animate: {
     opacity: [0, 1],
     pathLength: [0, 1],
-    pathOffset: [0, 1], 
+    pathOffset: [0, 1],
     transition: {
       duration: 0.6,
       ease: 'linear',
