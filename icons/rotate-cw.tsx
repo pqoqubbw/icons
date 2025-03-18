@@ -1,44 +1,26 @@
 'use client';
 
-import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface RotateCWIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface RotateCWIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
-  normal: {
-    pathLength: 1,
-    opacity: 1,
-  },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
-    },
-  },
-};
-
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
+const RotateCWIcon = forwardRef<RotateCWIconHandle, RotateCWIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -47,22 +29,16 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
-          onMouseEnter?.(e);
-        }
+        if (!isControlledRef.current) controls.start('animate');
+        else onMouseEnter?.(e);
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
-          onMouseLeave?.(e);
-        }
+        if (!isControlledRef.current) controls.start('normal');
+        else onMouseLeave?.(e);
       },
       [controls, onMouseLeave]
     );
@@ -70,14 +46,14 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
           className
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -87,19 +63,21 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          transition={{ type: 'spring', stiffness: 250, damping: 25 }}
+          variants={{
+            normal: { rotate: '0deg' },
+            animate: { rotate: '50deg' },
+          }}
+          animate={controls}
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-          <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"
-            variants={variants}
-            animate={controls}
-          />
-        </svg>
+          <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+          <path d="M21 3v5h-5" />
+        </motion.svg>
       </div>
     );
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
+RotateCWIcon.displayName = 'RotateCWIcon';
 
-export { ChartSplineIcon };
+export { RotateCWIcon };

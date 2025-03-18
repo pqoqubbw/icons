@@ -1,0 +1,21 @@
+{
+  "name": "gallery-horizontal-end",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "gallery-horizontal-end.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface GalleryHorizontalEndIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface GalleryHorizontalEndIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst pathVariants: Variants = {\n  normal: {\n    translateX: 0,\n    opacity: 1,\n    transition: {\n      type: 'tween',\n      stiffness: 200,\n      damping: 13,\n    },\n  },\n  animate: (i: number) => ({\n    translateX: [2 * i, 0],\n    opacity: [0, 1],\n    transition: {\n      delay: 0.25 * (2 - i),\n      type: 'tween',\n      stiffness: 200,\n      damping: 13,\n    },\n  }),\n};\n\nconst GalleryHorizontalEndIcon = forwardRef<\n  GalleryHorizontalEndIconHandle,\n  GalleryHorizontalEndIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n\n    return {\n      startAnimation: () => controls.start('animate'),\n      stopAnimation: () => controls.start('normal'),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('animate');\n      } else {\n        onMouseEnter?.(e);\n      }\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('normal');\n      } else {\n        onMouseLeave?.(e);\n      }\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(\n        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\n        className\n      )}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.path\n          d=\"M6 5v14\"\n          variants={pathVariants}\n          animate={controls}\n          custom={2}\n        />\n        <motion.path\n          d=\"M2 7v10\"\n          variants={pathVariants}\n          animate={controls}\n          custom={1}\n        />\n        <rect width=\"12\" height=\"18\" x=\"10\" y=\"3\" rx=\"2\" />\n      </svg>\n    </div>\n  );\n});\n\nGalleryHorizontalEndIcon.displayName = 'GalleryHorizontalEndIcon';\n\nexport { GalleryHorizontalEndIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

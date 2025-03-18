@@ -1,0 +1,21 @@
+{
+  "name": "key-circle",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "key-circle.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface KeyIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface KeyIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst KeyCircleIcon = forwardRef<KeyIconHandle, KeyIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(\n          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\n          className\n        )}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <motion.svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          variants={{\n            normal: { y: 0, rotate: 0 },\n            animate: {\n              y: [0, -3, 0, -2, 0],\n              rotate: [0, 3, -3, 0],\n            },\n          }}\n          transition={{\n            duration: 0.9,\n            bounce: 0.5,\n          }}\n          animate={controls}\n        >\n          <path d=\"M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z\" />\n          <circle cx=\"16.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />\n        </motion.svg>\n      </div>\n    );\n  }\n);\n\nKeyCircleIcon.displayName = 'KeyCircleIcon';\n\nexport { KeyCircleIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -47,12 +47,14 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
               exit: { y: 15, opacity: 0 },
             }}
           >
-            {icons.map((icon) => (
-              <span key={icon.name} className="shrink-0">
-                {icon.name}.json
-                <span className="text-muted-foreground">&quot;</span>
-              </span>
-            ))}
+            {icons
+              .filter((icon) => icon.name.length <= 25)
+              .map((icon) => (
+                <span key={icon.name} className="shrink-0">
+                  {icon.name}.json
+                  <span className="text-muted-foreground">&quot;</span>
+                </span>
+              ))}
           </TextLoop>
         </div>
       </div>

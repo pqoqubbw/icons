@@ -1,44 +1,26 @@
 'use client';
 
-import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface WavesLadderIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface WavesLadderIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
-  normal: {
-    pathLength: 1,
-    opacity: 1,
-  },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
-    },
-  },
-};
-
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
+const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -47,22 +29,16 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
-          onMouseEnter?.(e);
-        }
+        if (!isControlledRef.current) controls.start('animate');
+        onMouseEnter?.(e);
       },
       [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
-          onMouseLeave?.(e);
-        }
+        if (!isControlledRef.current) controls.start('normal');
+        onMouseLeave?.(e);
       },
       [controls, onMouseLeave]
     );
@@ -88,18 +64,29 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-          <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"
-            variants={variants}
+          <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+          <motion.g
+            initial={{ y: 0, opacity: 1 }}
+            variants={{
+              normal: { y: 0, opacity: 1 },
+              animate: {
+                y: [13, 0],
+                opacity: [0, 0, 1],
+                transition: { duration: 1, times: [0, 0.5, 1], repeat: 0 },
+              },
+            }}
             animate={controls}
-          />
+          >
+            <path d="M19 5a2 2 0 0 0-2 2v11" />
+            <path d="M7 13h10" />
+            <path d="M7 9h10" />
+            <path d="M9 5a2 2 0 0 0-2 2v11" />
+          </motion.g>
         </svg>
       </div>
     );
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
-
-export { ChartSplineIcon };
+WavesLadderIcon.displayName = 'WavesLadderIcon';
+export { WavesLadderIcon };

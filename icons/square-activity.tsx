@@ -1,44 +1,63 @@
 'use client';
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface ActivityIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ActivityIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const pathVariants: Variants = {
   normal: {
-    pathLength: 1,
     opacity: 1,
+    pathLength: 1,
+    pathOffset: 0,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
   },
   animate: {
-    pathLength: [0, 1],
     opacity: [0, 1],
+    pathLength: [0, 1],
+    pathOffset: [1, 0],
     transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
+      duration: 0.6,
+      ease: 'linear',
+      opacity: { duration: 0.1 },
     },
   },
 };
 
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
+const squareVariants: Variants = {
+  normal: {
+    transition: {
+      duration: 0.4,
+    },
+  },
+  animate: {
+    transition: {
+      duration: 0.6,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const SquareActivityIcon = forwardRef<ActivityIconHandle, ActivityIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -88,11 +107,21 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-          <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"
-            variants={variants}
+          <motion.rect
+            width="18"
+            height="18"
+            x="3"
+            y="3"
+            rx="2"
+            variants={squareVariants}
             animate={controls}
+            initial="normal"
+          />
+          <motion.path
+            variants={pathVariants}
+            animate={controls}
+            initial="normal"
+            d="M17 12h-2l-2 5-2-10-2 5H7"
           />
         </svg>
       </div>
@@ -100,6 +129,6 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
+SquareActivityIcon.displayName = 'SquareActivityIcon';
 
-export { ChartSplineIcon };
+export { SquareActivityIcon };

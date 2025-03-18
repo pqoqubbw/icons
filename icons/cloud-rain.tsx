@@ -6,39 +6,44 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface ChartSplineIconHandle {
+export interface CloudRainIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartSplineIconProps extends HTMLAttributes<HTMLDivElement> {
+interface CloudRainIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
-  normal: {
-    pathLength: 1,
-    opacity: 1,
-  },
+const rainVariants: Variants = {
   animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
     transition: {
-      delay: 0.15,
-      duration: 0.3,
-      opacity: { delay: 0.1 },
+      staggerChildren: 0.2,
     },
   },
 };
 
-const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
-  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+const rainChildVariants: Variants = {
+  normal: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: [1, 0.2, 1],
+    transition: {
+      duration: 1,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const CloudRainIcon = forwardRef<CloudRainIconHandle, CloudRainIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 24, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -88,18 +93,20 @@ const ChartSplineIcon = forwardRef<ChartSplineIconHandle, ChartSplineIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-          <motion.path
-            d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"
-            variants={variants}
-            animate={controls}
-          />
+          {/* Cloud - static */}
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+          {/* Rain lines - opacity animation */}
+          <motion.g variants={rainVariants} animate={controls} initial="normal">
+            <motion.path variants={rainChildVariants} d="M16 14v6" />
+            <motion.path variants={rainChildVariants} d="M8 14v6" />
+            <motion.path variants={rainChildVariants} d="M12 16v6" />
+          </motion.g>
         </svg>
       </div>
     );
   }
 );
 
-ChartSplineIcon.displayName = 'ChartSplineIcon';
+CloudRainIcon.displayName = 'CloudRainIcon';
 
-export { ChartSplineIcon };
+export { CloudRainIcon };

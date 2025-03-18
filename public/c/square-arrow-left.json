@@ -1,0 +1,21 @@
+{
+  "name": "square-arrow-left",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "square-arrow-left.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'framer-motion';\nimport { motion, useAnimation } from 'framer-motion';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface SquareArrowLeftIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface SquareArrowLeftIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst squareVariants: Variants = {\n  normal: { transition: { duration: 0.4 } },\n  animate: { transition: { duration: 0.6, ease: 'easeInOut' } },\n};\n\nconst pathVariants: Variants = {\n  normal: { d: 'm12 8-4 4 4 4', translateX: 0, opacity: 1 },\n  animate: {\n    d: 'm12 8-4 4 4 4',\n    translateX: [0, 3, 0],\n    transition: { duration: 0.4 },\n  },\n};\n\nconst secondPathVariants: Variants = {\n  normal: { d: 'M16 12H8', opacity: 1 },\n  animate: {\n    d: ['M16 12H8', 'M16 12H13', 'M16 12H8'],\n    transition: { duration: 0.4 },\n  },\n};\n\nconst SquareArrowLeftIcon = forwardRef<\n  SquareArrowLeftIconHandle,\n  SquareArrowLeftIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n    return {\n      startAnimation: () => controls.start('animate'),\n      stopAnimation: () => controls.start('normal'),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) controls.start('animate');\n      else onMouseEnter?.(e);\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) controls.start('normal');\n      else onMouseLeave?.(e);\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(\n        `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\n        className\n      )}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.rect\n          width=\"18\"\n          height=\"18\"\n          x=\"3\"\n          y=\"3\"\n          rx=\"2\"\n          variants={squareVariants}\n          animate={controls}\n          initial=\"normal\"\n        />\n        <motion.path\n          variants={pathVariants}\n          animate={controls}\n          initial=\"normal\"\n          d=\"m12 8-4 4 4 4\"\n        />\n        <motion.path\n          variants={secondPathVariants}\n          animate={controls}\n          initial=\"normal\"\n          d=\"M16 12H8\"\n        />\n      </svg>\n    </div>\n  );\n});\n\nSquareArrowLeftIcon.displayName = 'SquareArrowLeftIcon';\n\nexport { SquareArrowLeftIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
