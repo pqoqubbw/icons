@@ -183,6 +183,7 @@ import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { AppleIcon } from '@/icons/apple';
 import { CherryIcon } from '@/icons/cherry';  
+import { GrapeIcon } from '@/icons/grape';
 
 type IconListItem = {
   name: string;
@@ -226,6 +227,11 @@ const ICON_LIST: IconListItem[] = [
     icon: CherryIcon,
     keywords: ['fruit', 'cherry', 'healthy', 'food'],        
   },  
+  {
+    name: 'grape',
+    icon: GrapeIcon,
+    keywords: ['fruit', 'grape', 'healthy', 'food'],  
+  },
   {
     name: 'a-arrow-up',
     icon: AArrowUpIcon,
