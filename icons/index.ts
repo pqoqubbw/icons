@@ -253,8 +253,8 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'history',
     icon: HistoryIcon,
-    keywords: ['history', 'back', 'previous', 'arrow']
-  }, 
+    keywords: ['history', 'back', 'previous', 'arrow'],
+  },
   { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
     name: 'square-arrow-down',

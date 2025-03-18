@@ -26,7 +26,7 @@ const arrowVariants: Variants = {
     rotate: '0deg',
   },
   animate: {
-    rotate: '-50deg', 
+    rotate: '-50deg',
   },
 };
 
@@ -42,7 +42,7 @@ const handVariants: Variants = {
     originY: '50%',
   },
   animate: {
-    rotate: -360, 
+    rotate: -360,
   },
 };
 
@@ -58,7 +58,7 @@ const minuteHandVariants: Variants = {
     originY: '50%',
   },
   animate: {
-    rotate: -45, 
+    rotate: -45,
   },
 };
 
@@ -123,8 +123,8 @@ const HistoryIcon = forwardRef<HistoryIconHandle, HistoryIconProps>(
             variants={arrowVariants}
             animate={controls}
           >
-            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-            <path d="M3 3v5h5"/>
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
           </motion.g>
           <motion.line
             x1="12"
