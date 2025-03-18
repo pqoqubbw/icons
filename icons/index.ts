@@ -185,6 +185,7 @@ import { AppleIcon } from '@/icons/apple';
 import { CherryIcon } from '@/icons/cherry';  
 import { GrapeIcon } from '@/icons/grape';
 import { CitrusIcon } from '@/icons/citrus';
+import { VeganIcon } from '@/icons/vegan';
 
 type IconListItem = {
   name: string;
@@ -237,7 +238,12 @@ const ICON_LIST: IconListItem[] = [
     name: 'citrus', 
     icon: CitrusIcon, 
     keywords: ['fruit', 'citrus', 'healthy', 'food'],       
-  },
+  }, 
+  {
+    name: 'vegan',  
+    icon: VeganIcon,
+    keywords: ['vegan', 'healthy', 'food', 'plant', 'vegetarian'], 
+  }, 
   {
     name: 'a-arrow-up',
     icon: AArrowUpIcon,
