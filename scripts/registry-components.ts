@@ -1470,4 +1470,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'history',
+    'path': path.join(__dirname, '../icons/history.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
