@@ -241,6 +241,7 @@ import { FrownIcon } from '@/icons/frown';
 import { SmilePlusIcon } from '@/icons/smile-plus'; 
 import { SmileIcon } from '@/icons/smile';
 import { LaughIcon } from '@/icons/laugh';
+import { AnnoyedIcon } from '@/icons/annoyed';
 
 type IconListItem = {
   name: string;
@@ -280,6 +281,7 @@ const ICON_LIST: IconListItem[] = [
   { name: 'smile-plus', icon: SmilePlusIcon, keywords: ['smile', 'plus', 'emotion', 'face'] },
   { name: 'smile', icon: SmileIcon, keywords: ['smile', 'emotion', 'face'] },
   { name: 'laugh', icon: LaughIcon, keywords: ['laugh', 'emotion', 'face'] },
+  { name: 'annoyed', icon: AnnoyedIcon, keywords: ['annoyed', 'emotion', 'face'] },
   {
     name: 'key',
     icon: KeyIcon,
