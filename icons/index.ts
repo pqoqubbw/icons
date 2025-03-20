@@ -236,6 +236,7 @@ import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
 import { RedoIcon } from '@/icons/redo';
 import { UndoDotIcon } from '@/icons/undo-dot';
 import { RedoDotIcon } from '@/icons/redo-dot';
+import { SmilePlusIcon } from '@/icons/smile-plus'; 
 
 type IconListItem = {
   name: string;
@@ -270,6 +271,8 @@ const ICON_LIST: IconListItem[] = [
     icon: SquareArrowUpIcon,
     keywords: ['arrow', 'up', 'a'],
   },
+
+  { name: 'smile-plus', icon: SmilePlusIcon, keywords: ['smile', 'plus', 'emotion', 'face'] },
   {
     name: 'key',
     icon: KeyIcon,
