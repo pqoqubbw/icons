@@ -239,6 +239,7 @@ import { RedoDotIcon } from '@/icons/redo-dot';
 import { ScanFaceIcon } from '@/icons/scan-face';
 import { FrownIcon } from '@/icons/frown';
 import { SmilePlusIcon } from '@/icons/smile-plus'; 
+import { SmileIcon } from '@/icons/smile';
 
 type IconListItem = {
   name: string;
@@ -276,6 +277,7 @@ const ICON_LIST: IconListItem[] = [
   { name: 'scan-face', icon: ScanFaceIcon, keywords: ['scan', 'face', 'emotion'] },
   { name: 'frown', icon: FrownIcon, keywords: ['frown', 'emotion', 'face', 'sad'] },
   { name: 'smile-plus', icon: SmilePlusIcon, keywords: ['smile', 'plus', 'emotion', 'face'] },
+  { name: 'smile', icon: SmileIcon, keywords: ['smile', 'emotion', 'face'] },
   {
     name: 'key',
     icon: KeyIcon,
