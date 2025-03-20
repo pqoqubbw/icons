@@ -236,6 +236,7 @@ import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
 import { RedoIcon } from '@/icons/redo';
 import { UndoDotIcon } from '@/icons/undo-dot';
 import { RedoDotIcon } from '@/icons/redo-dot';
+import { HistoryIcon } from '@/icons/history';
 
 type IconListItem = {
   name: string;
@@ -248,6 +249,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'history',
+    icon: HistoryIcon,
+    keywords: ['history', 'back', 'previous', 'arrow'],
   },
   { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
