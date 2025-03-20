@@ -236,6 +236,7 @@ import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
 import { RedoIcon } from '@/icons/redo';
 import { UndoDotIcon } from '@/icons/undo-dot';
 import { RedoDotIcon } from '@/icons/redo-dot';
+import { ScanFaceIcon } from '@/icons/scan-face';
 import { SmilePlusIcon } from '@/icons/smile-plus'; 
 
 type IconListItem = {
@@ -271,7 +272,7 @@ const ICON_LIST: IconListItem[] = [
     icon: SquareArrowUpIcon,
     keywords: ['arrow', 'up', 'a'],
   },
-
+  { name: 'scan-face', icon: ScanFaceIcon, keywords: ['scan', 'face', 'emotion'] },
   { name: 'smile-plus', icon: SmilePlusIcon, keywords: ['smile', 'plus', 'emotion', 'face'] },
   {
     name: 'key',
