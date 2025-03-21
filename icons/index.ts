@@ -243,6 +243,7 @@ import { SmileIcon } from '@/icons/smile';
 import { LaughIcon } from '@/icons/laugh';
 import { AnnoyedIcon } from '@/icons/annoyed';
 import { MehIcon } from '@/icons/meh';
+import { HistoryIcon } from '@/icons/history';
 
 type IconListItem = {
   name: string;
@@ -255,6 +256,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'history',
+    icon: HistoryIcon,
+    keywords: ['history', 'back', 'previous', 'arrow'],
   },
   { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
