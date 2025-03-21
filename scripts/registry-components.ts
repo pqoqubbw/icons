@@ -1511,5 +1511,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/smile.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];

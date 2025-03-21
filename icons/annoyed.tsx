@@ -45,72 +45,72 @@ const AnnoyedIcon = forwardRef<AnnoyedIconHandle, AnnoyedIconProps>(
     );
 
     const faceVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
-        fill: "transparent",
-        transition: { duration: 0.2, ease: "easeOut" } 
+        fill: 'transparent',
+        transition: { duration: 0.2, ease: 'easeOut' },
       },
       animate: {
         scale: 1.05,
-        fill: "rgba(255, 120, 120, 0.15)",
-        transition: { 
+        fill: 'rgba(255, 120, 120, 0.15)',
+        transition: {
           duration: 0.3,
-          ease: "easeOut" 
-        }
-      }
+          ease: 'easeOut',
+        },
+      },
     };
 
     const mouthVariants: Variants = {
-      normal: { 
-        scaleX: 1, 
+      normal: {
+        scaleX: 1,
         y: 0,
-        transition: { duration: 0.2, ease: "easeOut" } 
+        transition: { duration: 0.2, ease: 'easeOut' },
       },
       animate: {
         scaleX: 0.8,
         y: 1,
-        transition: { 
+        transition: {
           duration: 0.3,
-          ease: "easeOut"
-        }
-      }
+          ease: 'easeOut',
+        },
+      },
     };
 
     const leftEyebrowVariants: Variants = {
-      normal: { 
-        rotate: 0, 
+      normal: {
+        rotate: 0,
         y: 0,
         x: 0,
-        transition: { duration: 0.2, ease: "easeOut" } 
+        transition: { duration: 0.2, ease: 'easeOut' },
       },
       animate: {
         rotate: 15,
         y: -1,
         x: -0.5,
-        transition: { 
+        transition: {
           duration: 0.25,
-          ease: "easeOut" 
-        }
-      }
+          ease: 'easeOut',
+        },
+      },
     };
 
     const rightEyebrowVariants: Variants = {
-      normal: { 
-        rotate: 0, 
+      normal: {
+        rotate: 0,
         y: 0,
         x: 0,
-        transition: { duration: 0.2, ease: "easeOut" } 
+        transition: { duration: 0.2, ease: 'easeOut' },
       },
       animate: {
         rotate: 15,
         y: -1,
         x: 0.5,
-        transition: { 
+        transition: {
           duration: 0.25,
-          ease: "easeOut",
-          delay: 0.05
-        }
-      }
+          ease: 'easeOut',
+          delay: 0.05,
+        },
+      },
     };
 
     return (

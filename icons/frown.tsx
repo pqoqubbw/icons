@@ -45,77 +45,81 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
     );
 
     const faceVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         rotate: 0,
-        fill: "transparent",
-        transition: { duration: 0.3, ease: "easeOut" } 
+        fill: 'transparent',
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 1.15, 1.05, 1.08],
         rotate: [0, -2, 2, 0],
-        fill: ["transparent", "rgba(100, 100, 255, 0.1)", "rgba(100, 100, 255, 0.12)"],
-        transition: { 
+        fill: [
+          'transparent',
+          'rgba(100, 100, 255, 0.1)',
+          'rgba(100, 100, 255, 0.12)',
+        ],
+        transition: {
           duration: 0.8,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut" 
-        }
+          ease: 'easeInOut',
+        },
       },
     };
 
     const mouthVariants: Variants = {
-      normal: { 
-        d: "M16 16s-1.5-2-4-2-4 2-4 2",
+      normal: {
+        d: 'M16 16s-1.5-2-4-2-4 2-4 2',
         pathLength: 1,
-        transition: { duration: 0.3, ease: "easeOut" }
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
-        d: "M16 17s-1.5-2.5-4-2.5-4 2.5-4 2.5",
+        d: 'M16 17s-1.5-2.5-4-2.5-4 2.5-4 2.5',
         pathLength: [0.3, 1, 1],
-        transition: { 
-          d: { duration: 0.5, ease: "easeOut" },
-          pathLength: { 
-            duration: 0.5, 
+        transition: {
+          d: { duration: 0.5, ease: 'easeOut' },
+          pathLength: {
+            duration: 0.5,
             times: [0, 0.5, 1],
-            ease: "easeInOut"
+            ease: 'easeInOut',
           },
-          delay: 0.1
-        }
+          delay: 0.1,
+        },
       },
     };
-    
+
     const leftEyeVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         y: 0,
-        transition: { duration: 0.3, ease: "easeOut" } 
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 1.3, 0.9, 1.1],
         y: [0, -0.5, 0.3, 0],
-        transition: { 
+        transition: {
           duration: 0.6,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut" 
-        }
-      }
+          ease: 'easeInOut',
+        },
+      },
     };
-    
+
     const rightEyeVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         y: 0,
-        transition: { duration: 0.3, ease: "easeOut" } 
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 0.9, 1.3, 1.1],
         y: [0, -0.5, 0.3, 0],
-        transition: { 
+        transition: {
           duration: 0.6,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut" 
-        }
-      }
+          ease: 'easeInOut',
+        },
+      },
     };
 
     return (
@@ -149,19 +153,19 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
             initial="normal"
             d="M16 16s-1.5-2-4-2-4 2-4 2"
           />
-          <motion.line 
-            x1="9" 
-            x2="9.01" 
-            y1="9" 
+          <motion.line
+            x1="9"
+            x2="9.01"
+            y1="9"
             y2="9"
             variants={leftEyeVariants}
             animate={controls}
             initial="normal"
           />
-          <motion.line 
-            x1="15" 
-            x2="15.01" 
-            y1="9" 
+          <motion.line
+            x1="15"
+            x2="15.01"
+            y1="9"
             y2="9"
             variants={rightEyeVariants}
             animate={controls}
