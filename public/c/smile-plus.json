@@ -1,0 +1,21 @@
+{
+  "name": "smile-plus",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "smile-plus.tsx",
+      "content": "'use client';\r\n\r\nimport type { Variants } from 'motion/react';\r\nimport { motion, useAnimation } from 'motion/react';\r\nimport type { HTMLAttributes } from 'react';\r\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\r\nimport { cn } from '@/lib/utils';\r\n\r\nexport interface SmilePlusIconHandle {\r\n  startAnimation: () => void;\r\n  stopAnimation: () => void;\r\n}\r\n\r\ninterface SmilePlusIconProps extends HTMLAttributes<HTMLDivElement> {\r\n  size?: number;\r\n}\r\n\r\nconst SmilePlusIcon = forwardRef<SmilePlusIconHandle, SmilePlusIconProps>(\r\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\r\n    const controls = useAnimation();\r\n    const isControlledRef = useRef(false);\r\n\r\n    useImperativeHandle(ref, () => {\r\n      isControlledRef.current = true;\r\n      return {\r\n        startAnimation: () => controls.start('animate'),\r\n        stopAnimation: () => controls.start('normal'),\r\n      };\r\n    });\r\n\r\n    const handleMouseEnter = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) controls.start('animate');\r\n        else onMouseEnter?.(e);\r\n      },\r\n      [controls, onMouseEnter]\r\n    );\r\n\r\n    const handleMouseLeave = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) controls.start('normal');\r\n        else onMouseLeave?.(e);\r\n      },\r\n      [controls, onMouseLeave]\r\n    );\r\n\r\n    const faceVariants: Variants = {\r\n      normal: { scale: 1 },\r\n      animate: {\r\n        scale: 1.1,\r\n        transition: { type: 'spring', stiffness: 200, damping: 20 }\r\n      },\r\n    };\r\n\r\n    const plusVariants: Variants = {\r\n      normal: { rotate: 0, scale: 1 },\r\n      animate: {\r\n        rotate: 90,\r\n        scale: 1.2,\r\n        transition: { type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }\r\n      },\r\n    };\r\n\r\n    return (\r\n      <div\r\n        className={cn(\r\n          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\r\n          className\r\n        )}\r\n        onMouseEnter={handleMouseEnter}\r\n        onMouseLeave={handleMouseLeave}\r\n        {...props}\r\n      >\r\n        <motion.svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          width={size}\r\n          height={size}\r\n          viewBox=\"0 0 24 24\"\r\n          fill=\"none\"\r\n          stroke=\"currentColor\"\r\n          strokeWidth=\"2\"\r\n          strokeLinecap=\"round\"\r\n          strokeLinejoin=\"round\"\r\n          animate={controls}\r\n          variants={faceVariants}\r\n        >\r\n          <path d=\"M22 11v1a10 10 0 1 1-9-10\" />\r\n          <path d=\"M8 14s1.5 2 4 2 4-2 4-2\" />\r\n          <line x1=\"9\" x2=\"9.01\" y1=\"9\" y2=\"9\" />\r\n          <line x1=\"15\" x2=\"15.01\" y1=\"9\" y2=\"9\" />\r\n          <motion.path\r\n            variants={plusVariants}\r\n            animate={controls}\r\n            d=\"M16 5h6\"\r\n          />\r\n          <motion.path\r\n            variants={plusVariants}\r\n            animate={controls}\r\n            d=\"M19 2v6\"\r\n          />\r\n        </motion.svg>\r\n      </div>\r\n    );\r\n  }\r\n);\r\n\r\nSmilePlusIcon.displayName = 'SmilePlusIcon';\r\n\r\nexport { SmilePlusIcon };",
+      "type": "registry:ui"
+    }
+  ]
+}
