@@ -47,12 +47,10 @@ const AnnoyedIcon = forwardRef<AnnoyedIconHandle, AnnoyedIconProps>(
     const faceVariants: Variants = {
       normal: { 
         scale: 1,
-        fill: "transparent",
         transition: { duration: 0.2, ease: "easeOut" } 
       },
       animate: {
         scale: 1.05,
-        fill: "rgba(255, 120, 120, 0.15)",
         transition: { 
           duration: 0.3,
           ease: "easeOut" 

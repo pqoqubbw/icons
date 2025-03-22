@@ -48,13 +48,11 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
       normal: { 
         scale: 1,
         rotate: 0,
-        fill: "transparent",
         transition: { duration: 0.3, ease: "easeOut" } 
       },
       animate: {
         scale: [1, 1.15, 1.05, 1.08],
         rotate: [0, -2, 2, 0],
-        fill: ["transparent", "rgba(100, 100, 255, 0.1)", "rgba(100, 100, 255, 0.12)"],
         transition: { 
           duration: 0.8,
           times: [0, 0.3, 0.6, 1],

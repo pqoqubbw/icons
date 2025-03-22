@@ -48,13 +48,11 @@ const MehIcon = forwardRef<MehIconHandle, MehIconProps>(
       normal: { 
         scale: 1,
         rotate: 0,
-        fill: "transparent",
         transition: { duration: 0.3, ease: "easeOut" }
       },
       animate: {
         scale: [1, 1.05, 0.98, 1.02],
         rotate: [0, 1, -1, 0],
-        fill: ["transparent", "rgba(200, 200, 200, 0.1)"],
         transition: { 
           duration: 0.7,
           times: [0, 0.4, 0.7, 1],

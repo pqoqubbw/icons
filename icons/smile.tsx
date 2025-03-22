@@ -48,14 +48,12 @@ const SmileIcon = forwardRef<SmileIconHandle, SmileIconProps>(
       normal: { 
         scale: 1,
         rotate: 0,
-        fill: "transparent",
         strokeWidth: 2,
         transition: { duration: 0.3, ease: "easeOut" }
       },
       animate: {
         scale: [1, 1.15, 1.05, 1.1],
         rotate: [0, -3, 3, 0],
-        fill: ["transparent", "rgba(255, 255, 255, 0.1)", "rgba(255, 255, 255, 0.2)"],
         strokeWidth: [2, 2.5, 2.5, 2.5],
         transition: { 
           duration: 0.8,

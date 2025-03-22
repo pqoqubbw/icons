@@ -48,14 +48,12 @@ const LaughIcon = forwardRef<LaughIconHandle, LaughIconProps>(
       normal: { 
         scale: 1,
         rotate: 0,
-        fill: "transparent",
         strokeWidth: 2,
         transition: { duration: 0.3, ease: "easeOut" } 
       },
       animate: {
         scale: [1, 1.15, 1, 1.1, 1.05],
         rotate: [0, 3, -2, 3, 0],
-        fill: ["transparent", "rgba(255, 255, 0, 0.03)", "rgba(255, 255, 0, 0.05)"],
         strokeWidth: [2, 2.5, 2.5, 2.5, 2],
         transition: { 
           duration: 1.2,
