@@ -45,72 +45,72 @@ const MehIcon = forwardRef<MehIconHandle, MehIconProps>(
     );
 
     const faceVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         rotate: 0,
-        transition: { duration: 0.3, ease: "easeOut" }
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 1.05, 0.98, 1.02],
         rotate: [0, 1, -1, 0],
-        transition: { 
+        transition: {
           duration: 0.7,
           times: [0, 0.4, 0.7, 1],
-          ease: "easeInOut"
-        }
+          ease: 'easeInOut',
+        },
       },
     };
 
     const mouthVariants: Variants = {
-      normal: { 
+      normal: {
         scaleX: 1,
         y: 0,
-        transition: { duration: 0.3, ease: "easeOut" }
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scaleX: [1, 1.2, 0.9, 1.1],
         y: [0, 0.5, -0.5, 0],
-        transition: { 
+        transition: {
           duration: 0.6,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut",
-          delay: 0.1
-        }
+          ease: 'easeInOut',
+          delay: 0.1,
+        },
       },
     };
-    
+
     const leftEyeVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         x: 0,
-        transition: { duration: 0.3, ease: "easeOut" }
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 1.3, 1, 1.2],
         x: [0, -0.3, 0.3, 0],
-        transition: { 
+        transition: {
           duration: 0.5,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut"
-        }
-      }
+          ease: 'easeInOut',
+        },
+      },
     };
-    
+
     const rightEyeVariants: Variants = {
-      normal: { 
+      normal: {
         scale: 1,
         x: 0,
-        transition: { duration: 0.3, ease: "easeOut" }
+        transition: { duration: 0.3, ease: 'easeOut' },
       },
       animate: {
         scale: [1, 1.3, 1, 1.2],
         x: [0, 0.3, -0.3, 0],
-        transition: { 
+        transition: {
           duration: 0.5,
           times: [0, 0.3, 0.6, 1],
-          ease: "easeInOut" 
-        }
-      }
+          ease: 'easeInOut',
+        },
+      },
     };
 
     return (
@@ -147,19 +147,19 @@ const MehIcon = forwardRef<MehIconHandle, MehIconProps>(
             y1="15"
             y2="15"
           />
-          <motion.line 
-            x1="9" 
-            x2="9.01" 
-            y1="9" 
+          <motion.line
+            x1="9"
+            x2="9.01"
+            y1="9"
             y2="9"
             variants={leftEyeVariants}
             animate={controls}
             initial="normal"
           />
-          <motion.line 
-            x1="15" 
-            x2="15.01" 
-            y1="9" 
+          <motion.line
+            x1="15"
+            x2="15.01"
+            y1="9"
             y2="9"
             variants={rightEyeVariants}
             animate={controls}

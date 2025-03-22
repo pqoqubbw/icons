@@ -58,7 +58,7 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
       visible: { scale: 1 },
       hidden: {
         scale: 0.9,
-        transition: { type: 'spring', stiffness: 200, damping: 20 }
+        transition: { type: 'spring', stiffness: 200, damping: 20 },
       },
     };
 
@@ -68,7 +68,7 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
         scale: 1.2,
         rotate: 45,
         opacity: 0,
-        transition: { type: 'spring', stiffness: 200, damping: 20 }
+        transition: { type: 'spring', stiffness: 200, damping: 20 },
       },
     };
 
@@ -77,7 +77,7 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
       hidden: {
         scale: 0.8,
         opacity: 0,
-        transition: { duration: 0.3, delay: 0.1 }
+        transition: { duration: 0.3, delay: 0.1 },
       },
     };
 

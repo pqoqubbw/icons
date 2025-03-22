@@ -48,7 +48,7 @@ const SmilePlusIcon = forwardRef<SmilePlusIconHandle, SmilePlusIconProps>(
       normal: { scale: 1 },
       animate: {
         scale: 1.1,
-        transition: { type: 'spring', stiffness: 200, damping: 20 }
+        transition: { type: 'spring', stiffness: 200, damping: 20 },
       },
     };
 
@@ -57,7 +57,7 @@ const SmilePlusIcon = forwardRef<SmilePlusIconHandle, SmilePlusIconProps>(
       animate: {
         rotate: 90,
         scale: 1.2,
-        transition: { type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }
+        transition: { type: 'spring', stiffness: 200, damping: 20, delay: 0.1 },
       },
     };
 
@@ -88,16 +88,8 @@ const SmilePlusIcon = forwardRef<SmilePlusIconHandle, SmilePlusIconProps>(
           <path d="M8 14s1.5 2 4 2 4-2 4-2" />
           <line x1="9" x2="9.01" y1="9" y2="9" />
           <line x1="15" x2="15.01" y1="9" y2="9" />
-          <motion.path
-            variants={plusVariants}
-            animate={controls}
-            d="M16 5h6"
-          />
-          <motion.path
-            variants={plusVariants}
-            animate={controls}
-            d="M19 2v6"
-          />
+          <motion.path variants={plusVariants} animate={controls} d="M16 5h6" />
+          <motion.path variants={plusVariants} animate={controls} d="M19 2v6" />
         </motion.svg>
       </div>
     );
