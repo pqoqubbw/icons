@@ -1329,5 +1329,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/hand-heart.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
