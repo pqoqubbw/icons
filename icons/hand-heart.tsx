@@ -17,21 +17,21 @@ interface HandHeartIconProps extends HTMLAttributes<HTMLDivElement> {
 const heartVariants: Variants = {
   normal: {
     translateY: 0,
-    opacity: 1,
+    scale: 1,
     transition: {
-      opacity: { duration: 0.2 },
       delay: 0.1,
+      scale: { duration: 0.2 },
       type: 'spring',
       stiffness: 200,
       damping: 25,
     },
   },
   animate: {
-    opacity: [0, 1],
-    translateY: [-20, 0],
+    translateY: [0, -2],
+    scale: [1, 1.1],
     transition: {
-      opacity: { duration: 0.2 },
       delay: 0.1,
+      scale: { duration: 0.2 },
       type: 'spring',
       stiffness: 200,
       damping: 25,
@@ -94,6 +94,7 @@ const HandHeartIcon = forwardRef<HandHeartIconHandle, HandHeartIconProps>(
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
+          style={{ overflow: 'visible' }}
           strokeLinejoin="round"
         >
           <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
