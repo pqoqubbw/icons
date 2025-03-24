@@ -42,7 +42,7 @@ import { LinkIcon } from '@/icons/link';
 import { MenuIcon } from '@/icons/menu';
 import { PartyPopperIcon } from '@/icons/party-popper';
 import { PenToolIcon } from '@/icons/pen-tool';
-import { RefreshIcon } from '@/icons/refresh';
+import { RefreshCCWIcon } from '@/icons/refresh-ccw';
 import { RouteIcon } from '@/icons/route';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SettingsIcon } from '@/icons/settings';
@@ -184,6 +184,9 @@ import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
 import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
 import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
+import { KeyIcon } from '@/icons/key';
+import { KeyCircleIcon } from '@/icons/key-circle';
+import { KeySquareIcon } from '@/icons/key-square';
 import { ChartLineIcon } from '@/icons/chart-line';
 import { ChartSplineIcon } from '@/icons/chart-spline';
 import { FileChartLineIcon } from '@/icons/file-chart-line';
@@ -196,6 +199,12 @@ import { TornadoIcon } from '@/icons/tornado';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { WavesIcon } from '@/icons/waves';
+import { WavesLadderIcon } from './waves-ladder';
+import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
+import { SquareArrowLeftIcon } from '@/icons/square-arrow-left';
+import { SquareArrowUpIcon } from '@/icons/square-arrow-up';
+import { SquareArrowRightIcon } from '@/icons/square-arrow-right';
 import { BlocksIcon } from '@/icons/blocks';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -215,6 +224,20 @@ import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
 import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
 import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
 import { HandHeartIcon } from '@/icons/hand-heart';
+import { SquareActivityIcon } from '@/icons/square-activity';
+import { RotateCWIcon } from '@/icons/rotate-cw';
+import { RotateCCWIcon } from '@/icons/rotate-ccw';
+import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
+import { UserCheckIcon } from '@/icons/user-check';
+import { UserRoundCheckIcon } from '@/icons/user-round-check';
+import { BoxesIcon } from '@/icons/boxes';
+import { RefreshCWIcon } from '@/icons/refresh-cw';
+import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
+import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
+import { RedoIcon } from '@/icons/redo';
+import { UndoDotIcon } from '@/icons/undo-dot';
+import { RedoDotIcon } from '@/icons/redo-dot';
+import { HistoryIcon } from '@/icons/history';
 
 type IconListItem = {
   name: string;
@@ -227,6 +250,103 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'history',
+    icon: HistoryIcon,
+    keywords: ['history', 'back', 'previous', 'arrow'],
+  },
+  { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
+  {
+    name: 'square-arrow-down',
+    icon: SquareArrowDownIcon,
+    keywords: ['arrow', 'down', 'a'],
+  },
+  {
+    name: 'square-arrow-left',
+    icon: SquareArrowLeftIcon,
+    keywords: ['arrow', 'left', 'a'],
+  },
+  {
+    name: 'square-arrow-right',
+    icon: SquareArrowRightIcon,
+    keywords: ['arrow', 'right', 'a'],
+  },
+  {
+    name: 'square-arrow-up',
+    icon: SquareArrowUpIcon,
+    keywords: ['arrow', 'up', 'a'],
+  },
+  {
+    name: 'key',
+    icon: KeyIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'key-square',
+    icon: KeySquareIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'key-circle',
+    icon: KeyCircleIcon,
+    keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'rotate-cw',
+    icon: RotateCWIcon,
+    keywords: [
+      'rotate',
+      'clockwise',
+      'turn',
+      'degrees',
+      'degrees',
+      'clockwise',
+      'counterclockwise',
+    ],
+  },
+  {
+    name: 'rotate-ccw',
+    icon: RotateCCWIcon,
+    keywords: [
+      'rotate',
+      'counterclockwise',
+      'turn',
+      'degrees',
+      'degrees',
+      'clockwise',
+      'counterclockwise',
+    ],
+  },
+  {
+    name: 'refresh-cw-off',
+    icon: RefreshCWOffIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-cw',
+    icon: RefreshCWIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'refresh-ccw-dot',
+    icon: RefreshCCWDotIcon,
+    keywords: ['refresh', 'rotate', 'reload', 'rerun', 'circular', 'cycle'],
+  },
+  {
+    name: 'redo',
+    icon: RedoIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'undo-dot',
+    icon: UndoDotIcon,
+    keywords: ['undo', 'repeat', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'redo-dot',
+    icon: RedoDotIcon,
+    keywords: ['redo', 'repeat', 'undo', 'back', 'previous', 'arrow'],
   },
   {
     name: 'arrow-big-down',
@@ -287,6 +407,16 @@ const ICON_LIST: IconListItem[] = [
       'haptic feedback',
       'screen',
     ],
+  },
+  {
+    name: 'waves-ladder',
+    icon: WavesLadderIcon,
+    keywords: ['waves', 'ladder', 'water', 'ocean', 'sea'],
+  },
+  {
+    name: 'waves',
+    icon: WavesIcon,
+    keywords: ['waves', 'water', 'ocean', 'sea', 'wave', 'sea wave'],
   },
   {
     name: 'wind-arrow-down',
@@ -683,8 +813,8 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: 'refresh',
-    icon: RefreshIcon,
+    name: 'refresh-ccw',
+    icon: RefreshCCWIcon,
     keywords: [
       'arrows',
       'rotate',
@@ -2130,6 +2260,51 @@ const ICON_LIST: IconListItem[] = [
       'cuddle',
       'emotion',
     ],
+  },
+  {
+    name: 'gallery-thumbnails',
+    icon: GalleryThumbnailsIcon,
+    keywords: [
+      'gallery',
+      'thumbnails',
+      'images',
+      'carousel',
+      'pictures',
+      'album',
+      'portfolio',
+      'preview',
+    ],
+  },
+  {
+    name: 'user-check',
+    icon: UserCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'user-round-check',
+    icon: UserRoundCheckIcon,
+    keywords: [
+      'user',
+      'check',
+      'checkmark',
+      'tick',
+      'done',
+      'confirm',
+      'complete',
+    ],
+  },
+  {
+    name: 'boxes',
+    icon: BoxesIcon,
+    keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
   },
 ];
 
