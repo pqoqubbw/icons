@@ -1523,5 +1523,11 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/history.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    'name': 'file-text',
+    'path': path.join(__dirname, '../icons/file-text.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
