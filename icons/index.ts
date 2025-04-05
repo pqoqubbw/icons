@@ -245,6 +245,7 @@ import { LaughIcon } from '@/icons/laugh';
 import { AnnoyedIcon } from '@/icons/annoyed';
 import { MehIcon } from '@/icons/meh';
 import { HistoryIcon } from '@/icons/history';
+import { FileTextIcon } from '@/icons/file-text';
 import { UserRoundPlusIcon } from '@/icons/user-round-plus';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
@@ -2339,6 +2340,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'boxes',
     icon: BoxesIcon,
     keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
+  },
+  {
+    name: 'file-text',
+    icon: FileTextIcon,
+    keywords: ['file', 'text', 'document', 'document', 'document'],
   },
   {
     name: 'user-round-plus',

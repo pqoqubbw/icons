@@ -1525,6 +1525,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'file-text',
+    'path': path.join(__dirname, '../icons/file-text.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'panel-left-close',
     'path': path.join(__dirname, '../icons/panel-left-close.tsx'),
     'registryDependencies': [],
