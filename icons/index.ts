@@ -200,7 +200,7 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
 import { WavesIcon } from '@/icons/waves';
-import { WavesLadderIcon } from './waves-ladder';
+import { WavesLadderIcon } from '@/icons/waves-ladder';
 import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
 import { SquareArrowLeftIcon } from '@/icons/square-arrow-left';
 import { SquareArrowUpIcon } from '@/icons/square-arrow-up';
@@ -246,7 +246,11 @@ import { AnnoyedIcon } from '@/icons/annoyed';
 import { MehIcon } from '@/icons/meh';
 import { HistoryIcon } from '@/icons/history';
 import { Building2Icon } from '@/icons/building-2';
-import { LibraryIcon } from './library';
+import { LibraryIcon } from '@/icons/library';
+import { UserRoundPlusIcon } from '@/icons/user-round-plus';
+import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
+import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
+import { PanelRightOpenIcon } from '@/icons/panel-right-open';
 
 type IconListItem = {
   name: string;
@@ -2369,6 +2373,50 @@ const ICON_LIST: IconListItem[] = [
       'archive',
       'research',
       'learning',
+      ],
+  },
+  {
+    name: 'user-round-plus',
+    icon: UserRoundPlusIcon,
+    keywords: [
+      'user',
+      'plus',
+      'add',
+      'create',
+      'new'
+    ],
+  },
+  {
+    name: 'panel-left-open',
+    icon: PanelLeftOpenIcon,
+    keywords: [
+      'panel',
+      'left',
+      'open',
+      'menu',
+      'navigation'
+    ],
+  },
+  {
+    name: 'panel-left-close',
+    icon: PanelLeftCloseIcon,
+    keywords: [
+      'panel',
+      'left',
+      'close',
+      'menu',
+      'navigation'
+    ],
+  },
+  {
+    name: 'panel-right-open',
+    icon: PanelRightOpenIcon,
+    keywords: [
+      'panel',
+      'right',
+      'open',
+      'menu',
+      'navigation'
     ],
   },
 ];
