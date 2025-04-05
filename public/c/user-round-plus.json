@@ -1,0 +1,21 @@
+{
+  "name": "user-round-plus",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "user-round-plus.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface UserRoundPlusIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface UserRoundPlusIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst verticalBarVariants: Variants = {\n  normal: {\n    opacity: 1,\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    transition: {\n      delay: 0.3,\n      duration: 0.2,\n      opacity: { duration: 0.1, delay: 0.3 },\n    },\n  },\n};\n\nconst horizontalBarVariants: Variants = {\n  normal: {\n    opacity: 1,\n  },\n  animate: {\n    opacity: [0, 1],\n    pathLength: [0, 1],\n    transition: {\n      delay: 0.6,\n      duration: 0.2,\n      opacity: { duration: 0.1, delay: 0.6 },\n    },\n  },\n};\n\nconst UserRoundPlusIcon = forwardRef<UserRoundPlusIconHandle, UserRoundPlusIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(\n          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,\n          className\n        )}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <motion.svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          initial=\"normal\"\n        >\n          <path d=\"M19.914 11.105A7.298 7.298 0 0 0 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32 32 0 0 0 .824-.738\" />\n          <circle cx=\"12\" cy=\"10\" r=\"3\" />\n          <motion.path\n            d=\"M16 18h6\"\n            variants={horizontalBarVariants}\n            initial=\"normal\"\n            animate={controls}\n          />\n          <motion.path\n            d=\"M19 15v6\"\n            variants={verticalBarVariants}\n            initial=\"normal\"\n            animate={controls}\n          />\n        </motion.svg>\n      </div>\n    );\n  }\n);\n\nUserRoundPlusIcon.displayName = 'UserRoundPlusIcon';\n\nexport { UserRoundPlusIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
