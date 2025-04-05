@@ -75,7 +75,6 @@ const FileText = forwardRef<FileTextIconHandle, FileTextIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-file-text-icon lucide-file-text"
           initial="normal"
           animate={controls}
           variants={{
