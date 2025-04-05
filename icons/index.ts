@@ -245,6 +245,8 @@ import { LaughIcon } from '@/icons/laugh';
 import { AnnoyedIcon } from '@/icons/annoyed';
 import { MehIcon } from '@/icons/meh';
 import { HistoryIcon } from '@/icons/history';
+import { Building2Icon } from '@/icons/building-2';
+import { LibraryIcon } from './library';
 
 type IconListItem = {
   name: string;
@@ -2335,6 +2337,39 @@ const ICON_LIST: IconListItem[] = [
     name: 'boxes',
     icon: BoxesIcon,
     keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
+  },
+  {
+    name: 'building-2',
+    icon: Building2Icon,
+    keywords: [
+      'office',
+      'city',
+      'architecture',
+      'tower',
+      'skyscraper',
+      'company',
+      'real estate',
+      'urban',
+      'construction',
+      'Account',
+      'Buildings',
+    ],
+  },
+  {
+    name: 'library',
+    icon: LibraryIcon,
+    keywords: [
+      'books',
+      'reading',
+      'education',
+      'knowledge',
+      'building',
+      'study',
+      'university',
+      'archive',
+      'research',
+      'learning',
+    ],
   },
 ];
 
