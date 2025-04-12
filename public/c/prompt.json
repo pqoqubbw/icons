@@ -1,0 +1,19 @@
+{
+  "name": "prompt",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "prompt.tsx",
+      "content": "",
+      "type": "registry:ui"
+    }
+  ]
+}

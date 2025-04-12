@@ -250,6 +250,7 @@ import { UserRoundPlusIcon } from '@/icons/user-round-plus';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelRightOpenIcon } from '@/icons/panel-right-open';
+import { PromptIcon } from '@/icons/prompt';
 
 type IconListItem = {
   name: string;
@@ -2349,45 +2350,35 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'user-round-plus',
     icon: UserRoundPlusIcon,
-    keywords: [
-      'user',
-      'plus',
-      'add',
-      'create',
-      'new'
-    ],
+    keywords: ['user', 'plus', 'add', 'create', 'new'],
   },
   {
     name: 'panel-left-open',
     icon: PanelLeftOpenIcon,
-    keywords: [
-      'panel',
-      'left',
-      'open',
-      'menu',
-      'navigation'
-    ],
+    keywords: ['panel', 'left', 'open', 'menu', 'navigation'],
   },
   {
     name: 'panel-left-close',
     icon: PanelLeftCloseIcon,
-    keywords: [
-      'panel',
-      'left',
-      'close',
-      'menu',
-      'navigation'
-    ],
+    keywords: ['panel', 'left', 'close', 'menu', 'navigation'],
   },
   {
     name: 'panel-right-open',
     icon: PanelRightOpenIcon,
+    keywords: ['panel', 'right', 'open', 'menu', 'navigation'],
+  },
+  {
+    name: 'prompt',
+    icon: PromptIcon,
     keywords: [
-      'panel',
-      'right',
-      'open',
-      'menu',
-      'navigation'
+      'prompt',
+      'ai',
+      'input',
+      'query',
+      'shell',
+      'cli',
+      'code',
+      'terminal-prompt',
     ],
   },
 ];
