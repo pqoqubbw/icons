@@ -1553,5 +1553,11 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/user-round-plus.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    name: 'debug',
+    path: path.join(__dirname, '../icons/debug.tsx'),
+    registryDependencies: [],
+    dependencies: ['motion'],
+  },
 ];
