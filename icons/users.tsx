@@ -3,7 +3,7 @@
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface UsersIconHandle {
@@ -39,6 +39,10 @@ const UsersIcon = forwardRef<UsersIconHandle, UsersIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
+
+    useEffect(() => {
+      controls.start('normal');
+    }, [controls]);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
@@ -97,11 +101,13 @@ const UsersIcon = forwardRef<UsersIconHandle, UsersIconProps>(
           <motion.path
             d="M22 21v-2a4 4 0 0 0-3-3.87"
             variants={pathVariants}
+            initial="normal"
             animate={controls}
           />
           <motion.path
             d="M16 3.13a4 4 0 0 1 0 7.75"
             variants={pathVariants}
+            initial="normal"
             animate={controls}
           />
         </svg>
