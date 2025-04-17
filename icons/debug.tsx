@@ -15,13 +15,12 @@ interface DebugIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pulseVariants: Variants = {
-  normal: { scale: 1, opacity: 1 },
-  pulse: {
-    scale: [1, 1.2, 1],
-    opacity: [1, 0.5, 1],
+const legVariants: Variants = {
+  normal: { rotate: 0 },
+  animate: {
+    rotate: [0, 10, -10, 0],
     transition: {
-      duration: 1.2,
+      duration: 1,
       repeat: Infinity,
       ease: 'easeInOut',
     },
@@ -36,13 +35,13 @@ const DebugIcon = forwardRef<DebugIconHandle, DebugIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('pulse'),
+        startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
       };
     });
 
     const handleMouseEnter = useCallback((e: any) => {
-      if (!isControlledRef.current) controls.start('pulse');
+      if (!isControlledRef.current) controls.start('animate');
       else onMouseEnter?.(e);
     }, []);
 
@@ -72,19 +71,15 @@ const DebugIcon = forwardRef<DebugIconHandle, DebugIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Bug base (from Lucide's bug icon) */}
-          <path d="M8 2v2m8-2v2M9 10h6m-6 4h6" />
-          <path d="M12 6v14a4 4 0 0 1-4-4V10a4 4 0 0 1 4-4z" />
-          <path d="M12 6v14a4 4 0 0 0 4-4V10a4 4 0 0 0-4-4z" />
-          {/* Legs */}
-          <path d="M3 13h2M3 17h2M19 13h2M19 17h2" />
-          {/* Pulse dot as breakpoint */}
-          <motion.circle
-            cx="12"
-            cy="4"
-            r="1.5"
-            fill="red"
-            variants={pulseVariants}
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8h.01" />
+          <path d="M8 16s1.5-2 4-2 4 2 4 2" />
+          <motion.line
+            x1="12"
+            y1="22"
+            x2="12"
+            y2="24"
+            variants={legVariants}
             animate={controls}
             initial="normal"
           />
