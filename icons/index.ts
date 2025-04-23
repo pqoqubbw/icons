@@ -250,8 +250,8 @@ import { UserRoundPlusIcon } from '@/icons/user-round-plus';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelRightOpenIcon } from '@/icons/panel-right-open';
-import { HeartIcon } from "@/icons/heart"
-import { LockIcon } from "@/icons/lock"
+import { HeartIcon } from '@/icons/heart';
+import { LockIcon } from '@/icons/lock';
 
 type IconListItem = {
   name: string;
@@ -261,21 +261,21 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
-    name: "lock",
+    name: 'lock',
     icon: LockIcon,
     keywords: [
-      "lock",
-      "security",
-      "privacy",
-      "protection",
-      "safety",
-      "authentication",
+      'lock',
+      'security',
+      'privacy',
+      'protection',
+      'safety',
+      'authentication',
     ],
   },
   {
-    name: "heart",
+    name: 'heart',
     icon: HeartIcon,
-    keywords: ["heart", "love", "like", "emotion", "favorite"],
+    keywords: ['heart', 'love', 'like', 'emotion', 'favorite'],
   },
   {
     name: 'smartphone-charging',
@@ -2368,46 +2368,22 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'user-round-plus',
     icon: UserRoundPlusIcon,
-    keywords: [
-      'user',
-      'plus',
-      'add',
-      'create',
-      'new'
-    ],
+    keywords: ['user', 'plus', 'add', 'create', 'new'],
   },
   {
     name: 'panel-left-open',
     icon: PanelLeftOpenIcon,
-    keywords: [
-      'panel',
-      'left',
-      'open',
-      'menu',
-      'navigation'
-    ],
+    keywords: ['panel', 'left', 'open', 'menu', 'navigation'],
   },
   {
     name: 'panel-left-close',
     icon: PanelLeftCloseIcon,
-    keywords: [
-      'panel',
-      'left',
-      'close',
-      'menu',
-      'navigation'
-    ],
+    keywords: ['panel', 'left', 'close', 'menu', 'navigation'],
   },
   {
     name: 'panel-right-open',
     icon: PanelRightOpenIcon,
-    keywords: [
-      'panel',
-      'right',
-      'open',
-      'menu',
-      'navigation'
-    ],
+    keywords: ['panel', 'right', 'open', 'menu', 'navigation'],
   },
 ];
 
