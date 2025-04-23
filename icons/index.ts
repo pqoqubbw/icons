@@ -250,6 +250,8 @@ import { UserRoundPlusIcon } from '@/icons/user-round-plus';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelRightOpenIcon } from '@/icons/panel-right-open';
+import { HeartIcon } from "@/icons/heart"
+import { LockIcon } from "@/icons/lock"
 
 type IconListItem = {
   name: string;
@@ -258,6 +260,23 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "lock",
+    icon: LockIcon,
+    keywords: [
+      "lock",
+      "security",
+      "privacy",
+      "protection",
+      "safety",
+      "authentication",
+    ],
+  },
+  {
+    name: "heart",
+    icon: HeartIcon,
+    keywords: ["heart", "love", "like", "emotion", "favorite"],
+  },
   {
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
