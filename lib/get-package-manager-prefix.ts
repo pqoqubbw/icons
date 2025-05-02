@@ -9,9 +9,9 @@ const getPackageManagerPrefix = (
     case PACKAGE_MANAGER.NPM:
       return 'npx';
     case PACKAGE_MANAGER.YARN:
-      return 'yarn dlx';
+      return 'npx';
     case PACKAGE_MANAGER.BUN:
-      return 'bunx';
+      return 'bunx --bun';
     default:
       return 'npx';
   }
