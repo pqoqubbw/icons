@@ -37,7 +37,7 @@ const TOOLTIP_DELAY_DURATION = 500;
 
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="p-3 border border-input rounded-md flex items-center justify-center flex-col">
+    <div className="p-3 pt-5 border border-input rounded-md flex items-center justify-center flex-col">
       {children}
     </div>
   );
