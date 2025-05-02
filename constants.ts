@@ -6,4 +6,11 @@ const LINK = {
   HELPY_UI: 'https://helpy-ui.link/from-icons',
 };
 
-export { LINK };
+const PACKAGE_MANAGER = {
+  PNPM: 'pnpm',
+  NPM: 'npm',
+  YARN: 'yarn',
+  BUN: 'bun',
+};
+
+export { LINK, PACKAGE_MANAGER };

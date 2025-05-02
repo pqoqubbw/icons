@@ -12,6 +12,8 @@ import { toast } from 'sonner';
 import { ActionItem } from './action';
 import { cn } from '@/lib/utils';
 import type { LucideProps } from 'lucide-react';
+import { usePackageNameContext } from '@/providers/package-name';
+import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 
 const V0Icon = forwardRef<SVGSVGElement, LucideProps>((props, ref) => {
   return (
@@ -51,6 +53,7 @@ const Title = ({ children }: { children: React.ReactNode }) => {
 
 const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   const op = useOpenPanel();
+  const { packageName } = usePackageNameContext();
 
   const [copied, setCopied] = useState(false);
 
@@ -59,7 +62,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
 
     op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
     navigator.clipboard.writeText(
-      `npx shadcn@latest add "https://icons.pqoqubbw.dev/c/${name}.json"`
+      `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://icons.pqoqubbw.dev/c/${name}.json"`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
