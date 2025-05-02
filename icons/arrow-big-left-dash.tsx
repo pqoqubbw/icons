@@ -74,10 +74,7 @@ const ArrowBigLeftDashIcon = forwardRef<
 
   return (
     <div
-      className={cn(
-        'cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center',
-        className
-      )}
+      className={cn(className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
@@ -18,7 +19,7 @@ const gVariants: Variants = {
 const FileCogIcon = forwardRef<
   FileCogIconHandle,
   HTMLAttributes<HTMLDivElement>
->(({ onMouseEnter, onMouseLeave, ...props }, ref) => {
+>(({ onMouseEnter, onMouseLeave, className, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
 
@@ -54,7 +55,7 @@ const FileCogIcon = forwardRef<
 
   return (
     <div
-      className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+      className={cn(className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}

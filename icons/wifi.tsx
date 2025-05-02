@@ -50,14 +50,7 @@ const WifiIcon = forwardRef<WifiIconHandle, WifiIconProps>(
     );
 
     return (
-      <div
-        className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
-          className
-        )}
-        onMouseEnter={handleMouseEnter}
-        {...props}
-      >
+      <div className={cn(className)} onMouseEnter={handleMouseEnter} {...props}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
