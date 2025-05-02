@@ -13,11 +13,15 @@ import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 
 type CopyIconProps = {
   copied: boolean;
+  onClick: () => void;
 };
 
-const CopyIcon = ({ copied }: CopyIconProps) => {
+const CopyIcon = ({ copied, onClick }: CopyIconProps) => {
   return (
-    <div className="absolute right-3 md:px-0 px-3 flex items-center justify-center -bottom-[6px] cursor-pointer p-4 size-8 -translate-y-1/2 hover:bg-input rounded-md transition-colors duration-200">
+    <div
+      onClick={onClick}
+      className="absolute right-3 md:px-0 px-3 flex items-center justify-center -bottom-[6px] cursor-pointer p-4 size-8 -translate-y-1/2 hover:bg-input rounded-md transition-colors duration-200"
+    >
       <AnimatePresence mode="wait" initial={false}>
         {copied ? (
           <motion.div
@@ -115,7 +119,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
           </TextLoop>
         </div>
       </div>
-      <CopyIcon copied={copied} />
+      <CopyIcon copied={copied} onClick={copyToClipboard} />
     </div>
   );
 };
