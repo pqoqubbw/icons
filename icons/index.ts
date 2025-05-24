@@ -250,6 +250,8 @@ import { UserRoundPlusIcon } from '@/icons/user-round-plus';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelRightOpenIcon } from '@/icons/panel-right-open';
+import { HeartIcon } from './heart';
+import { PlusIcon } from './plus';
 
 type IconListItem = {
   name: string;
@@ -258,6 +260,34 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'plus',
+    icon: PlusIcon,
+    keywords: [
+      'add',
+      'new',
+      'increase',
+      'increment',
+      'positive',
+      'calculate',
+      'toolbar',
+      'crosshair',
+      'aim',
+      'target',
+      'scope',
+      'sight',
+      'reticule',
+      'maximum',
+      'upgrade',
+      'extra',
+      '+',
+    ],
+  },
+  {
+    name: 'heart',
+    icon: HeartIcon,
+    keywords: ['like', 'love', 'emotion', 'suit', 'playing', 'cards'],
+  },
   {
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
