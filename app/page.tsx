@@ -14,11 +14,33 @@ export default async function Home() {
       <div className="container">
         <Link
           href="/sponsorship"
-          className="mt-3 sm:hidden flex mb-2 leading-normal items-center w-fit gap-1 border border-input rounded-2xl bg-input/50 pr-2 pl-3 py-1 text-muted-foreground text-sm"
+          className="text-xs mt-3 sm:hidden flex leading-normal items-center w-fit gap-2 border border-input rounded-2xl bg-input/50 px-4 py-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200"
         >
           sponsorship here{' '}
-          <ArrowUpRight className="size-3 leading-0 mt-[1px] shrink-0" />
+          <ArrowUpRight
+            className="size-3 leading-0 mt-[1px] shrink-0"
+            strokeWidth={2.5}
+          />
         </Link>
+        <a
+          href="https://www.framer.com/marketplace/plugins/framericons/"
+          target="_blank"
+          className="text-xs mt-2 flex leading-normal items-center w-fit gap-2 border border-input rounded-2xl bg-input/50 px-4 mb-4 py-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200"
+        >
+          <div className="w-2.5 shrink-0">
+            <svg
+              viewBox="0 0 256 384"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid"
+            >
+              <path
+                className="fill-foreground"
+                d="M0 0h256v128H128L0 0Zm0 128h128l128 128H128v128L0 256V128Z"
+              />
+            </svg>
+          </div>
+          <p>Want to use icons in Framer?</p>
+        </a>
         <h1 className="sm:text-3xl text-2xl text-balance">
           beautifully crafted animated icons
         </h1>
