@@ -252,6 +252,10 @@ import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelRightOpenIcon } from '@/icons/panel-right-open';
 import { HeartIcon } from './heart';
 import { PlusIcon } from './plus';
+import { DropletIcon } from './droplet';
+import { ThermometerIcon } from './thermometer';
+import { SnowflakeIcon } from './snowflake';
+import { FoldersIcon } from './folders';
 
 type IconListItem = {
   name: string;
@@ -260,6 +264,36 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folders',
+    icon: FoldersIcon,
+    keywords: ['folder', 'directory', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'snowflake',
+    icon: SnowflakeIcon,
+    keywords: ['snow', 'weather', 'cold', 'winter', 'flake'],
+  },
+  {
+    name: 'thermometer',
+    icon: ThermometerIcon,
+    keywords: ['temperature', 'celsius', 'fahrenheit', 'weather'],
+  },
+  {
+    name: 'droplet',
+    icon: DropletIcon,
+    keywords: [
+      'water',
+      'weather',
+      'liquid',
+      'fluid',
+      'wet',
+      'moisture',
+      'damp',
+      'bead',
+      'globule',
+    ],
+  },
   {
     name: 'plus',
     icon: PlusIcon,

@@ -1565,5 +1565,29 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/plus.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'droplet',
+    'path': path.join(__dirname, '../icons/droplet.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'folders',
+    'path': path.join(__dirname, '../icons/folders.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'snowflake',
+    'path': path.join(__dirname, '../icons/snowflake.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'thermometer',
+    'path': path.join(__dirname, '../icons/thermometer.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];

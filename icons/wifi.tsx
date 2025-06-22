@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 
 export interface WifiIconHandle {
   startAnimation: () => void;
+  stopAnimation: () => void;
 }
 
 interface WifiIconProps extends HTMLAttributes<HTMLDivElement> {
@@ -21,7 +22,7 @@ const WIFI_LEVELS = [
 ];
 
 const WifiIcon = forwardRef<WifiIconHandle, WifiIconProps>(
-  ({ onMouseEnter, className, size = 28, ...props }, ref) => {
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
 
     const isControlledRef = useRef(false);
@@ -34,6 +35,7 @@ const WifiIcon = forwardRef<WifiIconHandle, WifiIconProps>(
           await controls.start('fadeOut');
           controls.start('fadeIn');
         },
+        stopAnimation: () => controls.start('fadeIn'),
       };
     });
 
@@ -49,8 +51,21 @@ const WifiIcon = forwardRef<WifiIconHandle, WifiIconProps>(
       [controls, onMouseEnter]
     );
 
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        controls.start('fadeIn');
+        onMouseLeave?.(e);
+      },
+      [controls, onMouseLeave]
+    );
+
     return (
-      <div className={cn(className)} onMouseEnter={handleMouseEnter} {...props}>
+      <div
+        className={cn(className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}

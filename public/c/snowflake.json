@@ -1,0 +1,21 @@
+{
+  "name": "snowflake",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "snowflake.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation, type Variants } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nconst pathVariants: Variants = {\n  normal: {\n    rotate: 0,\n  },\n  animate: {\n    rotate: [0, -5, 5, -5, 5, 0],\n    transition: {\n      duration: 0.4,\n      times: [0, 0.2, 0.4, 0.6, 0.8, 1],\n    },\n  },\n};\n\nexport interface SnowflakeIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface SnowflakeIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst SnowflakeIcon = forwardRef<SnowflakeIconHandle, SnowflakeIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <motion.svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          variants={pathVariants}\n          animate={controls}\n          style={{ transformOrigin: 'center' }}\n        >\n          <path d=\"m10 20-1.25-2.5L6 18\" />\n          <path d=\"M10 4 8.75 6.5 6 6\" />\n          <path d=\"m14 20 1.25-2.5L18 18\" />\n          <path d=\"m14 4 1.25 2.5L18 6\" />\n          <path d=\"m17 21-3-6h-4\" />\n          <path d=\"m17 3-3 6 1.5 3\" />\n          <path d=\"M2 12h6.5L10 9\" />\n          <path d=\"m20 10-1.5 2 1.5 2\" />\n          <path d=\"M22 12h-6.5L14 15\" />\n          <path d=\"m4 10 1.5 2L4 14\" />\n          <path d=\"m7 21 3-6-1.5-3\" />\n          <path d=\"m7 3 3 6h4\" />\n        </motion.svg>\n      </div>\n    );\n  }\n);\n\nSnowflakeIcon.displayName = 'SnowflakeIcon';\n\nexport { SnowflakeIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

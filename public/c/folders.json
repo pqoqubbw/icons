@@ -1,0 +1,21 @@
+{
+  "name": "folders",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "folders.tsx",
+      "content": "'use client';\n\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface FoldersIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface FoldersIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst FoldersIcon = forwardRef<FoldersIconHandle, FoldersIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        >\n          <motion.path\n            animate={controls}\n            variants={{\n              normal: {\n                translateX: 0,\n                translateY: 0,\n              },\n              animate: {\n                translateX: -2,\n                translateY: 2,\n              },\n            }}\n            transition={{\n              type: 'spring',\n              stiffness: 250,\n              damping: 25,\n            }}\n            d=\"M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z\"\n          />\n          <motion.path\n            d=\"M2 8v11a2 2 0 0 0 2 2h14\"\n            animate={controls}\n            variants={{\n              normal: {\n                translateX: 0,\n                translateY: 0,\n                opacity: 1,\n                scale: 1,\n              },\n              animate: {\n                translateX: 2,\n                translateY: -2,\n                opacity: 0,\n                scale: 0.9,\n              },\n            }}\n            transition={{\n              type: 'spring',\n              stiffness: 250,\n              damping: 25,\n            }}\n          />\n        </svg>\n      </div>\n    );\n  }\n);\n\nFoldersIcon.displayName = 'FoldersIcon';\n\nexport { FoldersIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
