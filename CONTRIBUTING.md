@@ -33,11 +33,11 @@ We welcome contributions to our project! Please follow these steps to contribute
 6. **Create your animated icon:**
 
    a. Navigate to the `/icons/` directory and create a new file with the icon name in lowercase, using hyphens for spaces (following Lucide naming convention):
-   
+
    ```
    /icons/[icon-name].tsx
    ```
-   
+
    For example: `heart-icon.tsx`, `arrow-up.tsx`, `user-profile.tsx`
 
    b. Copy and paste the following template code into your new file:
@@ -135,7 +135,7 @@ We welcome contributions to our project! Please follow these steps to contribute
    a. Open the `icons/index.tsx` file.
 
    b. Import your new icon component at the top of the file:
-   
+
    ```tsx
    import { [YourIconName]Icon } from './[icon-name]';
    ```
@@ -151,6 +151,7 @@ We welcome contributions to our project! Please follow these steps to contribute
    ```
 
    For example:
+
    ```tsx
    {
      name: 'smile-plus',

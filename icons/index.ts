@@ -256,6 +256,10 @@ import { DropletIcon } from './droplet';
 import { ThermometerIcon } from './thermometer';
 import { SnowflakeIcon } from './snowflake';
 import { FoldersIcon } from './folders';
+import { LockIcon } from './lock';
+import { LockKeyholeIcon } from './lock-keyhole';
+import { LockOpenIcon } from './lock-open';
+import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 
 type IconListItem = {
   name: string;
@@ -264,6 +268,26 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'lock-keyhole-open',
+    icon: LockKeyholeOpenIcon,
+    keywords: ['security', 'password', 'secure', 'admin', 'lock', 'open'],
+  },
+  {
+    name: 'lock-open',
+    icon: LockOpenIcon,
+    keywords: ['security', 'password', 'secure', 'admin', 'lock', 'open'],
+  },
+  {
+    name: 'lock-keyhole',
+    icon: LockKeyholeIcon,
+    keywords: ['security', 'password', 'secure', 'admin', 'lock'],
+  },
+  {
+    name: 'lock',
+    icon: LockIcon,
+    keywords: ['security', 'password', 'secure', 'admin', 'lock'],
+  },
   {
     name: 'folders',
     icon: FoldersIcon,

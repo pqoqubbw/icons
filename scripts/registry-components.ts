@@ -1589,5 +1589,29 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/thermometer.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
+    'name': 'lock-keyhole-open',
+    'path': path.join(__dirname, '../icons/lock-keyhole-open.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'lock-keyhole',
+    'path': path.join(__dirname, '../icons/lock-keyhole.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'lock-open',
+    'path': path.join(__dirname, '../icons/lock-open.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'lock',
+    'path': path.join(__dirname, '../icons/lock.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
