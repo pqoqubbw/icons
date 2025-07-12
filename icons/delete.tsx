@@ -1,6 +1,6 @@
 'use client';
 
-import type { Variants } from 'motion/react';
+import type { Transition, Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
@@ -20,7 +20,7 @@ const lidVariants: Variants = {
   animate: { y: -1.1 },
 };
 
-const springTransition = {
+const springTransition: Transition = {
   type: 'spring',
   stiffness: 500,
   damping: 30,
