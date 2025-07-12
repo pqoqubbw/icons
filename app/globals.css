@@ -1,9 +1,123 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: 16px;
+  width: 100%;
+}
+
+@utility rainbow-banner-gradient-1 {
+  mask-image:
+    linear-gradient(to bottom, white, transparent),
+    radial-gradient(circle at top center, white, transparent);
+  mask-composite: intersect;
+  animation: moving-banner 16s linear infinite reverse;
+  --start: rgba(0, 87, 255, 0.5);
+  --mid: rgba(255, 0, 166, 0.77);
+  --end: rgba(255, 77, 0, 0.4);
+  --via: rgba(164, 255, 68, 0.4);
+  background-image: repeating-linear-gradient(
+    60deg,
+    var(--end),
+    var(--start) 2%,
+    var(--start) 5%,
+    transparent 8%,
+    transparent 14%,
+    var(--via) 18%,
+    var(--via) 22%,
+    var(--mid) 28%,
+    var(--mid) 30%,
+    var(--via) 34%,
+    var(--via) 36%,
+    transparent,
+    var(--end) calc(50% - 12px)
+  );
+  background-size: 200% 100%;
+  mix-blend-mode: difference;
+}
+
+@utility rainbow-banner-gradient-2 {
+  mask-image:
+    linear-gradient(to bottom, white, transparent),
+    radial-gradient(circle at top center, white, transparent);
+  mask-composite: intersect;
+  animation: moving-banner 20s linear infinite;
+  --start: rgba(255, 120, 120, 0.5);
+  --mid: rgba(36, 188, 255, 0.4);
+  --end: rgba(64, 0, 255, 0.51);
+  --via: rgba(255, 89, 0, 0.56);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--end),
+    var(--start) 4%,
+    var(--start) 8%,
+    transparent 9%,
+    transparent 14%,
+    var(--mid) 16%,
+    var(--mid) 20%,
+    transparent,
+    var(--via) 36%,
+    var(--via) 40%,
+    transparent 42%,
+    var(--end) 46%,
+    var(--end) calc(50% - 16.8px)
+  );
+  background-size: 200% 100%;
+  mix-blend-mode: color-dodge;
 }
 
 @layer base {
@@ -136,64 +250,6 @@ body {
       background-position: 100% 0;
     }
   }
-
-  .rainbow-banner-gradient-1 {
-    mask-image: linear-gradient(to bottom, white, transparent),
-      radial-gradient(circle at top center, white, transparent);
-    mask-composite: intersect;
-    animation: moving-banner 16s linear infinite reverse;
-    --start: rgba(0, 87, 255, 0.5);
-    --mid: rgba(255, 0, 166, 0.77);
-    --end: rgba(255, 77, 0, 0.4);
-    --via: rgba(164, 255, 68, 0.4);
-    background-image: repeating-linear-gradient(
-      60deg,
-      var(--end),
-      var(--start) 2%,
-      var(--start) 5%,
-      transparent 8%,
-      transparent 14%,
-      var(--via) 18%,
-      var(--via) 22%,
-      var(--mid) 28%,
-      var(--mid) 30%,
-      var(--via) 34%,
-      var(--via) 36%,
-      transparent,
-      var(--end) calc(50% - 12px)
-    );
-    background-size: 200% 100%;
-    mix-blend-mode: difference;
-  }
-
-  .rainbow-banner-gradient-2 {
-    mask-image: linear-gradient(to bottom, white, transparent),
-      radial-gradient(circle at top center, white, transparent);
-    mask-composite: intersect;
-    animation: moving-banner 20s linear infinite;
-    --start: rgba(255, 120, 120, 0.5);
-    --mid: rgba(36, 188, 255, 0.4);
-    --end: rgba(64, 0, 255, 0.51);
-    --via: rgba(255, 89, 0, 0.56);
-    background-image: repeating-linear-gradient(
-      45deg,
-      var(--end),
-      var(--start) 4%,
-      var(--start) 8%,
-      transparent 9%,
-      transparent 14%,
-      var(--mid) 16%,
-      var(--mid) 20%,
-      transparent,
-      var(--via) 36%,
-      var(--via) 40%,
-      transparent 42%,
-      var(--end) 46%,
-      var(--end) calc(50% - 16.8px)
-    );
-    background-size: 200% 100%;
-    mix-blend-mode: color-dodge;
-  }
 }
 
 @layer base {
@@ -201,7 +257,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
   }
 
   .action-container {

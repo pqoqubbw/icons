@@ -39,7 +39,7 @@ async function HeaderGithub() {
         <GitHubLogoIcon />
         {stars > 0 ? (
           <div className="flex items-center gap-1">
-            <Star className="!size-3" fill="#e3b341" stroke="#e3b341" />
+            <Star className="size-3!" fill="#e3b341" stroke="#e3b341" />
             <CountUpNumber number={stars} />
           </div>
         ) : (

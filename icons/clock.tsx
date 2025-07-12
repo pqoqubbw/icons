@@ -23,11 +23,13 @@ const handTransition: Transition = {
 const handVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: '50%',
-    originY: '50%',
+    originX: '0%',
+    originY: '100%',
   },
   animate: {
     rotate: 360,
+    originX: '0%',
+    originY: '100%',
   },
 };
 
@@ -39,11 +41,13 @@ const minuteHandTransition: Transition = {
 const minuteHandVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: '50%',
-    originY: '50%',
+    originX: '0%',
+    originY: '100%',
   },
   animate: {
     rotate: 45,
+    originX: '0%',
+    originY: '100%',
   },
 };
 

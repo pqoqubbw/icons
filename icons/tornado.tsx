@@ -30,8 +30,7 @@ const pathVariants: Variants = {
     transition: {
       x: {
         duration: 0.6,
-        repeat: 0.7,
-        repeatType: 'reverse',
+        repeat: 1,
         ease: 'easeInOut',
         delay: custom * 0.1,
       },

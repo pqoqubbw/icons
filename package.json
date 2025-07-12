@@ -34,19 +34,19 @@
     "use-debounce": "^10.0.5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^24.0.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.13.0",
     "@typescript-eslint/parser": "^8.13.0",
-    "autoprefixer": "^10.4.21",
     "eslint": "^8",
     "eslint-config-next": "15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   }
 }

@@ -73,21 +73,18 @@ const AirplaneIcon = forwardRef<AirplaneIconHandle, AirplaneIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          className="overflow-visible"
         >
           <motion.path
             animate={controls}
             transition={{
               duration: 0.5,
-              times: [0, 0.6, 1],
-              type: 'spring',
-              stiffness: 200,
-              damping: 10,
             }}
             variants={{
               normal: { x: 0, y: 0, scale: 1 },
               animate: {
-                x: [0, 5, 3],
-                y: [0, -5, -3],
+                x: 3,
+                y: -3,
                 scale: 0.8,
               },
             }}
@@ -112,9 +109,6 @@ const AirplaneIcon = forwardRef<AirplaneIconHandle, AirplaneIconProps>(
                   transition: {
                     duration: 0.3,
                     times: [0, 0.6, 1],
-                    type: 'spring',
-                    stiffness: 200,
-                    damping: 10,
                   },
                 },
                 animate: {

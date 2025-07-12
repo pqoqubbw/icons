@@ -75,7 +75,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
       >
         <TabsList className="w-full" onClick={(e) => e.stopPropagation()}>
           {Object.values(PACKAGE_MANAGER).map((pm) => (
-            <TabsTrigger key={pm} value={pm}>
+            <TabsTrigger key={pm} value={pm} className="cursor-pointer">
               {pm}
             </TabsTrigger>
           ))}

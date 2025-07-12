@@ -30,10 +30,7 @@ const linesVariants: Variants = {
     translateX: [-5, 0],
     translateY: [5, 0],
     transition: {
-      type: 'spring',
-      damping: 35,
       duration: 0.7,
-      stiffness: 240,
       velocity: 0.3,
     },
   },
@@ -47,10 +44,7 @@ const dotsVariants: Variants = {
     translateY: [5, 0],
     scale: [0.5, 0.8, 1, 1.1, 1],
     transition: {
-      type: 'spring',
-      damping: 35,
       duration: 0.7,
-      stiffness: 240,
     },
   },
 };
@@ -61,11 +55,7 @@ const popperVariants: Variants = {
     translateX: [-1.5, 0],
     translateY: [1.5, 0],
     transition: {
-      type: 'spring',
-      damping: 35,
-      stiffness: 200,
       velocity: 0.3,
-      mass: 4,
     },
   },
 };

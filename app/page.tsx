@@ -18,7 +18,7 @@ export default async function Home() {
         >
           sponsorship here{' '}
           <ArrowUpRight
-            className="size-3 leading-0 mt-[1px] shrink-0"
+            className="size-3 leading-0 mt-px shrink-0"
             strokeWidth={2.5}
           />
         </Link>

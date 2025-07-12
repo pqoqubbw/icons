@@ -18,8 +18,8 @@ interface TimerIconProps extends HTMLAttributes<HTMLDivElement> {
 const handVariants: Variants = {
   normal: {
     rotate: 0,
-    originX: '12px',
-    originY: '14px',
+    originX: '0%',
+    originY: '100%',
     transition: {
       duration: 0.6,
       ease: [0.4, 0, 0.2, 1],
@@ -27,6 +27,8 @@ const handVariants: Variants = {
   },
   animate: {
     rotate: 300,
+    originX: '0%',
+    originY: '100%',
     transition: {
       delay: 0.1,
       duration: 0.6,
