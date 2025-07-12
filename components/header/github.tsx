@@ -34,9 +34,9 @@ async function HeaderGithub() {
       <Link
         href={LINK.GITHUB}
         target="_blank"
-        className="flex items-center justify-between"
+        className="flex items-center !justify-between"
       >
-        <GitHubLogoIcon />
+        <GitHubLogoIcon className="ml-1 mr-1" />
         {stars > 0 ? (
           <div className="flex items-center gap-1">
             <Star className="size-3!" fill="#e3b341" stroke="#e3b341" />
@@ -45,7 +45,7 @@ async function HeaderGithub() {
         ) : (
           'check repo'
         )}
-        <ArrowUpRight className="w-4 h-4 sm:ml-1 ml-0 text-muted-foreground" />
+        <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
       </Link>
     </Button>
   );
