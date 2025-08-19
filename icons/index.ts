@@ -260,6 +260,7 @@ import { LockIcon } from './lock';
 import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
+import { ConstructionIcon } from './construction';
 
 type IconListItem = {
   name: string;
@@ -2453,6 +2454,17 @@ const ICON_LIST: IconListItem[] = [
     name: 'panel-right-open',
     icon: PanelRightOpenIcon,
     keywords: ['panel', 'right', 'open', 'menu', 'navigation'],
+  },
+  {
+    name: 'construction',
+    icon: ConstructionIcon,
+    keywords: [
+      'roadwork',
+      'maintenance',
+      'blockade',
+      'barricade',
+      'development',
+    ],
   },
 ];
 
