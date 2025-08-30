@@ -2,7 +2,7 @@
 
 YES/NO
 
-## I have run `yarn gen-cli` to generate the necessary files
+## I have run `pnpm gen-cli` to generate the necessary files
 
 YES/NO
 

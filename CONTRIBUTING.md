@@ -27,7 +27,7 @@ We welcome contributions to our project! Please follow these steps to contribute
 5. Install the project dependencies:
 
    ```
-   yarn install
+   pnpm install
    ```
 
 6. **Create your animated icon:**
@@ -165,14 +165,14 @@ We welcome contributions to our project! Please follow these steps to contribute
 8. Build the project to check for errors:
 
    ```
-   yarn build
+   pnpm build
    ```
 
 9. Test the application to ensure your changes work as expected:
 
    ```
-   yarn lint
-   yarn gen-cli
+   pnpm lint
+   pnpm gen-cli
    ```
 
 10. Commit your changes:

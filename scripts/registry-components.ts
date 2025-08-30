@@ -1619,5 +1619,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/construction.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
