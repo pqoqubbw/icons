@@ -1620,4 +1620,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'crown',
+    'path': path.join(__dirname, '../icons/crown.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];

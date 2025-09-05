@@ -1,3 +1,4 @@
+import { CrownIcon } from '@/icons/crown';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
@@ -269,6 +270,20 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'crown',
+    icon: CrownIcon,
+    keywords: [
+      'diadem',
+      'tiara',
+      'circlet',
+      'corona',
+      'king',
+      'ruler',
+      'winner',
+      'favourite',
+    ],
+  },
   {
     name: 'lock-keyhole-open',
     icon: LockKeyholeOpenIcon,
