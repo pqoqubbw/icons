@@ -1,3 +1,4 @@
+import { UnlinkIcon } from './unlink';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
@@ -269,6 +270,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'unlink',
+    icon: UnlinkIcon,
+    keywords: ['unlink', 'link', 'chain'],
+  },
   {
     name: 'lock-keyhole-open',
     icon: LockKeyholeOpenIcon,
