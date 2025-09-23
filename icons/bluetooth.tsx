@@ -75,13 +75,13 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
         >
           <motion.path
             d="m7 7 10 10-5 5V2l5 5L7 17"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           />
           <motion.path
             d="M14.5 9.5 17 7l-5-5v4.5"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           />
