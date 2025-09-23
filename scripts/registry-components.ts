@@ -1625,5 +1625,17 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/bluetooth.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'maximize-2',
+    'path': path.join(__dirname, '../icons/maximize-2.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'maximize',
+    'path': path.join(__dirname, '../icons/maximize.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];
