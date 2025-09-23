@@ -15,7 +15,7 @@ interface Maximize2IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
