@@ -10,7 +10,7 @@ export interface MaximizeIconHandle {
   stopAnimation: () => void;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
