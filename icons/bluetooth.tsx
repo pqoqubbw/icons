@@ -14,7 +14,7 @@ interface BluetoothIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 1],
