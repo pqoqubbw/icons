@@ -261,10 +261,10 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
-
 import { BluetoothIcon } from './bluetooth';
 import { MaximizeIcon } from './maximize';
 import { Maximize2Icon } from './maximize-2';
+import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
 
 type IconListItem = {
