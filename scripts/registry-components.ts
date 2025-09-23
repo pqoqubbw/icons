@@ -1620,4 +1620,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'bluetooth',
+    'path': path.join(__dirname, '../icons/bluetooth.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
