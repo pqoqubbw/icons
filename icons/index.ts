@@ -261,6 +261,7 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
+import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
 
 type IconListItem = {
@@ -1324,6 +1325,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'timer',
     icon: TimerIcon,
     keywords: ['time', 'watch', 'alarm', 'stopwatch', 'stopwatch'],
+  },
+  {
+    name: 'bluetooth',
+    icon: BluetoothIcon,
+    keywords: ['tool', 'connection', 'network'],
   },
   {
     name: 'bluetooth-searching',

@@ -1621,6 +1621,8 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'bluetooth',
+    'path': path.join(__dirname, '../icons/bluetooth.tsx'),
     'name': 'cloud-lightning',
     'path': path.join(__dirname, '../icons/cloud-lightning.tsx'),
     'registryDependencies': [],
