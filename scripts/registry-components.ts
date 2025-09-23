@@ -1620,4 +1620,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'cloud-lightning',
+    'path': path.join(__dirname, '../icons/cloud-lightning.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
