@@ -1,37 +1,34 @@
 'use client';
 
-import { motion, useAnimation, type Variants } from 'motion/react';
+import type { Transition } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BluetoothIconHandle {
+export interface Maximize2IconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BluetoothIconProps extends HTMLAttributes<HTMLDivElement> {
+interface Maximize2IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
-const pathVariants: Variants = {
-const PATH_VARIANTS: Variants = {
-  normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    pathOffset: [1, 0],
-  },
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 250,
+  damping: 25,
 };
 
-const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
+const Maximize2Icon = forwardRef<Maximize2IconHandle, Maximize2IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
+
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -74,18 +71,27 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <motion.path
-            d="m7 7 10 10-5 5V2l5 5L7 17"
-            variants={PATH_VARIANTS}
+            d="M3 16.2V21m0 0h4.8M3 21l6-6"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '2px' },
+            }}
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
           />
           <motion.path
-            d="M14.5 9.5 17 7l-5-5v4.5"
-            variants={PATH_VARIANTS}
+            d="M21 7.8V3m0 0h-4.8M21 3l-6 6"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '-2px' },
+            }}
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
           />
         </svg>
       </div>
@@ -93,6 +99,6 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
   }
 );
 
-BluetoothIcon.displayName = 'BluetoothIcon';
+Maximize2Icon.displayName = ' Maximize2Icon';
 
-export { BluetoothIcon };
+export { Maximize2Icon };

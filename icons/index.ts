@@ -262,6 +262,9 @@ import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
 import { BluetoothIcon } from './bluetooth';
+import { MaximizeIcon } from './maximize';
+import { Maximize2Icon } from './maximize-2';
+import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
 
 type IconListItem = {
@@ -417,6 +420,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'key-circle',
     icon: KeyCircleIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'maximize',
+    icon: MaximizeIcon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
+  },
+  {
+    name: 'maximize-2',
+    icon: Maximize2Icon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
   },
   {
     name: 'rotate-cw',

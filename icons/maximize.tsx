@@ -1,31 +1,26 @@
 'use client';
 
-import { motion, useAnimation, type Variants } from 'motion/react';
+import { motion, type Transition, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BluetoothIconHandle {
+export interface MaximizeIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BluetoothIconProps extends HTMLAttributes<HTMLDivElement> {
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 250,
+  damping: 25,
+};
+
+interface MaximizeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
-const pathVariants: Variants = {
-const PATH_VARIANTS: Variants = {
-  normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    pathOffset: [1, 0],
-  },
-};
-
-const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
+const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -76,16 +71,43 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
           stroke="currentColor"
         >
           <motion.path
-            d="m7 7 10 10-5 5V2l5 5L7 17"
-            variants={PATH_VARIANTS}
+            d="M8 3H5a2 2 0 0 0-2 2v3"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '-2px' }, // top-left corner → outwards
+            }}
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
           />
+
           <motion.path
-            d="M14.5 9.5 17 7l-5-5v4.5"
-            variants={PATH_VARIANTS}
+            d="M21 8V5a2 2 0 0 0-2-2h-3"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '-2px' }, // top-right corner → outwards
+            }}
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          />
+
+          <motion.path
+            d="M3 16v3a2 2 0 0 0 2 2h3"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '2px' }, // bottom-left corner → outwards
+            }}
+            animate={controls}
+          />
+
+          <motion.path
+            d="M16 21h3a2 2 0 0 0 2-2v-3"
+            transition={defaultTransition}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '2px' }, // bottom-right corner → outwards
+            }}
+            animate={controls}
           />
         </svg>
       </div>
@@ -93,6 +115,6 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
   }
 );
 
-BluetoothIcon.displayName = 'BluetoothIcon';
+MaximizeIcon.displayName = 'MaximizeIcon';
 
-export { BluetoothIcon };
+export { MaximizeIcon };
