@@ -1643,5 +1643,11 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/cloud-lightning.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
+  },
+  {
+    'name': 'cloud-cog',
+    'path': path.join(__dirname, '../icons/cloud-cog.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   }
 ];
