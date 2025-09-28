@@ -72,7 +72,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
         >
           <motion.path
             d="M8 3H5a2 2 0 0 0-2 2v3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
               animate: { translateX: '-2px', translateY: '-2px' }, // top-left corner → outwards
@@ -82,7 +82,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
 
           <motion.path
             d="M21 8V5a2 2 0 0 0-2-2h-3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
               animate: { translateX: '2px', translateY: '-2px' }, // top-right corner → outwards
@@ -92,7 +92,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
 
           <motion.path
             d="M3 16v3a2 2 0 0 0 2 2h3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
               animate: { translateX: '-2px', translateY: '2px' }, // bottom-left corner → outwards
@@ -102,7 +102,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
 
           <motion.path
             d="M16 21h3a2 2 0 0 0 2-2v-3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
               animate: { translateX: '2px', translateY: '2px' }, // bottom-right corner → outwards

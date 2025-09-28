@@ -1635,9 +1635,9 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'maximize',
     'path': path.join(__dirname, '../icons/maximize.tsx'),
-     'registryDependencies': [],
-    'dependencies': ['motion'], 
-  }, 
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
   {
     'name': 'cloud-lightning',
     'path': path.join(__dirname, '../icons/cloud-lightning.tsx'),
@@ -1649,5 +1649,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/cloud-cog.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
