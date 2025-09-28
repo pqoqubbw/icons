@@ -263,6 +263,8 @@ import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
+import { CloudDownloadIcon } from './cloud-download';
+import { CloudUploadIcon } from './cloud-upload';
 
 type IconListItem = {
   name: string;
@@ -558,6 +560,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'tornado',
     icon: TornadoIcon,
     keywords: ['tornado', 'wind', 'weather', 'spin', 'twister', 'whirlwind'],
+  },
+  {
+    name: 'cloud-download',
+    icon: CloudDownloadIcon,
+    keywords: ['cloud', 'download', 'weather', 'cloud download'],
+  },
+  {
+    name: 'cloud-upload',
+    icon: CloudUploadIcon,
+    keywords: ['cloud', 'upload', 'weather', 'cloud upload'],
   },
   {
     name: 'cloud-lightning',
