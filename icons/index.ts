@@ -261,10 +261,13 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
+import { MaximizeIcon } from './maximize';
+import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
 import { HardDriveUploadIcon } from './hard-drive-upload';
 import { HardDriveDownloadIcon } from './hard-drive-download';
+import { CloudCogIcon } from './cloud-cog';
 
 type IconListItem = {
   name: string;
@@ -431,6 +434,16 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
   },
   {
+    name: 'maximize',
+    icon: MaximizeIcon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
+  },
+  {
+    name: 'maximize-2',
+    icon: Maximize2Icon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
+  },
+  {
     name: 'rotate-cw',
     icon: RotateCWIcon,
     keywords: [
@@ -570,6 +583,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'tornado',
     icon: TornadoIcon,
     keywords: ['tornado', 'wind', 'weather', 'spin', 'twister', 'whirlwind'],
+  },
+  {
+    name: 'cloud-cog',
+    icon: CloudCogIcon,
+    keywords: ['cloud', 'cog', 'cloud cog', 'edit', 'gear', 'preferences'],
   },
   {
     name: 'cloud-lightning',
