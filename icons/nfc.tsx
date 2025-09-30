@@ -14,7 +14,7 @@ interface NfcIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     transition: {
