@@ -265,6 +265,8 @@ import { MaximizeIcon } from './maximize';
 import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
+import { SmartphoneNfcIcon } from './smartphone-nfc';
+import { NfcIcon } from './nfc';
 import { CloudCogIcon } from './cloud-cog';
 
 type IconListItem = {
@@ -356,6 +358,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'smartphone-charging',
     icon: SmartphoneChargingIcon,
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
+  },
+  {
+    name: 'smartphone-nfc',
+    icon: SmartphoneNfcIcon,
+    keywords: ['phone', 'cellphone', 'device', 'nfc', 'screen'],
+  },
+  {
+    name: 'nfc',
+    icon: NfcIcon,
+    keywords: ['nfc', 'near field communication', 'wireless', 'signal'],
   },
   {
     name: 'history',
