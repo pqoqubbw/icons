@@ -15,7 +15,7 @@ interface HardDriveUploadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: { y: 0 },
   animate: {
     y: -1,
