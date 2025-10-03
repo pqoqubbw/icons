@@ -265,6 +265,8 @@ import { MaximizeIcon } from './maximize';
 import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
+import { CloudDownloadIcon } from './cloud-download';
+import { CloudUploadIcon } from './cloud-upload';
 import { HardDriveUploadIcon } from './hard-drive-upload';
 import { HardDriveDownloadIcon } from './hard-drive-download';
 import { SmartphoneNfcIcon } from './smartphone-nfc';
@@ -595,6 +597,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'tornado',
     icon: TornadoIcon,
     keywords: ['tornado', 'wind', 'weather', 'spin', 'twister', 'whirlwind'],
+  },
+  {
+    name: 'cloud-download',
+    icon: CloudDownloadIcon,
+    keywords: ['cloud', 'download', 'weather', 'cloud download'],
+  },
+  {
+    name: 'cloud-upload',
+    icon: CloudUploadIcon,
+    keywords: ['cloud', 'upload', 'weather', 'cloud upload'],
   },
   {
     name: 'cloud-cog',

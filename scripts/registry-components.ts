@@ -1645,12 +1645,23 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'cloud-download',
+    'path': path.join(__dirname, '../icons/cloud-download.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'hard-drive-download',
     'path': path.join(__dirname, '../icons/hard-drive-download.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
+    'name': 'cloud-upload',
+    'path': path.join(__dirname, '../icons/cloud-upload.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
     'name': 'nfc',
     'path': path.join(__dirname, '../icons/nfc.tsx'),
     'registryDependencies': [],
