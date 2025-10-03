@@ -1661,7 +1661,8 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/cloud-upload.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
+  {
     'name': 'nfc',
     'path': path.join(__dirname, '../icons/nfc.tsx'),
     'registryDependencies': [],

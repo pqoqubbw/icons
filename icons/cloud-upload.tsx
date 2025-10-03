@@ -1,5 +1,6 @@
 'use client';
 
+import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
@@ -15,10 +16,9 @@ interface CloudUploadIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CLOUD_VARIANTS: Variants = {
-  initial: { y: -2 }, 
-  active: { y: 0 }
+  initial: { y: -2 },
+  active: { y: 0 },
 };
-
 
 const CloudUploadIcon = forwardRef<CloudUploadIconHandle, CloudUploadIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {

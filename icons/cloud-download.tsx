@@ -15,8 +15,8 @@ interface CloudDownloadIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CLOUD_VARIANTS: Variants = {
-  initial: { y: 2 }, 
-  active: { y: 0 }
+  initial: { y: 2 },
+  active: { y: 0 },
 };
 
 const CloudDownloadIcon = forwardRef<
