@@ -261,10 +261,17 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
+import { MaximizeIcon } from './maximize';
+import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
 import { CloudDownloadIcon } from './cloud-download';
 import { CloudUploadIcon } from './cloud-upload';
+import { HardDriveUploadIcon } from './hard-drive-upload';
+import { HardDriveDownloadIcon } from './hard-drive-download';
+import { SmartphoneNfcIcon } from './smartphone-nfc';
+import { NfcIcon } from './nfc';
+import { CloudCogIcon } from './cloud-cog';
 
 type IconListItem = {
   name: string;
@@ -357,9 +364,29 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['phone', 'cellphone', 'device', 'power', 'screen'],
   },
   {
+    name: 'smartphone-nfc',
+    icon: SmartphoneNfcIcon,
+    keywords: ['phone', 'cellphone', 'device', 'nfc', 'screen'],
+  },
+  {
+    name: 'nfc',
+    icon: NfcIcon,
+    keywords: ['nfc', 'near field communication', 'wireless', 'signal'],
+  },
+  {
     name: 'history',
     icon: HistoryIcon,
     keywords: ['history', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'hard-drive-upload',
+    icon: HardDriveUploadIcon,
+    keywords: ['hard drive', 'upload', 'storage', 'data', 'save'],
+  },
+  {
+    name: 'hard-drive-download',
+    icon: HardDriveDownloadIcon,
+    keywords: ['hard drive', 'download', 'storage', 'data', 'save'],
   },
   { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
@@ -419,6 +446,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'key-circle',
     icon: KeyCircleIcon,
     keywords: ['key', 'authentication', 'security', 'access', 'password'],
+  },
+  {
+    name: 'maximize',
+    icon: MaximizeIcon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
+  },
+  {
+    name: 'maximize-2',
+    icon: Maximize2Icon,
+    keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
   },
   {
     name: 'rotate-cw',
@@ -570,6 +607,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'cloud-upload',
     icon: CloudUploadIcon,
     keywords: ['cloud', 'upload', 'weather', 'cloud upload'],
+  },
+  {
+    name: 'cloud-cog',
+    icon: CloudCogIcon,
+    keywords: ['cloud', 'cog', 'cloud cog', 'edit', 'gear', 'preferences'],
   },
   {
     name: 'cloud-lightning',
