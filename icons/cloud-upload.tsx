@@ -14,6 +14,12 @@ interface CloudUploadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
+const CLOUD_VARIANTS: Variants = {
+  initial: { y: -2 }, 
+  active: { y: 0 }
+};
+
+
 const CloudUploadIcon = forwardRef<CloudUploadIconHandle, CloudUploadIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
@@ -22,15 +28,15 @@ const CloudUploadIcon = forwardRef<CloudUploadIconHandle, CloudUploadIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start({ y: -2 }),
-        stopAnimation: () => controls.start({ y: 0 }),
+        startAnimation: () => controls.start('initial'),
+        stopAnimation: () => controls.start('active'),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start({ y: -2 });
+          controls.start('initial');
         } else {
           onMouseEnter?.(e);
         }
@@ -41,7 +47,7 @@ const CloudUploadIcon = forwardRef<CloudUploadIconHandle, CloudUploadIconProps>(
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start({ y: 0 });
+          controls.start('active');
         } else {
           onMouseLeave?.(e);
         }
@@ -70,6 +76,7 @@ const CloudUploadIcon = forwardRef<CloudUploadIconHandle, CloudUploadIconProps>(
           <path d="M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2" />
           <motion.g
             animate={controls}
+            variants={CLOUD_VARIANTS}
             transition={{
               duration: 0.3,
               ease: [0.68, -0.6, 0.32, 1.6],
