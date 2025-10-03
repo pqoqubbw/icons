@@ -37,7 +37,7 @@ const CloudDownloadIcon = forwardRef<
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!isControlledRef.current) {
-        controls.start({ y: 2 });
+        controls.start('initial');
       } else {
         onMouseEnter?.(e);
       }
@@ -48,7 +48,7 @@ const CloudDownloadIcon = forwardRef<
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!isControlledRef.current) {
-        controls.start({ y: 0 });
+        controls.start('active');
       } else {
         onMouseLeave?.(e);
       }
