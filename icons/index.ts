@@ -265,6 +265,8 @@ import { MaximizeIcon } from './maximize';
 import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
 import { CloudLightningIcon } from './cloud-lightning';
+import { HardDriveUploadIcon } from './hard-drive-upload';
+import { HardDriveDownloadIcon } from './hard-drive-download';
 import { SmartphoneNfcIcon } from './smartphone-nfc';
 import { NfcIcon } from './nfc';
 import { CloudCogIcon } from './cloud-cog';
@@ -373,6 +375,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'history',
     icon: HistoryIcon,
     keywords: ['history', 'back', 'previous', 'arrow'],
+  },
+  {
+    name: 'hard-drive-upload',
+    icon: HardDriveUploadIcon,
+    keywords: ['hard drive', 'upload', 'storage', 'data', 'save'],
+  },
+  {
+    name: 'hard-drive-download',
+    icon: HardDriveDownloadIcon,
+    keywords: ['hard drive', 'download', 'storage', 'data', 'save'],
   },
   { name: 'square-activity', icon: SquareActivityIcon, keywords: ['activity'] },
   {
