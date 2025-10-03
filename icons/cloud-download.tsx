@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation, type Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
@@ -14,6 +14,11 @@ interface CloudDownloadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
+const CLOUD_VARIANTS: Variants = {
+  initial: { y: 2 }, 
+  active: { y: 0 }
+};
+
 const CloudDownloadIcon = forwardRef<
   CloudDownloadIconHandle,
   CloudDownloadIconProps
@@ -24,8 +29,8 @@ const CloudDownloadIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start({ y: 2 }),
-      stopAnimation: () => controls.start({ y: 0 }),
+      startAnimation: () => controls.start('initial'),
+      stopAnimation: () => controls.start('active'),
     };
   });
 
@@ -72,6 +77,7 @@ const CloudDownloadIcon = forwardRef<
         <path d="M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2" />
         <motion.g
           animate={controls}
+          variants={CLOUD_VARIANTS}
           transition={{
             duration: 0.3,
             ease: [0.68, -0.6, 0.32, 1.6],
