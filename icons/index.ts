@@ -261,6 +261,16 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
+import { BookmarkIcon } from './bookmark';
+import { BookmarkCheckIcon } from './bookmark-check';
+import { GripHorizontalIcon } from './grip-horizontal';
+import { ChevronFirstIcon } from './chevron-first';
+import { BotIcon } from './bot';
+import { BookmarkXIcon } from './bookmark-x';
+import { BookmarkMinusIcon } from './bookmark-minus';
+import { BookmarkPlusIcon } from './bookmark-plus';
+import { GripVerticalIcon } from './grip-vertical';
+import { BotMessageSquareIcon } from './bot-message-square';
 
 type IconListItem = {
   name: string;
@@ -269,6 +279,54 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'chevron-first',
+    icon: ChevronFirstIcon,
+    keywords: ['chevron', 'first', 'down', 'arrow'],
+  },
+  { name: 'bot', icon: BotIcon, keywords: ['bot', 'user', 'avatar'] },
+
+  {
+    name: 'grip-horizontal',
+    icon: GripHorizontalIcon,
+    keywords: ['grip', 'move', 'drag', 'resize', 'drag and drop'],
+  },
+  {
+    name: 'grip-vertical',
+    icon: GripVerticalIcon,
+    keywords: ['grip', 'move', 'drag', 'resize', 'drag and drop'],
+  },
+  {
+    name: 'bot-message-square',
+    icon: BotMessageSquareIcon,
+    keywords: ['bot', 'message', 'square', 'bubble', 'chat', 'conversation'],
+  },
+  {
+    name: 'bookmark',
+    icon: BookmarkIcon,
+    keywords: ['bookmark', 'save', 'tag', 'label'],
+  },
+  {
+    name: 'bookmark-x',
+    icon: BookmarkXIcon,
+    keywords: ['bookmark', 'x', 'remove', 'delete', 'tag', 'label'],
+  },
+  {
+    name: 'bookmark-minus',
+    icon: BookmarkMinusIcon,
+    keywords: ['bookmark', 'minus', 'remove', 'delete', 'tag', 'label'],
+  },
+  {
+    name: 'bookmark-plus',
+    icon: BookmarkPlusIcon,
+    keywords: ['bookmark', 'plus', 'add', 'create', 'tag', 'label'],
+  },
+  {
+    name: 'bookmark-check',
+    icon: BookmarkCheckIcon,
+    keywords: ['bookmark', 'check', 'save', 'tag', 'label'],
+  },
+
   {
     name: 'lock-keyhole-open',
     icon: LockKeyholeOpenIcon,
@@ -1485,6 +1543,7 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ['arrow', 'down', 'a'],
   },
+
   {
     name: 'circle-dashed',
     icon: CircleDashedIcon,
