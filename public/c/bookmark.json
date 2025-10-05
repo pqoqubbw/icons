@@ -1,0 +1,21 @@
+{
+  "name": "bookmark",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "bookmark.tsx",
+      "content": "'use client';\r\n\r\nimport type { Variants } from 'motion/react';\r\nimport { motion, useAnimation } from 'motion/react';\r\nimport {\r\n  forwardRef,\r\n  useImperativeHandle,\r\n  useRef,\r\n  useCallback,\r\n  type HTMLAttributes,\r\n} from 'react';\r\nimport { cn } from '@/lib/utils';\r\n\r\nexport interface BookmarkIconHandle {\r\n  startAnimation: () => void;\r\n  stopAnimation: () => void;\r\n}\r\n\r\ninterface BookmarkIconProps extends HTMLAttributes<HTMLDivElement> {\r\n  size?: number;\r\n}\r\n\r\nconst bookmarkVariants: Variants = {\r\n  normal: { scaleY: 1, scaleX: 1 },\r\n  animate: {\r\n    scaleY: [1, 1.3, 0.9, 1.05, 1],\r\n    scaleX: [1, 0.9, 1.1, 0.95, 1],\r\n    transition: {\r\n      duration: 0.6,\r\n      ease: 'easeOut',\r\n    },\r\n  },\r\n};\r\n\r\nconst BookmarkIcon = forwardRef<BookmarkIconHandle, BookmarkIconProps>(\r\n  ({ className, size = 28, onMouseEnter, onMouseLeave, ...props }, ref) => {\r\n    const controls = useAnimation();\r\n    const isControlledRef = useRef(false);\r\n\r\n    useImperativeHandle(ref, () => {\r\n      isControlledRef.current = true;\r\n      return {\r\n        startAnimation: () => controls.start('animate'),\r\n        stopAnimation: () => controls.start('normal'),\r\n      };\r\n    });\r\n\r\n    const handleMouseEnter = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) {\r\n          controls.start('animate');\r\n        } else {\r\n          onMouseEnter?.(e);\r\n        }\r\n      },\r\n      [controls, onMouseEnter]\r\n    );\r\n\r\n    const handleMouseLeave = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) {\r\n          controls.start('normal');\r\n        } else {\r\n          onMouseLeave?.(e);\r\n        }\r\n      },\r\n      [controls, onMouseLeave]\r\n    );\r\n\r\n    return (\r\n      <div\r\n        className={cn(className)}\r\n        onMouseEnter={handleMouseEnter}\r\n        onMouseLeave={handleMouseLeave}\r\n        {...props}\r\n      >\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          width={size}\r\n          height={size}\r\n          viewBox=\"0 0 24 24\"\r\n          fill=\"none\"\r\n          stroke=\"currentColor\"\r\n          strokeWidth=\"2\"\r\n          strokeLinecap=\"round\"\r\n          strokeLinejoin=\"round\"\r\n        >\r\n          <motion.path\r\n            d=\"m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z\"\r\n            animate={controls}\r\n            variants={bookmarkVariants}\r\n            style={{ originY: 0.5, originX: 0.5 }} // scale from center\r\n          />\r\n        </svg>\r\n      </div>\r\n    );\r\n  }\r\n);\r\n\r\nBookmarkIcon.displayName = 'BookmarkIcon';\r\n\r\nexport { BookmarkIcon };\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}
