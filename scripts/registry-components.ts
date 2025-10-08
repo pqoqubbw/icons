@@ -1686,4 +1686,70 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'dollar-sign',
+    'path': path.join(__dirname, '../icons/dollar-sign.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'euro',
+    'path': path.join(__dirname, '../icons/euro.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'georgian-lari',
+    'path': path.join(__dirname, '../icons/georgian-lari.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'indian-rupee',
+    'path': path.join(__dirname, '../icons/indian-rupee.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'japanese-yen',
+    'path': path.join(__dirname, '../icons/japanese-yen.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'philippine-peso',
+    'path': path.join(__dirname, '../icons/philippine-peso.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'pound-sterling',
+    'path': path.join(__dirname, '../icons/pound-sterling.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'russian-ruble',
+    'path': path.join(__dirname, '../icons/russian-ruble.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'saudi-riyal',
+    'path': path.join(__dirname, '../icons/saudi-riyal.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'swiss-franc',
+    'path': path.join(__dirname, '../icons/swiss-franc.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'turkish-lira',
+    'path': path.join(__dirname, '../icons/turkish-lira.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
