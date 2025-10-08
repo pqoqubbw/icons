@@ -1,35 +1,70 @@
 'use client';
 
-import { motion, useAnimation, type Variants } from 'motion/react';
+import type { Variants } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BluetoothIconHandle {
+export interface DollarSignIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BluetoothIconProps extends HTMLAttributes<HTMLDivElement> {
+interface DollarSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PATH_VARIANTS: Variants = {
-  normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
+const dollarMainVariants: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
+  },
   animate: {
-    pathLength: [0, 1],
     opacity: [0, 1],
-    pathOffset: [1, 0],
+    pathLength: [0, 1],
+    transition: {
+      duration: 0.6,
+      opacity: { duration: 0.1 },
+    },
   },
 };
 
-const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
+const dollarSecondaryVariants: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    pathOffset: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.3,
+      opacity: { duration: 0.1, delay: 0.3 },
+    },
+  },
+  animate: {
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    pathOffset: [1, 0],
+    transition: {
+      delay: 0.5,
+      duration: 0.4,
+      opacity: { duration: 0.1, delay: 0.5 },
+    },
+  },
+};
+
+const DollarSignIcon = forwardRef<DollarSignIconHandle, DollarSignIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
+
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -73,18 +108,20 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <motion.path
-            d="m7 7 10 10-5 5V2l5 5L7 17"
-            variants={PATH_VARIANTS}
+            d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+            initial="normal"
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            variants={dollarMainVariants}
           />
           <motion.path
-            d="M14.5 9.5 17 7l-5-5v4.5"
-            variants={PATH_VARIANTS}
+            d="M12 22 L12 2"
+            initial="normal"
             animate={controls}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            variants={dollarSecondaryVariants}
           />
         </svg>
       </div>
@@ -92,6 +129,6 @@ const BluetoothIcon = forwardRef<BluetoothIconHandle, BluetoothIconProps>(
   }
 );
 
-BluetoothIcon.displayName = 'BluetoothIcon';
+DollarSignIcon.displayName = 'DollarSignIcon';
 
-export { BluetoothIcon };
+export { DollarSignIcon };
