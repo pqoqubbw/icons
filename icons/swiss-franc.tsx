@@ -34,7 +34,7 @@ const francMainVariants: Variants = {
   },
 };
 
-const francSecondaryVariants: Variants = {
+const FRANC_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
