@@ -115,19 +115,19 @@ const SwissFrancIcon = forwardRef<SwissFrancIconHandle, SwissFrancIconProps>(
             d="M10 21V3h8"
             initial="normal"
             animate={controls}
-            variants={francMainVariants}
+            variants={FRANC_MAIN_VARIANTS}
           />
           <motion.path
             d="M6 16h9"
             initial="normal"
             animate={controls}
-            variants={francSecondaryVariants}
+            variants={FRANC_SECONDARY_VARIANTS}
           />
           <motion.path
             d="M10 9.5h7"
             initial="normal"
             animate={controls}
-            variants={francSecondaryVariants}
+            variants={FRANC_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
