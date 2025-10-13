@@ -103,7 +103,7 @@ const ArrowDownRightIcon = forwardRef<
         />
         <motion.path
           d="M17 17 L10 17"
-          variants={headVariants}
+          variants={HEAD_VARIANTS}
           animate={controls}
         />
       </svg>
