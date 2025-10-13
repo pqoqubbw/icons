@@ -15,7 +15,7 @@ interface TurkishLiraIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const liraMainVariants: Variants = {
+const LIRA_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
