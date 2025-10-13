@@ -34,7 +34,7 @@ const LIRA_MAIN_VARIANTS: Variants = {
   },
 };
 
-const liraSecondaryVariants: Variants = {
+const LIRA_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -115,19 +115,19 @@ const TurkishLiraIcon = forwardRef<TurkishLiraIconHandle, TurkishLiraIconProps>(
             d="M18 12a9 9 0 0 1-9 9V3"
             initial="normal"
             animate={controls}
-            variants={liraMainVariants}
+            variants={LIRA_MAIN_VARIANTS}
           />
           <motion.path
             d="M15 4 5 9"
             initial="normal"
             animate={controls}
-            variants={liraSecondaryVariants}
+            variants={LIRA_SECONDARY_VARIANTS}
           />
           <motion.path
             d="m15 8.5-10 5"
             initial="normal"
             animate={controls}
-            variants={liraSecondaryVariants}
+            variants={LIRA_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
