@@ -15,7 +15,7 @@ interface PoundSterlingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const poundMainVariants: Variants = {
+const POUND_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const poundMainVariants: Variants = {
   },
 };
 
-const poundSecondaryVariants: Variants = {
+const POUND_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -117,25 +117,25 @@ const PoundSterlingIcon = forwardRef<
           d="M18 7c0-5.333-8-5.333-8 0"
           initial="normal"
           animate={controls}
-          variants={poundMainVariants}
+          variants={POUND_MAIN_VARIANTS}
         />
         <motion.path
           d="M10 7v14"
           initial="normal"
           animate={controls}
-          variants={poundMainVariants}
+          variants={POUND_MAIN_VARIANTS}
         />
         <motion.path
           d="M18 21h-12"
           initial="normal"
           animate={controls}
-          variants={poundSecondaryVariants}
+          variants={POUND_SECONDARY_VARIANTS}
         />
         <motion.path
           d="M16 13h-10"
           initial="normal"
           animate={controls}
-          variants={poundSecondaryVariants}
+          variants={POUND_SECONDARY_VARIANTS}
         />
       </svg>
     </div>
