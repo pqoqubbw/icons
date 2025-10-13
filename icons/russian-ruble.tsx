@@ -15,7 +15,7 @@ interface RussianRubleIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rubleMainVariants: Variants = {
+const RUSSIAN_RUBLE_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const rubleMainVariants: Variants = {
   },
 };
 
-const rubleSecondaryVariants: Variants = {
+const RUSSIAN_RUBLE_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -117,13 +117,13 @@ const RussianRubleIcon = forwardRef<
           d="M6 11h8a4 4 0 0 0 0-8H9v18"
           initial="normal"
           animate={controls}
-          variants={rubleMainVariants}
+          variants={RUSSIAN_RUBLE_MAIN_VARIANTS}
         />
         <motion.path
           d="M6 15h8"
           initial="normal"
           animate={controls}
-          variants={rubleSecondaryVariants}
+          variants={RUSSIAN_RUBLE_SECONDARY_VARIANTS}
         />
       </svg>
     </div>
