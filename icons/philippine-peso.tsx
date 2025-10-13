@@ -15,7 +15,7 @@ interface PhilippinePesoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pesoMainVariants: Variants = {
+const PESO_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const pesoMainVariants: Variants = {
   },
 };
 
-const pesoSecondaryVariants: Variants = {
+const PESO_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -117,19 +117,19 @@ const PhilippinePesoIcon = forwardRef<
           d="M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7"
           initial="normal"
           animate={controls}
-          variants={pesoMainVariants}
+          variants={PESO_MAIN_VARIANTS}
         />
         <motion.path
           d="M20 7H4"
           initial="normal"
           animate={controls}
-          variants={pesoSecondaryVariants}
+          variants={PESO_SECONDARY_VARIANTS}
         />
         <motion.path
           d="M20 11H4"
           initial="normal"
           animate={controls}
-          variants={pesoSecondaryVariants}
+          variants={PESO_SECONDARY_VARIANTS}
         />
       </svg>
     </div>
