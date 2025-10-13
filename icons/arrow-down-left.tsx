@@ -75,7 +75,7 @@ const ArrowDownLeftIcon = forwardRef<
 
   return (
     <div
-      className={cn('inline-block', className)}
+      className={cn(className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
