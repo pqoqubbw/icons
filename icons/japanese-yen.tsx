@@ -15,7 +15,7 @@ interface JapaneseYenIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const japaneseYenMainVariants: Variants = {
+const JAPANESE_YEN_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const japaneseYenMainVariants: Variants = {
   },
 };
 
-const japaneseYenSecondaryVariants: Variants = {
+const JAPANESE_YEN_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -115,19 +115,19 @@ const JapaneseYenIcon = forwardRef<JapaneseYenIconHandle, JapaneseYenIconProps>(
             d="M12 9.5V21m0-11.5L6 3m6 6.5L18 3"
             initial="normal"
             animate={controls}
-            variants={japaneseYenMainVariants}
+            variants={JAPANESE_YEN_MAIN_VARIANTS}
           />
           <motion.path
             d="M18 11h-12"
             initial="normal"
             animate={controls}
-            variants={japaneseYenSecondaryVariants}
+            variants={JAPANESE_YEN_SECONDARY_VARIANTS}
           />
           <motion.path
             d="M18 15h-12"
             initial="normal"
             animate={controls}
-            variants={japaneseYenSecondaryVariants}
+            variants={JAPANESE_YEN_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
