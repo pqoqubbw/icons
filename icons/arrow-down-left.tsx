@@ -15,7 +15,7 @@ interface ArrowDownLeftIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const headVariants: Variants = {
+const HEAD_VARIANTS: Variants = {
   normal: { translateX: 0, translateY: 0 },
   animate: {
     translateX: [0, 3, 0],
