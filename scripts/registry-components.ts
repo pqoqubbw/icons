@@ -1689,6 +1689,8 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'dollar-sign',
     'path': path.join(__dirname, '../icons/dollar-sign.tsx'),
+    'name': 'arrow-down-left',
+    'path': path.join(__dirname, '../icons/arrow-down-left.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1749,6 +1751,8 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'turkish-lira',
     'path': path.join(__dirname, '../icons/turkish-lira.tsx'),
+    'name': 'arrow-down-right',
+    'path': path.join(__dirname, '../icons/arrow-down-right.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   }

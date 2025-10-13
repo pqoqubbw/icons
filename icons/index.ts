@@ -283,6 +283,8 @@ import { RussianRubleIcon } from './russian-ruble';
 import { SaudiRiyalIcon } from './saudi-riyal';
 import { SwissFrancIcon } from './swiss-franc';
 import { TurkishLiraIcon } from './turkish-lira';
+import { ArrowDownLeftIcon } from './arrow-down-left';
+import { ArrowDownRightIcon } from './arrow-down-right';
 
 type IconListItem = {
   name: string;
@@ -572,6 +574,30 @@ const ICON_LIST: IconListItem[] = [
     name: 'arrow-down',
     icon: ArrowDownIcon,
     keywords: ['down', 'below', 'direction', 'south', 'bottom'],
+  },
+  {
+    name: 'arrow-down-left',
+    icon: ArrowDownLeftIcon,
+    keywords: [
+      'arrow',
+      'down',
+      'left',
+      'direction',
+      'southwest',
+      'bottom left',
+    ],
+  },
+  {
+    name: 'arrow-down-right',
+    icon: ArrowDownRightIcon,
+    keywords: [
+      'arrow',
+      'down',
+      'right',
+      'direction',
+      'southeast',
+      'bottom right',
+    ],
   },
   {
     name: 'vibrate',
@@ -2598,6 +2624,6 @@ const ICON_LIST: IconListItem[] = [
       'development',
     ],
   },
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export { ICON_LIST };

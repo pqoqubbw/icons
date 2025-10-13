@@ -1,0 +1,21 @@
+{
+  "name": "arrow-down-left",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "arrow-down-left.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface ArrowDownLeftIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface ArrowDownLeftIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst headVariants: Variants = {\n  normal: { translateX: 0, translateY: 0 },\n  animate: {\n    translateX: [0, 3, 0],\n    translateY: [0, -3, 0],\n    transition: {\n      duration: 0.5,\n      ease: 'easeInOut',\n    },\n  },\n};\n\nconst shaftVariants: Variants = {\n  normal: { translateX: 0, translateY: 0, scale: 1 },\n  animate: {\n    translateX: [0, 3, 0],\n    translateY: [0, -3, 0],\n    scale: [1, 0.85, 1],\n    originX: 1,\n    originY: 1,\n    transition: {\n      duration: 0.5,\n      ease: 'easeInOut',\n    },\n  },\n};\n\nconst ArrowDownLeftIcon = forwardRef<\n  ArrowDownLeftIconHandle,\n  ArrowDownLeftIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n    return {\n      startAnimation: () => controls.start('animate'),\n      stopAnimation: () => controls.start('normal'),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) controls.start('animate');\n      onMouseEnter?.(e);\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) controls.start('normal');\n      onMouseLeave?.(e);\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn('inline-block', className)}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <motion.path\n          d=\"M17 17H7V7\"\n          variants={headVariants}\n          animate={controls}\n        />\n        <motion.path\n          d=\"M7 17 L12 12\"\n          variants={shaftVariants}\n          animate={controls}\n        />\n        <path d=\"M17 7 L12 12\" />\n      </svg>\n    </div>\n  );\n});\n\nArrowDownLeftIcon.displayName = 'ArrowDownLeftIcon';\n\nexport { ArrowDownLeftIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
