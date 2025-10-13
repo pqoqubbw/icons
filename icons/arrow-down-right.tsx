@@ -27,7 +27,7 @@ const HEAD_VARIANTS: Variants = {
   },
 };
 
-const shaftVariants: Variants = {
+const SHAFT_VARIANTS: Variants = {
   normal: { translateX: 0, translateY: 0, scale: 1 },
   animate: {
     translateX: [0, -3, 0],
