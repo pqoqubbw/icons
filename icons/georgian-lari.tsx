@@ -15,7 +15,7 @@ interface GeorgianLariIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lariMainVariants: Variants = {
+const LARI_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const lariMainVariants: Variants = {
   },
 };
 
-const lariSecondaryVariants: Variants = {
+const LARI_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -117,25 +117,25 @@ const GeorgianLariIcon = forwardRef<
           d="M11.5 21a7.5 7.5 0 1 1 7.35-9"
           initial="normal"
           animate={controls}
-          variants={lariMainVariants}
+          variants={LARI_MAIN_VARIANTS}
         />
         <motion.path
           d="M4 21h16"
           initial="normal"
           animate={controls}
-          variants={lariMainVariants}
+          variants={LARI_MAIN_VARIANTS}
         />
         <motion.path
           d="M9 12V3"
           initial="normal"
           animate={controls}
-          variants={lariSecondaryVariants}
+          variants={LARI_SECONDARY_VARIANTS}
         />
         <motion.path
           d="M13 12V3"
           initial="normal"
           animate={controls}
-          variants={lariSecondaryVariants}
+          variants={LARI_SECONDARY_VARIANTS}
         />
       </svg>
     </div>
