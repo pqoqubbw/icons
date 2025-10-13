@@ -15,7 +15,7 @@ interface SwissFrancIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const francMainVariants: Variants = {
+const FRANC_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
