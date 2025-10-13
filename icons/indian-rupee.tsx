@@ -15,7 +15,7 @@ interface IndianRupeeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const indianRupeeMainVariants: Variants = {
+const INDIAN_RUPEE_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const indianRupeeMainVariants: Variants = {
   },
 };
 
-const indianRupeeSecondaryVariants: Variants = {
+const INDIAN_RUPEE_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -115,31 +115,31 @@ const IndianRupeeIcon = forwardRef<IndianRupeeIconHandle, IndianRupeeIconProps>(
             d="M9 3c6.667 0 6.667 10 0 10"
             initial="normal"
             animate={controls}
-            variants={indianRupeeMainVariants}
+            variants={INDIAN_RUPEE_MAIN_VARIANTS}
           />
           <motion.path
             d="M9 13h-3"
             initial="normal"
             animate={controls}
-            variants={indianRupeeMainVariants}
+            variants={INDIAN_RUPEE_MAIN_VARIANTS}
           />
           <motion.path
             d="m14.5 21 l-8.5 -8"
             initial="normal"
             animate={controls}
-            variants={indianRupeeMainVariants}
+            variants={INDIAN_RUPEE_MAIN_VARIANTS}
           />
           <motion.path
             d="M18 3h-12"
             initial="normal"
             animate={controls}
-            variants={indianRupeeSecondaryVariants}
+            variants={INDIAN_RUPEE_SECONDARY_VARIANTS}
           />
           <motion.path
             d="M18 8h-12"
             initial="normal"
             animate={controls}
-            variants={indianRupeeSecondaryVariants}
+            variants={INDIAN_RUPEE_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
