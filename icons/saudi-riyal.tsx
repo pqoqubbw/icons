@@ -15,7 +15,7 @@ interface SaudiRiyalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const saudiRiyalVariants: Variants = {
+const SAUDI_RIYAL_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
