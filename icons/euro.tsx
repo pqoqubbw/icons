@@ -15,7 +15,7 @@ interface EuroIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const euroMainVariants: Variants = {
+const EURO_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const euroMainVariants: Variants = {
   },
 };
 
-const euroSecondaryVariants: Variants = {
+const EURO_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -115,19 +115,19 @@ const EuroIcon = forwardRef<EuroIconHandle, EuroIconProps>(
             d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"
             initial="normal"
             animate={controls}
-            variants={euroMainVariants}
+            variants={EURO_MAIN_VARIANTS}
           />
           <motion.path
             d="M16 10h-12"
             initial="normal"
             animate={controls}
-            variants={euroSecondaryVariants}
+            variants={EURO_SECONDARY_VARIANTS}
           />
           <motion.path
             d="M13 14h-9"
             initial="normal"
             animate={controls}
-            variants={euroSecondaryVariants}
+            variants={EURO_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
