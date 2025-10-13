@@ -15,7 +15,7 @@ interface DollarSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dollarMainVariants: Variants = {
+const DOLLAR_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -34,7 +34,7 @@ const dollarMainVariants: Variants = {
   },
 };
 
-const dollarSecondaryVariants: Variants = {
+const DOLLAR_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -115,13 +115,13 @@ const DollarSignIcon = forwardRef<DollarSignIconHandle, DollarSignIconProps>(
             d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
             initial="normal"
             animate={controls}
-            variants={dollarMainVariants}
+            variants={DOLLAR_MAIN_VARIANTS}
           />
           <motion.path
             d="M12 22 L12 2"
             initial="normal"
             animate={controls}
-            variants={dollarSecondaryVariants}
+            variants={DOLLAR_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
