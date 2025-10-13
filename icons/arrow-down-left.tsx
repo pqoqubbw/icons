@@ -93,12 +93,12 @@ const ArrowDownLeftIcon = forwardRef<
       >
         <motion.path
           d="M17 17H7V7"
-          variants={headVariants}
+          variants={HEAD_VARIANTS}
           animate={controls}
         />
         <motion.path
           d="M7 17 L12 12"
-          variants={shaftVariants}
+          variants={SHAFT_VARIANTS}
           animate={controls}
         />
         <path d="M17 7 L12 12" />
