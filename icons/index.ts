@@ -274,6 +274,14 @@ import { NfcIcon } from './nfc';
 import { CloudCogIcon } from './cloud-cog';
 import { ArrowDownLeftIcon } from './arrow-down-left';
 import { ArrowDownRightIcon } from './arrow-down-right';
+import { AccessibilityIcon } from './accessibility';
+import { BatteryMediumIcon } from './battery-medium';
+import { BatteryLowIcon } from './battery-low';
+import { PlugZapIcon } from './plug-zap';
+import { EvChargerIcon } from './ev-charger';
+import { ContrastIcon } from './contrast';
+import { ShrinkIcon } from './shrink';
+import { MinimizeIcon } from './minimize';
 
 type IconListItem = {
   name: string;
@@ -282,6 +290,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'accessibility',
+    icon: AccessibilityIcon,
+    keywords: ['accessibility', 'disabled', 'wheelchair', 'assistive'],
+  },
   {
     name: 'lock-keyhole-open',
     icon: LockKeyholeOpenIcon,
@@ -458,6 +471,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'maximize-2',
     icon: Maximize2Icon,
     keywords: ['maximize', 'fullscreen', 'expand', 'screen'],
+  },
+  {
+    name: 'minimize',
+    icon: MinimizeIcon,
+    keywords: ['minimize', 'contract', 'reduce', 'small', 'smaller'],
+  },
+  {
+    name: 'shrink',
+    icon: ShrinkIcon,
+    keywords: ['shrink', 'contract', 'reduce', 'small', 'smaller'],
   },
   {
     name: 'rotate-cw',
@@ -2042,6 +2065,16 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['battery', 'power', 'energy', 'full', 'charge'],
   },
   {
+    name: 'battery-medium',
+    icon: BatteryMediumIcon,
+    keywords: ['battery', 'power', 'energy', 'medium', 'charge'],
+  },
+  {
+    name: 'battery-low',
+    icon: BatteryLowIcon,
+    keywords: ['battery', 'power', 'energy', 'low', 'charge'],
+  },
+  {
     name: 'terminal',
     icon: TerminalIcon,
     keywords: ['terminal', 'console', 'command line', 'shell', 'prompt'],
@@ -2083,6 +2116,21 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'contrast',
+    icon: ContrastIcon,
+    keywords: [
+      'contrast',
+      'brightness',
+      'adjust',
+      'enhance',
+      'change',
+      'theme',
+      'dark',
+      'light',
+      'mode',
+    ],
+  },
+  {
     name: 'book-text',
     icon: BookTextIcon,
     keywords: [
@@ -2094,6 +2142,16 @@ const ICON_LIST: IconListItem[] = [
       'tome',
       'library',
     ],
+  },
+  {
+    name: 'ev-charger',
+    icon: EvChargerIcon,
+    keywords: ['ev', 'charger', 'charge', 'electric', 'vehicle'],
+  },
+  {
+    name: 'plug-zap',
+    icon: PlugZapIcon,
+    keywords: ['plug', 'zap', 'power', 'energy', 'charge'],
   },
   {
     name: 'shower-head',
