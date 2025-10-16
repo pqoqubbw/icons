@@ -14,7 +14,7 @@ interface BatteryMediumIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   initial: { opacity: 1 },
   fadeOut: {
     opacity: 0,
@@ -100,7 +100,7 @@ const BatteryMediumIcon = forwardRef<
           x2="6"
           y1="11"
           y2="13"
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="initial"
           animate={controls}
           custom={0}
@@ -110,7 +110,7 @@ const BatteryMediumIcon = forwardRef<
           x2="10"
           y1="11"
           y2="13"
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="initial"
           animate={controls}
           custom={1}
