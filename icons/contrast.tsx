@@ -22,7 +22,7 @@ const PATH_VARIANT: Variants = {
     transition: {
       type: 'spring',
       stiffness: 80,
-      damping: 10,
+      damping: 12,
     },
   },
 };
