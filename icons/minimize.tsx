@@ -15,7 +15,7 @@ interface MinimizeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const DEFAULT_TRANSITION: Transition = {
+const defaultTransition: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
@@ -77,67 +77,37 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
         >
           <motion.path
             d="M8 3v3a2 2 0 0 1-2 2H3"
-            transition={DEFAULT_TRANSITION}
+            transition={defaultTransition}
             variants={{
-              normal: {
-                y: 0,
-                x: 0,
-              },
-              animate: {
-                y: [0, 1, 0],
-                x: [0, 1, 0],
-                transition: { duration: 0.6, ease: 'easeInOut' },
-              },
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '2px' }, 
             }}
             animate={controls}
           />
           <motion.path
             d="M21 8h-3a2 2 0 0 1-2-2V3"
-            transition={DEFAULT_TRANSITION}
+            transition={defaultTransition}
             variants={{
-              normal: {
-                y: 0,
-                x: 0,
-                transition: { duration: 0.3, ease: 'easeInOut' },
-              },
-              animate: {
-                y: 1,
-                x: -1,
-                transition: { duration: 0.3, ease: 'easeInOut' },
-              },
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '2px' }, 
             }}
             animate={controls}
           />
           <motion.path
             d="M3 16h3a2 2 0 0 1 2 2v3"
-            transition={DEFAULT_TRANSITION}
+            transition={defaultTransition}
             variants={{
-              normal: {
-                y: 0,
-                x: 0,
-              },
-              animate: {
-                y: [0, -1, 0],
-                x: [0, 1, 0],
-                transition: { duration: 0.6, ease: 'easeInOut' },
-              },
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '-2px' }, 
             }}
             animate={controls}
           />
           <motion.path
             d="M16 21v-3a2 2 0 0 1 2-2h3"
-            transition={DEFAULT_TRANSITION}
+            transition={defaultTransition}
             variants={{
-              normal: {
-                y: 0,
-                x: 0,
-                transition: { duration: 0.3, ease: 'easeInOut' },
-              },
-              animate: {
-                y: -1,
-                x: -1,
-                transition: { duration: 0.3, ease: 'easeInOut' },
-              },
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '-2px' }, 
             }}
             animate={controls}
           />
