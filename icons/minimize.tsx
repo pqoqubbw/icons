@@ -15,7 +15,7 @@ interface MinimizeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
@@ -77,7 +77,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
         >
           <motion.path
             d="M8 3v3a2 2 0 0 1-2 2H3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: {
                 y: 0,
@@ -93,7 +93,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
           />
           <motion.path
             d="M21 8h-3a2 2 0 0 1-2-2V3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: {
                 y: 0,
@@ -110,7 +110,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
           />
           <motion.path
             d="M3 16h3a2 2 0 0 1 2 2v3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: {
                 y: 0,
@@ -126,7 +126,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
           />
           <motion.path
             d="M16 21v-3a2 2 0 0 1 2-2h3"
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: {
                 y: 0,
