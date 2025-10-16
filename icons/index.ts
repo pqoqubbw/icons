@@ -272,6 +272,17 @@ import { HardDriveDownloadIcon } from './hard-drive-download';
 import { SmartphoneNfcIcon } from './smartphone-nfc';
 import { NfcIcon } from './nfc';
 import { CloudCogIcon } from './cloud-cog';
+import { DollarSignIcon } from './dollar-sign';
+import { IndianRupeeIcon } from './indian-rupee';
+import { JapaneseYenIcon } from './japanese-yen';
+import { PhilippinePesoIcon } from './philippine-peso';
+import { EuroIcon } from './euro';
+import { PoundSterlingIcon } from './pound-sterling';
+import { GeorgianLariIcon } from './georgian-lari';
+import { RussianRubleIcon } from './russian-ruble';
+import { SaudiRiyalIcon } from './saudi-riyal';
+import { SwissFrancIcon } from './swiss-franc';
+import { TurkishLiraIcon } from './turkish-lira';
 import { ArrowDownLeftIcon } from './arrow-down-left';
 import { ArrowDownRightIcon } from './arrow-down-right';
 
@@ -1190,6 +1201,61 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'circle-dollar-sign',
     icon: CircleDollarSignIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'dollar-sign',
+    icon: DollarSignIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'indian-rupee',
+    icon: IndianRupeeIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'japanese-yen',
+    icon: JapaneseYenIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'philippine-peso',
+    icon: PhilippinePesoIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'euro',
+    icon: EuroIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'pound-sterling',
+    icon: PoundSterlingIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'georgian-lari',
+    icon: GeorgianLariIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'russian-ruble',
+    icon: RussianRubleIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'saudi-riyal',
+    icon: SaudiRiyalIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'swiss-franc',
+    icon: SwissFrancIcon,
+    keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
+  },
+  {
+    name: 'turkish-lira',
+    icon: TurkishLiraIcon,
     keywords: ['monetization', 'marketing', 'currency', 'money', 'payment'],
   },
   {
