@@ -1751,6 +1751,9 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'turkish-lira',
     'path': path.join(__dirname, '../icons/turkish-lira.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
     'name': 'arrow-down-right',
     'path': path.join(__dirname, '../icons/arrow-down-right.tsx'),
     'registryDependencies': [],
