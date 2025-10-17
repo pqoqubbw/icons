@@ -80,7 +80,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '2px' }, 
+              animate: { translateX: '2px', translateY: '2px' },
             }}
             animate={controls}
           />
@@ -89,7 +89,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '2px' }, 
+              animate: { translateX: '-2px', translateY: '2px' },
             }}
             animate={controls}
           />
@@ -98,7 +98,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '-2px' }, 
+              animate: { translateX: '2px', translateY: '-2px' },
             }}
             animate={controls}
           />
@@ -107,7 +107,7 @@ const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '-2px' }, 
+              animate: { translateX: '-2px', translateY: '-2px' },
             }}
             animate={controls}
           />

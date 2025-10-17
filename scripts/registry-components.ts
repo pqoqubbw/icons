@@ -1811,5 +1811,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/shrink.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
