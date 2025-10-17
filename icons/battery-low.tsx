@@ -1,51 +1,39 @@
 'use client';
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
+import { type Variants, motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface CctvIconHandle {
+export interface BatteryLowIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface CctvIconProps extends HTMLAttributes<HTMLDivElement> {
+interface BatteryLowIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const CCTV_GROUP_VARIANTS: Variants = {
-  normal: {
-    rotate: 0,
-    y: 0,
-    x: 0,
-  },
-  animate: {
-    rotate: [0, -20, -20, 15, 15, 0],
-    y: [0, -0.5, -0.5, 0, 0, 0],
-    x: [0, 0, 0, 0.5, 0.5, 0],
+const LINE_VARIANTS: Variants = {
+  initial: { opacity: 1 },
+  fadeOut: {
+    opacity: 0,
     transition: {
-      duration: 1.8,
+      duration: 0.4,
       ease: 'easeInOut',
     },
   },
-};
-
-const CCTV_PATH_VARIANTS: Variants = {
-  normal: {
+  fadeIn: (i: number) => ({
     opacity: 1,
-  },
-  animate: {
-    opacity: [1, 0, 1, 0, 1, 0, 1],
     transition: {
-      duration: 1.8,
+      duration: 0.6,
+      delay: i * 0.4,
       ease: 'easeInOut',
     },
-  },
+  }),
 };
 
-const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
+const BatteryLowIcon = forwardRef<BatteryLowIconHandle, BatteryLowIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -54,15 +42,19 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: async () => {
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
+        },
+        stopAnimation: () => controls.start('initial'),
       };
     });
 
     const handleMouseEnter = useCallback(
-      (e: React.MouseEvent<HTMLDivElement>) => {
+      async (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('animate');
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
         } else {
           onMouseEnter?.(e);
         }
@@ -73,13 +65,14 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('normal');
+          controls.start('initial');
         } else {
           onMouseLeave?.(e);
         }
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -87,7 +80,7 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -98,27 +91,24 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.g
-            variants={CCTV_GROUP_VARIANTS}
+          <rect width="16" height="10" x="2" y="7" rx="2" ry="2" />
+          <line x1="22" x2="22" y1="11" y2="13" />
+          <motion.line
+            x1="6"
+            x2="6"
+            y1="11"
+            y2="13"
+            variants={LINE_VARIANTS}
             initial="initial"
             animate={controls}
-          >
-            <path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97" />
-            <path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z" />
-            <motion.path
-              d="M7 9h.01"
-              variants={CCTV_PATH_VARIANTS}
-              animate={controls}
-            />
-          </motion.g>
-          <path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15" />
-          <path d="M2 21v-4" />
-        </svg>
+            custom={0}
+          />
+        </motion.svg>
       </div>
     );
   }
 );
 
-CctvIcon.displayName = 'CctvIcon';
+BatteryLowIcon.displayName = 'BatteryLowIcon';
 
-export { CctvIcon };
+export { BatteryLowIcon };

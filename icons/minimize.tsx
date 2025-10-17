@@ -1,51 +1,27 @@
 'use client';
 
-import type { Variants } from 'motion/react';
+import type { Transition } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface CctvIconHandle {
+export interface MinimizeIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface CctvIconProps extends HTMLAttributes<HTMLDivElement> {
+interface MinimizeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const CCTV_GROUP_VARIANTS: Variants = {
-  normal: {
-    rotate: 0,
-    y: 0,
-    x: 0,
-  },
-  animate: {
-    rotate: [0, -20, -20, 15, 15, 0],
-    y: [0, -0.5, -0.5, 0, 0, 0],
-    x: [0, 0, 0, 0.5, 0.5, 0],
-    transition: {
-      duration: 1.8,
-      ease: 'easeInOut',
-    },
-  },
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 250,
+  damping: 25,
 };
 
-const CCTV_PATH_VARIANTS: Variants = {
-  normal: {
-    opacity: 1,
-  },
-  animate: {
-    opacity: [1, 0, 1, 0, 1, 0, 1],
-    transition: {
-      duration: 1.8,
-      ease: 'easeInOut',
-    },
-  },
-};
-
-const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
+const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -80,6 +56,7 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -98,27 +75,48 @@ const CctvIcon = forwardRef<CctvIconHandle, CctvIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.g
-            variants={CCTV_GROUP_VARIANTS}
-            initial="initial"
+          <motion.path
+            d="M8 3v3a2 2 0 0 1-2 2H3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '2px' }, 
+            }}
             animate={controls}
-          >
-            <path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97" />
-            <path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z" />
-            <motion.path
-              d="M7 9h.01"
-              variants={CCTV_PATH_VARIANTS}
-              animate={controls}
-            />
-          </motion.g>
-          <path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15" />
-          <path d="M2 21v-4" />
+          />
+          <motion.path
+            d="M21 8h-3a2 2 0 0 1-2-2V3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '2px' }, 
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="M3 16h3a2 2 0 0 1 2 2v3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '-2px' }, 
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="M16 21v-3a2 2 0 0 1 2-2h3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '-2px' }, 
+            }}
+            animate={controls}
+          />
         </svg>
       </div>
     );
   }
 );
 
-CctvIcon.displayName = 'CctvIcon';
+MinimizeIcon.displayName = 'MinimizeIcon';
 
-export { CctvIcon };
+export { MinimizeIcon };

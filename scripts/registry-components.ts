@@ -1764,4 +1764,52 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'accessibility',
+    'path': path.join(__dirname, '../icons/accessibility.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'battery-low',
+    'path': path.join(__dirname, '../icons/battery-low.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'battery-medium',
+    'path': path.join(__dirname, '../icons/battery-medium.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'contrast',
+    'path': path.join(__dirname, '../icons/contrast.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'ev-charger',
+    'path': path.join(__dirname, '../icons/ev-charger.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'minimize',
+    'path': path.join(__dirname, '../icons/minimize.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'plug-zap',
+    'path': path.join(__dirname, '../icons/plug-zap.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'shrink',
+    'path': path.join(__dirname, '../icons/shrink.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
