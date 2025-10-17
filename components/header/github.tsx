@@ -7,6 +7,10 @@ import { CountUpNumber } from './count-up-number';
 
 const getGithubStars = async () => {
   try {
+    if (!process.env.GITHUB_TOKEN && process.env.NODE_ENV === 'development') {
+      return 0;
+    }
+
     const res = await fetch('https://api.github.com/repos/pqoqubbw/icons', {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
