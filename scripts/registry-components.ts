@@ -1689,6 +1689,10 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'dollar-sign',
     'path': path.join(__dirname, '../icons/dollar-sign.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'arrow-down-left',
     'path': path.join(__dirname, '../icons/arrow-down-left.tsx'),
     'registryDependencies': [],
@@ -1754,9 +1758,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
     'name': 'arrow-down-right',
     'path': path.join(__dirname, '../icons/arrow-down-right.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
