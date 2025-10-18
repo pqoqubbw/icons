@@ -293,6 +293,7 @@ import { EvChargerIcon } from './ev-charger';
 import { ContrastIcon } from './contrast';
 import { ShrinkIcon } from './shrink';
 import { MinimizeIcon } from './minimize';
+import { WashingMachineIcon } from './washing-machine';
 
 type IconListItem = {
   name: string;
@@ -301,6 +302,20 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'washing-machine',
+    icon: WashingMachineIcon,
+    keywords: [
+      'washing machine',
+      'tumble dryer',
+      'electronics',
+      'cycle',
+      'clothes',
+      'rinse',
+      'spin',
+      'drum',
+    ],
+  },
   {
     name: 'accessibility',
     icon: AccessibilityIcon,

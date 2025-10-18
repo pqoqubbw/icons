@@ -1812,4 +1812,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'washing-machine',
+    'path': path.join(__dirname, '../icons/washing-machine.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
