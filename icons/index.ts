@@ -294,6 +294,7 @@ import { ContrastIcon } from './contrast';
 import { ShrinkIcon } from './shrink';
 import { MinimizeIcon } from './minimize';
 import { WashingMachineIcon } from './washing-machine';
+import { CloudSnowIcon } from './cloud-snow';
 
 type IconListItem = {
   name: string;
@@ -302,6 +303,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'cloud-snow',
+    icon: CloudSnowIcon,
+    keywords: ['cloud snow', 'weather', 'blizzard'],
+  },
   {
     name: 'washing-machine',
     icon: WashingMachineIcon,
