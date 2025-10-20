@@ -1,0 +1,21 @@
+{
+  "name": "cloud-snow",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "tailwind": {},
+  "cssVars": {
+    "light": {},
+    "dark": {}
+  },
+  "files": [
+    {
+      "path": "cloud-snow.tsx",
+      "content": "'use client';\n\nimport { cn } from '@/lib/utils';\nimport type { Variants } from 'motion/react';\nimport { motion, useAnimation } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\n\nexport interface CloudSnowIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface CloudSnowIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst snowflakeVariants: Variants = {\n  animate: {\n    transition: {\n      staggerChildren: 0.3,\n    },\n  },\n};\n\nconst snowflakeChildVariants: Variants = {\n  normal: {\n    opacity: 1,\n  },\n  animate: {\n    opacity: [1, 0.3, 1],\n    transition: {\n      duration: 1.5,\n      repeat: Infinity,\n      ease: 'easeInOut',\n    },\n  },\n};\n\nconst snowflakePath = [\n  { id: 'snowflake1', d: 'M8 15h.01' },\n  { id: 'snowflake2', d: 'M8 19h.01' },\n  { id: 'snowflake3', d: 'M12 17h.01' },\n  { id: 'snowflake4', d: 'M12 21h.01' },\n  { id: 'snowflake5', d: 'M16 15h.01' },\n  { id: 'snowflake6', d: 'M16 19h.01' },\n];\n\nconst CloudSnowIcon = forwardRef<CloudSnowIconHandle, CloudSnowIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        >\n          <path d=\"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242\" />\n          <motion.g\n            variants={snowflakeVariants}\n            animate={controls}\n            initial=\"normal\"\n          >\n            {snowflakePath.map((path) => (\n              <motion.path\n                variants={snowflakeChildVariants}\n                key={path.id}\n                d={path.d}\n              />\n            ))}\n          </motion.g>\n        </svg>\n      </div>\n    );\n  }\n);\n\nCloudSnowIcon.displayName = 'CloudSnowIcon';\n\nexport { CloudSnowIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
