@@ -16,11 +16,11 @@ interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const pathVariants: Variants = {
-  normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
+  normal: {
+    strokeWidth: 2,
+  },
   animate: {
-    pathLength: [0, 1],
-    opacity: [0, 1],
-    pathOffset: [1, 0],
+    strokeWidth: 3.5,
   },
 };
 
