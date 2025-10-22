@@ -1817,5 +1817,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/washing-machine.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
