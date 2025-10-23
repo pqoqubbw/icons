@@ -15,7 +15,7 @@ interface CloudSnowIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const snowflakeVariants: Variants = {
+const SNOWFLAKE_VARIANTS: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.3,
@@ -23,7 +23,7 @@ const snowflakeVariants: Variants = {
   },
 };
 
-const snowflakeChildVariants: Variants = {
+const SNOWFLAKE_CHILD_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -37,7 +37,7 @@ const snowflakeChildVariants: Variants = {
   },
 };
 
-const snowflakePath = [
+const SNOWFLAKE_PATH = [
   { id: 'snowflake1', d: 'M8 15h.01' },
   { id: 'snowflake2', d: 'M8 19h.01' },
   { id: 'snowflake3', d: 'M12 17h.01' },
@@ -101,13 +101,13 @@ const CloudSnowIcon = forwardRef<CloudSnowIconHandle, CloudSnowIconProps>(
         >
           <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
           <motion.g
-            variants={snowflakeVariants}
+            variants={SNOWFLAKE_VARIANTS}
             animate={controls}
             initial="normal"
           >
-            {snowflakePath.map((path) => (
+            {SNOWFLAKE_PATH.map((path) => (
               <motion.path
-                variants={snowflakeChildVariants}
+                variants={SNOWFLAKE_CHILD_VARIANTS}
                 key={path.id}
                 d={path.d}
               />
