@@ -29,7 +29,6 @@ const CIRCLES = [
 ];
 
 const ROWS = 3;
-const COLS = 2;
 
 const variants: Variants = {
   normal: {
