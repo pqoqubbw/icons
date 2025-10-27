@@ -4,3 +4,4 @@ node_modules/
 .vscode/
 tailwind.config.ts
 README.md
+next-env.d.ts

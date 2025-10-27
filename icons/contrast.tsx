@@ -1,37 +1,39 @@
 'use client';
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation, type Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface ContrastIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ContrastIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: {
-    strokeWidth: 2,
-  },
+const PATH_VARIANT: Variants = {
+  normal: { rotate: 0 },
   animate: {
-    strokeWidth: 3.5,
+    rotate: 180,
+    transformOrigin: 'left center',
+    transition: {
+      type: 'spring',
+      stiffness: 80,
+      damping: 12,
+    },
   },
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const ContrastIcon = forwardRef<ContrastIconHandle, ContrastIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
@@ -59,6 +61,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -77,11 +80,12 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <circle cx="12" cy="12" r="10" />
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="M12 18a6 6 0 0 0 0-12v12z"
+            variants={PATH_VARIANT}
+            initial="normal"
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
           />
         </svg>
       </div>
@@ -89,6 +93,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+ContrastIcon.displayName = 'ContrastIcon';
 
-export { BoldIcon };
+export { ContrastIcon };

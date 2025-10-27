@@ -6,25 +6,58 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface TurkishLiraIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface TurkishLiraIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const LIRA_MAIN_VARIANTS: Variants = {
   normal: {
-    strokeWidth: 2,
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
   },
   animate: {
-    strokeWidth: 3.5,
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    transition: {
+      duration: 0.6,
+      opacity: { duration: 0.1 },
+    },
   },
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const LIRA_SECONDARY_VARIANTS: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    pathOffset: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.3,
+      opacity: { duration: 0.1, delay: 0.3 },
+    },
+  },
+  animate: {
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    pathOffset: [1, 0],
+    transition: {
+      delay: 0.5,
+      duration: 0.4,
+      opacity: { duration: 0.1, delay: 0.5 },
+    },
+  },
+};
+
+const TurkishLiraIcon = forwardRef<TurkishLiraIconHandle, TurkishLiraIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -59,6 +92,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -78,10 +112,22 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="M18 12a9 9 0 0 1-9 9V3"
+            initial="normal"
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+            variants={LIRA_MAIN_VARIANTS}
+          />
+          <motion.path
+            d="M15 4 5 9"
+            initial="normal"
+            animate={controls}
+            variants={LIRA_SECONDARY_VARIANTS}
+          />
+          <motion.path
+            d="m15 8.5-10 5"
+            initial="normal"
+            animate={controls}
+            variants={LIRA_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
@@ -89,6 +135,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+TurkishLiraIcon.displayName = 'TurkishLiraIcon';
 
-export { BoldIcon };
+export { TurkishLiraIcon };

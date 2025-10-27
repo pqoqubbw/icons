@@ -1,30 +1,27 @@
 'use client';
 
-import type { Variants } from 'motion/react';
+import type { Transition } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface ShrinkIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ShrinkIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: {
-    strokeWidth: 2,
-  },
-  animate: {
-    strokeWidth: 3.5,
-  },
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 250,
+  damping: 25,
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const ShrinkIcon = forwardRef<ShrinkIconHandle, ShrinkIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -59,6 +56,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -78,10 +76,40 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="M9 4.2V9m0 0H4.2M9 9 3 3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '1px', translateY: '1px' },
+            }}
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+          />
+          <motion.path
+            d="M15 4.2V9m0 0h4.8M15 9l6-6"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-1px', translateY: '1px' },
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="M9 19.8V15m0 0H4.2M9 15l-6 6"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '1px', translateY: '-1px' },
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="m15 15 6 6m-6-6v4.8m0-4.8h4.8"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-1px', translateY: '-1px' },
+            }}
+            animate={controls}
           />
         </svg>
       </div>
@@ -89,6 +117,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+ShrinkIcon.displayName = 'ShrinkIcon';
 
-export { BoldIcon };
+export { ShrinkIcon };

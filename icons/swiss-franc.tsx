@@ -6,25 +6,58 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface SwissFrancIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface SwissFrancIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const FRANC_MAIN_VARIANTS: Variants = {
   normal: {
-    strokeWidth: 2,
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
   },
   animate: {
-    strokeWidth: 3.5,
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    transition: {
+      duration: 0.6,
+      opacity: { duration: 0.1 },
+    },
   },
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const FRANC_SECONDARY_VARIANTS: Variants = {
+  normal: {
+    opacity: 1,
+    pathLength: 1,
+    pathOffset: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.3,
+      opacity: { duration: 0.1, delay: 0.3 },
+    },
+  },
+  animate: {
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    pathOffset: [1, 0],
+    transition: {
+      delay: 0.5,
+      duration: 0.4,
+      opacity: { duration: 0.1, delay: 0.5 },
+    },
+  },
+};
+
+const SwissFrancIcon = forwardRef<SwissFrancIconHandle, SwissFrancIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -59,6 +92,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -78,10 +112,22 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="M10 21V3h8"
+            initial="normal"
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+            variants={FRANC_MAIN_VARIANTS}
+          />
+          <motion.path
+            d="M6 16h9"
+            initial="normal"
+            animate={controls}
+            variants={FRANC_SECONDARY_VARIANTS}
+          />
+          <motion.path
+            d="M10 9.5h7"
+            initial="normal"
+            animate={controls}
+            variants={FRANC_SECONDARY_VARIANTS}
           />
         </svg>
       </div>
@@ -89,6 +135,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+SwissFrancIcon.displayName = 'SwissFrancIcon';
 
-export { BoldIcon };
+export { SwissFrancIcon };

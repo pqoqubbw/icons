@@ -1,30 +1,27 @@
 'use client';
 
-import type { Variants } from 'motion/react';
+import type { Transition } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface MinimizeIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface MinimizeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: {
-    strokeWidth: 2,
-  },
-  animate: {
-    strokeWidth: 3.5,
-  },
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 250,
+  damping: 25,
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const MinimizeIcon = forwardRef<MinimizeIconHandle, MinimizeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -59,6 +56,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -78,10 +76,40 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="M8 3v3a2 2 0 0 1-2 2H3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '2px' },
+            }}
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+          />
+          <motion.path
+            d="M21 8h-3a2 2 0 0 1-2-2V3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '2px' },
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="M3 16h3a2 2 0 0 1 2 2v3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '2px', translateY: '-2px' },
+            }}
+            animate={controls}
+          />
+          <motion.path
+            d="M16 21v-3a2 2 0 0 1 2-2h3"
+            transition={DEFAULT_TRANSITION}
+            variants={{
+              normal: { translateX: '0%', translateY: '0%' },
+              animate: { translateX: '-2px', translateY: '-2px' },
+            }}
+            animate={controls}
           />
         </svg>
       </div>
@@ -89,6 +117,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+MinimizeIcon.displayName = 'MinimizeIcon';
 
-export { BoldIcon };
+export { MinimizeIcon };

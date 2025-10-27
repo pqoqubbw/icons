@@ -6,25 +6,35 @@ import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface SaudiRiyalIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface SaudiRiyalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const SAUDI_RIYAL_VARIANTS: Variants = {
   normal: {
-    strokeWidth: 2,
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 0.4,
+      opacity: { duration: 0.1 },
+    },
   },
   animate: {
-    strokeWidth: 3.5,
+    opacity: [0, 1],
+    pathLength: [0, 1],
+    transition: {
+      duration: 0.6,
+      opacity: { duration: 0.1 },
+    },
   },
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const SaudiRiyalIcon = forwardRef<SaudiRiyalIconHandle, SaudiRiyalIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -59,6 +69,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -78,10 +89,28 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+            d="m20 19.5-5.5 1.2"
+            initial="normal"
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+            variants={SAUDI_RIYAL_VARIANTS}
+          />
+          <motion.path
+            d="M14.5 4v11.22a1 1 0 0 0 1.242.97L20 15.2"
+            initial="normal"
+            animate={controls}
+            variants={SAUDI_RIYAL_VARIANTS}
+          />
+          <motion.path
+            d="m2.978 19.351 5.549-1.363A2 2 0 0 0 10 16V2"
+            initial="normal"
+            animate={controls}
+            variants={SAUDI_RIYAL_VARIANTS}
+          />
+          <motion.path
+            d="M20 10 4 13.5"
+            initial="normal"
+            animate={controls}
+            variants={SAUDI_RIYAL_VARIANTS}
           />
         </svg>
       </div>
@@ -89,6 +118,6 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+SaudiRiyalIcon.displayName = 'SaudiRiyalIcon';
 
-export { BoldIcon };
+export { SaudiRiyalIcon };

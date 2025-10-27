@@ -1,30 +1,39 @@
 'use client';
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
+import { type Variants, motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface BoldIconHandle {
+export interface BatteryLowIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface BoldIconProps extends HTMLAttributes<HTMLDivElement> {
+interface BatteryLowIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
-  normal: {
-    strokeWidth: 2,
+const LINE_VARIANTS: Variants = {
+  initial: { opacity: 1 },
+  fadeOut: {
+    opacity: 0,
+    transition: {
+      duration: 0.4,
+      ease: 'easeInOut',
+    },
   },
-  animate: {
-    strokeWidth: 3.5,
-  },
+  fadeIn: (i: number) => ({
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.4,
+      ease: 'easeInOut',
+    },
+  }),
 };
 
-const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
+const BatteryLowIcon = forwardRef<BatteryLowIconHandle, BatteryLowIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -33,15 +42,19 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: async () => {
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
+        },
+        stopAnimation: () => controls.start('initial'),
       };
     });
 
     const handleMouseEnter = useCallback(
-      (e: React.MouseEvent<HTMLDivElement>) => {
+      async (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('animate');
+          await controls.start('fadeOut');
+          controls.start('fadeIn');
         } else {
           onMouseEnter?.(e);
         }
@@ -52,13 +65,14 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('normal');
+          controls.start('initial');
         } else {
           onMouseLeave?.(e);
         }
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -66,7 +80,7 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -77,18 +91,24 @@ const BoldIcon = forwardRef<BoldIconHandle, BoldIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            variants={pathVariants}
-            transition={{ duration: 0.6 }}
+          <rect width="16" height="10" x="2" y="7" rx="2" ry="2" />
+          <line x1="22" x2="22" y1="11" y2="13" />
+          <motion.line
+            x1="6"
+            x2="6"
+            y1="11"
+            y2="13"
+            variants={LINE_VARIANTS}
+            initial="initial"
             animate={controls}
-            d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"
+            custom={0}
           />
-        </svg>
+        </motion.svg>
       </div>
     );
   }
 );
 
-BoldIcon.displayName = 'BoldIcon';
+BatteryLowIcon.displayName = 'BatteryLowIcon';
 
-export { BoldIcon };
+export { BatteryLowIcon };
