@@ -20,7 +20,7 @@ interface BookmarkCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const bookmarkVariants: Variants = {
+const BOOKMARK_VARIANTS: Variants = {
   normal: { scaleY: 1, scaleX: 1 },
   animate: {
     scaleY: [1, 1.3, 0.9, 1.05, 1],
@@ -32,7 +32,7 @@ const bookmarkVariants: Variants = {
   },
 };
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: { opacity: 1, strokeDashoffset: 0 },
   animate: {
     strokeDashoffset: [1, 0],
@@ -99,22 +99,19 @@ const BookmarkCheckIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Bookmark body */}
         <motion.path
           d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"
           animate={controls}
-          variants={bookmarkVariants}
+          variants={BOOKMARK_VARIANTS}
           style={{ originX: 0.5, originY: 0.5 }}
         />
 
-        {/* Checkmark */}
         <motion.path
           d="m9 10 2 2 4-4"
           animate={controls}
-          variants={checkVariants}
+          variants={CHECK_VARIANTS}
           initial="normal"
           strokeDasharray="1 1"
-          //   strokeDashoffset={0.9}
           pathLength="1"
         />
       </svg>

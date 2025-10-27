@@ -20,7 +20,7 @@ interface BookmarkMinusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const bookmarkVariants: Variants = {
+const BOOKMARK_VARIANTS: Variants = {
   normal: { scaleY: 1, scaleX: 1 },
   animate: {
     scaleY: [1, 1.3, 0.9, 1.05, 1],
@@ -32,8 +32,8 @@ const bookmarkVariants: Variants = {
   },
 };
 
-const minusVariants: Variants = {
-  normal: { strokeDashoffset: 0, opacity: 1 }, // always visible
+const MINUS_VARIANTS: Variants = {
+  normal: { strokeDashoffset: 0, opacity: 1 },
   animate: {
     strokeDashoffset: [1, 0],
     opacity: 1,
@@ -99,22 +99,20 @@ const BookmarkMinusIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Bookmark body */}
         <motion.path
           d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
           animate={controls}
-          variants={bookmarkVariants}
+          variants={BOOKMARK_VARIANTS}
           style={{ originX: 0.5, originY: 0.5 }}
         />
 
-        {/* Minus line */}
         <motion.line
           x1="15"
           x2="9"
           y1="10"
           y2="10"
           animate={controls}
-          variants={minusVariants}
+          variants={MINUS_VARIANTS}
           initial="normal"
           strokeDasharray="1 1"
           pathLength="1"

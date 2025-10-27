@@ -20,7 +20,7 @@ interface BookmarkIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const bookmarkVariants: Variants = {
+const BOOKMARK_VARIANTS: Variants = {
   normal: { scaleY: 1, scaleX: 1 },
   animate: {
     scaleY: [1, 1.3, 0.9, 1.05, 1],
@@ -88,8 +88,8 @@ const BookmarkIcon = forwardRef<BookmarkIconHandle, BookmarkIconProps>(
           <motion.path
             d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
             animate={controls}
-            variants={bookmarkVariants}
-            style={{ originY: 0.5, originX: 0.5 }} // scale from center
+            variants={BOOKMARK_VARIANTS}
+            style={{ originY: 0.5, originX: 0.5 }}
           />
         </svg>
       </div>

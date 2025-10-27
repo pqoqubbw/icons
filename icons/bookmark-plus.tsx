@@ -20,7 +20,7 @@ interface BookmarkPlusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const bookmarkVariants: Variants = {
+const BOOKMARK_VARIANTS: Variants = {
   normal: { scaleY: 1, scaleX: 1 },
   animate: {
     scaleY: [1, 1.3, 0.9, 1.05, 1],
@@ -32,15 +32,15 @@ const bookmarkVariants: Variants = {
   },
 };
 
-const plusLineVariants: Variants = {
-  normal: { strokeDashoffset: 0, opacity: 1 }, // visible by default
+const PLUS_LINE_VARIANTS: Variants = {
+  normal: { strokeDashoffset: 0, opacity: 1 },
   animate: (i: number) => ({
     strokeDashoffset: [1, 0],
     opacity: 1,
     transition: {
       duration: 0.3,
       ease: 'easeOut',
-      delay: i * 0.1, // stagger between vertical and horizontal
+      delay: i * 0.1,
     },
   }),
 };
@@ -100,22 +100,20 @@ const BookmarkPlusIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Bookmark body */}
         <motion.path
           d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"
           animate={controls}
-          variants={bookmarkVariants}
+          variants={BOOKMARK_VARIANTS}
           style={{ originX: 0.5, originY: 0.5 }}
         />
 
-        {/* Plus symbol */}
         <motion.line
           x1="12"
           x2="12"
           y1="7"
           y2="13"
           animate={controls}
-          variants={plusLineVariants}
+          variants={PLUS_LINE_VARIANTS}
           custom={0}
           initial="normal"
           strokeDasharray="1 1"
@@ -127,7 +125,7 @@ const BookmarkPlusIcon = forwardRef<
           y1="10"
           y2="10"
           animate={controls}
-          variants={plusLineVariants}
+          variants={PLUS_LINE_VARIANTS}
           custom={1}
           initial="normal"
           strokeDasharray="1 1"
