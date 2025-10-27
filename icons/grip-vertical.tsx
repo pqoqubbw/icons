@@ -30,7 +30,7 @@ const CIRCLES = [
 
 const ROWS = 3;
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     opacity: 1,
     scale: 1,
@@ -116,7 +116,7 @@ const GripVerticalIcon = forwardRef<
             cx={circle.cx}
             cy={circle.cy}
             r="1"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={{ index }}
             initial="normal"
