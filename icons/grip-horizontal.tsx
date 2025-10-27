@@ -1,9 +1,13 @@
 'use client';
 
-import { AnimatePresence, motion, useAnimation } from 'motion/react';
-import { useEffect, useState } from 'react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation, type Variants } from 'motion/react';
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useCallback,
+  type HTMLAttributes,
+} from 'react';
 import { cn } from '@/lib/utils';
 
 export interface GripHorizontalIconHandle {
@@ -16,79 +20,84 @@ interface GripHorizontalIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CIRCLES = [
-  { cx: 5, cy: 9 }, // Top left
-  { cx: 12, cy: 9 }, // Top middle
-  { cx: 19, cy: 9 }, // Top right
-  { cx: 5, cy: 15 }, // Bottom left
-  { cx: 12, cy: 15 }, // Bottom middle
-  { cx: 19, cy: 15 }, // Bottom right
+  { cx: 5, cy: 9 },
+  { cx: 12, cy: 9 },
+  { cx: 19, cy: 9 },
+  { cx: 5, cy: 15 },
+  { cx: 12, cy: 15 },
+  { cx: 19, cy: 15 },
 ];
+
+const VARIANTS: Variants = {
+  normal: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.25, ease: 'easeOut' },
+  },
+  animate: (index: number) => {
+    const row = Math.floor(index / 3);
+    const col = index % 3;
+
+    const delay = col * 0.15 + row * 0.25;
+
+    return {
+      opacity: [1, 0.4, 1],
+      scale: [1, 0.85, 1],
+      transition: {
+        delay,
+        duration: 1,
+        ease: 'easeInOut',
+      },
+    };
+  },
+};
 
 const GripHorizontalIcon = forwardRef<
   GripHorizontalIconHandle,
   GripHorizontalIconProps
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-  const [isHovered, setIsHovered] = useState(false);
   const controls = useAnimation();
   const isControlledRef = useRef(false);
+  const isAnimatingRef = useRef(false);
+
+  const startAnimation = useCallback(async () => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    await controls.start('animate');
+    await controls.start('normal');
+    isAnimatingRef.current = false;
+  }, [controls]);
+
+  const stopAnimation = useCallback(async () => {
+    if (!isAnimatingRef.current) return;
+    await controls.start('normal');
+    isAnimatingRef.current = false;
+  }, [controls]);
 
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
-
-    return {
-      startAnimation: async () => setIsHovered(true),
-      stopAnimation: () => setIsHovered(false),
-    };
+    return { startAnimation, stopAnimation };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        setIsHovered(true);
-      } else {
-        onMouseEnter?.(e);
-      }
+      if (!isControlledRef.current) startAnimation();
+      onMouseEnter?.(e);
     },
-    [onMouseEnter]
+    [startAnimation, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        setIsHovered(false);
-      } else {
-        onMouseLeave?.(e);
-      }
+      if (!isControlledRef.current) stopAnimation();
+      onMouseLeave?.(e);
     },
-    [onMouseLeave]
+    [stopAnimation, onMouseLeave]
   );
-
-  useEffect(() => {
-    const animateCircles = async () => {
-      if (isHovered) {
-        await controls.start((i) => ({
-          opacity: 0.3,
-          transition: {
-            delay: i * 0.1,
-            duration: 0.2,
-          },
-        }));
-        await controls.start((i) => ({
-          opacity: 1,
-          transition: {
-            delay: i * 0.1,
-            duration: 0.2,
-          },
-        }));
-      }
-    };
-
-    animateCircles();
-  }, [isHovered, controls]);
 
   return (
     <div
-      className={cn(className)}
+      className={cn('inline-flex items-center justify-center', className)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...props}
@@ -104,30 +113,22 @@ const GripHorizontalIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <AnimatePresence>
-          {CIRCLES.map((circle, index) => (
-            <motion.circle
-              key={`${circle.cx}-${circle.cy}`}
-              cx={circle.cx}
-              cy={circle.cy}
-              r="1"
-              initial="initial"
-              variants={{
-                initial: {
-                  opacity: 1,
-                },
-              }}
-              animate={controls}
-              exit="initial"
-              custom={index}
-            />
-          ))}
-        </AnimatePresence>
+        {CIRCLES.map((circle, index) => (
+          <motion.circle
+            key={`${circle.cx}-${circle.cy}`}
+            cx={circle.cx}
+            cy={circle.cy}
+            r="1"
+            variants={VARIANTS}
+            animate={controls}
+            custom={index}
+            initial="normal"
+          />
+        ))}
       </svg>
     </div>
   );
 });
 
 GripHorizontalIcon.displayName = 'GripHorizontalIcon';
-
 export { GripHorizontalIcon };
