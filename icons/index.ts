@@ -294,6 +294,7 @@ import { ContrastIcon } from './contrast';
 import { ShrinkIcon } from './shrink';
 import { MinimizeIcon } from './minimize';
 import { WashingMachineIcon } from './washing-machine';
+import { GitMergeIcon } from './git-merge';
 
 type IconListItem = {
   name: string;
@@ -302,6 +303,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'git-merge',
+    icon: GitMergeIcon,
+    keywords: ['code', 'version control', 'merge', 'git', 'branch'],
+  },
   {
     name: 'washing-machine',
     icon: WashingMachineIcon,

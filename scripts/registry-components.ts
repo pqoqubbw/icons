@@ -1818,4 +1818,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'git-merge',
+    'path': path.join(__dirname, '../icons/git-merge.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  }
 ];
