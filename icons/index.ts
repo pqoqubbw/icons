@@ -241,11 +241,11 @@ import { ScanFaceIcon } from '@/icons/scan-face';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SearchIcon } from '@/icons/search';
 import { SettingsIcon } from '@/icons/settings';
-import { SettingsGearIcon } from '@/icons/settings-gear';
 import { ShieldCheckIcon } from '@/icons/shield-check';
 import { ShipIcon } from '@/icons/ship';
 import { ShowerHeadIcon } from '@/icons/shower-head';
 import { ShrinkIcon } from '@/icons/shrink';
+import { SlidersHorizontalIcon } from '@/icons/sliders-horizontal';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { SmartphoneNfcIcon } from '@/icons/smartphone-nfc';
 import { SmileIcon } from '@/icons/smile';
@@ -1181,13 +1181,13 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['garbage', 'delete', 'remove', 'bin'],
   },
   {
-    name: 'settings',
-    icon: SettingsIcon,
+    name: 'sliders-horizontal',
+    icon: SlidersHorizontalIcon,
     keywords: ['settings', 'filters', 'controls'],
   },
   {
-    name: 'settings-gear',
-    icon: SettingsGearIcon,
+    name: 'settings',
+    icon: SettingsIcon,
     keywords: ['cog', 'edit', 'gear', 'preferences'],
   },
   {

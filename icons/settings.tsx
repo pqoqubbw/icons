@@ -1,6 +1,5 @@
 'use client';
 
-import type { Transition } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { motion, useAnimation } from 'motion/react';
@@ -15,13 +14,6 @@ export interface SettingsIconHandle {
 interface SettingsIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
-
-const defaultTransition: Transition = {
-  type: 'spring',
-  stiffness: 100,
-  damping: 12,
-  mass: 0.4,
-};
 
 const SettingsIcon = forwardRef<SettingsIconHandle, SettingsIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -66,7 +58,7 @@ const SettingsIcon = forwardRef<SettingsIconHandle, SettingsIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -76,166 +68,20 @@ const SettingsIcon = forwardRef<SettingsIconHandle, SettingsIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+          variants={{
+            normal: {
+              rotate: 0,
+            },
+            animate: {
+              rotate: 180,
+            },
+          }}
+          animate={controls}
         >
-          <motion.line
-            x1="21"
-            x2="14"
-            y1="4"
-            y2="4"
-            initial={false}
-            variants={{
-              normal: {
-                x2: 14,
-              },
-              animate: {
-                x2: 10,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-          <motion.line
-            x1="10"
-            x2="3"
-            y1="4"
-            y2="4"
-            variants={{
-              normal: {
-                x1: 10,
-              },
-              animate: {
-                x1: 5,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="21"
-            x2="12"
-            y1="12"
-            y2="12"
-            variants={{
-              normal: {
-                x2: 12,
-              },
-              animate: {
-                x2: 18,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="8"
-            x2="3"
-            y1="12"
-            y2="12"
-            variants={{
-              normal: {
-                x1: 8,
-              },
-              animate: {
-                x1: 13,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="3"
-            x2="12"
-            y1="20"
-            y2="20"
-            variants={{
-              normal: {
-                x2: 12,
-              },
-              animate: {
-                x2: 4,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="16"
-            x2="21"
-            y1="20"
-            y2="20"
-            variants={{
-              normal: {
-                x1: 16,
-              },
-              animate: {
-                x1: 8,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="14"
-            x2="14"
-            y1="2"
-            y2="6"
-            variants={{
-              normal: {
-                x1: 14,
-                x2: 14,
-              },
-              animate: {
-                x1: 9,
-                x2: 9,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="8"
-            x2="8"
-            y1="10"
-            y2="14"
-            variants={{
-              normal: {
-                x1: 8,
-                x2: 8,
-              },
-              animate: {
-                x1: 14,
-                x2: 14,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-
-          <motion.line
-            x1="16"
-            x2="16"
-            y1="18"
-            y2="22"
-            variants={{
-              normal: {
-                x1: 16,
-                x2: 16,
-              },
-              animate: {
-                x1: 8,
-                x2: 8,
-              },
-            }}
-            animate={controls}
-            transition={defaultTransition}
-          />
-        </svg>
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </motion.svg>
       </div>
     );
   }

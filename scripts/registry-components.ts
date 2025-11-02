@@ -1478,14 +1478,14 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'settings-gear',
-    'path': path.join(__dirname, '../icons/settings-gear.tsx'),
+    'name': 'settings',
+    'path': path.join(__dirname, '../icons/settings.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
-    'name': 'settings',
-    'path': path.join(__dirname, '../icons/settings.tsx'),
+    'name': 'sliders-horizontal',
+    'path': path.join(__dirname, '../icons/sliders-horizontal.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
