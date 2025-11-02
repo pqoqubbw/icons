@@ -172,7 +172,6 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    ```
    pnpm lint
-   pnpm gen-cli
    ```
 
 10. Commit your changes:

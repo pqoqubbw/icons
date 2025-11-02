@@ -89,6 +89,7 @@ const printReport = () => {
       console.log(`  - icons/${file}.tsx`);
     });
     console.log('');
+    process.exit(1);
   } else {
     console.log('✅ All icon files are imported');
   }

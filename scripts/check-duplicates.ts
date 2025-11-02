@@ -46,6 +46,7 @@ const printReport = () => {
       console.log(`   name: "${name}" - appears ${indexes.length} times`);
     }
     console.log('');
+    process.exit(1);
   } else {
     console.log('✅ No duplicate names found\n');
   }
