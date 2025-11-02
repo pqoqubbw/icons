@@ -1,4 +1,5 @@
 import { AArrowDownIcon } from '@/icons/a-arrow-down';
+import { AArrowDownIcon as AArrowDownIconTest } from '@/icons/a-arrow-down-test';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
 import { AccessibilityIcon } from '@/icons/accessibility';
 import { ActivityIcon } from '@/icons/activity';
@@ -314,6 +315,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'a-arrow-down-test',
+    icon: AArrowDownIconTest,
+    keywords: ['arrow', 'down', 'a'],
+  },
   {
     name: 'cloud-snow',
     icon: CloudSnowIcon,
