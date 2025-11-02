@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+
 import type { Schema } from './registry-schema';
 import { components } from './registry-components';
 

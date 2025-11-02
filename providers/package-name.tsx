@@ -1,7 +1,8 @@
 'use client';
 
-import { PACKAGE_MANAGER } from '@/constants';
 import { createContext, useContext, useState } from 'react';
+
+import { PACKAGE_MANAGER } from '@/constants';
 
 type PackageNameContextType = {
   packageName: (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];

@@ -1,6 +1,7 @@
-import { AnimatePresence, motion } from 'motion/react';
-import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import type { LucideIcon } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 type Props = {
   icons: [LucideIcon, LucideIcon];

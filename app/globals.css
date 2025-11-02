@@ -261,10 +261,10 @@
   }
 
   .action-container {
-    @apply cursor-pointer p-2 hover:bg-accent size-[40px] rounded-md transition-colors duration-200 flex items-center justify-center;
+    @apply hover:bg-accent flex size-[40px] cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200;
   }
 
   .action-item {
-    @apply size-[18px] dark:text-gray-100 text-zinc-700;
+    @apply size-[18px] text-zinc-700 dark:text-gray-100;
   }
 }

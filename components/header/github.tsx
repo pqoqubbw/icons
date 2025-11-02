@@ -1,8 +1,9 @@
-import { Button } from '../ui/button';
 import Link from 'next/link';
-import { LINK } from '@/constants';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { ArrowUpRight, Star } from 'lucide-react';
+
+import { LINK } from '@/constants';
+import { Button } from '../ui/button';
 import { CountUpNumber } from './count-up-number';
 
 const getGithubStars = async () => {
@@ -40,7 +41,7 @@ async function HeaderGithub() {
         target="_blank"
         className="flex items-center !justify-between"
       >
-        <GitHubLogoIcon className="ml-1 mr-1" />
+        <GitHubLogoIcon className="mr-1 ml-1" />
         {stars > 0 ? (
           <div className="flex items-center gap-1">
             <Star className="size-3!" fill="#e3b341" stroke="#e3b341" />
@@ -49,7 +50,7 @@ async function HeaderGithub() {
         ) : (
           'check repo'
         )}
-        <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
+        <ArrowUpRight className="text-muted-foreground h-4 w-4" />
       </Link>
     </Button>
   );

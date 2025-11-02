@@ -1,4 +1,5 @@
 import path from 'path';
+
 import type { Schema } from './registry-schema';
 
 type ComponentDefinition = Partial<

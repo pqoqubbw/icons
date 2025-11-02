@@ -1,15 +1,15 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
-import { Check, Copy } from 'lucide-react';
-import { motion } from 'motion/react';
-import { AnimatePresence } from 'motion/react';
 import { useRef, useState } from 'react';
-import { TextLoop } from '../ui/text-loop';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
+import { Check, Copy } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+
 import { PACKAGE_MANAGER } from '@/constants';
-import { usePackageNameContext } from '@/providers/package-name';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
+import { usePackageNameContext } from '@/providers/package-name';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
+import { TextLoop } from '../ui/text-loop';
 
 type CopyIconProps = {
   copied: boolean;
@@ -20,7 +20,7 @@ const CopyIcon = ({ copied, onClick }: CopyIconProps) => {
   return (
     <div
       onClick={onClick}
-      className="absolute right-3 md:px-0 px-3 flex items-center justify-center -bottom-[6px] cursor-pointer p-4 size-8 -translate-y-1/2 hover:bg-input rounded-md transition-colors duration-200"
+      className="hover:bg-input absolute right-3 -bottom-[6px] flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-md p-4 px-3 transition-colors duration-200 md:px-0"
     >
       <AnimatePresence mode="wait" initial={false}>
         {copied ? (
@@ -67,7 +67,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
   };
 
   return (
-    <div className="w-full max-w-3xl bg-input/50 rounded-lg overflow-hidden mt-8 border border-input relative">
+    <div className="bg-input/50 border-input relative mt-8 w-full max-w-3xl overflow-hidden rounded-lg border">
       <Tabs
         className="w-full"
         value={packageName}
@@ -87,10 +87,10 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
       </Tabs>
       <div
         onClick={copyToClipboard}
-        className="pl-5 py-4 font-mono text-sm md:max-w-full max-w-[calc(100%-56px)] flex items-center gap-2 overflow-x-auto whitespace-nowrap pr-14 cursor-pointer"
+        className="flex max-w-[calc(100%-56px)] cursor-pointer items-center gap-2 overflow-x-auto py-4 pr-14 pl-5 font-mono text-sm whitespace-nowrap md:max-w-full"
       >
-        <div className="flex items-center min-w-0">
-          <span className="shrink-0 mr-2">
+        <div className="flex min-w-0 items-center">
+          <span className="mr-2 shrink-0">
             {getPackageManagerPrefix(packageName)}
           </span>{' '}
           <span className="text-muted-foreground shrink-0">

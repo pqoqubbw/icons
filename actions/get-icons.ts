@@ -1,6 +1,7 @@
-import { ICON_LIST } from '@/icons';
 import { promises as fs } from 'fs';
 import path from 'path';
+
+import { ICON_LIST } from '@/icons';
 
 const ICONS_DIRECTORY = 'icons';
 

@@ -1,7 +1,7 @@
 import type { Icon } from '@/actions/get-icons';
+import { useMemo } from 'react';
 import Fuse from 'fuse.js';
 import { useQueryState } from 'nuqs';
-import { useMemo } from 'react';
 
 const useSearch = (items: Icon[]) => {
   const [query] = useQueryState('q');

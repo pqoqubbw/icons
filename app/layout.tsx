@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist_Mono } from 'next/font/google';
-import './globals.css';
-import { ThemeProvider } from '@/providers/theme';
-import { Header } from '@/components/header';
 
-import ogImage from './og.png';
-import { Analytics } from '@/components/analytics';
+import './globals.css';
+
+import { ArrowUpRight } from 'lucide-react';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 // import { SnowfallComponent } from '@/components/snowfall';
 import { Toaster } from 'sonner';
+
+import { Analytics } from '@/components/analytics';
+import { Header } from '@/components/header';
 import { Banner } from '@/components/ui/banner';
 import { LINK } from '@/constants';
-import { ArrowUpRight } from 'lucide-react';
 import { PackageNameProvider } from '@/providers/package-name';
+import { ThemeProvider } from '@/providers/theme';
+import ogImage from './og.png';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -86,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistMono.className} antialiased relative bg-background dark:bg-[#151515]`}
+        className={`${geistMono.className} bg-background relative antialiased dark:bg-[#151515]`}
       >
         <ThemeProvider
           attribute="class"
@@ -96,12 +98,12 @@ export default function RootLayout({
         >
           <PackageNameProvider>
             <a href={LINK.HELPY_UI} target="_blank" className="group">
-              <Banner variant="rainbow" className="h-10 md:text-sm text-xs">
-                <p className="group-hover:underline underline-offset-4">
+              <Banner variant="rainbow" className="h-10 text-xs md:text-sm">
+                <p className="underline-offset-4 group-hover:underline">
                   🎉 helpy-ui - warm blanket for your projects
                 </p>
                 <ArrowUpRight
-                  className="size-3.5 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 ease-out shrink-0"
+                  className="ml-1 size-3.5 shrink-0 transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   strokeWidth={2}
                 />
               </Banner>

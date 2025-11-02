@@ -1,9 +1,11 @@
 'use client';
 
-import { type HTMLAttributes, useCallback, useEffect, useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { X } from 'lucide-react';
-import { cn } from '@/lib/utils';
+
 import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface BannerProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -50,7 +52,7 @@ export function Banner({
       {...props}
       style={{ height: open ? height : '0' }}
       className={cn(
-        'relative z-40 flex flex-row font-mono items-center justify-center bg-secondary px-4 text-center text-sm font-medium transition-all duration-300',
+        'bg-secondary relative z-40 flex flex-row items-center justify-center px-4 text-center font-mono text-sm font-medium transition-all duration-300',
         variant === 'rainbow' && 'bg-background',
         !open && 'hidden',
         props.className
@@ -83,7 +85,7 @@ export function Banner({
             buttonVariants({
               variant: 'ghost',
               className:
-                'absolute end-2 top-1/2 -translate-y-1/2 text-muted-foreground',
+                'text-muted-foreground absolute end-2 top-1/2 -translate-y-1/2',
               size: 'icon',
             })
           )}
@@ -98,8 +100,8 @@ export function Banner({
 const RainbowLayer = () => {
   return (
     <>
-      <div className="absolute inset-0 z-[-1] rainbow-banner-gradient-1" />
-      <div className="absolute inset-0 z-[-1] rainbow-banner-gradient-2" />
+      <div className="rainbow-banner-gradient-1 absolute inset-0 z-[-1]" />
+      <div className="rainbow-banner-gradient-2 absolute inset-0 z-[-1]" />
     </>
   );
 };

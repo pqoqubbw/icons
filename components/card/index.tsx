@@ -1,19 +1,19 @@
 'use client';
 
-import { forwardRef, useState } from 'react';
-import { Check, Copy, Terminal } from 'lucide-react';
-import { TooltipProvider } from '../ui/tooltip';
-
-import { useOpenPanel } from '@openpanel/nextjs';
-import { ANALYTIC_EVENT } from '../analytics';
 import type { Icon } from '@/actions/get-icons';
-import { openInV0Action } from '@/actions/open-in-v0';
-import { toast } from 'sonner';
-import { ActionItem } from './action';
-import { cn } from '@/lib/utils';
 import type { LucideProps } from 'lucide-react';
-import { usePackageNameContext } from '@/providers/package-name';
+import { forwardRef, useState } from 'react';
+import { useOpenPanel } from '@openpanel/nextjs';
+import { Check, Copy, Terminal } from 'lucide-react';
+import { toast } from 'sonner';
+
+import { openInV0Action } from '@/actions/open-in-v0';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
+import { cn } from '@/lib/utils';
+import { usePackageNameContext } from '@/providers/package-name';
+import { ANALYTIC_EVENT } from '../analytics';
+import { TooltipProvider } from '../ui/tooltip';
+import { ActionItem } from './action';
 
 const V0Icon = forwardRef<SVGSVGElement, LucideProps>((props, ref) => {
   return (
@@ -37,7 +37,7 @@ const TOOLTIP_DELAY_DURATION = 500;
 
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="p-3 pt-5 border border-input rounded-md flex items-center justify-center flex-col">
+    <div className="border-input flex flex-col items-center justify-center rounded-md border p-3 pt-5">
       {children}
     </div>
   );
@@ -45,7 +45,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="text-xs text-muted-foreground mt-5 mb-3 text-center">
+    <p className="text-muted-foreground mt-5 mb-3 text-center text-xs">
       {children}
     </p>
   );

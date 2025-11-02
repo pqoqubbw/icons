@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+
 import { components } from './registry-components';
 
 function updateRegistryComponents() {
