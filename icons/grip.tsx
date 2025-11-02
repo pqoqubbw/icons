@@ -1,9 +1,13 @@
 'use client';
 
-import { AnimatePresence, motion, useAnimation } from 'motion/react';
-import { useEffect, useState } from 'react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation, type Variants } from 'motion/react';
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useCallback,
+  type HTMLAttributes,
+} from 'react';
 import { cn } from '@/lib/utils';
 
 export interface GripIconHandle {
@@ -11,85 +15,87 @@ export interface GripIconHandle {
   stopAnimation: () => void;
 }
 
-interface GripIconProps extends HTMLAttributes<HTMLDivElement> {
+interface GripProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
 const CIRCLES = [
-  { cx: 19, cy: 5 }, // Top right
-  { cx: 12, cy: 5 }, // Top middle
-  { cx: 19, cy: 12 }, // Middle right
-  { cx: 5, cy: 5 }, // Top left
-  { cx: 12, cy: 12 }, // Center
-  { cx: 19, cy: 19 }, // Bottom right
-  { cx: 5, cy: 12 }, // Middle left
-  { cx: 12, cy: 19 }, // Bottom middle
-  { cx: 5, cy: 19 }, // Bottom left
+  { cx: 19, cy: 5 },
+  { cx: 19, cy: 12 },
+  { cx: 12, cy: 5 },
+  { cx: 19, cy: 19 },
+  { cx: 12, cy: 12 },
+  { cx: 5, cy: 5 },
+  { cx: 12, cy: 19 },
+  { cx: 5, cy: 12 },
+  { cx: 5, cy: 19 },
 ];
 
-const GripIcon = forwardRef<GripIconHandle, GripIconProps>(
+const VARIANTS: Variants = {
+  normal: {
+    opacity: 1,
+    transition: { duration: 0.25 },
+  },
+  animate: (index: number) => ({
+    opacity: [1, 0.3, 0.3, 1],
+    transition: {
+      delay: index * 0.07,
+      duration: 1.1,
+      times: [0, 0.2, 0.8, 1],
+    },
+  }),
+};
+
+const GripIcon = forwardRef<GripIconHandle, GripProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const [isHovered, setIsHovered] = useState(false);
     const controls = useAnimation();
     const isControlledRef = useRef(false);
+    const isAnimatingRef = useRef(false);
+
+    const startAnimation = useCallback(async () => {
+      if (isAnimatingRef.current) return;
+      isAnimatingRef.current = true;
+      await controls.start('animate');
+      await controls.start('normal');
+      isAnimatingRef.current = false;
+    }, [controls]);
+
+    const stopAnimation = useCallback(async () => {
+      if (!isAnimatingRef.current) return;
+      await controls.start('normal');
+      isAnimatingRef.current = false;
+    }, [controls]);
 
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
-
-      return {
-        startAnimation: async () => setIsHovered(true),
-        stopAnimation: () => setIsHovered(false),
-      };
+      return { startAnimation, stopAnimation };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          setIsHovered(true);
+          startAnimation();
         } else {
           onMouseEnter?.(e);
         }
       },
-      [onMouseEnter]
+      [startAnimation, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          setIsHovered(false);
+          stopAnimation();
         } else {
           onMouseLeave?.(e);
         }
       },
-      [onMouseLeave]
+      [stopAnimation, onMouseLeave]
     );
-
-    useEffect(() => {
-      const animateCircles = async () => {
-        if (isHovered) {
-          await controls.start((i) => ({
-            opacity: 0.3,
-            transition: {
-              delay: i * 0.1,
-              duration: 0.2,
-            },
-          }));
-          await controls.start((i) => ({
-            opacity: 1,
-            transition: {
-              delay: i * 0.1,
-              duration: 0.2,
-            },
-          }));
-        }
-      };
-
-      animateCircles();
-    }, [isHovered, controls]);
 
     return (
       <div
-        className={cn(className)}
+        className={cn('inline-flex items-center justify-center', className)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...props}
@@ -105,25 +111,18 @@ const GripIcon = forwardRef<GripIconHandle, GripIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <AnimatePresence>
-            {CIRCLES.map((circle, index) => (
-              <motion.circle
-                key={`${circle.cx}-${circle.cy}`}
-                cx={circle.cx}
-                cy={circle.cy}
-                r="1"
-                initial="initial"
-                variants={{
-                  initial: {
-                    opacity: 1,
-                  },
-                }}
-                animate={controls}
-                exit="initial"
-                custom={index}
-              />
-            ))}
-          </AnimatePresence>
+          {CIRCLES.map((circle, index) => (
+            <motion.circle
+              key={`${circle.cx}-${circle.cy}`}
+              cx={circle.cx}
+              cy={circle.cy}
+              r="1"
+              variants={VARIANTS}
+              animate={controls}
+              custom={index}
+              initial="normal"
+            />
+          ))}
         </svg>
       </div>
     );
@@ -131,5 +130,4 @@ const GripIcon = forwardRef<GripIconHandle, GripIconProps>(
 );
 
 GripIcon.displayName = 'GripIcon';
-
 export { GripIcon };
