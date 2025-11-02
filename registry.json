@@ -4,7 +4,6 @@
   "homepage": "https://lucide-animated.com",
   "items": [
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "a-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -20,7 +19,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "a-arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -36,7 +34,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "accessibility",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -52,7 +49,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "activity",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -68,7 +64,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "air-vent",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -84,7 +79,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "airplane",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -100,7 +94,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "alarm-clock",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -116,7 +109,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "align-center",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -132,7 +124,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "align-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -148,7 +139,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "align-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -164,7 +154,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "angry",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -180,7 +169,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "annoyed",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -196,7 +184,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "archive",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -212,7 +199,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-down-dash",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -228,7 +214,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -244,7 +229,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-left-dash",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -260,7 +244,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -276,7 +259,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-right-dash",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -292,7 +274,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -308,7 +289,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-up-dash",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -324,7 +304,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-big-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -340,7 +319,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-0-1",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -356,7 +334,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-1-0",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -372,7 +349,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-a-z",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -388,7 +364,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -404,7 +379,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -420,7 +394,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down-z-a",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -436,7 +409,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -452,7 +424,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -468,7 +439,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -484,7 +454,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -500,7 +469,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "at-sign",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -516,7 +484,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "attach-file",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -532,7 +499,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "audio-lines",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -548,7 +514,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "badge-alert",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -564,7 +529,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "badge-percent",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -580,7 +544,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "ban",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -596,7 +559,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "banana",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -612,7 +574,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "battery-full",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -628,7 +589,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "battery-low",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -644,7 +604,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "battery-medium",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -660,7 +619,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bell",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -676,7 +634,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "blocks",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -692,7 +649,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bluetooth-connected",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -708,7 +664,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bluetooth-off",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -724,7 +679,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bluetooth-searching",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -740,7 +694,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bluetooth",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -756,7 +709,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bold",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -772,7 +724,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bone",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -788,7 +739,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "book-text",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -804,7 +754,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bookmark-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -820,7 +769,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bookmark-minus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -836,7 +784,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bookmark-plus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -852,7 +799,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bookmark-x",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -868,7 +814,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bookmark",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -884,7 +829,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bot-message-square",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -900,7 +844,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "bot",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -916,7 +859,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "boxes",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -932,7 +874,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar-check-2",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -948,7 +889,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -964,7 +904,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar-cog",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -980,7 +919,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "calendar-days",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -996,7 +934,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cart",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1012,7 +949,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cast",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1028,7 +964,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cctv",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1044,7 +979,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-bar-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1060,7 +994,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-bar-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1076,7 +1009,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-column-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1092,7 +1024,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-column-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1108,7 +1039,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-line",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1124,7 +1054,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-no-axes-column-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1140,7 +1069,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-no-axes-column-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1156,7 +1084,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-pie",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1172,7 +1099,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-scatter",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1188,7 +1114,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chart-spline",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1204,7 +1129,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "check-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1220,7 +1144,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1236,7 +1159,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1252,7 +1174,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevron-first",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1268,7 +1189,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1284,7 +1204,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1300,7 +1219,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1316,7 +1234,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevrons-down-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1332,7 +1249,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevrons-left-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1348,7 +1264,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevrons-right-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1364,7 +1279,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chevrons-up-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1380,7 +1294,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chrome",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1396,7 +1309,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1412,7 +1324,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1428,7 +1339,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1444,7 +1354,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1460,7 +1369,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1476,7 +1384,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1492,7 +1399,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-dollar-sign",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1508,7 +1414,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "circle-help",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1524,7 +1429,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "clap",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1540,7 +1444,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "clipboard-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1556,7 +1459,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "clock",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1572,7 +1474,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-cog",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1588,7 +1489,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-download",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1604,7 +1504,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-lightning",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1620,7 +1519,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-rain-wind",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1636,7 +1534,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-rain",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1652,7 +1549,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-snow",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1668,7 +1564,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-sun",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1684,7 +1579,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cloud-upload",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1700,7 +1594,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "coffee",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1716,7 +1609,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cog",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1732,7 +1624,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "compass",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1748,7 +1639,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "connect",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1764,7 +1654,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "construction",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1780,7 +1669,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "contrast",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1796,7 +1684,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "copy",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1812,7 +1699,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cpu",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1828,7 +1714,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cursor-click",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1844,7 +1729,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "delete",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1860,7 +1744,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "discord",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1876,7 +1759,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "dollar-sign",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1892,7 +1774,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "download",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1908,7 +1789,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "downvote",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1924,7 +1804,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "dribbble",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1940,7 +1819,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "droplet",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1956,7 +1834,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "drum",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1972,7 +1849,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "earth",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -1988,7 +1864,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "euro",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2004,7 +1879,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "ev-charger",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2020,7 +1894,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "expand",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2036,7 +1909,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "eye-off",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2052,7 +1924,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "facebook",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2068,7 +1939,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "figma",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2084,7 +1954,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-chart-line",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2100,7 +1969,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-check-2",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2116,7 +1984,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2132,7 +1999,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-cog",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2148,7 +2014,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-pen-line",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2164,7 +2029,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-stack",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2180,7 +2044,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "file-text",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2196,7 +2059,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "fingerprint",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2212,7 +2074,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "fish-symbol",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2228,7 +2089,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "flame",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2244,7 +2104,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "flask",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2260,7 +2119,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "folders",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2276,7 +2134,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "frame",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2292,7 +2149,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "frown",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2308,7 +2164,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "gallery-horizontal-end",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2324,7 +2179,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "gallery-thumbnails",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2340,7 +2194,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "gallery-vertical-end",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2356,7 +2209,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "gauge",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2372,7 +2224,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "georgian-lari",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2388,7 +2239,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "git-commit-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2404,7 +2254,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "git-commit-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2420,7 +2269,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "git-merge",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2436,7 +2284,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "git-pull-request",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2452,7 +2299,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "github",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2468,7 +2314,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "grip-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2484,7 +2329,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "grip-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2500,7 +2344,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "grip",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2516,7 +2359,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "hand-coins",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2532,7 +2374,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "hand-heart",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2548,7 +2389,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "hard-drive-download",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2564,7 +2404,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "hard-drive-upload",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2580,7 +2419,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "heart",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2596,7 +2434,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "history",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2612,7 +2449,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "home",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2628,7 +2464,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "id-card",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2644,7 +2479,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "indian-rupee",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2660,7 +2494,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "instagram",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2676,7 +2509,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "italic",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2692,7 +2524,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "japanese-yen",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2708,7 +2539,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "key-circle",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2724,7 +2554,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "key-square",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2740,7 +2569,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "key",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2756,7 +2584,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "keyboard",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2772,7 +2599,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "languages",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2788,7 +2614,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "laptop-minimal-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2804,7 +2629,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "laugh",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2820,7 +2644,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "layers",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2836,7 +2659,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "layout-panel-top",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2852,7 +2674,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "link",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2868,7 +2689,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "linkedin",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2884,7 +2704,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "loader-pinwheel",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2900,7 +2719,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "lock-keyhole-open",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2916,7 +2734,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "lock-keyhole",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2932,7 +2749,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "lock-open",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2948,7 +2764,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "lock",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2964,7 +2779,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "logout",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2980,7 +2794,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "mail-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2996,7 +2809,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-check-inside",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3012,7 +2824,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3028,7 +2839,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-house",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3044,7 +2854,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-minus-inside",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3060,7 +2869,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-minus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3076,7 +2884,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-off",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3092,7 +2899,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-plus-inside",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3108,7 +2914,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-plus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3124,7 +2929,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin-x-inside",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3140,7 +2944,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "map-pin",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3156,7 +2959,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "maximize-2",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3172,7 +2974,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "maximize",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3188,7 +2989,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "meh",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3204,7 +3004,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "menu",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3220,7 +3019,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-circle-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3236,7 +3034,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-circle-more",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3252,7 +3049,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-circle",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3268,7 +3064,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-square-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3284,7 +3079,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-square-more",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3300,7 +3094,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-square",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3316,7 +3109,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "minimize",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3332,7 +3124,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "monitor-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3348,7 +3139,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "moon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3364,7 +3154,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "nfc",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3380,7 +3169,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "panel-left-close",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3396,7 +3184,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "panel-left-open",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3412,7 +3199,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "panel-right-open",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3428,7 +3214,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "party-popper",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3444,7 +3229,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "pause",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3460,7 +3244,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "pen-tool",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3476,7 +3259,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "philippine-peso",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3492,7 +3274,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "play",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3508,7 +3289,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "plug-zap",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3524,7 +3304,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "plus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3540,7 +3319,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "pound-sterling",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3556,7 +3334,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "rabbit",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3572,7 +3349,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "radio-tower",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3588,7 +3364,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "radio",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3604,7 +3379,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "redo-dot",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3620,7 +3394,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "redo",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3636,7 +3409,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "refresh-ccw-dot",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3652,7 +3424,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "refresh-ccw",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3668,7 +3439,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "refresh-cw-off",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3684,7 +3454,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "refresh-cw",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3700,7 +3469,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "rocket",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3716,7 +3484,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "rocking-chair",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3732,7 +3499,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "roller-coaster",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3748,7 +3514,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "rotate-ccw",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3764,7 +3529,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "rotate-cw",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3780,7 +3544,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "route",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3796,7 +3559,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "russian-ruble",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3812,7 +3574,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "saudi-riyal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3828,7 +3589,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "scan-face",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3844,7 +3604,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "scan-text",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3860,7 +3619,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "search",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3876,7 +3634,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "settings",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3892,7 +3649,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sliders-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3908,7 +3664,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "shield-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3924,7 +3679,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "ship",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3940,7 +3694,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "shower-head",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3956,7 +3709,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "shrink",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3972,7 +3724,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "smartphone-charging",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3988,7 +3739,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "smartphone-nfc",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4004,7 +3754,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "smile-plus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4020,7 +3769,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "smile",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4036,7 +3784,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "snowflake",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4052,7 +3799,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sparkles",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4068,7 +3814,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-activity",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4084,7 +3829,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4100,7 +3844,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-arrow-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4116,7 +3859,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-arrow-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4132,7 +3874,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4148,7 +3889,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4164,7 +3904,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4180,7 +3919,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4196,7 +3934,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4212,7 +3949,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-pen",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4228,7 +3964,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "square-stack",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4244,7 +3979,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "stethoscope",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4260,7 +3994,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sun-dim",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4276,7 +4009,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sun-medium",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4292,7 +4024,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sun-moon",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4308,7 +4039,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sun",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4324,7 +4054,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "sunset",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4340,7 +4069,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "swiss-franc",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4356,7 +4084,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "syringe",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4372,7 +4099,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "telescope",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4388,7 +4114,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "terminal",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4404,7 +4129,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "thermometer",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4420,7 +4144,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "timer",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4436,7 +4159,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "tornado",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4452,7 +4174,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "train-track",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4468,7 +4189,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "trending-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4484,7 +4204,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "trending-up-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4500,7 +4219,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "trending-up",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4516,7 +4234,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "turkish-lira",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4532,7 +4249,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "twitch",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4548,7 +4264,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "twitter",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4564,7 +4279,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "underline",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4580,7 +4294,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "undo-dot",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4596,7 +4309,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "undo",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4612,7 +4324,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "upload",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4628,7 +4339,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "upvote",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4644,7 +4354,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "user-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4660,7 +4369,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "user-round-check",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4676,7 +4384,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "user-round-plus",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4692,7 +4399,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "user",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4708,7 +4414,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "users",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4724,7 +4429,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "vibrate",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4740,7 +4444,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "volume",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4756,7 +4459,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "washing-machine",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4772,7 +4474,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "waves-ladder",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4788,7 +4489,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "waves",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4804,7 +4504,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "waypoints",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4820,7 +4519,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "webhook",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4836,7 +4534,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "wifi",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4852,7 +4549,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "wind-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4868,7 +4564,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "wind",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4884,7 +4579,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "workflow",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4900,7 +4594,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "x",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4916,7 +4609,6 @@
       ]
     },
     {
-      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "youtube",
       "type": "registry:ui",
       "registryDependencies": [],

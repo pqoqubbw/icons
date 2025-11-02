@@ -50,7 +50,8 @@ for (const component of components) {
     JSON.stringify(schema, null, 2)
   );
 
-  const { files, ...schemaWithoutContent } = schema;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { files, $schema: _itemSchema, ...schemaWithoutContent } = schema;
   registryItems.push({
     ...schemaWithoutContent,
     files: files.map((file) => {
