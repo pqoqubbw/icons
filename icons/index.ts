@@ -1,5 +1,4 @@
 import { AArrowDownIcon } from '@/icons/a-arrow-down';
-import { AArrowDownIcon as AArrowDownIconTest } from '@/icons/a-arrow-down-test';
 import { AArrowUpIcon } from '@/icons/a-arrow-up';
 import { AccessibilityIcon } from '@/icons/accessibility';
 import { ActivityIcon } from '@/icons/activity';
@@ -209,6 +208,7 @@ import { MessageSquareMoreIcon } from '@/icons/message-square-more';
 import { MinimizeIcon } from '@/icons/minimize';
 import { MonitorCheckIcon } from '@/icons/monitor-check';
 import { MoonIcon } from '@/icons/moon';
+import { NewIcon } from '@/icons/new-icon';
 import { NfcIcon } from '@/icons/nfc';
 import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
 import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
@@ -316,8 +316,8 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
-    name: 'a-arrow-down-test',
-    icon: AArrowDownIconTest,
+    name: 'new-icon',
+    icon: NewIcon,
     keywords: ['arrow', 'down', 'a'],
   },
   {

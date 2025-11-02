@@ -34,7 +34,7 @@ const arrowVariants: Variants = {
   },
 };
 
-const AArrowDownIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
+const NewIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -116,6 +116,6 @@ const AArrowDownIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
   }
 );
 
-AArrowDownIcon.displayName = 'AArrowDownIcon';
+NewIcon.displayName = 'NewIcon';
 
-export { AArrowDownIcon };
+export { NewIcon };
