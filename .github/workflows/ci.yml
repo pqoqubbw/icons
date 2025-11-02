@@ -7,9 +7,60 @@ on:
     branches: [main]
 
 jobs:
-  validate-and-format:
-    name: Validate and Format
+  check-imports:
+    name: Check Imports
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check imports
+        run: pnpm check-imports
+
+  check-duplicates:
+    name: Check Duplicates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check duplicates
+        run: pnpm check-duplicates
+
+  lint-and-generate:
+    name: Lint and Generate
+    runs-on: ubuntu-latest
+    needs: [check-imports, check-duplicates]
     permissions:
       contents: write
 
@@ -34,12 +85,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check imports
-        run: pnpm check-imports
-
-      - name: Check duplicates
-        run: pnpm check-duplicates
-
       - name: Run linter and formatter
         run: pnpm lint
 
@@ -49,7 +94,15 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+          echo "Git status before adding:"
+          git status
+          echo ""
+          echo "Changed/new files:"
+          git diff --name-only
+          git ls-files --others --exclude-standard
+          echo ""
+          git add -A
+          git diff --cached --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request'
@@ -57,5 +110,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git commit -m "chore: schema generated"
+          git commit -m "chore: auto-format and regenerate schema"
           git push
