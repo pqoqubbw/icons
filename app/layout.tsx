@@ -20,14 +20,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://icons.pqoqubbw.dev'),
+  metadataBase: new URL('https://lucide-animated.com'),
   openGraph: {
-    title: 'pqoqubbw/icons',
+    title: 'lucide-animated',
     description: 'beautifully crafted animated icons',
-    siteName: 'pqoqubbw/icons',
+    siteName: 'lucide-animated',
     type: 'website',
     locale: 'en_US',
-    url: 'https://icons.pqoqubbw.dev',
+    url: 'https://lucide-animated.com',
     images: [
       {
         url: ogImage.src,
@@ -44,20 +44,20 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
     googleBot: 'index, follow',
   },
-  applicationName: 'pqoqubbw/icons',
+  applicationName: 'lucide-animated',
   appleWebApp: {
-    title: 'pqoqubbw/icons',
+    title: 'lucide-animated',
     statusBarStyle: 'default',
     capable: true,
   },
   title: {
-    default: 'pqoqubbw/icons',
-    template: `%s - pqoqubbw/icons`,
+    default: 'lucide-animated',
+    template: `%s - lucide-animated`,
   },
   description: 'beautifully crafted animated icons',
   twitter: {
     card: 'summary_large_image',
-    title: 'pqoqubbw/icons',
+    title: 'lucide-animated',
     description: 'beautifully crafted animated icons',
     creator: '@pqoqubbw',
     images: [

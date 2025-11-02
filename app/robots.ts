@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://icons.pqoqubbw.dev/sitemap.xml',
+    sitemap: 'https://lucide-animated.com/sitemap.xml',
   };
 }

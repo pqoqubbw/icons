@@ -12,7 +12,7 @@ const getIconForV0 = async (name: string) => {
             )
           )
         : await (
-            await fetch(`https://icons.pqoqubbw.dev/c/${name}.json`)
+            await fetch(`https://lucide-animated.com/c/${name}.json`)
           ).json();
 
     const componentName = name
@@ -27,8 +27,8 @@ const getIconForV0 = async (name: string) => {
       type: 'registry:component',
       title: name,
       source: {
-        title: 'pqoqubbw/icons',
-        url: 'https://icons.pqoqubbw.dev',
+        title: 'lucide-animated',
+        url: 'https://lucide-animated.com',
         file: `${name}.tsx`,
       },
       registryDependencies: iconData.registryDependencies || [],
@@ -58,7 +58,7 @@ const getIconForV0 = async (name: string) => {
             '})\n\n' +
             'export const metadata: Metadata = {\n' +
             `  title: '${name} Icon',\n` +
-            `  description: 'Animated ${name} icon component from pqoqubbw/icons',\n` +
+            `  description: 'Animated ${name} icon component from lucide-animated',\n` +
             '}\n\n' +
             'export default function RootLayout({\n' +
             '  children,\n' +
