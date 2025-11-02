@@ -1883,5 +1883,5 @@ export const components: ComponentDefinition[] = [
     'path': path.join(__dirname, '../icons/git-merge.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
