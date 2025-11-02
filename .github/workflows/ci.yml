@@ -68,7 +68,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup pnpm
@@ -105,10 +106,17 @@ jobs:
           git diff --cached --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
-        if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request'
+        if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
           git commit -m "chore: auto-format and regenerate schema"
           git push
+
+      - name: Notify about required changes (fork PR)
+        if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
+        run: |
+          echo "::error::Changes are required but cannot be auto-committed to fork PR"
+          echo "::error::Please run 'pnpm lint && pnpm gen-cli' locally and commit the changes"
+          exit 1
