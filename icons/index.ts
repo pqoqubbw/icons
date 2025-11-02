@@ -101,6 +101,7 @@ import { CloudDownloadIcon } from '@/icons/cloud-download';
 import { CloudLightningIcon } from '@/icons/cloud-lightning';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { CloudSnowIcon } from '@/icons/cloud-snow';
 import { CloudSunIcon } from '@/icons/cloud-sun';
 import { CloudUploadIcon } from '@/icons/cloud-upload';
 import { CoffeeIcon } from '@/icons/coffee';
@@ -305,7 +306,6 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
-import { CloudSnowIcon } from '@/icons/cloud-snow';
 
 type IconListItem = {
   name: string;
