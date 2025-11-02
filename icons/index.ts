@@ -240,7 +240,7 @@ import { SaudiRiyalIcon } from '@/icons/saudi-riyal';
 import { ScanFaceIcon } from '@/icons/scan-face';
 import { ScanTextIcon } from '@/icons/scan-text';
 import { SearchIcon } from '@/icons/search';
-import { SettingsGearIcon } from '@/icons/settings-gear';
+import { SettingsIcon } from '@/icons/settings';
 import { ShieldCheckIcon } from '@/icons/shield-check';
 import { ShipIcon } from '@/icons/ship';
 import { ShowerHeadIcon } from '@/icons/shower-head';
@@ -1186,8 +1186,8 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['settings', 'filters', 'controls'],
   },
   {
-    name: 'settings-gear',
-    icon: SettingsGearIcon,
+    name: 'settings',
+    icon: SettingsIcon,
     keywords: ['cog', 'edit', 'gear', 'preferences'],
   },
   {
