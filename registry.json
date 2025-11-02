@@ -4622,6 +4622,21 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "hourglass",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hourglass.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
