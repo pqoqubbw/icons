@@ -13,13 +13,13 @@ export async function openInV0Action(name: string) {
     const payload = {
       ...template,
       meta: {
-        project: 'pqoqubbw/icons',
+        project: 'lucide-animated',
         author: 'dmytro',
-        url: 'https://icons.pqoqubbw.dev',
+        url: 'https://lucide-animated.com',
       },
       source: {
-        title: 'pqoqubbw/icons',
-        url: 'https://icons.pqoqubbw.dev',
+        title: 'lucide-animated',
+        url: 'https://lucide-animated.com',
         file: `${name}.tsx`,
       },
     };

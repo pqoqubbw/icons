@@ -1,9 +1,9 @@
-## `pqoqubbw/icons` is beautifully crafted animated icons.
+## `lucide-animated` is beautifully crafted animated icons.
 ![preview](./app/og.png)
 
-**Demo** → [icons.pqoqubbw.dev](https://icons.pqoqubbw.dev)
+**Demo** → [lucide-animated](https://lucide-animated.com)
 
-**Sponsorship** → [icons.pqoqubbw.dev/sponsorship](https://icons.pqoqubbw.dev/sponsorship)
+**Sponsorship** → [lucide-animated/sponsorship](https://lucide-animated.com/sponsorship)
 
 #### Svelte icons: [movingicons.dev](https://www.movingicons.dev/) by [@jis3r](https://github.com/jis3r)
 #### Vue icons: [imfenghuang.github.io/icons](https://imfenghuang.github.io/icons/) by [@imfenghuang](https://github.com/imfenghuang)
@@ -11,7 +11,7 @@
 
 ## Contributing
 
-We welcome contributions to `pqoqubbw/icons`! Please read our [contributing guidelines](CONTRIBUTING.md) on how to submit improvements and new icons.
+We welcome contributions to `lucide-animated`! Please read our [contributing guidelines](CONTRIBUTING.md) on how to submit improvements and new icons.
 
 ## Terms of Use
 

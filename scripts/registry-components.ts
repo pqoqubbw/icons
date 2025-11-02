@@ -1621,8 +1621,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'bookmark-check',
+    'path': path.join(__dirname, '../icons/bookmark-check.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'bluetooth',
     'path': path.join(__dirname, '../icons/bluetooth.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'bookmark-minus',
+    'path': path.join(__dirname, '../icons/bookmark-minus.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1633,8 +1645,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'bookmark-plus',
+    'path': path.join(__dirname, '../icons/bookmark-plus.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'maximize',
     'path': path.join(__dirname, '../icons/maximize.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'bookmark-x',
+    'path': path.join(__dirname, '../icons/bookmark-x.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1645,8 +1669,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'bookmark',
+    'path': path.join(__dirname, '../icons/bookmark.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'cloud-download',
     'path': path.join(__dirname, '../icons/cloud-download.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'bot-message-square',
+    'path': path.join(__dirname, '../icons/bot-message-square.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1657,8 +1693,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'bot',
+    'path': path.join(__dirname, '../icons/bot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'cloud-upload',
     'path': path.join(__dirname, '../icons/cloud-upload.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'chevron-first',
+    'path': path.join(__dirname, '../icons/chevron-first.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1669,8 +1717,20 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'grip-horizontal',
+    'path': path.join(__dirname, '../icons/grip-horizontal.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'hard-drive-upload',
     'path': path.join(__dirname, '../icons/hard-drive-upload.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'grip-vertical',
+    'path': path.join(__dirname, '../icons/grip-vertical.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -1819,9 +1879,15 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'git-merge',
+    'path': path.join(__dirname, '../icons/git-merge.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'cloud-snow',
     'path': path.join(__dirname, '../icons/cloud-snow.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
