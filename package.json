@@ -10,7 +10,9 @@
     "lint:check": "prettier --check . && eslint .",
     "check-duplicates": "tsx scripts/check-duplicates.ts",
     "check-imports": "tsx scripts/check-imports.ts",
-    "gen-cli": "tsx scripts/registry-build.ts"
+    "sync-registry": "tsx scripts/sync-registry.ts",
+    "build-registry": "tsx scripts/registry-build.ts",
+    "gen-cli": "pnpm run sync-registry && pnpm run build-registry"
   },
   "dependencies": {
     "@openpanel/nextjs": "^1.0.8",

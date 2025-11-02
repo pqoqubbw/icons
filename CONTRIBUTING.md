@@ -162,30 +162,50 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    Note: Use the exact icon name, keywords, and other data from the [lucide.dev](https://lucide.dev/) website for your specific icon.
 
-8. Build the project to check for errors:
+8. **Update the registry (for new icons):**
+
+   After creating a new icon, you need to update the registry so it can be used with the shadcn CLI:
+
+   ```
+   pnpm run sync-registry
+   ```
+
+   This will automatically add your new icon to the registry components list. Then build the registry JSON files:
+
+   ```
+   pnpm run build-registry
+   ```
+
+   Or run both commands at once:
+
+   ```
+   pnpm run gen-cli
+   ```
+
+9. Build the project to check for errors:
 
    ```
    pnpm build
    ```
 
-9. Test the application to ensure your changes work as expected:
+10. Test the application to ensure your changes work as expected:
 
-   ```
-   pnpm lint
-   ```
+    ```
+    pnpm lint
+    ```
 
-10. Commit your changes:
+11. Commit your changes:
 
     ```
     git commit -m "Add [icon-name] animated icon"
     ```
 
-11. Push your changes to your fork:
+12. Push your changes to your fork:
 
     ```
     git push origin your-branch-name
     ```
 
-12. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
+13. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
 
 Thank you for contributing to our project!
