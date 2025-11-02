@@ -1885,4 +1885,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'cloud-snow',
+    'path': path.join(__dirname, '../icons/cloud-snow.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

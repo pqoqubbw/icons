@@ -101,6 +101,7 @@ import { CloudDownloadIcon } from '@/icons/cloud-download';
 import { CloudLightningIcon } from '@/icons/cloud-lightning';
 import { CloudRainIcon } from '@/icons/cloud-rain';
 import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
+import { CloudSnowIcon } from '@/icons/cloud-snow';
 import { CloudSunIcon } from '@/icons/cloud-sun';
 import { CloudUploadIcon } from '@/icons/cloud-upload';
 import { CoffeeIcon } from '@/icons/coffee';
@@ -313,6 +314,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'cloud-snow',
+    icon: CloudSnowIcon,
+    keywords: ['cloud snow', 'weather', 'blizzard'],
+  },
   {
     name: 'chevron-first',
     icon: ChevronFirstIcon,
