@@ -4,7 +4,7 @@ import path from 'path';
 import type { Schema } from './registry-schema';
 import { components } from './registry-components';
 
-const registryComponents = path.join(__dirname, '../public/c');
+const registryComponents = path.join(__dirname, '../public/r');
 const registryIndexPath = path.join(__dirname, '../registry.json');
 
 if (!fs.existsSync(registryComponents)) {
