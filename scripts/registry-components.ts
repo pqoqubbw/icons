@@ -18,6 +18,12 @@ type ComponentDefinition = Partial<
 
 export const components: ComponentDefinition[] = [
   {
+    'name': 'new-icon',
+    'path': path.join(__dirname, '../icons/new-icon.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'activity',
     'path': path.join(__dirname, '../icons/activity.tsx'),
     'registryDependencies': [],
