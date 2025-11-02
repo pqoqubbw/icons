@@ -13,7 +13,8 @@ function updateRegistryComponents() {
 
   const files = fs
     .readdirSync(iconsDir)
-    .filter((file) => file.endsWith('.tsx') && file !== 'index.ts');
+    .filter((file) => file.endsWith('.tsx') && file !== 'index.ts')
+    .sort();
 
   for (const file of files) {
     if (!existingComponents.has(file)) {
@@ -28,7 +29,7 @@ function updateRegistryComponents() {
   }
 
   if (newComponents.length === 0) {
-    console.log('\n✅ No new components to add.\n');
+    console.log('\n✅ Registry is up to date. No new components to add.\n');
     return;
   }
 
@@ -52,12 +53,15 @@ function updateRegistryComponents() {
     content.slice(0, lastComponentIndex + 1) +
     ',\n' +
     newComponentsString +
-    '\n];';
+    ',\n];';
 
   fs.writeFileSync(registryPath, updatedContent);
 
-  console.log(`added ${newComponents.length} new components:`);
-  console.log(newComponents.map((c) => c.name).join(', '));
+  console.log(
+    `\n✅ Added ${newComponents.length} new component${newComponents.length > 1 ? 's' : ''}:`
+  );
+  newComponents.forEach((c) => console.log(`   • ${c.name}`));
+  console.log('');
 }
 
 updateRegistryComponents();

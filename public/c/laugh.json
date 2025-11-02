@@ -1,4 +1,5 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "laugh",
   "type": "registry:ui",
   "registryDependencies": [],
@@ -6,11 +7,6 @@
     "motion"
   ],
   "devDependencies": [],
-  "tailwind": {},
-  "cssVars": {
-    "light": {},
-    "dark": {}
-  },
   "files": [
     {
       "path": "laugh.tsx",
