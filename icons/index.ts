@@ -261,6 +261,16 @@ import { LockKeyholeIcon } from './lock-keyhole';
 import { LockOpenIcon } from './lock-open';
 import { LockKeyholeOpenIcon } from './lock-keyhole-open';
 import { ConstructionIcon } from './construction';
+import { BookmarkIcon } from './bookmark';
+import { BookmarkCheckIcon } from './bookmark-check';
+import { GripHorizontalIcon } from './grip-horizontal';
+import { ChevronFirstIcon } from './chevron-first';
+import { BotIcon } from './bot';
+import { BookmarkXIcon } from './bookmark-x';
+import { BookmarkMinusIcon } from './bookmark-minus';
+import { BookmarkPlusIcon } from './bookmark-plus';
+import { GripVerticalIcon } from './grip-vertical';
+import { BotMessageSquareIcon } from './bot-message-square';
 import { MaximizeIcon } from './maximize';
 import { Maximize2Icon } from './maximize-2';
 import { BluetoothIcon } from './bluetooth';
@@ -297,9 +307,9 @@ import { WashingMachineIcon } from './washing-machine';
 import { GitMergeIcon } from './git-merge';
 
 type IconListItem = {
-  name: string;
-  icon: React.ElementType;
-  keywords: string[];
+    name: string;
+    icon: React.ElementType;
+    keywords: string[];
 };
 
 const ICON_LIST: IconListItem[] = [
