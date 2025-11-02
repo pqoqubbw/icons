@@ -162,6 +162,7 @@ import { HardDriveUploadIcon } from '@/icons/hard-drive-upload';
 import { HeartIcon } from '@/icons/heart';
 import { HistoryIcon } from '@/icons/history';
 import { HomeIcon } from '@/icons/home';
+import { HourglassIcon } from '@/icons/hourglass';
 import { IdCardIcon } from '@/icons/id-card';
 import { IndianRupeeIcon } from '@/icons/indian-rupee';
 import { InstagramIcon } from '@/icons/instagram';
@@ -314,6 +315,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'hourglass',
+    icon: HourglassIcon,
+    keywords: ['hourglass', 'time', 'timer', 'sandglass'],
+  },
   {
     name: 'cloud-snow',
     icon: CloudSnowIcon,

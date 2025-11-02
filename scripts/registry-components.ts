@@ -1879,4 +1879,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'hourglass',
+    'path': path.join(__dirname, '../icons/hourglass.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
