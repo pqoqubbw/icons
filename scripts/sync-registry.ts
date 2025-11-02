@@ -27,7 +27,7 @@ function updateRegistryComponents() {
   }
 
   if (newComponents.length === 0) {
-    console.log('no new components to add.');
+    console.log('\n✅ No new components to add.\n');
     return;
   }
 

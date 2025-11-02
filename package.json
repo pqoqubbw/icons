@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write . && eslint --fix .",
-    "gen-cli": "tsx scripts/sync-registry.ts && tsx scripts/registry-build.ts"
+    "check-duplicates": "tsx scripts/check-duplicates.ts",
+    "check-imports": "tsx scripts/check-imports.ts",
+    "gen-cli": "tsx scripts/check-duplicates.ts && tsx scripts/check-imports.ts && tsx scripts/sync-registry.ts && tsx scripts/registry-build.ts"
   },
   "dependencies": {
     "@openpanel/nextjs": "^1.0.8",
