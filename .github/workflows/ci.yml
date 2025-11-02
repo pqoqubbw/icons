@@ -94,7 +94,15 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+          echo "Git status before adding:"
+          git status
+          echo ""
+          echo "Changed/new files:"
+          git diff --name-only
+          git ls-files --others --exclude-standard
+          echo ""
+          git add -A
+          git diff --cached --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         if: steps.git-check.outputs.changes == 'true' && github.event_name == 'pull_request'
