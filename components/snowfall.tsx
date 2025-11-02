@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import Snowfall from 'react-snowfall';
 
 const SNOWFALL_DELAY = 1500;
@@ -19,7 +19,7 @@ const SnowfallComponent = memo(() => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-50">
+    <div className="pointer-events-none fixed inset-0 z-50">
       <Snowfall
         snowflakeCount={90}
         changeFrequency={300}

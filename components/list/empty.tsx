@@ -1,8 +1,8 @@
 const ListEmpty = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full mt-20">
+    <div className="mt-20 flex w-full flex-col items-center justify-center">
       <h3 className="text-lg">No icons found</h3>
-      <p className="text-xs text-muted-foreground max-w-[350px] text-center text-pretty">
+      <p className="text-muted-foreground max-w-[350px] text-center text-xs text-pretty">
         We couldn&apos;t find any icons matching your search. Try different
         keywords.
       </p>

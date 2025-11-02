@@ -35,12 +35,12 @@ const SUPPORT_LIST = [
 
 const Sponsorship = () => {
   return (
-    <div className="font-mono flex items-center justify-center sm:mt-16 mt-8">
-      <div className="container flex items-center justify-center flex-col">
-        <h1 className="sm:text-3xl text-2xl mt-3 text-balance">
+    <div className="mt-8 flex items-center justify-center font-mono sm:mt-16">
+      <div className="container flex flex-col items-center justify-center">
+        <h1 className="mt-3 text-2xl text-balance sm:text-3xl">
           Support the project
         </h1>
-        <p className="sm:text-sm text-xs max-w-3xl text-center leading-relaxed sm:mt-4 mt-2 text-muted-foreground text-pretty">
+        <p className="text-muted-foreground mt-2 max-w-3xl text-center text-xs leading-relaxed text-pretty sm:mt-4 sm:text-sm">
           this is a place for those who want to go beyond a simple{' '}
           <i>thank you</i>. i&apos;m grateful for any kind of support, whether
           it&apos;s just a DM with kind words or something more. your donation
@@ -48,18 +48,18 @@ const Sponsorship = () => {
           for it. i am incredibly grateful for any support you choose to
           provide.
         </p>
-        <p className="text-muted-foreground py-2 px-4 mt-4 sm:text-sm text-xs bg-input/50 rounded-md border border-input">
+        <p className="text-muted-foreground bg-input/50 border-input mt-4 rounded-md border px-4 py-2 text-xs sm:text-sm">
           note: the icons will always be free and open-source, regardless of
           donations
         </p>
-        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-8 w-full max-w-2xl">
+        <div className="mt-8 grid w-full max-w-2xl grid-cols-2 gap-4 md:grid-cols-4">
           {SUPPORT_LIST.map((item) => (
             <a
               key={item.price}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-3 rounded-lg border border-input hover:bg-accent transition-colors"
+              className="border-input hover:bg-accent flex items-center justify-center rounded-lg border p-3 transition-colors"
             >
               <span className="font-medium">${item.price}</span>
             </a>

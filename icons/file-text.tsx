@@ -1,5 +1,6 @@
 'use client';
 
+import type { HTMLAttributes } from 'react';
 import React, {
   forwardRef,
   useCallback,
@@ -7,7 +8,7 @@ import React, {
   useRef,
 } from 'react';
 import { motion, useAnimation } from 'motion/react';
-import type { HTMLAttributes } from 'react';
+
 import { cn } from '@/lib/utils';
 
 export interface FileTextIconHandle {

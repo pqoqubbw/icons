@@ -1,7 +1,7 @@
 'use client';
 
-import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 import { useEffect } from 'react';
+import { animate, motion, useMotionValue, useTransform } from 'motion/react';
 
 type Props = {
   number: number;
