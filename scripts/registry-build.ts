@@ -5,12 +5,15 @@ import type { Schema } from './registry-schema';
 import { components } from './registry-components';
 
 const registryComponents = path.join(__dirname, '../public/c');
+const registryIndexPath = path.join(__dirname, '../registry.json');
 
 if (!fs.existsSync(registryComponents)) {
   fs.mkdirSync(registryComponents, { recursive: true });
 }
 
 console.log(`\n🔨 Building registry components...\n`);
+
+const registryItems = [];
 
 for (const component of components) {
   const content = fs.readFileSync(component.path, 'utf8');
@@ -46,6 +49,26 @@ for (const component of components) {
     path.join(registryComponents, `${component.name}.json`),
     JSON.stringify(schema, null, 2)
   );
+
+  const { files, ...schemaWithoutContent } = schema;
+  registryItems.push({
+    ...schemaWithoutContent,
+    files: files.map((file) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { content, ...fileWithoutContent } = file;
+      return fileWithoutContent;
+    }),
+  });
 }
 
-console.log(`✅ Built ${components.length} registry components\n`);
+const registryIndex = {
+  $schema: 'https://ui.shadcn.com/schema/registry.json',
+  name: 'lucide-animated',
+  homepage: 'https://lucide-animated.com',
+  items: registryItems,
+};
+
+fs.writeFileSync(registryIndexPath, JSON.stringify(registryIndex, null, 2));
+
+console.log(`✅ Built ${components.length} registry components`);
+console.log(`✅ Updated registry.json\n`);

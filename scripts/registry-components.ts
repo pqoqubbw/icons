@@ -447,13 +447,19 @@ export const components: ComponentDefinition[] = [
   },
   {
     'name': 'chart-no-axes-column-decreasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-decreasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-decreasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'chart-no-axes-column-increasing',
-    'path': path.join(__dirname, '../icons/chart-no-axes-column-increasing.tsx'),
+    'path': path.join(
+      __dirname,
+      '../icons/chart-no-axes-column-increasing.tsx'
+    ),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
