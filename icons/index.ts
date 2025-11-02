@@ -245,7 +245,7 @@ import { ShieldCheckIcon } from '@/icons/shield-check';
 import { ShipIcon } from '@/icons/ship';
 import { ShowerHeadIcon } from '@/icons/shower-head';
 import { ShrinkIcon } from '@/icons/shrink';
-import { SlidersHorizontalIcon } from '@/icons/sliders-horinzontal';
+import { SlidersHorizontalIcon } from '@/icons/sliders-horizontal';
 import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
 import { SmartphoneNfcIcon } from '@/icons/smartphone-nfc';
 import { SmileIcon } from '@/icons/smile';
