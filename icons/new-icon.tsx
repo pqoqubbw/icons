@@ -19,7 +19,6 @@ interface AArrowDownIconProps extends HTMLAttributes<HTMLDivElement> {
 const letterVariants: Variants = {
   normal: { opacity: 1, scale: 1 },
   animate: {
-    opacity: [0, 1],
     scale: [0.8, 1],
     transition: { duration: 0.3 },
   },
