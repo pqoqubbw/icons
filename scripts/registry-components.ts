@@ -1885,4 +1885,52 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'git-branch',
+    'path': path.join(__dirname, '../icons/git-branch.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-compare-arrows',
+    'path': path.join(__dirname, '../icons/git-compare-arrows.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-compare',
+    'path': path.join(__dirname, '../icons/git-compare.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-fork',
+    'path': path.join(__dirname, '../icons/git-fork.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-graph',
+    'path': path.join(__dirname, '../icons/git-graph.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-pull-request-closed',
+    'path': path.join(__dirname, '../icons/git-pull-request-closed.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'git-pull-request-create',
+    'path': path.join(__dirname, '../icons/git-pull-request-create.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'gitlab',
+    'path': path.join(__dirname, '../icons/gitlab.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

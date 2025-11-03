@@ -4637,6 +4637,126 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "git-branch",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-branch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-compare-arrows",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-compare-arrows.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-compare",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-compare.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-fork",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-fork.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-graph",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-graph.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-pull-request-closed",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-pull-request-closed.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "git-pull-request-create",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "git-pull-request-create.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "gitlab",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "gitlab.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
