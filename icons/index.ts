@@ -308,13 +308,13 @@ import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
 import { GitBranchIcon } from './git-branch';
-import { GitForkIcon } from './git-fork';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
+import { GitForkIcon } from './git-fork';
 import { GitGraphIcon } from './git-graph';
-import { GitlabIcon } from './gitlab';
-import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
+import { GitPullRequestCreateIcon } from './git-pull-request-create';
+import { GitlabIcon } from './gitlab';
 
 type IconListItem = {
   name: string;
@@ -326,12 +326,24 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'git-pull-request-create',
     icon: GitPullRequestCreateIcon,
-    keywords: ['git', 'pull request', 'create', 'version control', 'repository'],
+    keywords: [
+      'git',
+      'pull request',
+      'create',
+      'version control',
+      'repository',
+    ],
   },
   {
     name: 'git-pull-request-closed',
     icon: GitPullRequestClosedIcon,
-    keywords: ['git', 'pull request', 'closed', 'version control', 'repository'],
+    keywords: [
+      'git',
+      'pull request',
+      'closed',
+      'version control',
+      'repository',
+    ],
   },
   {
     name: 'gitlab',
