@@ -12,7 +12,7 @@
     "check-imports": "tsx scripts/check-imports.ts",
     "sync-registry": "tsx scripts/sync-registry.ts",
     "build-registry": "tsx scripts/registry-build.ts",
-    "gen-cli": "pnpm run sync-registry && pnpm run build-registry"
+    "gen-cli": "pnpm run sync-registry && pnpm run build-registry && pnpm lint"
   },
   "dependencies": {
     "@openpanel/nextjs": "^1.0.8",
