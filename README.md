@@ -1,3 +1,8 @@
+<a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+</a>
+<br />
+
 ## `lucide-animated` is beautifully crafted animated icons.
 ![preview](./app/og.png)
 
