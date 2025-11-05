@@ -57,7 +57,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
     const text = currentIconName.current || icons[0].name;
     try {
       await navigator.clipboard.writeText(
-        `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/c/${text}.json"`
+        `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${text}.json"`
       );
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -94,7 +94,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
             {getPackageManagerPrefix(packageName)}
           </span>{' '}
           <span className="text-muted-foreground shrink-0">
-            shadcn@latest add &quot;https://lucide-animated.com/c/
+            shadcn@latest add &quot;https://lucide-animated.com/r/
           </span>
           <TextLoop
             onIndexChange={(index) => {
