@@ -167,6 +167,10 @@
     );
   }
 
+  html {
+    scrollbar-gutter: stable;
+  }
+
   ::selection {
     background-color: hsl(var(--accent));
     color: hsl(var(--foreground));
