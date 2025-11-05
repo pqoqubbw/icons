@@ -12,7 +12,7 @@ const getIconForV0 = async (name: string) => {
             )
           )
         : await (
-            await fetch(`https://lucide-animated.com/c/${name}.json`)
+            await fetch(`https://lucide-animated.com/r/${name}.json`)
           ).json();
 
     const componentName = name

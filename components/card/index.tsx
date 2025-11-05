@@ -62,7 +62,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
 
     op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
     navigator.clipboard.writeText(
-      `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/c/${name}.json"`
+      `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${name}.json"`
     );
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
