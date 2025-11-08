@@ -1933,4 +1933,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'corner-down-left',
+    'path': path.join(__dirname, '../icons/corner-down-left.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

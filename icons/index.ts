@@ -307,6 +307,7 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
+import { CornerDownLeftIcon } from './corner-down-left';
 import { GitBranchIcon } from './git-branch';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
@@ -323,6 +324,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'corner-down-left',
+    icon: CornerDownLeftIcon,
+    keywords: ['corner', 'down', 'left', 'arrow'],
+  },
   {
     name: 'git-pull-request-create',
     icon: GitPullRequestCreateIcon,
