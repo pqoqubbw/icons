@@ -315,6 +315,7 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { BellElectricIcon } from './bell-electric';
 
 type IconListItem = {
   name: string;
@@ -323,6 +324,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'bell-electric',
+    icon: BellElectricIcon,
+    keywords: ['bell', 'electric', 'notification', 'alert'],
+  },
   {
     name: 'git-pull-request-create',
     icon: GitPullRequestCreateIcon,
