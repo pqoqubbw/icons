@@ -12,7 +12,7 @@ const CURVE_VARIANTS: Variants = {
   animate: {
     pathLength: [0, 1],
     opacity: [0.4, 1],
-    transition: { duration: 0.8, ease: 'easeInOut' },
+    transition: { duration: 0.3, ease: 'easeInOut' },
   },
 };
 
@@ -21,7 +21,7 @@ const ARROW_VARIANTS: Variants = {
   animate: {
     pathLength: [0, 1],
     opacity: [0.4, 1],
-    transition: { duration: 0.8, delay: 0.2, ease: 'easeInOut' },
+    transition: { duration: 0.3, delay: 0.1, ease: 'easeInOut' },
   },
 };
 
