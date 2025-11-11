@@ -307,6 +307,7 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
+import { BellElectricIcon } from './bell-electric';
 import { GitBranchIcon } from './git-branch';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
@@ -315,7 +316,6 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
-import { BellElectricIcon } from './bell-electric';
 
 type IconListItem = {
   name: string;
