@@ -7,21 +7,16 @@ import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-const CURVE_VARIANTS: Variants = {
-  normal: { pathLength: 1, opacity: 1 },
+// Stretch to left → compress back
+const STRETCH_VARIANTS: Variants = {
+  normal: { scaleX: 1, x: 0, opacity: 1 },
   animate: {
-    pathLength: [0, 1],
-    opacity: [0.4, 1],
-    transition: { duration: 0.3, ease: 'easeInOut' },
-  },
-};
-
-const ARROW_VARIANTS: Variants = {
-  normal: { pathLength: 1, opacity: 1 },
-  animate: {
-    pathLength: [0, 1],
-    opacity: [0.4, 1],
-    transition: { duration: 0.3, delay: 0.1, ease: 'easeInOut' },
+    scaleX: [1, 1.15, 1], // slightly stretch horizontally
+    x: [0, -2, 0],        // move slightly left to emphasize pull
+    transition: {
+      duration: 0.45,
+      ease: 'easeInOut',
+    },
   },
 };
 
@@ -78,7 +73,7 @@ const CornerDownLeftIcon = forwardRef<
       onMouseLeave={handleMouseLeave}
       {...props}
     >
-      <svg
+      <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
@@ -88,24 +83,13 @@ const CornerDownLeftIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        animate={controls}
+        variants={STRETCH_VARIANTS}
+        initial="normal"
       >
-        <motion.path
-          d="M20 4v7a4 4 0 0 1-4 4H4"
-          animate={controls}
-          variants={CURVE_VARIANTS}
-          initial="normal"
-          strokeDasharray="1 1"
-          pathLength="1"
-        />
-        <motion.path
-          d="m9 10-5 5 5 5"
-          animate={controls}
-          variants={ARROW_VARIANTS}
-          initial="normal"
-          strokeDasharray="1 1"
-          pathLength="1"
-        />
-      </svg>
+        <path d="M4 15h12a4 4 0 0 0 4-4V4" />
+        <path d="m9 20-5-5 5-5" />
+      </motion.svg>
     </div>
   );
 });
