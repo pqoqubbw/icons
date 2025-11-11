@@ -7,12 +7,11 @@ import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-// Stretch to left → compress back
 const STRETCH_VARIANTS: Variants = {
   normal: { scaleX: 1, x: 0, opacity: 1 },
   animate: {
-    scaleX: [1, 1.15, 1], // slightly stretch horizontally
-    x: [0, -2, 0],        // move slightly left to emphasize pull
+    scaleX: [1, 1.15, 1], 
+    x: [0, -2, 0],        
     transition: {
       duration: 0.45,
       ease: 'easeInOut',
