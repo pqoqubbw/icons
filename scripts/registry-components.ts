@@ -1933,4 +1933,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'feather',
+    'path': path.join(__dirname, '../icons/feather.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

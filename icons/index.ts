@@ -127,6 +127,7 @@ import { EvChargerIcon } from '@/icons/ev-charger';
 import { ExpandIcon } from '@/icons/expand';
 import { EyeOffIcon } from '@/icons/eye-off';
 import { FacebookIcon } from '@/icons/facebook';
+import { FeatherIcon } from '@/icons/feather';
 import { FigmaIcon } from '@/icons/figma';
 import { FileChartLineIcon } from '@/icons/file-chart-line';
 import { FileCheckIcon } from '@/icons/file-check';
@@ -323,6 +324,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'feather',
+    icon: FeatherIcon,
+    keywords: ['feather', 'quill', 'writing', 'light', 'bird'],
+  },
   {
     name: 'git-pull-request-create',
     icon: GitPullRequestCreateIcon,
