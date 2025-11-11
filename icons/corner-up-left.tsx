@@ -19,18 +19,18 @@ const STRETCH_VARIANTS: Variants = {
   },
 };
 
-export interface CornerDownLeftIconHandle {
+export interface CornerUpLeftIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface CornerDownLeftIconProps extends HTMLAttributes<HTMLDivElement> {
+interface CornerUpLeftIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const CornerDownLeftIcon = forwardRef<
-  CornerDownLeftIconHandle,
-  CornerDownLeftIconProps
+const CornerUpLeftIcon = forwardRef<
+  CornerUpLeftIconHandle,
+  CornerUpLeftIconProps
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
@@ -86,13 +86,13 @@ const CornerDownLeftIcon = forwardRef<
         variants={STRETCH_VARIANTS}
         initial="normal"
       >
-        <path d="M4 15h12a4 4 0 0 0 4-4V4" />
-        <path d="m9 20-5-5 5-5" />
+        <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+        <path d="M9 14 4 9l5-5" />
       </motion.svg>
     </div>
   );
 });
 
-CornerDownLeftIcon.displayName = 'CornerDownLeftIcon';
+CornerUpLeftIcon.displayName = 'CornerUpLeftIcon';
 
-export { CornerDownLeftIcon };
+export { CornerUpLeftIcon };
