@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "zap",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "zap.tsx",
+      "content": "'use client';\r\n\r\nimport type { Variants } from 'motion/react';\r\nimport type { HTMLAttributes } from 'react';\r\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\r\nimport { motion, useAnimation } from 'motion/react';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nexport interface ZapHandle {\r\n\tstartAnimation: () => void;\r\n\tstopAnimation: () => void;\r\n}\r\n\r\ninterface ZapProps extends HTMLAttributes<HTMLDivElement> {\r\n\tsize?: number;\r\n}\r\n\r\nconst pathVariants: Variants = {\r\n\tnormal: {\r\n\t\topacity: 1,\r\n\t\tpathLength: 1,\r\n\t\ttransition: {\r\n\t\t\tduration: 0.6,\r\n\t\t\topacity: { duration: 0.1 },\r\n\t\t},\r\n\t},\r\n\tanimate: {\r\n\t\topacity: [0, 1],\r\n\t\tpathLength: [0, 1],\r\n\t\ttransition: {\r\n\t\t\tduration: 0.6,\r\n\t\t\topacity: { duration: 0.1 },\r\n\t\t},\r\n\t},\r\n};\r\n\r\nconst ZapIcon = forwardRef<ZapHandle, ZapProps>(\r\n\t({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\r\n\t\tconst controls = useAnimation();\r\n\t\tconst isControlledRef = useRef(false);\r\n\r\n\t\tuseImperativeHandle(ref, () => {\r\n\t\t\tisControlledRef.current = true;\r\n\r\n\t\t\treturn {\r\n\t\t\t\tstartAnimation: () => controls.start('animate'),\r\n\t\t\t\tstopAnimation: () => controls.start('normal'),\r\n\t\t\t};\r\n\t\t});\r\n\r\n\t\tconst handleMouseEnter = useCallback(\r\n\t\t\t(e: React.MouseEvent<HTMLDivElement>) => {\r\n\t\t\t\tif (!isControlledRef.current) {\r\n\t\t\t\t\tcontrols.start('animate');\r\n\t\t\t\t} else {\r\n\t\t\t\t\tonMouseEnter?.(e);\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t[controls, onMouseEnter]\r\n\t\t);\r\n\r\n\t\tconst handleMouseLeave = useCallback(\r\n\t\t\t(e: React.MouseEvent<HTMLDivElement>) => {\r\n\t\t\t\tif (!isControlledRef.current) {\r\n\t\t\t\t\tcontrols.start('normal');\r\n\t\t\t\t} else {\r\n\t\t\t\t\tonMouseLeave?.(e);\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t[controls, onMouseLeave]\r\n\t\t);\r\n\r\n\t\treturn (\r\n\t\t\t<div\r\n\t\t\t\tclassName={cn(className)}\r\n\t\t\t\tonMouseEnter={handleMouseEnter}\r\n\t\t\t\tonMouseLeave={handleMouseLeave}\r\n\t\t\t\t{...props}\r\n\t\t\t>\r\n\t\t\t\t<svg\r\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\t\twidth={size}\r\n\t\t\t\t\theight={size}\r\n\t\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstrokeWidth=\"2\"\r\n\t\t\t\t\tstrokeLinecap=\"round\"\r\n\t\t\t\t\tstrokeLinejoin=\"round\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<motion.path\r\n\t\t\t\t\t\tvariants={pathVariants}\r\n\t\t\t\t\t\tanimate={controls}\r\n\t\t\t\t\t\td=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"\r\n\t\t\t\t\t/>\r\n\t\t\t\t</svg>\r\n\t\t\t</div>\r\n\t\t);\r\n\t}\r\n);\r\n\r\nZapIcon.displayName = 'ZapIcon';\r\n\r\nexport { ZapIcon };\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}
