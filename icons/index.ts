@@ -309,6 +309,8 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
+import { ZapIcon } from '@/icons/zap';
+import { ZapOffIcon } from '@/icons/zap-off';
 import { GitBranchIcon } from './git-branch';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
@@ -317,8 +319,6 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
-import { ZapIcon } from '@/icons/zap';
-import { ZapOffIcon } from '@/icons/zap-off';
 
 type IconListItem = {
   name: string;
@@ -2854,7 +2854,14 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'zap-off',
     icon: ZapOffIcon,
-    keywords: ['electricity', 'energy', 'power', 'lightning', 'off', 'disabled'],
+    keywords: [
+      'electricity',
+      'energy',
+      'power',
+      'lightning',
+      'off',
+      'disabled',
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
