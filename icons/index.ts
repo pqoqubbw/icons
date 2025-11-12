@@ -4,6 +4,7 @@ import { AccessibilityIcon } from '@/icons/accessibility';
 import { ActivityIcon } from '@/icons/activity';
 import { AirVentIcon } from '@/icons/air-vent';
 import { AirplaneIcon } from '@/icons/airplane';
+import { AirplayIcon } from '@/icons/airplay';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
@@ -30,6 +31,7 @@ import { ArrowLeftIcon } from '@/icons/arrow-left';
 import { ArrowRightIcon } from '@/icons/arrow-right';
 import { ArrowUpIcon } from '@/icons/arrow-up';
 import { AtSignIcon } from '@/icons/at-sign';
+import { AtomIcon } from '@/icons/atom';
 import { AttachFileIcon } from '@/icons/attach-file';
 import { AudioLinesIcon } from '@/icons/audio-lines';
 import { BadgeAlertIcon } from '@/icons/badge-alert';
@@ -315,6 +317,8 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { ZapIcon } from '@/icons/zap';
+import { ZapOffIcon } from '@/icons/zap-off';
 
 type IconListItem = {
   name: string;
@@ -323,6 +327,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'airplay',
+    icon: AirplayIcon,
+    keywords: ['airplay', 'screen', 'device', 'wireless', 'streaming'],
+  },
   {
     name: 'git-pull-request-create',
     icon: GitPullRequestCreateIcon,
@@ -1344,6 +1353,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'at-sign',
     icon: AtSignIcon,
     keywords: ['mention', 'at', 'email', 'message', '@'],
+  },
+  {
+    name: 'atom',
+    icon: AtomIcon,
+    keywords: ['science', 'physics', 'chemistry', 'molecule', 'element'],
   },
   {
     name: 'bell',
@@ -2831,6 +2845,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'git-merge',
     icon: GitMergeIcon,
     keywords: ['code', 'version control', 'merge', 'git', 'branch'],
+  },
+  {
+    name: 'zap',
+    icon: ZapIcon,
+    keywords: ['electricity', 'energy', 'power', 'lightning'],
+  },
+  {
+    name: 'zap-off',
+    icon: ZapOffIcon,
+    keywords: ['electricity', 'energy', 'power', 'lightning', 'off', 'disabled'],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
