@@ -1933,4 +1933,52 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'corner-down-left',
+    'path': path.join(__dirname, '../icons/corner-down-left.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-down-right',
+    'path': path.join(__dirname, '../icons/corner-down-right.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-left-down',
+    'path': path.join(__dirname, '../icons/corner-left-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-left-up',
+    'path': path.join(__dirname, '../icons/corner-left-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-right-down',
+    'path': path.join(__dirname, '../icons/corner-right-down.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-right-up',
+    'path': path.join(__dirname, '../icons/corner-right-up.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-up-left',
+    'path': path.join(__dirname, '../icons/corner-up-left.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'corner-up-right',
+    'path': path.join(__dirname, '../icons/corner-up-right.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
