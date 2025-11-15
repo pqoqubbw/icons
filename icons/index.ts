@@ -338,6 +338,11 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['bell', 'electric', 'notification', 'alert'],
   },
   {
+    name: 'corner-up-right',
+    icon: CornerUpRightIcon,
+    keywords: ['corner', 'up', 'right', 'arrow'],
+  },
+  {
     name: 'corner-up-left',
     icon: CornerUpLeftIcon,
     keywords: ['corner', 'up', 'left', 'arrow'],
