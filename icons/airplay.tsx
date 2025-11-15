@@ -17,7 +17,7 @@ interface AirplayIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const DURATION = 0.3;
 
-const screenVariants = {
+const SCREEN_VARIANTS = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -35,7 +35,7 @@ const screenVariants = {
   },
 };
 
-const triangleVariants = {
+const TRIANGLE_VARIANTS = {
   normal: {
     scale: 1,
     opacity: 1,
@@ -111,12 +111,12 @@ const AirplayIcon = forwardRef<AirplayIconHandle, AirplayIconProps>(
         >
           <motion.path
             d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
-            variants={screenVariants}
+            variants={SCREEN_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M12 15l5 6H7z"
-            variants={triangleVariants}
+            variants={TRIANGLE_VARIANTS}
             animate={controls}
           />
         </svg>
