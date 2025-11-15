@@ -307,6 +307,7 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
+import { BellElectricIcon } from './bell-electric';
 import { CornerDownLeftIcon } from './corner-down-left';
 import { CornerDownRightIcon } from './corner-down-right';
 import { CornerLeftDownIcon } from './corner-left-down';
@@ -331,6 +332,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'bell-electric',
+    icon: BellElectricIcon,
+    keywords: ['bell', 'electric', 'notification', 'alert'],
+  },
   {
     name: 'corner-up-right',
     icon: CornerUpRightIcon,

@@ -4227,6 +4227,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "bell-electric",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "bell-electric.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

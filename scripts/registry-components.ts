@@ -1981,4 +1981,10 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'bell-electric',
+    'path': path.join(__dirname, '../icons/bell-electric.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
