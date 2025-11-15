@@ -16,7 +16,7 @@ interface FeatherIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const featherVariants: Variants = {
+const FEATHER_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     y: 0,
