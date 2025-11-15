@@ -127,6 +127,7 @@ import { EvChargerIcon } from '@/icons/ev-charger';
 import { ExpandIcon } from '@/icons/expand';
 import { EyeOffIcon } from '@/icons/eye-off';
 import { FacebookIcon } from '@/icons/facebook';
+import { FeatherIcon } from '@/icons/feather';
 import { FigmaIcon } from '@/icons/figma';
 import { FileChartLineIcon } from '@/icons/file-chart-line';
 import { FileCheckIcon } from '@/icons/file-check';
@@ -332,34 +333,9 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
-    name: 'corner-up-right',
-    icon: CornerUpRightIcon,
-    keywords: ['corner', 'up', 'right', 'arrow'],
-  },
-  {
-    name: 'corner-up-left',
-    icon: CornerUpLeftIcon,
-    keywords: ['corner', 'up', 'left', 'arrow'],
-  },
-  {
-    name: 'corner-right-up',
-    icon: CornerRightUpIcon,
-    keywords: ['corner', 'right', 'up', 'arrow'],
-  },
-  {
-    name: 'corner-right-down',
-    icon: CornerRightDownIcon,
-    keywords: ['corner', 'right', 'down', 'arrow'],
-  },
-  {
-    name: 'corner-left-up',
-    icon: CornerLeftUpIcon,
-    keywords: ['corner', 'left', 'up', 'arrow'],
-  },
-  {
-    name: 'corner-left-down',
-    icon: CornerLeftDownIcon,
-    keywords: ['corner', 'left', 'down', 'arrow'],
+    name: 'corner-down-left',
+    icon: CornerDownLeftIcon,
+    keywords: ['corner', 'down', 'left', 'arrow'],
   },
   {
     name: 'corner-down-right',
@@ -367,9 +343,39 @@ const ICON_LIST: IconListItem[] = [
     keywords: ['corner', 'down', 'right', 'arrow'],
   },
   {
-    name: 'corner-down-left',
-    icon: CornerDownLeftIcon,
-    keywords: ['corner', 'down', 'left', 'arrow'],
+    name: 'corner-left-down',
+    icon: CornerLeftDownIcon,
+    keywords: ['corner', 'left', 'down', 'arrow'],
+  },
+  {
+    name: 'corner-left-up',
+    icon: CornerLeftUpIcon,
+    keywords: ['corner', 'left', 'up', 'arrow'],
+  },
+  {
+    name: 'corner-right-down',
+    icon: CornerRightDownIcon,
+    keywords: ['corner', 'right', 'down', 'arrow'],
+  },
+  {
+    name: 'corner-right-up',
+    icon: CornerRightUpIcon,
+    keywords: ['corner', 'right', 'up', 'arrow'],
+  },
+  {
+    name: 'corner-up-left',
+    icon: CornerUpLeftIcon,
+    keywords: ['corner', 'up', 'left', 'arrow'],
+  },
+  {
+    name: 'corner-up-right',
+    icon: CornerUpRightIcon,
+    keywords: ['corner', 'up', 'right', 'arrow'],
+  },
+  {
+    name: 'feather',
+    icon: FeatherIcon,
+    keywords: ['feather', 'quill', 'writing', 'light', 'bird'],
   },
   {
     name: 'git-pull-request-create',
