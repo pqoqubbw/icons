@@ -333,6 +333,7 @@ import { FolderGit2Icon } from './folder-git-2';
 import { FolderGitIcon } from './folder-git';
 import { FolderCogIcon } from './folder-cog';
 import { FolderDotIcon } from './folder-dot';
+import { FolderXIcon } from './folder-x';
 
 type IconListItem = {
   name: string;
@@ -341,6 +342,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folder-x',
+    icon: FolderXIcon,
+    keywords: ['folder', 'x', 'file', 'storage', 'organization'],
+  },
   {
     name: 'folder-dot',
     icon: FolderDotIcon,
