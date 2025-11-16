@@ -339,6 +339,7 @@ import { FolderPlusIcon } from './folder-plus';
 import { FolderMinusIcon } from './folder-minus';
 import { FolderSyncIcon } from './folder-sync';
 import { FolderCodeIcon } from './folder-code';
+import { FolderKanbanIcon } from './folder-kanban';
 
 type IconListItem = {
   name: string;
@@ -347,6 +348,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folder-kanban',
+    icon: FolderKanbanIcon,
+    keywords: ['folder', 'kanban', 'file', 'storage', 'organization'],
+  },
   {
     name: 'folder-code',
     icon: FolderCodeIcon,
