@@ -335,6 +335,10 @@ import { FolderCogIcon } from './folder-cog';
 import { FolderDotIcon } from './folder-dot';
 import { FolderXIcon } from './folder-x';
 import { FolderArchiveIcon } from './folder-archive';
+import { FolderPlusIcon } from './folder-plus';
+import { FolderMinusIcon } from './folder-minus';
+import { FolderSyncIcon } from './folder-sync';
+import { FolderCodeIcon } from './folder-code';
 
 type IconListItem = {
   name: string;
@@ -343,6 +347,26 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folder-code',
+    icon: FolderCodeIcon,
+    keywords: ['folder', 'code', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-sync',
+    icon: FolderSyncIcon,
+    keywords: ['folder', 'sync', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-plus',
+    icon: FolderPlusIcon,
+    keywords: ['folder', 'plus', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-minus',
+    icon: FolderMinusIcon,
+    keywords: ['folder', 'minus', 'file', 'storage', 'organization'],
+  },
   {
     name: 'folder-archive',
     icon: FolderArchiveIcon,
