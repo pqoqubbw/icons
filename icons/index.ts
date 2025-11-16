@@ -311,6 +311,15 @@ import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
 import { ZapIcon } from '@/icons/zap';
 import { ZapOffIcon } from '@/icons/zap-off';
+import { BellElectricIcon } from './bell-electric';
+import { CornerDownLeftIcon } from './corner-down-left';
+import { CornerDownRightIcon } from './corner-down-right';
+import { CornerLeftDownIcon } from './corner-left-down';
+import { CornerLeftUpIcon } from './corner-left-up';
+import { CornerRightDownIcon } from './corner-right-down';
+import { CornerRightUpIcon } from './corner-right-up';
+import { CornerUpLeftIcon } from './corner-up-left';
+import { CornerUpRightIcon } from './corner-up-right';
 import { GitBranchIcon } from './git-branch';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
@@ -328,9 +337,49 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
-    name: 'airplay',
-    icon: AirplayIcon,
-    keywords: ['airplay', 'screen', 'device', 'wireless', 'streaming'],
+    name: 'bell-electric',
+    icon: BellElectricIcon,
+    keywords: ['bell', 'electric', 'notification', 'alert'],
+  },
+  {
+    name: 'corner-up-right',
+    icon: CornerUpRightIcon,
+    keywords: ['corner', 'up', 'right', 'arrow'],
+  },
+  {
+    name: 'corner-up-left',
+    icon: CornerUpLeftIcon,
+    keywords: ['corner', 'up', 'left', 'arrow'],
+  },
+  {
+    name: 'corner-right-up',
+    icon: CornerRightUpIcon,
+    keywords: ['corner', 'right', 'up', 'arrow'],
+  },
+  {
+    name: 'corner-right-down',
+    icon: CornerRightDownIcon,
+    keywords: ['corner', 'right', 'down', 'arrow'],
+  },
+  {
+    name: 'corner-left-up',
+    icon: CornerLeftUpIcon,
+    keywords: ['corner', 'left', 'up', 'arrow'],
+  },
+  {
+    name: 'corner-left-down',
+    icon: CornerLeftDownIcon,
+    keywords: ['corner', 'left', 'down', 'arrow'],
+  },
+  {
+    name: 'corner-down-right',
+    icon: CornerDownRightIcon,
+    keywords: ['corner', 'down', 'right', 'arrow'],
+  },
+  {
+    name: 'corner-down-left',
+    icon: CornerDownLeftIcon,
+    keywords: ['corner', 'down', 'left', 'arrow'],
   },
   {
     name: 'git-pull-request-create',
@@ -1211,6 +1260,11 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'airplay',
+    icon: AirplayIcon,
+    keywords: ['stream', 'cast', 'device', 'screen', 'monitor'],
+  },
+  {
     name: 'refresh-ccw',
     icon: RefreshCCWIcon,
     keywords: [
@@ -1357,7 +1411,7 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'atom',
     icon: AtomIcon,
-    keywords: ['science', 'physics', 'chemistry', 'molecule', 'element'],
+    keywords: ['science', 'physics', 'chemistry', 'nucleus', 'electron'],
   },
   {
     name: 'bell',
@@ -2849,19 +2903,12 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'zap',
     icon: ZapIcon,
-    keywords: ['electricity', 'energy', 'power', 'lightning'],
+    keywords: ['electricity', 'energy', 'power', 'lightning', 'bolt'],
   },
   {
     name: 'zap-off',
     icon: ZapOffIcon,
-    keywords: [
-      'electricity',
-      'energy',
-      'power',
-      'lightning',
-      'off',
-      'disabled',
-    ],
+    keywords: ['electricity', 'energy', 'power', 'lightning', 'bolt', 'off'],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
