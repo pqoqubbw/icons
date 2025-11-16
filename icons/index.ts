@@ -324,6 +324,15 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { FolderClockIcon } from './folder-clock';
+import { FolderCheckIcon } from './folder-check';
+import { FolderUpIcon } from './folder-up';
+import { FolderOutputIcon } from './folder-output';
+import { FolderDownIcon } from './folder-down';
+import { FolderGit2Icon } from './folder-git-2';
+import { FolderGitIcon } from './folder-git';
+import { FolderCogIcon } from './folder-cog';
+import { FolderDotIcon } from './folder-dot';
 
 type IconListItem = {
   name: string;
@@ -332,6 +341,51 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folder-dot',
+    icon: FolderDotIcon,
+    keywords: ['folder', 'dot', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-cog',
+    icon: FolderCogIcon,
+    keywords: ['folder', 'cog', 'settings', 'configuration'],
+  },
+  {
+    name: 'folder-git-2',
+    icon: FolderGit2Icon,
+    keywords: ['folder', 'git', 'version control', 'repository'],
+  },
+  {
+    name: 'folder-git',
+    icon: FolderGitIcon,
+    keywords: ['folder', 'git', 'version control', 'repository'],
+  },
+  {
+    name: 'folder-down',
+    icon: FolderDownIcon,
+    keywords: ['folder', 'down', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-output',
+    icon: FolderOutputIcon,
+    keywords: ['folder', 'output', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-up',
+    icon: FolderUpIcon,
+    keywords: ['folder', 'up', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-check',
+    icon: FolderCheckIcon,
+    keywords: ['folder', 'check', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-clock',
+    icon: FolderClockIcon,
+    keywords: ['folder', 'clock', 'time', 'schedule'],
+  },
   {
     name: 'bell-electric',
     icon: BellElectricIcon,
