@@ -1934,6 +1934,12 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'feather',
+    'path': path.join(__dirname, '../icons/feather.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'corner-down-left',
     'path': path.join(__dirname, '../icons/corner-down-left.tsx'),
     'registryDependencies': [],

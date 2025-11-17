@@ -4125,6 +4125,19 @@
       ]
     },
     {
+      "name": "feather",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "feather.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "corner-down-left",
       "type": "registry:ui",
       "registryDependencies": [],
