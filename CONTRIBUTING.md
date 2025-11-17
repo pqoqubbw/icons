@@ -167,20 +167,10 @@ We welcome contributions to our project! Please follow these steps to contribute
    After creating a new icon, you need to update the registry so it can be used with the shadcn CLI:
 
    ```
-   pnpm run sync-registry
-   ```
-
-   This will automatically add your new icon to the registry components list. Then build the registry JSON files:
-
-   ```
-   pnpm run build-registry
-   ```
-
-   Or run both commands at once:
-
-   ```
    pnpm run gen-cli
    ```
+
+   This command will automatically sync your new icon to the registry and build the necessary JSON files.
 
 9. Build the project to check for errors:
 
