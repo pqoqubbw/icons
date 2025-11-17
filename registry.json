@@ -4136,6 +4136,175 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "corner-down-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-down-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-down-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-down-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-left-down",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-left-down.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-left-up",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-left-up.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-right-down",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-right-down.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-right-up",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-right-up.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-up-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-up-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "corner-up-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "corner-up-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bell-electric",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "bell-electric.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "airplay",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "airplay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "atom",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "atom.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "zap-off",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "zap-off.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "zap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "zap.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
