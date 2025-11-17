@@ -1987,4 +1987,28 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'airplay',
+    'path': path.join(__dirname, '../icons/airplay.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'atom',
+    'path': path.join(__dirname, '../icons/atom.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'zap-off',
+    'path': path.join(__dirname, '../icons/zap-off.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'zap',
+    'path': path.join(__dirname, '../icons/zap.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

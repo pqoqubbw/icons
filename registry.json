@@ -4240,6 +4240,58 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "airplay",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "airplay.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "atom",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "atom.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "zap-off",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "zap-off.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "zap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "zap.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

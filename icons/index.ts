@@ -4,6 +4,7 @@ import { AccessibilityIcon } from '@/icons/accessibility';
 import { ActivityIcon } from '@/icons/activity';
 import { AirVentIcon } from '@/icons/air-vent';
 import { AirplaneIcon } from '@/icons/airplane';
+import { AirplayIcon } from '@/icons/airplay';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
@@ -30,6 +31,7 @@ import { ArrowLeftIcon } from '@/icons/arrow-left';
 import { ArrowRightIcon } from '@/icons/arrow-right';
 import { ArrowUpIcon } from '@/icons/arrow-up';
 import { AtSignIcon } from '@/icons/at-sign';
+import { AtomIcon } from '@/icons/atom';
 import { AttachFileIcon } from '@/icons/attach-file';
 import { AudioLinesIcon } from '@/icons/audio-lines';
 import { BadgeAlertIcon } from '@/icons/badge-alert';
@@ -307,6 +309,8 @@ import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
+import { ZapIcon } from '@/icons/zap';
+import { ZapOffIcon } from '@/icons/zap-off';
 import { BellElectricIcon } from './bell-electric';
 import { CornerDownLeftIcon } from './corner-down-left';
 import { CornerDownRightIcon } from './corner-down-right';
@@ -1256,6 +1260,11 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'airplay',
+    icon: AirplayIcon,
+    keywords: ['stream', 'cast', 'device', 'screen', 'monitor'],
+  },
+  {
     name: 'refresh-ccw',
     icon: RefreshCCWIcon,
     keywords: [
@@ -1398,6 +1407,11 @@ const ICON_LIST: IconListItem[] = [
     name: 'at-sign',
     icon: AtSignIcon,
     keywords: ['mention', 'at', 'email', 'message', '@'],
+  },
+  {
+    name: 'atom',
+    icon: AtomIcon,
+    keywords: ['science', 'physics', 'chemistry', 'nucleus', 'electron'],
   },
   {
     name: 'bell',
@@ -2885,6 +2899,16 @@ const ICON_LIST: IconListItem[] = [
     name: 'git-merge',
     icon: GitMergeIcon,
     keywords: ['code', 'version control', 'merge', 'git', 'branch'],
+  },
+  {
+    name: 'zap',
+    icon: ZapIcon,
+    keywords: ['electricity', 'energy', 'power', 'lightning', 'bolt'],
+  },
+  {
+    name: 'zap-off',
+    icon: ZapOffIcon,
+    keywords: ['electricity', 'energy', 'power', 'lightning', 'bolt', 'off'],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
