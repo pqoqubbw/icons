@@ -4305,6 +4305,305 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "folder-archive",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-archive.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-clock",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-clock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-code",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-code.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-cog",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-cog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-dot",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-dot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-down",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-down.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-git-2",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-git-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-git",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-git.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-heart",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-heart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-input",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-kanban",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-kanban.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-key",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-key.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-lock",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-lock.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-minus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-minus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-open",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-open.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-output",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-output.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-root",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-root.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-sync",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-sync.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-tree",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-up",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-up.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "folder-x",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "folder-x.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

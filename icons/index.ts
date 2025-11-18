@@ -321,6 +321,29 @@ import { CornerRightDownIcon } from './corner-right-down';
 import { CornerRightUpIcon } from './corner-right-up';
 import { CornerUpLeftIcon } from './corner-up-left';
 import { CornerUpRightIcon } from './corner-up-right';
+import { FolderArchiveIcon } from './folder-archive';
+import { FolderCheckIcon } from './folder-check';
+import { FolderClockIcon } from './folder-clock';
+import { FolderCodeIcon } from './folder-code';
+import { FolderCogIcon } from './folder-cog';
+import { FolderDotIcon } from './folder-dot';
+import { FolderDownIcon } from './folder-down';
+import { FolderGitIcon } from './folder-git';
+import { FolderGit2Icon } from './folder-git-2';
+import { FolderHeartIcon } from './folder-heart';
+import { FolderInputIcon } from './folder-input';
+import { FolderKanbanIcon } from './folder-kanban';
+import { FolderKeyIcon } from './folder-key';
+import { FolderLockIcon } from './folder-lock';
+import { FolderMinusIcon } from './folder-minus';
+import { FolderOpenIcon } from './folder-open';
+import { FolderOutputIcon } from './folder-output';
+import { FolderPlusIcon } from './folder-plus';
+import { FolderRootIcon } from './folder-root';
+import { FolderSyncIcon } from './folder-sync';
+import { FolderTreeIcon } from './folder-tree';
+import { FolderUpIcon } from './folder-up';
+import { FolderXIcon } from './folder-x';
 import { GitBranchIcon } from './git-branch';
 import { GitCompareIcon } from './git-compare';
 import { GitCompareArrowsIcon } from './git-compare-arrows';
@@ -329,29 +352,6 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
-import { FolderClockIcon } from './folder-clock';
-import { FolderCheckIcon } from './folder-check';
-import { FolderUpIcon } from './folder-up';
-import { FolderOutputIcon } from './folder-output';
-import { FolderDownIcon } from './folder-down';
-import { FolderGit2Icon } from './folder-git-2';
-import { FolderGitIcon } from './folder-git';
-import { FolderCogIcon } from './folder-cog';
-import { FolderDotIcon } from './folder-dot';
-import { FolderXIcon } from './folder-x';
-import { FolderArchiveIcon } from './folder-archive';
-import { FolderPlusIcon } from './folder-plus';
-import { FolderMinusIcon } from './folder-minus';
-import { FolderSyncIcon } from './folder-sync';
-import { FolderCodeIcon } from './folder-code';
-import { FolderKanbanIcon } from './folder-kanban';
-import { FolderOpenIcon } from './folder-open';
-import { FolderTreeIcon } from './folder-tree';
-import { FolderRootIcon } from './folder-root';
-import { FolderHeartIcon } from './folder-heart';
-import { FolderInputIcon } from './folder-input';
-import { FolderKeyIcon } from './folder-key';
-import { FolderLockIcon } from './folder-lock';
 
 type IconListItem = {
   name: string;
@@ -393,7 +393,7 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'folder-open',
     icon: FolderOpenIcon,
-    keywords:['folder', 'open', 'file', 'storage', 'organization']
+    keywords: ['folder', 'open', 'file', 'storage', 'organization'],
   },
   {
     name: 'folder-kanban',
@@ -424,8 +424,8 @@ const ICON_LIST: IconListItem[] = [
     name: 'folder-archive',
     icon: FolderArchiveIcon,
     keywords: ['folder', 'archive', 'file', 'storage', 'organization'],
-  }
-  ,{
+  },
+  {
     name: 'folder-x',
     icon: FolderXIcon,
     keywords: ['folder', 'x', 'file', 'storage', 'organization'],
