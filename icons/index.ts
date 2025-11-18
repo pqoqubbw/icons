@@ -348,6 +348,10 @@ import { FolderKanbanIcon } from './folder-kanban';
 import { FolderOpenIcon } from './folder-open';
 import { FolderTreeIcon } from './folder-tree';
 import { FolderRootIcon } from './folder-root';
+import { FolderHeartIcon } from './folder-heart';
+import { FolderInputIcon } from './folder-input';
+import { FolderKeyIcon } from './folder-key';
+import { FolderLockIcon } from './folder-lock';
 
 type IconListItem = {
   name: string;
@@ -356,6 +360,26 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'folder-lock',
+    icon: FolderLockIcon,
+    keywords: ['folder', 'lock', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-key',
+    icon: FolderKeyIcon,
+    keywords: ['folder', 'key', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-input',
+    icon: FolderInputIcon,
+    keywords: ['folder', 'input', 'file', 'storage', 'organization'],
+  },
+  {
+    name: 'folder-heart',
+    icon: FolderHeartIcon,
+    keywords: ['folder', 'heart', 'file', 'storage', 'organization'],
+  },
   {
     name: 'folder-root',
     icon: FolderRootIcon,
