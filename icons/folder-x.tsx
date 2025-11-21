@@ -16,7 +16,6 @@ interface FolderXIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
 const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
