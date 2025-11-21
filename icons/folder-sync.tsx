@@ -16,12 +16,12 @@ interface FolderSyncIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const syncVariants: Variants = {
+const SYNC_VARIANTS: Variants = {
   normal: { rotate: 0 },
-  animate: { rotate: 360 },
+  animate: { rotate: -360 },
 };
 
-const syncTransition: Transition = {
+const SYNC_TRANSITION: Transition = {
   duration: 1.2,
   ease: 'easeInOut',
 };
@@ -81,10 +81,10 @@ const FolderSyncIcon = forwardRef<FolderSyncIconHandle, FolderSyncIconProps>(
         >
           <path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v.5" />
           <motion.g
-            variants={syncVariants}
+            variants={SYNC_VARIANTS}
             animate={controls}
             initial="normal"
-            transition={syncTransition}
+            transition={SYNC_TRANSITION}
           >
             <path d="M12 10v4h4" />
             <path d="m12 14 1.535-1.605a5 5 0 0 1 8 1.5" />

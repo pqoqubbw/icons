@@ -16,7 +16,7 @@ interface FolderCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -92,7 +92,7 @@ const FolderCheckIcon = forwardRef<FolderCheckIconHandle, FolderCheckIconProps>(
             d="m9 13 2 2 4-4"
             animate={controls}
             initial="normal"
-            variants={checkVariants}
+            variants={CHECK_VARIANTS}
             style={{ transformOrigin: 'center' }}
           />
         </svg>

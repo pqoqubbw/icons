@@ -16,7 +16,7 @@ interface FolderKeyIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const keyVariants: Variants = {
+const KEY_VARIANTS: Variants = {
   normal: { rotate: 0, x: 0 },
   animate: {
     rotate: [0, -15, 8, -5, 0],
@@ -84,7 +84,7 @@ const FolderKeyIcon = forwardRef<FolderKeyIconHandle, FolderKeyIconProps>(
         >
           <path d="M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2" />
           <motion.g
-            variants={keyVariants}
+            variants={KEY_VARIANTS}
             animate={controls}
             initial="normal"
             style={{ transformOrigin: '16px 18px' }}

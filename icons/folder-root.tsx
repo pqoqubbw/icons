@@ -16,7 +16,7 @@ interface FolderRootIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rootVariants: Variants = {
+const ROOT_VARIANTS: Variants = {
   normal: { opacity: 0.6 },
   animate: {
     opacity: [0.6, 1, 0.3, 0.6],
@@ -86,13 +86,13 @@ const FolderRootIcon = forwardRef<FolderRootIconHandle, FolderRootIconProps>(
             cx="12"
             cy="13"
             r="2"
-            variants={rootVariants}
+            variants={ROOT_VARIANTS}
             animate={controls}
             initial="normal"
           />
           <motion.path
             d="M12 15v5"
-            variants={rootVariants}
+            variants={ROOT_VARIANTS}
             animate={controls}
             initial="normal"
           />

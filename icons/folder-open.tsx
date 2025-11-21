@@ -16,7 +16,7 @@ interface FolderOpenIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: {
     rotate: [0, -8, 6, -4, 0],
@@ -83,7 +83,7 @@ const FolderOpenIcon = forwardRef<FolderOpenIconHandle, FolderOpenIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             style={{ transformOrigin: '12px 12px' }}

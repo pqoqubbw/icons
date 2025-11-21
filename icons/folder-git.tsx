@@ -16,7 +16,7 @@ interface FolderGitIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const commitVariants: Variants = {
+const COMMIT_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -89,19 +89,19 @@ const FolderGitIcon = forwardRef<FolderGitIconHandle, FolderGitIconProps>(
             cx="12"
             cy="13"
             r="2"
-            variants={commitVariants}
+            variants={COMMIT_VARIANTS}
             animate={controls}
             custom={1}
           />
           <motion.path
             d="M14 13h3"
-            variants={commitVariants}
+            variants={COMMIT_VARIANTS}
             animate={controls}
             custom={2}
           />
           <motion.path
             d="M7 13h3"
-            variants={commitVariants}
+            variants={COMMIT_VARIANTS}
             animate={controls}
             custom={0}
           />

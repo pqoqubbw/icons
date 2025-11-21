@@ -16,7 +16,7 @@ interface FolderKanbanIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const columnsVariants: Variants = {
+const COLUMNS_VARIANTS: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.2,
@@ -24,7 +24,7 @@ const columnsVariants: Variants = {
   },
 };
 
-const columnVariants: Variants = {
+const COLUMN_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: {
     opacity: [1, 0.2, 1],
@@ -93,13 +93,13 @@ const FolderKanbanIcon = forwardRef<
       >
         <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
         <motion.g
-          variants={columnsVariants}
+          variants={COLUMNS_VARIANTS}
           animate={controls}
           initial="normal"
         >
-          <motion.path variants={columnVariants} d="M8 10v4" />
-          <motion.path variants={columnVariants} d="M12 10v2" />
-          <motion.path variants={columnVariants} d="M16 10v6" />
+          <motion.path variants={COLUMN_VARIANTS} d="M8 10v4" />
+          <motion.path variants={COLUMN_VARIANTS} d="M12 10v2" />
+          <motion.path variants={COLUMN_VARIANTS} d="M16 10v6" />
         </motion.g>
       </svg>
     </div>

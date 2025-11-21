@@ -16,7 +16,7 @@ interface FolderDotIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dotVariants: Variants = {
+const DOT_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: {
     opacity: [1, 0, 1],
@@ -82,7 +82,7 @@ const FolderDotIcon = forwardRef<FolderDotIconHandle, FolderDotIconProps>(
             cx="12"
             cy="13"
             r="1"
-            variants={dotVariants}
+            variants={DOT_VARIANTS}
             animate={controls}
             initial="normal"
           />
