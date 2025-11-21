@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "folder-archive",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "folder-archive.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { motion, useAnimation } from 'motion/react';\n\nimport { cn } from '@/lib/utils';\n\nexport interface FolderArchiveIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface FolderArchiveIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst BLINK_VARIANTS: Variants = {\n  normal: { opacity: 1 },\n  animate: {\n    opacity: [1, 0, 1],\n    transition: { duration: 0.6, ease: 'easeInOut' },\n  },\n};\n\nconst FolderArchiveIcon = forwardRef<\n  FolderArchiveIconHandle,\n  FolderArchiveIconProps\n>(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n  const controls = useAnimation();\n  const isControlledRef = useRef(false);\n\n  useImperativeHandle(ref, () => {\n    isControlledRef.current = true;\n    return {\n      startAnimation: () => controls.start('animate'),\n      stopAnimation: () => controls.start('normal'),\n    };\n  });\n\n  const handleMouseEnter = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('animate');\n      } else {\n        onMouseEnter?.(e);\n      }\n    },\n    [controls, onMouseEnter]\n  );\n\n  const handleMouseLeave = useCallback(\n    (e: React.MouseEvent<HTMLDivElement>) => {\n      if (!isControlledRef.current) {\n        controls.start('normal');\n      } else {\n        onMouseLeave?.(e);\n      }\n    },\n    [controls, onMouseLeave]\n  );\n\n  return (\n    <div\n      className={cn(className)}\n      onMouseEnter={handleMouseEnter}\n      onMouseLeave={handleMouseLeave}\n      {...props}\n    >\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n      >\n        <path d=\"M20.9 19.8A2 2 0 0 0 22 18V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h5.1\" />\n        <motion.g variants={BLINK_VARIANTS} animate={controls} initial=\"normal\">\n          <circle cx=\"15\" cy=\"19\" r=\"2\" />\n          <path d=\"M15 11v-1\" />\n          <path d=\"M15 17v-2\" />\n        </motion.g>\n      </svg>\n    </div>\n  );\n});\n\nFolderArchiveIcon.displayName = 'FolderArchiveIcon';\n\nexport { FolderArchiveIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
