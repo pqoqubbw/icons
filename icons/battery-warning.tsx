@@ -70,12 +70,10 @@ const BatteryWarningIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Static Battery Parts */}
         <path d="M14 6h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2" />
         <path d="M22 14v-4" />
         <path d="M6 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2" />
 
-        {/* Animated Warning Symbol (Exclamation Mark) */}
         <motion.g
           variants={{
             normal: { opacity: 1, scale: 1 },
@@ -91,7 +89,7 @@ const BatteryWarningIcon = forwardRef<
           }}
           initial="normal"
           animate={controls}
-          style={{ originX: '10px', originY: '12px' }}
+          style={{ originX: '50%', originY: '50%' }}
         >
           <path d="M10 17h.01" />
           <path d="M10 7v6" />

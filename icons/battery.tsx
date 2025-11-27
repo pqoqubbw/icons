@@ -71,7 +71,6 @@ const BatteryIcon = forwardRef<BatteryIconHandle, BatteryIconProps>(
           <rect x="2" y="6" width="16" height="12" rx="2" />
           <path d="M22 14v-4" />
 
-          {/* Animated Fill Level */}
           <motion.rect
             x="4"
             y="8"

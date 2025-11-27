@@ -68,12 +68,10 @@ const BatteryPlusIcon = forwardRef<BatteryPlusIconHandle, BatteryPlusIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Static Battery Outline */}
           <path d="M12.543 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.605" />
           <path d="M22 14v-4" />
           <path d="M7.606 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.606" />
 
-          {/* Animated Plus Sign */}
           <motion.g
             initial="normal"
             animate={controls}
@@ -88,8 +86,7 @@ const BatteryPlusIcon = forwardRef<BatteryPlusIconHandle, BatteryPlusIconProps>(
                 },
               },
             }}
-            // The center of the plus sign is roughly at x=10, y=12
-            style={{ originX: '10px', originY: '12px' }}
+            style={{ originX: '50%', originY: '50%' }}
           >
             <path d="M10 9v6" />
             <path d="M7 12h6" />
