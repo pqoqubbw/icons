@@ -2155,4 +2155,28 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'battery-charging',
+    'path': path.join(__dirname, '../icons/battery-charging.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'battery',
+    'path': path.join(__dirname, '../icons/battery.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'battery-plus',
+    'path': path.join(__dirname, '../icons/battery-plus.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'battery-warning',
+    'path': path.join(__dirname, '../icons/battery-warning.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];

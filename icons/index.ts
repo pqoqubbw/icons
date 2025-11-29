@@ -312,6 +312,10 @@ import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
 import { ZapIcon } from '@/icons/zap';
 import { ZapOffIcon } from '@/icons/zap-off';
+import { BatteryIcon } from './battery';
+import { BatteryChargingIcon } from './battery-charging';
+import { BatteryPlusIcon } from './battery-plus';
+import { BatteryWarningIcon } from './battery-warning';
 import { BellElectricIcon } from './bell-electric';
 import { CornerDownLeftIcon } from './corner-down-left';
 import { CornerDownRightIcon } from './corner-down-right';
@@ -3053,6 +3057,34 @@ const ICON_LIST: IconListItem[] = [
     name: 'zap-off',
     icon: ZapOffIcon,
     keywords: ['electricity', 'energy', 'power', 'lightning', 'bolt', 'off'],
+  },
+  {
+    name: 'battery-charging',
+    icon: BatteryChargingIcon,
+    keywords: ['battery', 'charging', 'power', 'electricity', 'energy'],
+  },
+  {
+    name: 'battery',
+    icon: BatteryIcon,
+    keywords: ['power', 'electricity', 'energy', 'accumulator', 'charge'],
+  },
+  {
+    name: 'battery-plus',
+    icon: BatteryPlusIcon,
+    keywords: ['accumulator', 'charge', 'plus', 'add', 'battery', 'new'],
+  },
+  {
+    name: 'battery-warning',
+    icon: BatteryWarningIcon,
+    keywords: [
+      'battery',
+      'warning',
+      'power',
+      'electricity',
+      'energy',
+      'alert',
+      'exclamation',
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

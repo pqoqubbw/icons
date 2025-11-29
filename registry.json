@@ -4604,6 +4604,58 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "battery-charging",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "battery-charging.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "battery",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "battery.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "battery-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "battery-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "battery-warning",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "battery-warning.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

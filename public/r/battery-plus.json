@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "battery-plus",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "battery-plus.tsx",
+      "content": "'use client';\n\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { motion, useAnimation } from 'motion/react';\n\nimport { cn } from '@/lib/utils';\n\nexport interface BatteryPlusIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface BatteryPlusIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst BatteryPlusIcon = forwardRef<BatteryPlusIconHandle, BatteryPlusIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n        >\n          <path d=\"M12.543 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3.605\" />\n          <path d=\"M22 14v-4\" />\n          <path d=\"M7.606 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.606\" />\n\n          <motion.g\n            initial=\"normal\"\n            animate={controls}\n            variants={{\n              normal: { opacity: 1, scale: 1 },\n              animate: {\n                opacity: [1, 0.5, 1],\n                scale: [1, 0.8, 1.2, 1],\n                transition: {\n                  duration: 0.5,\n                  ease: 'easeInOut',\n                },\n              },\n            }}\n            style={{ originX: '50%', originY: '50%' }}\n          >\n            <path d=\"M10 9v6\" />\n            <path d=\"M7 12h6\" />\n          </motion.g>\n        </svg>\n      </div>\n    );\n  }\n);\n\nBatteryPlusIcon.displayName = 'BatteryPlusIcon';\n\nexport { BatteryPlusIcon };",
+      "type": "registry:ui"
+    }
+  ]
+}
