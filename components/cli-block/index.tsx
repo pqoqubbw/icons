@@ -20,7 +20,7 @@ const CopyIcon = ({ copied, onClick }: CopyIconProps) => {
   return (
     <div
       onClick={onClick}
-      className="hover:bg-input absolute right-3 -bottom-[6px] flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-md p-4 px-3 transition-colors duration-200 md:px-0"
+      className="absolute top-1/2 right-1 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center px-3 text-[#71717B]"
     >
       <AnimatePresence mode="wait" initial={false}>
         {copied ? (
@@ -67,9 +67,64 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
   };
 
   return (
-    <div className="bg-input/50 border-input relative mt-8 w-full max-w-3xl overflow-hidden rounded-lg border">
+    <div className="relative mt-[50px] w-full max-w-[610px]">
       <Tabs
-        className="w-full"
+        className="corner-squircle w-full"
+        value={packageName}
+        onValueChange={setPackageName}
+      >
+        <TabsList className="w-full" onClick={(e) => e.stopPropagation()}>
+          {Object.values(PACKAGE_MANAGER).map((pm) => (
+            <TabsTrigger key={pm} value={pm}>
+              {pm}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
+      <div
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            copyToClipboard();
+          }
+        }}
+        className="corner-squircle focus-visible:outline-primary relative mt-px w-full rounded-tr-[14px] rounded-br-[14px] rounded-bl-[14px] bg-white px-4 py-3 font-mono text-sm tracking-[-0.39px] focus-within:-outline-offset-1 focus-visible:outline-[1px]"
+      >
+        <span className="text-primary">
+          {getPackageManagerPrefix(packageName)}
+        </span>{' '}
+        <span className="text-[#71717B]">
+          shadcn@latest add @lucide-animated/
+        </span>
+        <TextLoop
+          onIndexChange={(index) => {
+            currentIconName.current = icons[index].name;
+          }}
+          interval={2}
+          transition={{ duration: 0.25, opacity: { duration: 0.2 } }}
+          variants={{
+            initial: { y: -15, opacity: 0 },
+            animate: { y: 0, opacity: 1 },
+            exit: { y: 15, opacity: 0 },
+          }}
+        >
+          {icons
+            .filter((icon) => icon.name.length <= 20)
+            .map((icon) => (
+              <span key={icon.name} className="shrink-0 text-black">
+                {icon.name}
+              </span>
+            ))}
+        </TextLoop>
+        <CopyIcon copied={copied} onClick={copyToClipboard} />
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="relative mt-[50px] w-full max-w-[610px] overflow-hidden">
+      <Tabs
+        className="corner-squircle w-full"
         value={packageName}
         onValueChange={setPackageName}
       >
@@ -87,7 +142,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
       </Tabs>
       <div
         onClick={copyToClipboard}
-        className="flex max-w-[calc(100%-56px)] cursor-pointer items-center gap-2 overflow-x-auto py-4 pr-14 pl-5 font-mono text-sm whitespace-nowrap md:max-w-full"
+        className="flex max-w-[calc(100%-56px)] cursor-pointer items-center gap-2 overflow-x-auto bg-white py-4 pr-14 pl-5 font-mono text-sm whitespace-nowrap md:max-w-full"
       >
         <div className="flex min-w-0 items-center">
           <span className="mr-2 shrink-0">

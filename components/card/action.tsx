@@ -1,5 +1,4 @@
 import type { LucideIcon } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
@@ -11,36 +10,17 @@ type Props = {
 };
 
 const ActionItem = ({ icons, toggle, onClick, tooltipText }: Props) => {
-  const [IconDefault, IconCopied] = icons;
+  const [IconDefault] = icons;
   const [tooltipDefaultText, tooltipCopiedText] = tooltipText;
 
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="action-container" onClick={onClick}>
-          <AnimatePresence mode="wait" initial={false}>
-            {!toggle ? (
-              <motion.div
-                key="first"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.1, ease: 'easeInOut' }}
-              >
-                <IconDefault className="action-item" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="second"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.1, ease: 'easeInOut' }}
-              >
-                <IconCopied className="action-item" />
-              </motion.div>
-            )}
-          </AnimatePresence>
+        <div
+          className="action-container corner-squircle cursor-pointer rounded-[20px] bg-neutral-200/20 p-2 transition-colors duration-100 hover:bg-neutral-200"
+          onClick={onClick}
+        >
+          <IconDefault className="size-5 text-neutral-800" />
         </div>
       </TooltipTrigger>
       <TooltipContent sideOffset={10} side="bottom">

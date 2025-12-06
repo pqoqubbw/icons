@@ -1,24 +1,30 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import './globals.css';
 
-import { ArrowUpRight } from 'lucide-react';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 // import { SnowfallComponent } from '@/components/snowfall';
 import { Toaster } from 'sonner';
 
 import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/header';
-import { Banner } from '@/components/ui/banner';
-import { LINK } from '@/constants';
 import { PackageNameProvider } from '@/providers/package-name';
 import { ThemeProvider } from '@/providers/theme';
-import ogImage from './og.png';
 
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+// import ogImage from './og.png';
+
+const andaleMono = localFont({
+  src: '../fonts/ANDALEMO.woff',
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+const gtCinetype = localFont({
+  src: '../fonts/GT-Cinetype-Regular.woff',
+  variable: '--font-sans',
+  display: 'swap',
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -30,13 +36,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://lucide-animated.com',
-    images: [
-      {
-        url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
-      },
-    ],
+    // images: [
+    //   {
+    //     url: ogImage.src,
+    //     width: ogImage.width,
+    //     height: ogImage.height,
+    //   },
+    // ],
   },
   robots: {
     index: true,
@@ -62,13 +68,13 @@ export const metadata: Metadata = {
     title: 'lucide-animated',
     description: 'beautifully crafted animated icons',
     creator: '@pqoqubbw',
-    images: [
-      {
-        url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
-      },
-    ],
+    // images: [
+    //   {
+    //     url: ogImage.src,
+    //     width: ogImage.width,
+    //     height: ogImage.height,
+    //   },
+    // ],
   },
 };
 
@@ -86,37 +92,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${andaleMono.variable} ${gtCinetype.variable}`}
+    >
       <body
-        className={`${geistMono.className} bg-background relative antialiased dark:bg-[#151515]`}
+        className={`${gtCinetype.className} bg-background relative antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <PackageNameProvider>
-            <a href={LINK.HELPY_UI} target="_blank" className="group">
-              <Banner variant="rainbow" className="h-10 text-xs md:text-sm">
-                <p className="underline-offset-4 group-hover:underline">
-                  🎉 helpy-ui - warm blanket for your projects
-                </p>
-                <ArrowUpRight
-                  className="ml-1 size-3.5 shrink-0 transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  strokeWidth={2}
-                />
-              </Banner>
-            </a>
-            <Header />
-            <NuqsAdapter>
-              {children}
-              <Toaster theme="light" position="bottom-right" />
-              {/* <SnowfallComponent /> */}
-            </NuqsAdapter>
-            <Analytics />
-          </PackageNameProvider>
-        </ThemeProvider>
+        <div className="root">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <PackageNameProvider>
+              <Header />
+              <NuqsAdapter>
+                {children}
+                <Toaster theme="light" position="bottom-right" />
+                {/* <SnowfallComponent /> */}
+              </NuqsAdapter>
+              <Analytics />
+            </PackageNameProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

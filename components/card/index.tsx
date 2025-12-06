@@ -35,9 +35,15 @@ V0Icon.displayName = 'V0Icon';
 
 const TOOLTIP_DELAY_DURATION = 500;
 
-const Card = ({ children }: { children: React.ReactNode }) => {
+const Card = ({
+  children,
+  ...props
+}: { children: React.ReactNode } & React.ComponentPropsWithoutRef<'div'>) => {
   return (
-    <div className="border-input flex flex-col items-center justify-center rounded-md border p-3 pt-5">
+    <div
+      className="corner-squircle group/card flex flex-col items-center justify-center rounded-[30px] bg-white px-[28px] pt-[50px]"
+      {...props}
+    >
       {children}
     </div>
   );
@@ -45,7 +51,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="text-muted-foreground mt-5 mb-3 text-center text-xs">
+    <p className="mt-[36px] text-center font-mono text-xs text-[#9F9FA9]">
       {children}
     </p>
   );
@@ -147,7 +153,7 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
 
 const Actions = ({ content, name }: Icon) => {
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
       <TooltipProvider delayDuration={TOOLTIP_DELAY_DURATION}>
         <CopyCLIAction name={name} />
         <CopyCodeAction content={content} name={name} />
