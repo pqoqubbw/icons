@@ -12,8 +12,7 @@ export interface ChartNoAxesColumnIncreasingIconHandle {
   stopAnimation: () => void;
 }
 
-interface ChartNoAxesColumnIncreasingIconProps
-  extends HTMLAttributes<HTMLDivElement> {
+interface ChartNoAxesColumnIncreasingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 

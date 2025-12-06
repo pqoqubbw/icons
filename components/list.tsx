@@ -3,8 +3,8 @@
 import type { Icon } from '@/actions/get-icons';
 import { useRef } from 'react';
 
+import { Card, CardActions, CardTitle } from '@/components/card';
 import { ICON_LIST } from '@/icons';
-import { Card, CardActions, CardTitle } from '../card';
 
 type Props = {
   icons: Icon[];

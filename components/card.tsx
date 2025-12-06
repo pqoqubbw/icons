@@ -4,17 +4,21 @@ import type { Icon } from '@/actions/get-icons';
 import type { LucideProps } from 'lucide-react';
 import { forwardRef, useState } from 'react';
 import { useOpenPanel } from '@openpanel/nextjs';
-import { Check, Copy, Terminal } from 'lucide-react';
+import { Copy, Terminal } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { getIconContent } from '@/actions/get-icon-content';
 import { openInV0Action } from '@/actions/open-in-v0';
+import { ANALYTIC_EVENT } from '@/components/analytics';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { cn } from '@/lib/utils';
 import { usePackageNameContext } from '@/providers/package-name';
-import { ANALYTIC_EVENT } from '../analytics';
-import { TooltipProvider } from '../ui/tooltip';
-import { ActionItem } from './action';
 
 const V0Icon = forwardRef<SVGSVGElement, LucideProps>((props, ref) => {
   return (
@@ -33,8 +37,6 @@ const V0Icon = forwardRef<SVGSVGElement, LucideProps>((props, ref) => {
 });
 
 V0Icon.displayName = 'V0Icon';
-
-const TOOLTIP_DELAY_DURATION = 500;
 
 const Card = ({
   children,
@@ -76,12 +78,21 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   };
 
   return (
-    <ActionItem
-      icons={[Terminal, Check]}
-      toggle={copied}
-      onClick={handleCopy}
-      tooltipText={['copy shadcn/cli command', 'copied']}
-    />
+    <Tooltip>
+      <TooltipTrigger
+        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        onClick={handleCopy}
+      >
+        <Terminal className="size-4 text-neutral-800 dark:text-neutral-100" />
+      </TooltipTrigger>
+      <TooltipContent>
+        Copy{' '}
+        <code className="rounded-[4px] bg-neutral-50/20 px-1 py-0.5 font-mono">
+          shadcn/cli
+        </code>{' '}
+        command
+      </TooltipContent>
+    </Tooltip>
   );
 };
 
@@ -111,12 +122,21 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
   };
 
   return (
-    <ActionItem
-      icons={[Copy, Check]}
-      toggle={copied}
-      onClick={handleCopy}
-      tooltipText={['copy code', 'copied']}
-    />
+    <Tooltip>
+      <TooltipTrigger
+        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        onClick={handleCopy}
+      >
+        <Copy className="size-4 text-neutral-800 dark:text-neutral-100" />
+      </TooltipTrigger>
+      <TooltipContent>
+        Copy{' '}
+        <code className="rounded-[4px] bg-neutral-50/20 px-1 py-0.5 font-mono">
+          .tsx
+        </code>{' '}
+        code
+      </TooltipContent>
+    </Tooltip>
   );
 };
 
@@ -154,24 +174,27 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   };
 
   return (
-    <ActionItem
-      icons={[V0Icon, Check]}
-      toggle={isLoading}
-      onClick={handleOpenInV0}
-      tooltipText={['open in v0', 'opened']}
-    />
+    <Tooltip>
+      <TooltipTrigger
+        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        onClick={handleOpenInV0}
+      >
+        <V0Icon className="size-5 text-neutral-800 dark:text-neutral-100" />
+      </TooltipTrigger>
+      <TooltipContent>Open in v0</TooltipContent>
+    </Tooltip>
   );
 };
 
 const Actions = ({ name }: Pick<Icon, 'name'>) => {
   return (
-    <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
-      <TooltipProvider delayDuration={TOOLTIP_DELAY_DURATION}>
-        <CopyCLIAction name={name} />
+    <TooltipProvider>
+      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
         <CopyCodeAction name={name} />
+        <CopyCLIAction name={name} />
         <OpenInV0Action name={name} />
-      </TooltipProvider>
-    </div>
+      </div>
+    </TooltipProvider>
   );
 };
 

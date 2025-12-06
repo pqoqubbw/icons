@@ -5,11 +5,11 @@ import { useRef, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { TextLoop } from '@/components/ui/text-loop';
 import { PACKAGE_MANAGER } from '@/constants';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { usePackageNameContext } from '@/providers/package-name';
-import { Tabs, TabsList, TabsTrigger } from '../ui/tabs';
-import { TextLoop } from '../ui/text-loop';
 
 type CopyIconProps = {
   copied: boolean;

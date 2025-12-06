@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
+import { GithubStartsButton } from '@/components/github-button';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { cn } from '@/lib/utils';
-import { ThemeToggle } from '../ui/theme-toggle';
-import { GithubStartsButton } from './github';
 
 const Logo = ({ className }: { className?: string }) => {
   return (

@@ -12,8 +12,7 @@ export interface ChartNoAxesColumnDecreasingIconHandle {
   stopAnimation: () => void;
 }
 
-interface ChartNoAxesColumnDecreasingIconProps
-  extends HTMLAttributes<HTMLDivElement> {
+interface ChartNoAxesColumnDecreasingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
