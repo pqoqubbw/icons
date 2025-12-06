@@ -41,7 +41,7 @@ const Card = ({
 }: { children: React.ReactNode } & React.ComponentPropsWithoutRef<'div'>) => {
   return (
     <div
-      className="corner-squircle group/card flex flex-col items-center justify-center rounded-[30px] bg-white px-[28px] pt-[50px]"
+      className="corner-squircle group/card flex flex-col items-center justify-center rounded-[30px] bg-white px-[28px] pt-[50px] dark:bg-[#0A0A0A]"
       {...props}
     >
       {children}
@@ -51,7 +51,7 @@ const Card = ({
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="mt-[36px] text-center font-mono text-xs text-[#9F9FA9]">
+    <p className="mt-[36px] text-center font-mono text-xs text-[#9F9FA9] dark:text-[#D4D4D4]">
       {children}
     </p>
   );

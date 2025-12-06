@@ -35,7 +35,7 @@ const ThemeToggle = () => {
       onClick={() => handleChangeTheme(nextTheme)}
       aria-pressed={isDark}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="focus-visible:outline-primary flex size-9 cursor-pointer items-center justify-center bg-white focus-within:outline-offset-2 focus-visible:outline-1"
+      className="focus-visible:outline-primary flex size-9 cursor-pointer items-center justify-center bg-white focus-within:outline-offset-2 focus-visible:outline-1 dark:bg-white/10"
     >
       <SunIcon
         className="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"

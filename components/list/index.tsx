@@ -27,7 +27,7 @@ const IconItem = ({ icon }: { icon: Icon }) => {
     >
       <IconComponent
         ref={animationRef}
-        className="flex items-center justify-center [&>svg]:size-10 [&>svg]:text-neutral-800"
+        className="flex items-center justify-center [&>svg]:size-10 [&>svg]:text-neutral-800 dark:[&>svg]:text-neutral-100"
       />
       <CardTitle>{icon.name}</CardTitle>
       <CardActions {...icon} />

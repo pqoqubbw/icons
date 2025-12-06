@@ -17,10 +17,10 @@ const ActionItem = ({ icons, toggle, onClick, tooltipText }: Props) => {
     <Tooltip>
       <TooltipTrigger>
         <div
-          className="action-container corner-squircle cursor-pointer rounded-[20px] bg-neutral-200/20 p-2 transition-colors duration-100 hover:bg-neutral-200"
+          className="action-container corner-squircle cursor-pointer rounded-[20px] bg-neutral-200/20 p-2 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
           onClick={onClick}
         >
-          <IconDefault className="size-5 text-neutral-800" />
+          <IconDefault className="size-5 text-neutral-800 dark:text-neutral-100" />
         </div>
       </TooltipTrigger>
       <TooltipContent sideOffset={10} side="bottom">

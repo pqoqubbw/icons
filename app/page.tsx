@@ -31,7 +31,7 @@ const Home = async () => {
           href="https://motion.dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="focus-visible:outline-primary text-primary bg-[#E5E5E5] px-2 py-0.5 focus-within:outline-offset-1 focus-visible:outline-1"
+          className="focus-visible:outline-primary text-primary bg-[#E5E5E5] px-2 py-0.5 focus-within:outline-offset-1 focus-visible:outline-1 dark:bg-[#262626]"
         >
           Motion
         </a>{' '}
@@ -40,7 +40,7 @@ const Home = async () => {
           href="https://lucide.dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="focus-visible:outline-primary text-primary bg-[#E5E5E5] px-2 py-0.5 focus-within:outline-offset-1 focus-visible:outline-1"
+          className="focus-visible:outline-primary text-primary bg-[#E5E5E5] px-2 py-0.5 focus-within:outline-offset-1 focus-visible:outline-1 dark:bg-[#262626]"
         >
           Lucide
         </a>
