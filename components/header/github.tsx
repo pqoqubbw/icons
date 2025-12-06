@@ -3,10 +3,9 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { LINK } from '@/constants';
 
 const DEFAULT_STARS = 5550;
+const CACHE_TIME = 86400; // 1 day
 
 const getGithubStars = async () => {
-  'use cache';
-
   if (process.env.NODE_ENV !== 'production') {
     return DEFAULT_STARS;
   }
@@ -16,6 +15,7 @@ const getGithubStars = async () => {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
+      next: { revalidate: CACHE_TIME },
     });
 
     if (!res.ok) {

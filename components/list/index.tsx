@@ -5,7 +5,6 @@ import { useRef } from 'react';
 
 import { ICON_LIST } from '@/icons';
 import { Card, CardActions, CardTitle } from '../card';
-import { useSearch } from './hooks/use-search';
 
 type Props = {
   icons: Icon[];
@@ -36,12 +35,10 @@ const IconItem = ({ icon }: { icon: Icon }) => {
 };
 
 const IconsList = ({ icons }: Props) => {
-  const { results } = useSearch(icons);
-
   return (
     <div className="mt-[100px] mb-20 w-full">
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
-        {results.map((icon) => {
+        {icons.map((icon) => {
           return <IconItem key={icon.name} icon={icon} />;
         })}
       </div>
