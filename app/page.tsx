@@ -2,8 +2,8 @@ import { getIcons } from '@/actions/get-icons';
 import { CliBlock } from '@/components/cli-block';
 import { IconsList } from '@/components/list';
 
-const Home = async () => {
-  const icons = await getIcons();
+const Home = () => {
+  const icons = getIcons();
 
   return (
     <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center">
@@ -47,8 +47,8 @@ const Home = async () => {
       </p>
       <CliBlock
         icons={[
-          { content: '', keywords: [''], name: 'blocks' },
-          { content: '', keywords: [''], name: 'workflow' },
+          { keywords: [''], name: 'blocks' },
+          { keywords: [''], name: 'workflow' },
         ]}
       />
       <IconsList icons={icons} />

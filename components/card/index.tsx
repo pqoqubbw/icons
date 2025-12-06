@@ -7,6 +7,7 @@ import { useOpenPanel } from '@openpanel/nextjs';
 import { Check, Copy, Terminal } from 'lucide-react';
 import { toast } from 'sonner';
 
+import { getIconContent } from '@/actions/get-icon-content';
 import { openInV0Action } from '@/actions/open-in-v0';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { cn } from '@/lib/utils';
@@ -84,18 +85,29 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   );
 };
 
-const CopyCodeAction = ({ content, name }: Pick<Icon, 'content' | 'name'>) => {
+const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
   const op = useOpenPanel();
 
   const [copied, setCopied] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCopy = async () => {
-    if (copied) return;
+    if (copied || isLoading) return;
 
-    op.track(ANALYTIC_EVENT.ICON_COPY, { icon: `${name}.tsx` });
-    await navigator.clipboard.writeText(content);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      setIsLoading(true);
+      op.track(ANALYTIC_EVENT.ICON_COPY, { icon: `${name}.tsx` });
+
+      const content = await getIconContent(name);
+
+      await navigator.clipboard.writeText(content);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy icon content:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -151,12 +163,12 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   );
 };
 
-const Actions = ({ content, name }: Icon) => {
+const Actions = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 [@media(hover:none)]:opacity-100">
       <TooltipProvider delayDuration={TOOLTIP_DELAY_DURATION}>
         <CopyCLIAction name={name} />
-        <CopyCodeAction content={content} name={name} />
+        <CopyCodeAction name={name} />
         <OpenInV0Action name={name} />
       </TooltipProvider>
     </div>
