@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { ThemeToggle } from '../ui/theme-toggle';
+import { GithubStartsButton } from './github';
 
 const Logo = ({ className }: { className?: string }) => {
   return (
@@ -79,7 +80,10 @@ const Header = () => {
         >
           <Logo />
         </Link>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <GithubStartsButton />
+        </div>
       </div>
     </header>
   );
