@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { ThemeToggle } from '../ui/theme-toggle';
+
 const Logo = ({ className }: { className?: string }) => {
   return (
     <svg
@@ -73,10 +75,11 @@ const Header = () => {
       <div className="flex h-full w-full items-center justify-between">
         <Link
           href="/"
-          className="focus-visible:outline-primary corner-squircle rounded-[14px] focus-within:outline-offset-4 focus-visible:outline-1"
+          className="focus-visible:outline-primary focus-within:outline-offset-4 focus-visible:outline-1"
         >
           <Logo />
         </Link>
+        <ThemeToggle />
       </div>
     </header>
   );
