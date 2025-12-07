@@ -41,7 +41,7 @@ const TabsTrigger = ({ className, ...props }: TabsTriggerProps) => {
         'aria-selected:bg-primary dark:aria-selected:bg-primary z-50 inline-flex cursor-pointer items-center justify-center bg-white px-4 py-1 font-mono text-sm tracking-[-0.39px] whitespace-nowrap text-black hover:bg-neutral-50 aria-selected:text-white dark:bg-white/10 dark:text-white dark:hover:bg-white/5',
         'first:corner-tl-squircle last:corner-tr-squircle first:rounded-tl-[14px] last:rounded-tr-[14px]',
         'transition-[background-color] duration-50',
-        'focus-visible:outline-primary focus-within:outline-offset-0 focus-visible:outline-[1px]',
+        'focus-visible:outline-primary focus-within:outline-offset-0 focus-visible:outline-1',
         className
       )}
       {...props}

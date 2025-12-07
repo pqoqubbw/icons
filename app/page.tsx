@@ -7,17 +7,17 @@ const Home = () => {
 
   return (
     <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center">
-      <h1 className="text-center font-sans text-[42px]">
+      <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
         Beautifully crafted <br />
         animated icons<span className="text-primary">*</span>
       </h1>
-      <p className="text-secondary mt-5 max-w-[550px] text-center font-mono text-sm">
+      <p className="text-secondary mt-5 max-w-[582px] px-4 text-center font-mono text-sm">
         an open-source (
         <a
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:decoration-primary focus-visible:outline-primary underline underline-offset-3 transition-[decoration-color] duration-50 focus-within:outline-offset-0 focus-visible:outline-[1px]"
+          className="hover:decoration-primary focus-visible:outline-primary underline underline-offset-3 transition-[decoration-color] duration-50 focus-within:outline-offset-0 focus-visible:outline-1"
         >
           MIT License
         </a>
@@ -25,7 +25,7 @@ const Home = () => {
         use them, share your feedback, and let's make this library awesome
         together
       </p>
-      <p className="text-secondary mt-4 font-mono text-sm">
+      <p className="text-secondary mt-4 font-mono text-xs min-[640px]:text-sm">
         Crafted with{' '}
         <a
           href="https://motion.dev"

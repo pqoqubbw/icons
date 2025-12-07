@@ -70,7 +70,7 @@
 @layer base {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
+    scrollbar-color: var(--color-neutral-700) transparent;
   }
 
   html {
@@ -96,7 +96,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 2px;
   }
 
   ::-webkit-scrollbar-track {
@@ -104,8 +104,8 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 4px;
+    background: var(--color-neutral-700);
+    border-radius: 6px;
   }
 
   ::view-transition-group(root) {
