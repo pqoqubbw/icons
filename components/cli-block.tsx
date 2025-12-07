@@ -68,7 +68,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                   'after:pointer-events-none after:absolute after:top-0 after:right-0 after:block after:h-full after:rounded-r-[10px]',
                   'supports-[corner-shape:squircle]:after:corner-r-squircle supports-[corner-shape:squircle]:after:rounded-r-[14px]',
                   "after:transition-[width] after:duration-50 after:ease-out after:content-['']",
-                  'after:w-[calc(min(40px,var(--scroll-area-overflow-x-end))+100px)] after:bg-[linear-gradient(to_left,white_0%,white_30%,transparent)] after:[--scroll-area-overflow-x-end:inherit] dark:after:bg-[linear-gradient(to_left,rgb(47_47_47/1)_0%,rgb(47_47_47/1)_30%,transparent)]'
+                  'after:w-[calc(min(40px,var(--scroll-area-overflow-x-end,100px))+100px)] after:bg-[linear-gradient(to_left,white_0%,white_30%,transparent)] after:[--scroll-area-overflow-x-end:inherit] dark:after:bg-[linear-gradient(to_left,rgb(47_47_47/1)_0%,rgb(47_47_47/1)_30%,transparent)]'
                 )}
               >
                 <span className="text-neutral-600 dark:text-neutral-400">
@@ -103,7 +103,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 orientation="horizontal"
                 className="pointer-events-none absolute right-2! bottom-1! left-2! flex h-0.5 touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-150 data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0 data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0 dark:bg-neutral-400"
               >
-                <BaseScrollArea.Thumb className="relative w-10 rounded bg-neutral-700" />
+                <BaseScrollArea.Thumb className="relative w-full rounded bg-neutral-700" />
               </BaseScrollArea.Scrollbar>
               <button
                 tabIndex={0}
