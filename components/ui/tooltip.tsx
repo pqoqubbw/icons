@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const TooltipProvider = ({
   delay = 150,
-  closeDelay = 150,
+  closeDelay = 200,
   ...props
 }: React.ComponentProps<typeof BaseTooltip.Provider>) => {
   return (

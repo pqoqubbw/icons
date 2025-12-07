@@ -74,7 +74,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleCopy}
       >
         <Terminal className="size-4 text-neutral-800 dark:text-neutral-100" />
@@ -118,7 +118,7 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleCopy}
       >
         <Copy className="size-4 text-neutral-800 dark:text-neutral-100" />
@@ -170,7 +170,7 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleOpenInV0}
       >
         <V0Icon className="size-5 text-neutral-800 dark:text-neutral-100" />

@@ -6,7 +6,7 @@ import { useHotkeys } from 'react-hotkeys-hook';
 
 type Theme = 'light' | 'dark' | 'system';
 
-const KEYS = ['ctrl+shift+l', 'meta+shift+l'];
+const KEYS = ['ctrl+u', 'meta+u'];
 
 const ThemeToggle = () => {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
@@ -31,6 +31,7 @@ const ThemeToggle = () => {
 
   return (
     <button
+      suppressHydrationWarning
       type="button"
       onClick={() => handleChangeTheme(nextTheme)}
       aria-pressed={isDark}
