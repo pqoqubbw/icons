@@ -66,7 +66,8 @@ const TooltipContent = ({
         <BaseTooltip.Popup
           data-slot="tooltip-content"
           className={cn(
-            'bg-primary corner-squircle z-50 w-fit origin-(--transform-origin) rounded-[20px] px-3 py-1.5 text-xs text-balance text-white shadow-sm transition-[transform,scale,opacity] duration-50 data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
+            'bg-primary z-50 w-fit origin-(--transform-origin) rounded-[14px] px-3 py-1.5 text-xs text-balance text-white shadow-sm transition-[transform,scale,opacity] duration-50 data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0',
+            'supports-[corner-shape:squircle]:corner-squircle supports-[corner-shape:squircle]:rounded-[20px]',
             className
           )}
           {...props}

@@ -40,6 +40,7 @@ const GithubStartsButton = async () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Star on GitHub (${stars.toLocaleString()} stars)`}
+      tabIndex={0}
       className="focus-visible:outline-primary group/github-stars flex items-center gap-2 bg-white px-2.5 py-2 focus-within:outline-offset-2 focus-visible:outline-1 dark:bg-white/10"
     >
       <GitHubLogoIcon className="size-4" aria-hidden="true" />

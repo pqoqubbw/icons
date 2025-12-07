@@ -82,6 +82,7 @@ const Header = () => {
         <Link
           href="/"
           aria-label="Lucide Icons - Home"
+          tabIndex={0}
           className="focus-visible:outline-primary focus-within:outline-offset-4 focus-visible:outline-1"
         >
           <Logo />

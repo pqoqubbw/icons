@@ -11,7 +11,7 @@ const Tabs = ({ className, ...props }: TabsProps) => {
   return (
     <BaseTabs.Root
       data-slot="tabs"
-      className={cn('flex flex-col gap-2', className)}
+      className={cn('flex flex-col', className)}
       {...props}
     />
   );
@@ -39,7 +39,9 @@ const TabsTrigger = ({ className, ...props }: TabsTriggerProps) => {
       data-slot="tabs-trigger"
       className={cn(
         'aria-selected:bg-primary dark:aria-selected:bg-primary z-50 inline-flex cursor-pointer items-center justify-center bg-white px-4 py-1 font-mono text-sm tracking-[-0.39px] whitespace-nowrap text-black hover:bg-neutral-50 aria-selected:text-white dark:bg-white/10 dark:text-white dark:hover:bg-white/5',
-        'first:corner-tl-squircle last:corner-tr-squircle first:rounded-tl-[14px] last:rounded-tr-[14px]',
+        'first:rounded-tl-[8px] last:rounded-tr-[8px]',
+        'supports-[corner-shape:squircle]:first:corner-tl-squircle supports-[corner-shape:squircle]:first:rounded-tl-[14px]',
+        'supports-[corner-shape:squircle]:last:corner-tr-squircle supports-[corner-shape:squircle]:last:rounded-tr-[14px]',
         'transition-[background-color] duration-50',
         'focus-visible:outline-primary focus-within:outline-offset-0 focus-visible:outline-1',
         className

@@ -38,7 +38,7 @@ const Card = ({
 }: { children: React.ReactNode } & React.ComponentPropsWithoutRef<'div'>) => {
   return (
     <div
-      className="corner-squircle group/card flex flex-col items-center justify-center rounded-[30px] bg-white px-[28px] pt-[50px] dark:bg-[#0A0A0A]"
+      className="group/card supports-[corner-shape:squircle]:corner-squircle flex flex-col items-center justify-center rounded-[20px] bg-white px-[28px] pt-[50px] supports-[corner-shape:squircle]:rounded-[30px] dark:bg-[#0A0A0A]"
       {...props}
     >
       {children}
@@ -74,7 +74,12 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        tabIndex={0}
+        aria-label="Copy shadcn/cli command"
+        aria-pressed={copied}
+        aria-roledescription="Copy shadcn/cli command"
+        aria-disabled={copied}
+        className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleCopy}
       >
         <Terminal className="size-4 text-neutral-800 dark:text-neutral-100" />
@@ -118,7 +123,12 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        tabIndex={0}
+        className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        aria-label="Copy .tsx code"
+        aria-pressed={copied}
+        aria-roledescription="Copy .tsx code"
+        aria-disabled={copied}
         onClick={handleCopy}
       >
         <Copy className="size-4 text-neutral-800 dark:text-neutral-100" />
@@ -170,7 +180,12 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <Tooltip>
       <TooltipTrigger
-        className="corner-squircle focus-visible:outline-primary flex size-10 cursor-pointer items-center justify-center rounded-[20px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        tabIndex={0}
+        className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        aria-label="Open in v0"
+        aria-pressed={isLoading}
+        aria-roledescription="Open in v0"
+        aria-disabled={isLoading}
         onClick={handleOpenInV0}
       >
         <V0Icon className="size-5 text-neutral-800 dark:text-neutral-100" />
