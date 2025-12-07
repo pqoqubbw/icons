@@ -48,12 +48,7 @@ const Home = () => {
           Lucide
         </a>
       </p>
-      <CliBlock
-        icons={[
-          { keywords: [''], name: 'blocks' },
-          { keywords: [''], name: 'workflow' },
-        ]}
-      />
+      <CliBlock icons={icons.filter((icon) => icon.name.length <= 20)} />
       <IconsList icons={icons} />
     </section>
   );
