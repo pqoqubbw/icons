@@ -90,6 +90,11 @@
     overscroll-behavior: none;
   }
 
+  ::selection {
+    background-color: var(--primary);
+    color: white;
+  }
+
   .root {
     isolation: isolate;
     min-height: 100vh;
