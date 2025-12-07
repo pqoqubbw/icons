@@ -19,19 +19,11 @@ ScrollArea.displayName = 'ScrollArea';
 
 const ScrollAreaViewport = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Viewport>,
-  React.ComponentPropsWithoutRef<typeof BaseScrollArea.Viewport> & {
-    scrollFade?: boolean;
-  }
->(({ className, scrollFade, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof BaseScrollArea.Viewport>
+>(({ className, children, ...props }, ref) => (
   <BaseScrollArea.Viewport
     ref={ref}
-    className={cn(
-      'overscroll-contain rounded-[inherit]',
-      'focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-blue-800',
-      scrollFade &&
-        "before:from-background after:from-background before:pointer-events-none before:absolute before:top-0 before:left-0 before:block before:h-[min(40px,var(--scroll-area-overflow-y-start))] before:w-full before:rounded-[inherit] before:bg-linear-to-b before:to-transparent before:transition-[height] before:duration-100 before:ease-out before:content-[''] before:[--scroll-area-overflow-y-start:inherit] after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:block after:h-[min(40px,var(--scroll-area-overflow-y-end,40px))] after:w-full after:rounded-[inherit] after:bg-linear-to-t after:to-transparent after:transition-[height] after:duration-100 after:ease-out after:content-[''] after:[--scroll-area-overflow-y-end:inherit]",
-      className
-    )}
+    className={cn('overscroll-contain rounded-[inherit]', className)}
     {...props}
   >
     {children}
@@ -55,7 +47,7 @@ const ScrollAreaScrollbar = React.forwardRef<
     ref={ref}
     orientation={orientation}
     className={cn(
-      'pointer-events-none relative flex touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-150',
+      'pointer-events-none relative flex touch-none opacity-0 transition-opacity duration-100',
       "before:absolute before:content-['']",
       'data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0',
       'data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0',
@@ -67,7 +59,7 @@ const ScrollAreaScrollbar = React.forwardRef<
     )}
     {...props}
   >
-    <BaseScrollArea.Thumb className="relative w-full flex-1 rounded bg-neutral-500 dark:bg-neutral-700" />
+    <BaseScrollArea.Thumb className="relative w-full flex-1" />
   </BaseScrollArea.Scrollbar>
 ));
 ScrollAreaScrollbar.displayName = 'ScrollAreaScrollbar';

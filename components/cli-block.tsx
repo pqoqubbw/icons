@@ -51,21 +51,21 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
           <TabsContent
             key={pm}
             value={pm}
-            className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-tr-squircle supports-[corner-shape:squircle]:corner-br-squircle supports-[corner-shape:squircle]:corner-bl-squircle mt-px rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px] focus-within:outline-offset-0 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-tr-[14px] supports-[corner-shape:squircle]:rounded-br-[14px] supports-[corner-shape:squircle]:rounded-bl-[14px]"
+            className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-tr-squircle supports-[corner-shape:squircle]:corner-br-squircle supports-[corner-shape:squircle]:corner-bl-squircle mt-px overflow-hidden rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px] focus-within:outline-offset-0 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-tr-[14px] supports-[corner-shape:squircle]:rounded-br-[14px] supports-[corner-shape:squircle]:rounded-bl-[14px]"
           >
             <BaseScrollArea.Root className="relative w-full overflow-hidden">
               <BaseScrollArea.Viewport
                 className={cn(
                   'focus-visible:outline-primary overflow-hidden rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px] bg-white focus-visible:outline-1 focus-visible:outline-offset-0 dark:bg-white/10',
                   'supports-[corner-shape:squircle]:corner-tr-squircle supports-[corner-shape:squircle]:corner-br-squircle supports-[corner-shape:squircle]:corner-bl-squircle supports-[corner-shape:squircle]:rounded-tr-[14px] supports-[corner-shape:squircle]:rounded-br-[14px] supports-[corner-shape:squircle]:rounded-bl-[14px]',
-                  'px-4 py-3 pr-20 font-mono text-sm tracking-[-0.39px] whitespace-nowrap',
+                  'isolate px-4 py-3 pr-20 font-mono text-sm tracking-[-0.39px] whitespace-nowrap',
                   // left fade
-                  'before:pointer-events-none before:absolute before:top-0 before:left-0 before:block before:h-full before:rounded-bl-[10px]',
+                  'before:pointer-events-none before:absolute before:top-0 before:left-0 before:z-10 before:block before:h-full before:rounded-bl-[10px]',
                   'supports-[corner-shape:squircle]:before:corner-bl-squircle supports-[corner-shape:squircle]:before:rounded-bl-[14px]',
                   "before:transition-[width] before:duration-50 before:ease-out before:content-['']",
                   'before:w-[min(40px,var(--scroll-area-overflow-x-start))] before:bg-[linear-gradient(to_right,white,transparent)] before:[--scroll-area-overflow-x-start:inherit] dark:before:bg-[linear-gradient(to_right,rgb(47_47_47/1),transparent)]',
                   // right fade
-                  'after:pointer-events-none after:absolute after:top-0 after:right-0 after:block after:h-full after:rounded-r-[10px]',
+                  'after:pointer-events-none after:absolute after:top-0 after:right-0 after:z-10 after:block after:h-full after:rounded-r-[10px]',
                   'supports-[corner-shape:squircle]:after:corner-r-squircle supports-[corner-shape:squircle]:after:rounded-r-[14px]',
                   "after:transition-[width] after:duration-50 after:ease-out after:content-['']",
                   'after:w-[calc(min(40px,var(--scroll-area-overflow-x-end,100px))+100px)] after:bg-[linear-gradient(to_left,white_0%,white_30%,transparent)] after:[--scroll-area-overflow-x-end:inherit] dark:after:bg-[linear-gradient(to_left,rgb(47_47_47/1)_0%,rgb(47_47_47/1)_30%,transparent)]'
@@ -101,9 +101,9 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
               <BaseScrollArea.Scrollbar
                 keepMounted={false}
                 orientation="horizontal"
-                className="pointer-events-none absolute right-2! bottom-1! left-2! flex h-0.5 touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-150 data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0 data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0 dark:bg-neutral-400"
+                className="pointer-events-none absolute right-2! bottom-1! left-2! flex h-0.5 touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-150 data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0 data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0 dark:bg-neutral-700"
               >
-                <BaseScrollArea.Thumb className="relative w-full rounded bg-neutral-700" />
+                <BaseScrollArea.Thumb className="relative w-full rounded bg-neutral-600 dark:bg-neutral-400" />
               </BaseScrollArea.Scrollbar>
               <button
                 tabIndex={0}
@@ -113,7 +113,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 aria-roledescription="Copy to clipboard"
                 aria-disabled={state === 'copied'}
                 onClick={handleCopyToClipboard}
-                className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
+                className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
               >
                 {state === 'copied' && (
                   <CheckIcon className="size-4 text-green-600" />
