@@ -77,17 +77,17 @@ const Logo = ({ className }: { className?: string }) => {
 
 const Header = () => {
   return (
-    <header className="mx-auto mt-[25px] max-w-[1292px] px-4 font-mono">
-      <div className="flex h-full w-full items-center justify-between">
+    <header className="mx-auto mt-[25px] w-full max-w-[1292px] px-4 font-mono">
+      <div className="flex h-full w-full justify-between gap-4">
         <Link
           href="/"
           aria-label="Lucide Icons - Home"
           tabIndex={0}
-          className="focus-visible:outline-primary focus-within:outline-offset-4 focus-visible:outline-1"
+          className="focus-visible:outline-primary mr-auto focus-within:outline-offset-4 focus-visible:outline-1"
         >
           <Logo />
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="ml-auto flex w-full flex-1 flex-wrap-reverse items-center justify-end gap-2">
           <Link
             href="/sponsorship"
             aria-label="Sponsor Project"
@@ -108,8 +108,10 @@ const Header = () => {
             </svg>
             Sponsor Project
           </Link>
-          <ThemeToggle />
-          <GithubStartsButton />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <GithubStartsButton />
+          </div>
         </div>
       </div>
     </header>
