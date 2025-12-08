@@ -21,6 +21,7 @@ const IconItem = ({ icon }: { icon: Icon }) => {
   return (
     <Card
       key={icon.name}
+      animationRef={animationRef}
       onMouseEnter={() => animationRef.current?.startAnimation()}
       onMouseLeave={() => animationRef.current?.stopAnimation()}
     >

@@ -1,9 +1,10 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
-import { useState } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useOpenPanel } from '@openpanel/nextjs';
-import { Copy, Terminal } from 'lucide-react';
+import { Copy, PauseIcon, PlayIcon, Terminal } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { getIconContent } from '@/actions/get-icon-content';
@@ -15,6 +16,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { useTouchDevice } from '@/hooks/use-touch-device';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { usePackageNameContext } from '@/providers/package-name';
 
@@ -32,15 +34,70 @@ const V0Icon = ({ className }: { className?: string }) => {
   );
 };
 
-const Card = ({
-  children,
-  ...props
-}: { children: React.ReactNode } & React.ComponentPropsWithoutRef<'div'>) => {
+interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
+  children: React.ReactNode;
+  animationRef?: RefObject<{
+    startAnimation: () => void;
+    stopAnimation: () => void;
+  } | null>;
+}
+
+const Card = ({ children, animationRef, ...props }: CardProps) => {
+  const isTouchDevice = useTouchDevice();
+  const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handlePlayClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
+    if (isAnimating) {
+      animationRef?.current?.stopAnimation();
+      setIsAnimating(false);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    } else {
+      animationRef?.current?.startAnimation();
+      setIsAnimating(true);
+
+      timeoutRef.current = setTimeout(() => {
+        setIsAnimating(false);
+        animationRef?.current?.stopAnimation();
+      }, 1500);
+    }
+  };
+
   return (
     <div
-      className="group/card supports-[corner-shape:squircle]:corner-squircle flex flex-col items-center justify-center rounded-[20px] bg-white px-[28px] pt-[50px] supports-[corner-shape:squircle]:rounded-[30px] dark:bg-[#0A0A0A]"
+      className="group/card supports-[corner-shape:squircle]:corner-squircle relative flex flex-col items-center justify-center rounded-[20px] bg-white px-[28px] pt-[50px] supports-[corner-shape:squircle]:rounded-[30px] dark:bg-[#0A0A0A]"
       {...props}
+      onMouseEnter={!isTouchDevice ? props.onMouseEnter : undefined}
+      onMouseLeave={!isTouchDevice ? props.onMouseLeave : undefined}
     >
+      {isTouchDevice && (
+        <button
+          type="button"
+          aria-label={isAnimating ? 'Stop animation' : 'Play animation'}
+          aria-pressed={isAnimating}
+          onClick={handlePlayClick}
+          className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-3 right-3 z-10 flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+        >
+          {isAnimating ? (
+            <PauseIcon className="size-4 text-neutral-800 dark:text-neutral-100" />
+          ) : (
+            <PlayIcon className="size-4 text-neutral-800 dark:text-neutral-100" />
+          )}
+        </button>
+      )}
       {children}
     </div>
   );
