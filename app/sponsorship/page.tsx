@@ -33,7 +33,7 @@ const SUPPORT_LIST = [
 
 const Sponsorship = () => {
   return (
-    <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center">
+    <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center pb-20">
       <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
         Support the project
       </h1>
