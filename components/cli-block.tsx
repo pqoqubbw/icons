@@ -71,10 +71,17 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                   'after:w-[calc(min(40px,var(--scroll-area-overflow-x-end,100px))+100px)] after:bg-[linear-gradient(to_left,white_0%,white_30%,transparent)] after:[--scroll-area-overflow-x-end:inherit] dark:after:bg-[linear-gradient(to_left,rgb(47_47_47/1)_0%,rgb(47_47_47/1)_30%,transparent)]'
                 )}
               >
-                <span className="text-neutral-600 dark:text-neutral-400">
+                <span className="sr-only">
+                  {getPackageManagerPrefix(pm)} shadcn add @lucide-animated/
+                  {currentIconName.current}
+                </span>
+                <span
+                  className="text-neutral-600 dark:text-neutral-400"
+                  aria-hidden="true"
+                >
                   {getPackageManagerPrefix(pm)}
                 </span>{' '}
-                <span className="text-black dark:text-white">
+                <span className="text-black dark:text-white" aria-hidden="true">
                   shadcn add @lucide-animated/
                 </span>
                 <TextLoop
@@ -116,9 +123,14 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
               >
                 {state === 'copied' && (
-                  <CheckIcon className="size-4 text-green-600" />
+                  <CheckIcon
+                    className="size-4 text-green-600"
+                    aria-hidden="true"
+                  />
                 )}
-                {state === 'idle' && <CopyIcon className="size-4" />}
+                {state === 'idle' && (
+                  <CopyIcon className="size-4" aria-hidden="true" />
+                )}
               </button>
             </BaseScrollArea.Root>
           </TabsContent>
