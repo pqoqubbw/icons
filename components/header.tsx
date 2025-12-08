@@ -88,6 +88,26 @@ const Header = () => {
           <Logo />
         </Link>
         <div className="flex items-center gap-2">
+          <Link
+            href="/sponsorship"
+            aria-label="Sponsor Project"
+            tabIndex={0}
+            className="focus-visible:outline-primary flex items-center gap-1 pr-1 font-sans text-sm text-[#3F3F47] underline-offset-4 focus-within:outline-offset-4 hover:underline focus-visible:outline-1 dark:text-[#FAFAFA]"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.72238 13.5321L7.71838 13.5297L7.70318 13.5217C7.38749 13.3499 7.07746 13.1679 6.77358 12.976C6.04907 12.5202 5.35871 12.0122 4.70798 11.456C3.23598 10.1864 1.59998 8.28165 1.59998 6.00005C1.60005 5.25562 1.8309 4.52952 2.26074 3.92172C2.69058 3.31393 3.29827 2.85433 4.00014 2.60622C4.702 2.35811 5.46353 2.33369 6.17985 2.53631C6.89618 2.73894 7.53207 3.15865 7.99998 3.73765C8.46788 3.15865 9.10377 2.73894 9.8201 2.53631C10.5364 2.33369 11.2979 2.35811 11.9998 2.60622C12.7017 2.85433 13.3094 3.31393 13.7392 3.92172C14.1691 4.52952 14.3999 5.25562 14.4 6.00005C14.4 8.28165 12.7648 10.1864 11.292 11.456C10.3674 12.246 9.36371 12.9382 8.29678 13.5217L8.28158 13.5297L8.27758 13.5321H8.27598C8.19097 13.5771 8.09627 13.6007 8.00007 13.6008C7.90388 13.601 7.80911 13.5776 7.72398 13.5329L7.72238 13.5321Z"
+                className="fill-primary"
+              />
+            </svg>
+            Sponsor Project
+          </Link>
           <ThemeToggle />
           <GithubStartsButton />
         </div>
