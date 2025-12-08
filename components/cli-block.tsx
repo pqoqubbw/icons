@@ -113,10 +113,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 aria-roledescription="Copy to clipboard"
                 aria-disabled={state === 'copied'}
                 onClick={handleCopyToClipboard}
-                className={cn(
-                  'focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700',
-                  "after:absolute after:-inset-x-[572px] after:-inset-y-[6px] after:-right-1.5 after:content-[''] after:select-none"
-                )}
+                className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
               >
                 {state === 'copied' && (
                   <CheckIcon className="size-4 text-green-600" />
