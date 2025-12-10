@@ -2179,4 +2179,22 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'box',
+    'path': path.join(__dirname, '../icons/box.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cooking-pot',
+    'path': path.join(__dirname, '../icons/cooking-pot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'wrench',
+    'path': path.join(__dirname, '../icons/wrench.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
