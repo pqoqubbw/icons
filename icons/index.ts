@@ -356,6 +356,12 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { HandIcon } from './hand';
+import { HandFistIcon } from './hand-fist';
+import { HandGrabIcon } from './hand-grab';
+import { HandHelpingIcon } from './hand-helping';
+import { HandMetalIcon } from './hand-metal';
+import { HeartHandshakeIcon } from './heart-handshake';
 
 type IconListItem = {
   name: string;
@@ -3084,6 +3090,62 @@ const ICON_LIST: IconListItem[] = [
       'energy',
       'alert',
       'exclamation',
+    ],
+  },
+  {
+    name: 'hand',
+    icon: HandIcon,
+    keywords: ['wave', 'hand', 'hello', 'bye', 'gesture'],
+  },
+  {
+    name: 'hand-grab',
+    icon: HandGrabIcon,
+    keywords: ['gesture', 'hand', 'grab'],
+  },
+  {
+    name: 'heart-handshake',
+    icon: HeartHandshakeIcon,
+    keywords: [
+      'agreement',
+      'charity',
+      'deal',
+      'handshake',
+      'heart',
+      'love',
+      'partnership',
+      'relationship',
+      'support',
+      'together',
+    ],
+  },
+  {
+    name: 'hand-fist',
+    icon: HandFistIcon,
+    keywords: ['fist', 'bump', 'power', 'punch', 'strength', 'rock'],
+  },
+  {
+    name: 'hand-helping',
+    icon: HandHelpingIcon,
+    keywords: [
+      'agreement',
+      'assistance',
+      'help',
+      'partnership',
+      'support',
+      'volunteer',
+    ],
+  },
+  {
+    name: 'hand-metal',
+    icon: HandMetalIcon,
+    keywords: [
+      'rock',
+      'metal',
+      'heavy metal',
+      'music',
+      'gesture',
+      'concert',
+      'horns',
     ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
