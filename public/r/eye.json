@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "eye",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "eye.tsx",
+      "content": "'use client';\r\n\r\nimport { motion, useAnimation } from 'motion/react';\r\nimport type { HTMLAttributes } from 'react';\r\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\r\nimport { cn } from '@/lib/utils';\r\n\r\nexport interface EyeIconHandle {\r\n  startAnimation: () => void;\r\n  stopAnimation: () => void;\r\n}\r\n\r\ninterface EyeIconProps extends HTMLAttributes<HTMLDivElement> {\r\n  size?: number;\r\n}\r\n\r\nconst EyeIcon = forwardRef<EyeIconHandle, EyeIconProps>(\r\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\r\n    const controls = useAnimation();\r\n    const isControlledRef = useRef(false);\r\n\r\n    useImperativeHandle(ref, () => {\r\n      isControlledRef.current = true;\r\n      return {\r\n        startAnimation: () => controls.start('animate'),\r\n        stopAnimation: () => controls.start('normal'),\r\n      };\r\n    });\r\n\r\n    const handleMouseEnter = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) {\r\n          controls.start('animate');\r\n        } else {\r\n          onMouseEnter?.(e);\r\n        }\r\n      },\r\n      [controls, onMouseEnter]\r\n    );\r\n\r\n    const handleMouseLeave = useCallback(\r\n      (e: React.MouseEvent<HTMLDivElement>) => {\r\n        if (!isControlledRef.current) {\r\n          controls.start('normal');\r\n        } else {\r\n          onMouseLeave?.(e);\r\n        }\r\n      },\r\n      [controls, onMouseLeave]\r\n    );\r\n\r\n    return (\r\n      <div\r\n        className={cn(className)}\r\n        onMouseEnter={handleMouseEnter}\r\n        onMouseLeave={handleMouseLeave}\r\n        {...props}\r\n      >\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          width={size}\r\n          height={size}\r\n          viewBox=\"0 0 24 24\"\r\n          fill=\"none\"\r\n          stroke=\"currentColor\"\r\n          strokeWidth=\"2\"\r\n          strokeLinecap=\"round\"\r\n          strokeLinejoin=\"round\"\r\n        >\r\n        <motion.path\r\n            d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\"\r\n            variants={{\r\n              normal: { scaleY: 1, opacity: 1 },\r\n              animate: { scaleY: [1, 0.1, 1], opacity: [1, 0.3, 1] },\r\n            }}\r\n            transition={{ duration: 0.4, ease: \"easeInOut\" }}\r\n            animate={controls}\r\n            style={{ originY: \"50%\" }}\r\n          />\r\n          <motion.circle\r\n            cx=\"12\"\r\n            cy=\"12\"\r\n            r=\"3\"\r\n            variants={{\r\n              normal: { scale: 1, opacity: 1 },\r\n              animate: { scale: [1, 0.3, 1], opacity: [1, 0.3, 1] },\r\n            }}\r\n            transition={{ duration: 0.4, ease: \"easeInOut\" }}\r\n            animate={controls}\r\n          />\r\n        </svg>\r\n      </div>\r\n    );\r\n  }\r\n);\r\n\r\nEyeIcon.displayName = 'EyeIcon';\r\n\r\nexport { EyeIcon };",
+      "type": "registry:ui"
+    }
+  ]
+}
