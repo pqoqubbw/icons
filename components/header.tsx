@@ -125,10 +125,10 @@ const Header = () => {
           href="/"
           aria-label="Lucide Animated - Home"
           tabIndex={0}
-          className="focus-visible:outline-primary mr-auto flex items-center gap-2 font-sans text-xl focus-within:outline-offset-4 focus-visible:outline-1"
+          className="focus-visible:outline-primary mr-auto flex h-[42px] items-center gap-2 font-sans text-base focus-within:outline-offset-4 focus-visible:outline-1 max-[524px]:translate-y-[-2px] min-[395px]:text-xl"
         >
           <Logo
-            className="text-primary w-8 data-[type='christmas']:translate-y-[-4px]"
+            className="text-primary w-6 data-[type='christmas']:translate-y-[-4px] min-[395px]:w-8"
             type="christmas"
           />
           lucide-animated
