@@ -4,15 +4,12 @@ import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from 'next-themes';
 import { useHotkeys } from 'react-hotkeys-hook';
 
-import { useBrowser } from '@/hooks/use-browser';
-
 type Theme = 'light' | 'dark' | 'system';
 
 const KEYS = ['ctrl+u', 'meta+u'];
 
 const ThemeToggle = () => {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
-  const { isChrome } = useBrowser();
 
   const isDark = resolvedTheme === 'dark';
   const nextTheme = isDark ? 'light' : 'dark';
@@ -20,10 +17,7 @@ const ThemeToggle = () => {
   const handleChangeTheme = (theme: Theme) => {
     if (theme === currentTheme) return;
 
-    if (!isChrome) return setTheme(theme);
-
-    if (!document.startViewTransition) return setTheme(theme);
-    document.startViewTransition(() => setTheme(theme));
+    setTheme(theme);
   };
 
   useHotkeys(
