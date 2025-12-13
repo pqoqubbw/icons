@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { Stamp } from './stamp';
 
 const DESIGN_WIDTH = 1040;
+const DESIGN_HEIGHT = 460;
 
 type AmountSelectorProps = {
   amounts: typeof SUPPORT_LIST;
@@ -104,15 +105,18 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
       <div
         ref={containerRef}
         className={cn(
-          'supports-[corner-shape:squircle]:corner-squircle relative h-fit w-full rounded-[60px] bg-white supports-[corner-shape:squircle]:rounded-[60px] dark:bg-black',
-          'aspect-[1040/490] max-[610px]:hidden'
+          'supports-[corner-shape:squircle]:corner-squircle relative w-full rounded-[40px] bg-white supports-[corner-shape:squircle]:rounded-[60px] dark:bg-black',
+          'max-[610px]:hidden'
         )}
+        style={{
+          height: DESIGN_HEIGHT * scale,
+        }}
       >
         <div
           className="origin-top-left"
           style={{
             width: DESIGN_WIDTH,
-            height: 490,
+            height: DESIGN_HEIGHT,
             transform: `scale(${scale})`,
           }}
         >
@@ -154,13 +158,14 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
             </div>
           </div>
           <div className="mt-[38px] flex w-full items-center gap-[60px] px-[70px]">
-            <div className="supports-[corner-shape:squircle]:corner-squircle h-[242px] w-[220px] border border-[#DBD8D8] supports-[corner-shape:squircle]:rounded-[40px] dark:border-neutral-900">
+            <div className="supports-[corner-shape:squircle]:corner-squircle h-[242px] w-[220px] overflow-hidden rounded-[20px] border border-[#DBD8D8] supports-[corner-shape:squircle]:rounded-[40px] dark:border-neutral-900">
               <svg
                 width="220"
                 height="242"
                 viewBox="0 0 220 242"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="scale-105"
               >
                 <g clipPath="url(#clip0_143_5174)">
                   <path
