@@ -19,7 +19,7 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={0}
-          className="hover:decoration-primary focus-visible:outline-primary underline underline-offset-3 transition-[decoration-color] duration-50 focus-within:outline-offset-0 focus-visible:outline-1"
+          className="hover:decoration-primary focus-visible:outline-primary underline underline-offset-3 transition-[decoration-color] duration-100 focus-within:outline-offset-0 focus-visible:outline-1"
         >
           MIT License
         </a>

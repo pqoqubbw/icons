@@ -47,7 +47,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
   };
 
   return (
-    <div className="relative mt-[50px] w-full max-w-[642px] px-4">
+    <div className="relative mt-[40px] w-full max-w-[642px] px-4">
       <Tabs
         className="w-full"
         value={packageName}
@@ -139,7 +139,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
               <BaseScrollArea.Scrollbar
                 keepMounted={false}
                 orientation="horizontal"
-                className="pointer-events-none absolute right-2! bottom-1! left-2! flex h-0.5 touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-150 data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0 data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0 dark:bg-neutral-700"
+                className="pointer-events-none absolute right-2! bottom-1! left-2! flex h-0.5 touch-none rounded bg-neutral-200 opacity-0 transition-opacity duration-100 data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0 data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0 dark:bg-neutral-700"
               >
                 <BaseScrollArea.Thumb className="relative w-full rounded bg-neutral-600 dark:bg-neutral-400" />
               </BaseScrollArea.Scrollbar>

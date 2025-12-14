@@ -37,7 +37,7 @@ const IconItem = ({ icon }: { icon: Icon }) => {
 
 const IconsList = ({ icons }: Props) => {
   return (
-    <div className="mt-[100px] mb-20 w-full">
+    <div className="mt-[40px] mb-20 w-full">
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
         {icons.map((icon) => {
           return <IconItem key={icon.name} icon={icon} />;

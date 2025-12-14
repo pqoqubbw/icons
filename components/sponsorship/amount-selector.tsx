@@ -268,7 +268,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
                 tabIndex={0}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary focus-visible:outline-primary mt-[16px] flex w-fit cursor-pointer items-center justify-center px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-50 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1"
+                className="bg-primary focus-visible:outline-primary mt-[16px] flex w-fit cursor-pointer items-center justify-center px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-100 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1"
               >
                 Sponsor
               </a>
@@ -283,7 +283,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
         target="_blank"
         tabIndex={0}
         rel="noopener noreferrer"
-        className="bg-primary focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle hidden w-full cursor-pointer items-center justify-center rounded-[12px] px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-50 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1 supports-[corner-shape:squircle]:rounded-[20px] max-[610px]:flex"
+        className="bg-primary focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle hidden w-full cursor-pointer items-center justify-center rounded-[12px] px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-100 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1 supports-[corner-shape:squircle]:rounded-[20px] max-[610px]:flex"
       >
         Sponsor
       </a>

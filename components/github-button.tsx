@@ -57,7 +57,7 @@ const GithubStartsButton = async () => {
         viewBox="0 0 13 13"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-neutral-400 transition-colors duration-50 group-hover/github-stars:text-[#e3b341]"
+        className="text-neutral-400 transition-colors duration-100 group-hover/github-stars:text-[#e3b341]"
       >
         <path
           fillRule="evenodd"
