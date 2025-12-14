@@ -19,7 +19,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
     amounts[0].price.toString()
   );
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -106,10 +106,12 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
         ref={containerRef}
         className={cn(
           'supports-[corner-shape:squircle]:corner-squircle relative w-full rounded-[40px] bg-white supports-[corner-shape:squircle]:rounded-[60px] dark:bg-black',
-          'max-[610px]:hidden'
+          'max-[610px]:hidden',
+          'transition-opacity duration-100',
+          scale === 0 ? 'opacity-0' : 'opacity-100'
         )}
         style={{
-          height: DESIGN_HEIGHT * scale,
+          height: scale === 0 ? DESIGN_HEIGHT : DESIGN_HEIGHT * scale,
         }}
       >
         <div
@@ -263,6 +265,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
               </p>
               <a
                 href={buyLink}
+                tabIndex={0}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary focus-visible:outline-primary mt-[16px] flex w-fit cursor-pointer items-center justify-center px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-50 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1"
@@ -278,6 +281,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
       <a
         href={buyLink}
         target="_blank"
+        tabIndex={0}
         rel="noopener noreferrer"
         className="bg-primary focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle hidden w-full cursor-pointer items-center justify-center rounded-[12px] px-[24px] py-[8px] font-sans text-[18px] text-white transition-colors duration-50 hover:bg-[color-mix(in_oklab,var(--color-primary),black_10%)] focus-visible:outline-1 focus-visible:outline-offset-1 supports-[corner-shape:squircle]:rounded-[20px] max-[610px]:flex"
       >

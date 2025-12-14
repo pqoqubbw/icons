@@ -125,15 +125,23 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
 
   const [state, setState] = useState<IconStatus>('idle');
 
-  const handleCopy = () => {
+  const handleCopy = async () => {
     if (state !== 'idle') return;
 
-    op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
-    navigator.clipboard.writeText(
-      `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${name}.json"`
-    );
-    setState('done');
-    setTimeout(() => setState('idle'), 2000);
+    try {
+      op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
+      await navigator.clipboard.writeText(
+        `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${name}.json"`
+      );
+      setState('done');
+      setTimeout(() => setState('idle'), 2000);
+    } catch {
+      toast.error('Failed to copy to clipboard', {
+        description: 'Please check your browser permissions.',
+      });
+      setState('error');
+      setTimeout(() => setState('idle'), 2000);
+    }
   };
 
   return (
@@ -141,9 +149,8 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
       <TooltipTrigger
         tabIndex={0}
         aria-label="Copy shadcn/cli command"
-        aria-pressed={state === 'done'}
-        aria-roledescription="Copy shadcn/cli command"
         aria-disabled={state !== 'idle'}
+        data-busy={state !== 'idle' ? '' : undefined}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleCopy}
       >
@@ -182,9 +189,12 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
       await navigator.clipboard.writeText(content);
       setState('done');
       setTimeout(() => setState('idle'), 2000);
-    } catch (error) {
-      console.error('Failed to copy icon content:', error);
-      setState('idle');
+    } catch {
+      toast.error('Failed to copy to clipboard', {
+        description: 'Please check your browser permissions.',
+      });
+      setState('error');
+      setTimeout(() => setState('idle'), 2000);
     }
   };
 
@@ -194,9 +204,8 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
         tabIndex={0}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         aria-label="Copy .tsx code"
-        aria-pressed={state === 'done'}
-        aria-roledescription="Copy .tsx code"
         aria-disabled={state !== 'idle'}
+        data-busy={state !== 'idle' ? '' : undefined}
         onClick={handleCopy}
       >
         <IconState status={state}>
@@ -231,23 +240,31 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
 
       if (data.url) {
         const popupOpened = window.open(data.url, '_blank');
-
-        if (!popupOpened) {
+        console.log({ popupOpened });
+        if (popupOpened === null) {
           toast.warning('Pop-up window blocked.', {
-            description: 'Click Open to continue in new tab.',
+            description: 'Click below to continue in new tab.',
             duration: 5000,
             action: {
-              label: 'Open',
+              label: 'Open in new tab',
               onClick: () => window.open(data.url, '_blank'),
             },
           });
+
+          setState('error');
         }
+      } else {
+        setState('done');
       }
-      setState('done');
+
       setTimeout(() => setState('idle'), 2000);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error(error);
-      setState('idle');
+      toast.error('Failed to open in v0', {
+        description: 'Please try again later.',
+      });
+      setState('error');
+      setTimeout(() => setState('idle'), 2000);
     }
   };
 
@@ -257,9 +274,8 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
         tabIndex={0}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         aria-label="Open in v0"
-        aria-pressed={state !== 'idle'}
-        aria-roledescription="Open in v0"
         aria-disabled={state !== 'idle'}
+        data-busy={state !== 'idle' ? '' : undefined}
         onClick={handleOpenInV0}
       >
         <IconState status={state}>
@@ -282,7 +298,7 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
 const Actions = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <TooltipProvider>
-      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 focus-within:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
+      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 has-focus-visible:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
         <CopyCodeAction name={name} />
         <CopyCLIAction name={name} />
         <OpenInV0Action name={name} />

@@ -1,9 +1,11 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
+import type { IconStatus } from '@/components/ui/icon-state';
 import { useRef, useState, useTransition } from 'react';
 import { ScrollArea as BaseScrollArea } from '@base-ui-components/react/scroll-area';
 import { CopyIcon } from 'lucide-react';
+import { toast } from 'sonner';
 
 import { IconState } from '@/components/ui/icon-state';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -14,7 +16,7 @@ import { cn } from '@/lib/utils';
 import { usePackageNameContext } from '@/providers/package-name';
 
 const CliBlock = ({ icons }: { icons: Icon[] }) => {
-  const [state, setState] = useState<'idle' | 'copied'>('idle');
+  const [state, setState] = useState<IconStatus>('idle');
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, startTransition] = useTransition();
   const currentIconName = useRef('');
@@ -25,13 +27,22 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
     startTransition(async () => {
       const iconName = currentIconName.current || icons[0].name;
 
-      await navigator.clipboard.writeText(
-        `${getPackageManagerPrefix(packageName)} shadcn add @lucide-animated/${iconName}`
-      );
+      try {
+        await navigator.clipboard.writeText(
+          `${getPackageManagerPrefix(packageName)} shadcn add @lucide-animated/${iconName}`
+        );
 
-      setState('copied');
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setState('idle');
+        setState('done');
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        setState('idle');
+      } catch {
+        toast.error('Failed to copy to clipboard', {
+          description: 'Please check your browser permissions.',
+        });
+        setState('error');
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        setState('idle');
+      }
     });
   };
 
@@ -136,13 +147,11 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 tabIndex={0}
                 type="button"
                 aria-label="Copy to clipboard"
-                aria-pressed={state === 'copied'}
-                aria-roledescription="Copy to clipboard"
-                aria-disabled={state === 'copied'}
+                aria-disabled={state !== 'idle'}
                 onClick={handleCopyToClipboard}
                 className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
               >
-                <IconState status={state === 'copied' ? 'done' : 'idle'}>
+                <IconState status={state}>
                   <CopyIcon className="size-4" aria-hidden="true" />
                 </IconState>
               </button>

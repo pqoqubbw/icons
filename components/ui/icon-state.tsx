@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CheckIcon, LoaderIcon } from 'lucide-react';
+import { CheckIcon, LoaderIcon, XIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
 const DEFAULT_LOADING_DELAY = 150;
 
-type IconStatus = 'idle' | 'loading' | 'done';
+type IconStatus = 'idle' | 'loading' | 'done' | 'error';
 
 type IconStateProps = {
   children: React.ReactNode;
@@ -38,6 +38,10 @@ const IconState = ({ children, status = 'idle' }: IconStateProps) => {
 
     if (status === 'done') {
       return <CheckIcon className="text-green-600" aria-hidden="true" />;
+    }
+
+    if (status === 'error') {
+      return <XIcon className="text-red-500" aria-hidden="true" />;
     }
 
     return children;
