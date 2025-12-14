@@ -23,7 +23,7 @@ const Home = () => {
           MIT License
         </a>
         ) collection of smooth animated icons for your projects. feel free to
-        use them, share your feedback, and let's make this library awesome
+        use them, share your feedback, and let&apos;s make this library awesome
         together
       </p>
       <p className="text-secondary mt-4 font-mono text-xs min-[640px]:text-sm">

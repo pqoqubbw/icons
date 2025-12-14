@@ -14,6 +14,7 @@ const useTouchDevice = (): boolean => {
       // @ts-expect-error - legacy property
       navigator.msMaxTouchPoints > 0;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsTouchDevice(hasTouchScreen);
   }, []);
 

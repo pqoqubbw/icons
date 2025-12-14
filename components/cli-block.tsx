@@ -14,6 +14,7 @@ import { usePackageNameContext } from '@/providers/package-name';
 
 const CliBlock = ({ icons }: { icons: Icon[] }) => {
   const [state, setState] = useState<'idle' | 'copied'>('idle');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, startTransition] = useTransition();
   const currentIconName = useRef('');
 
@@ -47,6 +48,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
             </TabsTrigger>
           ))}
         </TabsList>
+        {/* eslint-disable-next-line react-hooks/refs */}
         {Object.values(PACKAGE_MANAGER).map((pm) => (
           <TabsContent
             key={pm}
