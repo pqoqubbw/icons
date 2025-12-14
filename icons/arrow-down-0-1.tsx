@@ -31,7 +31,7 @@ const SWAP_VARIANTS: Variants = {
   }),
 };
 
-const ARROW_DOWN01CON = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
+const ArrowDown01Icon = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -115,6 +115,6 @@ const ARROW_DOWN01CON = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
   }
 );
 
-ARROW_DOWN01CON.displayName = 'ArrowDown01con';
+ArrowDown01Icon.displayName = 'ArrowDown01con';
 
-export { ARROW_DOWN01CON };
+export { ArrowDown01Icon };
