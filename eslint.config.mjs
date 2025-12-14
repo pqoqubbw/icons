@@ -3,6 +3,7 @@ import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import nextTypescript from 'eslint-config-next/typescript';
 import prettier from 'eslint-config-prettier';
 
+import noComments from './eslint-rules/no-comments.js';
 import uppercaseVariants from './eslint-rules/uppercase-variants.js';
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -39,11 +40,13 @@ const config = [
     plugins: {
       local: {
         rules: {
+          'no-comments': noComments,
           'uppercase-variants': uppercaseVariants,
         },
       },
     },
     rules: {
+      'local/no-comments': 'error',
       'local/uppercase-variants': 'error',
     },
   },

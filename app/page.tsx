@@ -1,6 +1,7 @@
 import { getIcons } from '@/actions/get-icons';
 import { CliBlock } from '@/components/cli-block';
 import { IconsList } from '@/components/list';
+import { LINK } from '@/constants';
 
 const Home = () => {
   const icons = getIcons();
@@ -14,7 +15,7 @@ const Home = () => {
       <p className="text-secondary mt-5 max-w-[582px] px-4 text-center font-mono text-sm">
         an open-source (
         <a
-          href="#"
+          href={`${LINK.GITHUB}/blob/main/LICENSE`}
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={0}

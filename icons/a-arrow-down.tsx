@@ -88,7 +88,6 @@ const AArrowDownIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Letra A */}
           <motion.path
             d="M3.5 13h6"
             animate={controls}
@@ -99,7 +98,6 @@ const AArrowDownIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
             animate={controls}
             variants={LETTER_VARIANTS}
           />
-          {/* Seta */}
           <motion.path
             d="M18 7v9"
             animate={controls}

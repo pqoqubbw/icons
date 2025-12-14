@@ -91,9 +91,7 @@ const CloudRainIcon = forwardRef<CloudRainIconHandle, CloudRainIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Cloud - static */}
           <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
-          {/* Rain lines - opacity animation */}
           <motion.g
             variants={RAIN_VARIANTS}
             animate={controls}

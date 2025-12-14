@@ -17,7 +17,7 @@ interface LoaderPinwheelIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const G_VARIANTS: Variants = {
-  normal: { rotate: 0 }, // if you want to start from a different angle, change this value or remove it entirely
+  normal: { rotate: 0 },
   animate: {
     rotate: 360,
     transition: {

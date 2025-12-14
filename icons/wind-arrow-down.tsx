@@ -114,7 +114,6 @@ const WindArrowDownIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Wind paths */}
         <motion.path
           d="M12.8 21.6A2 2 0 1 0 14 18H2"
           variants={WIND_VARIANTS}
