@@ -88,7 +88,6 @@ const AArrowUpIcon = forwardRef<AArrowUpIconHandle, AArrowUpIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-         
           <motion.path
             d="M3.5 13h6"
             animate={controls}
@@ -99,7 +98,7 @@ const AArrowUpIcon = forwardRef<AArrowUpIconHandle, AArrowUpIconProps>(
             animate={controls}
             variants={LETTER_VARIANTS}
           />
-         
+
           <motion.path
             d="M18 16V7"
             animate={controls}
