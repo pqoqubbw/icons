@@ -3,8 +3,9 @@
 import type { Icon } from '@/actions/get-icons';
 import { useRef, useState, useTransition } from 'react';
 import { ScrollArea as BaseScrollArea } from '@base-ui-components/react/scroll-area';
-import { CheckIcon, CopyIcon } from 'lucide-react';
+import { CopyIcon } from 'lucide-react';
 
+import { IconState } from '@/components/ui/icon-state';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TextLoop } from '@/components/ui/text-loop';
 import { PACKAGE_MANAGER } from '@/constants';
@@ -124,15 +125,9 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 onClick={handleCopyToClipboard}
                 className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[6px] p-2 transition-[background-color] duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[8px] dark:hover:bg-neutral-700"
               >
-                {state === 'copied' && (
-                  <CheckIcon
-                    className="size-4 text-green-600"
-                    aria-hidden="true"
-                  />
-                )}
-                {state === 'idle' && (
+                <IconState status={state === 'copied' ? 'done' : 'idle'}>
                   <CopyIcon className="size-4" aria-hidden="true" />
-                )}
+                </IconState>
               </button>
             </BaseScrollArea.Root>
           </TabsContent>

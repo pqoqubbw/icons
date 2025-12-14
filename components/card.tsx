@@ -1,6 +1,7 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
+import type { IconStatus } from '@/components/ui/icon-state';
 import type { RefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useOpenPanel } from '@openpanel/nextjs';
@@ -10,6 +11,7 @@ import { toast } from 'sonner';
 import { getIconContent } from '@/actions/get-icon-content';
 import { openInV0Action } from '@/actions/open-in-v0';
 import { ANALYTIC_EVENT } from '@/components/analytics';
+import { IconState } from '@/components/ui/icon-state';
 import {
   Tooltip,
   TooltipContent,
@@ -121,17 +123,17 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
   const op = useOpenPanel();
   const { packageName } = usePackageNameContext();
 
-  const [copied, setCopied] = useState(false);
+  const [state, setState] = useState<IconStatus>('idle');
 
   const handleCopy = () => {
-    if (copied) return;
+    if (state !== 'idle') return;
 
     op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
     navigator.clipboard.writeText(
       `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${name}.json"`
     );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setState('done');
+    setTimeout(() => setState('idle'), 2000);
   };
 
   return (
@@ -139,16 +141,18 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
       <TooltipTrigger
         tabIndex={0}
         aria-label="Copy shadcn/cli command"
-        aria-pressed={copied}
+        aria-pressed={state === 'done'}
         aria-roledescription="Copy shadcn/cli command"
-        aria-disabled={copied}
+        aria-disabled={state !== 'idle'}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         onClick={handleCopy}
       >
-        <Terminal
-          className="size-4 text-neutral-800 dark:text-neutral-100"
-          aria-hidden="true"
-        />
+        <IconState status={state}>
+          <Terminal
+            className="size-4 text-neutral-800 dark:text-neutral-100"
+            aria-hidden="true"
+          />
+        </IconState>
       </TooltipTrigger>
       <TooltipContent>
         Copy{' '}
@@ -164,25 +168,23 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
 const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
   const op = useOpenPanel();
 
-  const [copied, setCopied] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [state, setState] = useState<IconStatus>('idle');
 
   const handleCopy = async () => {
-    if (copied || isLoading) return;
+    if (state !== 'idle') return;
 
     try {
-      setIsLoading(true);
+      setState('loading');
       op.track(ANALYTIC_EVENT.ICON_COPY, { icon: `${name}.tsx` });
 
       const content = await getIconContent(name);
 
       await navigator.clipboard.writeText(content);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      setState('done');
+      setTimeout(() => setState('idle'), 2000);
     } catch (error) {
       console.error('Failed to copy icon content:', error);
-    } finally {
-      setIsLoading(false);
+      setState('idle');
     }
   };
 
@@ -192,15 +194,17 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
         tabIndex={0}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         aria-label="Copy .tsx code"
-        aria-pressed={copied}
+        aria-pressed={state === 'done'}
         aria-roledescription="Copy .tsx code"
-        aria-disabled={copied}
+        aria-disabled={state !== 'idle'}
         onClick={handleCopy}
       >
-        <Copy
-          className="size-4 text-neutral-800 dark:text-neutral-100"
-          aria-hidden="true"
-        />
+        <IconState status={state}>
+          <Copy
+            className="size-4 text-neutral-800 dark:text-neutral-100"
+            aria-hidden="true"
+          />
+        </IconState>
       </TooltipTrigger>
       <TooltipContent>
         Copy{' '}
@@ -216,12 +220,12 @@ const CopyCodeAction = ({ name }: Pick<Icon, 'name'>) => {
 const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   const op = useOpenPanel();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [state, setState] = useState<IconStatus>('idle');
 
   const handleOpenInV0 = async () => {
-    if (isLoading) return;
+    if (state !== 'idle') return;
     try {
-      setIsLoading(true);
+      setState('loading');
       op.track(ANALYTIC_EVENT.ICON_OPEN_IN_V0, { icon: `${name}.tsx` });
       const data = await openInV0Action(name);
 
@@ -239,10 +243,11 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
           });
         }
       }
+      setState('done');
+      setTimeout(() => setState('idle'), 2000);
     } catch (error) {
       console.error(error);
-    } finally {
-      setIsLoading(false);
+      setState('idle');
     }
   };
 
@@ -252,15 +257,17 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
         tabIndex={0}
         className="focus-visible:outline-primary supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
         aria-label="Open in v0"
-        aria-pressed={isLoading}
+        aria-pressed={state !== 'idle'}
         aria-roledescription="Open in v0"
-        aria-disabled={isLoading}
+        aria-disabled={state !== 'idle'}
         onClick={handleOpenInV0}
       >
-        <V0Icon
-          className="size-5 text-neutral-800 dark:text-neutral-100"
-          aria-hidden="true"
-        />
+        <IconState status={state}>
+          <V0Icon
+            className="size-5 text-neutral-800 dark:text-neutral-100"
+            aria-hidden="true"
+          />
+        </IconState>
       </TooltipTrigger>
       <TooltipContent>
         Open in{' '}
