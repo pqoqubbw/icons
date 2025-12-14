@@ -16,7 +16,7 @@ interface ConnectIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const plugVariants: Variants = {
+const PLUG_VARIANTS: Variants = {
   normal: {
     x: 0,
     y: 0,
@@ -27,7 +27,7 @@ const plugVariants: Variants = {
   },
 };
 
-const socketVariants: Variants = {
+const SOCKET_VARIANTS: Variants = {
   normal: {
     x: 0,
     y: 0,
@@ -38,7 +38,7 @@ const socketVariants: Variants = {
   },
 };
 
-const pathVariants = {
+const PATH_VARIANTS = {
   normal: (custom: { x: number; y: number }) => ({
     d: `M${custom.x} ${custom.y} l2.5 -2.5`,
   }),
@@ -129,19 +129,19 @@ const ConnectIcon = forwardRef<ConnectIconHandle, ConnectIconProps>(
           />
           <motion.path
             d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"
-            variants={socketVariants}
+            variants={SOCKET_VARIANTS}
             animate={controls}
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={{ x: 7.5, y: 13.5 }}
             initial="normal"
             animate={controls}
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={{ x: 10.5, y: 16.5 }}
             initial="normal"
             animate={controls}
@@ -149,7 +149,7 @@ const ConnectIcon = forwardRef<ConnectIconHandle, ConnectIconProps>(
           />
           <motion.path
             d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"
-            variants={plugVariants}
+            variants={PLUG_VARIANTS}
             animate={controls}
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />

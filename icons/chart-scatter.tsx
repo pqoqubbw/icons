@@ -16,7 +16,7 @@ interface ChartScatterIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dotVariants: Variants = {
+const DOT_VARIANTS: Variants = {
   visible: (i: number) => ({
     opacity: 1,
     transition: {
@@ -99,7 +99,7 @@ const ChartScatterIcon = forwardRef<
           cx="7.5"
           cy="7.5"
           r=".5"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           custom={0}
           fill="currentColor"
         />
@@ -107,7 +107,7 @@ const ChartScatterIcon = forwardRef<
           cx="18.5"
           cy="5.5"
           r=".5"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           custom={1}
           fill="currentColor"
         />
@@ -115,7 +115,7 @@ const ChartScatterIcon = forwardRef<
           cx="11.5"
           cy="11.5"
           r=".5"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           custom={2}
           fill="currentColor"
         />
@@ -123,7 +123,7 @@ const ChartScatterIcon = forwardRef<
           cx="7.5"
           cy="16.5"
           r=".5"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           custom={3}
           fill="currentColor"
         />
@@ -131,7 +131,7 @@ const ChartScatterIcon = forwardRef<
           cx="17.5"
           cy="14.5"
           r=".5"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           custom={4}
           fill="currentColor"
         />

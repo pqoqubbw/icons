@@ -16,7 +16,7 @@ interface HandCoinsIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     translateY: 0,
     opacity: 1,
@@ -41,7 +41,7 @@ const circleVariants: Variants = {
   },
 };
 
-const secondCircleVariants: Variants = {
+const SECOND_CIRCLE_VARIANTS: Variants = {
   normal: {
     translateY: 0,
     opacity: 1,
@@ -130,14 +130,14 @@ const HandCoinsIcon = forwardRef<HandCoinsIconHandle, HandCoinsIconProps>(
             cy="9"
             r="2.9"
             animate={controls}
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
           />
           <motion.circle
             cx="6"
             cy="5"
             r="3"
             animate={controls}
-            variants={secondCircleVariants}
+            variants={SECOND_CIRCLE_VARIANTS}
           />
         </svg>
       </div>

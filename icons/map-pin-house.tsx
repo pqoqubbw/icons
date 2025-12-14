@@ -16,7 +16,7 @@ interface MapPinHouseIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const houseVariants: Variants = {
+const HOUSE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -97,7 +97,7 @@ const MapPinHouseIcon = forwardRef<MapPinHouseIconHandle, MapPinHouseIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -105,7 +105,7 @@ const MapPinHouseIcon = forwardRef<MapPinHouseIconHandle, MapPinHouseIconProps>(
           <circle cx="10" cy="10" r="3" />
           <motion.path
             d="M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z M18 22v-3"
-            variants={houseVariants}
+            variants={HOUSE_VARIANTS}
             initial="normal"
             animate={controls}
           />

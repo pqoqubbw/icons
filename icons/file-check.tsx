@@ -16,7 +16,7 @@ interface FileCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -93,7 +93,7 @@ const FileCheckIcon = forwardRef<FileCheckIconHandle, FileCheckIconProps>(
           <motion.path
             animate={controls}
             initial="normal"
-            variants={checkVariants}
+            variants={CHECK_VARIANTS}
             d="m9 15 2 2 4-4"
             style={{ transformOrigin: 'center' }}
           />

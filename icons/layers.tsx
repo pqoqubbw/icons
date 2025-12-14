@@ -16,7 +16,7 @@ interface LayersIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 100,
   damping: 14,
@@ -90,7 +90,7 @@ const LayersIcon = forwardRef<LayersIconHandle, LayersIconProps>(
               secondState: { y: 0 },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
           />
           <motion.path
             d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"
@@ -100,7 +100,7 @@ const LayersIcon = forwardRef<LayersIconHandle, LayersIconProps>(
               secondState: { y: 0 },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
           />
         </svg>
       </div>

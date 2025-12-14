@@ -16,7 +16,7 @@ interface CloudRainIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rainVariants: Variants = {
+const RAIN_VARIANTS: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.2,
@@ -24,7 +24,7 @@ const rainVariants: Variants = {
   },
 };
 
-const rainChildVariants: Variants = {
+const RAIN_CHILD_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -94,10 +94,14 @@ const CloudRainIcon = forwardRef<CloudRainIconHandle, CloudRainIconProps>(
           {/* Cloud - static */}
           <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
           {/* Rain lines - opacity animation */}
-          <motion.g variants={rainVariants} animate={controls} initial="normal">
-            <motion.path variants={rainChildVariants} d="M16 14v6" />
-            <motion.path variants={rainChildVariants} d="M8 14v6" />
-            <motion.path variants={rainChildVariants} d="M12 16v6" />
+          <motion.g
+            variants={RAIN_VARIANTS}
+            animate={controls}
+            initial="normal"
+          >
+            <motion.path variants={RAIN_CHILD_VARIANTS} d="M16 14v6" />
+            <motion.path variants={RAIN_CHILD_VARIANTS} d="M8 14v6" />
+            <motion.path variants={RAIN_CHILD_VARIANTS} d="M12 16v6" />
           </motion.g>
         </svg>
       </div>

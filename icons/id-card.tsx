@@ -16,7 +16,7 @@ interface IdCardIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const Variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -87,19 +87,19 @@ const IdCardIcon = forwardRef<IdCardIconHandle, IdCardIconProps>(
         >
           <motion.path
             d="M16 10h2"
-            variants={Variants}
+            variants={VARIANTS}
             animate={controls}
             custom={2}
           />
           <motion.path
             d="M16 14h2"
-            variants={Variants}
+            variants={VARIANTS}
             animate={controls}
             custom={2}
           />
           <motion.path
             d="M6.17 15a3 3 0 0 1 5.66 0"
-            variants={Variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
@@ -107,7 +107,7 @@ const IdCardIcon = forwardRef<IdCardIconHandle, IdCardIconProps>(
             cx="9"
             cy="11"
             r="2"
-            variants={Variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />

@@ -16,7 +16,7 @@ interface ChartPieIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { translateX: 0, translateY: 0 },
   animate: { translateX: 1.1, translateY: -1.1 },
 };
@@ -83,7 +83,7 @@ const ChartPieIcon = forwardRef<ChartPieIconHandle, ChartPieIconProps>(
               damping: 15,
               bounce: 0.6,
             }}
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />

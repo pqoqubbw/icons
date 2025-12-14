@@ -16,7 +16,7 @@ interface BellIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: [0, -10, 10, -10, 0] },
 };
@@ -73,7 +73,7 @@ const BellIcon = forwardRef<BellIconHandle, BellIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.5,

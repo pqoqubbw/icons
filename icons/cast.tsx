@@ -16,7 +16,7 @@ interface CastIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: (custom: number) => ({
     opacity: [0, 1],
@@ -82,19 +82,19 @@ const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
         >
           <path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0.2}
             d="M2 12a9 9 0 0 1 8 8"
           />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0.1}
             d="M2 16a5 5 0 0 1 4 4"
           />
           <motion.line
-            variants={variants}
+            variants={VARIANTS}
             custom={0}
             animate={controls}
             x1="2"

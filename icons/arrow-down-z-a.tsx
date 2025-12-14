@@ -16,13 +16,13 @@ interface ArrowDownZAIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const swapTransition: Transition = {
+const SWAP_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 240,
   damping: 24,
 };
 
-const swapVariants: Variants = {
+const SWAP_VARIANTS: Variants = {
   normal: {
     translateY: 0,
   },
@@ -89,18 +89,18 @@ const ArrowDownZAIcon = forwardRef<ArrowDownZAIconHandle, ArrowDownZAIconProps>(
           <path d="M7 20V4" />
           <motion.path
             d="M15 4h5l-5 6h5"
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           />
           <motion.g
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={-1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           >
             <path d="M20 18h-5" />
             <path d="M15 20v-3.5a2.5 2.5 0 0 1 5 0V20" />

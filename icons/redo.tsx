@@ -15,7 +15,7 @@ interface RedoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
+const CUSTOM_EASING = cubicBezier(0.25, 0.1, 0.25, 1);
 
 const RedoIcon = forwardRef<RedoIconHandle, RedoIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -71,7 +71,7 @@ const RedoIcon = forwardRef<RedoIconHandle, RedoIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { translateX: 0, translateY: 0, rotate: 0 },
               animate: {
@@ -84,7 +84,7 @@ const RedoIcon = forwardRef<RedoIconHandle, RedoIconProps>(
             d="M21 7v6h-6"
           />
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { pathLength: 1 },
               animate: { pathLength: [1, 0.8, 1] },

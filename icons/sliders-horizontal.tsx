@@ -16,7 +16,7 @@ interface SlidersHorizontalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 100,
   damping: 12,
@@ -94,7 +94,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.line
           x1="10"
@@ -110,7 +110,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -127,7 +127,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -144,7 +144,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -161,7 +161,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -178,7 +178,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -197,7 +197,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -216,7 +216,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
 
         <motion.line
@@ -235,7 +235,7 @@ const SlidersHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
       </svg>
     </div>

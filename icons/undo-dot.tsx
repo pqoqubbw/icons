@@ -15,7 +15,7 @@ interface UndoDotIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
+const CUSTOM_EASING = cubicBezier(0.25, 0.1, 0.25, 1);
 
 const UndoDotIcon = forwardRef<UndoDotIconHandle, UndoDotIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -71,7 +71,7 @@ const UndoDotIcon = forwardRef<UndoDotIconHandle, UndoDotIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { translateX: 0, translateY: 0, rotate: 0 },
               animate: {
@@ -84,7 +84,7 @@ const UndoDotIcon = forwardRef<UndoDotIconHandle, UndoDotIconProps>(
             d="M3 7v6h6"
           />
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { pathLength: 1 },
               animate: { pathLength: [1, 0.8, 1] },
@@ -93,7 +93,7 @@ const UndoDotIcon = forwardRef<UndoDotIconHandle, UndoDotIconProps>(
             d="M21 17a9 9 0 0 0-15-6.7L3 13"
           />
           <motion.circle
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { scale: 1 },
               animate: { scale: [1, 1.2, 1] },

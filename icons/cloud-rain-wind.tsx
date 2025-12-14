@@ -16,7 +16,7 @@ interface CloudRainWindIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const windVariants: Variants = {
+const WIND_VARIANTS: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.2,
@@ -24,7 +24,7 @@ const windVariants: Variants = {
   },
 };
 
-const windChildVariants: Variants = {
+const WIND_CHILD_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -96,10 +96,10 @@ const CloudRainWindIcon = forwardRef<
         {/* Cloud - static */}
         <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
         {/* Wind lines - opacity animation */}
-        <motion.g variants={windVariants} animate={controls} initial="normal">
-          <motion.path variants={windChildVariants} d="m9.2 22 3-7" />
-          <motion.path variants={windChildVariants} d="m9 13-3 7" />
-          <motion.path variants={windChildVariants} d="m17 13-3 7" />
+        <motion.g variants={WIND_VARIANTS} animate={controls} initial="normal">
+          <motion.path variants={WIND_CHILD_VARIANTS} d="m9.2 22 3-7" />
+          <motion.path variants={WIND_CHILD_VARIANTS} d="m9 13-3 7" />
+          <motion.path variants={WIND_CHILD_VARIANTS} d="m17 13-3 7" />
         </motion.g>
       </svg>
     </div>

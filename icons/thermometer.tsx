@@ -7,7 +7,7 @@ import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -85,7 +85,7 @@ const ThermometerIcon = forwardRef<ThermometerIconHandle, ThermometerIconProps>(
         >
           <motion.path
             d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             style={{ transformOrigin: 'center' }}
           />

@@ -16,7 +16,7 @@ interface MapPinPlusInsideIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const verticalBarVariants: Variants = {
+const VERTICAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -44,7 +44,7 @@ const verticalBarVariants: Variants = {
   },
 };
 
-const horizontalBarVariants: Variants = {
+const HORIZONTAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -114,20 +114,20 @@ const MapPinPlusInsideIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={svgVariants}
+        variants={SVG_VARIANTS}
         initial="normal"
         animate={controls}
       >
         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
         <motion.path
           d="M12 7v6"
-          variants={horizontalBarVariants}
+          variants={HORIZONTAL_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />
         <motion.path
           d="M9 10h6"
-          variants={verticalBarVariants}
+          variants={VERTICAL_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />

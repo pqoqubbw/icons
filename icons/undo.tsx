@@ -15,7 +15,7 @@ interface UndoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
+const CUSTOM_EASING = cubicBezier(0.25, 0.1, 0.25, 1);
 
 const UndoIcon = forwardRef<UndoIconHandle, UndoIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -73,7 +73,7 @@ const UndoIcon = forwardRef<UndoIconHandle, UndoIconProps>(
           <motion.path
             transition={{
               duration: 0.6,
-              ease: customEasing,
+              ease: CUSTOM_EASING,
             }}
             variants={{
               normal: { translateX: 0, translateY: 0, rotate: 0 },
@@ -89,7 +89,7 @@ const UndoIcon = forwardRef<UndoIconHandle, UndoIconProps>(
           <motion.path
             transition={{
               duration: 0.6,
-              ease: customEasing,
+              ease: CUSTOM_EASING,
             }}
             variants={{
               normal: { pathLength: 1 },

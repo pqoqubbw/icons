@@ -16,7 +16,7 @@ interface FlameIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -88,7 +88,7 @@ const FlameIcon = forwardRef<FlameIconHandle, FlameIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             fill="none"

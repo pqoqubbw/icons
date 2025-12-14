@@ -16,7 +16,7 @@ interface WindArrowDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const windVariants: Variants = {
+const WIND_VARIANTS: Variants = {
   normal: (custom: number) => ({
     pathLength: 1,
     opacity: 1,
@@ -39,7 +39,7 @@ const windVariants: Variants = {
   }),
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
     y: 0,
     opacity: 1,
@@ -117,27 +117,27 @@ const WindArrowDownIcon = forwardRef<
         {/* Wind paths */}
         <motion.path
           d="M12.8 21.6A2 2 0 1 0 14 18H2"
-          variants={windVariants}
+          variants={WIND_VARIANTS}
           initial="normal"
           animate={controls}
           custom={0.2}
         />
         <motion.path
           d="M17.5 10a2.5 2.5 0 1 1 2 4H2"
-          variants={windVariants}
+          variants={WIND_VARIANTS}
           initial="normal"
           animate={controls}
           custom={0.4}
         />
         <motion.path
           d="M10 2v8"
-          variants={arrowVariants}
+          variants={ARROW_VARIANTS}
           initial="normal"
           animate={controls}
         />
         <motion.path
           d="m6 6 4 4 4-4"
-          variants={arrowVariants}
+          variants={ARROW_VARIANTS}
           initial="normal"
           animate={controls}
         />

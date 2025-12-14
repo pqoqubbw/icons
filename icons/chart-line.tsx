@@ -16,7 +16,7 @@ interface ChartLineIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -89,7 +89,7 @@ const ChartLineIcon = forwardRef<ChartLineIconHandle, ChartLineIconProps>(
           <path d="M3 3v16a2 2 0 0 0 2 2h16" />
           <motion.path
             d="m7 13 3-3 4 4 5-5"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
           />
         </svg>

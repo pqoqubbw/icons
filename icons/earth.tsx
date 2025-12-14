@@ -16,13 +16,13 @@ interface EarthIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleTransition: Transition = {
+const CIRCLE_TRANSITION: Transition = {
   duration: 0.3,
   delay: 0.1,
   opacity: { delay: 0.15 },
 };
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -142,8 +142,8 @@ const EarthIcon = forwardRef<EarthIconHandle, EarthIconProps>(
             cx="12"
             cy="12"
             r="10"
-            transition={circleTransition}
-            variants={circleVariants}
+            transition={CIRCLE_TRANSITION}
+            variants={CIRCLE_VARIANTS}
             animate={controls}
           />
         </svg>

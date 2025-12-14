@@ -16,7 +16,7 @@ interface CloudCogIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const gVariants: Variants = {
+const G_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: 180 },
 };
@@ -77,7 +77,7 @@ const CloudCogIcon = forwardRef<CloudCogIconHandle, CloudCogIconProps>(
           <path d="M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2" />
           <motion.g
             transition={{ type: 'spring', stiffness: 50, damping: 10 }}
-            variants={gVariants}
+            variants={G_VARIANTS}
             animate={controls}
           >
             <path d="m9.2 15.9-.9-.4" />

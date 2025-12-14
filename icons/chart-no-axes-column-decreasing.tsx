@@ -16,7 +16,7 @@ interface ChartNoAxesColumnDecreasingIconProps extends HTMLAttributes<HTMLDivEle
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   visible: { pathLength: 1, opacity: 1 },
   hidden: { pathLength: 0, opacity: 0 },
 };
@@ -98,21 +98,21 @@ const ChartNoAxesColumnDecreasingIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={0}
           d="M6 20V4"
         />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={1}
           d="M12 20V10"
         />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={2}

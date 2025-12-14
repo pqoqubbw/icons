@@ -16,7 +16,7 @@ interface TrendingDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   animate: {
     x: 0,
     y: 0,
@@ -28,7 +28,7 @@ const svgVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -48,7 +48,7 @@ const pathVariants: Variants = {
   },
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -125,19 +125,19 @@ const TrendingDownIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={svgVariants}
+        variants={SVG_VARIANTS}
         initial="normal"
         animate={controls}
       >
         <motion.polyline
           points="22 17 13.5 8.5 8.5 13.5 2 7"
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           initial="normal"
           animate={controls}
         />
         <motion.polyline
           points="16 17 22 17 22 11"
-          variants={arrowVariants}
+          variants={ARROW_VARIANTS}
           initial="normal"
           animate={controls}
         />

@@ -16,12 +16,12 @@ interface SquareArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const squareVariants: Variants = {
+const SQUARE_VARIANTS: Variants = {
   normal: { transition: { duration: 0.4 } },
   animate: { transition: { duration: 0.6, ease: 'easeInOut' } },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'm16 12-4-4-4 4', translateY: 0, opacity: 1 },
   animate: {
     d: 'm16 12-4-4-4 4',
@@ -30,7 +30,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondPathVariants: Variants = {
+const SECOND_PATH_VARIANTS: Variants = {
   normal: { d: 'M12 16V8', opacity: 1 },
   animate: {
     d: ['M12 16V8', 'M12 16V13', 'M12 16V8'],
@@ -93,18 +93,18 @@ const SquareArrowUpIcon = forwardRef<
           x="3"
           y="3"
           rx="2"
-          variants={squareVariants}
+          variants={SQUARE_VARIANTS}
           animate={controls}
           initial="normal"
         />
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           initial="normal"
           d="m16 12-4-4-4 4"
         />
         <motion.path
-          variants={secondPathVariants}
+          variants={SECOND_PATH_VARIANTS}
           animate={controls}
           initial="normal"
           d="M12 16V8"

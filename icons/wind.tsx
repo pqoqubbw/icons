@@ -16,7 +16,7 @@ interface WindIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: (custom: number) => ({
     pathLength: 1,
     opacity: 1,
@@ -94,21 +94,21 @@ const WindIcon = forwardRef<WindIconHandle, WindIconProps>(
         >
           <motion.path
             d="M12.8 19.6A2 2 0 1 0 14 16H2"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={0.2}
           />
           <motion.path
             d="M17.5 8a2.5 2.5 0 1 1 2 4H2"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={0}
           />
           <motion.path
             d="M9.8 4.4A2 2 0 1 1 11 8H2"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={0.4}

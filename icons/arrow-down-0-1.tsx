@@ -16,13 +16,13 @@ interface ArrowDown01IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const swapTransition: Transition = {
+const SWAP_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 240,
   damping: 24,
 };
 
-const swapVariants: Variants = {
+const SWAP_VARIANTS: Variants = {
   normal: {
     translateY: 0,
   },
@@ -31,7 +31,7 @@ const swapVariants: Variants = {
   }),
 };
 
-const ArrowDown01con = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
+const ARROW_DOWN01CON = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -93,18 +93,18 @@ const ArrowDown01con = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
             width="4"
             height="6"
             ry="2"
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           />
           <motion.g
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={-1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           >
             <path d="M17 20v-6h-2" />
             <path d="M15 20h4" />
@@ -115,6 +115,6 @@ const ArrowDown01con = forwardRef<ArrowDown01IconHandle, ArrowDown01IconProps>(
   }
 );
 
-ArrowDown01con.displayName = 'ArrowDown01con';
+ARROW_DOWN01CON.displayName = 'ArrowDown01con';
 
-export { ArrowDown01con };
+export { ARROW_DOWN01CON };

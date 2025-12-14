@@ -17,7 +17,7 @@ interface GitCompareArrowsIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const DURATION = 0.3;
 
-const calculateDelay = (i: number) => {
+const CALCULATE_DELAY = (i: number) => {
   if (i === 0) return 0.1;
 
   return i * DURATION + 0.1;
@@ -84,8 +84,8 @@ const GitCompareArrowsIcon = forwardRef<
           r="3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(0),
-            opacity: { delay: calculateDelay(0) },
+            delay: CALCULATE_DELAY(0),
+            opacity: { delay: CALCULATE_DELAY(0) },
           }}
           variants={{
             normal: { pathLength: 1, opacity: 1, transition: { delay: 0 } },
@@ -101,8 +101,8 @@ const GitCompareArrowsIcon = forwardRef<
           d="M12 6h5a2 2 0 0 1 2 2v7"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(1),
-            opacity: { delay: calculateDelay(1) },
+            delay: CALCULATE_DELAY(1),
+            opacity: { delay: CALCULATE_DELAY(1) },
           }}
           variants={{
             normal: {
@@ -124,8 +124,8 @@ const GitCompareArrowsIcon = forwardRef<
           d="m15 9-3-3 3-3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(1),
-            opacity: { delay: calculateDelay(1) },
+            delay: CALCULATE_DELAY(1),
+            opacity: { delay: CALCULATE_DELAY(1) },
           }}
           variants={{
             normal: { opacity: 1 },
@@ -140,8 +140,8 @@ const GitCompareArrowsIcon = forwardRef<
           r="3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(2),
-            opacity: { delay: calculateDelay(2) },
+            delay: CALCULATE_DELAY(2),
+            opacity: { delay: CALCULATE_DELAY(2) },
           }}
           variants={{
             normal: { pathLength: 1, opacity: 1, transition: { delay: 0 } },
@@ -157,8 +157,8 @@ const GitCompareArrowsIcon = forwardRef<
           d="M12 18H7a2 2 0 0 1-2-2V9"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(1),
-            opacity: { delay: calculateDelay(1) },
+            delay: CALCULATE_DELAY(1),
+            opacity: { delay: CALCULATE_DELAY(1) },
           }}
           variants={{
             normal: {
@@ -180,8 +180,8 @@ const GitCompareArrowsIcon = forwardRef<
           d="m9 15 3 3-3 3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(1),
-            opacity: { delay: calculateDelay(1) },
+            delay: CALCULATE_DELAY(1),
+            opacity: { delay: CALCULATE_DELAY(1) },
           }}
           variants={{
             normal: { opacity: 1 },

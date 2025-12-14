@@ -3,6 +3,8 @@ import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import nextTypescript from 'eslint-config-next/typescript';
 import prettier from 'eslint-config-prettier';
 
+import uppercaseVariants from './eslint-rules/uppercase-variants.js';
+
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
   {
@@ -29,6 +31,20 @@ const config = [
           disallowTypeAnnotations: false,
         },
       ],
+      'prefer-arrow-callback': 'error',
+    },
+  },
+  {
+    files: ['icons/**/*.tsx'],
+    plugins: {
+      local: {
+        rules: {
+          'uppercase-variants': uppercaseVariants,
+        },
+      },
+    },
+    rules: {
+      'local/uppercase-variants': 'error',
     },
   },
 ];

@@ -16,12 +16,12 @@ interface WorkflowIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const transition: Transition = {
+const TRANSITION: Transition = {
   duration: 0.3,
   opacity: { delay: 0.15 },
 };
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -30,7 +30,7 @@ const variants: Variants = {
     pathLength: [0, 1],
     opacity: [0, 1],
     transition: {
-      ...transition,
+      ...TRANSITION,
       delay: 0.1 * custom,
     },
   }),
@@ -96,13 +96,13 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
             x="3"
             y="3"
             rx="2"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
           <motion.path
             d="M7 11v4a2 2 0 0 0 2 2h4"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={3}
           />
@@ -112,7 +112,7 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
             x="13"
             y="13"
             rx="2"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />

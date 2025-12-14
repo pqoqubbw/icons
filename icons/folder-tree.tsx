@@ -35,7 +35,7 @@ const PANEL_VARIANTS: Variants = {
   },
 };
 
-const calculateDelay = (index: number) => index * DURATION + 0.1;
+const CALCULATE_DELAY = (index: number) => index * DURATION + 0.1;
 
 const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -97,8 +97,8 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
             initial="normal"
             transition={{
               duration: DURATION,
-              delay: calculateDelay(0),
-              opacity: { delay: calculateDelay(0) },
+              delay: CALCULATE_DELAY(0),
+              opacity: { delay: CALCULATE_DELAY(0) },
             }}
           />
           <motion.path
@@ -108,8 +108,8 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
             initial="normal"
             transition={{
               duration: DURATION,
-              delay: calculateDelay(2),
-              opacity: { delay: calculateDelay(2) },
+              delay: CALCULATE_DELAY(2),
+              opacity: { delay: CALCULATE_DELAY(2) },
             }}
           />
           <motion.path
@@ -119,8 +119,8 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
             initial="normal"
             transition={{
               duration: DURATION,
-              delay: calculateDelay(1),
-              opacity: { delay: calculateDelay(1) },
+              delay: CALCULATE_DELAY(1),
+              opacity: { delay: CALCULATE_DELAY(1) },
             }}
           />
           <motion.path
@@ -130,8 +130,8 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
             initial="normal"
             transition={{
               duration: DURATION,
-              delay: calculateDelay(3),
-              opacity: { delay: calculateDelay(3) },
+              delay: CALCULATE_DELAY(3),
+              opacity: { delay: CALCULATE_DELAY(3) },
             }}
           />
         </svg>
