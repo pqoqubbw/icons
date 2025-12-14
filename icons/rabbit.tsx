@@ -31,7 +31,7 @@ const SPEED_VARIANTS: Variants = {
     rotate: [0, 5, -5, 3, -3, 0],
     x: [0, 3, -3, 2, -2, 0],
     y: [0, 1.5, -1.5, 1, -1, 0],
-    TRANSITION,
+    transition: TRANSITION,
   },
 };
 

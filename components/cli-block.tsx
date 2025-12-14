@@ -91,12 +91,29 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                   onIndexChange={(index) => {
                     currentIconName.current = icons[index].name;
                   }}
-                  interval={2}
-                  transition={{ duration: 0.25, opacity: { duration: 0.15 } }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                  interval={1.5}
                   variants={{
-                    initial: { y: -10, opacity: 0 },
-                    animate: { y: 0, opacity: 1 },
-                    exit: { y: 10, opacity: 0 },
+                    initial: {
+                      y: -12,
+                      rotateX: -90,
+                      opacity: 0,
+                      filter: 'blur(2px)',
+                    },
+                    animate: {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      filter: 'blur(0px)',
+                    },
+                    exit: {
+                      y: 12,
+                      rotateX: 90,
+                      opacity: 0,
+                      filter: 'blur(2px)',
+                    },
                   }}
                 >
                   {icons
