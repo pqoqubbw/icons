@@ -282,7 +282,7 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
 const Actions = ({ name }: Pick<Icon, 'name'>) => {
   return (
     <TooltipProvider>
-      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
+      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 focus-within:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
         <CopyCodeAction name={name} />
         <CopyCLIAction name={name} />
         <OpenInV0Action name={name} />
