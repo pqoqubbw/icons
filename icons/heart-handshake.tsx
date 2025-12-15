@@ -72,12 +72,11 @@ const HeartHandshakeIcon = forwardRef<
         variants={{
           normal: { scale: 1, rotate: 0 },
           animate: {
-            // Sequence: Pull back slightly (scale down), clap together (scale 1), then shake (rotate)
             scale: [1, 0.9, 1, 1, 1, 1, 1],
             rotate: [0, 0, 0, -7, 7, -3, 0],
             transition: {
               duration: 0.7,
-              // Timing checkpoints for the sequence [0% -> 100%]
+
               times: [0, 0.15, 0.3, 0.4, 0.55, 0.75, 1],
               ease: 'easeInOut',
             },

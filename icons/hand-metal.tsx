@@ -70,7 +70,7 @@ const HandMetalIcon = forwardRef<HandMetalIconHandle, HandMetalIconProps>(
           variants={{
             normal: { rotate: 0 },
             animate: {
-              rotate: [0, -15, 15, -10, 10, 0], // Energetic rocking motion
+              rotate: [0, -15, 15, -10, 10, 0],
               transition: {
                 duration: 0.6,
                 ease: 'easeInOut',
@@ -79,7 +79,6 @@ const HandMetalIcon = forwardRef<HandMetalIconHandle, HandMetalIconProps>(
           }}
           initial="normal"
           animate={controls}
-          // Set pivot point to the bottom center (wrist area)
           style={{ originX: '50%', originY: '90%' }}
         >
           <path d="M18 12.5V10a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4" />
