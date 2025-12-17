@@ -12,8 +12,7 @@ import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/header';
 import { PackageNameProvider } from '@/providers/package-name';
 import { ThemeProvider } from '@/providers/theme';
-
-// import ogImage from './og.png';
+import ogImage from './og.png';
 
 const andaleMono = localFont({
   src: '../fonts/ANDALEMO.woff',
@@ -37,13 +36,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://lucide-animated.com',
-    // images: [
-    //   {
-    //     url: ogImage.src,
-    //     width: ogImage.width,
-    //     height: ogImage.height,
-    //   },
-    // ],
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
   applicationName: 'lucide-animated',
   appleWebApp: {
@@ -61,13 +60,13 @@ export const metadata: Metadata = {
     title: 'lucide-animated',
     description: 'beautifully crafted animated icons',
     creator: '@pqoqubbw',
-    // images: [
-    //   {
-    //     url: ogImage.src,
-    //     width: ogImage.width,
-    //     height: ogImage.height,
-    //   },
-    // ],
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 };
 
