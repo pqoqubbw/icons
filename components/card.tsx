@@ -240,7 +240,6 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
 
       if (data.url) {
         const popupOpened = window.open(data.url, '_blank');
-        console.log({ popupOpened });
         if (popupOpened === null) {
           toast.warning('Pop-up window blocked.', {
             description: 'Click below to continue in new tab.',
