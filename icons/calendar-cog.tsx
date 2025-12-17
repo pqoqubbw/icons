@@ -16,7 +16,7 @@ interface CalendarCogIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const gVariants: Variants = {
+const G_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: 180 },
 };
@@ -81,7 +81,7 @@ const CalendarCogIcon = forwardRef<CalendarCogIconHandle, CalendarCogIconProps>(
           <path d="M8 2v4" />
           <motion.g
             transition={{ type: 'spring', stiffness: 50, damping: 10 }}
-            variants={gVariants}
+            variants={G_VARIANTS}
             animate={controls}
           >
             <path d="m15.2 16.9-.9-.4" />

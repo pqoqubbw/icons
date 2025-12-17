@@ -16,7 +16,7 @@ interface CloudSunIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const cloudVariants: Variants = {
+const CLOUD_VARIANTS: Variants = {
   normal: {
     x: 0,
     y: 0,
@@ -31,7 +31,7 @@ const cloudVariants: Variants = {
   },
 };
 
-const sunVariants: Variants = {
+const SUN_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
     opacity: [0, 1],
@@ -104,7 +104,7 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
           style={{ overflow: 'visible' }}
         >
           <motion.g
-            variants={cloudVariants}
+            variants={CLOUD_VARIANTS}
             animate={cloudControls}
             initial="normal"
           >
@@ -121,7 +121,7 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
               key={d}
               d={d}
               animate={sunControls}
-              variants={sunVariants}
+              variants={SUN_VARIANTS}
               custom={index + 1}
               initial="normal"
             />

@@ -16,7 +16,7 @@ interface ItalicIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 1],
@@ -81,7 +81,7 @@ const ItalicIcon = forwardRef<ItalicIconHandle, ItalicIconProps>(
         >
           <motion.line
             transition={{ duration: 0.2 }}
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             x1="19"
             x2="10"
@@ -90,7 +90,7 @@ const ItalicIcon = forwardRef<ItalicIconHandle, ItalicIconProps>(
           />
           <motion.line
             transition={{ duration: 0.2 }}
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             x1="14"
             x2="5"

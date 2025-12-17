@@ -16,12 +16,12 @@ interface PanelLeftCloseIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   times: [0, 0.4, 1],
   duration: 0.5,
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { x: 0 },
   animate: { x: [0, -1.5, 0] },
 };
@@ -84,8 +84,8 @@ const PanelLeftCloseIcon = forwardRef<
         <rect width="18" height="18" x="3" y="3" rx="2" />
         <path d="M9 3v18" />
         <motion.path
-          transition={defaultTransition}
-          variants={pathVariants}
+          transition={DEFAULT_TRANSITION}
+          variants={PATH_VARIANTS}
           animate={controls}
           d="m16 15-3-3 3-3"
         />

@@ -16,7 +16,7 @@ interface ChartBarIncreasingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   visible: { pathLength: 1, opacity: 1 },
   hidden: { pathLength: 0, opacity: 0 },
 };
@@ -99,21 +99,21 @@ const ChartBarIncreasingIcon = forwardRef<
       >
         <path d="M3 3v16a2 2 0 0 0 2 2h16" />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={1}
           d="M7 11h8"
         />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={2}
           d="M7 16h12"
         />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={0}

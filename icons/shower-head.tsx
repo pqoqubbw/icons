@@ -16,7 +16,7 @@ interface ShowerHeadIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dropVariants: Variants = {
+const DROP_VARIANTS: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.2,
@@ -24,7 +24,7 @@ const dropVariants: Variants = {
   },
 };
 
-const dropChildVariants: Variants = {
+const DROP_CHILD_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -38,7 +38,7 @@ const dropChildVariants: Variants = {
   },
 };
 
-const dropPath = [
+const DROP_PATH = [
   { id: 'drop1', d: 'M14 17v.01' },
   { id: 'drop2', d: 'M10 16v.01' },
   { id: 'drop3', d: 'M13 13v.01' },
@@ -105,10 +105,14 @@ const ShowerHeadIcon = forwardRef<ShowerHeadIconHandle, ShowerHeadIconProps>(
           <path d="m4 4 2.5 2.5" />
           <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
           <path d="M15 5 5 15" />
-          <motion.g variants={dropVariants} animate={controls} initial="normal">
-            {dropPath.map((path) => (
+          <motion.g
+            variants={DROP_VARIANTS}
+            animate={controls}
+            initial="normal"
+          >
+            {DROP_PATH.map((path) => (
               <motion.path
-                variants={dropChildVariants}
+                variants={DROP_CHILD_VARIANTS}
                 key={path.id}
                 d={path.d}
               />

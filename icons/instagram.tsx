@@ -16,7 +16,7 @@ interface InstagramIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rectVariants: Variants = {
+const RECT_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const rectVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -60,7 +60,7 @@ const pathVariants: Variants = {
   },
 };
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -151,7 +151,7 @@ const InstagramIcon = forwardRef<InstagramIconHandle, InstagramIconProps>(
           strokeLinejoin="round"
         >
           <motion.rect
-            variants={rectVariants}
+            variants={RECT_VARIANTS}
             initial="normal"
             animate={rectControls}
             x="2"
@@ -162,13 +162,13 @@ const InstagramIcon = forwardRef<InstagramIconHandle, InstagramIconProps>(
             ry="5"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={pathControls}
             d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
           />
           <motion.line
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             initial="normal"
             animate={lineControls}
             x1="17.5"

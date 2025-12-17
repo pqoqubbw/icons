@@ -78,7 +78,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '-2px' }, // top-left corner → outwards
+              animate: { translateX: '-2px', translateY: '-2px' },
             }}
             animate={controls}
           />
@@ -88,7 +88,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '-2px' }, // top-right corner → outwards
+              animate: { translateX: '2px', translateY: '-2px' },
             }}
             animate={controls}
           />
@@ -98,7 +98,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '2px' }, // bottom-left corner → outwards
+              animate: { translateX: '-2px', translateY: '2px' },
             }}
             animate={controls}
           />
@@ -108,7 +108,7 @@ const MaximizeIcon = forwardRef<MaximizeIconHandle, MaximizeIconProps>(
             transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '2px' }, // bottom-right corner → outwards
+              animate: { translateX: '2px', translateY: '2px' },
             }}
             animate={controls}
           />

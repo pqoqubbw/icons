@@ -16,7 +16,7 @@ interface CheckCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -93,14 +93,14 @@ const CheckCheckIcon = forwardRef<CheckCheckIconHandle, CheckCheckIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M2 12 7 17L18 6"
             custom={0}
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M13 16L14.5 17.5L22 10"

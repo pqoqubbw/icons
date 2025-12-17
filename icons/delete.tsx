@@ -16,12 +16,12 @@ interface DeleteIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lidVariants: Variants = {
+const LID_VARIANTS: Variants = {
   normal: { y: 0 },
   animate: { y: -1.1 },
 };
 
-const springTransition: Transition = {
+const SPRING_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 500,
   damping: 30,
@@ -82,9 +82,9 @@ const DeleteIcon = forwardRef<DeleteIconHandle, DeleteIconProps>(
           strokeLinejoin="round"
         >
           <motion.g
-            variants={lidVariants}
+            variants={LID_VARIANTS}
             animate={controls}
-            transition={springTransition}
+            transition={SPRING_TRANSITION}
           >
             <path d="M3 6h18" />
             <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
@@ -96,7 +96,7 @@ const DeleteIcon = forwardRef<DeleteIconHandle, DeleteIconProps>(
               animate: { d: 'M19 9v12c0 1-1 2-2 2H7c-1 0-2-1-2-2V9' },
             }}
             animate={controls}
-            transition={springTransition}
+            transition={SPRING_TRANSITION}
           />
           <motion.line
             x1="10"
@@ -108,7 +108,7 @@ const DeleteIcon = forwardRef<DeleteIconHandle, DeleteIconProps>(
               animate: { y1: 11.5, y2: 17.5 },
             }}
             animate={controls}
-            transition={springTransition}
+            transition={SPRING_TRANSITION}
           />
           <motion.line
             x1="14"
@@ -120,7 +120,7 @@ const DeleteIcon = forwardRef<DeleteIconHandle, DeleteIconProps>(
               animate: { y1: 11.5, y2: 17.5 },
             }}
             animate={controls}
-            transition={springTransition}
+            transition={SPRING_TRANSITION}
           />
         </svg>
       </div>

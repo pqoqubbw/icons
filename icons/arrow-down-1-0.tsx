@@ -16,13 +16,13 @@ interface ArrowDown10IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const swapTransition: Transition = {
+const SWAP_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 240,
   damping: 24,
 };
 
-const swapVariants: Variants = {
+const SWAP_VARIANTS: Variants = {
   normal: {
     translateY: 0,
   },
@@ -88,11 +88,11 @@ const ArrowDown10Icon = forwardRef<ArrowDown10IconHandle, ArrowDown10IconProps>(
           <path d="m3 16 4 4 4-4" />
           <path d="M7 20V4" />
           <motion.g
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           >
             <path d="M17 10V4h-2" />
             <path d="M15 10h4" />
@@ -103,11 +103,11 @@ const ArrowDown10Icon = forwardRef<ArrowDown10IconHandle, ArrowDown10IconProps>(
             width="4"
             height="6"
             ry="2"
-            variants={swapVariants}
+            variants={SWAP_VARIANTS}
             initial="normal"
             animate={controls}
             custom={-1}
-            transition={swapTransition}
+            transition={SWAP_TRANSITION}
           />
         </svg>
       </div>

@@ -16,7 +16,7 @@ interface PenToolIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: { rotate: 0, translateX: 0, translateY: 0 },
   animate: {
     rotate: [0, 0, 8, -3, 8, 0],
@@ -24,7 +24,7 @@ const svgVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 0, 1],
@@ -86,7 +86,7 @@ const PenToolIcon = forwardRef<PenToolIconHandle, PenToolIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           transition={{
             duration: 1,
           }}
@@ -95,7 +95,7 @@ const PenToolIcon = forwardRef<PenToolIconHandle, PenToolIconProps>(
           <path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z" />
           <path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18" />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             transition={{
               duration: 0.8,

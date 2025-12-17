@@ -16,7 +16,7 @@ interface LinkedinIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const pathVariants: Variants = {
   },
 };
 
-const rectVariants: Variants = {
+const RECT_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -60,7 +60,7 @@ const rectVariants: Variants = {
   },
 };
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -152,13 +152,13 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
           viewBox="0 0 24 24"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={pathControls}
             d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
           />
           <motion.rect
-            variants={rectVariants}
+            variants={RECT_VARIANTS}
             initial="normal"
             animate={rectControls}
             x="2"
@@ -167,7 +167,7 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
             height="12"
           />
           <motion.circle
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
             initial="normal"
             animate={circleControls}
             cx="4"

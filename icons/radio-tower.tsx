@@ -16,7 +16,7 @@ interface RadioTowerIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     opacity: 1,
     transition: {
@@ -99,14 +99,14 @@ const RadioTowerIcon = forwardRef<RadioTowerIconHandle, RadioTowerIconProps>(
           <motion.path
             d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />
           <motion.path
             d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
@@ -114,14 +114,14 @@ const RadioTowerIcon = forwardRef<RadioTowerIconHandle, RadioTowerIconProps>(
           <motion.path
             d="M16.2 4.8c2 2 2.26 5.11.8 7.47"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
           <motion.path
             d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />

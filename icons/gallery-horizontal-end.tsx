@@ -16,7 +16,7 @@ interface GalleryHorizontalEndIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     translateX: 0,
     opacity: 1,
@@ -96,13 +96,13 @@ const GalleryHorizontalEndIcon = forwardRef<
       >
         <motion.path
           d="M6 5v14"
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           custom={2}
         />
         <motion.path
           d="M2 7v10"
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           custom={1}
         />

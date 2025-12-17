@@ -25,7 +25,7 @@ const DOTS = [
   { cx: 16, cy: 18 },
 ];
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     opacity: 1,
     transition: {
@@ -111,7 +111,7 @@ const CalendarDaysIcon = forwardRef<
               fill="currentColor"
               stroke="none"
               initial="normal"
-              variants={variants}
+              variants={VARIANTS}
               animate={controls}
               custom={index}
             />

@@ -16,7 +16,7 @@ interface LogoutIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   animate: {
     x: 2,
     translateX: [0, -3, 0],
@@ -83,7 +83,7 @@ const LogoutIcon = forwardRef<LogoutIconHandle, LogoutIconProps>(
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
           <motion.polyline
             points="16 17 21 12 16 7"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.line
@@ -91,7 +91,7 @@ const LogoutIcon = forwardRef<LogoutIconHandle, LogoutIconProps>(
             x2="9"
             y1="12"
             y2="12"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
         </svg>
