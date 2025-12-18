@@ -1,7 +1,7 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
-import { useMemo, useRef } from 'react';
+import { Suspense, useMemo, useRef } from 'react';
 import Fuse from 'fuse.js';
 import { useQueryState } from 'nuqs';
 
@@ -37,7 +37,7 @@ const IconItem = ({ icon }: { icon: Icon }) => {
   );
 };
 
-const IconsList = ({ icons }: Props) => {
+const IconsListContent = ({ icons }: Props) => {
   const [query] = useQueryState('q');
 
   const filteredIcons = useMemo(() => {
@@ -70,6 +70,14 @@ const IconsList = ({ icons }: Props) => {
         </div>
       )}
     </div>
+  );
+};
+
+const IconsList = (props: Props) => {
+  return (
+    <Suspense fallback={null}>
+      <IconsListContent {...props} />
+    </Suspense>
   );
 };
 

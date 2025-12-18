@@ -2,8 +2,9 @@
 
 import { SearchIcon, XIcon } from 'lucide-react';
 import { useQueryState } from 'nuqs';
+import { Suspense } from 'react';
 
-const Search = () => {
+const SearchInput = () => {
   const [search, setSearch] = useQueryState('q', {
     defaultValue: '',
     parse: (value) => value || '',
@@ -36,6 +37,14 @@ const Search = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const Search = () => {
+  return (
+    <Suspense fallback={null}>
+      <SearchInput />
+    </Suspense>
   );
 };
 
