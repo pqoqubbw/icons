@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 
 import './globals.css';
 
+import { Geist, Geist_Mono } from 'next/font/google';
 import { CircleXIcon, TriangleAlertIcon } from 'lucide-react';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 // import { SnowfallComponent } from '@/components/snowfall';
@@ -14,18 +15,35 @@ import { PackageNameProvider } from '@/providers/package-name';
 import { ThemeProvider } from '@/providers/theme';
 import ogImage from './og.png';
 
-const andaleMono = localFont({
+const andaleMonoLocal = localFont({
   src: '../fonts/ANDALEMO.woff',
   variable: '--font-mono',
   display: 'swap',
 });
 
-const gtCinetype = localFont({
+const gtCinetypeLocal = localFont({
   src: '../fonts/GT-Cinetype-Regular.woff',
   variable: '--font-sans',
   display: 'swap',
   weight: '400',
 });
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const andaleMono =
+  process.env.NODE_ENV !== 'production' ? geistMono : andaleMonoLocal;
+const gtCinetype =
+  process.env.NODE_ENV !== 'production' ? geist : gtCinetypeLocal;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucide-animated.com'),
