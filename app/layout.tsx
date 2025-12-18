@@ -15,18 +15,18 @@ import { PackageNameProvider } from '@/providers/package-name';
 import { ThemeProvider } from '@/providers/theme';
 import ogImage from './og.png';
 
-const andaleMonoLocal = localFont({
-  src: '../fonts/ANDALEMO.woff',
-  variable: '--font-mono',
-  display: 'swap',
-});
+// const andaleMonoLocal = localFont({
+//   src: '../fonts/ANDALEMO.woff',
+//   variable: '--font-mono',
+//   display: 'swap',
+// });
 
-const gtCinetypeLocal = localFont({
-  src: '../fonts/GT-Cinetype-Regular.woff',
-  variable: '--font-sans',
-  display: 'swap',
-  weight: '400',
-});
+// const gtCinetypeLocal = localFont({
+//   src: '../fonts/GT-Cinetype-Regular.woff',
+//   variable: '--font-sans',
+//   display: 'swap',
+//   weight: '400',
+// });
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -40,10 +40,10 @@ const geist = Geist({
   display: 'swap',
 });
 
-const andaleMono =
-  process.env.NODE_ENV !== 'production' ? geistMono : andaleMonoLocal;
-const gtCinetype =
-  process.env.NODE_ENV !== 'production' ? geist : gtCinetypeLocal;
+// const andaleMono =
+//   process.env.NODE_ENV !== 'production' ? geistMono : andaleMonoLocal;
+// const gtCinetype =
+//   process.env.NODE_ENV !== 'production' ? geist : gtCinetypeLocal;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucide-animated.com'),
@@ -105,10 +105,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${andaleMono.variable} ${gtCinetype.variable}`}
     >
       <body
-        className={`${gtCinetype.className} bg-background relative antialiased`}
+        className="bg-background relative antialiased"
       >
         <div className="root">
           <ThemeProvider
