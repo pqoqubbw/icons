@@ -16,7 +16,7 @@ interface PlayIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     x: 0,
     rotate: 0,
@@ -88,7 +88,7 @@ const PlayIcon = forwardRef<PlayIconHandle, PlayIconProps>(
         >
           <motion.polygon
             points="6 3 20 12 6 21 6 3"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
         </motion.svg>

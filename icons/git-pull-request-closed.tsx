@@ -17,7 +17,7 @@ interface GitPullRequestClosedIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const DURATION = 0.3;
 
-const calculateDelay = (i: number) => {
+const CALCULATE_DELAY = (i: number) => {
   if (i === 0) return 0.1;
 
   return i * DURATION + 0.1;
@@ -84,8 +84,8 @@ const GitPullRequestClosedIcon = forwardRef<
           r="3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(0),
-            opacity: { delay: calculateDelay(0) },
+            delay: CALCULATE_DELAY(0),
+            opacity: { delay: CALCULATE_DELAY(0) },
           }}
           variants={{
             normal: { pathLength: 1, opacity: 1, transition: { delay: 0 } },
@@ -101,8 +101,8 @@ const GitPullRequestClosedIcon = forwardRef<
           d="M6 9v12"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(1),
-            opacity: { delay: calculateDelay(1) },
+            delay: CALCULATE_DELAY(1),
+            opacity: { delay: CALCULATE_DELAY(1) },
           }}
           variants={{
             normal: {
@@ -124,8 +124,8 @@ const GitPullRequestClosedIcon = forwardRef<
           d="m21 3-6 6"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(2),
-            opacity: { delay: calculateDelay(2) },
+            delay: CALCULATE_DELAY(2),
+            opacity: { delay: CALCULATE_DELAY(2) },
           }}
           variants={{
             normal: { opacity: 1, transition: { delay: 0 } },
@@ -138,8 +138,8 @@ const GitPullRequestClosedIcon = forwardRef<
           d="m21 9-6-6"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(2),
-            opacity: { delay: calculateDelay(2) },
+            delay: CALCULATE_DELAY(2),
+            opacity: { delay: CALCULATE_DELAY(2) },
           }}
           variants={{
             normal: { opacity: 1, transition: { delay: 0 } },
@@ -152,8 +152,8 @@ const GitPullRequestClosedIcon = forwardRef<
           d="M18 11.5V15"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(3),
-            opacity: { delay: calculateDelay(3) },
+            delay: CALCULATE_DELAY(3),
+            opacity: { delay: CALCULATE_DELAY(3) },
           }}
           variants={{
             normal: {
@@ -177,8 +177,8 @@ const GitPullRequestClosedIcon = forwardRef<
           r="3"
           transition={{
             duration: DURATION,
-            delay: calculateDelay(4),
-            opacity: { delay: calculateDelay(4) },
+            delay: CALCULATE_DELAY(4),
+            opacity: { delay: CALCULATE_DELAY(4) },
           }}
           variants={{
             normal: { pathLength: 1, opacity: 1, transition: { delay: 0 } },

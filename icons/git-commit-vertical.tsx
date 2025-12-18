@@ -16,7 +16,7 @@ interface GitCommitVerticalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -89,7 +89,7 @@ const GitCommitVerticalIcon = forwardRef<
       >
         <motion.path
           d="M12 3v6"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={0}
         />
@@ -97,13 +97,13 @@ const GitCommitVerticalIcon = forwardRef<
           cx="12"
           cy="12"
           r="3"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={1}
         />
         <motion.path
           d="M12 15v6"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={2}
         />

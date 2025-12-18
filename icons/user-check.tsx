@@ -16,7 +16,7 @@ interface UserCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -93,7 +93,7 @@ const UserCheckIcon = forwardRef<UserCheckIconHandle, UserCheckIconProps>(
           <motion.path
             animate={controls}
             initial="normal"
-            variants={checkVariants}
+            variants={CHECK_VARIANTS}
             d="M16 11L18 13L22 9"
             style={{ transformOrigin: 'center' }}
           />

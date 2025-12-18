@@ -16,12 +16,12 @@ interface SquareArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const squareVariants: Variants = {
+const SQUARE_VARIANTS: Variants = {
   normal: { transition: { duration: 0.4 } },
   animate: { transition: { duration: 0.6, ease: 'easeInOut' } },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'M8 12h8', opacity: 1 },
   animate: {
     d: ['M8 12h8', 'M8 12h5', 'M8 12h8'],
@@ -29,7 +29,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondPathVariants: Variants = {
+const SECOND_PATH_VARIANTS: Variants = {
   normal: { d: 'm12 8 4 4-4 4', translateX: 0, opacity: 1 },
   animate: {
     d: 'm12 8 4 4-4 4',
@@ -93,18 +93,18 @@ const SquareArrowRightIcon = forwardRef<
           x="3"
           y="3"
           rx="2"
-          variants={squareVariants}
+          variants={SQUARE_VARIANTS}
           animate={controls}
           initial="normal"
         />
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           initial="normal"
           d="M8 12h8"
         />
         <motion.path
-          variants={secondPathVariants}
+          variants={SECOND_PATH_VARIANTS}
           animate={controls}
           initial="normal"
           d="m12 8 4 4-4 4"

@@ -16,13 +16,13 @@ interface PauseIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const baseRectVariants: Variants = {
+const BASE_RECT_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
 };
 
-const baseRectTransition = {
+const BASE_RECT_TRANSITION = {
   transition: {
     times: [0, 0.2, 0.5, 1],
     duration: 0.5,
@@ -31,19 +31,19 @@ const baseRectTransition = {
   },
 };
 
-const leftRectVariants: Variants = {
-  ...baseRectVariants,
+const LEFT_RECT_VARIANTS: Variants = {
+  ...BASE_RECT_VARIANTS,
   animate: {
     y: [0, 2, 0, 0],
-    ...baseRectTransition,
+    ...BASE_RECT_TRANSITION,
   },
 };
 
-const rightRectVariants: Variants = {
-  ...baseRectVariants,
+const RIGHT_RECT_VARIANTS: Variants = {
+  ...BASE_RECT_VARIANTS,
   animate: {
     y: [0, 0, 2, 0],
-    ...baseRectTransition,
+    ...BASE_RECT_TRANSITION,
   },
 };
 
@@ -107,7 +107,7 @@ const PauseIcon = forwardRef<PauseIconHandle, PauseIconProps>(
             width="4"
             height="16"
             rx="1"
-            variants={leftRectVariants}
+            variants={LEFT_RECT_VARIANTS}
             animate={controls}
           />
           <motion.rect
@@ -116,7 +116,7 @@ const PauseIcon = forwardRef<PauseIconHandle, PauseIconProps>(
             width="4"
             height="16"
             rx="1"
-            variants={rightRectVariants}
+            variants={RIGHT_RECT_VARIANTS}
             animate={controls}
           />
         </svg>

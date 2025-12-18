@@ -16,7 +16,7 @@ interface MenuIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     y: 0,
@@ -92,7 +92,7 @@ const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
             y1="6"
             x2="20"
             y2="6"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             custom={1}
           />
@@ -101,7 +101,7 @@ const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
             y1="12"
             x2="20"
             y2="12"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             custom={2}
           />
@@ -110,7 +110,7 @@ const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
             y1="18"
             x2="20"
             y2="18"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             custom={3}
           />

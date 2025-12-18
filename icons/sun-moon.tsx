@@ -16,7 +16,7 @@ interface SunMoonIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const sunVariants: Variants = {
+const SUN_VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -29,7 +29,7 @@ const sunVariants: Variants = {
   },
 };
 
-const moonVariants: Variants = {
+const MOON_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
     opacity: [0, 1],
@@ -101,7 +101,7 @@ const SunMoonIcon = forwardRef<SunMoonIconHandle, SunMoonIconProps>(
           strokeLinejoin="round"
         >
           <motion.g
-            variants={sunVariants}
+            variants={SUN_VARIANTS}
             animate={sunControls}
             initial="normal"
           >
@@ -121,7 +121,7 @@ const SunMoonIcon = forwardRef<SunMoonIconHandle, SunMoonIconProps>(
               key={d}
               d={d}
               animate={moonControls}
-              variants={moonVariants}
+              variants={MOON_VARIANTS}
               custom={index + 1}
               initial="normal"
             />

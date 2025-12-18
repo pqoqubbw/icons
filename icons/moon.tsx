@@ -16,7 +16,7 @@ interface MoonIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -25,7 +25,7 @@ const svgVariants: Variants = {
   },
 };
 
-const svgTransition: Transition = {
+const SVG_TRANSITION: Transition = {
   duration: 1.2,
   ease: 'easeInOut',
 };
@@ -82,9 +82,9 @@ const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           animate={controls}
-          transition={svgTransition}
+          transition={SVG_TRANSITION}
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
         </motion.svg>

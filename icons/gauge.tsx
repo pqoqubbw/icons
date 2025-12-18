@@ -16,7 +16,7 @@ interface GaugeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 160,
   damping: 17,
@@ -88,7 +88,7 @@ const GaugeIcon = forwardRef<GaugeIconHandle, GaugeIconProps>(
               },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
           />
           <path d="M3.34 19a10 10 0 1 1 17.32 0" />
         </svg>

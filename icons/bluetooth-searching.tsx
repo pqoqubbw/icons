@@ -16,7 +16,7 @@ interface BluetoothSearchingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     scale: 1,
     transition: {
@@ -28,7 +28,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondVariants: Variants = {
+const SECOND_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -95,12 +95,12 @@ const BluetoothSearchingIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.path
-          variants={secondVariants}
+          variants={SECOND_VARIANTS}
           animate={controls}
           d="m7 7 10 10-5 5V2l5 5L7 17"
         />
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.6,
@@ -110,7 +110,7 @@ const BluetoothSearchingIcon = forwardRef<
           d="M20.83 14.83a4 4 0 0 0 0-5.66"
         />
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.6,

@@ -16,7 +16,7 @@ interface MapPinOffIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const barVariants: Variants = {
+const BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -97,7 +97,7 @@ const MapPinOffIcon = forwardRef<MapPinOffIconHandle, MapPinOffIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -105,7 +105,7 @@ const MapPinOffIcon = forwardRef<MapPinOffIconHandle, MapPinOffIconProps>(
           <path d="M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568" />
           <motion.path
             d="m2 2 20 20"
-            variants={barVariants}
+            variants={BAR_VARIANTS}
             initial="normal"
             animate={controls}
           />

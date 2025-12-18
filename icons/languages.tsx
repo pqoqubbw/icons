@@ -16,7 +16,7 @@ interface LanguagesIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { opacity: 1, pathLength: 1, pathOffset: 0 },
   animate: (custom: number) => ({
     opacity: [0, 1],
@@ -34,7 +34,7 @@ const pathVariants: Variants = {
   }),
 };
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: {
     opacity: 1,
@@ -108,42 +108,42 @@ const LanguagesIcon = forwardRef<LanguagesIconHandle, LanguagesIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           animate={svgControls}
         >
           <motion.path
             d="m5 8 6 6"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={3}
             animate={pathControls}
           />
           <motion.path
             d="m4 14 6-6 3-3"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={2}
             animate={pathControls}
           />
           <motion.path
             d="M2 5h12"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={1}
             animate={pathControls}
           />
           <motion.path
             d="M7 2h1"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={0}
             animate={pathControls}
           />
           <motion.path
             d="m22 22-5-10-5 10"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={3}
             animate={pathControls}
           />
           <motion.path
             d="M14 18h6"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={3}
             animate={pathControls}
           />

@@ -16,7 +16,7 @@ interface AArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const letterVariants: Variants = {
+const LETTER_VARIANTS: Variants = {
   normal: { opacity: 1, scale: 1 },
   animate: {
     opacity: [0, 1],
@@ -25,11 +25,11 @@ const letterVariants: Variants = {
   },
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: { opacity: 1, y: 0 },
   animate: {
     opacity: [0, 1],
-    y: [10, 0], // Changed from [-10, 0] to animate upward
+    y: [10, 0],
     transition: { duration: 0.3, delay: 0.2 },
   },
 };
@@ -88,27 +88,26 @@ const AArrowUpIcon = forwardRef<AArrowUpIconHandle, AArrowUpIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Letter A - unchanged */}
           <motion.path
             d="M3.5 13h6"
             animate={controls}
-            variants={letterVariants}
+            variants={LETTER_VARIANTS}
           />
           <motion.path
             d="m2 16 4.5-9 4.5 9"
             animate={controls}
-            variants={letterVariants}
+            variants={LETTER_VARIANTS}
           />
-          {/* Arrow pointing up - modified */}
+
           <motion.path
-            d="M18 16V7" // Vertical line from bottom to top
+            d="M18 16V7"
             animate={controls}
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
           />
           <motion.path
-            d="m14 11 4-4 4 4" // Arrowhead pointing up
+            d="m14 11 4-4 4 4"
             animate={controls}
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
           />
         </svg>
       </div>

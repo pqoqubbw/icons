@@ -16,7 +16,7 @@ interface DrumIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -86,13 +86,13 @@ const DrumIcon = forwardRef<DrumIconHandle, DrumIconProps>(
         >
           <motion.path
             d="m2 2 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />
           <motion.path
             d="m22 2-8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={2}
           />

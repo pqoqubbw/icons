@@ -16,7 +16,7 @@ interface ClapIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     rotate: 0,
     originX: '4px',
@@ -32,7 +32,7 @@ const variants: Variants = {
   },
 };
 
-const clapVariants: Variants = {
+const CLAP_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     originX: '3px',
@@ -102,8 +102,8 @@ const ClapIcon = forwardRef<ClapIconHandle, ClapIconProps>(
           strokeLinejoin="round"
           style={{ overflow: 'visible' }}
         >
-          <motion.g animate={controls} variants={variants}>
-            <motion.g animate={controls} variants={clapVariants}>
+          <motion.g animate={controls} variants={VARIANTS}>
+            <motion.g animate={controls} variants={CLAP_VARIANTS}>
               <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
               <path d="m6.2 5.3 3.1 3.9" />
               <path d="m12.4 3.4 3.1 4" />

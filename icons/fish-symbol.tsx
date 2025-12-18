@@ -16,7 +16,7 @@ interface FishSymbolIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -87,7 +87,7 @@ const FishSymbolIcon = forwardRef<FishSymbolIconHandle, FishSymbolIconProps>(
         >
           <motion.path
             d="M2 16s9-15 20-4C11 23 2 8 2 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
           />
         </svg>

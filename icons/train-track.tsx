@@ -16,12 +16,12 @@ interface TrainTrackIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const transition: Transition = {
+const TRANSITION: Transition = {
   duration: 0.3,
   opacity: { delay: 0.15 },
 };
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -30,7 +30,7 @@ const variants: Variants = {
     pathLength: [0, 1],
     opacity: [0, 1],
     transition: {
-      ...transition,
+      ...TRANSITION,
       delay: 0.1 * custom,
     },
   }),
@@ -93,31 +93,31 @@ const TrainTrackIcon = forwardRef<TrainTrackIconHandle, TrainTrackIconProps>(
           <path d="M2 17 17 2" />
           <motion.path
             d="m2 14 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={4}
           />
           <motion.path
             d="m5 11 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={3}
           />
           <motion.path
             d="m8 8 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={2}
           />
           <motion.path
             d="m11 5 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />
           <motion.path
             d="m14 2 8 8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />

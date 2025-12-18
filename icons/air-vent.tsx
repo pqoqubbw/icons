@@ -16,7 +16,7 @@ interface AirVentIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const windVariants: Variants = {
+const WIND_VARIANTS: Variants = {
   normal: (custom: number) => ({
     pathLength: 1,
     opacity: 1,
@@ -96,14 +96,14 @@ const AirVentIcon = forwardRef<AirVentIconHandle, AirVentIconProps>(
           <path d="M6 8h12" />
           <motion.path
             d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12"
-            variants={windVariants}
+            variants={WIND_VARIANTS}
             initial="normal"
             animate={controls}
             custom={0}
           />
           <motion.path
             d="M6.6 15.6A2 2 0 1 0 10 17v-5"
-            variants={windVariants}
+            variants={WIND_VARIANTS}
             initial="normal"
             animate={controls}
             custom={0.2}

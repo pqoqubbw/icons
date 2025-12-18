@@ -16,13 +16,13 @@ interface RouteIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleTransition: Transition = {
+const CIRCLE_TRANSITION: Transition = {
   duration: 0.3,
   delay: 0.1,
   opacity: { delay: 0.15 },
 };
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -91,8 +91,8 @@ const RouteIcon = forwardRef<RouteIconHandle, RouteIconProps>(
             cx="6"
             cy="19"
             r="3"
-            transition={circleTransition}
-            variants={circleVariants}
+            transition={CIRCLE_TRANSITION}
+            variants={CIRCLE_VARIANTS}
             animate={controls}
           />
           <motion.path
@@ -116,8 +116,8 @@ const RouteIcon = forwardRef<RouteIconHandle, RouteIconProps>(
             cx="18"
             cy="5"
             r="3"
-            transition={circleTransition}
-            variants={circleVariants}
+            transition={CIRCLE_TRANSITION}
+            variants={CIRCLE_VARIANTS}
             animate={controls}
           />
         </svg>

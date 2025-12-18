@@ -16,7 +16,7 @@ interface ArrowDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'm19 12-7 7-7-7', translateY: 0 },
   animate: {
     d: 'm19 12-7 7-7-7',
@@ -27,7 +27,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondPathVariants: Variants = {
+const SECOND_PATH_VARIANTS: Variants = {
   normal: { d: 'M12 5v14' },
   animate: {
     d: ['M12 5v14', 'M12 5v9', 'M12 5v14'],
@@ -93,12 +93,12 @@ const ArrowDownIcon = forwardRef<ArrowDownIconHandle, ArrowDownIconProps>(
         >
           <motion.path
             d="m19 12-7 7-7-7"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M12 5v14"
-            variants={secondPathVariants}
+            variants={SECOND_PATH_VARIANTS}
             animate={controls}
           />
         </svg>

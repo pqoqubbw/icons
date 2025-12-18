@@ -16,7 +16,7 @@ interface ChevronsLeftRightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
@@ -83,7 +83,7 @@ const ChevronsLeftRightIcon = forwardRef<
             normal: { translateX: '0%' },
             animate: { translateX: '-2px' },
           }}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           animate={controls}
           initial="normal"
           d="m9 7-5 5 5 5"
@@ -93,7 +93,7 @@ const ChevronsLeftRightIcon = forwardRef<
             normal: { translateX: '0%' },
             animate: { translateX: '2px' },
           }}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           animate={controls}
           initial="normal"
           d="m15 7 5 5-5 5"

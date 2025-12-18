@@ -16,7 +16,7 @@ interface UsersIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     translateX: 0,
     transition: {
@@ -94,12 +94,12 @@ const UsersIcon = forwardRef<UsersIconHandle, UsersIconProps>(
           <circle cx="9" cy="7" r="4" />
           <motion.path
             d="M22 21v-2a4 4 0 0 0-3-3.87"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M16 3.13a4 4 0 0 1 0 7.75"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
         </svg>

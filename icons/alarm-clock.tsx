@@ -16,7 +16,7 @@ interface AlarmClockIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     y: 0,
     x: 0,
@@ -46,7 +46,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondaryPathVariants: Variants = {
+const SECONDARY_PATH_VARIANTS: Variants = {
   normal: {
     y: 0,
     x: 0,
@@ -132,37 +132,37 @@ const AlarmClockIcon = forwardRef<AlarmClockIconHandle, AlarmClockIconProps>(
           style={{ overflow: 'visible' }}
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M18 20.5L19.5 22"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M6 20.5L4.5 22"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M21 13C21 17.968 16.968 22 12 22C7.032 22 3 17.968 3 13C3 8.032 7.032 4 12 4C16.968 4 21 8.032 21 13Z"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M15.339 15.862L12.549 14.197C12.063 13.909 11.667 13.216 11.667 12.649V8.95898"
           />
           <motion.path
-            variants={secondaryPathVariants}
+            variants={SECONDARY_PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M18 2L21.747 5.31064"
           />
           <motion.path
-            variants={secondaryPathVariants}
+            variants={SECONDARY_PATH_VARIANTS}
             initial="normal"
             animate={controls}
             d="M6 2L2.25304 5.31064"

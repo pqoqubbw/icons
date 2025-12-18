@@ -16,7 +16,7 @@ interface AlignVerticalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 160,
   damping: 17,
@@ -90,7 +90,7 @@ const AlignVerticalIcon = forwardRef<
           x="7"
           y="9"
           rx="2"
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.path
           variants={{
@@ -101,7 +101,7 @@ const AlignVerticalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           d="M22 20H2"
         />
         <motion.path
@@ -113,7 +113,7 @@ const AlignVerticalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           d="M22 4H2"
         />
       </svg>

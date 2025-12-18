@@ -21,7 +21,7 @@ import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash';
 import { ArrowDownIcon } from '@/icons/arrow-down';
-import { ArrowDown01con } from '@/icons/arrow-down-0-1';
+import { ArrowDown01Icon } from '@/icons/arrow-down-0-1';
 import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
 import { ArrowDownAZIcon } from '@/icons/arrow-down-a-z';
 import { ArrowDownLeftIcon } from '@/icons/arrow-down-left';
@@ -2692,7 +2692,7 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'arrow-down-0-1',
-    icon: ArrowDown01con,
+    icon: ArrowDown01Icon,
     keywords: [
       'filter',
       'sort',

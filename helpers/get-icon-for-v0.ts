@@ -1,19 +1,8 @@
-import { promises as fs } from 'fs';
-import path from 'path';
-
 const getIconForV0 = async (name: string) => {
   try {
-    const iconData =
-      process.env.NODE_ENV === 'development'
-        ? JSON.parse(
-            await fs.readFile(
-              path.join(process.cwd(), 'public', 'c', `${name}.json`),
-              'utf-8'
-            )
-          )
-        : await (
-            await fetch(`https://lucide-animated.com/r/${name}.json`)
-          ).json();
+    const iconData = await (
+      await fetch(`https://lucide-animated.com/r/${name}.json`)
+    ).json();
 
     const componentName = name
       .split('-')

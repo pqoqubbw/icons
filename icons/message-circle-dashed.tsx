@@ -16,7 +16,7 @@ interface MessageCircleDashedIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
     opacity: [0, 1],
@@ -94,7 +94,7 @@ const MessageCircleDashedIcon = forwardRef<
             key={d}
             d={d}
             animate={controls}
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             custom={index + 1}
           />
         ))}

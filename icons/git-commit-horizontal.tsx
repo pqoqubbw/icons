@@ -16,7 +16,7 @@ interface GitCommitHorizontalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -91,7 +91,7 @@ const GitCommitHorizontalIcon = forwardRef<
           cx="12"
           cy="12"
           r="3"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={1}
         />
@@ -100,7 +100,7 @@ const GitCommitHorizontalIcon = forwardRef<
           x2="9"
           y1="12"
           y2="12"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={0}
         />
@@ -109,7 +109,7 @@ const GitCommitHorizontalIcon = forwardRef<
           x2="21"
           y1="12"
           y2="12"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={2}
         />

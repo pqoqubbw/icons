@@ -16,7 +16,7 @@ interface MapPinPlusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const verticalBarVariants: Variants = {
+const VERTICAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -44,7 +44,7 @@ const verticalBarVariants: Variants = {
   },
 };
 
-const horizontalBarVariants: Variants = {
+const HORIZONTAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -112,7 +112,7 @@ const MapPinPlusIcon = forwardRef<MapPinPlusIconHandle, MapPinPlusIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -120,13 +120,13 @@ const MapPinPlusIcon = forwardRef<MapPinPlusIconHandle, MapPinPlusIconProps>(
           <circle cx="12" cy="10" r="3" />
           <motion.path
             d="M16 18h6"
-            variants={horizontalBarVariants}
+            variants={HORIZONTAL_BAR_VARIANTS}
             initial="normal"
             animate={controls}
           />
           <motion.path
             d="M19 15v6"
-            variants={verticalBarVariants}
+            variants={VERTICAL_BAR_VARIANTS}
             initial="normal"
             animate={controls}
           />

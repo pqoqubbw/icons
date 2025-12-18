@@ -16,7 +16,7 @@ interface YoutubeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const pathVariants: Variants = {
   },
 };
 
-const triangleVariants: Variants = {
+const TRIANGLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -124,13 +124,13 @@ const YoutubeIcon = forwardRef<YoutubeIconHandle, YoutubeIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={pathControls}
             d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
           />
           <motion.path
-            variants={triangleVariants}
+            variants={TRIANGLE_VARIANTS}
             initial="normal"
             animate={triangleControls}
             d="M10 15l5-3-5-3z"

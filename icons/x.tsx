@@ -16,7 +16,7 @@ interface XIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -81,13 +81,13 @@ const XIcon = forwardRef<XIconHandle, XIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             d="M18 6 6 18"
           />
           <motion.path
             transition={{ delay: 0.2 }}
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             d="m6 6 12 12"
           />

@@ -16,7 +16,7 @@ interface UserRoundPlusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const verticalBarVariants: Variants = {
+const VERTICAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -31,7 +31,7 @@ const verticalBarVariants: Variants = {
   },
 };
 
-const horizontalBarVariants: Variants = {
+const HORIZONTAL_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -107,13 +107,13 @@ const UserRoundPlusIcon = forwardRef<
         <circle cx="10" cy="8" r="5" />
         <motion.path
           d="M19 16v6"
-          variants={verticalBarVariants}
+          variants={VERTICAL_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />
         <motion.path
           d="M22 19h-6"
-          variants={horizontalBarVariants}
+          variants={HORIZONTAL_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />

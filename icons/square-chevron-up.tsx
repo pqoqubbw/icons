@@ -16,7 +16,7 @@ interface SquareChevronUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   times: [0, 0.4, 1],
   duration: 0.5,
 };
@@ -82,7 +82,7 @@ const SquareChevronUpIcon = forwardRef<
             normal: { y: 0 },
             animate: { y: [0, -2, 0] },
           }}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           animate={controls}
           d="m8 14 4-4 4 4"
         />

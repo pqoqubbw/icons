@@ -12,7 +12,7 @@ export interface FileCogIconHandle {
   stopAnimation: () => void;
 }
 
-const gVariants: Variants = {
+const G_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: 180 },
 };
@@ -76,7 +76,7 @@ const FileCogIcon = forwardRef<
         <path d="M4.677 21.5a2 2 0 0 0 1.313.5H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v2.5" />
         <motion.g
           transition={{ type: 'spring', stiffness: 50, damping: 10 }}
-          variants={gVariants}
+          variants={G_VARIANTS}
           animate={controls}
         >
           <path d="m3.2 12.9-.9-.4" />

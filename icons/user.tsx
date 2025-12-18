@@ -16,7 +16,7 @@ interface UserIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariant: Variants = {
+const PATH_VARIANT: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 1],
@@ -25,7 +25,7 @@ const pathVariant: Variants = {
   },
 };
 
-const circleVariant: Variants = {
+const CIRCLE_VARIANT: Variants = {
   normal: {
     pathLength: 1,
     pathOffset: 0,
@@ -96,12 +96,12 @@ const UserIcon = forwardRef<UserIconHandle, UserIconProps>(
             cy="8"
             r="5"
             animate={controls}
-            variants={circleVariant}
+            variants={CIRCLE_VARIANT}
           />
 
           <motion.path
             d="M20 21a8 8 0 0 0-16 0"
-            variants={pathVariant}
+            variants={PATH_VARIANT}
             transition={{
               delay: 0.2,
               duration: 0.4,
