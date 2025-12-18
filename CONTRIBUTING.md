@@ -30,7 +30,41 @@ We welcome contributions to our project! Please follow these steps to contribute
    pnpm install
    ```
 
-6. **Create your animated icon:**
+6. **Fix font loading error (if you don't have the font files):**
+
+   The project uses proprietary fonts that are not included in the repository. If you see this error:
+
+   ```
+   Font file not found: Can't resolve '../fonts/ANDALEMO.woff'
+   ```
+
+   Comment out the font imports in `app/layout.tsx`:
+
+   ```tsx
+   // const andaleMono = localFont({
+   //   src: '../fonts/ANDALEMO.woff',
+   //   variable: '--font-mono',
+   //   display: 'swap',
+   // });
+
+   // const gtCinetype = localFont({
+   //   src: '../fonts/GT-Cinetype-Regular.woff',
+   //   variable: '--font-sans',
+   //   display: 'swap',
+   //   weight: '400',
+   // });
+   ```
+
+   And update the `<html>` and `<body>` tags to remove font classes:
+
+   ```tsx
+   <html lang="en" suppressHydrationWarning>
+     <body className="bg-background relative antialiased">
+   ```
+
+   The app will use system fonts as fallback.
+
+7. **Create your animated icon:**
 
    a. Navigate to the `/icons/` directory and create a new file with the icon name in lowercase, using hyphens for spaces (following Lucide naming convention):
 
@@ -130,7 +164,7 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    e. Add your animation logic using Framer Motion's `motion` components and the `controls` object to create engaging hover animations.
 
-7. **Add your icon to the icon list:**
+8. **Add your icon to the icon list:**
 
    a. Open the `icons/index.tsx` file.
 
@@ -162,7 +196,7 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    Note: Use the exact icon name, keywords, and other data from the [lucide.dev](https://lucide.dev/) website for your specific icon.
 
-8. **Update the registry (for new icons):**
+9. **Update the registry (for new icons):**
 
    After creating a new icon, you need to update the registry so it can be used with the shadcn CLI:
 
@@ -172,30 +206,30 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    This command will automatically sync your new icon to the registry and build the necessary JSON files.
 
-9. Build the project to check for errors:
+10. Build the project to check for errors:
 
-   ```
-   pnpm build
-   ```
+```
+pnpm build
+```
 
-10. Test the application to ensure your changes work as expected:
+11. Test the application to ensure your changes work as expected:
 
     ```
     pnpm lint
     ```
 
-11. Commit your changes:
+12. Commit your changes:
 
     ```
     git commit -m "Add [icon-name] animated icon"
     ```
 
-12. Push your changes to your fork:
+13. Push your changes to your fork:
 
     ```
     git push origin your-branch-name
     ```
 
-13. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
+14. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
 
 Thank you for contributing to our project!
