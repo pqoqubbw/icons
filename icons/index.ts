@@ -127,6 +127,7 @@ import { EarthIcon } from '@/icons/earth';
 import { EuroIcon } from '@/icons/euro';
 import { EvChargerIcon } from '@/icons/ev-charger';
 import { ExpandIcon } from '@/icons/expand';
+import { EyeIcon } from '@/icons/eye';
 import { EyeOffIcon } from '@/icons/eye-off';
 import { FacebookIcon } from '@/icons/facebook';
 import { FeatherIcon } from '@/icons/feather';
@@ -1239,6 +1240,24 @@ const ICON_LIST: IconListItem[] = [
       'hidden',
       'visibility',
       'vision',
+    ],
+  },
+  {
+    name: 'eye',
+    icon: EyeIcon,
+    keywords: [
+      'view',
+      'watch',
+      'see',
+      'show',
+      'expose',
+      'reveal',
+      'display',
+      'visible',
+      'visibility',
+      'vision',
+      'preview',
+      'read',
     ],
   },
   {
