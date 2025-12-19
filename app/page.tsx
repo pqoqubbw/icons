@@ -1,5 +1,6 @@
 import { getIcons } from '@/actions/get-icons';
 import { CliBlock } from '@/components/cli-block';
+import { CommentBlock } from '@/components/comment';
 import { IconsList } from '@/components/list';
 import { LINK } from '@/constants';
 
@@ -50,6 +51,7 @@ const Home = () => {
         </a>
       </p>
       <CliBlock icons={icons.filter((icon) => icon.name.length <= 20)} />
+      <CommentBlock />
       <IconsList icons={icons} />
     </section>
   );
