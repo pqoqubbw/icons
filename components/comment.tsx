@@ -20,6 +20,7 @@ const CommentBlock = () => {
             <AvatarImage
               src="https://pqoqubbw.b-cdn.net/me.jpg"
               alt="Dmytro Tovstokor, the author of the lucide-animated"
+              className="select-none"
             />
             <AvatarFallback className="bg-neutral-200 font-sans dark:bg-neutral-800">
               DT

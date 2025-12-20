@@ -40,10 +40,12 @@ const geist = Geist({
   display: 'swap',
 });
 
-const andaleMono =
-  process.env.NODE_ENV !== 'production' ? geistMono : andaleMonoLocal;
-const gtCinetype =
-  process.env.NODE_ENV !== 'production' ? geist : gtCinetypeLocal;
+const useProductionFonts =
+  process.env.NODE_ENV === 'production' ||
+  process.env.USE_PRODUCTION_FONTS === 'true';
+
+const andaleMono = useProductionFonts ? andaleMonoLocal : geistMono;
+const gtCinetype = useProductionFonts ? gtCinetypeLocal : geist;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lucide-animated.com'),
