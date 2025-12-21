@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/tooltip';
 import { useTouchDevice } from '@/hooks/use-touch-device';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
+import { cn } from '@/lib/utils';
 import { usePackageNameContext } from '@/providers/package-name';
 
 const V0Icon = ({ className }: { className?: string }) => {
@@ -44,7 +45,7 @@ interface CardProps extends React.ComponentPropsWithoutRef<'div'> {
   } | null>;
 }
 
-const Card = ({ children, animationRef, ...props }: CardProps) => {
+const Card = ({ children, animationRef, className, ...props }: CardProps) => {
   const isTouchDevice = useTouchDevice();
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -80,7 +81,10 @@ const Card = ({ children, animationRef, ...props }: CardProps) => {
 
   return (
     <div
-      className="group/card supports-[corner-shape:squircle]:corner-squircle relative flex flex-col items-center justify-center rounded-[20px] bg-white px-[28px] pt-[50px] supports-[corner-shape:squircle]:rounded-[30px] dark:bg-[#0A0A0A]"
+      className={cn(
+        'group/card supports-[corner-shape:squircle]:corner-squircle relative flex flex-col items-center justify-center rounded-[20px] bg-white px-[28px] pt-[50px] supports-[corner-shape:squircle]:rounded-[30px] dark:bg-[#0A0A0A]',
+        className
+      )}
       {...props}
       onMouseEnter={!isTouchDevice ? props.onMouseEnter : undefined}
       onMouseLeave={!isTouchDevice ? props.onMouseLeave : undefined}
