@@ -32,6 +32,8 @@ import { ArrowDownZAIcon } from '@/icons/arrow-down-z-a';
 import { ArrowLeftIcon } from '@/icons/arrow-left';
 import { ArrowRightIcon } from '@/icons/arrow-right';
 import { ArrowUpIcon } from '@/icons/arrow-up';
+import { ArrowUpLeftIcon } from '@/icons/arrow-up-left';
+import { ArrowUpRightIcon } from '@/icons/arrow-up-right';
 import { AtSignIcon } from '@/icons/at-sign';
 import { AtomIcon } from '@/icons/atom';
 import { AttachFileIcon } from '@/icons/attach-file';
@@ -1031,6 +1033,30 @@ const ICON_LIST: IconListItem[] = [
       'direction',
       'southeast',
       'bottom right',
+    ],
+  },
+  {
+    name: 'arrow-up-left',
+    icon: ArrowUpLeftIcon,
+    keywords: [
+      'arrow',
+      'up',
+      'left',
+      'direction',
+      'northwest',
+      'top left',
+    ],
+  },
+  {
+    name: 'arrow-up-right',
+    icon: ArrowUpRightIcon,
+    keywords: [
+      'arrow',
+      'up',
+      'right',
+      'direction',
+      'northeast',
+      'top right',
     ],
   },
   {
