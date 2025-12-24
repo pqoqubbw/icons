@@ -2,7 +2,7 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 
 import { LINK } from '@/constants';
 
-const DEFAULT_STARS = 5550;
+const DEFAULT_STARS = 6077;
 const CACHE_TIME = 86400; // 1 day
 
 const getGithubStars = async () => {
