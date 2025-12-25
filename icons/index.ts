@@ -210,6 +210,8 @@ import { MessageCircleMoreIcon } from '@/icons/message-circle-more';
 import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
+import { MicIcon } from '@/icons/mic';
+import { MicOffIcon } from '@/icons/mic-off';
 import { MinimizeIcon } from '@/icons/minimize';
 import { MonitorCheckIcon } from '@/icons/monitor-check';
 import { MoonIcon } from '@/icons/moon';
@@ -365,6 +367,16 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'mic',
+    icon: MicIcon,
+    keywords: ['microphone', 'audio', 'sound', 'record', 'voice'],
+  },
+  {
+    name: 'mic-off',
+    icon: MicOffIcon,
+    keywords: ['microphone', 'audio', 'sound', 'mute', 'silent', 'disabled'],
+  },
   {
     name: 'folder-lock',
     icon: FolderLockIcon,

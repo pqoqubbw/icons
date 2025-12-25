@@ -4669,6 +4669,32 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "mic-off",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mic-off.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mic.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
