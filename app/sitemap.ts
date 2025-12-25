@@ -1,5 +1,7 @@
 import { type MetadataRoute } from 'next';
 
+import { SITE } from '@/constants';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return [{ url: 'https://lucide-animated.com', lastModified: new Date() }];
+  return [{ url: SITE.URL, lastModified: new Date() }];
 }

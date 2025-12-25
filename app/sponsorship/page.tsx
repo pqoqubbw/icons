@@ -1,4 +1,13 @@
 import { AmountSelector } from '@/components/sponsorship/amount-selector';
+import { createMetadata } from '@/seo/metadata';
+
+export const metadata = createMetadata({
+  title: 'Sponsor lucide-animated',
+  description:
+    'Support the development of lucide-animated - free open-source animated React icons library. Your sponsorship helps maintain and grow this MIT licensed project.',
+  canonical: '/sponsorship',
+  ogTitle: 'Sponsor lucide-animated | Support Open Source',
+});
 
 const SUPPORT_LIST = [
   {

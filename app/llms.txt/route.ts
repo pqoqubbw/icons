@@ -1,31 +1,32 @@
 import { getIcons } from '@/actions/get-icons';
+import { LINK, SITE } from '@/constants';
 
 export function GET() {
   const icons = getIcons();
   const iconNames = icons.map((icon) => icon.name).join(', ');
 
-  const content = `# lucide-animated
+  const content = `# ${SITE.NAME}
 
 > Beautifully crafted animated icons
 
-lucide-animated is an open-source (MIT License) collection of smooth animated icons for React projects.
+${SITE.NAME} is an open-source (MIT License) collection of smooth animated icons for React projects.
 
 ## Overview
 
-- Website: https://lucide-animated.com
-- GitHub: https://github.com/pqoqubbw/icons
-- Author: @pqoqubbw (https://x.com/pqoqubbw)
+- Website: ${SITE.URL}
+- GitHub: ${LINK.GITHUB}
+- Author: ${SITE.AUTHOR.TWITTER} (${LINK.TWITTER})
 
 ## Tech Stack
 
 - React components with TypeScript
-- Animations powered by Motion (https://motion.dev)
-- Based on Lucide icons (https://lucide.dev)
+- Animations powered by Motion (${LINK.MOTION})
+- Based on Lucide icons (${LINK.LUCIDE})
 
 ## Installation
 
 \`\`\`bash
-npx shadcn@latest add "https://lucide-animated.com/r/{icon-name}.json"
+npx shadcn@latest add "${SITE.URL}/r/{icon-name}.json"
 \`\`\`
 
 Replace {icon-name} with the desired icon name (kebab-case).

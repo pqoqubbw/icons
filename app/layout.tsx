@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Viewport } from 'next';
 import localFont from 'next/font/local';
 
 import './globals.css';
@@ -6,14 +6,14 @@ import './globals.css';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { CircleXIcon, TriangleAlertIcon } from 'lucide-react';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
-// import { SnowfallComponent } from '@/components/snowfall';
 import { Toaster } from 'sonner';
 
 import { Analytics } from '@/components/analytics';
 import { Header } from '@/components/header';
 import { PackageNameProvider } from '@/providers/package-name';
 import { ThemeProvider } from '@/providers/theme';
-import ogImage from './og.png';
+import { JsonLdScripts } from '@/seo/json-ld';
+import { baseMetadata } from '@/seo/metadata';
 
 const andaleMonoLocal = localFont({
   src: '../fonts/ANDALEMO.woff',
@@ -47,48 +47,7 @@ const useProductionFonts =
 const andaleMono = useProductionFonts ? andaleMonoLocal : geistMono;
 const gtCinetype = useProductionFonts ? gtCinetypeLocal : geist;
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://lucide-animated.com'),
-  openGraph: {
-    title: 'lucide-animated',
-    description: 'beautifully crafted animated icons',
-    siteName: 'lucide-animated',
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://lucide-animated.com',
-    images: [
-      {
-        url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
-      },
-    ],
-  },
-  applicationName: 'lucide-animated',
-  appleWebApp: {
-    title: 'lucide-animated',
-    statusBarStyle: 'default',
-    capable: true,
-  },
-  title: {
-    default: 'lucide-animated',
-    template: `%s - lucide-animated`,
-  },
-  description: 'beautifully crafted animated icons',
-  twitter: {
-    card: 'summary_large_image',
-    title: 'lucide-animated',
-    description: 'beautifully crafted animated icons',
-    creator: '@pqoqubbw',
-    images: [
-      {
-        url: ogImage.src,
-        width: ogImage.width,
-        height: ogImage.height,
-      },
-    ],
-  },
-};
+export const metadata = baseMetadata;
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -109,6 +68,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${andaleMono.variable} ${gtCinetype.variable}`}
     >
+      <head>
+        <JsonLdScripts />
+      </head>
       <body
         className={`${gtCinetype.className} bg-background relative antialiased`}
       >
@@ -146,7 +108,6 @@ export default function RootLayout({
                     ),
                   }}
                 />
-                {/* <SnowfallComponent /> */}
               </NuqsAdapter>
               <Analytics />
             </PackageNameProvider>

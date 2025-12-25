@@ -31,7 +31,7 @@ const Home = () => {
       <p className="text-secondary mt-4 font-mono text-xs min-[640px]:text-sm">
         Crafted with{' '}
         <a
-          href="https://motion.dev"
+          href={LINK.MOTION}
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={0}
@@ -41,7 +41,7 @@ const Home = () => {
         </a>{' '}
         &{' '}
         <a
-          href="https://lucide.dev"
+          href={LINK.LUCIDE}
           target="_blank"
           rel="noopener noreferrer"
           tabIndex={0}

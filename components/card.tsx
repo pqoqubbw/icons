@@ -18,6 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { SITE } from '@/constants';
 import { useTouchDevice } from '@/hooks/use-touch-device';
 import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { cn } from '@/lib/utils';
@@ -135,7 +136,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, 'name'>) => {
     try {
       op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
       await navigator.clipboard.writeText(
-        `${getPackageManagerPrefix(packageName)} shadcn@latest add "https://lucide-animated.com/r/${name}.json"`
+        `${getPackageManagerPrefix(packageName)} shadcn@latest add "${SITE.URL}/r/${name}.json"`
       );
       setState('done');
       setTimeout(() => setState('idle'), 2000);

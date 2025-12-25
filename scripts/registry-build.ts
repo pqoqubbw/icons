@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import type { Schema } from './registry-schema';
+import { SITE } from '../constants';
 import { components } from './registry-components';
 
 const registryComponents = path.join(__dirname, '../public/r');
@@ -65,8 +66,8 @@ for (const component of components) {
 
 const registryIndex = {
   $schema: 'https://ui.shadcn.com/schema/registry.json',
-  name: 'lucide-animated',
-  homepage: 'https://lucide-animated.com',
+  name: SITE.NAME,
+  homepage: SITE.URL,
   items: registryItems,
 };
 
