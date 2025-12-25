@@ -1,3 +1,4 @@
+import { unstable_cache } from 'next/cache';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 
 import { LINK } from '@/constants';
@@ -5,17 +6,12 @@ import { LINK } from '@/constants';
 const DEFAULT_STARS = 6077;
 const CACHE_TIME = 86400; // 1 day
 
-const getGithubStars = async () => {
-  if (process.env.NODE_ENV !== 'production') {
-    return DEFAULT_STARS;
-  }
-
+const fetchGithubStars = async (): Promise<number> => {
   try {
     const res = await fetch('https://api.github.com/repos/pqoqubbw/icons', {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
-      next: { revalidate: CACHE_TIME },
     });
 
     if (!res.ok) {
@@ -33,8 +29,15 @@ const getGithubStars = async () => {
   }
 };
 
+const getGithubStars = unstable_cache(fetchGithubStars, ['github-stars'], {
+  revalidate: CACHE_TIME,
+});
+
 const GithubStartsButton = async () => {
-  const stars = await getGithubStars();
+  const stars =
+    process.env.NODE_ENV === 'production'
+      ? await getGithubStars()
+      : DEFAULT_STARS;
 
   return (
     <a
