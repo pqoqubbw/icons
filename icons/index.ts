@@ -8,6 +8,8 @@ import { AirplayIcon } from '@/icons/airplay';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
+import { AlignLeftIcon } from '@/icons/align-left';
+import { AlignRightIcon } from '@/icons/align-right';
 import { AlignVerticalIcon } from '@/icons/align-vertical';
 import { AngryIcon } from '@/icons/angry';
 import { AnnoyedIcon } from '@/icons/annoyed';
@@ -365,6 +367,16 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'align-left',
+    icon: AlignLeftIcon,
+    keywords: ['text', 'alignment', 'left', 'paragraph', 'format'],
+  },
+  {
+    name: 'align-right',
+    icon: AlignRightIcon,
+    keywords: ['text', 'alignment', 'right', 'paragraph', 'format'],
+  },
   {
     name: 'folder-lock',
     icon: FolderLockIcon,
