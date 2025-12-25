@@ -24,7 +24,9 @@ const getGithubStars = async () => {
 
     const data = await res.json();
 
-    return data.stargazers_count || DEFAULT_STARS;
+    return data.stargazers_count < DEFAULT_STARS
+      ? DEFAULT_STARS
+      : data.stargazers_count;
   } catch (error) {
     console.error('Failed to fetch GitHub stars:', error);
     return DEFAULT_STARS;
