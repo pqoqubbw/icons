@@ -77,7 +77,6 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-         
           <motion.line
             x1="3"
             x2="21"
@@ -90,7 +89,7 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
             animate={controls}
             transition={DEFAULT_TRANSITION}
           />
-         
+
           <motion.line
             x1="3"
             x2="15"
@@ -103,7 +102,7 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
             animate={controls}
             transition={DEFAULT_TRANSITION}
           />
-         
+
           <motion.line
             x1="3"
             x2="17"
