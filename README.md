@@ -4,7 +4,7 @@
 <br />
 
 ## `lucide-animated` is beautifully crafted animated icons.
-![preview](./app/og.png)
+![preview](./public/og.png)
 
 **Demo** → [lucide-animated](https://lucide-animated.com)
 
