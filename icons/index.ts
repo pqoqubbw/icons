@@ -369,12 +369,7 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
-import { HandIcon } from './hand';
-import { HandFistIcon } from './hand-fist';
-import { HandGrabIcon } from './hand-grab';
-import { HandHelpingIcon } from './hand-helping';
-import { HandMetalIcon } from './hand-metal';
-import { HeartHandshakeIcon } from './heart-handshake';
+import { TruckIcon } from './truck';
 
 type IconListItem = {
   name: string;
@@ -383,6 +378,18 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'truck',
+    icon: TruckIcon,
+    keywords: [
+      'delivery',
+      'van',
+      'shipping',
+      'haulage',
+      'lorry',
+      'transportation',
+    ],
+  },
   {
     name: 'mic',
     icon: MicIcon,
@@ -1038,26 +1045,12 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'arrow-up-left',
     icon: ArrowUpLeftIcon,
-    keywords: [
-      'arrow',
-      'up',
-      'left',
-      'direction',
-      'northwest',
-      'top left',
-    ],
+    keywords: ['arrow', 'up', 'left', 'direction', 'northwest', 'top left'],
   },
   {
     name: 'arrow-up-right',
     icon: ArrowUpRightIcon,
-    keywords: [
-      'arrow',
-      'up',
-      'right',
-      'direction',
-      'northeast',
-      'top right',
-    ],
+    keywords: ['arrow', 'up', 'right', 'direction', 'northeast', 'top right'],
   },
   {
     name: 'vibrate',

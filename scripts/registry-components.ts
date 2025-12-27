@@ -2204,8 +2204,8 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'eye',
-    'path': path.join(__dirname, '../icons/eye.tsx'),
+    'name': 'truck',
+    'path': path.join(__dirname, '../icons/truck.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -2222,8 +2222,8 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'wrench',
-    'path': path.join(__dirname, '../icons/wrench.tsx'),
+    'name': 'eye',
+    'path': path.join(__dirname, '../icons/eye.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
@@ -2266,16 +2266,20 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'mic-off',
     'path': path.join(__dirname, '../icons/mic-off.tsx'),
-  },
-  {
-    'name': 'repeat',
-    'path': path.join(__dirname, '../icons/repeat.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'mic',
     'path': path.join(__dirname, '../icons/mic.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'repeat-1',
+    'path': path.join(__dirname, '../icons/repeat-1.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
   },
   {
     'name': 'repeat-2',
@@ -2284,8 +2288,14 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'repeat-1',
-    'path': path.join(__dirname, '../icons/repeat-1.tsx'),
+    'name': 'repeat',
+    'path': path.join(__dirname, '../icons/repeat.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'wrench',
+    'path': path.join(__dirname, '../icons/wrench.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },

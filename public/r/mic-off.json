@@ -3,7 +3,9 @@
   "name": "mic-off",
   "type": "registry:ui",
   "registryDependencies": [],
-  "dependencies": [],
+  "dependencies": [
+    "motion"
+  ],
   "devDependencies": [],
   "files": [
     {

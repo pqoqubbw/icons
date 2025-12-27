@@ -342,6 +342,32 @@
       ]
     },
     {
+      "name": "arrow-up-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "arrow-down-z-a",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4684,14 +4710,14 @@
       ]
     },
     {
-      "name": "eye",
+      "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "eye.tsx",
+          "path": "truck.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4723,14 +4749,14 @@
       ]
     },
     {
-      "name": "wrench",
+      "name": "eye",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wrench.tsx",
+          "path": "eye.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4817,7 +4843,7 @@
       "name": "mic-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4827,27 +4853,27 @@
       ]
     },
     {
-      "name": "repeat",
+      "name": "mic",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "repeat.tsx",
+          "path": "mic.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "mic",
+      "name": "repeat-1",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "mic.tsx",
+          "path": "repeat-1.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4866,14 +4892,27 @@
       ]
     },
     {
-      "name": "repeat-1",
+      "name": "repeat",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "repeat-1.tsx",
+          "path": "repeat.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wrench",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "wrench.tsx",
           "type": "registry:ui"
         }
       ]
