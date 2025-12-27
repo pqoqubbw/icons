@@ -299,10 +299,21 @@ const OpenInV0Action = ({ name }: Pick<Icon, 'name'>) => {
   );
 };
 
-const Actions = ({ name }: Pick<Icon, 'name'>) => {
+type ActionsProps = Pick<Icon, 'name'> & {
+  alwaysVisible?: boolean;
+};
+
+const Actions = ({ name, alwaysVisible = false }: ActionsProps) => {
   return (
     <TooltipProvider>
-      <div className="my-6 flex items-center justify-center gap-2 opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 has-focus-visible:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100">
+      <div
+        className={cn(
+          'my-6 flex items-center justify-center gap-2 transition-opacity duration-100',
+          alwaysVisible
+            ? 'opacity-100'
+            : 'opacity-0 group-hover/card:opacity-100 has-focus-visible:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 [@media(hover:none)]:opacity-100'
+        )}
+      >
         <CopyCodeAction name={name} />
         <CopyCLIAction name={name} />
         <OpenInV0Action name={name} />

@@ -4695,6 +4695,32 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "align-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "align-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "align-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "align-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -15,17 +15,26 @@ import { getPackageManagerPrefix } from '@/lib/get-package-manager-prefix';
 import { cn } from '@/lib/utils';
 import { usePackageNameContext } from '@/providers/package-name';
 
-const CliBlock = ({ icons }: { icons: Icon[] }) => {
+type CliBlockProps = {
+  icons?: Icon[];
+  staticIconName?: string;
+  className?: string;
+};
+
+const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
   const [state, setState] = useState<IconStatus>('idle');
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, startTransition] = useTransition();
-  const currentIconName = useRef('');
+  const currentIconName = useRef(staticIconName || '');
 
   const { packageName, setPackageName } = usePackageNameContext();
 
+  const isStatic = !!staticIconName;
+
   const handleCopyToClipboard = () => {
     startTransition(async () => {
-      const iconName = currentIconName.current || icons[0].name;
+      const iconName =
+        staticIconName || currentIconName.current || icons?.[0]?.name || '';
 
       try {
         await navigator.clipboard.writeText(
@@ -47,7 +56,9 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
   };
 
   return (
-    <div className="relative mt-[40px] w-full max-w-[642px] px-4">
+    <div
+      className={cn('relative mt-[40px] w-full max-w-[642px] px-4', className)}
+    >
       <Tabs
         className="w-full"
         value={packageName}
@@ -87,7 +98,7 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
               >
                 <span className="sr-only">
                   {getPackageManagerPrefix(pm)} shadcn add @lucide-animated/
-                  {currentIconName.current}
+                  {staticIconName || currentIconName.current}
                 </span>
                 <span
                   className="text-neutral-600 dark:text-neutral-400"
@@ -98,43 +109,49 @@ const CliBlock = ({ icons }: { icons: Icon[] }) => {
                 <span className="text-black dark:text-white" aria-hidden="true">
                   shadcn add @lucide-animated/
                 </span>
-                <TextLoop
-                  onIndexChange={(index) => {
-                    currentIconName.current = icons[index].name;
-                  }}
-                  transition={{
-                    duration: 0.25,
-                  }}
-                  interval={1.5}
-                  variants={{
-                    initial: {
-                      y: -12,
-                      rotateX: -90,
-                      opacity: 0,
-                      filter: 'blur(2px)',
-                    },
-                    animate: {
-                      y: 0,
-                      rotateX: 0,
-                      opacity: 1,
-                      filter: 'blur(0px)',
-                    },
-                    exit: {
-                      y: 12,
-                      rotateX: 90,
-                      opacity: 0,
-                      filter: 'blur(2px)',
-                    },
-                  }}
-                >
-                  {icons
-                    .filter((icon) => icon.name.length <= 20)
-                    .map((icon) => (
-                      <span key={icon.name} className="text-primary shrink-0">
-                        {icon.name}
-                      </span>
-                    ))}
-                </TextLoop>
+                {isStatic ? (
+                  <span className="text-primary shrink-0">
+                    {staticIconName}
+                  </span>
+                ) : (
+                  <TextLoop
+                    onIndexChange={(index) => {
+                      currentIconName.current = icons?.[index]?.name || '';
+                    }}
+                    transition={{
+                      duration: 0.25,
+                    }}
+                    interval={1.5}
+                    variants={{
+                      initial: {
+                        y: -12,
+                        rotateX: -90,
+                        opacity: 0,
+                        filter: 'blur(2px)',
+                      },
+                      animate: {
+                        y: 0,
+                        rotateX: 0,
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                      },
+                      exit: {
+                        y: 12,
+                        rotateX: 90,
+                        opacity: 0,
+                        filter: 'blur(2px)',
+                      },
+                    }}
+                  >
+                    {(icons || [])
+                      .filter((icon) => icon.name.length <= 20)
+                      .map((icon) => (
+                        <span key={icon.name} className="text-primary shrink-0">
+                          {icon.name}
+                        </span>
+                      ))}
+                  </TextLoop>
+                )}
               </BaseScrollArea.Viewport>
               <BaseScrollArea.Scrollbar
                 keepMounted={false}

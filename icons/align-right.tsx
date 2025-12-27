@@ -1,33 +1,29 @@
 'use client';
 
-import type { Variants } from 'motion/react';
+import type { Transition } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-export interface MicIconHandle {
+export interface AlignRightIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface MicIconProps extends HTMLAttributes<HTMLDivElement> {
+interface AlignRightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const CAPSULE_VARIANTS: Variants = {
-  normal: { y: 0 },
-  animate: {
-    y: [0, -3, 0, -2, 0],
-    transition: {
-      duration: 0.6,
-      ease: 'easeInOut',
-    },
-  },
+const DEFAULT_TRANSITION: Transition = {
+  type: 'spring',
+  stiffness: 150,
+  damping: 15,
+  mass: 0.3,
 };
 
-const MicIcon = forwardRef<MicIconHandle, MicIconProps>(
+const AlignRightIcon = forwardRef<AlignRightIconHandle, AlignRightIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -80,18 +76,44 @@ const MicIcon = forwardRef<MicIconHandle, MicIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          overflow="visible"
         >
-          <path d="M12 19v3" />
-          <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-          <motion.rect
-            x="9"
-            y="2"
-            width="6"
-            height="13"
-            rx="3"
-            variants={CAPSULE_VARIANTS}
+          <motion.line
+            x1="3"
+            x2="21"
+            y1="6"
+            y2="6"
+            variants={{
+              normal: { x1: 3 },
+              animate: { x1: 3 },
+            }}
             animate={controls}
+            transition={DEFAULT_TRANSITION}
+          />
+
+          <motion.line
+            x1="9"
+            x2="21"
+            y1="12"
+            y2="12"
+            variants={{
+              normal: { x1: 9 },
+              animate: { x1: 5 },
+            }}
+            animate={controls}
+            transition={DEFAULT_TRANSITION}
+          />
+
+          <motion.line
+            x1="7"
+            x2="21"
+            y1="18"
+            y2="18"
+            variants={{
+              normal: { x1: 7 },
+              animate: { x1: 12 },
+            }}
+            animate={controls}
+            transition={DEFAULT_TRANSITION}
           />
         </svg>
       </div>
@@ -99,6 +121,6 @@ const MicIcon = forwardRef<MicIconHandle, MicIconProps>(
   }
 );
 
-MicIcon.displayName = 'MicIcon';
+AlignRightIcon.displayName = 'AlignRightIcon';
 
-export { MicIcon };
+export { AlignRightIcon };
