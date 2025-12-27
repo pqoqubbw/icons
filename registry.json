@@ -4695,6 +4695,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "truck",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "truck.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

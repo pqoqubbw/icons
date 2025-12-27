@@ -359,6 +359,7 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { TruckIcon } from './truck';
 
 type IconListItem = {
   name: string;
@@ -367,6 +368,18 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'truck',
+    icon: TruckIcon,
+    keywords: [
+      'delivery',
+      'van',
+      'shipping',
+      'haulage',
+      'lorry',
+      'transportation',
+    ],
+  },
   {
     name: 'align-left',
     icon: AlignLeftIcon,
