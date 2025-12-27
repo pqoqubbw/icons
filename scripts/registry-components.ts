@@ -2186,6 +2186,18 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'mic-off',
+    'path': path.join(__dirname, '../icons/mic-off.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'mic',
+    'path': path.join(__dirname, '../icons/mic.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'align-left',
     'path': path.join(__dirname, '../icons/align-left.tsx'),
     'registryDependencies': [],
