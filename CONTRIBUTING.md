@@ -174,9 +174,9 @@ We welcome contributions to our project! Please follow these steps to contribute
 
 9. Build the project to check for errors:
 
-   ```
-   pnpm build
-   ```
+```
+pnpm build
+```
 
 10. Test the application to ensure your changes work as expected:
 

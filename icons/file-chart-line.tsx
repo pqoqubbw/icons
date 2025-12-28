@@ -16,7 +16,7 @@ interface FileChartLineIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -92,7 +92,7 @@ const FileChartLineIcon = forwardRef<
         <path d="M14 2v4a2 2 0 0 0 2 2h4" />
         <motion.path
           d="m8 17 2.5-2.5 2 2L16 13"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
         />
       </svg>

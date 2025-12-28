@@ -16,7 +16,7 @@ interface DiscordIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     translateX: 0,
     opacity: 1,
@@ -91,31 +91,31 @@ const DiscordIcon = forwardRef<DiscordIconHandle, DiscordIconProps>(
           style={{ overflow: 'visible' }}
         >
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             d="M17.54,34.22A47.42,47.42,0,0,1,14.68,38C7.3,37.79,4.5,33,4.5,33A44.83,44.83,0,0,1,9.31,13.48,16.47,16.47,0,0,1,18.69,10l1,2.31"
           />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             d="M17.85,22.67a3.48,3.48,0,0,0-3.37,3.9,3.38,3.38,0,0,0,3.31,3.22,3.53,3.53,0,0,0,3.43-3.9A3.45,3.45,0,0,0,17.85,22.67Z"
           />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             d="M12.2,14.37a28.19,28.19,0,0,1,8.16-2.18A23.26,23.26,0,0,1,24,12a23.26,23.26,0,0,1,3.64.21,28.19,28.19,0,0,1,8.16,2.18m-7.47-2.09l1-2.31a16.47,16.47,0,0,1,9.38,3.51A44.83,44.83,0,0,1,43.5,33S40.7,37.79,33.32,38a47.42,47.42,0,0,1-2.86-3.81"
           />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             d="M36.92,31.29a29.63,29.63,0,0,1-8.64,3.49,21.25,21.25,0,0,1-4.28.4h0a21.25,21.25,0,0,1-4.28-.4,29.63,29.63,0,0,1-8.64-3.49"
           />
           <motion.path
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             initial="normal"
             d="M30.15,22.67a3.48,3.48,0,0,1,3.37,3.9,3.38,3.38,0,0,1-3.31,3.22,3.53,3.53,0,0,1-3.43-3.9A3.45,3.45,0,0,1,30.15,22.67Z"

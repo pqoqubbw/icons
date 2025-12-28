@@ -16,13 +16,13 @@ interface HistoryIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const arrowTransition: Transition = {
+const ARROW_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
     rotate: '0deg',
   },
@@ -31,12 +31,12 @@ const arrowVariants: Variants = {
   },
 };
 
-const handTransition: Transition = {
+const HAND_TRANSITION: Transition = {
   duration: 0.6,
   ease: [0.4, 0, 0.2, 1],
 };
 
-const handVariants: Variants = {
+const HAND_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     originX: '0%',
@@ -49,12 +49,12 @@ const handVariants: Variants = {
   },
 };
 
-const minuteHandTransition: Transition = {
+const MINUTE_HAND_TRANSITION: Transition = {
   duration: 0.5,
   ease: 'easeInOut',
 };
 
-const minuteHandVariants: Variants = {
+const MINUTE_HAND_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     originX: '0%',
@@ -121,8 +121,8 @@ const HistoryIcon = forwardRef<HistoryIconHandle, HistoryIconProps>(
           strokeLinejoin="round"
         >
           <motion.g
-            transition={arrowTransition}
-            variants={arrowVariants}
+            transition={ARROW_TRANSITION}
+            variants={ARROW_VARIANTS}
             animate={controls}
           >
             <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
@@ -133,20 +133,20 @@ const HistoryIcon = forwardRef<HistoryIconHandle, HistoryIconProps>(
             y1="12"
             x2="12"
             y2="7"
-            variants={handVariants}
+            variants={HAND_VARIANTS}
             animate={controls}
             initial="normal"
-            transition={handTransition}
+            transition={HAND_TRANSITION}
           />
           <motion.line
             x1="12"
             y1="12"
             x2="16"
             y2="14"
-            variants={minuteHandVariants}
+            variants={MINUTE_HAND_VARIANTS}
             animate={controls}
             initial="normal"
-            transition={minuteHandTransition}
+            transition={MINUTE_HAND_TRANSITION}
           />
         </svg>
       </div>

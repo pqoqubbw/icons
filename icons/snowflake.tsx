@@ -7,7 +7,7 @@ import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -82,7 +82,7 @@ const SnowflakeIcon = forwardRef<SnowflakeIconHandle, SnowflakeIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           style={{ transformOrigin: 'center' }}
         >

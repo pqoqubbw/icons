@@ -16,7 +16,7 @@ interface TwitchIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const pathVariants: Variants = {
   },
 };
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -129,19 +129,19 @@ const TwitchIcon = forwardRef<TwitchIconHandle, TwitchIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={pathControls}
             d="M21 2H3v16h5v4l4-4h5l4-4V2z"
           />
           <motion.path
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             initial="normal"
             animate={line1Controls}
             d="M11 11V7"
           />
           <motion.path
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             initial="normal"
             animate={line2Controls}
             d="M16 11V7"

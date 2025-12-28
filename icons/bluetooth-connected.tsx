@@ -16,7 +16,7 @@ interface BluetoothConnectedIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -86,7 +86,7 @@ const BluetoothConnectedIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           d="m7 7 10 10-5 5V2l5 5L7 17"
         />

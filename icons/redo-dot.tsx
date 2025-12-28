@@ -15,7 +15,7 @@ interface RedoDotIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const customEasing = cubicBezier(0.25, 0.1, 0.25, 1);
+const CUSTOM_EASING = cubicBezier(0.25, 0.1, 0.25, 1);
 
 const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
@@ -71,7 +71,7 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { translateX: 0, translateY: 0, rotate: 0 },
               animate: {
@@ -84,7 +84,7 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
             d="M21 7v6h-6"
           />
           <motion.path
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { pathLength: 1 },
               animate: { pathLength: [1, 0.8, 1] },
@@ -93,7 +93,7 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
             d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"
           />
           <motion.circle
-            transition={{ duration: 0.6, ease: customEasing }}
+            transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { scale: 1 },
               animate: { scale: [1, 1.2, 1] },

@@ -16,7 +16,7 @@ interface ArchiveIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rectVariants: Variants = {
+const RECT_VARIANTS: Variants = {
   normal: {
     translateY: 0,
     transition: {
@@ -37,12 +37,12 @@ const rectVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8' },
   animate: { d: 'M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11' },
 };
 
-const secondaryPathVariants: Variants = {
+const SECONDARY_PATH_VARIANTS: Variants = {
   normal: { d: 'M10 12h4' },
   animate: { d: 'M10 15h4' },
 };
@@ -109,16 +109,16 @@ const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
             rx="1"
             initial="normal"
             animate={controls}
-            variants={rectVariants}
+            variants={RECT_VARIANTS}
           />
           <motion.path
             d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M10 12h4"
-            variants={secondaryPathVariants}
+            variants={SECONDARY_PATH_VARIANTS}
             animate={controls}
           />
         </svg>

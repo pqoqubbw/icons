@@ -16,7 +16,7 @@ interface MessageSquareMoreIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dotVariants: Variants = {
+const DOT_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -99,19 +99,19 @@ const MessageSquareMoreIcon = forwardRef<
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         <motion.path
           d="M8 10h.01"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           animate={controls}
           custom={0}
         />
         <motion.path
           d="M12 10h.01"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           animate={controls}
           custom={1}
         />
         <motion.path
           d="M16 10h.01"
-          variants={dotVariants}
+          variants={DOT_VARIANTS}
           animate={controls}
           custom={2}
         />

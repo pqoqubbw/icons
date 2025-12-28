@@ -16,8 +16,8 @@ interface LoaderPinwheelIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const gVariants: Variants = {
-  normal: { rotate: 0 }, // if you want to start from a different angle, change this value or remove it entirely
+const G_VARIANTS: Variants = {
+  normal: { rotate: 0 },
   animate: {
     rotate: 360,
     transition: {
@@ -28,7 +28,7 @@ const gVariants: Variants = {
   },
 };
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 50,
   damping: 10,
@@ -91,8 +91,8 @@ const LoaderPinwheelIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.g
-          transition={defaultTransition}
-          variants={gVariants}
+          transition={DEFAULT_TRANSITION}
+          variants={G_VARIANTS}
           animate={controls}
         >
           <path d="M22 12a1 1 0 0 1-10 0 1 1 0 0 0-10 0" />

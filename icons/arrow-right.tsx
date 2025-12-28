@@ -16,7 +16,7 @@ interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'M5 12h14' },
   animate: {
     d: ['M5 12h14', 'M5 12h9', 'M5 12h14'],
@@ -26,7 +26,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondaryPathVariants: Variants = {
+const SECONDARY_PATH_VARIANTS: Variants = {
   normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
   animate: {
     d: 'm12 5 7 7-7 7',
@@ -93,12 +93,12 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
         >
           <motion.path
             d="M5 12h14"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
+            variants={SECONDARY_PATH_VARIANTS}
             animate={controls}
           />
         </svg>

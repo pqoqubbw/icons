@@ -16,7 +16,7 @@ interface TornadoIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     x: 0,
     opacity: 1,
@@ -94,35 +94,35 @@ const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
         >
           <motion.path
             d="M21 4H3"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={1}
           />
           <motion.path
             d="M18 8H6"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={2}
           />
           <motion.path
             d="M19 12H9"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={3}
           />
           <motion.path
             d="M16 16h-6"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={4}
           />
           <motion.path
             d="M11 20H9"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
             custom={5}

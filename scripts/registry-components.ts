@@ -2179,40 +2179,4 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-  {
-    'name': 'hand',
-    'path': path.join(__dirname, '../icons/hand.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'hand-grab',
-    'path': path.join(__dirname, '../icons/hand-grab.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'heart-handshake',
-    'path': path.join(__dirname, '../icons/heart-handshake.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'hand-fist',
-    'path': path.join(__dirname, '../icons/hand-fist.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'hand-helping',
-    'path': path.join(__dirname, '../icons/hand-helping.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'hand-metal',
-    'path': path.join(__dirname, '../icons/hand-metal.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
 ];

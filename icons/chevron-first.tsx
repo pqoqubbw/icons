@@ -71,7 +71,6 @@ const ChevronFirstIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Chevron */}
         <motion.path
           d="m17 18-6-6 6-6"
           animate={controls}
@@ -85,14 +84,13 @@ const ChevronFirstIcon = forwardRef<
               transition: {
                 duration: 0.6,
                 ease: 'easeInOut',
-                times: [0, 0.3, 0.7, 1], // Control keyframe timing
+                times: [0, 0.3, 0.7, 1],
               },
             },
           }}
           initial="normal"
         />
 
-        {/* Vertical Line*/}
         <path d="M7 6v12" />
       </svg>
     </div>

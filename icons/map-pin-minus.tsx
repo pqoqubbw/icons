@@ -16,7 +16,7 @@ interface MapPinMinusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const minusVariants: Variants = {
+const MINUS_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -97,7 +97,7 @@ const MapPinMinusIcon = forwardRef<MapPinMinusIconHandle, MapPinMinusIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -105,7 +105,7 @@ const MapPinMinusIcon = forwardRef<MapPinMinusIconHandle, MapPinMinusIconProps>(
           <circle cx="12" cy="10" r="3" />
           <motion.path
             d="M16 18h6"
-            variants={minusVariants}
+            variants={MINUS_VARIANTS}
             initial="normal"
             animate={controls}
           />

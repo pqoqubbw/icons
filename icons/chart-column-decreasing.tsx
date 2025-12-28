@@ -12,12 +12,11 @@ export interface ChartColumnDecreasingIconHandle {
   stopAnimation: () => void;
 }
 
-interface ChartColumnDecreasingIconProps
-  extends HTMLAttributes<HTMLDivElement> {
+interface ChartColumnDecreasingIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   visible: { pathLength: 1, opacity: 1 },
   hidden: { pathLength: 0, opacity: 0 },
 };
@@ -99,14 +98,14 @@ const ChartColumnDecreasingIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={1}
           d="M13 17V9"
         />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={2}
@@ -114,7 +113,7 @@ const ChartColumnDecreasingIcon = forwardRef<
         />
         <path d="M3 3v16a2 2 0 0 0 2 2h16" />
         <motion.path
-          variants={lineVariants}
+          variants={LINE_VARIANTS}
           initial="visible"
           animate={controls}
           custom={0}

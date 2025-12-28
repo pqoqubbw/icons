@@ -16,7 +16,7 @@ interface MessageSquareIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const iconVariants: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
     scale: 1,
     rotate: 0,
@@ -93,7 +93,7 @@ const MessageSquareIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={iconVariants}
+        variants={ICON_VARIANTS}
         animate={controls}
       >
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />

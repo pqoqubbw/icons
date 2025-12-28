@@ -16,7 +16,7 @@ interface ArrowBigLeftIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'M18 15h-6v4l-7-7 7-7v4h6v6z', translateX: 0 },
   animate: {
     d: 'M18 15h-6v4l-7-7 7-7v4h6v6z',
@@ -84,7 +84,7 @@ const ArrowBigLeftIcon = forwardRef<
       >
         <motion.path
           d="M18 15h-6v4l-7-7 7-7v4h6v6z"
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
         />
       </svg>

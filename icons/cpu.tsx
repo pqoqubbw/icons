@@ -16,13 +16,13 @@ interface CpuIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const transition: Transition = {
+const TRANSITION: Transition = {
   duration: 0.5,
   ease: 'easeInOut',
   repeat: 1,
 };
 
-const yVariants: Variants = {
+const Y_VARIANTS: Variants = {
   normal: {
     scale: 1,
     rotate: 0,
@@ -33,7 +33,7 @@ const yVariants: Variants = {
     opacity: [1, 0.8, 1],
   },
 };
-const xVariants: Variants = {
+const X_VARIANTS: Variants = {
   normal: {
     scale: 1,
     rotate: 0,
@@ -102,50 +102,50 @@ const CpuIcon = forwardRef<CpuIconHandle, CpuIconProps>(
           <rect width="6" height="6" x="9" rx="1" y="9" />
           <motion.path
             d="M15 2v2"
-            variants={yVariants}
-            transition={transition}
+            variants={Y_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M15 20v2"
-            variants={yVariants}
-            transition={transition}
+            variants={Y_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M2 15h2"
-            variants={xVariants}
-            transition={transition}
+            variants={X_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M2 9h2"
-            variants={xVariants}
-            transition={transition}
+            variants={X_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M20 15h2"
-            variants={xVariants}
-            transition={transition}
+            variants={X_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M20 9h2"
-            variants={xVariants}
-            transition={transition}
+            variants={X_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M9 2v2"
-            variants={yVariants}
-            transition={transition}
+            variants={Y_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
           <motion.path
             d="M9 20v2"
-            variants={yVariants}
-            transition={transition}
+            variants={Y_VARIANTS}
+            transition={TRANSITION}
             animate={controls}
           />
         </svg>

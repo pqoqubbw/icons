@@ -16,7 +16,7 @@ interface CalendarCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -97,7 +97,7 @@ const CalendarCheckIcon = forwardRef<
         <motion.path
           animate={controls}
           initial="normal"
-          variants={checkVariants}
+          variants={CHECK_VARIANTS}
           d="m9 16 2 2 4-4"
           style={{ transformOrigin: 'center' }}
         />

@@ -16,7 +16,7 @@ interface LinkIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   initial: { pathLength: 1, pathOffset: 0, rotate: 0 },
   animate: {
     pathLength: [1, 0.97, 1, 0.97, 1],
@@ -88,12 +88,12 @@ const LinkIcon = forwardRef<LinkIconHandle, LinkIconProps>(
         >
           <motion.path
             d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
         </svg>

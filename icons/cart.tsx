@@ -16,7 +16,7 @@ interface CartIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const cartVariants: Variants = {
+const CART_VARIANTS: Variants = {
   normal: { scale: 1 },
   animate: {
     scale: 1.1,
@@ -81,7 +81,7 @@ const CartIcon = forwardRef<CartIconHandle, CartIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={cartVariants}
+          variants={CART_VARIANTS}
           animate={controls}
           transition={{ duration: 0.2 }}
         >

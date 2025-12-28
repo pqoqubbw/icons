@@ -16,7 +16,7 @@ interface RadioIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     opacity: 1,
     transition: {
@@ -99,14 +99,14 @@ const RadioIcon = forwardRef<RadioIconHandle, RadioIconProps>(
           <motion.path
             d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />
           <motion.path
             d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
@@ -114,14 +114,14 @@ const RadioIcon = forwardRef<RadioIconHandle, RadioIconProps>(
           <motion.path
             d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
           <motion.path
             d="M19.1 4.9C23 8.8 23 15.1 19.1 19"
             initial={{ opacity: 1 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={1}
           />

@@ -16,7 +16,7 @@ interface RollerCoasterIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -87,15 +87,15 @@ const RollerCoasterIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <motion.path d="M6 19V5" variants={variants} animate={controls} />
-        <motion.path d="M10 19V6.8" variants={variants} animate={controls} />
-        <motion.path d="M14 19v-7.8" variants={variants} animate={controls} />
-        <motion.path d="M18 5v4" variants={variants} animate={controls} />
-        <motion.path d="M18 19v-6" variants={variants} animate={controls} />
-        <motion.path d="M22 19V9" variants={variants} animate={controls} />
+        <motion.path d="M6 19V5" variants={VARIANTS} animate={controls} />
+        <motion.path d="M10 19V6.8" variants={VARIANTS} animate={controls} />
+        <motion.path d="M14 19v-7.8" variants={VARIANTS} animate={controls} />
+        <motion.path d="M18 5v4" variants={VARIANTS} animate={controls} />
+        <motion.path d="M18 19v-6" variants={VARIANTS} animate={controls} />
+        <motion.path d="M22 19V9" variants={VARIANTS} animate={controls} />
         <motion.path
           d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65"
-          variants={variants}
+          variants={VARIANTS}
           animate={controls}
           custom={2}
         />

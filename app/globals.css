@@ -1,274 +1,86 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin '@toolwind/corner-shape';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-mono: var(--font-geist-mono);
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 }
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+:root {
+  --background: #f2f2f2;
+  --foreground: #000;
+  --primary: #ee4822;
+  --secondary: #3f3f47;
+
+  --radius: 0.4rem;
 }
 
-@utility container {
-  margin-inline: auto;
-  max-width: 1200px;
-  padding-inline: 16px;
-  width: 100%;
-}
-
-@utility rainbow-banner-gradient-1 {
-  mask-image:
-    linear-gradient(to bottom, white, transparent),
-    radial-gradient(circle at top center, white, transparent);
-  mask-composite: intersect;
-  animation: moving-banner 16s linear infinite reverse;
-  --start: rgba(0, 87, 255, 0.5);
-  --mid: rgba(255, 0, 166, 0.77);
-  --end: rgba(255, 77, 0, 0.4);
-  --via: rgba(164, 255, 68, 0.4);
-  background-image: repeating-linear-gradient(
-    60deg,
-    var(--end),
-    var(--start) 2%,
-    var(--start) 5%,
-    transparent 8%,
-    transparent 14%,
-    var(--via) 18%,
-    var(--via) 22%,
-    var(--mid) 28%,
-    var(--mid) 30%,
-    var(--via) 34%,
-    var(--via) 36%,
-    transparent,
-    var(--end) calc(50% - 12px)
-  );
-  background-size: 200% 100%;
-  mix-blend-mode: difference;
-}
-
-@utility rainbow-banner-gradient-2 {
-  mask-image:
-    linear-gradient(to bottom, white, transparent),
-    radial-gradient(circle at top center, white, transparent);
-  mask-composite: intersect;
-  animation: moving-banner 20s linear infinite;
-  --start: rgba(255, 120, 120, 0.5);
-  --mid: rgba(36, 188, 255, 0.4);
-  --end: rgba(64, 0, 255, 0.51);
-  --via: rgba(255, 89, 0, 0.56);
-  background-image: repeating-linear-gradient(
-    45deg,
-    var(--end),
-    var(--start) 4%,
-    var(--start) 8%,
-    transparent 9%,
-    transparent 14%,
-    var(--mid) 16%,
-    var(--mid) 20%,
-    transparent,
-    var(--via) 36%,
-    var(--via) 40%,
-    transparent 42%,
-    var(--end) 46%,
-    var(--end) calc(50% - 16.8px)
-  );
-  background-size: 200% 100%;
-  mix-blend-mode: color-dodge;
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 97%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.4rem;
-    --expo-out: linear(
-      0 0%,
-      0.1684 2.66%,
-      0.3165 5.49%,
-      0.446 8.52%,
-      0.5581 11.78%,
-      0.6535 15.29%,
-      0.7341 19.11%,
-      0.8011 23.3%,
-      0.8557 27.93%,
-      0.8962 32.68%,
-      0.9283 38.01%,
-      0.9529 44.08%,
-      0.9711 51.14%,
-      0.9833 59.06%,
-      0.9915 68.74%,
-      1 100%
-    );
-  }
-
-  html {
-    scrollbar-gutter: stable;
-  }
-
-  ::selection {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--foreground));
-  }
-
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-
-  .dark ::selection {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--foreground));
-  }
-
-  ::view-transition-group(root) {
-    animation-duration: 0.7s;
-    animation-timing-function: var(--expo-out);
-  }
-
-  ::view-transition-new(root) {
-    animation-name: reveal-light;
-  }
-
-  ::view-transition-old(root),
-  .dark::view-transition-old(root) {
-    animation: none;
-    z-index: -1;
-  }
-  .dark::view-transition-new(root) {
-    animation-name: reveal-dark;
-  }
-
-  @keyframes reveal-dark {
-    from {
-      clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
-    }
-    to {
-      clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
-    }
-  }
-
-  @keyframes reveal-light {
-    from {
-      clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
-    }
-    to {
-      clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
-    }
-  }
-}
-
-@layer components {
-  @keyframes moving-banner {
-    from {
-      background-position: 0% 0;
-    }
-    to {
-      background-position: 100% 0;
-    }
-  }
+.dark {
+  --background: #171717;
+  --foreground: #fff;
+  --secondary-bg: #262626;
+  --secondary: #d4d4d4;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-neutral-700) transparent;
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html[data-base-ui-scroll-locked] {
+    scroll-behavior: auto;
+  }
+
   body {
-    @apply bg-background text-foreground font-mono;
+    background-color: var(--background);
+    color: var(--foreground);
+    overscroll-behavior: none;
   }
 
-  .action-container {
-    @apply hover:bg-accent flex size-[40px] cursor-pointer items-center justify-center rounded-md p-2 transition-colors duration-200;
+  ::selection {
+    background-color: var(--primary);
+    color: white;
   }
 
-  .action-item {
-    @apply size-[18px] text-zinc-700 dark:text-gray-100;
+  .root {
+    isolation: isolate;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-neutral-700);
+    border-radius: 6px;
+  }
+
+  kbd {
+    @apply flex size-5 items-center justify-center rounded-[4px] select-none;
+    @apply font-sans text-xs uppercase;
+    @apply bg-neutral-200 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-300;
+    @apply cursor-pointer transition-transform duration-100 active:scale-95;
   }
 }

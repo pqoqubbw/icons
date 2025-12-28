@@ -8,6 +8,8 @@ import { AirplayIcon } from '@/icons/airplay';
 import { AlarmClockIcon } from '@/icons/alarm-clock';
 import { AlignCenterIcon } from '@/icons/align-center';
 import { AlignHorizontalIcon } from '@/icons/align-horizontal';
+import { AlignLeftIcon } from '@/icons/align-left';
+import { AlignRightIcon } from '@/icons/align-right';
 import { AlignVerticalIcon } from '@/icons/align-vertical';
 import { AngryIcon } from '@/icons/angry';
 import { AnnoyedIcon } from '@/icons/annoyed';
@@ -21,7 +23,7 @@ import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
 import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
 import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash';
 import { ArrowDownIcon } from '@/icons/arrow-down';
-import { ArrowDown01con } from '@/icons/arrow-down-0-1';
+import { ArrowDown01Icon } from '@/icons/arrow-down-0-1';
 import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
 import { ArrowDownAZIcon } from '@/icons/arrow-down-a-z';
 import { ArrowDownLeftIcon } from '@/icons/arrow-down-left';
@@ -127,6 +129,7 @@ import { EarthIcon } from '@/icons/earth';
 import { EuroIcon } from '@/icons/euro';
 import { EvChargerIcon } from '@/icons/ev-charger';
 import { ExpandIcon } from '@/icons/expand';
+import { EyeIcon } from '@/icons/eye';
 import { EyeOffIcon } from '@/icons/eye-off';
 import { FacebookIcon } from '@/icons/facebook';
 import { FeatherIcon } from '@/icons/feather';
@@ -370,6 +373,16 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: 'align-left',
+    icon: AlignLeftIcon,
+    keywords: ['text', 'alignment', 'left', 'paragraph', 'format'],
+  },
+  {
+    name: 'align-right',
+    icon: AlignRightIcon,
+    keywords: ['text', 'alignment', 'right', 'paragraph', 'format'],
+  },
   {
     name: 'folder-lock',
     icon: FolderLockIcon,
@@ -1245,6 +1258,24 @@ const ICON_LIST: IconListItem[] = [
       'hidden',
       'visibility',
       'vision',
+    ],
+  },
+  {
+    name: 'eye',
+    icon: EyeIcon,
+    keywords: [
+      'view',
+      'watch',
+      'see',
+      'show',
+      'expose',
+      'reveal',
+      'display',
+      'visible',
+      'visibility',
+      'vision',
+      'preview',
+      'read',
     ],
   },
   {
@@ -2679,7 +2710,7 @@ const ICON_LIST: IconListItem[] = [
   },
   {
     name: 'arrow-down-0-1',
-    icon: ArrowDown01con,
+    icon: ArrowDown01Icon,
     keywords: [
       'filter',
       'sort',

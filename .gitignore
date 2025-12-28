@@ -10,6 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 
+_app/*
+
 package-lock.json
 yarn.lock
 
@@ -41,3 +43,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# proprietary fonts (not licensed for public distribution)
+# fonts are downloaded at build time from Vercel Blob Storage
+/fonts/*.woff
+/fonts/*.woff2
+/fonts/*.ttf
+/fonts/*.otf
+/fonts/*EULA.pdf
+/fonts/Grilli-Type-EULA.pdf

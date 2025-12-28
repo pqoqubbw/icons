@@ -16,7 +16,7 @@ interface VibrateIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rectVariants: Variants = {
+const RECT_VARIANTS: Variants = {
   normal: {
     rotate: 0,
   },
@@ -91,7 +91,7 @@ const VibrateIcon = forwardRef<VibrateIconHandle, VibrateIconProps>(
             x="8"
             y="5"
             rx="1"
-            variants={rectVariants}
+            variants={RECT_VARIANTS}
             animate={controls}
             style={{ transformOrigin: 'center' }}
           />

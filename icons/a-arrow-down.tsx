@@ -16,7 +16,7 @@ interface AArrowDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const letterVariants: Variants = {
+const LETTER_VARIANTS: Variants = {
   normal: { opacity: 1, scale: 1 },
   animate: {
     opacity: [0, 1],
@@ -25,7 +25,7 @@ const letterVariants: Variants = {
   },
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: { opacity: 1, y: 0 },
   animate: {
     opacity: [0, 1],
@@ -88,27 +88,25 @@ const AArrowDownIcon = forwardRef<AArrowDownIconHandle, AArrowDownIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          {/* Letra A */}
           <motion.path
             d="M3.5 13h6"
             animate={controls}
-            variants={letterVariants}
+            variants={LETTER_VARIANTS}
           />
           <motion.path
             d="m2 16 4.5-9 4.5 9"
             animate={controls}
-            variants={letterVariants}
+            variants={LETTER_VARIANTS}
           />
-          {/* Seta */}
           <motion.path
             d="M18 7v9"
             animate={controls}
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
           />
           <motion.path
             d="m14 12 4 4 4-4"
             animate={controls}
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
           />
         </svg>
       </div>

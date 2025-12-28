@@ -16,7 +16,7 @@ interface MapPinXInsideIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const firstBarVariants: Variants = {
+const FIRST_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -44,7 +44,7 @@ const firstBarVariants: Variants = {
   },
 };
 
-const secondBarVariants: Variants = {
+const SECOND_BAR_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -114,20 +114,20 @@ const MapPinXInsideIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={svgVariants}
+        variants={SVG_VARIANTS}
         initial="normal"
         animate={controls}
       >
         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
         <motion.path
           d="m14.5 7.5-5 5"
-          variants={firstBarVariants}
+          variants={FIRST_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />
         <motion.path
           d="m9.5 7.5 5 5"
-          variants={secondBarVariants}
+          variants={SECOND_BAR_VARIANTS}
           initial="normal"
           animate={controls}
         />

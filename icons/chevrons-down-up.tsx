@@ -16,7 +16,7 @@ interface ChevronsDownUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 250,
   damping: 25,
@@ -83,7 +83,7 @@ const ChevronsDownUpIcon = forwardRef<
             normal: { translateY: '0%' },
             animate: { translateY: '-2px' },
           }}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           animate={controls}
           initial="normal"
           d="m7 20 5-5 5 5"
@@ -93,7 +93,7 @@ const ChevronsDownUpIcon = forwardRef<
             normal: { translateY: '0%' },
             animate: { translateY: '2px' },
           }}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           animate={controls}
           initial="normal"
           d="m7 4 5 5 5-5"

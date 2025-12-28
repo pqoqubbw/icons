@@ -16,7 +16,7 @@ interface TrendingUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   animate: {
     x: 0,
     y: 0,
@@ -28,7 +28,7 @@ const svgVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -48,7 +48,7 @@ const pathVariants: Variants = {
   },
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -123,19 +123,19 @@ const TrendingUpIcon = forwardRef<TrendingUpIconHandle, TrendingUpIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
           <motion.polyline
             points="22 7 13.5 15.5 8.5 10.5 2 17"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={controls}
           />
           <motion.polyline
             points="16 7 22 7 22 13"
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
             initial="normal"
             animate={controls}
           />

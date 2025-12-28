@@ -16,7 +16,7 @@ interface BanIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -35,7 +35,7 @@ const circleVariants: Variants = {
   },
 };
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -116,13 +116,13 @@ const BanIcon = forwardRef<BanIconHandle, BanIconProps>(
             cx="12"
             cy="12"
             r="10"
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
             initial="normal"
             animate={controls}
           />
           <motion.path
             d="m4.9 4.9 14.2 14.2"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             initial="normal"
             animate={controls}
           />

@@ -16,7 +16,7 @@ interface SquareStackIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const rectVariants: Variants = {
+const RECT_VARIANTS: Variants = {
   normal: { scale: 1 },
   animate: {
     scale: [1, 0.8, 1],
@@ -24,7 +24,7 @@ const rectVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { scale: 1 },
   animate: {
     scale: [1, 0.9, 1],
@@ -86,7 +86,7 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             transition={{
               delay: 0.3,
@@ -96,7 +96,7 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
           />
           <motion.path
             d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             transition={{
               delay: 0.2,
@@ -104,7 +104,7 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
             }}
           />
           <motion.rect
-            variants={rectVariants}
+            variants={RECT_VARIANTS}
             width="8"
             height="8"
             x="14"

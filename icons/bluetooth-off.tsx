@@ -16,7 +16,7 @@ interface BluetoothOffIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 1],
@@ -25,7 +25,7 @@ const pathVariants: Variants = {
   },
 };
 
-const offlineVariants: Variants = {
+const OFFLINE_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1 },
   animate: {
     pathLength: [0, 1],
@@ -90,7 +90,7 @@ const BluetoothOffIcon = forwardRef<
         strokeLinejoin="round"
       >
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.3,
@@ -98,7 +98,7 @@ const BluetoothOffIcon = forwardRef<
           d="m17 17-5 5V12l-5 5"
         />
         <motion.path
-          variants={offlineVariants}
+          variants={OFFLINE_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.2,
@@ -107,7 +107,7 @@ const BluetoothOffIcon = forwardRef<
           d="m2 2 20 20"
         />
         <motion.path
-          variants={pathVariants}
+          variants={PATH_VARIANTS}
           animate={controls}
           transition={{
             duration: 0.3,

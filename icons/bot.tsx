@@ -82,7 +82,7 @@ const BotIcon = forwardRef<BotIconHandle, BotIconProps>(
             variants={{
               normal: { y1: 13, y2: 15 },
               animate: {
-                y1: [13, 14, 13], // open → closed → open
+                y1: [13, 14, 13],
                 y2: [15, 14, 15],
                 transition: {
                   duration: 0.5,
@@ -101,7 +101,7 @@ const BotIcon = forwardRef<BotIconHandle, BotIconProps>(
             variants={{
               normal: { y1: 13, y2: 15 },
               animate: {
-                y1: [13, 14, 13], // open → closed → open
+                y1: [13, 14, 13],
                 y2: [15, 14, 15],
                 transition: {
                   duration: 0.5,

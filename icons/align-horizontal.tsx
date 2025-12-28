@@ -16,7 +16,7 @@ interface AlignHorizontalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 160,
   damping: 17,
@@ -85,7 +85,7 @@ const AlignHorizontalIcon = forwardRef<
             animate: { scaleX: 0.85 },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
           width="6"
           height="10"
           x="9"
@@ -102,7 +102,7 @@ const AlignHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.path
           d="M20 22V2"
@@ -114,7 +114,7 @@ const AlignHorizontalIcon = forwardRef<
             },
           }}
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
       </svg>
     </div>

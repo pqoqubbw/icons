@@ -16,7 +16,7 @@ interface DribbbleIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const circleVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -147,7 +147,7 @@ const DribbbleIcon = forwardRef<DribbbleIconHandle, DribbbleIconProps>(
           strokeLinejoin="round"
         >
           <motion.circle
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
             initial="normal"
             animate={circleControls}
             cx="12"
@@ -155,19 +155,19 @@ const DribbbleIcon = forwardRef<DribbbleIconHandle, DribbbleIconProps>(
             r="10"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={path1Controls}
             d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={path2Controls}
             d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             initial="normal"
             animate={path3Controls}
             d="M8.56 2.75c4.37 6 6 9.42 8 17.72"
