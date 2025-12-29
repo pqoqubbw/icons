@@ -5374,21 +5374,6 @@
       ]
     },
     {
-      "name": "eye",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "eye.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "align-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5414,6 +5399,111 @@
       "files": [
         {
           "path": "align-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "eye.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-fist",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hand-fist.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-grab",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hand-grab.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-helping",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hand-helping.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-metal",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hand-metal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hand.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heart-handshake",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "heart-handshake.tsx",
           "type": "registry:ui"
         }
       ]
