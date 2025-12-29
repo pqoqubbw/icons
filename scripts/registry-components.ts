@@ -2179,22 +2179,4 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
-  {
-    'name': 'eye',
-    'path': path.join(__dirname, '../icons/eye.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'align-left',
-    'path': path.join(__dirname, '../icons/align-left.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
-    'name': 'align-right',
-    'path': path.join(__dirname, '../icons/align-right.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
 ];
