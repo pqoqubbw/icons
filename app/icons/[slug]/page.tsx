@@ -39,7 +39,9 @@ export const generateMetadata = async ({
   }
 
   const pascalName = kebabToPascalCase(slug);
-  const title = `${pascalName} - Animated React Icon`;
+  const [keyword] = pascalName.split('Icon');
+
+  const title = `${keyword} Icon - Animated React Icon`;
   const description = `Free animated ${icon.name} icon for React. Smooth Motion-powered animation, copy-paste ready. Keywords: ${icon.keywords.slice(0, 5).join(', ')}.`;
 
   return {
