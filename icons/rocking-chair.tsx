@@ -16,14 +16,14 @@ interface RockingChairIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 100,
   damping: 12,
   mass: 0.4,
 };
 
-const rockingVariants: Variants = {
+const ROCKING_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: {
     rotate: [-5, 5, -5],
@@ -91,14 +91,14 @@ const RockingChairIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={rockingVariants}
+        variants={ROCKING_VARIANTS}
         animate={controls}
         style={{ originX: '10%', originY: '90%' }}
       >
         <motion.polyline
           points="3.5 2 6.5 12.5 18 12.5"
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.line
           x1="9.5"
@@ -106,7 +106,7 @@ const RockingChairIcon = forwardRef<
           y1="12.5"
           y2="20"
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.line
           x1="15"
@@ -114,12 +114,12 @@ const RockingChairIcon = forwardRef<
           y1="12.5"
           y2="20"
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
         <motion.path
           d="M2.75 18a13 13 0 0 0 18.5 0"
           animate={controls}
-          transition={defaultTransition}
+          transition={DEFAULT_TRANSITION}
         />
       </motion.svg>
     </div>

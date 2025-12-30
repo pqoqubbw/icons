@@ -16,12 +16,12 @@ interface ChromeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const transition: Transition = {
+const TRANSITION: Transition = {
   duration: 0.3,
   opacity: { delay: 0.15 },
 };
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: {
     pathLength: 1,
     opacity: 1,
@@ -30,7 +30,7 @@ const variants: Variants = {
     pathLength: [0, 1],
     opacity: [0, 1],
     transition: {
-      ...transition,
+      ...TRANSITION,
       delay: 0.1 * custom,
     },
   }),
@@ -95,7 +95,7 @@ const ChromeIcon = forwardRef<ChromeIconHandle, ChromeIconProps>(
             cx="12"
             cy="12"
             r="4"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={0}
           />
@@ -104,7 +104,7 @@ const ChromeIcon = forwardRef<ChromeIconHandle, ChromeIconProps>(
             x2="12"
             y1="8"
             y2="8"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={3}
           />
@@ -113,7 +113,7 @@ const ChromeIcon = forwardRef<ChromeIconHandle, ChromeIconProps>(
             x2="8.54"
             y1="6.06"
             y2="14"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={3}
           />
@@ -122,7 +122,7 @@ const ChromeIcon = forwardRef<ChromeIconHandle, ChromeIconProps>(
             x2="15.46"
             y1="21.94"
             y2="14"
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             custom={3}
           />

@@ -4,11 +4,11 @@ import { createContext, useContext, useState } from 'react';
 
 import { PACKAGE_MANAGER } from '@/constants';
 
+type PackageManager = (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];
+
 type PackageNameContextType = {
-  packageName: (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];
-  setPackageName: (
-    packageName: (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER]
-  ) => void;
+  packageName: PackageManager;
+  setPackageName: (packageName: PackageManager) => void;
 };
 
 const PackageNameContext = createContext<PackageNameContextType>({
@@ -17,7 +17,9 @@ const PackageNameContext = createContext<PackageNameContextType>({
 });
 
 const PackageNameProvider = ({ children }: { children: React.ReactNode }) => {
-  const [packageName, setPackageName] = useState(PACKAGE_MANAGER.PNPM);
+  const [packageName, setPackageName] = useState<PackageManager>(
+    PACKAGE_MANAGER.PNPM
+  );
 
   return (
     <PackageNameContext.Provider value={{ packageName, setPackageName }}>

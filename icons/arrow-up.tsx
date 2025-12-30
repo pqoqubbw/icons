@@ -16,7 +16,7 @@ interface ArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: { d: 'm5 12 7-7 7 7', translateY: 0 },
   animate: {
     d: 'm5 12 7-7 7 7',
@@ -27,7 +27,7 @@ const pathVariants: Variants = {
   },
 };
 
-const secondPathVariants: Variants = {
+const SECOND_PATH_VARIANTS: Variants = {
   normal: { d: 'M12 19V5' },
   animate: {
     d: ['M12 19V5', 'M12 19V10', 'M12 19V5'],
@@ -93,12 +93,12 @@ const ArrowUpIcon = forwardRef<ArrowUpIconHandle, ArrowUpIconProps>(
         >
           <motion.path
             d="m5 12 7-7 7 7"
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
           />
           <motion.path
             d="M12 19V5"
-            variants={secondPathVariants}
+            variants={SECOND_PATH_VARIANTS}
             animate={controls}
           />
         </svg>

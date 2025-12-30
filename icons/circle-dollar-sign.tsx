@@ -16,7 +16,7 @@ interface CircleDollarSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dollarMainVariants: Variants = {
+const DOLLAR_MAIN_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -35,7 +35,7 @@ const dollarMainVariants: Variants = {
   },
 };
 
-const dollarSecondaryVariants: Variants = {
+const DOLLAR_SECONDARY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -119,13 +119,13 @@ const CircleDollarSignIcon = forwardRef<
           d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"
           initial="normal"
           animate={controls}
-          variants={dollarMainVariants}
+          variants={DOLLAR_MAIN_VARIANTS}
         />
         <motion.path
           d="M12 18V6"
           initial="normal"
           animate={controls}
-          variants={dollarSecondaryVariants}
+          variants={DOLLAR_SECONDARY_VARIANTS}
         />
       </svg>
     </div>

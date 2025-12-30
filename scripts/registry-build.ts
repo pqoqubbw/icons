@@ -2,10 +2,12 @@ import fs from 'fs';
 import path from 'path';
 
 import type { Schema } from './registry-schema';
+import { SITE } from '../constants';
 import { components } from './registry-components';
 
 const registryComponents = path.join(__dirname, '../public/r');
-const registryIndexPath = path.join(__dirname, '../registry.json');
+const registryIndexPath = path.join(__dirname, '../public/r/registry.json');
+const registryRootPath = path.join(__dirname, '../registry.json');
 
 if (!fs.existsSync(registryComponents)) {
   fs.mkdirSync(registryComponents, { recursive: true });
@@ -64,12 +66,14 @@ for (const component of components) {
 
 const registryIndex = {
   $schema: 'https://ui.shadcn.com/schema/registry.json',
-  name: 'lucide-animated',
-  homepage: 'https://lucide-animated.com',
+  name: SITE.NAME,
+  homepage: SITE.URL,
   items: registryItems,
 };
 
-fs.writeFileSync(registryIndexPath, JSON.stringify(registryIndex, null, 2));
+const registryIndexJson = JSON.stringify(registryIndex, null, 2);
+fs.writeFileSync(registryIndexPath, registryIndexJson);
+fs.writeFileSync(registryRootPath, registryIndexJson);
 
 console.log(`✅ Built ${components.length} registry components`);
 console.log(`✅ Updated registry.json\n`);

@@ -16,7 +16,7 @@ interface MapPinIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -98,7 +98,7 @@ const MapPinIcon = forwardRef<MapPinIconHandle, MapPinIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -107,7 +107,7 @@ const MapPinIcon = forwardRef<MapPinIconHandle, MapPinIconProps>(
             cx="12"
             cy="10"
             r="3"
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
             initial="normal"
             animate={controls}
           />

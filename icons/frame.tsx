@@ -16,7 +16,7 @@ interface FrameIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 160,
   damping: 17,
@@ -87,7 +87,7 @@ const FrameIcon = forwardRef<FrameIconHandle, FrameIconProps>(
               },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             x1={22}
             x2={2}
             y1={6}
@@ -103,7 +103,7 @@ const FrameIcon = forwardRef<FrameIconHandle, FrameIconProps>(
               },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             x1={22}
             x2={2}
             y1={18}
@@ -119,7 +119,7 @@ const FrameIcon = forwardRef<FrameIconHandle, FrameIconProps>(
               },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             x1={6}
             x2={6}
             y1={2}
@@ -135,7 +135,7 @@ const FrameIcon = forwardRef<FrameIconHandle, FrameIconProps>(
               },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             x1={18}
             x2={18}
             y1={2}

@@ -16,7 +16,7 @@ interface UnderlineIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1, pathOffset: 0 },
   animate: {
     pathLength: [0, 1],
@@ -81,7 +81,7 @@ const UnderlineIcon = forwardRef<UnderlineIconHandle, UnderlineIconProps>(
         >
           <motion.path
             transition={{ duration: 0.3 }}
-            variants={variants}
+            variants={VARIANTS}
             animate={controls}
             d="M6 4v6a6 6 0 0 0 12 0V4"
           />
@@ -90,7 +90,7 @@ const UnderlineIcon = forwardRef<UnderlineIconHandle, UnderlineIconProps>(
             x2="20"
             y1="20"
             y2="20"
-            variants={variants}
+            variants={VARIANTS}
             transition={{
               delay: 0.2,
               duration: 0.4,

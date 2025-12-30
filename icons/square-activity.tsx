@@ -16,7 +16,7 @@ interface ActivityIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -38,7 +38,7 @@ const pathVariants: Variants = {
   },
 };
 
-const squareVariants: Variants = {
+const SQUARE_VARIANTS: Variants = {
   normal: {
     transition: {
       duration: 0.4,
@@ -111,12 +111,12 @@ const SquareActivityIcon = forwardRef<ActivityIconHandle, ActivityIconProps>(
             x="3"
             y="3"
             rx="2"
-            variants={squareVariants}
+            variants={SQUARE_VARIANTS}
             animate={controls}
             initial="normal"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             initial="normal"
             d="M17 12h-2l-2 5-2-10-2 5H7"

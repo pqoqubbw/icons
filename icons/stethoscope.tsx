@@ -17,7 +17,7 @@ interface StethoscopeIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const DURATION = 0.25;
 
-const calculateDelay = (i: number) => {
+const CALCULATE_DELAY = (i: number) => {
   return i === 0 ? 0.1 : i * DURATION + 0.1;
 };
 
@@ -80,8 +80,8 @@ const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
             animate={controls}
             transition={{
               duration: DURATION,
-              delay: calculateDelay(2),
-              opacity: { delay: calculateDelay(2) },
+              delay: CALCULATE_DELAY(2),
+              opacity: { delay: CALCULATE_DELAY(2) },
             }}
             variants={{
               normal: {
@@ -102,8 +102,8 @@ const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
             animate={controls}
             transition={{
               duration: DURATION,
-              delay: calculateDelay(2),
-              opacity: { delay: calculateDelay(2) },
+              delay: CALCULATE_DELAY(2),
+              opacity: { delay: CALCULATE_DELAY(2) },
             }}
             variants={{
               normal: {
@@ -124,8 +124,8 @@ const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
             animate={controls}
             transition={{
               duration: DURATION,
-              delay: calculateDelay(2),
-              opacity: { delay: calculateDelay(2) },
+              delay: CALCULATE_DELAY(2),
+              opacity: { delay: CALCULATE_DELAY(2) },
             }}
             variants={{
               normal: {
@@ -146,8 +146,8 @@ const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
             animate={controls}
             transition={{
               duration: DURATION,
-              delay: calculateDelay(1),
-              opacity: { delay: calculateDelay(1) },
+              delay: CALCULATE_DELAY(1),
+              opacity: { delay: CALCULATE_DELAY(1) },
             }}
             variants={{
               normal: {
@@ -170,8 +170,8 @@ const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
             animate={controls}
             transition={{
               duration: DURATION,
-              delay: calculateDelay(0),
-              opacity: { delay: calculateDelay(0) },
+              delay: CALCULATE_DELAY(0),
+              opacity: { delay: CALCULATE_DELAY(0) },
             }}
             variants={{
               normal: { pathLength: 1, opacity: 1, transition: { delay: 0 } },

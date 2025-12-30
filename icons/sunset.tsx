@@ -16,7 +16,7 @@ interface SunsetIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -24,7 +24,7 @@ const arrowVariants: Variants = {
     y: [0, 1, 0],
   },
 };
-const raysVariants: Variants = {
+const RAYS_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: (i: number) => ({
     opacity: [0, 1],
@@ -98,7 +98,7 @@ const SunsetIcon = forwardRef<SunsetIconHandle, SunsetIconProps>(
           <motion.g
             animate={arrowControls}
             initial="normal"
-            variants={arrowVariants}
+            variants={ARROW_VARIANTS}
           >
             <path d="M12 10V2" />
             <path d="m16 6-4 4-4-4" />
@@ -116,7 +116,7 @@ const SunsetIcon = forwardRef<SunsetIconHandle, SunsetIconProps>(
               key={d}
               d={d}
               animate={raysControls}
-              variants={raysVariants}
+              variants={RAYS_VARIANTS}
               custom={index + 1}
               initial="normal"
             />

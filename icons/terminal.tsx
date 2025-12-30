@@ -16,7 +16,7 @@ interface TerminalIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: {
     opacity: [1, 0, 1],
@@ -88,7 +88,7 @@ const TerminalIcon = forwardRef<TerminalIconHandle, TerminalIconProps>(
             x2="20"
             y1="19"
             y2="19"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={controls}
             initial="normal"
           />

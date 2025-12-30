@@ -16,7 +16,7 @@ interface CursorClickIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const cursorVariants: Variants = {
+const CURSOR_VARIANTS: Variants = {
   initial: { x: 0, y: 0 },
   hover: {
     x: [0, 0, -3, 0],
@@ -28,7 +28,7 @@ const cursorVariants: Variants = {
   },
 };
 
-const lineVariants: Variants = {
+const LINE_VARIANTS: Variants = {
   initial: { opacity: 1, x: 0, y: 0 },
   spread: (custom: { x: number; y: number }) => ({
     opacity: [0, 1, 0, 0, 0, 0, 1],
@@ -108,30 +108,30 @@ const CursorClickIcon = forwardRef<CursorClickIconHandle, CursorClickIconProps>(
         >
           <motion.path
             d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
-            variants={cursorVariants}
+            variants={CURSOR_VARIANTS}
             animate={cursorControls}
           />
           <motion.path
             d="M14 4.1 12 6"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={clickControls}
             custom={{ x: 1, y: -1 }}
           />
           <motion.path
             d="m5.1 8-2.9-.8"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={clickControls}
             custom={{ x: -1, y: 0 }}
           />
           <motion.path
             d="m6 12-1.9 2"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={clickControls}
             custom={{ x: -1, y: 1 }}
           />
           <motion.path
             d="M7.2 2.2 8 5.1"
-            variants={lineVariants}
+            variants={LINE_VARIANTS}
             animate={clickControls}
             custom={{ x: 0, y: -1 }}
           />

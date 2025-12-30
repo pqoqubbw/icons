@@ -16,7 +16,7 @@ interface CopyIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const defaultTransition: Transition = {
+const DEFAULT_TRANSITION: Transition = {
   type: 'spring',
   stiffness: 160,
   damping: 17,
@@ -88,7 +88,7 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
               animate: { translateY: -3, translateX: -3 },
             }}
             animate={controls}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
           />
           <motion.path
             d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
@@ -96,7 +96,7 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
               normal: { x: 0, y: 0 },
               animate: { x: 3, y: 3 },
             }}
-            transition={defaultTransition}
+            transition={DEFAULT_TRANSITION}
             animate={controls}
           />
         </svg>

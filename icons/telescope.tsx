@@ -16,7 +16,7 @@ interface TelescopeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const scopeVariants: Variants = {
+const SCOPE_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     transition: {
@@ -88,7 +88,7 @@ const TelescopeIcon = forwardRef<TelescopeIconHandle, TelescopeIconProps>(
           strokeLinejoin="round"
         >
           <motion.g
-            variants={scopeVariants}
+            variants={SCOPE_VARIANTS}
             animate={controls}
             style={{ transformOrigin: '12px 13px' }}
           >

@@ -16,7 +16,7 @@ interface AtSignIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const circleVariants: Variants = {
+const CIRCLE_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -37,7 +37,7 @@ const circleVariants: Variants = {
   },
 };
 
-const pathVariants: Variants = {
+const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
     pathLength: 1,
@@ -113,14 +113,14 @@ const AtSignIcon = forwardRef<AtSignIconHandle, AtSignIconProps>(
           strokeLinejoin="round"
         >
           <motion.circle
-            variants={circleVariants}
+            variants={CIRCLE_VARIANTS}
             animate={controls}
             cx="12"
             cy="12"
             r="4"
           />
           <motion.path
-            variants={pathVariants}
+            variants={PATH_VARIANTS}
             animate={controls}
             d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"
           />

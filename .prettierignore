@@ -6,3 +6,4 @@ public
 package-lock.json
 yarn.lock
 README.md
+pnpm-lock.yaml

@@ -16,7 +16,7 @@ interface CircleHelpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const variants: Variants = {
+const VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: { rotate: [0, -10, 10, -10, 0] },
 };
@@ -77,7 +77,7 @@ const CircleHelpIcon = forwardRef<CircleHelpIconHandle, CircleHelpIconProps>(
         >
           <circle cx="12" cy="12" r="10" />
           <motion.g
-            variants={variants}
+            variants={VARIANTS}
             transition={{
               duration: 0.5,
               ease: 'easeInOut',

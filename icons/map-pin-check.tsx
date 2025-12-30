@@ -16,7 +16,7 @@ interface MapPinCheckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const svgVariants: Variants = {
+const SVG_VARIANTS: Variants = {
   normal: {
     y: 0,
   },
@@ -29,7 +29,7 @@ const svgVariants: Variants = {
   },
 };
 
-const checkVariants: Variants = {
+const CHECK_VARIANTS: Variants = {
   normal: {
     opacity: 1,
   },
@@ -97,7 +97,7 @@ const MapPinCheckIcon = forwardRef<MapPinCheckIconHandle, MapPinCheckIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={svgVariants}
+          variants={SVG_VARIANTS}
           initial="normal"
           animate={controls}
         >
@@ -105,7 +105,7 @@ const MapPinCheckIcon = forwardRef<MapPinCheckIconHandle, MapPinCheckIconProps>(
           <circle cx="12" cy="10" r="3" />
           <motion.path
             d="m16 18 2 2 4-4"
-            variants={checkVariants}
+            variants={CHECK_VARIANTS}
             initial="normal"
             animate={controls}
           />

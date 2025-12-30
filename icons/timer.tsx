@@ -16,7 +16,7 @@ interface TimerIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const handVariants: Variants = {
+const HAND_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     originX: '0%',
@@ -38,7 +38,7 @@ const handVariants: Variants = {
   },
 };
 
-const buttonVariants: Variants = {
+const BUTTON_VARIANTS: Variants = {
   normal: {
     scale: 1,
     y: 0,
@@ -113,7 +113,7 @@ const TimerIcon = forwardRef<TimerIconHandle, TimerIconProps>(
             y1="2"
             y2="2"
             animate={controls}
-            variants={buttonVariants}
+            variants={BUTTON_VARIANTS}
           />
           <motion.line
             x1="12"
@@ -122,7 +122,7 @@ const TimerIcon = forwardRef<TimerIconHandle, TimerIconProps>(
             y2="11"
             initial="normal"
             animate={controls}
-            variants={handVariants}
+            variants={HAND_VARIANTS}
           />
           <circle cx="12" cy="14" r="8" />
         </svg>

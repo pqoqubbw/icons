@@ -16,7 +16,7 @@ interface ArrowBigUpDashIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const dashVariants: Variants = {
+const DASH_VARIANTS: Variants = {
   normal: { translateY: 0 },
   animate: {
     translateY: [0, -1, 0],
@@ -26,7 +26,7 @@ const dashVariants: Variants = {
   },
 };
 
-const arrowVariants: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: { translateY: 0 },
   animate: {
     translateY: [0, -3, 0],
@@ -91,10 +91,10 @@ const ArrowBigUpDashIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <motion.path d="M9 19h6" variants={dashVariants} animate={controls} />
+        <motion.path d="M9 19h6" variants={DASH_VARIANTS} animate={controls} />
         <motion.path
           d="M9 15v-3H5l7-7 7 7h-4v3H9z"
-          variants={arrowVariants}
+          variants={ARROW_VARIANTS}
           animate={controls}
         />
       </svg>

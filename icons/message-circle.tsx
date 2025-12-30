@@ -16,7 +16,7 @@ interface MessageCircleIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const iconVariants: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
     scale: 1,
     rotate: 0,
@@ -93,7 +93,7 @@ const MessageCircleIcon = forwardRef<
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        variants={iconVariants}
+        variants={ICON_VARIANTS}
         animate={controls}
       >
         <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />

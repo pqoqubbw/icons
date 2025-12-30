@@ -1,5 +1,6 @@
 'use server';
 
+import { SITE } from '@/constants';
 import { getIconForV0 } from '@/helpers/get-icon-for-v0';
 
 export async function openInV0Action(name: string) {
@@ -13,13 +14,13 @@ export async function openInV0Action(name: string) {
     const payload = {
       ...template,
       meta: {
-        project: 'lucide-animated',
-        author: 'dmytro',
-        url: 'https://lucide-animated.com',
+        project: SITE.NAME,
+        author: SITE.AUTHOR.NAME,
+        url: SITE.URL,
       },
       source: {
-        title: 'lucide-animated',
-        url: 'https://lucide-animated.com',
+        title: SITE.NAME,
+        url: SITE.URL,
         file: `${name}.tsx`,
       },
     };
