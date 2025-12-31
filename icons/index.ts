@@ -59,6 +59,7 @@ import { BookmarkPlusIcon } from '@/icons/bookmark-plus';
 import { BookmarkXIcon } from '@/icons/bookmark-x';
 import { BotIcon } from '@/icons/bot';
 import { BotMessageSquareIcon } from '@/icons/bot-message-square';
+import { BoxIcon } from '@/icons/box';
 import { BoxesIcon } from '@/icons/boxes';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -114,6 +115,7 @@ import { CompassIcon } from '@/icons/compass';
 import { ConnectIcon } from '@/icons/connect';
 import { ConstructionIcon } from '@/icons/construction';
 import { ContrastIcon } from '@/icons/contrast';
+import { CookingPotIcon } from '@/icons/cooking-pot';
 import { CopyIcon } from '@/icons/copy';
 import { CpuIcon } from '@/icons/cpu';
 import { CursorClickIcon } from '@/icons/cursor-click';
@@ -311,6 +313,7 @@ import { WifiIcon } from '@/icons/wifi';
 import { WindIcon } from '@/icons/wind';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
+import { WrenchIcon } from '@/icons/wrench';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
 import { ZapIcon } from '@/icons/zap';
@@ -1194,6 +1197,19 @@ const ICON_LIST: IconListItem[] = [
       'network',
       'node',
       'connection',
+    ],
+  },
+  {
+    name: 'wrench',
+    icon: WrenchIcon,
+    keywords: [
+      'account',
+      'settings',
+      'spanner',
+      'diy',
+      'toolbox',
+      'build',
+      'construction',
     ],
   },
   {
@@ -2595,6 +2611,24 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'cooking-pot',
+    icon: CookingPotIcon,
+    keywords: [
+      'pod',
+      'cooking',
+      'recipe',
+      'food',
+      'kitchen',
+      'chef',
+      'restaurant',
+      'dinner',
+      'lunch',
+      'breakfast',
+      'meal',
+      'eat',
+    ],
+  },
+  {
     name: 'book-text',
     icon: BookTextIcon,
     keywords: [
@@ -3037,6 +3071,19 @@ const ICON_LIST: IconListItem[] = [
       'done',
       'confirm',
       'complete',
+    ],
+  },
+  {
+    name: 'box',
+    icon: BoxIcon,
+    keywords: [
+      'cube',
+      'package',
+      'container',
+      'storage',
+      'geometry',
+      '3d',
+      'isometric',
     ],
   },
   {
