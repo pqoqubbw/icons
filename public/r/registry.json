@@ -5419,6 +5419,51 @@
       ]
     },
     {
+      "name": "box",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cooking-pot",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cooking-pot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wrench",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "wrench.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "hand-fist",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5504,6 +5549,36 @@
       "files": [
         {
           "path": "heart-handshake.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic-off",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mic-off.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mic.tsx",
           "type": "registry:ui"
         }
       ]

@@ -16,7 +16,7 @@ interface WrenchIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const iconVariants: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
     rotate: 0,
     transition: { duration: 0.25, ease: 'easeOut' },
@@ -83,7 +83,7 @@ const WrenchIcon = forwardRef<WrenchIconHandle, WrenchIconProps>(
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={iconVariants}
+          variants={ICON_VARIANTS}
           initial="normal"
           animate={controls}
           style={{ transformOrigin: '90% 10%', transformBox: 'fill-box' }}

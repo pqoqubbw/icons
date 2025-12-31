@@ -4658,45 +4658,6 @@
       ]
     },
     {
-      "name": "box",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "box.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "cooking-pot",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "cooking-pot.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "wrench",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "wrench.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "align-left",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4732,8 +4693,45 @@
         {
           "path": "eye.tsx",
           "type": "registry:ui"
-          
-          
+        }
+      ]
+    },
+    {
+      "name": "box",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "box.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cooking-pot",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cooking-pot.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wrench",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "wrench.tsx",
+          "type": "registry:ui"
         }
       ]
     },
