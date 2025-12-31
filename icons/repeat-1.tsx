@@ -3,7 +3,13 @@
 import type { Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
-import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -50,6 +56,7 @@ const NUMBER_VARIANTS: Variants = {
 
 const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const [hovered, setHovered] = useState(false);
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -88,13 +95,16 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
         className={cn(className)}
         onMouseEnter={(e) => {
           handleMouseEnter(e);
+          setHovered(true);
         }}
         onMouseLeave={(e) => {
           handleMouseLeave(e);
+          setHovered(false);
         }}
         {...props}
       >
         <motion.svg
+          animate={hovered ? "show" : "idle"}
           className="lucide lucide-repeat1-icon lucide-repeat-1"
           fill="none"
           height={size}
@@ -104,7 +114,6 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
           strokeLinejoin="round"
           strokeWidth="2"
           viewBox="0 0 24 24"
-          whileHover="show"
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
