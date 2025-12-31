@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "repeat",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "repeat.tsx",
+      "content": "'use client';\n\nimport type { Variants } from 'motion/react';\nimport type { HTMLAttributes } from 'react';\nimport {\n  forwardRef,\n  useCallback,\n  useImperativeHandle,\n  useRef,\n  useState,\n} from 'react';\nimport { motion, useAnimation } from 'motion/react';\n\nimport { cn } from '@/lib/utils';\n\nexport interface RepeatIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface RepeatIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst DRAW_VARIANTS: Variants = {\n  hidden: {\n    pathLength: 0,\n    opacity: 0,\n  },\n  show: (i: number) => ({\n    pathLength: 1,\n    opacity: 1,\n    transition: {\n      delay: i === 0 ? 0 : 0.2,\n      duration: 0.25,\n      ease: 'easeOut',\n    },\n  }),\n};\n\nconst RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const [hovered, setHovered] = useState(false);\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={(e) => {\n          setHovered(true);\n          handleMouseEnter(e);\n        }}\n        onMouseLeave={(e) => {\n          setHovered(false);\n          handleMouseLeave(e);\n        }}\n        {...props}\n      >\n        <motion.svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          key={hovered ? 'hover' : 'idle'}\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          initial=\"hidden\"\n          animate=\"show\"\n        >\n          <motion.path\n            d=\"M3 11v-1a4 4 0 0 1 4-4h14\"\n            variants={DRAW_VARIANTS}\n            custom={0}\n          />\n          <motion.path d=\"m17 2 4 4-4 4\" variants={DRAW_VARIANTS} custom={1} />\n          <motion.path\n            d=\"M21 13v1a4 4 0 0 1-4 4H3\"\n            variants={DRAW_VARIANTS}\n            custom={0}\n          />\n          <motion.path d=\"m7 22-4-4 4-4\" variants={DRAW_VARIANTS} custom={1} />\n        </motion.svg>\n      </div>\n    );\n  }\n);\n\nRepeatIcon.displayName = 'RepeatIcon';\n\nexport { RepeatIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

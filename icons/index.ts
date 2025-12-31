@@ -240,6 +240,9 @@ import { RefreshCCWIcon } from '@/icons/refresh-ccw';
 import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
 import { RefreshCWIcon } from '@/icons/refresh-cw';
 import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
+import { RepeatIcon } from '@/icons/repeat';
+import { Repeat1Icon } from '@/icons/repeat-1';
+import { Repeat2Icon } from '@/icons/repeat-2';
 import { RocketIcon } from '@/icons/rocket';
 import { RockingChairIcon } from '@/icons/rocking-chair';
 import { RollerCoasterIcon } from '@/icons/roller-coaster';
@@ -387,6 +390,30 @@ const ICON_LIST: IconListItem[] = [
     name: 'mic-off',
     icon: MicOffIcon,
     keywords: ['microphone', 'audio', 'sound', 'mute', 'silent', 'disabled'],
+  },
+  {
+    name: 'repeat-1',
+    icon: Repeat1Icon,
+    keywords: ['repeat', 'replay', 'multimedia'],
+  },
+  {
+    name: 'repeat-2',
+    icon: Repeat2Icon,
+    keywords: [
+      'repeat',
+      'arrows',
+      'repost',
+      'share',
+      'loop',
+      'retweet',
+      'social',
+      'multimedia',
+    ],
+  },
+  {
+    name: 'repeat',
+    icon: RepeatIcon,
+    keywords: ['repeat', 'loop', 'arrows', 'multimedia'],
   },
   {
     name: 'align-left',

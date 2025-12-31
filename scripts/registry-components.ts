@@ -2254,12 +2254,26 @@ export const components: ComponentDefinition[] = [
   {
     'name': 'mic-off',
     'path': path.join(__dirname, '../icons/mic-off.tsx'),
+  },
+  {
+    'name': 'repeat',
+    'path': path.join(__dirname, '../icons/repeat.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
   {
     'name': 'mic',
     'path': path.join(__dirname, '../icons/mic.tsx'),
+  },
+  {
+    'name': 'repeat-2',
+    'path': path.join(__dirname, '../icons/repeat-2.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'repeat-1',
+    'path': path.join(__dirname, '../icons/repeat-1.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
   },

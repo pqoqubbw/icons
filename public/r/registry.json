@@ -5557,9 +5557,7 @@
       "name": "mic-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": [],
       "devDependencies": [],
       "files": [
         {
@@ -5569,7 +5567,7 @@
       ]
     },
     {
-      "name": "mic",
+      "name": "repeat",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": [
@@ -5578,7 +5576,50 @@
       "devDependencies": [],
       "files": [
         {
+          "path": "repeat.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mic",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "files": [
+        {
           "path": "mic.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "repeat-2",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "repeat-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "repeat-1",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "repeat-1.tsx",
           "type": "registry:ui"
         }
       ]
