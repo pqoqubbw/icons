@@ -59,6 +59,7 @@ import { BookmarkPlusIcon } from '@/icons/bookmark-plus';
 import { BookmarkXIcon } from '@/icons/bookmark-x';
 import { BotIcon } from '@/icons/bot';
 import { BotMessageSquareIcon } from '@/icons/bot-message-square';
+import { BoxIcon } from '@/icons/box';
 import { BoxesIcon } from '@/icons/boxes';
 import { CalendarCheckIcon } from '@/icons/calendar-check';
 import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
@@ -114,6 +115,7 @@ import { CompassIcon } from '@/icons/compass';
 import { ConnectIcon } from '@/icons/connect';
 import { ConstructionIcon } from '@/icons/construction';
 import { ContrastIcon } from '@/icons/contrast';
+import { CookingPotIcon } from '@/icons/cooking-pot';
 import { CopyIcon } from '@/icons/copy';
 import { CpuIcon } from '@/icons/cpu';
 import { CursorClickIcon } from '@/icons/cursor-click';
@@ -212,6 +214,8 @@ import { MessageCircleMoreIcon } from '@/icons/message-circle-more';
 import { MessageSquareIcon } from '@/icons/message-square';
 import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
 import { MessageSquareMoreIcon } from '@/icons/message-square-more';
+import { MicIcon } from '@/icons/mic';
+import { MicOffIcon } from '@/icons/mic-off';
 import { MinimizeIcon } from '@/icons/minimize';
 import { MonitorCheckIcon } from '@/icons/monitor-check';
 import { MoonIcon } from '@/icons/moon';
@@ -311,6 +315,7 @@ import { WifiIcon } from '@/icons/wifi';
 import { WindIcon } from '@/icons/wind';
 import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
 import { WorkflowIcon } from '@/icons/workflow';
+import { WrenchIcon } from '@/icons/wrench';
 import { XIcon } from '@/icons/x';
 import { YoutubeIcon } from '@/icons/youtube';
 import { ZapIcon } from '@/icons/zap';
@@ -359,6 +364,12 @@ import { GitGraphIcon } from './git-graph';
 import { GitPullRequestClosedIcon } from './git-pull-request-closed';
 import { GitPullRequestCreateIcon } from './git-pull-request-create';
 import { GitlabIcon } from './gitlab';
+import { HandIcon } from './hand';
+import { HandFistIcon } from './hand-fist';
+import { HandGrabIcon } from './hand-grab';
+import { HandHelpingIcon } from './hand-helping';
+import { HandMetalIcon } from './hand-metal';
+import { HeartHandshakeIcon } from './heart-handshake';
 import { TruckIcon } from './truck';
 
 type IconListItem = {
@@ -368,7 +379,7 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
-  {
+   {
     name: 'truck',
     icon: TruckIcon,
     keywords: [
@@ -379,6 +390,16 @@ const ICON_LIST: IconListItem[] = [
       'lorry',
       'transportation',
     ],
+  },
+  {
+    name: 'mic',
+    icon: MicIcon,
+    keywords: ['microphone', 'audio', 'sound', 'record', 'voice'],
+  },
+  {
+    name: 'mic-off',
+    icon: MicOffIcon,
+    keywords: ['microphone', 'audio', 'sound', 'mute', 'silent', 'disabled'],
   },
   {
     name: 'align-left',
@@ -1201,6 +1222,19 @@ const ICON_LIST: IconListItem[] = [
       'network',
       'node',
       'connection',
+    ],
+  },
+  {
+    name: 'wrench',
+    icon: WrenchIcon,
+    keywords: [
+      'account',
+      'settings',
+      'spanner',
+      'diy',
+      'toolbox',
+      'build',
+      'construction',
     ],
   },
   {
@@ -2602,6 +2636,24 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'cooking-pot',
+    icon: CookingPotIcon,
+    keywords: [
+      'pod',
+      'cooking',
+      'recipe',
+      'food',
+      'kitchen',
+      'chef',
+      'restaurant',
+      'dinner',
+      'lunch',
+      'breakfast',
+      'meal',
+      'eat',
+    ],
+  },
+  {
     name: 'book-text',
     icon: BookTextIcon,
     keywords: [
@@ -3047,6 +3099,19 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: 'box',
+    icon: BoxIcon,
+    keywords: [
+      'cube',
+      'package',
+      'container',
+      'storage',
+      'geometry',
+      '3d',
+      'isometric',
+    ],
+  },
+  {
     name: 'boxes',
     icon: BoxesIcon,
     keywords: ['boxes', 'box', 'container', 'package', 'shipping'],
@@ -3128,6 +3193,62 @@ const ICON_LIST: IconListItem[] = [
       'energy',
       'alert',
       'exclamation',
+    ],
+  },
+  {
+    name: 'hand',
+    icon: HandIcon,
+    keywords: ['wave', 'hand', 'hello', 'bye', 'gesture'],
+  },
+  {
+    name: 'hand-grab',
+    icon: HandGrabIcon,
+    keywords: ['gesture', 'hand', 'grab'],
+  },
+  {
+    name: 'heart-handshake',
+    icon: HeartHandshakeIcon,
+    keywords: [
+      'agreement',
+      'charity',
+      'deal',
+      'handshake',
+      'heart',
+      'love',
+      'partnership',
+      'relationship',
+      'support',
+      'together',
+    ],
+  },
+  {
+    name: 'hand-fist',
+    icon: HandFistIcon,
+    keywords: ['fist', 'bump', 'power', 'punch', 'strength', 'rock'],
+  },
+  {
+    name: 'hand-helping',
+    icon: HandHelpingIcon,
+    keywords: [
+      'agreement',
+      'assistance',
+      'help',
+      'partnership',
+      'support',
+      'volunteer',
+    ],
+  },
+  {
+    name: 'hand-metal',
+    icon: HandMetalIcon,
+    keywords: [
+      'rock',
+      'metal',
+      'heavy metal',
+      'music',
+      'gesture',
+      'concert',
+      'horns',
     ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));

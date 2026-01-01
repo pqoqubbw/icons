@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hand-metal",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": [
+    "motion"
+  ],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "hand-metal.tsx",
+      "content": "'use client';\n\nimport type { HTMLAttributes } from 'react';\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';\nimport { motion, useAnimation } from 'motion/react';\n\nimport { cn } from '@/lib/utils';\n\nexport interface HandMetalIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface HandMetalIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst HandMetalIcon = forwardRef<HandMetalIconHandle, HandMetalIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n      return {\n        startAnimation: () => controls.start('animate'),\n        stopAnimation: () => controls.start('normal'),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('animate');\n        } else {\n          onMouseEnter?.(e);\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (!isControlledRef.current) {\n          controls.start('normal');\n        } else {\n          onMouseLeave?.(e);\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <motion.svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          width={size}\n          height={size}\n          viewBox=\"0 0 24 24\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth=\"2\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          variants={{\n            normal: { rotate: 0 },\n            animate: {\n              rotate: [0, -15, 15, -10, 10, 0],\n              transition: {\n                duration: 0.6,\n                ease: 'easeInOut',\n              },\n            },\n          }}\n          initial=\"normal\"\n          animate={controls}\n          style={{ originX: '50%', originY: '90%' }}\n        >\n          <path d=\"M18 12.5V10a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4\" />\n          <path d=\"M14 11V9a2 2 0 1 0-4 0v2\" />\n          <path d=\"M10 10.5V5a2 2 0 1 0-4 0v9\" />\n          <path d=\"m7 15-1.76-1.76a2 2 0 0 0-2.83 2.82l3.6 3.6C7.5 21.14 9.2 22 12 22h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v5\" />\n        </motion.svg>\n      </div>\n    );\n  }\n);\n\nHandMetalIcon.displayName = 'HandMetalIcon';\n\nexport { HandMetalIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

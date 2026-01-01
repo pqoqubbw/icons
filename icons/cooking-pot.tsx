@@ -1,0 +1,120 @@
+'use client';
+
+import type { Variants } from 'motion/react';
+import type { HTMLAttributes } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation } from 'motion/react';
+
+import { cn } from '@/lib/utils';
+
+export interface CookingPotIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
+
+interface CookingPotIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+}
+
+const LID_VARIANTS: Variants = {
+  normal: { rotate: 0 },
+  animate: {
+    rotate: [0, -14, 14, -10, 10, -6, 6, 0],
+    transition: {
+      duration: 0.9,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const POT_VARIANTS: Variants = {
+  normal: { scale: 1 },
+  animate: {
+    scale: [1, 1.08, 1],
+    transition: {
+      duration: 0.95,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const CookingPotIcon = forwardRef<CookingPotIconHandle, CookingPotIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+    const isControlledRef = useRef(false);
+
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
+      return {
+        startAnimation: () => controls.start('animate'),
+        stopAnimation: () => controls.start('normal'),
+      };
+    });
+
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('animate');
+        } else {
+          onMouseEnter?.(e);
+        }
+      },
+      [controls, onMouseEnter]
+    );
+
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!isControlledRef.current) {
+          controls.start('normal');
+        } else {
+          onMouseLeave?.(e);
+        }
+      },
+      [controls, onMouseLeave]
+    );
+
+    return (
+      <div
+        className={cn(className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <motion.g
+            variants={POT_VARIANTS}
+            initial="normal"
+            animate={controls}
+            style={{ transformOrigin: '12px 16px' }}
+          >
+            <path d="M2 12h20" />
+            <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8" />
+          </motion.g>
+          <motion.g
+            variants={LID_VARIANTS}
+            initial="normal"
+            animate={controls}
+            style={{ transformOrigin: '18px 6px' }}
+          >
+            <path d="m4 8 16-4" />
+            <path d="m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8" />
+          </motion.g>
+        </svg>
+      </div>
+    );
+  }
+);
+
+CookingPotIcon.displayName = 'CookingPotIcon';
+
+export { CookingPotIcon };

@@ -2180,12 +2180,6 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
-    'name': 'eye',
-    'path': path.join(__dirname, '../icons/eye.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
-  },
-  {
     'name': 'align-left',
     'path': path.join(__dirname, '../icons/align-left.tsx'),
     'registryDependencies': [],
@@ -2198,9 +2192,81 @@ export const components: ComponentDefinition[] = [
     'dependencies': ['motion'],
   },
   {
+    'name': 'eye',
+    'path': path.join(__dirname, '../icons/eye.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'box',
+    'path': path.join(__dirname, '../icons/box.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'cooking-pot',
+    'path': path.join(__dirname, '../icons/cooking-pot.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'wrench',
+    'path': path.join(__dirname, '../icons/wrench.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'hand-fist',
+    'path': path.join(__dirname, '../icons/hand-fist.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'hand-grab',
+    'path': path.join(__dirname, '../icons/hand-grab.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'hand-helping',
+    'path': path.join(__dirname, '../icons/hand-helping.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'hand-metal',
+    'path': path.join(__dirname, '../icons/hand-metal.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'hand',
+    'path': path.join(__dirname, '../icons/hand.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'heart-handshake',
+    'path': path.join(__dirname, '../icons/heart-handshake.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'mic-off',
+    'path': path.join(__dirname, '../icons/mic-off.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'mic',
+    'path': path.join(__dirname, '../icons/mic.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
     'name': 'truck',
     'path': path.join(__dirname, '../icons/truck.tsx'),
     'registryDependencies': [],
     'dependencies': ['motion'],
-  }
+  },
 ];
