@@ -17,17 +17,17 @@ interface ArrowUpRightIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ARROW_VARIANTS: Variants = {
-  normal: { 
+  normal: {
     scale: 1,
-    translateX: 0, 
+    translateX: 0,
     translateY: 0,
   },
   animate: {
     scale: [1, 0.85, 1],
-    translateX: [0, -4, 0], // Slight movement towards left
-    translateY: [0, 4, 0],  // Slight movement towards bottom
-    originX: 1,  // Right side (top-right corner X)
-    originY: 0,  // Top side (top-right corner Y)
+    translateX: [0, -4, 0],
+    translateY: [0, 4, 0],
+    originX: 1,
+    originY: 0,
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
@@ -84,15 +84,9 @@ const ArrowUpRightIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <motion.g
-          variants={ARROW_VARIANTS}
-          animate={controls}
-        >
-          {/* Arrow head - top horizontal line */}
+        <motion.g variants={ARROW_VARIANTS} animate={controls}>
           <path d="M7 7H17" />
-          {/* Arrow head - right vertical line */}
           <path d="M17 7V17" />
-          {/* Arrow shaft - diagonal line */}
           <path d="M7 17L17 7" />
         </motion.g>
       </svg>

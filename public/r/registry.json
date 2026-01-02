@@ -394,6 +394,36 @@
       ]
     },
     {
+      "name": "arrow-up-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "arrow-down-z-a",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5579,6 +5609,21 @@
       "files": [
         {
           "path": "mic.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "truck",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "truck.tsx",
           "type": "registry:ui"
         }
       ]

@@ -381,7 +381,7 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
-   {
+  {
     name: 'truck',
     icon: TruckIcon,
     keywords: [
@@ -1024,26 +1024,12 @@ const ICON_LIST: IconListItem[] = [
   {
     name: 'arrow-up-left',
     icon: ArrowUpLeftIcon,
-    keywords: [
-      'arrow',
-      'up',
-      'left',
-      'direction',
-      'northwest',
-      'top left',
-    ],
+    keywords: ['arrow', 'up', 'left', 'direction', 'northwest', 'top left'],
   },
   {
     name: 'arrow-up-right',
     icon: ArrowUpRightIcon,
-    keywords: [
-      'arrow',
-      'up',
-      'right',
-      'direction',
-      'northeast',
-      'top right',
-    ],
+    keywords: ['arrow', 'up', 'right', 'direction', 'northeast', 'top right'],
   },
   {
     name: 'vibrate',

@@ -1,9 +1,9 @@
 'use client';
 
 import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import { motion, useAnimation } from 'motion/react';
 
 export interface TruckIconHandle {
   startAnimation: () => void;
@@ -14,7 +14,7 @@ interface TruckIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const truckVariants: Variants = {
+const TRUCK_VARIANTS: Variants = {
   normal: { x: 0, y: 0 },
   animate: {
     y: [0, -1, 0, -0.5, 0],
@@ -27,7 +27,7 @@ const truckVariants: Variants = {
   },
 };
 
-const wheelVariants: Variants = {
+const WHEEL_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: {
     rotate: 360,
@@ -39,7 +39,7 @@ const wheelVariants: Variants = {
   },
 };
 
-const speedLineVariants: Variants = {
+const SPEED_LINE_VARIANTS: Variants = {
   normal: {
     opacity: 0,
     x: 0,
@@ -125,7 +125,7 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
               y2={line.y}
               strokeWidth="2"
               strokeLinecap="round"
-              variants={speedLineVariants}
+              variants={SPEED_LINE_VARIANTS}
               custom={i}
               animate={controls}
               initial="normal"
@@ -133,7 +133,7 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
           ))}
 
           <motion.g
-            variants={truckVariants}
+            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
           >
@@ -143,12 +143,12 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
           </motion.g>
 
           <motion.g
-            variants={truckVariants}
+            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
           >
             <motion.g
-              variants={wheelVariants}
+              variants={WHEEL_VARIANTS}
               animate={controls}
               initial="normal"
               style={{ transformOrigin: '7px 18px' }}
@@ -160,12 +160,12 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
           </motion.g>
 
           <motion.g
-            variants={truckVariants}
+            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
           >
             <motion.g
-              variants={wheelVariants}
+              variants={WHEEL_VARIANTS}
               animate={controls}
               initial="normal"
               style={{ transformOrigin: '17px 18px' }}
