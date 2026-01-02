@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Icon } from '@/actions/get-icons';
-import { useMemo, useRef } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import { useMemo, useRef } from "react";
+import type { Icon } from "@/actions/get-icons";
 
-import { Card, CardTitle } from '@/components/card';
-import { ICON_LIST } from '@/icons';
+import { Card, CardTitle } from "@/components/card";
+import { ICON_LIST } from "@/icons";
 
 type Props = {
   currentIcon: Icon;
@@ -18,27 +18,31 @@ const SimilarIconItem = ({
   Icon,
 }: {
   icon: Icon;
-  Icon: React.ElementType;
+  Icon: React.ElementType | undefined;
 }) => {
   const animationRef = useRef<{
     startAnimation: () => void;
     stopAnimation: () => void;
   }>(null);
 
+  if (!Icon) {
+    return null;
+  }
+
   return (
     <Link
+      className="focus-visible:outline-1 focus-visible:outline-primary focus-visible:outline-offset-2"
       href={`/icons/${icon.name}`}
-      className="focus-visible:outline-primary focus-visible:outline-1 focus-visible:outline-offset-2"
     >
       <Card
         animationRef={animationRef}
+        className="pb-[50px]"
         onMouseEnter={() => animationRef.current?.startAnimation()}
         onMouseLeave={() => animationRef.current?.stopAnimation()}
-        className="pb-[50px]"
       >
         <Icon
-          ref={animationRef}
           className="flex items-center justify-center [&>svg]:size-10 [&>svg]:text-neutral-800 dark:[&>svg]:text-neutral-100"
+          ref={animationRef}
         />
         <CardTitle>{icon.name}</CardTitle>
       </Card>
@@ -74,9 +78,9 @@ const SimilarIcons = ({ currentIcon }: Props) => {
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
         {similarIcons.map((icon) => (
           <SimilarIconItem
-            key={icon.name}
+            Icon={ICON_MAP.get(icon.name) ?? undefined}
             icon={icon}
-            Icon={ICON_MAP.get(icon.name)!}
+            key={icon.name}
           />
         ))}
       </div>

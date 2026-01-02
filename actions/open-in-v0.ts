@@ -1,7 +1,7 @@
-'use server';
+"use server";
 
-import { SITE } from '@/constants';
-import { getIconForV0 } from '@/helpers/get-icon-for-v0';
+import { SITE } from "@/constants";
+import { getIconForV0 } from "@/helpers/get-icon-for-v0";
 
 export async function openInV0Action(name: string) {
   try {
@@ -25,29 +25,29 @@ export async function openInV0Action(name: string) {
       },
     };
 
-    const response = await fetch(`https://v0.dev/chat/api/templates/open`, {
-      method: 'POST',
+    const response = await fetch("https://v0.dev/chat/api/templates/open", {
+      method: "POST",
       body: JSON.stringify({
         version: 3,
         template: payload,
       }),
       headers: {
-        'x-v0-edit-secret': process.env.V0_API_KEY!,
-        'Content-Type': 'application/json',
+        "x-v0-edit-secret": process.env.V0_API_KEY ?? "",
+        "Content-Type": "application/json",
       },
     });
 
     if (!response.ok) {
       if (response.status === 403) {
-        throw new Error('Unauthorized');
+        throw new Error("Unauthorized");
       }
 
       console.error(
-        'Eror fetching /api/templates/open:',
+        "Eror fetching /api/templates/open:",
         await response.text()
       );
 
-      throw new Error('Something went wrong. Please try again later.');
+      throw new Error("Something went wrong. Please try again later.");
     }
 
     const result = await response.json();
@@ -63,6 +63,6 @@ export async function openInV0Action(name: string) {
       return { error: error.message, url: null };
     }
 
-    return { error: 'Something went wrong. Please try again later.', url: '' };
+    return { error: "Something went wrong. Please try again later.", url: "" };
   }
 }

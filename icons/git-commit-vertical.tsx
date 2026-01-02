@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface GitCommitVerticalIconHandle {
   startAnimation: () => void;
@@ -42,17 +42,17 @@ const GitCommitVerticalIcon = forwardRef<
     isControlledRef.current = true;
 
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -60,10 +60,10 @@ const GitCommitVerticalIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -77,41 +77,41 @@ const GitCommitVerticalIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          d="M12 3v6"
-          variants={VARIANTS}
           animate={controls}
           custom={0}
+          d="M12 3v6"
+          variants={VARIANTS}
         />
         <motion.circle
+          animate={controls}
+          custom={1}
           cx="12"
           cy="12"
           r="3"
           variants={VARIANTS}
-          animate={controls}
-          custom={1}
         />
         <motion.path
-          d="M12 15v6"
-          variants={VARIANTS}
           animate={controls}
           custom={2}
+          d="M12 15v6"
+          variants={VARIANTS}
         />
       </svg>
     </div>
   );
 });
 
-GitCommitVerticalIcon.displayName = 'GitCommitVerticalIcon';
+GitCommitVerticalIcon.displayName = "GitCommitVerticalIcon";
 
 export { GitCommitVerticalIcon };

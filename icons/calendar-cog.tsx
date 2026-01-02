@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface CalendarCogIconHandle {
   startAnimation: () => void;
@@ -30,17 +30,17 @@ const CalendarCogIcon = forwardRef<CalendarCogIconHandle, CalendarCogIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -48,10 +48,10 @@ const CalendarCogIcon = forwardRef<CalendarCogIconHandle, CalendarCogIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -65,24 +65,24 @@ const CalendarCogIcon = forwardRef<CalendarCogIconHandle, CalendarCogIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6" />
           <path d="M16 2v4" />
           <path d="M3 10h18" />
           <path d="M8 2v4" />
           <motion.g
-            transition={{ type: 'spring', stiffness: 50, damping: 10 }}
-            variants={G_VARIANTS}
             animate={controls}
+            transition={{ type: "spring", stiffness: 50, damping: 10 }}
+            variants={G_VARIANTS}
           >
             <path d="m15.2 16.9-.9-.4" />
             <path d="m15.2 19.1-.9.4" />
@@ -100,6 +100,6 @@ const CalendarCogIcon = forwardRef<CalendarCogIconHandle, CalendarCogIconProps>(
   }
 );
 
-CalendarCogIcon.displayName = 'CalendarCogIcon';
+CalendarCogIcon.displayName = "CalendarCogIcon";
 
 export { CalendarCogIcon };

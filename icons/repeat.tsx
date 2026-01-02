@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
 import {
   forwardRef,
   useCallback,
   useImperativeHandle,
   useRef,
   useState,
-} from 'react';
-import { motion, useAnimation } from 'motion/react';
+} from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface RepeatIconHandle {
   startAnimation: () => void;
@@ -33,7 +33,7 @@ const DRAW_VARIANTS: Variants = {
     transition: {
       delay: i === 0 ? 0 : 0.2,
       duration: 0.25,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   }),
 };
@@ -47,17 +47,17 @@ const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -65,10 +65,10 @@ const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -88,37 +88,37 @@ const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          key={hovered ? 'hover' : 'idle'}
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate="show"
           fill="none"
+          height={size}
+          initial="hidden"
+          key={hovered ? "hover" : "idle"}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          initial="hidden"
-          animate="show"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            custom={0}
             d="M3 11v-1a4 4 0 0 1 4-4h14"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
-          <motion.path d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} />
           <motion.path
+            custom={0}
             d="M21 13v1a4 4 0 0 1-4 4H3"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
-          <motion.path d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} />
         </motion.svg>
       </div>
     );
   }
 );
 
-RepeatIcon.displayName = 'RepeatIcon';
+RepeatIcon.displayName = "RepeatIcon";
 
 export { RepeatIcon };

@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/no-require-imports */
 
 /**
  * Downloads proprietary fonts from Vercel Blob Storage during build time.
  * This keeps font files out of the public repository while using them in production.
  */
 
-const https = require('https');
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const https = require("node:https");
+const http = require("node:http");
+const fs = require("node:fs");
+const path = require("node:path");
 
-const fontsDir = path.join(__dirname, '..', 'fonts');
+const fontsDir = path.join(__dirname, "..", "fonts");
 
 // Ensure fonts directory exists
 if (!fs.existsSync(fontsDir)) {
@@ -21,13 +20,13 @@ if (!fs.existsSync(fontsDir)) {
 const fonts = [
   {
     url: process.env.FONT_DOWNLOAD_URL_GT_CINETYPE,
-    filename: 'GT-Cinetype-Regular.woff',
-    name: 'GT Cinetype Regular',
+    filename: "GT-Cinetype-Regular.woff",
+    name: "GT Cinetype Regular",
   },
   {
     url: process.env.FONT_DOWNLOAD_URL_ANDALE_MONO,
-    filename: 'ANDALEMO.woff',
-    name: 'Andale Mono',
+    filename: "ANDALEMO.woff",
+    name: "Andale Mono",
   },
 ];
 
@@ -56,7 +55,7 @@ function downloadFont(url, filepath, name) {
 
     console.log(`⬇️  Downloading ${name} from Vercel Blob...`);
 
-    const client = url.startsWith('https') ? https : http;
+    const client = url.startsWith("https") ? https : http;
 
     client
       .get(url, (response) => {
@@ -77,19 +76,19 @@ function downloadFont(url, filepath, name) {
         const fileStream = fs.createWriteStream(filepath);
         response.pipe(fileStream);
 
-        fileStream.on('finish', () => {
+        fileStream.on("finish", () => {
           fileStream.close();
           console.log(`✓ ${name} downloaded successfully`);
           resolve();
         });
 
-        fileStream.on('error', (err) => {
-          fs.unlink(filepath, () => {});
+        fileStream.on("error", (err) => {
+          fs.unlink(filepath);
           console.log(`⚠️  Error downloading ${name}:`, err.message);
           resolve(); // Don't fail the build
         });
       })
-      .on('error', (err) => {
+      .on("error", (err) => {
         console.log(`⚠️  Network error downloading ${name}:`, err.message);
         resolve(); // Don't fail the build
       });
@@ -97,7 +96,7 @@ function downloadFont(url, filepath, name) {
 }
 
 async function downloadAllFonts() {
-  console.log('\n🔤 Checking fonts...\n');
+  console.log("\n🔤 Checking fonts...\n");
 
   try {
     await Promise.all(
@@ -106,10 +105,10 @@ async function downloadAllFonts() {
       )
     );
 
-    console.log('\n✅ Font setup complete!\n');
+    console.log("\n✅ Font setup complete!\n");
   } catch (error) {
-    console.error('\n⚠️  Font download encountered issues:', error.message);
-    console.log('Build will continue with available fonts\n');
+    console.error("\n⚠️  Font download encountered issues:", error.message);
+    console.log("Build will continue with available fonts\n");
   }
 }
 

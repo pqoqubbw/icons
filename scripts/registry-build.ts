@@ -1,29 +1,28 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "node:fs";
+import path from "node:path";
+import { SITE } from "../constants";
+import { components } from "./registry-components";
+import type { Schema } from "./registry-schema";
 
-import type { Schema } from './registry-schema';
-import { SITE } from '../constants';
-import { components } from './registry-components';
-
-const registryComponents = path.join(__dirname, '../public/r');
-const registryIndexPath = path.join(__dirname, '../public/r/registry.json');
-const registryRootPath = path.join(__dirname, '../registry.json');
+const registryComponents = path.join(__dirname, "../public/r");
+const registryIndexPath = path.join(__dirname, "../public/r/registry.json");
+const registryRootPath = path.join(__dirname, "../registry.json");
 
 if (!fs.existsSync(registryComponents)) {
   fs.mkdirSync(registryComponents, { recursive: true });
 }
 
-console.log(`\n🔨 Building registry components...\n`);
+console.log("\n🔨 Building registry components...\n");
 
-const registryItems = [];
+const registryItems: Schema[] = [];
 
 for (const component of components) {
-  const content = fs.readFileSync(component.path, 'utf8');
+  const content = fs.readFileSync(component.path, "utf8");
 
   const schema: Schema = {
-    $schema: 'https://ui.shadcn.com/schema/registry-item.json',
+    $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name: component.name,
-    type: 'registry:ui',
+    type: "registry:ui",
     registryDependencies: component.registryDependencies || [],
     dependencies: component.dependencies || [],
     devDependencies: component.devDependencies || [],
@@ -31,7 +30,7 @@ for (const component of components) {
       {
         path: `${component.name}.tsx`,
         content,
-        type: 'registry:ui',
+        type: "registry:ui",
       },
     ],
   };
@@ -52,12 +51,10 @@ for (const component of components) {
     JSON.stringify(schema, null, 2)
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { files, $schema: _itemSchema, ...schemaWithoutContent } = schema;
   registryItems.push({
     ...schemaWithoutContent,
     files: files.map((file) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { content, ...fileWithoutContent } = file;
       return fileWithoutContent;
     }),
@@ -65,7 +62,7 @@ for (const component of components) {
 }
 
 const registryIndex = {
-  $schema: 'https://ui.shadcn.com/schema/registry.json',
+  $schema: "https://ui.shadcn.com/schema/registry.json",
   name: SITE.NAME,
   homepage: SITE.URL,
   items: registryItems,
@@ -76,4 +73,4 @@ fs.writeFileSync(registryIndexPath, registryIndexJson);
 fs.writeFileSync(registryRootPath, registryIndexJson);
 
 console.log(`✅ Built ${components.length} registry components`);
-console.log(`✅ Updated registry.json\n`);
+console.log("✅ Updated registry.json\n");

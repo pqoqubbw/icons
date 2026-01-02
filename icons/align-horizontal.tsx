@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface AlignHorizontalIconHandle {
   startAnimation: () => void;
@@ -17,7 +17,7 @@ interface AlignHorizontalIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DEFAULT_TRANSITION: Transition = {
-  type: 'spring',
+  type: "spring",
   stiffness: 160,
   damping: 17,
   mass: 1,
@@ -34,17 +34,17 @@ const AlignHorizontalIcon = forwardRef<
     isControlledRef.current = true;
 
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -52,10 +52,10 @@ const AlignHorizontalIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -69,31 +69,33 @@ const AlignHorizontalIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.rect
+          animate={controls}
+          height="10"
+          rx="2"
+          transition={DEFAULT_TRANSITION}
           variants={{
             normal: { scaleX: 1 },
             animate: { scaleX: 0.85 },
           }}
-          animate={controls}
-          transition={DEFAULT_TRANSITION}
           width="6"
-          height="10"
           x="9"
           y="7"
-          rx="2"
         />
         <motion.path
+          animate={controls}
           d="M4 22V2"
+          transition={DEFAULT_TRANSITION}
           variants={{
             normal: { translateX: 0, scaleY: 1 },
             animate: {
@@ -101,11 +103,11 @@ const AlignHorizontalIcon = forwardRef<
               scaleY: 0.9,
             },
           }}
-          animate={controls}
-          transition={DEFAULT_TRANSITION}
         />
         <motion.path
+          animate={controls}
           d="M20 22V2"
+          transition={DEFAULT_TRANSITION}
           variants={{
             normal: { translateX: 0, scaleY: 1 },
             animate: {
@@ -113,14 +115,12 @@ const AlignHorizontalIcon = forwardRef<
               scaleY: 0.9,
             },
           }}
-          animate={controls}
-          transition={DEFAULT_TRANSITION}
         />
       </svg>
     </div>
   );
 });
 
-AlignHorizontalIcon.displayName = 'AlignHorizontalIcon';
+AlignHorizontalIcon.displayName = "AlignHorizontalIcon";
 
 export { AlignHorizontalIcon };

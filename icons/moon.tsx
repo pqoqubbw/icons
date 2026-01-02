@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition, Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition, Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface MoonIconHandle {
   startAnimation: () => void;
@@ -27,7 +27,7 @@ const SVG_VARIANTS: Variants = {
 
 const SVG_TRANSITION: Transition = {
   duration: 1.2,
-  ease: 'easeInOut',
+  ease: "easeInOut",
 };
 
 const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
@@ -39,17 +39,17 @@ const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -57,10 +57,10 @@ const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -73,18 +73,18 @@ const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={SVG_VARIANTS}
-          animate={controls}
+          strokeWidth="2"
           transition={SVG_TRANSITION}
+          variants={SVG_VARIANTS}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
         </motion.svg>
@@ -93,6 +93,6 @@ const MoonIcon = forwardRef<MoonIconHandle, MoonIconProps>(
   }
 );
 
-MoonIcon.displayName = 'MoonIcon';
+MoonIcon.displayName = "MoonIcon";
 
 export { MoonIcon };

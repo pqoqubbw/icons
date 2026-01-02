@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ArchiveIconHandle {
   startAnimation: () => void;
@@ -21,7 +21,7 @@ const RECT_VARIANTS: Variants = {
     translateY: 0,
     transition: {
       duration: 0.2,
-      type: 'spring',
+      type: "spring",
       stiffness: 200,
       damping: 25,
     },
@@ -30,7 +30,7 @@ const RECT_VARIANTS: Variants = {
     translateY: -1.5,
     transition: {
       duration: 0.2,
-      type: 'spring',
+      type: "spring",
       stiffness: 200,
       damping: 25,
     },
@@ -38,13 +38,13 @@ const RECT_VARIANTS: Variants = {
 };
 
 const PATH_VARIANTS: Variants = {
-  normal: { d: 'M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8' },
-  animate: { d: 'M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11' },
+  normal: { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" },
+  animate: { d: "M4 11v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11" },
 };
 
 const SECONDARY_PATH_VARIANTS: Variants = {
-  normal: { d: 'M10 12h4' },
-  animate: { d: 'M10 15h4' },
+  normal: { d: "M10 12h4" },
+  animate: { d: "M10 15h4" },
 };
 
 const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
@@ -56,17 +56,17 @@ const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -74,10 +74,10 @@ const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -91,35 +91,35 @@ const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.rect
-            width="20"
+            animate={controls}
             height="5"
+            initial="normal"
+            rx="1"
+            variants={RECT_VARIANTS}
+            width="20"
             x="2"
             y="3"
-            rx="1"
-            initial="normal"
-            animate={controls}
-            variants={RECT_VARIANTS}
           />
           <motion.path
+            animate={controls}
             d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"
             variants={PATH_VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M10 12h4"
             variants={SECONDARY_PATH_VARIANTS}
-            animate={controls}
           />
         </svg>
       </div>
@@ -127,6 +127,6 @@ const ArchiveIcon = forwardRef<ArchiveIconHandle, ArchiveIconProps>(
   }
 );
 
-ArchiveIcon.displayName = 'ArchiveIcon';
+ArchiveIcon.displayName = "ArchiveIcon";
 
 export { ArchiveIcon };

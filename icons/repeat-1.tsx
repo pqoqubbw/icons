@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface Repeat1IconHandle {
   startAnimation: () => void;
@@ -27,7 +27,7 @@ const DRAW_VARIANTS: Variants = {
     transition: {
       delay: i === 0 ? 0 : 0.3,
       duration: 0.25,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   }),
 };
@@ -43,7 +43,7 @@ const NUMBER_VARIANTS: Variants = {
     transition: {
       delay: 0.25,
       duration: 0.2,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -56,17 +56,17 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -74,10 +74,10 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -95,30 +95,30 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          className="lucide lucide-repeat1-icon lucide-repeat-1"
           fill="none"
+          height={size}
+          initial="idle"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-repeat1-icon lucide-repeat-1"
-          initial="idle"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
           whileHover="show"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} />
           <motion.path
+            custom={0}
             d="M3 11v-1a4 4 0 0 1 4-4h14"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
-          <motion.path d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} />
           <motion.path
+            custom={0}
             d="M21 13v1a4 4 0 0 1-4 4H3"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
           <motion.path d="M11 10h1v4" variants={NUMBER_VARIANTS} />
         </motion.svg>
@@ -127,6 +127,6 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
   }
 );
 
-Repeat1Icon.displayName = 'Repeat1Icon';
+Repeat1Icon.displayName = "Repeat1Icon";
 
 export { Repeat1Icon };

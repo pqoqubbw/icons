@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface RefreshCWOffIconHandle {
   startAnimation: () => void;
@@ -25,23 +25,23 @@ const RefreshCWOffIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) controls.start('animate');
-      else onMouseEnter?.(e);
+      if (isControlledRef.current) onMouseEnter?.(e);
+      else controls.start("animate");
     },
     [controls, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) controls.start('normal');
-      else onMouseLeave?.(e);
+      if (isControlledRef.current) onMouseLeave?.(e);
+      else controls.start("normal");
     },
     [controls, onMouseLeave]
   );
@@ -54,16 +54,14 @@ const RefreshCWOffIcon = forwardRef<
       {...props}
     >
       <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
+        animate={controls}
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        transition={{ type: 'spring', stiffness: 500, damping: 20 }}
+        strokeWidth="2"
+        transition={{ type: "spring", stiffness: 500, damping: 20 }}
         variants={{
           normal: { x: 0 },
           animate: {
@@ -71,7 +69,9 @@ const RefreshCWOffIcon = forwardRef<
             transition: { duration: 0.4 },
           },
         }}
-        animate={controls}
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M21 8L18.74 5.74A9.75 9.75 0 0 0 12 3C11 3 10.03 3.16 9.13 3.47" />
         <path d="M8 16H3v5" />
@@ -85,6 +85,6 @@ const RefreshCWOffIcon = forwardRef<
   );
 });
 
-RefreshCWOffIcon.displayName = 'RefreshCWOffIcon';
+RefreshCWOffIcon.displayName = "RefreshCWOffIcon";
 
 export { RefreshCWOffIcon };

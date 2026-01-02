@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FolderPlusIconHandle {
   startAnimation: () => void;
@@ -23,7 +23,7 @@ const PATH_VARIANTS: Variants = {
     opacity: [0, 1],
     transition: {
       duration: 0.4,
-      ease: 'easeInOut',
+      ease: "easeInOut",
       delay: custom * 0.1,
       opacity: { delay: custom * 0.1 },
     },
@@ -38,17 +38,17 @@ const FolderPlusIcon = forwardRef<FolderPlusIconHandle, FolderPlusIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -56,10 +56,10 @@ const FolderPlusIcon = forwardRef<FolderPlusIconHandle, FolderPlusIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -73,30 +73,30 @@ const FolderPlusIcon = forwardRef<FolderPlusIconHandle, FolderPlusIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
           <motion.path
-            d="M12 10v6"
-            variants={PATH_VARIANTS}
             animate={controls}
-            initial="normal"
             custom={1}
+            d="M12 10v6"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M9 13h6"
-            variants={PATH_VARIANTS}
             animate={controls}
-            initial="normal"
             custom={0}
+            d="M9 13h6"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
         </svg>
       </div>
@@ -104,6 +104,6 @@ const FolderPlusIcon = forwardRef<FolderPlusIconHandle, FolderPlusIconProps>(
   }
 );
 
-FolderPlusIcon.displayName = 'FolderPlusIcon';
+FolderPlusIcon.displayName = "FolderPlusIcon";
 
 export { FolderPlusIcon };

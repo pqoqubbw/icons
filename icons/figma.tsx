@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FigmaIconHandle {
   startAnimation: () => void;
@@ -41,17 +41,17 @@ const FigmaIcon = forwardRef<FigmaIconHandle, FigmaIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -59,10 +59,10 @@ const FigmaIcon = forwardRef<FigmaIconHandle, FigmaIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -76,40 +76,40 @@ const FigmaIcon = forwardRef<FigmaIconHandle, FigmaIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            animate={controls}
             d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"
             variants={VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"
             variants={VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"
             variants={VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"
             variants={VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"
             variants={VARIANTS}
-            animate={controls}
           />
         </svg>
       </div>
@@ -117,6 +117,6 @@ const FigmaIcon = forwardRef<FigmaIconHandle, FigmaIconProps>(
   }
 );
 
-FigmaIcon.displayName = 'FigmaIcon';
+FigmaIcon.displayName = "FigmaIcon";
 
 export { FigmaIcon };

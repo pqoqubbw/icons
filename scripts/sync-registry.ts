@@ -1,42 +1,47 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "node:fs";
+import path from "node:path";
 
-import { components } from './registry-components';
+import { components } from "./registry-components";
 
 function updateRegistryComponents() {
-  const iconsDir = path.join(process.cwd(), 'icons');
+  const iconsDir = path.join(process.cwd(), "icons");
   const existingComponents = new Map(
-    components.map((c) => [path.basename(c.path.replace('../icons/', '')), c])
+    components.map((c) => [path.basename(c.path.replace("../icons/", "")), c])
   );
 
-  const newComponents = [];
+  const newComponents: {
+    name: string;
+    path: string;
+    registryDependencies: string[];
+    dependencies: string[];
+  }[] = [];
 
   const files = fs
     .readdirSync(iconsDir)
-    .filter((file) => file.endsWith('.tsx') && file !== 'index.ts')
+    .filter((file) => file.endsWith(".tsx") && file !== "index.ts")
     .sort();
 
   for (const file of files) {
     if (!existingComponents.has(file)) {
-      const name = path.basename(file, '.tsx');
+      const name = path.basename(file, ".tsx");
       newComponents.push({
         name,
-        path: path.join(__dirname, '../icons', file),
+        path: path.join(__dirname, "../icons", file),
         registryDependencies: [],
-        dependencies: ['motion'],
+        dependencies: ["motion"],
       });
     }
   }
 
   if (newComponents.length === 0) {
-    console.log('\n✅ Registry is up to date. No new components to add.\n');
+    console.log("\n✅ Registry is up to date. No new components to add.\n");
     return;
   }
 
-  const registryPath = path.join(__dirname, 'registry-components.ts');
-  const content = fs.readFileSync(registryPath, 'utf8');
+  const registryPath = path.join(__dirname, "registry-components.ts");
+  const content = fs.readFileSync(registryPath, "utf8");
 
-  const lastComponentIndex = content.lastIndexOf('}');
+  const lastComponentIndex = content.lastIndexOf("}");
 
   const newComponentsString = newComponents
     .map(
@@ -47,21 +52,22 @@ function updateRegistryComponents() {
     'dependencies': ['motion'],
   }`
     )
-    .join(',\n');
+    .join(",\n");
 
   const updatedContent =
     content.slice(0, lastComponentIndex + 1) +
-    ',\n' +
+    ",\n" +
     newComponentsString +
-    ',\n];';
+    ",\n];";
 
   fs.writeFileSync(registryPath, updatedContent);
 
   console.log(
-    `\n✅ Added ${newComponents.length} new component${newComponents.length > 1 ? 's' : ''}:`
+    `\n✅ Added ${newComponents.length} new component${newComponents.length > 1 ? "s" : ""}:`
   );
+  // biome-ignore lint/suspicious/useIterableCallbackReturn: ignore
   newComponents.forEach((c) => console.log(`   • ${c.name}`));
-  console.log('');
+  console.log("");
 }
 
 updateRegistryComponents();

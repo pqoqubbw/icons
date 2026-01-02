@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition, Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition, Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface WorkflowIconHandle {
   startAnimation: () => void;
@@ -45,17 +45,17 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -63,10 +63,10 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -80,41 +80,41 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.rect
-            width="8"
+            animate={controls}
+            custom={0}
             height="8"
+            rx="2"
+            variants={VARIANTS}
+            width="8"
             x="3"
             y="3"
-            rx="2"
-            variants={VARIANTS}
-            animate={controls}
-            custom={0}
           />
           <motion.path
-            d="M7 11v4a2 2 0 0 0 2 2h4"
-            variants={VARIANTS}
             animate={controls}
             custom={3}
+            d="M7 11v4a2 2 0 0 0 2 2h4"
+            variants={VARIANTS}
           />
           <motion.rect
-            width="8"
-            height="8"
-            x="13"
-            y="13"
-            rx="2"
-            variants={VARIANTS}
             animate={controls}
             custom={0}
+            height="8"
+            rx="2"
+            variants={VARIANTS}
+            width="8"
+            x="13"
+            y="13"
           />
         </svg>
       </div>
@@ -122,6 +122,6 @@ const WorkflowIcon = forwardRef<WorkflowIconHandle, WorkflowIconProps>(
   }
 );
 
-WorkflowIcon.displayName = 'WorkflowIcon';
+WorkflowIcon.displayName = "WorkflowIcon";
 
 export { WorkflowIcon };

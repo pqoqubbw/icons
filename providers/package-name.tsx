@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
-import { PACKAGE_MANAGER } from '@/constants';
+import { PACKAGE_MANAGER } from "@/constants";
 
 type PackageManager = (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];
 
@@ -13,7 +13,9 @@ type PackageNameContextType = {
 
 const PackageNameContext = createContext<PackageNameContextType>({
   packageName: PACKAGE_MANAGER.PNPM,
-  setPackageName: () => {},
+  setPackageName: (_packageName: PackageManager) => {
+    return;
+  },
 });
 
 const PackageNameProvider = ({ children }: { children: React.ReactNode }) => {
@@ -33,7 +35,7 @@ const usePackageNameContext = () => {
 
   if (!context) {
     throw new Error(
-      'usePackageNameContext must be used within a PackageNameProvider'
+      "usePackageNameContext must be used within a PackageNameProvider"
     );
   }
 

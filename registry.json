@@ -4710,14 +4710,14 @@
       ]
     },
     {
-      "name": "truck",
+      "name": "eye",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "truck.tsx",
+          "path": "eye.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4861,6 +4861,19 @@
       "files": [
         {
           "path": "mic.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "truck",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "truck.tsx",
           "type": "registry:ui"
         }
       ]

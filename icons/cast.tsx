@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface CastIconHandle {
   startAnimation: () => void;
@@ -36,17 +36,17 @@ const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -54,10 +54,10 @@ const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -70,33 +70,33 @@ const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6" />
           <motion.path
-            variants={VARIANTS}
             animate={controls}
             custom={0.2}
             d="M2 12a9 9 0 0 1 8 8"
+            variants={VARIANTS}
           />
           <motion.path
-            variants={VARIANTS}
             animate={controls}
             custom={0.1}
             d="M2 16a5 5 0 0 1 4 4"
+            variants={VARIANTS}
           />
           <motion.line
-            variants={VARIANTS}
-            custom={0}
             animate={controls}
+            custom={0}
+            variants={VARIANTS}
             x1="2"
             x2="2.01"
             y1="20"
@@ -108,6 +108,6 @@ const CastIcon = forwardRef<CastIconHandle, CastIconProps>(
   }
 );
 
-CastIcon.displayName = 'CastIcon';
+CastIcon.displayName = "CastIcon";
 
 export { CastIcon };

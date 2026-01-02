@@ -1,4 +1,4 @@
-import { ICON_LIST } from '@/icons';
+import { ICON_LIST } from "@/icons";
 
 type Icon = {
   name: string;

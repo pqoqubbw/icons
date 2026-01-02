@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import type { VariantProps } from 'class-variance-authority';
-import * as React from 'react';
-import { Avatar as AvatarBase } from '@base-ui-components/react/avatar';
-import { cva } from 'class-variance-authority';
+import { Avatar as AvatarBase } from "@base-ui-components/react/avatar";
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
+import type * as React from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const avatarVariants = cva(
-  'relative flex shrink-0 overflow-hidden rounded-full',
+  "relative flex shrink-0 overflow-hidden rounded-full",
   {
     variants: {
       size: {
-        sm: 'size-7 text-sm',
-        md: 'size-10',
-        lg: 'size-12 text-lg',
+        sm: "size-7 text-sm",
+        md: "size-10",
+        lg: "size-12 text-lg",
       },
     },
     defaultVariants: {
-      size: 'md',
+      size: "md",
     },
   }
 );
@@ -31,8 +31,8 @@ function Avatar({
   VariantProps<typeof avatarVariants>) {
   return (
     <AvatarBase.Root
-      data-slot="avatar"
       className={cn(avatarVariants({ size }), className)}
+      data-slot="avatar"
       {...props}
     />
   );
@@ -44,8 +44,8 @@ function AvatarImage({
 }: React.ComponentProps<typeof AvatarBase.Image>) {
   return (
     <AvatarBase.Image
+      className={cn("size-full object-cover", className)}
       data-slot="avatar-image"
-      className={cn('size-full object-cover', className)}
       {...props}
     />
   );
@@ -57,11 +57,11 @@ function AvatarFallback({
 }: React.ComponentProps<typeof AvatarBase.Fallback>) {
   return (
     <AvatarBase.Fallback
-      data-slot="avatar-fallback"
       className={cn(
-        'bg-muted flex size-full items-center justify-center rounded-full select-none',
+        "flex size-full select-none items-center justify-center rounded-full bg-muted",
         className
       )}
+      data-slot="avatar-fallback"
       {...props}
     />
   );

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface SquareStackIconHandle {
   startAnimation: () => void;
@@ -40,17 +40,17 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -58,10 +58,10 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -75,42 +75,42 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            variants={PATH_VARIANTS}
             animate={controls}
+            d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"
             transition={{
               delay: 0.3,
               duration: 0.4,
             }}
-            d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"
-            variants={PATH_VARIANTS}
             animate={controls}
+            d="M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"
             transition={{
               delay: 0.2,
               duration: 0.2,
             }}
+            variants={PATH_VARIANTS}
           />
           <motion.rect
+            animate={controls}
+            height="8"
+            rx="2"
             variants={RECT_VARIANTS}
             width="8"
-            height="8"
             x="14"
             y="14"
-            rx="2"
-            animate={controls}
           />
         </svg>
       </div>
@@ -118,6 +118,6 @@ const SquareStackIcon = forwardRef<SquareStackIconHandle, SquareStackIconProps>(
   }
 );
 
-SquareStackIcon.displayName = 'SquareStackIcon';
+SquareStackIcon.displayName = "SquareStackIcon";
 
 export { SquareStackIcon };

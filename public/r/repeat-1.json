@@ -3,9 +3,7 @@
   "name": "repeat-1",
   "type": "registry:ui",
   "registryDependencies": [],
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "devDependencies": [],
   "files": [
     {

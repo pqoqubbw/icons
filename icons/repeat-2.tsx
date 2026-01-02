@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
 import {
   forwardRef,
   useCallback,
   useImperativeHandle,
   useRef,
   useState,
-} from 'react';
-import { motion, useAnimation } from 'motion/react';
+} from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface Repeat2IconHandle {
   startAnimation: () => void;
@@ -33,7 +33,7 @@ const DRAW_VARIANTS: Variants = {
     transition: {
       delay: i === 0 ? 0 : 0.2,
       duration: 0.25,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   }),
 };
@@ -47,17 +47,17 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -65,10 +65,10 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -88,30 +88,30 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          key={hovered ? 'hover' : 'idle'}
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate="show"
           fill="none"
+          height={size}
+          initial="hidden"
+          key={hovered ? "hover" : "idle"}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          initial="hidden"
-          animate="show"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path d="m2 9 3-3 3 3" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m2 9 3-3 3 3" variants={DRAW_VARIANTS} />
           <motion.path
+            custom={0}
             d="M13 18H7a2 2 0 0 1-2-2V6"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
-          <motion.path d="m22 15-3 3-3-3" variants={DRAW_VARIANTS} custom={1} />
+          <motion.path custom={1} d="m22 15-3 3-3-3" variants={DRAW_VARIANTS} />
           <motion.path
+            custom={0}
             d="M11 6h6a2 2 0 0 1 2 2v10"
             variants={DRAW_VARIANTS}
-            custom={0}
           />
         </motion.svg>
       </div>
@@ -119,6 +119,6 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
   }
 );
 
-Repeat2Icon.displayName = 'Repeat2Icon';
+Repeat2Icon.displayName = "Repeat2Icon";
 
 export { Repeat2Icon };

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cubicBezier, motion, useAnimation } from 'motion/react';
+import { cubicBezier, motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface RedoDotIconHandle {
   startAnimation: () => void;
@@ -25,17 +25,17 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -43,10 +43,10 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -60,17 +60,19 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            animate={controls}
+            d="M21 7v6h-6"
             transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { translateX: 0, translateY: 0, rotate: 0 },
@@ -80,28 +82,26 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
                 rotate: [0, -12, 0],
               },
             }}
-            animate={controls}
-            d="M21 7v6h-6"
           />
           <motion.path
+            animate={controls}
+            d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"
             transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { pathLength: 1 },
               animate: { pathLength: [1, 0.8, 1] },
             }}
-            animate={controls}
-            d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"
           />
           <motion.circle
+            animate={controls}
+            cx="12"
+            cy="17"
+            r="1"
             transition={{ duration: 0.6, ease: CUSTOM_EASING }}
             variants={{
               normal: { scale: 1 },
               animate: { scale: [1, 1.2, 1] },
             }}
-            animate={controls}
-            cx="12"
-            cy="17"
-            r="1"
           />
         </svg>
       </div>
@@ -109,6 +109,6 @@ const RedoDotIcon = forwardRef<RedoDotIconHandle, RedoDotIconProps>(
   }
 );
 
-RedoDotIcon.displayName = 'RedoDotIcon';
+RedoDotIcon.displayName = "RedoDotIcon";
 
 export { RedoDotIcon };

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface HandIconHandle {
   startAnimation: () => void;
@@ -23,17 +23,17 @@ const HandIcon = forwardRef<HandIconHandle, HandIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -41,10 +41,10 @@ const HandIcon = forwardRef<HandIconHandle, HandIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -58,27 +58,27 @@ const HandIcon = forwardRef<HandIconHandle, HandIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
+          initial="normal"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
           variants={{
-            normal: { rotate: 0, originX: '50%', originY: '90%' },
+            normal: { rotate: 0, originX: "50%", originY: "90%" },
             animate: {
               rotate: [0, -15, 10, -5, 0],
               transition: {
                 duration: 0.8,
-                ease: 'easeInOut',
+                ease: "easeInOut",
               },
             },
           }}
-          initial="normal"
-          animate={controls}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" />
           <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" />
@@ -90,6 +90,6 @@ const HandIcon = forwardRef<HandIconHandle, HandIconProps>(
   }
 );
 
-HandIcon.displayName = 'HandIcon';
+HandIcon.displayName = "HandIcon";
 
 export { HandIcon };

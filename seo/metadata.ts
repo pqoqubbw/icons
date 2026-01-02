@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import { LINK, SITE } from '@/constants';
+import { LINK, SITE } from "@/constants";
 
 type CreateMetadataOptions = {
   title?: string;
@@ -33,7 +33,7 @@ const createMetadata = (options: CreateMetadataOptions = {}): Metadata => {
       title: ogTitle || title || SITE.NAME,
       description: ogDescription || description,
       url: canonical ? `${SITE.URL}${canonical}` : SITE.URL,
-      type: 'website',
+      type: "website",
     },
     twitter: {
       title: ogTitle || title || SITE.NAME,
@@ -51,14 +51,14 @@ const createMetadata = (options: CreateMetadataOptions = {}): Metadata => {
 const baseMetadata: Metadata = {
   metadataBase: new URL(SITE.URL),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
     title: SITE.NAME,
     description: SITE.DESCRIPTION.SHORT,
     siteName: SITE.NAME,
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: SITE.URL,
     images: [
       {
@@ -72,7 +72,7 @@ const baseMetadata: Metadata = {
   applicationName: SITE.NAME,
   appleWebApp: {
     title: SITE.NAME,
-    statusBarStyle: 'default',
+    statusBarStyle: "default",
     capable: true,
   },
   title: {
@@ -85,7 +85,7 @@ const baseMetadata: Metadata = {
   creator: SITE.AUTHOR.NAME,
   publisher: SITE.AUTHOR.NAME,
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: `${SITE.NAME} | Free Animated React Icons`,
     description: SITE.DESCRIPTION.SHORT,
     creator: SITE.AUTHOR.TWITTER,
@@ -99,7 +99,7 @@ const baseMetadata: Metadata = {
       },
     ],
   },
-  category: 'technology',
+  category: "technology",
 };
 
 export { baseMetadata, createMetadata };

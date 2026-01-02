@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ContrastIconHandle {
   startAnimation: () => void;
@@ -20,9 +20,9 @@ const PATH_VARIANT: Variants = {
   normal: { rotate: 0 },
   animate: {
     rotate: 180,
-    transformOrigin: 'left center',
+    transformOrigin: "left center",
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 80,
       damping: 12,
     },
@@ -37,17 +37,17 @@ const ContrastIcon = forwardRef<ContrastIconHandle, ContrastIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -55,10 +55,10 @@ const ContrastIcon = forwardRef<ContrastIconHandle, ContrastIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -72,22 +72,22 @@ const ContrastIcon = forwardRef<ContrastIconHandle, ContrastIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="12" cy="12" r="10" />
           <motion.path
-            d="M12 18a6 6 0 0 0 0-12v12z"
-            variants={PATH_VARIANT}
-            initial="normal"
             animate={controls}
+            d="M12 18a6 6 0 0 0 0-12v12z"
+            initial="normal"
+            variants={PATH_VARIANT}
           />
         </svg>
       </div>
@@ -95,6 +95,6 @@ const ContrastIcon = forwardRef<ContrastIconHandle, ContrastIconProps>(
   }
 );
 
-ContrastIcon.displayName = 'ContrastIcon';
+ContrastIcon.displayName = "ContrastIcon";
 
 export { ContrastIcon };
