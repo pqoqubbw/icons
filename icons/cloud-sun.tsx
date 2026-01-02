@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface CloudSunIconHandle {
   startAnimation: () => void;
@@ -26,7 +26,7 @@ const CLOUD_VARIANTS: Variants = {
     y: [-1, 1, -1, 1, 0],
     transition: {
       duration: 1,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -50,23 +50,23 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
 
       return {
         startAnimation: () => {
-          cloudControls.start('animate');
-          sunControls.start('animate');
+          cloudControls.start("animate");
+          sunControls.start("animate");
         },
         stopAnimation: () => {
-          cloudControls.start('normal');
-          sunControls.start('normal');
+          cloudControls.start("normal");
+          sunControls.start("normal");
         },
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          cloudControls.start('animate');
-          sunControls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          cloudControls.start("animate");
+          sunControls.start("animate");
         }
       },
       [cloudControls, sunControls, onMouseEnter]
@@ -74,11 +74,11 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          cloudControls.start('normal');
-          sunControls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          cloudControls.start("normal");
+          sunControls.start("normal");
         }
       },
       [cloudControls, sunControls, onMouseLeave]
@@ -92,38 +92,38 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ overflow: 'visible' }}
+          strokeWidth="2"
+          style={{ overflow: "visible" }}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.g
-            variants={CLOUD_VARIANTS}
             animate={cloudControls}
             initial="normal"
+            variants={CLOUD_VARIANTS}
           >
             <path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z" />
           </motion.g>
           {[
-            'M12 2v2',
-            'm4.93 4.93 1.41 1.41',
-            'M20 12h2',
-            'm19.07 4.93-1.41 1.41',
-            'M15.947 12.65a4 4 0 0 0-5.925-4.128',
+            "M12 2v2",
+            "m4.93 4.93 1.41 1.41",
+            "M20 12h2",
+            "m19.07 4.93-1.41 1.41",
+            "M15.947 12.65a4 4 0 0 0-5.925-4.128",
           ].map((d, index) => (
             <motion.path
-              key={d}
-              d={d}
               animate={sunControls}
-              variants={SUN_VARIANTS}
               custom={index + 1}
+              d={d}
               initial="normal"
+              key={d}
+              variants={SUN_VARIANTS}
             />
           ))}
         </svg>
@@ -132,6 +132,6 @@ const CloudSunIcon = forwardRef<CloudSunIconHandle, CloudSunIconProps>(
   }
 );
 
-CloudSunIcon.displayName = 'CloudSunIcon';
+CloudSunIcon.displayName = "CloudSunIcon";
 
 export { CloudSunIcon };

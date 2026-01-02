@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { Radio as BaseRadio } from '@base-ui-components/react/radio';
-import { RadioGroup as BaseRadioGroup } from '@base-ui-components/react/radio-group';
+import { Radio as BaseRadio } from "@base-ui-components/react/radio";
+import { RadioGroup as BaseRadioGroup } from "@base-ui-components/react/radio-group";
+import * as React from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const RadioGroup = ({
   className,
   ...props
 }: React.ComponentProps<typeof BaseRadioGroup>) => {
-  return <BaseRadioGroup className={cn('grid', className)} {...props} />;
+  return <BaseRadioGroup className={cn("grid", className)} {...props} />;
 };
 
 const Radio = {
@@ -16,21 +16,21 @@ const Radio = {
     React.ElementRef<typeof BaseRadio.Root>,
     React.ComponentPropsWithoutRef<typeof BaseRadio.Root>
   >(({ className, ...props }, ref) => (
-    <BaseRadio.Root ref={ref} className={className} {...props} />
+    <BaseRadio.Root className={className} ref={ref} {...props} />
   )),
   Indicator: React.forwardRef<
     React.ElementRef<typeof BaseRadio.Indicator>,
     React.ComponentPropsWithoutRef<typeof BaseRadio.Indicator>
   >(({ className, ...props }, ref) => (
     <BaseRadio.Indicator
+      className={cn("flex items-center justify-center", className)}
       ref={ref}
-      className={cn('flex items-center justify-center', className)}
       {...props}
     />
   )),
 };
 
-Radio.Root.displayName = 'Radio.Root';
-Radio.Indicator.displayName = 'Radio.Indicator';
+Radio.Root.displayName = "Radio.Root";
+Radio.Indicator.displayName = "Radio.Indicator";
 
 export { RadioGroup, Radio };

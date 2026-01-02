@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface GalleryThumbnailsIconHandle {
   startAnimation: () => void;
@@ -35,17 +35,17 @@ const GalleryThumbnailsIcon = forwardRef<
     isControlledRef.current = true;
 
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -53,10 +53,10 @@ const GalleryThumbnailsIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -70,24 +70,24 @@ const GalleryThumbnailsIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="18" height="14" x="3" y="3" rx="2" />
-        {['M4 21h1', 'M9 21h1', 'M14 21h1', 'M19 21h1'].map((d, index) => (
+        <rect height="14" rx="2" width="18" x="3" y="3" />
+        {["M4 21h1", "M9 21h1", "M14 21h1", "M19 21h1"].map((d, index) => (
           <motion.path
-            key={d}
-            d={d}
             animate={controls}
-            variants={PATH_VARIANTS}
             custom={index + 1}
+            d={d}
+            key={d}
+            variants={PATH_VARIANTS}
           />
         ))}
       </svg>
@@ -95,6 +95,6 @@ const GalleryThumbnailsIcon = forwardRef<
   );
 });
 
-GalleryThumbnailsIcon.displayName = 'GalleryThumbnailsIcon';
+GalleryThumbnailsIcon.displayName = "GalleryThumbnailsIcon";
 
 export { GalleryThumbnailsIcon };

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { easeInOut, easeOut, motion, useAnimation } from 'motion/react';
+import { easeInOut, easeOut, motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface AirplayIconHandle {
   startAnimation: () => void;
@@ -61,20 +61,20 @@ const AirplayIcon = forwardRef<AirplayIconHandle, AirplayIconProps>(
 
       return {
         startAnimation: async () => {
-          await controls.start('animate');
-          controls.start('normal');
+          await controls.start("animate");
+          controls.start("normal");
         },
-        stopAnimation: () => controls.start('normal'),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       async (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          await controls.start('animate');
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          await controls.start("animate");
+          controls.start("normal");
         }
       },
       [controls, onMouseEnter]
@@ -82,10 +82,10 @@ const AirplayIcon = forwardRef<AirplayIconHandle, AirplayIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -99,25 +99,25 @@ const AirplayIcon = forwardRef<AirplayIconHandle, AirplayIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            animate={controls}
             d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"
             variants={SCREEN_VARIANTS}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M12 15l5 6H7z"
             variants={TRIANGLE_VARIANTS}
-            animate={controls}
           />
         </svg>
       </div>
@@ -125,6 +125,6 @@ const AirplayIcon = forwardRef<AirplayIconHandle, AirplayIconProps>(
   }
 );
 
-AirplayIcon.displayName = 'AirplayIcon';
+AirplayIcon.displayName = "AirplayIcon";
 
 export { AirplayIcon };

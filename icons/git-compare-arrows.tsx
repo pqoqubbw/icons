@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface GitCompareArrowsIconHandle {
   startAnimation: () => void;
@@ -33,17 +33,17 @@ const GitCompareArrowsIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -51,10 +51,10 @@ const GitCompareArrowsIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -68,17 +68,18 @@ const GitCompareArrowsIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.circle
+          animate={controls}
           cx="5"
           cy="6"
           r="3"
@@ -94,10 +95,10 @@ const GitCompareArrowsIcon = forwardRef<
               opacity: [0, 1],
             },
           }}
-          animate={controls}
         />
 
         <motion.path
+          animate={controls}
           d="M12 6h5a2 2 0 0 1 2 2v7"
           transition={{
             duration: DURATION,
@@ -117,10 +118,10 @@ const GitCompareArrowsIcon = forwardRef<
               pathOffset: [1, 0],
             },
           }}
-          animate={controls}
         />
 
         <motion.path
+          animate={controls}
           d="m15 9-3-3 3-3"
           transition={{
             duration: DURATION,
@@ -131,10 +132,10 @@ const GitCompareArrowsIcon = forwardRef<
             normal: { opacity: 1 },
             animate: { opacity: [0, 1] },
           }}
-          animate={controls}
         />
 
         <motion.circle
+          animate={controls}
           cx="19"
           cy="18"
           r="3"
@@ -150,10 +151,10 @@ const GitCompareArrowsIcon = forwardRef<
               opacity: [0, 1],
             },
           }}
-          animate={controls}
         />
 
         <motion.path
+          animate={controls}
           d="M12 18H7a2 2 0 0 1-2-2V9"
           transition={{
             duration: DURATION,
@@ -173,10 +174,10 @@ const GitCompareArrowsIcon = forwardRef<
               pathOffset: [1, 0],
             },
           }}
-          animate={controls}
         />
 
         <motion.path
+          animate={controls}
           d="m9 15 3 3-3 3"
           transition={{
             duration: DURATION,
@@ -187,13 +188,12 @@ const GitCompareArrowsIcon = forwardRef<
             normal: { opacity: 1 },
             animate: { opacity: [0, 1] },
           }}
-          animate={controls}
         />
       </svg>
     </div>
   );
 });
 
-GitCompareArrowsIcon.displayName = 'GitCompareArrowsIcon';
+GitCompareArrowsIcon.displayName = "GitCompareArrowsIcon";
 
 export { GitCompareArrowsIcon };

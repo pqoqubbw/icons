@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface BoxIconHandle {
   startAnimation: () => void;
@@ -43,17 +43,17 @@ const BoxIcon = forwardRef<BoxIconHandle, BoxIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -61,10 +61,10 @@ const BoxIcon = forwardRef<BoxIconHandle, BoxIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -78,33 +78,33 @@ const BoxIcon = forwardRef<BoxIconHandle, BoxIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            animate={controls}
             d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
-            variants={PATH_VARIANTS}
             initial="normal"
-            animate={controls}
+            variants={PATH_VARIANTS}
           />
           <motion.path
+            animate={controls}
             d="m3.3 7 8.7 5 8.7-5"
-            variants={PATH_VARIANTS}
             initial="normal"
-            animate={controls}
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M12 22V12"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
+            d="M12 22V12"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
         </svg>
       </div>
@@ -112,6 +112,6 @@ const BoxIcon = forwardRef<BoxIconHandle, BoxIconProps>(
   }
 );
 
-BoxIcon.displayName = 'BoxIcon';
+BoxIcon.displayName = "BoxIcon";
 
 export { BoxIcon };

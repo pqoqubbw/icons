@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ExpandIconHandle {
   startAnimation: () => void;
@@ -17,7 +17,7 @@ interface ExpandIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DEFAULT_TRANSITION: Transition = {
-  type: 'spring',
+  type: "spring",
   stiffness: 250,
   damping: 25,
 };
@@ -31,17 +31,17 @@ const ExpandIcon = forwardRef<ExpandIconHandle, ExpandIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -49,10 +49,10 @@ const ExpandIcon = forwardRef<ExpandIconHandle, ExpandIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -66,51 +66,51 @@ const ExpandIcon = forwardRef<ExpandIconHandle, ExpandIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
+            animate={controls}
             d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"
             transition={DEFAULT_TRANSITION}
             variants={{
-              normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '2px' },
+              normal: { translateX: "0%", translateY: "0%" },
+              animate: { translateX: "2px", translateY: "2px" },
             }}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M3 16.2V21m0 0h4.8M3 21l6-6"
             transition={DEFAULT_TRANSITION}
             variants={{
-              normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '2px' },
+              normal: { translateX: "0%", translateY: "0%" },
+              animate: { translateX: "-2px", translateY: "2px" },
             }}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M21 7.8V3m0 0h-4.8M21 3l-6 6"
             transition={DEFAULT_TRANSITION}
             variants={{
-              normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '2px', translateY: '-2px' },
+              normal: { translateX: "0%", translateY: "0%" },
+              animate: { translateX: "2px", translateY: "-2px" },
             }}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M3 7.8V3m0 0h4.8M3 3l6 6"
             transition={DEFAULT_TRANSITION}
             variants={{
-              normal: { translateX: '0%', translateY: '0%' },
-              animate: { translateX: '-2px', translateY: '-2px' },
+              normal: { translateX: "0%", translateY: "0%" },
+              animate: { translateX: "-2px", translateY: "-2px" },
             }}
-            animate={controls}
           />
         </svg>
       </div>
@@ -118,6 +118,6 @@ const ExpandIcon = forwardRef<ExpandIconHandle, ExpandIconProps>(
   }
 );
 
-ExpandIcon.displayName = 'ExpandIcon';
+ExpandIcon.displayName = "ExpandIcon";
 
 export { ExpandIcon };

@@ -1,14 +1,14 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const DuckSvg = () => {
   return (
     <svg
-      width="101"
+      className="translate-y-[-5%] [grid-area:1/1]"
+      fill="none"
       height="87"
       viewBox="0 0 101 87"
-      fill="none"
+      width="101"
       xmlns="http://www.w3.org/2000/svg"
-      className="translate-y-[-5%] [grid-area:1/1]"
     >
       <path
         d="M97.1846 38.3866C94.9593 33.9746 91.9889 31.1107 90.557 29.7368C90.1409 29.3401 89.8894 29.0982 89.7346 28.895C88.7961 27.6663 88.6026 26.5826 88.4091 25.528C88.3026 24.9572 88.1962 24.3573 87.964 23.68C87.6737 22.8382 87.0642 21.0774 85.4677 19.9647C84.7614 19.4906 83.2811 18.7263 81.4525 19.0552C79.1981 19.5003 78.0371 21.7643 76.5858 24.6282C74.9893 27.7921 73.1704 31.3816 69.1938 33.5682C67.578 34.4584 66.1944 34.797 64.9367 35.0389C64.9367 35.0389 56.5384 36.703 53.6842 37.2739C53.3746 37.3319 53.1714 36.9836 53.3649 36.732C53.7519 36.2386 54.1293 35.7355 54.526 35.2518C59.025 29.7368 60.6311 22.7899 58.9282 16.2203C55.8902 4.45512 43.1381 -2.45308 30.5117 0.807517C27.4059 1.61057 24.455 3.01345 21.8813 4.92917C19.3464 6.80619 17.1791 9.17665 15.5633 11.8857C13.0477 16.1042 11.6932 21.5708 12.6026 26.5536C12.6607 26.8923 12.5349 27.2309 12.2543 27.434C11.161 28.2178 10.0097 29.8723 9.04212 30.4238C6.79743 31.7009 4.45599 30.1044 2.07585 31.0043C1.26312 31.3042 0.585848 31.9525 0.324614 32.7749C-0.372012 34.9615 1.77595 36.8869 3.50784 37.8544C6.12986 39.3154 10.2612 40.1088 14.799 39.6637C15.0312 39.6444 15.1956 39.8766 15.0892 40.0797C14.3829 41.531 13.9862 43.1565 13.9378 43.9402C13.8314 45.8462 14.9441 47.4523 16.9372 47.5007C18.0015 47.5297 19.0271 47.1331 19.9753 46.6687C21.4846 45.9237 23.2359 44.4627 24.6968 42.5566C24.9 42.2954 25.2483 42.1987 25.558 42.3341C26.2546 42.6341 28.8669 43.5145 30.3859 44.0176C30.773 44.1434 30.7827 44.6755 30.415 44.84C29.3217 45.3044 28.4992 45.6431 28.1413 45.8366C25.6547 47.1331 22.7714 48.8553 20.1688 51.8063C17.8273 54.4767 16.0374 57.776 15.1376 61.0946C13.6572 66.658 14.4506 70.9828 15.3795 73.6242C18.5433 82.6222 27.6188 85.97 30.3279 86.7827C31.2374 87.0536 32.2049 87.0729 33.1241 86.831L86.7449 72.9663C88.5542 72.5018 90.2087 71.7569 91.66 70.77C92.0857 70.4797 92.3566 70.2572 92.5888 70.0636C97.8135 65.6227 99.6615 59.7497 100.213 57.4276C100.232 57.3406 102.322 48.0522 97.1749 38.4446V38.3866H97.1846Z"
@@ -37,12 +37,12 @@ const DuckSvg = () => {
 const Circles = () => {
   return (
     <svg
-      width="236"
+      className="[grid-area:1/1]"
+      fill="none"
       height="235"
       viewBox="0 0 236 235"
-      fill="none"
+      width="236"
       xmlns="http://www.w3.org/2000/svg"
-      className="[grid-area:1/1]"
     >
       <circle
         cx="117.318"
@@ -62,10 +62,10 @@ const Circles = () => {
 const Vector = () => {
   return (
     <svg
-      width="93"
+      fill="none"
       height="22"
       viewBox="0 0 93 22"
-      fill="none"
+      width="93"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -79,7 +79,7 @@ const Vector = () => {
 interface CircularTextProps {
   text: string;
   radius: number;
-  position: 'top' | 'bottom';
+  position: "top" | "bottom";
   angleSpan?: number;
   className?: string;
 }
@@ -91,28 +91,28 @@ const CircularText = ({
   angleSpan = 120,
   className,
 }: CircularTextProps) => {
-  const isBottom = position === 'bottom';
-  const characters = isBottom ? text.split('').reverse() : text.split('');
+  const isBottom = position === "bottom";
+  const characters = isBottom ? text.split("").reverse() : text.split("");
   const totalChars = characters.length;
   const anglePerChar = angleSpan / (totalChars - 1 || 1);
-  const centerAngle = position === 'top' ? 0 : 180;
+  const centerAngle = position === "top" ? 0 : 180;
   const startAngle = centerAngle - angleSpan / 2;
 
   return (
-    <div className={cn('absolute inset-0 text-sm', className)}>
+    <div className={cn("absolute inset-0 text-sm", className)}>
       {characters.map((char, i) => {
         const charAngle = startAngle + i * anglePerChar;
 
         return (
           <span
-            key={i}
             className="absolute top-1/2 left-1/2"
+            key={i}
             style={{
               transform: `
                 translate(-50%, -50%)
                 rotate(${charAngle}deg)
                 translateY(-${radius}px)
-                ${isBottom ? 'rotate(180deg)' : ''}
+                ${isBottom ? "rotate(180deg)" : ""}
               `,
             }}
           >
@@ -129,24 +129,24 @@ type StampProps = {
 };
 
 const Stamp = ({ className }: StampProps) => {
-  const dateText = new Date().toLocaleDateString('en-US', {
-    month: 'long',
-    year: 'numeric',
+  const dateText = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
   });
 
   return (
-    <div className={cn('relative grid place-items-center', className)}>
+    <div className={cn("relative grid place-items-center", className)}>
       <Circles />
       <DuckSvg />
 
       <div className="absolute inset-0 grid place-items-center [grid-area:1/1]">
         <div className="relative size-[calc(100%-30px)]">
           <CircularText
-            text={dateText}
-            radius={80}
-            position="top"
             angleSpan={85}
             className="font-mono text-[#737373] dark:text-[#fdc700]"
+            position="top"
+            radius={80}
+            text={dateText}
           />
 
           <div className="absolute top-[74%] left-1/2 -translate-x-1/2">
@@ -154,11 +154,11 @@ const Stamp = ({ className }: StampProps) => {
           </div>
 
           <CircularText
-            text="Chill Guy Supporter"
-            radius={84}
-            position="bottom"
             angleSpan={110}
             className="font-mono text-[#737373] dark:text-[#fdc700]"
+            position="bottom"
+            radius={84}
+            text="Chill Guy Supporter"
           />
         </div>
       </div>

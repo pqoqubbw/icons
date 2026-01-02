@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface WashingMachineIconHandle {
   startAnimation: () => void;
@@ -25,17 +25,17 @@ const WashingMachineIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -43,10 +43,10 @@ const WashingMachineIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -60,15 +60,15 @@ const WashingMachineIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.g
           animate={controls}
@@ -80,15 +80,15 @@ const WashingMachineIcon = forwardRef<
               x: [0, 0.5, -0.5, 0.3, -0.3, 0],
               transition: {
                 duration: 0.8,
-                repeat: Infinity,
-                ease: 'easeInOut',
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
               },
             },
           }}
         >
           <path d="M3 6h3" />
           <path d="M17 6h.01" />
-          <rect width="18" height="20" x="3" y="2" rx="2" />
+          <rect height="20" rx="2" width="18" x="3" y="2" />
         </motion.g>
         <motion.g
           animate={controls}
@@ -98,7 +98,7 @@ const WashingMachineIcon = forwardRef<
               y: 0,
               transition: {
                 duration: 0.5,
-                ease: 'linear',
+                ease: "linear",
               },
             },
             animate: {
@@ -107,13 +107,13 @@ const WashingMachineIcon = forwardRef<
               transition: {
                 rotate: {
                   duration: 1,
-                  repeat: Infinity,
-                  ease: 'linear',
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear",
                 },
                 y: {
                   duration: 0.3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "easeInOut",
                 },
               },
             },
@@ -127,6 +127,6 @@ const WashingMachineIcon = forwardRef<
   );
 });
 
-WashingMachineIcon.displayName = 'WashingMachineIcon';
+WashingMachineIcon.displayName = "WashingMachineIcon";
 
 export { WashingMachineIcon };

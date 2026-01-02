@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface WindArrowDownIconHandle {
   startAnimation: () => void;
@@ -23,7 +23,7 @@ const WIND_VARIANTS: Variants = {
     pathOffset: 0,
     transition: {
       duration: 0.3,
-      ease: 'easeInOut',
+      ease: "easeInOut",
       delay: custom,
     },
   }),
@@ -33,7 +33,7 @@ const WIND_VARIANTS: Variants = {
     pathOffset: [1, 0],
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: "easeInOut",
       delay: custom,
     },
   }),
@@ -45,7 +45,7 @@ const ARROW_VARIANTS: Variants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
   animate: {
@@ -53,7 +53,7 @@ const ARROW_VARIANTS: Variants = {
     opacity: [0, 1],
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      ease: "easeInOut",
       delay: 0.35,
     },
   },
@@ -69,17 +69,17 @@ const WindArrowDownIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -87,10 +87,10 @@ const WindArrowDownIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -104,47 +104,47 @@ const WindArrowDownIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          d="M12.8 21.6A2 2 0 1 0 14 18H2"
-          variants={WIND_VARIANTS}
-          initial="normal"
           animate={controls}
           custom={0.2}
+          d="M12.8 21.6A2 2 0 1 0 14 18H2"
+          initial="normal"
+          variants={WIND_VARIANTS}
         />
         <motion.path
-          d="M17.5 10a2.5 2.5 0 1 1 2 4H2"
-          variants={WIND_VARIANTS}
-          initial="normal"
           animate={controls}
           custom={0.4}
+          d="M17.5 10a2.5 2.5 0 1 1 2 4H2"
+          initial="normal"
+          variants={WIND_VARIANTS}
         />
         <motion.path
+          animate={controls}
           d="M10 2v8"
-          variants={ARROW_VARIANTS}
           initial="normal"
-          animate={controls}
+          variants={ARROW_VARIANTS}
         />
         <motion.path
-          d="m6 6 4 4 4-4"
-          variants={ARROW_VARIANTS}
-          initial="normal"
           animate={controls}
+          d="m6 6 4 4 4-4"
+          initial="normal"
+          variants={ARROW_VARIANTS}
         />
       </svg>
     </div>
   );
 });
 
-WindArrowDownIcon.displayName = 'WindArrowDownIcon';
+WindArrowDownIcon.displayName = "WindArrowDownIcon";
 
 export { WindArrowDownIcon };

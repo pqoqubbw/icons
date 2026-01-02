@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FolderDotIconHandle {
   startAnimation: () => void;
@@ -20,7 +20,7 @@ const DOT_VARIANTS: Variants = {
   normal: { opacity: 1 },
   animate: {
     opacity: [1, 0, 1],
-    transition: { duration: 0.6, ease: 'easeInOut' },
+    transition: { duration: 0.6, ease: "easeInOut" },
   },
 };
 
@@ -32,17 +32,17 @@ const FolderDotIcon = forwardRef<FolderDotIconHandle, FolderDotIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -50,10 +50,10 @@ const FolderDotIcon = forwardRef<FolderDotIconHandle, FolderDotIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -67,24 +67,24 @@ const FolderDotIcon = forwardRef<FolderDotIconHandle, FolderDotIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
           <motion.circle
+            animate={controls}
             cx="12"
             cy="13"
+            initial="normal"
             r="1"
             variants={DOT_VARIANTS}
-            animate={controls}
-            initial="normal"
           />
         </svg>
       </div>
@@ -92,6 +92,6 @@ const FolderDotIcon = forwardRef<FolderDotIconHandle, FolderDotIconProps>(
   }
 );
 
-FolderDotIcon.displayName = 'FolderDotIcon';
+FolderDotIcon.displayName = "FolderDotIcon";
 
 export { FolderDotIcon };

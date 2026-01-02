@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition, Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition, Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface TrainTrackIconHandle {
   startAnimation: () => void;
@@ -45,17 +45,17 @@ const TrainTrackIcon = forwardRef<TrainTrackIconHandle, TrainTrackIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -63,10 +63,10 @@ const TrainTrackIcon = forwardRef<TrainTrackIconHandle, TrainTrackIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -80,46 +80,46 @@ const TrainTrackIcon = forwardRef<TrainTrackIconHandle, TrainTrackIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M2 17 17 2" />
           <motion.path
-            d="m2 14 8 8"
-            variants={VARIANTS}
             animate={controls}
             custom={4}
+            d="m2 14 8 8"
+            variants={VARIANTS}
           />
           <motion.path
-            d="m5 11 8 8"
-            variants={VARIANTS}
             animate={controls}
             custom={3}
+            d="m5 11 8 8"
+            variants={VARIANTS}
           />
           <motion.path
-            d="m8 8 8 8"
-            variants={VARIANTS}
             animate={controls}
             custom={2}
+            d="m8 8 8 8"
+            variants={VARIANTS}
           />
           <motion.path
-            d="m11 5 8 8"
-            variants={VARIANTS}
             animate={controls}
             custom={1}
+            d="m11 5 8 8"
+            variants={VARIANTS}
           />
           <motion.path
-            d="m14 2 8 8"
-            variants={VARIANTS}
             animate={controls}
             custom={0}
+            d="m14 2 8 8"
+            variants={VARIANTS}
           />
           <path d="M7 22 22 7" />
         </svg>
@@ -128,6 +128,6 @@ const TrainTrackIcon = forwardRef<TrainTrackIconHandle, TrainTrackIconProps>(
   }
 );
 
-TrainTrackIcon.displayName = 'TrainTrackIcon';
+TrainTrackIcon.displayName = "TrainTrackIcon";
 
 export { TrainTrackIcon };

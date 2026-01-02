@@ -1,9 +1,9 @@
-import { getIcons } from '@/actions/get-icons';
-import { LINK, SITE } from '@/constants';
+import { getIcons } from "@/actions/get-icons";
+import { LINK, SITE } from "@/constants";
 
 export function GET() {
   const icons = getIcons();
-  const iconNames = icons.map((icon) => icon.name).join(', ');
+  const iconNames = icons.map((icon) => icon.name).join(", ");
 
   const content = `# ${SITE.NAME}
 
@@ -63,7 +63,7 @@ Contributions welcome! See CONTRIBUTING.md for guidelines.
 
   return new Response(content, {
     headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
+      "Content-Type": "text/plain; charset=utf-8",
     },
   });
 }

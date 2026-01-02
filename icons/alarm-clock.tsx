@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface AlarmClockIconHandle {
   startAnimation: () => void;
@@ -22,7 +22,7 @@ const PATH_VARIANTS: Variants = {
     x: 0,
     transition: {
       duration: 0.2,
-      type: 'spring',
+      type: "spring",
       stiffness: 200,
       damping: 25,
     },
@@ -33,14 +33,14 @@ const PATH_VARIANTS: Variants = {
     transition: {
       y: {
         duration: 0.2,
-        type: 'spring',
+        type: "spring",
         stiffness: 200,
         damping: 25,
       },
       x: {
         duration: 0.3,
-        repeat: Infinity,
-        ease: 'linear',
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "linear",
       },
     },
   },
@@ -52,7 +52,7 @@ const SECONDARY_PATH_VARIANTS: Variants = {
     x: 0,
     transition: {
       duration: 0.2,
-      type: 'spring',
+      type: "spring",
       stiffness: 200,
       damping: 25,
     },
@@ -63,14 +63,14 @@ const SECONDARY_PATH_VARIANTS: Variants = {
     transition: {
       y: {
         duration: 0.2,
-        type: 'spring',
+        type: "spring",
         stiffness: 200,
         damping: 25,
       },
       x: {
         duration: 0.3,
-        repeat: Infinity,
-        ease: 'linear',
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "linear",
       },
     },
   },
@@ -85,17 +85,17 @@ const AlarmClockIcon = forwardRef<AlarmClockIconHandle, AlarmClockIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -103,10 +103,10 @@ const AlarmClockIcon = forwardRef<AlarmClockIconHandle, AlarmClockIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -120,52 +120,52 @@ const AlarmClockIcon = forwardRef<AlarmClockIconHandle, AlarmClockIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ overflow: 'visible' }}
+          strokeWidth="2"
+          style={{ overflow: "visible" }}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M18 20.5L19.5 22"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M6 20.5L4.5 22"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M21 13C21 17.968 16.968 22 12 22C7.032 22 3 17.968 3 13C3 8.032 7.032 4 12 4C16.968 4 21 8.032 21 13Z"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M15.339 15.862L12.549 14.197C12.063 13.909 11.667 13.216 11.667 12.649V8.95898"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            variants={SECONDARY_PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M18 2L21.747 5.31064"
+            initial="normal"
+            variants={SECONDARY_PATH_VARIANTS}
           />
           <motion.path
-            variants={SECONDARY_PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             d="M6 2L2.25304 5.31064"
+            initial="normal"
+            variants={SECONDARY_PATH_VARIANTS}
           />
         </svg>
       </div>
@@ -173,6 +173,6 @@ const AlarmClockIcon = forwardRef<AlarmClockIconHandle, AlarmClockIconProps>(
   }
 );
 
-AlarmClockIcon.displayName = 'AlarmClockIcon';
+AlarmClockIcon.displayName = "AlarmClockIcon";
 
 export { AlarmClockIcon };

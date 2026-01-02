@@ -1,5 +1,5 @@
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 
 interface CheckResult {
   missingImports: string[];
@@ -9,25 +9,26 @@ interface CheckResult {
 }
 
 const getAllIconFiles = (): string[] => {
-  const iconsDir = join(process.cwd(), 'icons');
+  const iconsDir = join(process.cwd(), "icons");
   const files = readdirSync(iconsDir);
 
   return files
-    .filter((file) => file.endsWith('.tsx'))
-    .map((file) => file.replace('.tsx', ''))
+    .filter((file) => file.endsWith(".tsx"))
+    .map((file) => file.replace(".tsx", ""))
     .sort();
 };
 
 const getImportsFromIndex = (): Set<string> => {
-  const indexPath = join(process.cwd(), 'icons', 'index.ts');
-  const content = readFileSync(indexPath, 'utf-8');
+  const indexPath = join(process.cwd(), "icons", "index.ts");
+  const content = readFileSync(indexPath, "utf-8");
 
   const imports = new Set<string>();
 
   const importRegex =
     /import\s+{\s*(\w+)\s*}\s+from\s+['"](?:@\/icons\/|\.\/)([^'"]+)['"]/g;
 
-  let match;
+  let match: RegExpExecArray | null = null;
+  // biome-ignore lint/suspicious/noAssignInExpressions: ignore
   while ((match = importRegex.exec(content)) !== null) {
     const fileName = match[2];
     imports.add(fileName);
@@ -37,14 +38,15 @@ const getImportsFromIndex = (): Set<string> => {
 };
 
 const getIconsUsedInList = (): Set<string> => {
-  const indexPath = join(process.cwd(), 'icons', 'index.ts');
-  const content = readFileSync(indexPath, 'utf-8');
+  const indexPath = join(process.cwd(), "icons", "index.ts");
+  const content = readFileSync(indexPath, "utf-8");
 
   const iconsInList = new Set<string>();
 
   const nameRegex = /name:\s*['"]([^'"]+)['"]/g;
 
-  let match;
+  let match: RegExpExecArray | null = null;
+  // biome-ignore lint/suspicious/noAssignInExpressions: ignore
   while ((match = nameRegex.exec(content)) !== null) {
     const name = match[1];
     iconsInList.add(name);
@@ -76,7 +78,7 @@ const checkImports = (): CheckResult => {
 };
 
 const printReport = () => {
-  console.log('🔍 Checking icon imports...');
+  console.log("🔍 Checking icon imports...");
 
   const result = checkImports();
 
@@ -84,14 +86,14 @@ const printReport = () => {
   console.log(`   Total imports in index.ts: ${result.totalImports}`);
 
   if (result.missingImports.length > 0) {
-    console.log('❌ MISSING IMPORTS:');
+    console.log("❌ MISSING IMPORTS:");
     result.missingImports.forEach((file) => {
       console.log(`  - icons/${file}.tsx`);
     });
-    console.log('');
+    console.log("");
     process.exit(1);
   } else {
-    console.log('✅ All icon files are imported');
+    console.log("✅ All icon files are imported");
   }
 };
 

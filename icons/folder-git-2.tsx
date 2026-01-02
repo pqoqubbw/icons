@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FolderGit2IconHandle {
   startAnimation: () => void;
@@ -31,17 +31,17 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -49,10 +49,10 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -66,18 +66,19 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5" />
           <motion.circle
+            animate={controls}
             cx="13"
             cy="12"
             r="2"
@@ -93,9 +94,9 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
                 opacity: [0, 1],
               },
             }}
-            animate={controls}
           />
           <motion.path
+            animate={controls}
             d="M18 19c-2.8 0-5-2.2-5-5v8"
             transition={{
               duration: DURATION,
@@ -115,9 +116,9 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
                 pathOffset: [1, 0],
               },
             }}
-            animate={controls}
           />
           <motion.circle
+            animate={controls}
             cx="20"
             cy="19"
             r="2"
@@ -133,7 +134,6 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
                 opacity: [0, 1],
               },
             }}
-            animate={controls}
           />
         </svg>
       </div>
@@ -141,6 +141,6 @@ const FolderGit2Icon = forwardRef<FolderGit2IconHandle, FolderGit2IconProps>(
   }
 );
 
-FolderGit2Icon.displayName = 'FolderGit2Icon';
+FolderGit2Icon.displayName = "FolderGit2Icon";
 
 export { FolderGit2Icon };

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import type { Icon } from '@/actions/get-icons';
-import { useDeferredValue, useMemo, useRef, useState } from 'react';
-import Fuse from 'fuse.js';
+import Fuse from "fuse.js";
+import { useDeferredValue, useMemo, useRef, useState } from "react";
+import type { Icon } from "@/actions/get-icons";
 
-import { Card, CardActions, CardTitle } from '@/components/card';
-import { ICON_LIST } from '@/icons';
-import { SearchInput } from './search-input';
+import { Card, CardActions, CardTitle } from "@/components/card";
+import { ICON_LIST } from "@/icons";
+import { SearchInput } from "./search-input";
 
 type Props = {
   icons: Icon[];
@@ -14,23 +14,33 @@ type Props = {
 
 const ICON_MAP = new Map(ICON_LIST.map((item) => [item.name, item.icon]));
 
-const IconItem = ({ icon, Icon }: { icon: Icon; Icon: React.ElementType }) => {
+const IconItem = ({
+  icon,
+  Icon,
+}: {
+  icon: Icon;
+  Icon: React.ElementType | undefined;
+}) => {
   const animationRef = useRef<{
     startAnimation: () => void;
     stopAnimation: () => void;
   }>(null);
 
+  if (!Icon) {
+    return null;
+  }
+
   return (
     <Card
-      key={icon.name}
       animationRef={animationRef}
+      className="[contain-intrinsic-size:auto_180px] [content-visibility:auto]"
+      key={icon.name}
       onMouseEnter={() => animationRef.current?.startAnimation()}
       onMouseLeave={() => animationRef.current?.stopAnimation()}
-      className="[contain-intrinsic-size:auto_180px] [content-visibility:auto]"
     >
       <Icon
-        ref={animationRef}
         className="flex items-center justify-center [&>svg]:size-10 [&>svg]:text-neutral-800 dark:[&>svg]:text-neutral-100"
+        ref={animationRef}
       />
       <CardTitle>{icon.name}</CardTitle>
       <CardActions {...icon} />
@@ -39,7 +49,7 @@ const IconItem = ({ icon, Icon }: { icon: Icon; Icon: React.ElementType }) => {
 };
 
 const IconsList = ({ icons }: Props) => {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const deferredSearchValue = useDeferredValue(searchValue);
 
@@ -47,8 +57,8 @@ const IconsList = ({ icons }: Props) => {
     () =>
       new Fuse(icons, {
         keys: [
-          { name: 'name', weight: 3 },
-          { name: 'keywords', weight: 2 },
+          { name: "name", weight: 3 },
+          { name: "keywords", weight: 2 },
         ],
         threshold: 0.3,
         ignoreLocation: true,
@@ -67,22 +77,22 @@ const IconsList = ({ icons }: Props) => {
   return (
     <div className="mb-20 w-full">
       <SearchInput
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
         searchOpen={searchOpen}
+        searchValue={searchValue}
         setSearchOpen={setSearchOpen}
+        setSearchValue={setSearchValue}
       />
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
         {filteredIcons.length === 0 && (
-          <div className="col-span-full pt-10 text-center text-sm text-neutral-500">
+          <div className="col-span-full pt-10 text-center text-neutral-500 text-sm">
             No icons found
           </div>
         )}
         {filteredIcons.map((icon) => (
           <IconItem
-            key={icon.name}
+            Icon={ICON_MAP.get(icon.name) ?? undefined}
             icon={icon}
-            Icon={ICON_MAP.get(icon.name)!}
+            key={icon.name}
           />
         ))}
       </div>

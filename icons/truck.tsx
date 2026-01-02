@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 export interface TruckIconHandle {
   startAnimation: () => void;
@@ -20,9 +20,9 @@ const TRUCK_VARIANTS: Variants = {
     y: [0, -1, 0, -0.5, 0],
     transition: {
       duration: 0.4,
-      ease: 'easeInOut',
-      repeat: Infinity,
-      repeatType: 'loop',
+      ease: "easeInOut",
+      repeat: Number.POSITIVE_INFINITY,
+      repeatType: "loop",
     },
   },
 };
@@ -33,8 +33,8 @@ const WHEEL_VARIANTS: Variants = {
     rotate: 360,
     transition: {
       duration: 0.5,
-      ease: 'linear',
-      repeat: Infinity,
+      ease: "linear",
+      repeat: Number.POSITIVE_INFINITY,
     },
   },
 };
@@ -51,8 +51,8 @@ const SPEED_LINE_VARIANTS: Variants = {
     scaleX: [0.2, 1, 0.8, 0.3],
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
-      repeat: Infinity,
+      ease: "easeOut",
+      repeat: Number.POSITIVE_INFINITY,
       delay: custom * 0.08,
       times: [0, 0.2, 0.6, 1],
     },
@@ -68,15 +68,15 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('animate');
+          controls.start("animate");
         }
         onMouseEnter?.(e);
       },
@@ -86,7 +86,7 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('normal');
+          controls.start("normal");
         }
         onMouseLeave?.(e);
       },
@@ -101,16 +101,16 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          className="overflow-visible"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="overflow-visible"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           {[
             { y: 8, width: 5, x: 0 },
@@ -118,24 +118,24 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
             { y: 14, width: 4, x: 0 },
           ].map((line, i) => (
             <motion.line
-              key={`speed-${i}`}
-              x1={line.x}
-              y1={line.y}
-              x2={line.x + line.width}
-              y2={line.y}
-              strokeWidth="2"
-              strokeLinecap="round"
-              variants={SPEED_LINE_VARIANTS}
-              custom={i}
               animate={controls}
+              custom={i}
               initial="normal"
+              key={`speed-${i}`}
+              strokeLinecap="round"
+              strokeWidth="2"
+              variants={SPEED_LINE_VARIANTS}
+              x1={line.x}
+              x2={line.x + line.width}
+              y1={line.y}
+              y2={line.y}
             />
           ))}
 
           <motion.g
-            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
+            variants={TRUCK_VARIANTS}
           >
             <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
             <path d="M15 18H9" />
@@ -143,36 +143,36 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
           </motion.g>
 
           <motion.g
-            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
+            variants={TRUCK_VARIANTS}
           >
             <motion.g
-              variants={WHEEL_VARIANTS}
               animate={controls}
               initial="normal"
-              style={{ transformOrigin: '7px 18px' }}
+              style={{ transformOrigin: "7px 18px" }}
+              variants={WHEEL_VARIANTS}
             >
               <circle cx="7" cy="18" r="2" />
-              <line x1="7" y1="16.5" x2="7" y2="19.5" strokeWidth="1.5" />
-              <line x1="5.5" y1="18" x2="8.5" y2="18" strokeWidth="1.5" />
+              <line strokeWidth="1.5" x1="7" x2="7" y1="16.5" y2="19.5" />
+              <line strokeWidth="1.5" x1="5.5" x2="8.5" y1="18" y2="18" />
             </motion.g>
           </motion.g>
 
           <motion.g
-            variants={TRUCK_VARIANTS}
             animate={controls}
             initial="normal"
+            variants={TRUCK_VARIANTS}
           >
             <motion.g
-              variants={WHEEL_VARIANTS}
               animate={controls}
               initial="normal"
-              style={{ transformOrigin: '17px 18px' }}
+              style={{ transformOrigin: "17px 18px" }}
+              variants={WHEEL_VARIANTS}
             >
               <circle cx="17" cy="18" r="2" />
-              <line x1="17" y1="16.5" x2="17" y2="19.5" strokeWidth="1.5" />
-              <line x1="15.5" y1="18" x2="18.5" y2="18" strokeWidth="1.5" />
+              <line strokeWidth="1.5" x1="17" x2="17" y1="16.5" y2="19.5" />
+              <line strokeWidth="1.5" x1="15.5" x2="18.5" y1="18" y2="18" />
             </motion.g>
           </motion.g>
         </svg>
@@ -181,6 +181,6 @@ const TruckIcon = forwardRef<TruckIconHandle, TruckIconProps>(
   }
 );
 
-TruckIcon.displayName = 'TruckIcon';
+TruckIcon.displayName = "TruckIcon";
 
 export { TruckIcon };
