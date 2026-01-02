@@ -424,6 +424,36 @@
       ]
     },
     {
+      "name": "arrow-up-left",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-left.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-right",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "arrow-up-right.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "arrow-down-z-a",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5609,66 +5639,6 @@
       "files": [
         {
           "path": "mic.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat-1",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat-2",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "wrench",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "wrench.tsx",
           "type": "registry:ui"
         }
       ]
