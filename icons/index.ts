@@ -372,6 +372,7 @@ import { HandGrabIcon } from './hand-grab';
 import { HandHelpingIcon } from './hand-helping';
 import { HandMetalIcon } from './hand-metal';
 import { HeartHandshakeIcon } from './heart-handshake';
+import { TruckIcon } from './truck';
 
 type IconListItem = {
   name: string;
@@ -380,6 +381,18 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+   {
+    name: 'truck',
+    icon: TruckIcon,
+    keywords: [
+      'delivery',
+      'van',
+      'shipping',
+      'haulage',
+      'lorry',
+      'transportation',
+    ],
+  },
   {
     name: 'mic',
     icon: MicIcon,
