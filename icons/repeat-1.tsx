@@ -2,13 +2,7 @@
 
 import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
-import {
-  forwardRef,
-  useCallback,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 import { motion, useAnimation } from 'motion/react';
 
 import { cn } from '@/lib/utils';
@@ -23,15 +17,15 @@ interface Repeat1IconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DRAW_VARIANTS: Variants = {
-  hidden: {
-    pathLength: 0,
-    opacity: 0,
-  },
-  show: (i: number) => ({
+  idle: {
     pathLength: 1,
     opacity: 1,
+  },
+  show: (i: number) => ({
+    pathLength: [0, 1],
+    opacity: 1,
     transition: {
-      delay: i === 0 ? 0 : 0.2,
+      delay: i === 0 ? 0 : 0.3,
       duration: 0.25,
       ease: 'easeOut',
     },
@@ -39,16 +33,16 @@ const DRAW_VARIANTS: Variants = {
 };
 
 const NUMBER_VARIANTS: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.6,
-  },
-  show: {
+  idle: {
     opacity: 1,
     scale: 1,
+  },
+  show: {
+    opacity: [0, 1],
+    scale: [0.6, 1],
     transition: {
-      delay: 0.2,
-      duration: 0.25,
+      delay: 0.25,
+      duration: 0.2,
       ease: 'easeOut',
     },
   },
@@ -56,7 +50,6 @@ const NUMBER_VARIANTS: Variants = {
 
 const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const [hovered, setHovered] = useState(false);
     const controls = useAnimation();
     const isControlledRef = useRef(false);
 
@@ -94,18 +87,15 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
       <div
         className={cn(className)}
         onMouseEnter={(e) => {
-          setHovered(true);
           handleMouseEnter(e);
         }}
         onMouseLeave={(e) => {
-          setHovered(false);
           handleMouseLeave(e);
         }}
         {...props}
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
-          key={hovered ? 'hover' : 'idle'}
           width={size}
           height={size}
           viewBox="0 0 24 24"
@@ -115,8 +105,8 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
           className="lucide lucide-repeat1-icon lucide-repeat-1"
-          initial="hidden"
-          animate="show"
+          initial="idle"
+          whileHover="show"
         >
           <motion.path d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} custom={1} />
           <motion.path
