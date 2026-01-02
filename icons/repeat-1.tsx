@@ -112,10 +112,7 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          width={size}
-          xmlns="http://www.w3.org/2000/svg"
+          whileHover="show"
         >
           <motion.path custom={1} d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} />
           <motion.path
