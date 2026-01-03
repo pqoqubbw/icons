@@ -2,6 +2,8 @@
 
 **IMPORTANT:** This project only accepts contributions based on [lucide icons](https://lucide.dev/). Pull requests containing custom icons or icons from other icon packs will be closed.
 
+**Animation Quality:** Pull requests with simple path length animations (`strokeDasharray`/`strokeDashoffset` "drawing" effect) will likely be rejected. This type of animation looks generic and doesn't add meaningful interaction. We're looking for creative, purposeful animations that enhance the icon's meaning.
+
 We welcome contributions to our project! Please follow these steps to contribute:
 
 1. Fork the repository on GitHub.
