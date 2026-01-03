@@ -16,19 +16,16 @@ interface ChessPawnIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PATH_VARIANTS: Variants = {
+const BODY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
-    pathLength: 1,
-    scale: 1,
-    transition: { duration: 0.25 },
+    y: 0,
   },
   animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    scale: [0.95, 1],
+    opacity: [0.6, 1],
+    y: [2, 0],
     transition: {
-      duration: 0.35,
+      duration: 0.2,
       ease: 'easeOut',
     },
   },
@@ -36,15 +33,16 @@ const PATH_VARIANTS: Variants = {
 
 const HEAD_VARIANTS: Variants = {
   normal: {
-    scale: 1,
     opacity: 1,
+    scale: 1,
   },
   animate: {
-    scale: [0, 1],
-    opacity: [0, 1],
+    opacity: [0.6, 1],
+    scale: [0.9, 1],
+    y: [-2, 0],
     transition: {
-      duration: 0.3,
-      ease: 'backOut',
+      duration: 0.2,
+      ease: 'easeOut',
     },
   },
 };
@@ -103,25 +101,25 @@ const ChessPawnIcon = forwardRef<ChessPawnIconHandle, ChessPawnIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"
           />
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="M7 10h10"
           />
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="m8 18 1.5-8"
           />
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="m14.5 10 1.5 8"

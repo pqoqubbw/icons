@@ -16,39 +16,35 @@ interface ChessKnightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PATH_VARIANTS: Variants = {
+const BODY_VARIANTS: Variants = {
   normal: {
     opacity: 1,
-    pathLength: 1,
-    scale: 1,
     x: 0,
-    y: 0,
-    transition: { duration: 0.25 },
+    rotate: 0,
   },
   animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    scale: [0.9, 1],
-    x: [-2, 0],
-    y: [2, 0],
+    opacity: [0.6, 1],
+    x: [-3, 0],
+    rotate: [-4, 0],
     transition: {
-      duration: 0.45,
+      duration: 0.25,
       ease: 'easeOut',
     },
   },
 };
 
-const DETAIL_VARIANTS: Variants = {
+const HEAD_VARIANTS: Variants = {
   normal: {
-    scale: 1,
     opacity: 1,
+    y: 0,
   },
   animate: {
-    scale: [0, 1],
-    opacity: [0, 1],
+    opacity: [0.6, 1],
+    y: [-2, 0],
     transition: {
-      duration: 0.25,
-      ease: 'backOut',
+      duration: 0.2,
+      ease: 'easeOut',
+      delay: 0.05,
     },
   },
 };
@@ -107,31 +103,31 @@ const ChessKnightIcon = forwardRef<ChessKnightIconHandle, ChessKnightIconProps>(
           strokeLinejoin="round"
         >
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={HEAD_VARIANTS}
             initial="normal"
             animate={controls}
             d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"
           />
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={HEAD_VARIANTS}
             initial="normal"
             animate={controls}
             d="M16.5 18c1-2 2.5-5 2.5-9a7 7 0 0 0-7-7H6.635a1 1 0 0 0-.768 1.64L7 5l-2.32 5.802a2 2 0 0 0 .95 2.526l2.87 1.456"
           />
           <motion.path
-            variants={PATH_VARIANTS}
+            variants={HEAD_VARIANTS}
             initial="normal"
             animate={controls}
             d="M9.713 12.185 7 18"
           />
           <motion.path
-            variants={DETAIL_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="m15 5 1.425-1.425"
           />
           <motion.path
-            variants={DETAIL_VARIANTS}
+            variants={BODY_VARIANTS}
             initial="normal"
             animate={controls}
             d="m17 8 1.53-1.53"

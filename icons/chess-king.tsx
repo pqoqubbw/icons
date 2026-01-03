@@ -19,16 +19,15 @@ interface ChessKingIconProps extends HTMLAttributes<HTMLDivElement> {
 const PATH_VARIANTS: Variants = {
   normal: {
     opacity: 1,
-    pathLength: 1,
     scale: 1,
-    transition: { duration: 0.25 },
+    y: 0,
   },
   animate: {
-    opacity: [0, 1],
-    pathLength: [0, 1],
-    scale: [0.95, 1],
+    opacity: [0.6, 1],
+    scale: [0.96, 1],
+    y: [2, 0],
     transition: {
-      duration: 0.4,
+      duration: 0.25,
       ease: 'easeOut',
     },
   },
@@ -36,15 +35,16 @@ const PATH_VARIANTS: Variants = {
 
 const CROSS_VARIANTS: Variants = {
   normal: {
-    scale: 1,
     opacity: 1,
+    y: 0,
   },
   animate: {
-    scale: [0, 1],
-    opacity: [0, 1],
+    opacity: [0.6, 1],
+    y: [-3, 0],
     transition: {
-      duration: 0.25,
-      ease: 'backOut',
+      duration: 0.2,
+      ease: 'easeOut',
+      delay: 0.05,
     },
   },
 };
