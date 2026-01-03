@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FileCheck2IconHandle {
   startAnimation: () => void;
@@ -28,8 +28,8 @@ const CHECK_VARIANTS: Variants = {
     pathLength: [0, 1],
     opacity: [0, 1],
     transition: {
-      pathLength: { duration: 0.4, ease: 'easeInOut' },
-      opacity: { duration: 0.4, ease: 'easeInOut' },
+      pathLength: { duration: 0.4, ease: "easeInOut" },
+      opacity: { duration: 0.4, ease: "easeInOut" },
     },
   },
 };
@@ -43,17 +43,17 @@ const FileCheck2Icon = forwardRef<FileCheck2IconHandle, FileCheck2IconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -61,10 +61,10 @@ const FileCheck2Icon = forwardRef<FileCheck2IconHandle, FileCheck2IconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -78,24 +78,24 @@ const FileCheck2Icon = forwardRef<FileCheck2IconHandle, FileCheck2IconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M14 2v4a2 2 0 0 0 2 2h4" />
           <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
           <motion.path
             animate={controls}
-            initial="normal"
-            variants={CHECK_VARIANTS}
             d="m3 15 2 2 4-4"
-            style={{ transformOrigin: 'center' }}
+            initial="normal"
+            style={{ transformOrigin: "center" }}
+            variants={CHECK_VARIANTS}
           />
         </svg>
       </div>
@@ -103,6 +103,6 @@ const FileCheck2Icon = forwardRef<FileCheck2IconHandle, FileCheck2IconProps>(
   }
 );
 
-FileCheck2Icon.displayName = 'FileCheck2Icon';
+FileCheck2Icon.displayName = "FileCheck2Icon";
 
 export { FileCheck2Icon };

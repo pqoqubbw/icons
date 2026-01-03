@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface AlignLeftIconHandle {
   startAnimation: () => void;
@@ -17,7 +17,7 @@ interface AlignLeftIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DEFAULT_TRANSITION: Transition = {
-  type: 'spring',
+  type: "spring",
   stiffness: 150,
   damping: 15,
   mass: 0.3,
@@ -32,17 +32,17 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -50,10 +50,10 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -67,53 +67,53 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.line
-            x1="3"
-            x2="21"
-            y1="6"
-            y2="6"
+            animate={controls}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { x2: 21 },
               animate: { x2: 21 },
             }}
-            animate={controls}
-            transition={DEFAULT_TRANSITION}
+            x1="3"
+            x2="21"
+            y1="6"
+            y2="6"
           />
 
           <motion.line
-            x1="3"
-            x2="15"
-            y1="12"
-            y2="12"
+            animate={controls}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { x2: 15 },
               animate: { x2: 19 },
             }}
-            animate={controls}
-            transition={DEFAULT_TRANSITION}
+            x1="3"
+            x2="15"
+            y1="12"
+            y2="12"
           />
 
           <motion.line
-            x1="3"
-            x2="17"
-            y1="18"
-            y2="18"
+            animate={controls}
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { x2: 17 },
               animate: { x2: 12 },
             }}
-            animate={controls}
-            transition={DEFAULT_TRANSITION}
+            x1="3"
+            x2="17"
+            y1="18"
+            y2="18"
           />
         </svg>
       </div>
@@ -121,6 +121,6 @@ const AlignLeftIcon = forwardRef<AlignLeftIconHandle, AlignLeftIconProps>(
   }
 );
 
-AlignLeftIcon.displayName = 'AlignLeftIcon';
+AlignLeftIcon.displayName = "AlignLeftIcon";
 
 export { AlignLeftIcon };

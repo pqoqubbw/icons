@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface RollerCoasterIconHandle {
   startAnimation: () => void;
@@ -42,17 +42,17 @@ const RollerCoasterIcon = forwardRef<
     isControlledRef.current = true;
 
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -60,10 +60,10 @@ const RollerCoasterIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -77,33 +77,33 @@ const RollerCoasterIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <motion.path d="M6 19V5" variants={VARIANTS} animate={controls} />
-        <motion.path d="M10 19V6.8" variants={VARIANTS} animate={controls} />
-        <motion.path d="M14 19v-7.8" variants={VARIANTS} animate={controls} />
-        <motion.path d="M18 5v4" variants={VARIANTS} animate={controls} />
-        <motion.path d="M18 19v-6" variants={VARIANTS} animate={controls} />
-        <motion.path d="M22 19V9" variants={VARIANTS} animate={controls} />
+        <motion.path animate={controls} d="M6 19V5" variants={VARIANTS} />
+        <motion.path animate={controls} d="M10 19V6.8" variants={VARIANTS} />
+        <motion.path animate={controls} d="M14 19v-7.8" variants={VARIANTS} />
+        <motion.path animate={controls} d="M18 5v4" variants={VARIANTS} />
+        <motion.path animate={controls} d="M18 19v-6" variants={VARIANTS} />
+        <motion.path animate={controls} d="M22 19V9" variants={VARIANTS} />
         <motion.path
-          d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65"
-          variants={VARIANTS}
           animate={controls}
           custom={2}
+          d="M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65"
+          variants={VARIANTS}
         />
       </svg>
     </div>
   );
 });
 
-RollerCoasterIcon.displayName = 'RollerCoasterIcon';
+RollerCoasterIcon.displayName = "RollerCoasterIcon";
 
 export { RollerCoasterIcon };

@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
+import { AnimatePresence, motion } from "motion/react";
+import type { HTMLAttributes } from "react";
 import {
-  forwardRef,
   Fragment,
+  forwardRef,
   useCallback,
   useImperativeHandle,
   useRef,
   useState,
-} from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+} from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface VolumeIconHandle {
   startAnimation: () => void;
@@ -38,10 +38,10 @@ const VolumeIcon = forwardRef<VolumeIconHandle, VolumeIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          setIsHovered(true);
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          setIsHovered(true);
         }
       },
       [onMouseEnter]
@@ -49,10 +49,10 @@ const VolumeIcon = forwardRef<VolumeIconHandle, VolumeIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          setIsHovered(false);
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          setIsHovered(false);
         }
       },
       [onMouseLeave]
@@ -66,60 +66,60 @@ const VolumeIcon = forwardRef<VolumeIconHandle, VolumeIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence initial={false} mode="wait">
             {isHovered ? (
               <Fragment key="volume-icon-active">
                 <motion.path
-                  d="M16 9a5 5 0 0 1 0 6"
                   animate={{ opacity: 1, transition: { delay: 0.1 } }}
-                  initial={{ opacity: 0 }}
+                  d="M16 9a5 5 0 0 1 0 6"
                   exit={{ opacity: 0 }}
+                  initial={{ opacity: 0 }}
                 />
                 <motion.path
-                  d="M19.364 18.364a9 9 0 0 0 0-12.728"
                   animate={{ opacity: 1, transition: { delay: 0.2 } }}
-                  initial={{ opacity: 0 }}
+                  d="M19.364 18.364a9 9 0 0 0 0-12.728"
                   exit={{ opacity: 0 }}
+                  initial={{ opacity: 0 }}
                 />
               </Fragment>
             ) : (
               <Fragment key="volume-icon-inactive">
                 <motion.line
-                  x1="22"
-                  x2="16"
-                  y1="9"
-                  y2="15"
                   animate={{
                     pathLength: [0, 1],
                     opacity: [0, 1],
                     transition: { delay: 0.1 },
                   }}
-                  initial={{ pathLength: 1, opacity: 1 }}
                   exit={{ pathLength: 1, opacity: 1 }}
-                />
-                <motion.line
-                  x1="16"
-                  x2="22"
+                  initial={{ pathLength: 1, opacity: 1 }}
+                  x1="22"
+                  x2="16"
                   y1="9"
                   y2="15"
+                />
+                <motion.line
                   animate={{
                     pathLength: [0, 1],
                     opacity: [0, 1],
                     transition: { delay: 0.2 },
                   }}
-                  initial={{ pathLength: 1, opacity: 1 }}
                   exit={{ pathLength: 1, opacity: 1 }}
+                  initial={{ pathLength: 1, opacity: 1 }}
+                  x1="16"
+                  x2="22"
+                  y1="9"
+                  y2="15"
                 />
               </Fragment>
             )}
@@ -130,6 +130,6 @@ const VolumeIcon = forwardRef<VolumeIconHandle, VolumeIconProps>(
   }
 );
 
-VolumeIcon.displayName = 'VolumeIcon';
+VolumeIcon.displayName = "VolumeIcon";
 
 export { VolumeIcon };

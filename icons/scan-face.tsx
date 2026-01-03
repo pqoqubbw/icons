@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ScanFaceIconHandle {
   startAnimation: () => void;
@@ -25,20 +25,20 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
       isControlledRef.current = true;
       return {
         startAnimation: async () => {
-          await controls.start('hidden');
-          await controls.start('visible');
+          await controls.start("hidden");
+          await controls.start("visible");
         },
-        stopAnimation: () => controls.start('visible'),
+        stopAnimation: () => controls.start("visible"),
       };
     });
 
     const handleMouseEnter = useCallback(
       async (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          await controls.start('hidden');
-          await controls.start('visible');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          await controls.start("hidden");
+          await controls.start("visible");
         }
       },
       [controls, onMouseEnter]
@@ -46,10 +46,10 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('visible');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("visible");
         }
       },
       [controls, onMouseLeave]
@@ -59,7 +59,7 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
       visible: { scale: 1 },
       hidden: {
         scale: 0.9,
-        transition: { type: 'spring', stiffness: 200, damping: 20 },
+        transition: { type: "spring", stiffness: 200, damping: 20 },
       },
     };
 
@@ -69,7 +69,7 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
         scale: 1.2,
         rotate: 45,
         opacity: 0,
-        transition: { type: 'spring', stiffness: 200, damping: 20 },
+        transition: { type: "spring", stiffness: 200, damping: 20 },
       },
     };
 
@@ -90,47 +90,47 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          animate={controls}
+          strokeWidth="2"
           variants={faceVariants}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            variants={cornerVariants}
             animate={controls}
-            initial="visible"
             d="M3 7V5a2 2 0 0 1 2-2h2"
+            initial="visible"
+            variants={cornerVariants}
           />
           <motion.path
-            variants={cornerVariants}
             animate={controls}
-            initial="visible"
             d="M17 3h2a2 2 0 0 1 2 2v2"
+            initial="visible"
+            variants={cornerVariants}
           />
           <motion.path
-            variants={cornerVariants}
             animate={controls}
-            initial="visible"
             d="M21 17v2a2 2 0 0 1-2 2h-2"
-          />
-          <motion.path
+            initial="visible"
             variants={cornerVariants}
-            animate={controls}
-            initial="visible"
-            d="M7 21H5a2 2 0 0 1-2-2v-2"
           />
           <motion.path
-            variants={mouthVariants}
             animate={controls}
+            d="M7 21H5a2 2 0 0 1-2-2v-2"
             initial="visible"
+            variants={cornerVariants}
+          />
+          <motion.path
+            animate={controls}
             d="M8 14s1.5 2 4 2 4-2 4-2"
+            initial="visible"
+            variants={mouthVariants}
           />
           <line x1="9" x2="9.01" y1="9" y2="9" />
           <line x1="15" x2="15.01" y1="9" y2="9" />
@@ -140,6 +140,6 @@ const ScanFaceIcon = forwardRef<ScanFaceIconHandle, ScanFaceIconProps>(
   }
 );
 
-ScanFaceIcon.displayName = 'ScanFaceIcon';
+ScanFaceIcon.displayName = "ScanFaceIcon";
 
 export { ScanFaceIcon };

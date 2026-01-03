@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const STRETCH_VARIANTS: Variants = {
   normal: { scaleY: 1, y: 0, opacity: 1 },
@@ -14,7 +14,7 @@ const STRETCH_VARIANTS: Variants = {
     y: [0, 2, 0],
     transition: {
       duration: 0.45,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -38,17 +38,17 @@ const CornerRightDownIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -56,10 +56,10 @@ const CornerRightDownIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -73,18 +73,18 @@ const CornerRightDownIcon = forwardRef<
       {...props}
     >
       <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
+        animate={controls}
         fill="none"
+        height={size}
+        initial="normal"
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        animate={controls}
+        strokeWidth="2"
         variants={STRETCH_VARIANTS}
-        initial="normal"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path d="m10 15 5 5 5-5" />
         <path d="M4 4h7a4 4 0 0 1 4 4v12" />
@@ -93,6 +93,6 @@ const CornerRightDownIcon = forwardRef<
   );
 });
 
-CornerRightDownIcon.displayName = 'CornerRightDownIcon';
+CornerRightDownIcon.displayName = "CornerRightDownIcon";
 
 export { CornerRightDownIcon };

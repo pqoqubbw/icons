@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FrownIconHandle {
   startAnimation: () => void;
@@ -24,14 +24,14 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('animate');
+        if (!isControlledRef.current) controls.start("animate");
         onMouseEnter?.(e);
       },
       [controls, onMouseEnter]
@@ -39,7 +39,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) controls.start('normal');
+        if (!isControlledRef.current) controls.start("normal");
         onMouseLeave?.(e);
       },
       [controls, onMouseLeave]
@@ -49,7 +49,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
       normal: {
         scale: 1,
         rotate: 0,
-        transition: { duration: 0.3, ease: 'easeOut' },
+        transition: { duration: 0.3, ease: "easeOut" },
       },
       animate: {
         scale: [1, 1.15, 1.05, 1.08],
@@ -57,26 +57,26 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
         transition: {
           duration: 0.8,
           times: [0, 0.3, 0.6, 1],
-          ease: 'easeInOut',
+          ease: "easeInOut",
         },
       },
     };
 
     const mouthVariants: Variants = {
       normal: {
-        d: 'M16 16s-1.5-2-4-2-4 2-4 2',
+        d: "M16 16s-1.5-2-4-2-4 2-4 2",
         pathLength: 1,
-        transition: { duration: 0.3, ease: 'easeOut' },
+        transition: { duration: 0.3, ease: "easeOut" },
       },
       animate: {
-        d: 'M16 17s-1.5-2.5-4-2.5-4 2.5-4 2.5',
+        d: "M16 17s-1.5-2.5-4-2.5-4 2.5-4 2.5",
         pathLength: [0.3, 1, 1],
         transition: {
-          d: { duration: 0.5, ease: 'easeOut' },
+          d: { duration: 0.5, ease: "easeOut" },
           pathLength: {
             duration: 0.5,
             times: [0, 0.5, 1],
-            ease: 'easeInOut',
+            ease: "easeInOut",
           },
           delay: 0.1,
         },
@@ -87,7 +87,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
       normal: {
         scale: 1,
         y: 0,
-        transition: { duration: 0.3, ease: 'easeOut' },
+        transition: { duration: 0.3, ease: "easeOut" },
       },
       animate: {
         scale: [1, 1.3, 0.9, 1.1],
@@ -95,7 +95,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
         transition: {
           duration: 0.6,
           times: [0, 0.3, 0.6, 1],
-          ease: 'easeInOut',
+          ease: "easeInOut",
         },
       },
     };
@@ -104,7 +104,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
       normal: {
         scale: 1,
         y: 0,
-        transition: { duration: 0.3, ease: 'easeOut' },
+        transition: { duration: 0.3, ease: "easeOut" },
       },
       animate: {
         scale: [1, 0.9, 1.3, 1.1],
@@ -112,7 +112,7 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
         transition: {
           duration: 0.6,
           times: [0, 0.3, 0.6, 1],
-          ease: 'easeInOut',
+          ease: "easeInOut",
         },
       },
     };
@@ -125,43 +125,43 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
+          initial="normal"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          animate={controls}
-          initial="normal"
+          strokeWidth="2"
           variants={faceVariants}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="12" cy="12" r="10" />
           <motion.path
-            variants={mouthVariants}
             animate={controls}
-            initial="normal"
             d="M16 16s-1.5-2-4-2-4 2-4 2"
+            initial="normal"
+            variants={mouthVariants}
           />
           <motion.line
+            animate={controls}
+            initial="normal"
+            variants={leftEyeVariants}
             x1="9"
             x2="9.01"
             y1="9"
             y2="9"
-            variants={leftEyeVariants}
-            animate={controls}
-            initial="normal"
           />
           <motion.line
+            animate={controls}
+            initial="normal"
+            variants={rightEyeVariants}
             x1="15"
             x2="15.01"
             y1="9"
             y2="9"
-            variants={rightEyeVariants}
-            animate={controls}
-            initial="normal"
           />
         </motion.svg>
       </div>
@@ -169,6 +169,6 @@ const FrownIcon = forwardRef<FrownIconHandle, FrownIconProps>(
   }
 );
 
-FrownIcon.displayName = 'FrownIcon';
+FrownIcon.displayName = "FrownIcon";
 
 export { FrownIcon };

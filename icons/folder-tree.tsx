@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes, MouseEvent } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes, MouseEvent } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface FolderTreeIconHandle {
   startAnimation: () => void;
@@ -45,17 +45,17 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (event: MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(event);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -63,10 +63,10 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
 
     const handleMouseLeave = useCallback(
       (event: MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(event);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -80,59 +80,59 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"
-            variants={PANEL_VARIANTS}
             animate={controls}
+            d="M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"
             initial="normal"
             transition={{
               duration: DURATION,
               delay: CALCULATE_DELAY(0),
               opacity: { delay: CALCULATE_DELAY(0) },
             }}
+            variants={PANEL_VARIANTS}
           />
           <motion.path
-            d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"
-            variants={PANEL_VARIANTS}
             animate={controls}
+            d="M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z"
             initial="normal"
             transition={{
               duration: DURATION,
               delay: CALCULATE_DELAY(2),
               opacity: { delay: CALCULATE_DELAY(2) },
             }}
+            variants={PANEL_VARIANTS}
           />
           <motion.path
-            d="M3 5a2 2 0 0 0 2 2h3"
-            variants={BRANCH_VARIANTS}
             animate={controls}
+            d="M3 5a2 2 0 0 0 2 2h3"
             initial="normal"
             transition={{
               duration: DURATION,
               delay: CALCULATE_DELAY(1),
               opacity: { delay: CALCULATE_DELAY(1) },
             }}
+            variants={BRANCH_VARIANTS}
           />
           <motion.path
-            d="M3 3v13a2 2 0 0 0 2 2h3"
-            variants={BRANCH_VARIANTS}
             animate={controls}
+            d="M3 3v13a2 2 0 0 0 2 2h3"
             initial="normal"
             transition={{
               duration: DURATION,
               delay: CALCULATE_DELAY(3),
               opacity: { delay: CALCULATE_DELAY(3) },
             }}
+            variants={BRANCH_VARIANTS}
           />
         </svg>
       </div>
@@ -140,6 +140,6 @@ const FolderTreeIcon = forwardRef<FolderTreeIconHandle, FolderTreeIconProps>(
   }
 );
 
-FolderTreeIcon.displayName = 'FolderTreeIcon';
+FolderTreeIcon.displayName = "FolderTreeIcon";
 
 export { FolderTreeIcon };

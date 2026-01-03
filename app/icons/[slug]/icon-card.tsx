@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { Icon } from '@/actions/get-icons';
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef } from "react";
+import type { Icon } from "@/actions/get-icons";
 
-import { Card, CardActions } from '@/components/card';
-import { ICON_LIST } from '@/icons';
+import { Card, CardActions } from "@/components/card";
+import { ICON_LIST } from "@/icons";
 
 type Props = {
   icon: Icon;
@@ -27,15 +27,15 @@ const IconCard = ({ icon }: Props) => {
   return (
     <Card
       animationRef={animationRef}
+      className="w-full min-[880px]:w-auto"
       onMouseEnter={() => animationRef.current?.startAnimation()}
       onMouseLeave={() => animationRef.current?.stopAnimation()}
-      className="w-full min-[880px]:w-auto"
     >
       <IconComponent
-        ref={animationRef}
         className="flex items-center justify-center [&>svg]:size-12 [&>svg]:text-neutral-800 dark:[&>svg]:text-neutral-100"
+        ref={animationRef}
       />
-      <CardActions name={icon.name} alwaysVisible />
+      <CardActions alwaysVisible name={icon.name} />
     </Card>
   );
 };

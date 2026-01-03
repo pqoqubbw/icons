@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface GitPullRequestIconHandle {
   startAnimation: () => void;
@@ -34,17 +34,17 @@ const GitPullRequestIcon = forwardRef<
     isControlledRef.current = true;
 
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -52,10 +52,10 @@ const GitPullRequestIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -69,17 +69,18 @@ const GitPullRequestIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.circle
+          animate={controls}
           cx="18"
           cy="18"
           r="3"
@@ -95,9 +96,9 @@ const GitPullRequestIcon = forwardRef<
               opacity: [0, 1],
             },
           }}
-          animate={controls}
         />
         <motion.circle
+          animate={controls}
           cx="6"
           cy="6"
           r="3"
@@ -113,9 +114,9 @@ const GitPullRequestIcon = forwardRef<
               opacity: [0, 1],
             },
           }}
-          animate={controls}
         />
         <motion.path
+          animate={controls}
           d="M13 6h3a2 2 0 0 1 2 2v7"
           transition={{
             duration: DURATION,
@@ -135,13 +136,9 @@ const GitPullRequestIcon = forwardRef<
               pathOffset: [1, 0],
             },
           }}
-          animate={controls}
         />
         <motion.line
-          x1="6"
-          x2="6"
-          y1="9"
-          y2="21"
+          animate={controls}
           transition={{
             duration: DURATION,
             delay: CALCULATE_DELAY(3),
@@ -154,13 +151,16 @@ const GitPullRequestIcon = forwardRef<
               pathLength: [0, 1],
             },
           }}
-          animate={controls}
+          x1="6"
+          x2="6"
+          y1="9"
+          y2="21"
         />
       </svg>
     </div>
   );
 });
 
-GitPullRequestIcon.displayName = 'GitPullRequestIcon';
+GitPullRequestIcon.displayName = "GitPullRequestIcon";
 
 export { GitPullRequestIcon };

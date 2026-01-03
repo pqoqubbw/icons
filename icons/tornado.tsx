@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface TornadoIconHandle {
   startAnimation: () => void;
@@ -22,7 +22,7 @@ const PATH_VARIANTS: Variants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
   animate: (custom: number) => ({
@@ -32,7 +32,7 @@ const PATH_VARIANTS: Variants = {
       x: {
         duration: 0.6,
         repeat: 1,
-        ease: 'easeInOut',
+        ease: "easeInOut",
         delay: custom * 0.1,
       },
     },
@@ -47,17 +47,17 @@ const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -65,10 +65,10 @@ const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -82,50 +82,50 @@ const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            d="M21 4H3"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             custom={1}
+            d="M21 4H3"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M18 8H6"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             custom={2}
+            d="M18 8H6"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M19 12H9"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             custom={3}
+            d="M19 12H9"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M16 16h-6"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             custom={4}
+            d="M16 16h-6"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
           <motion.path
-            d="M11 20H9"
-            variants={PATH_VARIANTS}
-            initial="normal"
             animate={controls}
             custom={5}
+            d="M11 20H9"
+            initial="normal"
+            variants={PATH_VARIANTS}
           />
         </svg>
       </div>
@@ -133,6 +133,6 @@ const TornadoIcon = forwardRef<TornadoIconHandle, TornadoIconProps>(
   }
 );
 
-TornadoIcon.displayName = 'TornadoIcon';
+TornadoIcon.displayName = "TornadoIcon";
 
 export { TornadoIcon };

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface GitGraphIconHandle {
   startAnimation: () => void;
@@ -31,17 +31,17 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -49,10 +49,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -66,17 +66,18 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
+            animate={controls}
             cx="5"
             cy="6"
             r="3"
@@ -92,10 +93,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 opacity: [0, 1],
               },
             }}
-            animate={controls}
           />
 
           <motion.path
+            animate={controls}
             d="M5 9v6"
             transition={{
               duration: DURATION,
@@ -115,10 +116,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 pathOffset: [1, 0],
               },
             }}
-            animate={controls}
           />
 
           <motion.circle
+            animate={controls}
             cx="5"
             cy="18"
             r="3"
@@ -134,10 +135,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 opacity: [0, 1],
               },
             }}
-            animate={controls}
           />
 
           <motion.path
+            animate={controls}
             d="M12 3v18"
             transition={{
               duration: DURATION,
@@ -157,10 +158,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 pathOffset: [1, 0],
               },
             }}
-            animate={controls}
           />
 
           <motion.circle
+            animate={controls}
             cx="19"
             cy="6"
             r="3"
@@ -176,10 +177,10 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 opacity: [0, 1],
               },
             }}
-            animate={controls}
           />
 
           <motion.path
+            animate={controls}
             d="M16 15.7A9 9 0 0 0 19 9"
             transition={{
               duration: DURATION,
@@ -199,7 +200,6 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
                 pathOffset: [1, 0],
               },
             }}
-            animate={controls}
           />
         </svg>
       </div>
@@ -207,6 +207,6 @@ const GitGraphIcon = forwardRef<GitGraphIconHandle, GitGraphIconProps>(
   }
 );
 
-GitGraphIcon.displayName = 'GitGraphIcon';
+GitGraphIcon.displayName = "GitGraphIcon";
 
 export { GitGraphIcon };

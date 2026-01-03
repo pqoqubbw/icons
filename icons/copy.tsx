@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Transition } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Transition } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface CopyIconHandle {
   startAnimation: () => void;
@@ -17,7 +17,7 @@ interface CopyIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DEFAULT_TRANSITION: Transition = {
-  type: 'spring',
+  type: "spring",
   stiffness: 160,
   damping: 17,
   mass: 1,
@@ -32,17 +32,17 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -50,10 +50,10 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -66,38 +66,38 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.rect
-            width="14"
+            animate={controls}
             height="14"
-            x="8"
-            y="8"
             rx="2"
             ry="2"
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { translateY: 0, translateX: 0 },
               animate: { translateY: -3, translateX: -3 },
             }}
-            animate={controls}
-            transition={DEFAULT_TRANSITION}
+            width="14"
+            x="8"
+            y="8"
           />
           <motion.path
+            animate={controls}
             d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+            transition={DEFAULT_TRANSITION}
             variants={{
               normal: { x: 0, y: 0 },
               animate: { x: 3, y: 3 },
             }}
-            transition={DEFAULT_TRANSITION}
-            animate={controls}
           />
         </svg>
       </div>
@@ -105,6 +105,6 @@ const CopyIcon = forwardRef<CopyIconHandle, CopyIconProps>(
   }
 );
 
-CopyIcon.displayName = 'CopyIcon';
+CopyIcon.displayName = "CopyIcon";
 
 export { CopyIcon };

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface CloudRainWindIconHandle {
   startAnimation: () => void;
@@ -32,8 +32,8 @@ const WIND_CHILD_VARIANTS: Variants = {
     opacity: [1, 0.2, 1],
     transition: {
       duration: 1,
-      repeat: Infinity,
-      ease: 'easeInOut',
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "easeInOut",
     },
   },
 };
@@ -48,17 +48,17 @@ const CloudRainWindIcon = forwardRef<
   useImperativeHandle(ref, () => {
     isControlledRef.current = true;
     return {
-      startAnimation: () => controls.start('animate'),
-      stopAnimation: () => controls.start('normal'),
+      startAnimation: () => controls.start("animate"),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
     [controls, onMouseEnter]
@@ -66,10 +66,10 @@ const CloudRainWindIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -83,27 +83,27 @@ const CloudRainWindIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
-        <motion.g variants={WIND_VARIANTS} animate={controls} initial="normal">
-          <motion.path variants={WIND_CHILD_VARIANTS} d="m9.2 22 3-7" />
-          <motion.path variants={WIND_CHILD_VARIANTS} d="m9 13-3 7" />
-          <motion.path variants={WIND_CHILD_VARIANTS} d="m17 13-3 7" />
+        <motion.g animate={controls} initial="normal" variants={WIND_VARIANTS}>
+          <motion.path d="m9.2 22 3-7" variants={WIND_CHILD_VARIANTS} />
+          <motion.path d="m9 13-3 7" variants={WIND_CHILD_VARIANTS} />
+          <motion.path d="m17 13-3 7" variants={WIND_CHILD_VARIANTS} />
         </motion.g>
       </svg>
     </div>
   );
 });
 
-CloudRainWindIcon.displayName = 'CloudRainWindIcon';
+CloudRainWindIcon.displayName = "CloudRainWindIcon";
 
 export { CloudRainWindIcon };

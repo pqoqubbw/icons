@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ClapIconHandle {
   startAnimation: () => void;
@@ -19,15 +19,15 @@ interface ClapIconProps extends HTMLAttributes<HTMLDivElement> {
 const VARIANTS: Variants = {
   normal: {
     rotate: 0,
-    originX: '4px',
-    originY: '20px',
+    originX: "4px",
+    originY: "20px",
   },
   animate: {
     rotate: [-10, -10, 0],
     transition: {
       duration: 0.8,
       times: [0, 0.5, 1],
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -35,15 +35,15 @@ const VARIANTS: Variants = {
 const CLAP_VARIANTS: Variants = {
   normal: {
     rotate: 0,
-    originX: '3px',
-    originY: '11px',
+    originX: "3px",
+    originY: "11px",
   },
   animate: {
     rotate: [0, -10, 16, 0],
     transition: {
       duration: 0.4,
       times: [0, 0.3, 0.6, 1],
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -57,17 +57,17 @@ const ClapIcon = forwardRef<ClapIconHandle, ClapIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -75,10 +75,10 @@ const ClapIcon = forwardRef<ClapIconHandle, ClapIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -91,16 +91,16 @@ const ClapIcon = forwardRef<ClapIconHandle, ClapIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ overflow: 'visible' }}
+          strokeWidth="2"
+          style={{ overflow: "visible" }}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.g animate={controls} variants={VARIANTS}>
             <motion.g animate={controls} variants={CLAP_VARIANTS}>
@@ -116,6 +116,6 @@ const ClapIcon = forwardRef<ClapIconHandle, ClapIconProps>(
   }
 );
 
-ClapIcon.displayName = 'ClapIcon';
+ClapIcon.displayName = "ClapIcon";
 
 export { ClapIcon };

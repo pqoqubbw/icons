@@ -1,76 +1,76 @@
-import * as React from 'react';
-import { ScrollArea as BaseScrollArea } from '@base-ui-components/react/scroll-area';
+import { ScrollArea as BaseScrollArea } from "@base-ui-components/react/scroll-area";
+import * as React from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Root>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Root>
 >(({ className, children, ...props }, ref) => (
   <BaseScrollArea.Root
+    className={cn("relative overflow-hidden", className)}
     ref={ref}
-    className={cn('relative overflow-hidden', className)}
     {...props}
   >
     {children}
   </BaseScrollArea.Root>
 ));
-ScrollArea.displayName = 'ScrollArea';
+ScrollArea.displayName = "ScrollArea";
 
 const ScrollAreaViewport = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Viewport>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Viewport>
 >(({ className, children, ...props }, ref) => (
   <BaseScrollArea.Viewport
+    className={cn("overscroll-contain rounded-[inherit]", className)}
     ref={ref}
-    className={cn('overscroll-contain rounded-[inherit]', className)}
     {...props}
   >
     {children}
   </BaseScrollArea.Viewport>
 ));
-ScrollAreaViewport.displayName = 'ScrollAreaViewport';
+ScrollAreaViewport.displayName = "ScrollAreaViewport";
 
 const ScrollAreaContent = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Content>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Content>
 >(({ className, ...props }, ref) => (
-  <BaseScrollArea.Content ref={ref} className={className} {...props} />
+  <BaseScrollArea.Content className={className} ref={ref} {...props} />
 ));
-ScrollAreaContent.displayName = 'ScrollAreaContent';
+ScrollAreaContent.displayName = "ScrollAreaContent";
 
 const ScrollAreaScrollbar = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Scrollbar>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Scrollbar>
->(({ className, orientation = 'vertical', ...props }, ref) => (
+>(({ className, orientation = "vertical", ...props }, ref) => (
   <BaseScrollArea.Scrollbar
-    ref={ref}
-    orientation={orientation}
     className={cn(
-      'pointer-events-none relative flex touch-none opacity-0 transition-opacity duration-100',
+      "pointer-events-none relative flex touch-none opacity-0 transition-opacity duration-100",
       "before:absolute before:content-['']",
-      'data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0',
-      'data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0',
-      orientation === 'vertical' &&
-        'm-2 w-1 before:left-1/2 before:h-full before:w-5 before:-translate-x-1/2',
-      orientation === 'horizontal' &&
-        'm-2 h-1 before:right-0 before:-bottom-2 before:left-0 before:h-5 before:w-full',
+      "data-scrolling:pointer-events-auto data-scrolling:opacity-100 data-scrolling:duration-0",
+      "data-hovering:pointer-events-auto data-hovering:opacity-100 data-hovering:delay-0",
+      orientation === "vertical" &&
+        "m-2 w-1 before:left-1/2 before:h-full before:w-5 before:-translate-x-1/2",
+      orientation === "horizontal" &&
+        "m-2 h-1 before:right-0 before:-bottom-2 before:left-0 before:h-5 before:w-full",
       className
     )}
+    orientation={orientation}
+    ref={ref}
     {...props}
   >
     <BaseScrollArea.Thumb className="relative w-full flex-1" />
   </BaseScrollArea.Scrollbar>
 ));
-ScrollAreaScrollbar.displayName = 'ScrollAreaScrollbar';
+ScrollAreaScrollbar.displayName = "ScrollAreaScrollbar";
 
 const ScrollAreaCorner = React.forwardRef<
   React.ElementRef<typeof BaseScrollArea.Corner>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Corner>
 >(({ className, ...props }, ref) => (
-  <BaseScrollArea.Corner ref={ref} className={className} {...props} />
+  <BaseScrollArea.Corner className={className} ref={ref} {...props} />
 ));
-ScrollAreaCorner.displayName = 'ScrollAreaCorner';
+ScrollAreaCorner.displayName = "ScrollAreaCorner";
 
 export {
   ScrollArea,

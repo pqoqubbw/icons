@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface SmartphoneNfcIconHandle {
   startAnimation: () => void;
@@ -30,7 +30,7 @@ const PATH_VARIANTS: Variants = {
   fadeIn: (i: number) => ({
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       stiffness: 300,
       damping: 20,
       delay: i * 0.1,
@@ -49,20 +49,20 @@ const SmartphoneNfcIcon = forwardRef<
     isControlledRef.current = true;
     return {
       startAnimation: async () => {
-        await controls.start('fadeOut');
-        controls.start('fadeIn');
+        await controls.start("fadeOut");
+        controls.start("fadeIn");
       },
-      stopAnimation: () => controls.start('normal'),
+      stopAnimation: () => controls.start("normal"),
     };
   });
 
   const handleMouseEnter = useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        await controls.start('fadeOut');
-        controls.start('fadeIn');
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        await controls.start("fadeOut");
+        controls.start("fadeIn");
       }
     },
     [controls, onMouseEnter]
@@ -70,10 +70,10 @@ const SmartphoneNfcIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
     [controls, onMouseLeave]
@@ -87,43 +87,43 @@ const SmartphoneNfcIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <rect width="7" height="12" x="2" y="6" rx="1" />
+        <rect height="12" rx="1" width="7" x="2" y="6" />
         <motion.path
+          animate={controls}
+          custom={0}
           d="M13 8.32a7.43 7.43 0 0 1 0 7.36"
           initial={{ opacity: 1 }}
           variants={PATH_VARIANTS}
-          animate={controls}
-          custom={0}
         />
         <motion.path
+          animate={controls}
+          custom={1}
           d="M16.46 6.21a11.76 11.76 0 0 1 0 11.58"
           initial={{ opacity: 1 }}
           variants={PATH_VARIANTS}
-          animate={controls}
-          custom={1}
         />
         <motion.path
+          animate={controls}
+          custom={2}
           d="M19.91 4.1a15.91 15.91 0 0 1 .01 15.8"
           initial={{ opacity: 1 }}
           variants={PATH_VARIANTS}
-          animate={controls}
-          custom={2}
         />
       </svg>
     </div>
   );
 });
 
-SmartphoneNfcIcon.displayName = 'SmartphoneNfcIcon';
+SmartphoneNfcIcon.displayName = "SmartphoneNfcIcon";
 
 export { SmartphoneNfcIcon };

@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ChartNoAxesColumnDecreasingIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ChartNoAxesColumnDecreasingIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ChartNoAxesColumnDecreasingIconProps
+  extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
@@ -44,13 +45,15 @@ const ChartNoAxesColumnDecreasingIcon = forwardRef<
           transition: { delay: i * 0.1, duration: 0.3 },
         }));
       },
-      stopAnimation: () => controls.start('visible'),
+      stopAnimation: () => controls.start("visible"),
     };
   });
 
   const handleMouseEnter = useCallback(
     async (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
+      if (isControlledRef.current) {
+        onMouseEnter?.(e);
+      } else {
         await controls.start((i) => ({
           pathLength: 0,
           opacity: 0,
@@ -61,8 +64,6 @@ const ChartNoAxesColumnDecreasingIcon = forwardRef<
           opacity: 1,
           transition: { delay: i * 0.1, duration: 0.3 },
         }));
-      } else {
-        onMouseEnter?.(e);
       }
     },
     [controls, onMouseEnter]
@@ -70,10 +71,10 @@ const ChartNoAxesColumnDecreasingIcon = forwardRef<
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start('visible');
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("visible");
       }
     },
     [controls, onMouseLeave]
@@ -87,42 +88,42 @@ const ChartNoAxesColumnDecreasingIcon = forwardRef<
       {...props}
     >
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          variants={LINE_VARIANTS}
-          initial="visible"
           animate={controls}
           custom={0}
           d="M6 20V4"
+          initial="visible"
+          variants={LINE_VARIANTS}
         />
         <motion.path
-          variants={LINE_VARIANTS}
-          initial="visible"
           animate={controls}
           custom={1}
           d="M12 20V10"
+          initial="visible"
+          variants={LINE_VARIANTS}
         />
         <motion.path
-          variants={LINE_VARIANTS}
-          initial="visible"
           animate={controls}
           custom={2}
           d="M18 20v-4"
+          initial="visible"
+          variants={LINE_VARIANTS}
         />
       </svg>
     </div>
   );
 });
 
-ChartNoAxesColumnDecreasingIcon.displayName = 'ChartNoAxesColumnDecreasingIcon';
+ChartNoAxesColumnDecreasingIcon.displayName = "ChartNoAxesColumnDecreasingIcon";
 
 export { ChartNoAxesColumnDecreasingIcon };

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface TelescopeIconHandle {
   startAnimation: () => void;
@@ -21,14 +21,14 @@ const SCOPE_VARIANTS: Variants = {
     rotate: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
   animate: {
     rotate: -15,
     transition: {
       duration: 0.8,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -42,17 +42,17 @@ const TelescopeIcon = forwardRef<TelescopeIconHandle, TelescopeIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -60,10 +60,10 @@ const TelescopeIcon = forwardRef<TelescopeIconHandle, TelescopeIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -77,20 +77,20 @@ const TelescopeIcon = forwardRef<TelescopeIconHandle, TelescopeIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.g
-            variants={SCOPE_VARIANTS}
             animate={controls}
-            style={{ transformOrigin: '12px 13px' }}
+            style={{ transformOrigin: "12px 13px" }}
+            variants={SCOPE_VARIANTS}
           >
             <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44" />
             <path d="m13.56 11.747 4.332-.924" />
@@ -108,6 +108,6 @@ const TelescopeIcon = forwardRef<TelescopeIconHandle, TelescopeIconProps>(
   }
 );
 
-TelescopeIcon.displayName = 'TelescopeIcon';
+TelescopeIcon.displayName = "TelescopeIcon";
 
 export { TelescopeIcon };

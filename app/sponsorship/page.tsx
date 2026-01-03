@@ -1,42 +1,42 @@
-import { AmountSelector } from '@/components/sponsorship/amount-selector';
-import { createMetadata } from '@/seo/metadata';
+import { AmountSelector } from "@/components/sponsorship/amount-selector";
+import { createMetadata } from "@/seo/metadata";
 
 export const metadata = createMetadata({
-  title: 'Sponsor lucide-animated',
+  title: "Sponsor lucide-animated",
   description:
-    'Support the development of lucide-animated - free open-source animated React icons library. Your sponsorship helps maintain and grow this MIT licensed project.',
-  canonical: '/sponsorship',
-  ogTitle: 'Sponsor lucide-animated | Support Open Source',
+    "Support the development of lucide-animated - free open-source animated React icons library. Your sponsorship helps maintain and grow this MIT licensed project.",
+  canonical: "/sponsorship",
+  ogTitle: "Sponsor lucide-animated | Support Open Source",
 });
 
 const SUPPORT_LIST = [
   {
     price: 5,
-    link: 'https://www.creem.io/payment/prod_1G8q9yoWDEMUuMaYXjdMnk',
+    link: "https://www.creem.io/payment/prod_1G8q9yoWDEMUuMaYXjdMnk",
   },
   {
     price: 10,
-    link: 'https://www.creem.io/payment/prod_2fx79crTzRv8c6DCBiYSt4',
+    link: "https://www.creem.io/payment/prod_2fx79crTzRv8c6DCBiYSt4",
   },
   {
     price: 25,
-    link: 'https://www.creem.io/payment/prod_5GxIWzOFwl7JvFxtWV1x1O',
+    link: "https://www.creem.io/payment/prod_5GxIWzOFwl7JvFxtWV1x1O",
   },
   {
     price: 50,
-    link: 'https://www.creem.io/payment/prod_4wOq9XhPSA4jIt1EBdVEcR',
+    link: "https://www.creem.io/payment/prod_4wOq9XhPSA4jIt1EBdVEcR",
   },
   {
     price: 100,
-    link: 'https://www.creem.io/payment/prod_2BWHaJvZZUTYQONb5xpQIR',
+    link: "https://www.creem.io/payment/prod_2BWHaJvZZUTYQONb5xpQIR",
   },
   {
     price: 200,
-    link: 'https://www.creem.io/payment/prod_49xErbm5DmJJZDBW7lA2lO',
+    link: "https://www.creem.io/payment/prod_49xErbm5DmJJZDBW7lA2lO",
   },
   {
     price: 500,
-    link: 'https://www.creem.io/payment/prod_2HSF38lRw7yMNy8Lb9f3p1',
+    link: "https://www.creem.io/payment/prod_2HSF38lRw7yMNy8Lb9f3p1",
   },
 ];
 
@@ -46,7 +46,7 @@ const Sponsorship = () => {
       <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
         Support the project
       </h1>
-      <p className="text-secondary mt-5 max-w-[582px] px-4 text-center font-mono text-sm">
+      <p className="mt-5 max-w-[582px] px-4 text-center font-mono text-secondary text-sm">
         this is a place for those who want to go beyond a simple thank you.
         I&apos;m grateful for any kind of support, whether it&apos;s just a DM
         with kind words or something more. your donation is by no means required

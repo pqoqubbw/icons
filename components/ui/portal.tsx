@@ -1,4 +1,4 @@
-import { createPortal } from 'react-dom';
+import { createPortal } from "react-dom";
 
 type PortalProps = {
   children: React.ReactNode;
@@ -6,7 +6,7 @@ type PortalProps = {
 };
 
 const Portal = ({ children, container }: PortalProps) => {
-  if (typeof window === 'undefined' || typeof document === 'undefined') {
+  if (typeof window === "undefined" || typeof document === "undefined") {
     return null;
   }
 

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface PlusIconHandle {
   startAnimation: () => void;
@@ -24,17 +24,17 @@ const PlusIcon = forwardRef<PlusIconHandle, PlusIconProps>(
       isControlledRef.current = true;
 
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -42,10 +42,10 @@ const PlusIcon = forwardRef<PlusIconHandle, PlusIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -59,17 +59,14 @@ const PlusIcon = forwardRef<PlusIconHandle, PlusIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          animate={controls}
-          transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+          strokeWidth="2"
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
           variants={{
             normal: {
               rotate: 0,
@@ -78,6 +75,9 @@ const PlusIcon = forwardRef<PlusIconHandle, PlusIconProps>(
               rotate: 180,
             },
           }}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M5 12h14" />
           <path d="M12 5v14" />
@@ -87,6 +87,6 @@ const PlusIcon = forwardRef<PlusIconHandle, PlusIconProps>(
   }
 );
 
-PlusIcon.displayName = 'PlusIcon';
+PlusIcon.displayName = "PlusIcon";
 
 export { PlusIcon };

@@ -1,14 +1,14 @@
 export type RegistryType =
-  | 'registry:block'
-  | 'registry:component'
-  | 'registry:lib'
-  | 'registry:hook'
-  | 'registry:ui'
-  | 'registry:page'
-  | 'registry:file'
-  | 'registry:style'
-  | 'registry:theme'
-  | 'registry:item';
+  | "registry:block"
+  | "registry:component"
+  | "registry:lib"
+  | "registry:hook"
+  | "registry:ui"
+  | "registry:page"
+  | "registry:file"
+  | "registry:style"
+  | "registry:theme"
+  | "registry:item";
 
 export interface RegistryFile {
   path: string;

@@ -1,9 +1,9 @@
-import { SearchIcon } from 'lucide-react';
-import { useHotkeys } from 'react-hotkeys-hook';
+import { SearchIcon } from "lucide-react";
+import { useHotkeys } from "react-hotkeys-hook";
 
-import { Portal } from '@/components/ui/portal';
-import { cn } from '@/lib/utils';
-import { Input } from './ui/input';
+import { Portal } from "@/components/ui/portal";
+import { cn } from "@/lib/utils";
+import { Input } from "./ui/input";
 
 type SearchInputProps = {
   searchValue: string;
@@ -19,10 +19,10 @@ const SearchInput = ({
   setSearchOpen,
 }: SearchInputProps) => {
   useHotkeys(
-    'mod+F',
+    "mod+F",
     () => {
       setSearchOpen(!searchOpen);
-      setSearchValue('');
+      setSearchValue("");
     },
     {
       preventDefault: true,
@@ -33,10 +33,10 @@ const SearchInput = ({
   );
 
   useHotkeys(
-    'escape',
+    "escape",
     () => {
       setSearchOpen(false);
-      setSearchValue('');
+      setSearchValue("");
     },
     {
       preventDefault: true,
@@ -50,15 +50,15 @@ const SearchInput = ({
     <>
       <div
         className={cn(
-          'hidden items-center justify-end gap-1 pr-4 pb-2 opacity-100 transition-opacity duration-75 md:flex',
-          searchOpen && 'opacity-0'
+          "hidden items-center justify-end gap-1 pr-4 pb-2 opacity-100 transition-opacity duration-75 md:flex",
+          searchOpen && "opacity-0"
         )}
       >
         <div className="flex items-center justify-center gap-0.5">
           <kbd>⌘</kbd>
           <kbd>F</kbd>
         </div>
-        <span className="font-sans text-sm text-neutral-500 dark:text-neutral-500">
+        <span className="font-sans text-neutral-500 text-sm dark:text-neutral-500">
           for the search
         </span>
       </div>
@@ -66,25 +66,25 @@ const SearchInput = ({
         <Portal>
           <div className="fixed top-4 right-4 w-[400px]">
             <Input
-              autoFocus
+              aria-label="Search icons"
+              autoCapitalize="off"
               autoComplete="off"
               autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck="false"
+              autoFocus
+              className="shadow-sm"
               inputMode="search"
-              role="search"
-              aria-label="Search icons"
-              placeholder="Search icons..."
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
               leadingIcon={
                 <SearchIcon
-                  strokeWidth={2.5}
                   className="size-4 text-neutral-400"
+                  strokeWidth={2.5}
                 />
               }
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder="Search icons..."
+              role="search"
+              spellCheck="false"
               trailingIcon={<kbd className="w-8">esc</kbd>}
-              className="shadow-sm"
+              value={searchValue}
             />
           </div>
         </Portal>

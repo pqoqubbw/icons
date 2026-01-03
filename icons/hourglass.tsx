@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface HourglassIconHandle {
   startAnimation: () => void;
@@ -23,17 +23,17 @@ const HourglassIcon = forwardRef<HourglassIconHandle, HourglassIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -41,10 +41,10 @@ const HourglassIcon = forwardRef<HourglassIconHandle, HourglassIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -58,17 +58,27 @@ const HourglassIcon = forwardRef<HourglassIconHandle, HourglassIconProps>(
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.g
+            animate={controls}
+            style={{
+              transformOrigin: "12px 12px",
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+              mass: 1,
+            }}
             variants={{
               normal: {
                 rotate: 0,
@@ -76,16 +86,6 @@ const HourglassIcon = forwardRef<HourglassIconHandle, HourglassIconProps>(
               animate: {
                 rotate: 180,
               },
-            }}
-            animate={controls}
-            transition={{
-              type: 'spring',
-              stiffness: 100,
-              damping: 15,
-              mass: 1,
-            }}
-            style={{
-              transformOrigin: '12px 12px',
             }}
           >
             <path d="M5 22h14" />
@@ -99,6 +99,6 @@ const HourglassIcon = forwardRef<HourglassIconHandle, HourglassIconProps>(
   }
 );
 
-HourglassIcon.displayName = 'HourglassIcon';
+HourglassIcon.displayName = "HourglassIcon";
 
 export { HourglassIcon };
