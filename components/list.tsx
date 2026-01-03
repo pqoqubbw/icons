@@ -1,11 +1,12 @@
 'use client';
 
 import type { Icon } from '@/actions/get-icons';
-import { useDeferredValue, useMemo, useRef, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import Fuse from 'fuse.js';
 
 import { Card, CardActions, CardTitle } from '@/components/card';
 import { ICON_LIST } from '@/icons';
+import { cn } from '@/lib/utils';
 import { SearchInput } from './search-input';
 
 type Props = {
@@ -43,6 +44,23 @@ const IconsList = ({ icons }: Props) => {
   const [searchOpen, setSearchOpen] = useState(false);
   const deferredSearchValue = useDeferredValue(searchValue);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (searchOpen && containerRef.current) {
+      containerRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+
+      const timer = setTimeout(() => {
+        containerRef.current?.querySelector('input')?.focus();
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+  }, [searchOpen, searchValue]);
+
   const fuse = useMemo(
     () =>
       new Fuse(icons, {
@@ -65,13 +83,19 @@ const IconsList = ({ icons }: Props) => {
   }, [fuse, icons, deferredSearchValue]);
 
   return (
-    <div className="mb-20 w-full">
+    <div
+      ref={containerRef}
+      className={cn('mb-20 w-full', searchOpen && 'min-h-dvh')}
+    >
+      {searchOpen && <div className="my-4 h-9" />}
+
       <SearchInput
         searchValue={searchValue}
         setSearchValue={setSearchValue}
         searchOpen={searchOpen}
         setSearchOpen={setSearchOpen}
       />
+
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
         {filteredIcons.length === 0 && (
           <div className="col-span-full pt-10 text-center text-sm text-neutral-500">
