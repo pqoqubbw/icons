@@ -1,13 +1,13 @@
 "use client";
 
-import type { Icon } from '@/actions/get-icons';
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import Fuse from 'fuse.js';
+import Fuse from "fuse.js";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import type { Icon } from "@/actions/get-icons";
 
-import { Card, CardActions, CardTitle } from '@/components/card';
-import { ICON_LIST } from '@/icons';
-import { cn } from '@/lib/utils';
-import { SearchInput } from './search-input';
+import { Card, CardActions, CardTitle } from "@/components/card";
+import { ICON_LIST } from "@/icons";
+import { cn } from "@/lib/utils";
+import { SearchInput } from "./search-input";
 
 type Props = {
   icons: Icon[];
@@ -59,17 +59,17 @@ const IconsList = ({ icons }: Props) => {
   useEffect(() => {
     if (searchOpen && containerRef.current) {
       containerRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
 
       const timer = setTimeout(() => {
-        containerRef.current?.querySelector('input')?.focus();
+        containerRef.current?.querySelector("input")?.focus();
       }, 150);
 
       return () => clearTimeout(timer);
     }
-  }, [searchOpen, searchValue]);
+  }, [searchOpen]);
 
   const fuse = useMemo(
     () =>
@@ -94,8 +94,8 @@ const IconsList = ({ icons }: Props) => {
 
   return (
     <div
+      className={cn("mb-20 w-full", searchOpen && "min-h-dvh")}
       ref={containerRef}
-      className={cn('mb-20 w-full', searchOpen && 'min-h-dvh')}
     >
       {searchOpen && <div className="my-4 h-9" />}
 

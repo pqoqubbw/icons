@@ -1,381 +1,3 @@
-import { AArrowDownIcon } from '@/icons/a-arrow-down';
-import { AArrowUpIcon } from '@/icons/a-arrow-up';
-import { AccessibilityIcon } from '@/icons/accessibility';
-import { ActivityIcon } from '@/icons/activity';
-import { AirVentIcon } from '@/icons/air-vent';
-import { AirplaneIcon } from '@/icons/airplane';
-import { AirplayIcon } from '@/icons/airplay';
-import { AlarmClockIcon } from '@/icons/alarm-clock';
-import { AlignCenterIcon } from '@/icons/align-center';
-import { AlignHorizontalIcon } from '@/icons/align-horizontal';
-import { AlignLeftIcon } from '@/icons/align-left';
-import { AlignRightIcon } from '@/icons/align-right';
-import { AlignVerticalIcon } from '@/icons/align-vertical';
-import { AngryIcon } from '@/icons/angry';
-import { AnnoyedIcon } from '@/icons/annoyed';
-import { ArchiveIcon } from '@/icons/archive';
-import { ArrowBigDownIcon } from '@/icons/arrow-big-down';
-import { ArrowBigDownDashIcon } from '@/icons/arrow-big-down-dash';
-import { ArrowBigLeftIcon } from '@/icons/arrow-big-left';
-import { ArrowBigLeftDashIcon } from '@/icons/arrow-big-left-dash';
-import { ArrowBigRightIcon } from '@/icons/arrow-big-right';
-import { ArrowBigRightDashIcon } from '@/icons/arrow-big-right-dash';
-import { ArrowBigUpIcon } from '@/icons/arrow-big-up';
-import { ArrowBigUpDashIcon } from '@/icons/arrow-big-up-dash';
-import { ArrowDownIcon } from '@/icons/arrow-down';
-import { ArrowDown01Icon } from '@/icons/arrow-down-0-1';
-import { ArrowDown10Icon } from '@/icons/arrow-down-1-0';
-import { ArrowDownAZIcon } from '@/icons/arrow-down-a-z';
-import { ArrowDownLeftIcon } from '@/icons/arrow-down-left';
-import { ArrowDownRightIcon } from '@/icons/arrow-down-right';
-import { ArrowDownZAIcon } from '@/icons/arrow-down-z-a';
-import { ArrowLeftIcon } from '@/icons/arrow-left';
-import { ArrowRightIcon } from '@/icons/arrow-right';
-import { ArrowUpIcon } from '@/icons/arrow-up';
-import { AtSignIcon } from '@/icons/at-sign';
-import { AtomIcon } from '@/icons/atom';
-import { AttachFileIcon } from '@/icons/attach-file';
-import { AudioLinesIcon } from '@/icons/audio-lines';
-import { BadgeAlertIcon } from '@/icons/badge-alert';
-import { BadgePercentIcon } from '@/icons/badge-percent';
-import { BanIcon } from '@/icons/ban';
-import { BananaIcon } from '@/icons/banana';
-import { BatteryFullIcon } from '@/icons/battery-full';
-import { BatteryLowIcon } from '@/icons/battery-low';
-import { BatteryMediumIcon } from '@/icons/battery-medium';
-import { BellIcon } from '@/icons/bell';
-import { BlocksIcon } from '@/icons/blocks';
-import { BluetoothIcon } from '@/icons/bluetooth';
-import { BluetoothConnectedIcon } from '@/icons/bluetooth-connected';
-import { BluetoothOffIcon } from '@/icons/bluetooth-off';
-import { BluetoothSearchingIcon } from '@/icons/bluetooth-searching';
-import { BoldIcon } from '@/icons/bold';
-import { BoneIcon } from '@/icons/bone';
-import { BookTextIcon } from '@/icons/book-text';
-import { BookmarkIcon } from '@/icons/bookmark';
-import { BookmarkCheckIcon } from '@/icons/bookmark-check';
-import { BookmarkMinusIcon } from '@/icons/bookmark-minus';
-import { BookmarkPlusIcon } from '@/icons/bookmark-plus';
-import { BookmarkXIcon } from '@/icons/bookmark-x';
-import { BotIcon } from '@/icons/bot';
-import { BotMessageSquareIcon } from '@/icons/bot-message-square';
-import { BoxIcon } from '@/icons/box';
-import { BoxesIcon } from '@/icons/boxes';
-import { CalendarCheckIcon } from '@/icons/calendar-check';
-import { CalendarCheck2Icon } from '@/icons/calendar-check-2';
-import { CalendarCogIcon } from '@/icons/calendar-cog';
-import { CalendarDaysIcon } from '@/icons/calendar-days';
-import { CartIcon } from '@/icons/cart';
-import { CastIcon } from '@/icons/cast';
-import { CctvIcon } from '@/icons/cctv';
-import { ChartBarDecreasingIcon } from '@/icons/chart-bar-decreasing';
-import { ChartBarIncreasingIcon } from '@/icons/chart-bar-increasing';
-import { ChartColumnDecreasingIcon } from '@/icons/chart-column-decreasing';
-import { ChartColumnIncreasingIcon } from '@/icons/chart-column-increasing';
-import { ChartLineIcon } from '@/icons/chart-line';
-import { ChartNoAxesColumnDecreasingIcon } from '@/icons/chart-no-axes-column-decreasing';
-import { ChartNoAxesColumnIncreasingIcon } from '@/icons/chart-no-axes-column-increasing';
-import { ChartPieIcon } from '@/icons/chart-pie';
-import { ChartScatterIcon } from '@/icons/chart-scatter';
-import { ChartSplineIcon } from '@/icons/chart-spline';
-import { CheckIcon } from '@/icons/check';
-import { CheckCheckIcon } from '@/icons/check-check';
-import { ChevronDownIcon } from '@/icons/chevron-down';
-import { ChevronFirstIcon } from '@/icons/chevron-first';
-import { ChevronLeftIcon } from '@/icons/chevron-left';
-import { ChevronRightIcon } from '@/icons/chevron-right';
-import { ChevronUpIcon } from '@/icons/chevron-up';
-import { ChevronsDownUpIcon } from '@/icons/chevrons-down-up';
-import { ChevronsLeftRightIcon } from '@/icons/chevrons-left-right';
-import { ChevronsRightLeftIcon } from '@/icons/chevrons-right-left';
-import { ChevronsUpDownIcon } from '@/icons/chevrons-up-down';
-import { ChromeIcon } from '@/icons/chrome';
-import { CircleCheckIcon } from '@/icons/circle-check';
-import { CircleChevronDownIcon } from '@/icons/circle-chevron-down';
-import { CircleChevronLeftIcon } from '@/icons/circle-chevron-left';
-import { CircleChevronRightIcon } from '@/icons/circle-chevron-right';
-import { CircleChevronUpIcon } from '@/icons/circle-chevron-up';
-import { CircleDashedIcon } from '@/icons/circle-dashed';
-import { CircleDollarSignIcon } from '@/icons/circle-dollar-sign';
-import { CircleHelpIcon } from '@/icons/circle-help';
-import { ClapIcon } from '@/icons/clap';
-import { ClipboardCheckIcon } from '@/icons/clipboard-check';
-import { ClockIcon } from '@/icons/clock';
-import { CloudCogIcon } from '@/icons/cloud-cog';
-import { CloudDownloadIcon } from '@/icons/cloud-download';
-import { CloudLightningIcon } from '@/icons/cloud-lightning';
-import { CloudRainIcon } from '@/icons/cloud-rain';
-import { CloudRainWindIcon } from '@/icons/cloud-rain-wind';
-import { CloudSnowIcon } from '@/icons/cloud-snow';
-import { CloudSunIcon } from '@/icons/cloud-sun';
-import { CloudUploadIcon } from '@/icons/cloud-upload';
-import { CoffeeIcon } from '@/icons/coffee';
-import { CogIcon } from '@/icons/cog';
-import { CompassIcon } from '@/icons/compass';
-import { ConnectIcon } from '@/icons/connect';
-import { ConstructionIcon } from '@/icons/construction';
-import { ContrastIcon } from '@/icons/contrast';
-import { CookingPotIcon } from '@/icons/cooking-pot';
-import { CopyIcon } from '@/icons/copy';
-import { CpuIcon } from '@/icons/cpu';
-import { CursorClickIcon } from '@/icons/cursor-click';
-import { DeleteIcon } from '@/icons/delete';
-import { DiscordIcon } from '@/icons/discord';
-import { DollarSignIcon } from '@/icons/dollar-sign';
-import { DownloadIcon } from '@/icons/download';
-import { DownvoteIcon } from '@/icons/downvote';
-import { DribbbleIcon } from '@/icons/dribbble';
-import { DropletIcon } from '@/icons/droplet';
-import { DrumIcon } from '@/icons/drum';
-import { EarthIcon } from '@/icons/earth';
-import { EuroIcon } from '@/icons/euro';
-import { EvChargerIcon } from '@/icons/ev-charger';
-import { ExpandIcon } from '@/icons/expand';
-import { EyeIcon } from '@/icons/eye';
-import { EyeOffIcon } from '@/icons/eye-off';
-import { FacebookIcon } from '@/icons/facebook';
-import { FeatherIcon } from '@/icons/feather';
-import { FigmaIcon } from '@/icons/figma';
-import { FileChartLineIcon } from '@/icons/file-chart-line';
-import { FileCheckIcon } from '@/icons/file-check';
-import { FileCheck2Icon } from '@/icons/file-check-2';
-import { FileCogIcon } from '@/icons/file-cog';
-import { FilePenLineIcon } from '@/icons/file-pen-line';
-import { FileStackIcon } from '@/icons/file-stack';
-import { FileTextIcon } from '@/icons/file-text';
-import { FingerprintIcon } from '@/icons/fingerprint';
-import { FishSymbolIcon } from '@/icons/fish-symbol';
-import { FlameIcon } from '@/icons/flame';
-import { FlaskIcon } from '@/icons/flask';
-import { FoldersIcon } from '@/icons/folders';
-import { FrameIcon } from '@/icons/frame';
-import { FrownIcon } from '@/icons/frown';
-import { GalleryHorizontalEndIcon } from '@/icons/gallery-horizontal-end';
-import { GalleryThumbnailsIcon } from '@/icons/gallery-thumbnails';
-import { GalleryVerticalEndIcon } from '@/icons/gallery-vertical-end';
-import { GaugeIcon } from '@/icons/gauge';
-import { GeorgianLariIcon } from '@/icons/georgian-lari';
-import { GitCommitHorizontalIcon } from '@/icons/git-commit-horizontal';
-import { GitCommitVerticalIcon } from '@/icons/git-commit-vertical';
-import { GitMergeIcon } from '@/icons/git-merge';
-import { GitPullRequestIcon } from '@/icons/git-pull-request';
-import { GithubIcon } from '@/icons/github';
-import { GripIcon } from '@/icons/grip';
-import { GripHorizontalIcon } from '@/icons/grip-horizontal';
-import { GripVerticalIcon } from '@/icons/grip-vertical';
-import { HandCoinsIcon } from '@/icons/hand-coins';
-import { HandHeartIcon } from '@/icons/hand-heart';
-import { HardDriveDownloadIcon } from '@/icons/hard-drive-download';
-import { HardDriveUploadIcon } from '@/icons/hard-drive-upload';
-import { HeartIcon } from '@/icons/heart';
-import { HistoryIcon } from '@/icons/history';
-import { HomeIcon } from '@/icons/home';
-import { HourglassIcon } from '@/icons/hourglass';
-import { IdCardIcon } from '@/icons/id-card';
-import { IndianRupeeIcon } from '@/icons/indian-rupee';
-import { InstagramIcon } from '@/icons/instagram';
-import { ItalicIcon } from '@/icons/italic';
-import { JapaneseYenIcon } from '@/icons/japanese-yen';
-import { KeyIcon } from '@/icons/key';
-import { KeyCircleIcon } from '@/icons/key-circle';
-import { KeySquareIcon } from '@/icons/key-square';
-import { KeyboardIcon } from '@/icons/keyboard';
-import { LanguagesIcon } from '@/icons/languages';
-import { LaptopMinimalCheckIcon } from '@/icons/laptop-minimal-check';
-import { LaughIcon } from '@/icons/laugh';
-import { LayersIcon } from '@/icons/layers';
-import { LayoutPanelTopIcon } from '@/icons/layout-panel-top';
-import { LinkIcon } from '@/icons/link';
-import { LinkedinIcon } from '@/icons/linkedin';
-import { LoaderPinwheelIcon } from '@/icons/loader-pinwheel';
-import { LockIcon } from '@/icons/lock';
-import { LockKeyholeIcon } from '@/icons/lock-keyhole';
-import { LockKeyholeOpenIcon } from '@/icons/lock-keyhole-open';
-import { LockOpenIcon } from '@/icons/lock-open';
-import { LogoutIcon } from '@/icons/logout';
-import { MailCheckIcon } from '@/icons/mail-check';
-import { MapPinIcon } from '@/icons/map-pin';
-import { MapPinCheckIcon } from '@/icons/map-pin-check';
-import { MapPinCheckInsideIcon } from '@/icons/map-pin-check-inside';
-import { MapPinHouseIcon } from '@/icons/map-pin-house';
-import { MapPinMinusIcon } from '@/icons/map-pin-minus';
-import { MapPinMinusInsideIcon } from '@/icons/map-pin-minus-inside';
-import { MapPinOffIcon } from '@/icons/map-pin-off';
-import { MapPinPlusIcon } from '@/icons/map-pin-plus';
-import { MapPinPlusInsideIcon } from '@/icons/map-pin-plus-inside';
-import { MapPinXInsideIcon } from '@/icons/map-pin-x-inside';
-import { MaximizeIcon } from '@/icons/maximize';
-import { Maximize2Icon } from '@/icons/maximize-2';
-import { MehIcon } from '@/icons/meh';
-import { MenuIcon } from '@/icons/menu';
-import { MessageCircleIcon } from '@/icons/message-circle';
-import { MessageCircleDashedIcon } from '@/icons/message-circle-dashed';
-import { MessageCircleMoreIcon } from '@/icons/message-circle-more';
-import { MessageSquareIcon } from '@/icons/message-square';
-import { MessageSquareDashedIcon } from '@/icons/message-square-dashed';
-import { MessageSquareMoreIcon } from '@/icons/message-square-more';
-import { MicIcon } from '@/icons/mic';
-import { MicOffIcon } from '@/icons/mic-off';
-import { MinimizeIcon } from '@/icons/minimize';
-import { MonitorCheckIcon } from '@/icons/monitor-check';
-import { MoonIcon } from '@/icons/moon';
-import { NfcIcon } from '@/icons/nfc';
-import { PanelLeftCloseIcon } from '@/icons/panel-left-close';
-import { PanelLeftOpenIcon } from '@/icons/panel-left-open';
-import { PanelRightOpenIcon } from '@/icons/panel-right-open';
-import { PartyPopperIcon } from '@/icons/party-popper';
-import { PauseIcon } from '@/icons/pause';
-import { PenToolIcon } from '@/icons/pen-tool';
-import { PhilippinePesoIcon } from '@/icons/philippine-peso';
-import { PlayIcon } from '@/icons/play';
-import { PlugZapIcon } from '@/icons/plug-zap';
-import { PlusIcon } from '@/icons/plus';
-import { PoundSterlingIcon } from '@/icons/pound-sterling';
-import { RabbitIcon } from '@/icons/rabbit';
-import { RadioIcon } from '@/icons/radio';
-import { RadioTowerIcon } from '@/icons/radio-tower';
-import { RedoIcon } from '@/icons/redo';
-import { RedoDotIcon } from '@/icons/redo-dot';
-import { RefreshCCWIcon } from '@/icons/refresh-ccw';
-import { RefreshCCWDotIcon } from '@/icons/refresh-ccw-dot';
-import { RefreshCWIcon } from '@/icons/refresh-cw';
-import { RefreshCWOffIcon } from '@/icons/refresh-cw-off';
-import { RocketIcon } from '@/icons/rocket';
-import { RockingChairIcon } from '@/icons/rocking-chair';
-import { RollerCoasterIcon } from '@/icons/roller-coaster';
-import { RotateCCWIcon } from '@/icons/rotate-ccw';
-import { RotateCWIcon } from '@/icons/rotate-cw';
-import { RouteIcon } from '@/icons/route';
-import { RussianRubleIcon } from '@/icons/russian-ruble';
-import { SaudiRiyalIcon } from '@/icons/saudi-riyal';
-import { ScanFaceIcon } from '@/icons/scan-face';
-import { ScanTextIcon } from '@/icons/scan-text';
-import { SearchIcon } from '@/icons/search';
-import { SettingsIcon } from '@/icons/settings';
-import { ShieldCheckIcon } from '@/icons/shield-check';
-import { ShipIcon } from '@/icons/ship';
-import { ShowerHeadIcon } from '@/icons/shower-head';
-import { ShrinkIcon } from '@/icons/shrink';
-import { SlidersHorizontalIcon } from '@/icons/sliders-horizontal';
-import { SmartphoneChargingIcon } from '@/icons/smartphone-charging';
-import { SmartphoneNfcIcon } from '@/icons/smartphone-nfc';
-import { SmileIcon } from '@/icons/smile';
-import { SmilePlusIcon } from '@/icons/smile-plus';
-import { SnowflakeIcon } from '@/icons/snowflake';
-import { SparklesIcon } from '@/icons/sparkles';
-import { SquareActivityIcon } from '@/icons/square-activity';
-import { SquareArrowDownIcon } from '@/icons/square-arrow-down';
-import { SquareArrowLeftIcon } from '@/icons/square-arrow-left';
-import { SquareArrowRightIcon } from '@/icons/square-arrow-right';
-import { SquareArrowUpIcon } from '@/icons/square-arrow-up';
-import { SquareChevronDownIcon } from '@/icons/square-chevron-down';
-import { SquareChevronLeftIcon } from '@/icons/square-chevron-left';
-import { SquareChevronRightIcon } from '@/icons/square-chevron-right';
-import { SquareChevronUpIcon } from '@/icons/square-chevron-up';
-import { SquarePenIcon } from '@/icons/square-pen';
-import { SquareStackIcon } from '@/icons/square-stack';
-import { StethoscopeIcon } from '@/icons/stethoscope';
-import { SunIcon } from '@/icons/sun';
-import { SunDimIcon } from '@/icons/sun-dim';
-import { SunMediumIcon } from '@/icons/sun-medium';
-import { SunMoonIcon } from '@/icons/sun-moon';
-import { SunsetIcon } from '@/icons/sunset';
-import { SwissFrancIcon } from '@/icons/swiss-franc';
-import { SyringeIcon } from '@/icons/syringe';
-import { TelescopeIcon } from '@/icons/telescope';
-import { TerminalIcon } from '@/icons/terminal';
-import { ThermometerIcon } from '@/icons/thermometer';
-import { TimerIcon } from '@/icons/timer';
-import { TornadoIcon } from '@/icons/tornado';
-import { TrainTrackIcon } from '@/icons/train-track';
-import { TrendingDownIcon } from '@/icons/trending-down';
-import { TrendingUpIcon } from '@/icons/trending-up';
-import { TrendingUpDownIcon } from '@/icons/trending-up-down';
-import { TurkishLiraIcon } from '@/icons/turkish-lira';
-import { TwitchIcon } from '@/icons/twitch';
-import { TwitterIcon } from '@/icons/twitter';
-import { UnderlineIcon } from '@/icons/underline';
-import { UndoIcon } from '@/icons/undo';
-import { UndoDotIcon } from '@/icons/undo-dot';
-import { UploadIcon } from '@/icons/upload';
-import { UpvoteIcon } from '@/icons/upvote';
-import { UserIcon } from '@/icons/user';
-import { UserCheckIcon } from '@/icons/user-check';
-import { UserRoundCheckIcon } from '@/icons/user-round-check';
-import { UserRoundPlusIcon } from '@/icons/user-round-plus';
-import { UsersIcon } from '@/icons/users';
-import { VibrateIcon } from '@/icons/vibrate';
-import { VolumeIcon } from '@/icons/volume';
-import { WashingMachineIcon } from '@/icons/washing-machine';
-import { WavesIcon } from '@/icons/waves';
-import { WavesLadderIcon } from '@/icons/waves-ladder';
-import { WaypointsIcon } from '@/icons/waypoints';
-import { WebhookIcon } from '@/icons/webhook';
-import { WifiIcon } from '@/icons/wifi';
-import { WindIcon } from '@/icons/wind';
-import { WindArrowDownIcon } from '@/icons/wind-arrow-down';
-import { WorkflowIcon } from '@/icons/workflow';
-import { WrenchIcon } from '@/icons/wrench';
-import { XIcon } from '@/icons/x';
-import { YoutubeIcon } from '@/icons/youtube';
-import { ZapIcon } from '@/icons/zap';
-import { ZapOffIcon } from '@/icons/zap-off';
-import { BatteryIcon } from './battery';
-import { BatteryChargingIcon } from './battery-charging';
-import { BatteryPlusIcon } from './battery-plus';
-import { BatteryWarningIcon } from './battery-warning';
-import { BellElectricIcon } from './bell-electric';
-import { ChessBishopIcon } from './chess-bishop';
-import { ChessKingIcon } from './chess-king';
-import { ChessKnightIcon } from './chess-knight';
-import { ChessPawnIcon } from './chess-pawn';
-import { ChessQueenIcon } from './chess-queen';
-import { ChessRookIcon } from './chess-rook';
-import { CornerDownLeftIcon } from './corner-down-left';
-import { CornerDownRightIcon } from './corner-down-right';
-import { CornerLeftDownIcon } from './corner-left-down';
-import { CornerLeftUpIcon } from './corner-left-up';
-import { CornerRightDownIcon } from './corner-right-down';
-import { CornerRightUpIcon } from './corner-right-up';
-import { CornerUpLeftIcon } from './corner-up-left';
-import { CornerUpRightIcon } from './corner-up-right';
-import { FolderArchiveIcon } from './folder-archive';
-import { FolderCheckIcon } from './folder-check';
-import { FolderClockIcon } from './folder-clock';
-import { FolderCodeIcon } from './folder-code';
-import { FolderCogIcon } from './folder-cog';
-import { FolderDotIcon } from './folder-dot';
-import { FolderDownIcon } from './folder-down';
-import { FolderGitIcon } from './folder-git';
-import { FolderGit2Icon } from './folder-git-2';
-import { FolderHeartIcon } from './folder-heart';
-import { FolderInputIcon } from './folder-input';
-import { FolderKanbanIcon } from './folder-kanban';
-import { FolderKeyIcon } from './folder-key';
-import { FolderLockIcon } from './folder-lock';
-import { FolderMinusIcon } from './folder-minus';
-import { FolderOpenIcon } from './folder-open';
-import { FolderOutputIcon } from './folder-output';
-import { FolderPlusIcon } from './folder-plus';
-import { FolderRootIcon } from './folder-root';
-import { FolderSyncIcon } from './folder-sync';
-import { FolderTreeIcon } from './folder-tree';
-import { FolderUpIcon } from './folder-up';
-import { FolderXIcon } from './folder-x';
-import { GitBranchIcon } from './git-branch';
-import { GitCompareIcon } from './git-compare';
-import { GitCompareArrowsIcon } from './git-compare-arrows';
-import { GitForkIcon } from './git-fork';
-import { GitGraphIcon } from './git-graph';
-import { GitPullRequestClosedIcon } from './git-pull-request-closed';
-import { GitPullRequestCreateIcon } from './git-pull-request-create';
-import { GitlabIcon } from './gitlab';
-import { HandIcon } from './hand';
-import { HandFistIcon } from './hand-fist';
-import { HandGrabIcon } from './hand-grab';
-import { HandHelpingIcon } from './hand-helping';
-import { HandMetalIcon } from './hand-metal';
-import { HeartHandshakeIcon } from './heart-handshake';
 import { AArrowDownIcon } from "@/icons/a-arrow-down";
 import { AArrowUpIcon } from "@/icons/a-arrow-up";
 import { AccessibilityIcon } from "@/icons/accessibility";
@@ -705,6 +327,12 @@ import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
+import { ChessBishopIcon } from "./chess-bishop";
+import { ChessKingIcon } from "./chess-king";
+import { ChessKnightIcon } from "./chess-knight";
+import { ChessPawnIcon } from "./chess-pawn";
+import { ChessQueenIcon } from "./chess-queen";
+import { ChessRookIcon } from "./chess-rook";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
 import { CornerLeftDownIcon } from "./corner-left-down";
@@ -760,34 +388,34 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
-    name: 'chess-king',
+    name: "chess-king",
     icon: ChessKingIcon,
-    keywords: ['ruler', 'crown', 'piece', 'board game', 'stalemate'],
+    keywords: ["ruler", "crown", "piece", "board game", "stalemate"],
   },
   {
-    name: 'chess-queen',
+    name: "chess-queen",
     icon: ChessQueenIcon,
-    keywords: ['ruler', 'crown', 'piece', 'board game', 'stalemate'],
+    keywords: ["ruler", "crown", "piece", "board game", "stalemate"],
   },
   {
-    name: 'chess-rook',
+    name: "chess-rook",
     icon: ChessRookIcon,
-    keywords: ['castle', 'piece', 'board game'],
+    keywords: ["castle", "piece", "board game"],
   },
   {
-    name: 'chess-bishop',
+    name: "chess-bishop",
     icon: ChessBishopIcon,
-    keywords: ['mitre', 'miter', 'piece', 'board game', 'religion'],
+    keywords: ["mitre", "miter", "piece", "board game", "religion"],
   },
   {
-    name: 'chess-knight',
+    name: "chess-knight",
     icon: ChessKnightIcon,
-    keywords: ['piece', 'horse', 'board game'],
+    keywords: ["piece", "horse", "board game"],
   },
   {
-    name: 'chess-pawn',
+    name: "chess-pawn",
     icon: ChessPawnIcon,
-    keywords: ['piece', 'board game'],
+    keywords: ["piece", "board game"],
   },
   {
     name: "truck",

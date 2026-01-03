@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { motion, useAnimation } from 'motion/react';
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 export interface ChessBishopIconHandle {
   startAnimation: () => void;
@@ -28,7 +28,7 @@ const ICON_VARIANTS: Variants = {
     y: -1,
     transition: {
       duration: 0.18,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -41,17 +41,17 @@ const ChessBishopIcon = forwardRef<ChessBishopIconHandle, ChessBishopIconProps>(
     useImperativeHandle(ref, () => {
       isControlledRef.current = true;
       return {
-        startAnimation: () => controls.start('animate'),
-        stopAnimation: () => controls.start('normal'),
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
       };
     });
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
       [controls, onMouseEnter]
@@ -59,10 +59,10 @@ const ChessBishopIcon = forwardRef<ChessBishopIconHandle, ChessBishopIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
       [controls, onMouseLeave]
@@ -76,19 +76,19 @@ const ChessBishopIcon = forwardRef<ChessBishopIconHandle, ChessBishopIconProps>(
         {...props}
       >
         <motion.svg
-          variants={ICON_VARIANTS}
-          initial="normal"
           animate={controls}
-          style={{ transformOrigin: '50% 100%' }}
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
+          initial="normal"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          style={{ transformOrigin: "50% 100%" }}
+          variants={ICON_VARIANTS}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" />
           <path d="M15 18c1.5-.615 3-2.461 3-4.923C18 8.769 14.5 4.462 12 2 9.5 4.462 6 8.77 6 13.077 6 15.539 7.5 17.385 9 18" />
@@ -100,6 +100,6 @@ const ChessBishopIcon = forwardRef<ChessBishopIconHandle, ChessBishopIconProps>(
   }
 );
 
-ChessBishopIcon.displayName = 'ChessBishopIcon';
+ChessBishopIcon.displayName = "ChessBishopIcon";
 
 export { ChessBishopIcon };

@@ -4869,9 +4869,7 @@
       "name": "chess-bishop",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4884,9 +4882,7 @@
       "name": "chess-king",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4899,9 +4895,7 @@
       "name": "chess-knight",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4914,9 +4908,7 @@
       "name": "chess-pawn",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4929,9 +4921,7 @@
       "name": "chess-queen",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -4944,9 +4934,7 @@
       "name": "chess-rook",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
