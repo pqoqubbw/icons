@@ -16,35 +16,19 @@ interface ChessKnightIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const BODY_VARIANTS: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
-    opacity: 1,
-    x: 0,
     rotate: 0,
-  },
-  animate: {
-    opacity: [0.6, 1],
-    x: [-3, 0],
-    rotate: [-4, 0],
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const HEAD_VARIANTS: Variants = {
-  normal: {
-    opacity: 1,
+    x: 0,
     y: 0,
   },
   animate: {
-    opacity: [0.6, 1],
-    y: [-2, 0],
+    rotate: 12,
+    x: 1.5,
+    y: -1,
     transition: {
-      duration: 0.2,
+      duration: 0.18,
       ease: 'easeOut',
-      delay: 0.05,
     },
   },
 };
@@ -91,7 +75,11 @@ const ChessKnightIcon = forwardRef<ChessKnightIconHandle, ChessKnightIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
+          variants={ICON_VARIANTS}
+          initial="normal"
+          animate={controls}
+          style={{ transformOrigin: '50% 100%' }}
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -102,37 +90,12 @@ const ChessKnightIcon = forwardRef<ChessKnightIconHandle, ChessKnightIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            variants={HEAD_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"
-          />
-          <motion.path
-            variants={HEAD_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M16.5 18c1-2 2.5-5 2.5-9a7 7 0 0 0-7-7H6.635a1 1 0 0 0-.768 1.64L7 5l-2.32 5.802a2 2 0 0 0 .95 2.526l2.87 1.456"
-          />
-          <motion.path
-            variants={HEAD_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M9.713 12.185 7 18"
-          />
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m15 5 1.425-1.425"
-          />
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m17 8 1.53-1.53"
-          />
-        </svg>
+          <path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" />
+          <path d="M16.5 18c1-2 2.5-5 2.5-9a7 7 0 0 0-7-7H6.635a1 1 0 0 0-.768 1.64L7 5l-2.32 5.802a2 2 0 0 0 .95 2.526l2.87 1.456" />
+          <path d="M9.713 12.185 7 18" />
+          <path d="m15 5 1.425-1.425" />
+          <path d="m17 8 1.53-1.53" />
+        </motion.svg>
       </div>
     );
   }

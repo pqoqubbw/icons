@@ -16,33 +16,18 @@ interface ChessRookIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PATH_VARIANTS: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
-    opacity: 1,
-    scale: 1,
+    rotate: 0,
+    x: 0,
     y: 0,
   },
   animate: {
-    opacity: [0.6, 1],
-    scale: [0.95, 1],
-    y: [2, 0],
+    rotate: 12,
+    x: 1.5,
+    y: -1,
     transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const TOP_VARIANTS: Variants = {
-  normal: {
-    opacity: 1,
-    y: 0,
-  },
-  animate: {
-    opacity: [0.6, 1],
-    y: [-2, 0],
-    transition: {
-      duration: 0.2,
+      duration: 0.18,
       ease: 'easeOut',
     },
   },
@@ -90,7 +75,11 @@ const ChessRookIcon = forwardRef<ChessRookIconHandle, ChessRookIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
+          variants={ICON_VARIANTS}
+          initial="normal"
+          animate={controls}
+          style={{ transformOrigin: '50% 100%' }}
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -101,49 +90,14 @@ const ChessRookIcon = forwardRef<ChessRookIconHandle, ChessRookIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m7 18 1-9"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m17 18-1-9"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M6 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M6 4h12"
-          />
-          <motion.path
-            variants={TOP_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M10 2v2"
-          />
-          <motion.path
-            variants={TOP_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M14 2v2"
-          />
-        </svg>
+          <path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" />
+          <path d="m7 18 1-9" />
+          <path d="m17 18-1-9" />
+          <path d="M6 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2" />
+          <path d="M6 4h12" />
+          <path d="M10 2v2" />
+          <path d="M14 2v2" />
+        </motion.svg>
       </div>
     );
   }

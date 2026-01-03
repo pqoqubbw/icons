@@ -16,31 +16,18 @@ interface ChessQueenIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PATH_VARIANTS: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
-    opacity: 1,
-    scale: 1,
-  },
-  animate: {
-    opacity: [0.6, 1],
-    scale: [0.95, 1],
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const CIRCLE_VARIANTS: Variants = {
-  normal: {
-    opacity: 1,
+    rotate: 0,
+    x: 0,
     y: 0,
   },
   animate: {
-    opacity: [0.6, 1],
-    y: [-3, 0],
+    rotate: 12,
+    x: 1.5,
+    y: -1,
     transition: {
-      duration: 0.25,
+      duration: 0.18,
       ease: 'easeOut',
     },
   },
@@ -88,7 +75,11 @@ const ChessQueenIcon = forwardRef<ChessQueenIconHandle, ChessQueenIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
+          variants={ICON_VARIANTS}
+          initial="normal"
+          animate={controls}
+          style={{ transformOrigin: '50% 100%' }}
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -99,61 +90,15 @@ const ChessQueenIcon = forwardRef<ChessQueenIconHandle, ChessQueenIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M7 18 4 9"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m20 9-3 9"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m12.474 5.943 1.567 5.34a1 1 0 0 0 1.75.328l2.616-3.402"
-          />
-          <motion.path
-            variants={PATH_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m5.594 8.209 2.615 3.403a1 1 0 0 0 1.75-.329l1.567-5.34"
-          />
-          <motion.circle
-            variants={CIRCLE_VARIANTS}
-            initial="normal"
-            animate={controls}
-            cx="12"
-            cy="4"
-            r="2"
-          />
-          <motion.circle
-            variants={CIRCLE_VARIANTS}
-            initial="normal"
-            animate={controls}
-            cx="20"
-            cy="7"
-            r="2"
-          />
-          <motion.circle
-            variants={CIRCLE_VARIANTS}
-            initial="normal"
-            animate={controls}
-            cx="4"
-            cy="7"
-            r="2"
-          />
-        </svg>
+          <path d="M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" />
+          <path d="M7 18 4 9" />
+          <path d="m20 9-3 9" />
+          <path d="m12.474 5.943 1.567 5.34a1 1 0 0 0 1.75.328l2.616-3.402" />
+          <path d="m5.594 8.209 2.615 3.403a1 1 0 0 0 1.75-.329l1.567-5.34" />
+          <circle cx="12" cy="4" r="2" />
+          <circle cx="20" cy="7" r="2" />
+          <circle cx="4" cy="7" r="2" />
+        </motion.svg>
       </div>
     );
   }

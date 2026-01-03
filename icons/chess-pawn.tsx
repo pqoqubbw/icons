@@ -16,32 +16,18 @@ interface ChessPawnIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const BODY_VARIANTS: Variants = {
+const ICON_VARIANTS: Variants = {
   normal: {
-    opacity: 1,
+    rotate: 0,
+    x: 0,
     y: 0,
   },
   animate: {
-    opacity: [0.6, 1],
-    y: [2, 0],
+    rotate: 12,
+    x: 1.5,
+    y: -1,
     transition: {
-      duration: 0.2,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const HEAD_VARIANTS: Variants = {
-  normal: {
-    opacity: 1,
-    scale: 1,
-  },
-  animate: {
-    opacity: [0.6, 1],
-    scale: [0.9, 1],
-    y: [-2, 0],
-    transition: {
-      duration: 0.2,
+      duration: 0.18,
       ease: 'easeOut',
     },
   },
@@ -89,7 +75,11 @@ const ChessPawnIcon = forwardRef<ChessPawnIconHandle, ChessPawnIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <svg
+        <motion.svg
+          variants={ICON_VARIANTS}
+          initial="normal"
+          animate={controls}
+          style={{ transformOrigin: '50% 100%' }}
           xmlns="http://www.w3.org/2000/svg"
           width={size}
           height={size}
@@ -100,39 +90,12 @@ const ChessPawnIcon = forwardRef<ChessPawnIconHandle, ChessPawnIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"
-          />
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="M7 10h10"
-          />
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m8 18 1.5-8"
-          />
-          <motion.path
-            variants={BODY_VARIANTS}
-            initial="normal"
-            animate={controls}
-            d="m14.5 10 1.5 8"
-          />
-          <motion.circle
-            variants={HEAD_VARIANTS}
-            initial="normal"
-            animate={controls}
-            cx="12"
-            cy="6"
-            r="4"
-          />
-        </svg>
+          <path d="M5 20a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" />
+          <path d="M7 10h10" />
+          <path d="m8 18 1.5-8" />
+          <path d="m14.5 10 1.5 8" />
+          <circle cx="12" cy="6" r="4" />
+        </motion.svg>
       </div>
     );
   }
