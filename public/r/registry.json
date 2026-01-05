@@ -4866,45 +4866,6 @@
       ]
     },
     {
-      "name": "repeat-1",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat-2",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4913,58 +4874,6 @@
       "files": [
         {
           "path": "truck.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat-1",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat-2",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "repeat",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "repeat.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "wrench",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "wrench.tsx",
           "type": "registry:ui"
         }
       ]

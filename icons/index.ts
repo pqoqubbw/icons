@@ -32,6 +32,8 @@ import { ArrowDownZAIcon } from "@/icons/arrow-down-z-a";
 import { ArrowLeftIcon } from "@/icons/arrow-left";
 import { ArrowRightIcon } from "@/icons/arrow-right";
 import { ArrowUpIcon } from "@/icons/arrow-up";
+import { ArrowUpLeftIcon } from "@/icons/arrow-up-left";
+import { ArrowUpRightIcon } from "@/icons/arrow-up-right";
 import { AtSignIcon } from "@/icons/at-sign";
 import { AtomIcon } from "@/icons/atom";
 import { AttachFileIcon } from "@/icons/attach-file";
@@ -240,9 +242,6 @@ import { RefreshCCWIcon } from "@/icons/refresh-ccw";
 import { RefreshCCWDotIcon } from "@/icons/refresh-ccw-dot";
 import { RefreshCWIcon } from "@/icons/refresh-cw";
 import { RefreshCWOffIcon } from "@/icons/refresh-cw-off";
-import { RepeatIcon } from "@/icons/repeat";
-import { Repeat1Icon } from "@/icons/repeat-1";
-import { Repeat2Icon } from "@/icons/repeat-2";
 import { RocketIcon } from "@/icons/rocket";
 import { RockingChairIcon } from "@/icons/rocking-chair";
 import { RollerCoasterIcon } from "@/icons/roller-coaster";
@@ -323,8 +322,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { ArrowUpLeftIcon } from "./arrow-up-left";
-import { ArrowUpRightIcon } from "./arrow-up-right";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -405,30 +402,6 @@ const ICON_LIST: IconListItem[] = [
     name: "mic-off",
     icon: MicOffIcon,
     keywords: ["microphone", "audio", "sound", "mute", "silent", "disabled"],
-  },
-  {
-    name: "repeat-1",
-    icon: Repeat1Icon,
-    keywords: ["repeat", "replay", "multimedia"],
-  },
-  {
-    name: "repeat-2",
-    icon: Repeat2Icon,
-    keywords: [
-      "repeat",
-      "arrows",
-      "repost",
-      "share",
-      "loop",
-      "retweet",
-      "social",
-      "multimedia",
-    ],
-  },
-  {
-    name: "repeat",
-    icon: RepeatIcon,
-    keywords: ["repeat", "loop", "arrows", "multimedia"],
   },
   {
     name: "align-left",
