@@ -116,11 +116,11 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.g variants={RIGHT_ARROW_VARIANTS}>
+          <motion.g variants={LEFT_ARROW_VARIANTS}>
             <motion.path d="m2 9 3-3 3 3" />
             <motion.path d="M13 18H7a2 2 0 0 1-2-2V6" />
           </motion.g>
-          <motion.g variants={LEFT_ARROW_VARIANTS}>
+          <motion.g variants={RIGHT_ARROW_VARIANTS}>
             <motion.path custom={1} d="m22 15-3 3-3-3" />
             <motion.path custom={0} d="M11 6h6a2 2 0 0 1 2 2v10" />
           </motion.g>

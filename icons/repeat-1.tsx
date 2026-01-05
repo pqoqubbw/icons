@@ -117,13 +117,15 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
         <motion.svg
           animate={hovered ? "show" : "idle"}
           className="lucide lucide-repeat1-icon lucide-repeat-1"
-          fill="none"
+          width={size}
           height={size}
+          fill="none"
           initial="idle"
           stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
           strokeLinecap="round"
           strokeLinejoin="round"
-          whileHover="show"
         >
           <motion.g variants={RIGHT_ARROW_VARIANTS}>
             <motion.path d="m17 2 4 4-4 4" />
