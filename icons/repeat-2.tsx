@@ -22,20 +22,36 @@ interface Repeat2IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const DRAW_VARIANTS: Variants = {
-  hidden: {
-    pathLength: 0,
-    opacity: 0,
-  },
-  show: (i: number) => ({
-    pathLength: 1,
+const RIGHT_ARROW_VARIANTS: Variants = {
+  idle: {
     opacity: 1,
+    y: 0,
+  },
+  show: {
+    opacity: [0, 1],
+    y: [-4, 0],
     transition: {
-      delay: i === 0 ? 0 : 0.2,
-      duration: 0.25,
+      duration: 0.3,
       ease: "easeOut",
+      delay: 0.05,
     },
-  }),
+  },
+};
+
+const LEFT_ARROW_VARIANTS: Variants = {
+  idle: {
+    opacity: 1,
+    y: 0,
+  },
+  show: {
+    opacity: [0, 1],
+    y: [4, 0],
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+      delay: 0.05,
+    },
+  },
 };
 
 const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
@@ -78,21 +94,20 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
       <div
         className={cn(className)}
         onMouseEnter={(e) => {
-          setHovered(true);
           handleMouseEnter(e);
+          setHovered(true);
         }}
         onMouseLeave={(e) => {
-          setHovered(false);
           handleMouseLeave(e);
+          setHovered(false);
         }}
         {...props}
       >
         <motion.svg
-          animate="show"
+          animate={hovered ? "show" : "idle"}
           fill="none"
           height={size}
-          initial="hidden"
-          key={hovered ? "hover" : "idle"}
+          initial="idle"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -101,18 +116,14 @@ const Repeat2Icon = forwardRef<Repeat2IconHandle, Repeat2IconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path custom={1} d="m2 9 3-3 3 3" variants={DRAW_VARIANTS} />
-          <motion.path
-            custom={0}
-            d="M13 18H7a2 2 0 0 1-2-2V6"
-            variants={DRAW_VARIANTS}
-          />
-          <motion.path custom={1} d="m22 15-3 3-3-3" variants={DRAW_VARIANTS} />
-          <motion.path
-            custom={0}
-            d="M11 6h6a2 2 0 0 1 2 2v10"
-            variants={DRAW_VARIANTS}
-          />
+          <motion.g variants={RIGHT_ARROW_VARIANTS}>
+            <motion.path d="m2 9 3-3 3 3" />
+            <motion.path d="M13 18H7a2 2 0 0 1-2-2V6" />
+          </motion.g>
+          <motion.g variants={LEFT_ARROW_VARIANTS}>
+            <motion.path custom={1} d="m22 15-3 3-3-3" />
+            <motion.path custom={0} d="M11 6h6a2 2 0 0 1 2 2v10" />
+          </motion.g>
         </motion.svg>
       </div>
     );

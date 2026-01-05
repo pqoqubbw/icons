@@ -22,20 +22,36 @@ interface RepeatIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const DRAW_VARIANTS: Variants = {
-  hidden: {
-    pathLength: 0,
-    opacity: 0,
-  },
-  show: (i: number) => ({
-    pathLength: 1,
+const RIGHT_ARROW_VARIANTS: Variants = {
+  idle: {
     opacity: 1,
+    x: 0,
+  },
+  show: {
+    opacity: [0, 1],
+    x: [-4, 0],
     transition: {
-      delay: i === 0 ? 0 : 0.2,
-      duration: 0.25,
+      duration: 0.3,
       ease: "easeOut",
+      delay: 0.05,
     },
-  }),
+  },
+};
+
+const LEFT_ARROW_VARIANTS: Variants = {
+  idle: {
+    opacity: 1,
+    x: 0,
+  },
+  show: {
+    opacity: [0, 1],
+    x: [4, 0],
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+      delay: 0.05,
+    },
+  },
 };
 
 const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
@@ -88,11 +104,10 @@ const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
         {...props}
       >
         <motion.svg
-          animate="show"
+          animate={hovered ? "show" : "idle"}
           fill="none"
           height={size}
-          initial="hidden"
-          key={hovered ? "hover" : "idle"}
+          initial="idle"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -101,18 +116,14 @@ const RepeatIcon = forwardRef<RepeatIconHandle, RepeatIconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.path
-            custom={0}
-            d="M3 11v-1a4 4 0 0 1 4-4h14"
-            variants={DRAW_VARIANTS}
-          />
-          <motion.path custom={1} d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} />
-          <motion.path
-            custom={0}
-            d="M21 13v1a4 4 0 0 1-4 4H3"
-            variants={DRAW_VARIANTS}
-          />
-          <motion.path custom={1} d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} />
+          <motion.g variants={RIGHT_ARROW_VARIANTS}>
+            <motion.path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+            <motion.path d="m17 2 4 4-4 4" />
+          </motion.g>
+          <motion.g variants={LEFT_ARROW_VARIANTS}>
+            <motion.path d="M21 13v1a4 4 0 0 1-4 4H3" />
+            <motion.path d="m7 22-4-4 4-4" />
+          </motion.g>
         </motion.svg>
       </div>
     );

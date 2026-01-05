@@ -22,32 +22,43 @@ interface Repeat1IconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const DRAW_VARIANTS: Variants = {
+const RIGHT_ARROW_VARIANTS: Variants = {
   idle: {
-    pathLength: 1,
     opacity: 1,
+    x: 0,
   },
-  show: (i: number) => ({
-    pathLength: [0, 1],
-    opacity: 1,
+  show: {
+    opacity: [0, 1],
+    x: [-4, 0],
     transition: {
-      delay: i === 0 ? 0 : 0.3,
-      duration: 0.25,
+      duration: 0.3,
       ease: "easeOut",
     },
-  }),
+  },
+};
+
+const LEFT_ARROW_VARIANTS: Variants = {
+  idle: {
+    opacity: 1,
+    x: 0,
+  },
+  show: {
+    opacity: [0, 1],
+    x: [4, 0],
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+    },
+  },
 };
 
 const NUMBER_VARIANTS: Variants = {
-  idle: {
-    opacity: 1,
-    scale: 1,
-  },
+  idle: { opacity: 1, scale: 1 },
   show: {
     opacity: [0, 1],
     scale: [0.6, 1],
     transition: {
-      delay: 0.25,
+      delay: 0.15,
       duration: 0.2,
       ease: "easeOut",
     },
@@ -114,18 +125,15 @@ const Repeat1Icon = forwardRef<Repeat1IconHandle, Repeat1IconProps>(
           strokeLinejoin="round"
           whileHover="show"
         >
-          <motion.path custom={1} d="m17 2 4 4-4 4" variants={DRAW_VARIANTS} />
-          <motion.path
-            custom={0}
-            d="M3 11v-1a4 4 0 0 1 4-4h14"
-            variants={DRAW_VARIANTS}
-          />
-          <motion.path custom={1} d="m7 22-4-4 4-4" variants={DRAW_VARIANTS} />
-          <motion.path
-            custom={0}
-            d="M21 13v1a4 4 0 0 1-4 4H3"
-            variants={DRAW_VARIANTS}
-          />
+          <motion.g variants={RIGHT_ARROW_VARIANTS}>
+            <motion.path d="m17 2 4 4-4 4" />
+            <motion.path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+          </motion.g>
+
+          <motion.g variants={LEFT_ARROW_VARIANTS}>
+            <motion.path d="m7 22-4-4 4-4" />
+            <motion.path d="M21 13v1a4 4 0 0 1-4 4H3" />
+          </motion.g>
           <motion.path d="M11 10h1v4" variants={NUMBER_VARIANTS} />
         </motion.svg>
       </div>
