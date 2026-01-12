@@ -9,6 +9,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Toaster } from "sonner";
 
 import { Analytics } from "@/components/analytics";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { PackageNameProvider } from "@/providers/package-name";
 import { ThemeProvider } from "@/providers/theme";
@@ -110,6 +111,7 @@ export default function RootLayout({
                 />
               </NuqsAdapter>
               <Analytics />
+              <Footer />
             </PackageNameProvider>
           </ThemeProvider>
         </div>
