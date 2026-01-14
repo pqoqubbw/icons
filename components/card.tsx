@@ -1,7 +1,7 @@
 "use client";
 
 import { useOpenPanel } from "@openpanel/nextjs";
-import { Copy, PauseIcon, PlayIcon, Terminal } from "lucide-react";
+import { Copy, PauseIcon, PlayIcon, Terminal, Settings } from "lucide-react";
 import type { RefObject } from "react";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
@@ -299,9 +299,10 @@ const OpenInV0Action = ({ name }: Pick<Icon, "name">) => {
 
 type ActionsProps = Pick<Icon, "name"> & {
   alwaysVisible?: boolean;
+  onCustomizeClick?: () => void;
 };
 
-const Actions = ({ name, alwaysVisible = false }: ActionsProps) => {
+const Actions = ({ name, alwaysVisible = false, onCustomizeClick }: ActionsProps) => {
   return (
     <TooltipProvider>
       <div
@@ -312,6 +313,22 @@ const Actions = ({ name, alwaysVisible = false }: ActionsProps) => {
             : "opacity-0 group-hover/card:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 has-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
         )}
       >
+        {onCustomizeClick && (
+          <Tooltip>
+            <TooltipTrigger
+              aria-label="Customize icon"
+              className="supports-[corner-shape:squircle]:corner-squircle flex size-10 cursor-pointer items-center justify-center rounded-[14px] bg-neutral-200/20 transition-[background-color] duration-100 focus-within:-outline-offset-1 hover:bg-neutral-200 focus-visible:outline-1 focus-visible:outline-primary supports-[corner-shape:squircle]:rounded-[20px] dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+              onClick={onCustomizeClick}
+              tabIndex={0}
+            >
+              <Settings
+                aria-hidden="true"
+                className="size-4 text-neutral-800 dark:text-neutral-100"
+              />
+            </TooltipTrigger>
+            <TooltipContent>Customize icon</TooltipContent>
+          </Tooltip>
+        )}
         <CopyCodeAction name={name} />
         <CopyCLIAction name={name} />
         <OpenInV0Action name={name} />

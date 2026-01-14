@@ -128,8 +128,8 @@ const Header = () => {
           tabIndex={0}
         >
           <Logo
-            className="w-6 text-primary data-[type='christmas']:translate-y-[-4px] min-[395px]:w-8"
-            type="christmas"
+            className="w-6 text-primary min-[395px]:w-8"
+            type="default"
           />
           lucide-animated
         </Link>
