@@ -11,7 +11,7 @@ import { IconState } from "@/components/ui/icon-state";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TextLoop } from "@/components/ui/text-loop";
 import { PACKAGE_MANAGER } from "@/constants";
-import { getPackageManagerPrefix } from "@/lib/get-package-manager-prefix";
+import { getPackageManagerPrefix, isFlutter } from "@/lib/get-package-manager-prefix";
 import { cn } from "@/lib/utils";
 import { usePackageNameContext } from "@/providers/package-name";
 
@@ -35,10 +35,12 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
       const iconName =
         staticIconName || currentIconName.current || icons?.[0]?.name || "";
 
+      const command = isFlutter(packageName)
+        ? "flutter pub add flutter_lucide_animated"
+        : `${getPackageManagerPrefix(packageName)} shadcn add @lucide-animated/${iconName}`;
+
       try {
-        await navigator.clipboard.writeText(
-          `${getPackageManagerPrefix(packageName)} shadcn add @lucide-animated/${iconName}`
-        );
+        await navigator.clipboard.writeText(command);
 
         setState("done");
         await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -94,61 +96,80 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
                   "after:w-[calc(min(40px,var(--scroll-area-overflow-x-end,100px))+100px)] after:bg-[linear-gradient(to_left,white_0%,white_30%,transparent)] dark:after:bg-[linear-gradient(to_left,rgb(47_47_47/1)_0%,rgb(47_47_47/1)_30%,transparent)] after:[--scroll-area-overflow-x-end:inherit]"
                 )}
               >
-                <span className="sr-only">
-                  {getPackageManagerPrefix(pm)} shadcn add @lucide-animated/
-                  {staticIconName || currentIconName.current}
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="text-neutral-600 dark:text-neutral-400"
-                >
-                  {getPackageManagerPrefix(pm)}
-                </span>{" "}
-                <span aria-hidden="true" className="text-black dark:text-white">
-                  shadcn add @lucide-animated/
-                </span>
-                {isStatic ? (
-                  <span className="shrink-0 text-primary">
-                    {staticIconName}
-                  </span>
+                {isFlutter(pm) ? (
+                  <>
+                    <span className="sr-only">
+                      flutter pub add flutter_lucide_animated
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="text-neutral-600 dark:text-neutral-400"
+                    >
+                      flutter pub add
+                    </span>{" "}
+                    <span aria-hidden="true" className="text-primary">
+                      flutter_lucide_animated
+                    </span>
+                  </>
                 ) : (
-                  <TextLoop
-                    interval={1.5}
-                    onIndexChange={(index) => {
-                      currentIconName.current = icons?.[index]?.name || "";
-                    }}
-                    transition={{
-                      duration: 0.25,
-                    }}
-                    variants={{
-                      initial: {
-                        y: -12,
-                        rotateX: -90,
-                        opacity: 0,
-                        filter: "blur(2px)",
-                      },
-                      animate: {
-                        y: 0,
-                        rotateX: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                      },
-                      exit: {
-                        y: 12,
-                        rotateX: 90,
-                        opacity: 0,
-                        filter: "blur(2px)",
-                      },
-                    }}
-                  >
-                    {(icons || [])
-                      .filter((icon) => icon.name.length <= 20)
-                      .map((icon) => (
-                        <span className="shrink-0 text-primary" key={icon.name}>
-                          {icon.name}
-                        </span>
-                      ))}
-                  </TextLoop>
+                  <>
+                    <span className="sr-only">
+                      {getPackageManagerPrefix(pm)} shadcn add @lucide-animated/
+                      {staticIconName || currentIconName.current}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="text-neutral-600 dark:text-neutral-400"
+                    >
+                      {getPackageManagerPrefix(pm)}
+                    </span>{" "}
+                    <span aria-hidden="true" className="text-black dark:text-white">
+                      shadcn add @lucide-animated/
+                    </span>
+                    {isStatic ? (
+                      <span className="shrink-0 text-primary">
+                        {staticIconName}
+                      </span>
+                    ) : (
+                      <TextLoop
+                        interval={1.5}
+                        onIndexChange={(index) => {
+                          currentIconName.current = icons?.[index]?.name || "";
+                        }}
+                        transition={{
+                          duration: 0.25,
+                        }}
+                        variants={{
+                          initial: {
+                            y: -12,
+                            rotateX: -90,
+                            opacity: 0,
+                            filter: "blur(2px)",
+                          },
+                          animate: {
+                            y: 0,
+                            rotateX: 0,
+                            opacity: 1,
+                            filter: "blur(0px)",
+                          },
+                          exit: {
+                            y: 12,
+                            rotateX: 90,
+                            opacity: 0,
+                            filter: "blur(2px)",
+                          },
+                        }}
+                      >
+                        {(icons || [])
+                          .filter((icon) => icon.name.length <= 20)
+                          .map((icon) => (
+                            <span className="shrink-0 text-primary" key={icon.name}>
+                              {icon.name}
+                            </span>
+                          ))}
+                      </TextLoop>
+                    )}
+                  </>
                 )}
               </BaseScrollArea.Viewport>
               <BaseScrollArea.Scrollbar
