@@ -327,6 +327,12 @@ import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
+import { ChessBishopIcon } from "./chess-bishop";
+import { ChessKingIcon } from "./chess-king";
+import { ChessKnightIcon } from "./chess-knight";
+import { ChessPawnIcon } from "./chess-pawn";
+import { ChessQueenIcon } from "./chess-queen";
+import { ChessRookIcon } from "./chess-rook";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
 import { CornerLeftDownIcon } from "./corner-left-down";
@@ -381,6 +387,36 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "chess-king",
+    icon: ChessKingIcon,
+    keywords: ["ruler", "crown", "piece", "board game", "stalemate"],
+  },
+  {
+    name: "chess-queen",
+    icon: ChessQueenIcon,
+    keywords: ["ruler", "crown", "piece", "board game", "stalemate"],
+  },
+  {
+    name: "chess-rook",
+    icon: ChessRookIcon,
+    keywords: ["castle", "piece", "board game"],
+  },
+  {
+    name: "chess-bishop",
+    icon: ChessBishopIcon,
+    keywords: ["mitre", "miter", "piece", "board game", "religion"],
+  },
+  {
+    name: "chess-knight",
+    icon: ChessKnightIcon,
+    keywords: ["piece", "horse", "board game"],
+  },
+  {
+    name: "chess-pawn",
+    icon: ChessPawnIcon,
+    keywords: ["piece", "board game"],
+  },
   {
     name: "truck",
     icon: TruckIcon,
