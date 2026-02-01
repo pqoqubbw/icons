@@ -12,9 +12,15 @@ const getPackageManagerPrefix = (
       return "npx";
     case PACKAGE_MANAGER.BUN:
       return "bunx --bun";
+    case PACKAGE_MANAGER.FLUTTER:
+      return "flutter pub add";
     default:
       return "npx";
   }
 };
 
-export { getPackageManagerPrefix };
+const isFlutter = (
+  packageManager: (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER]
+) => packageManager === PACKAGE_MANAGER.FLUTTER;
+
+export { getPackageManagerPrefix, isFlutter };

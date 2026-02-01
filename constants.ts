@@ -44,6 +44,7 @@ const PACKAGE_MANAGER = {
   NPM: "npm",
   YARN: "yarn",
   BUN: "bun",
+  FLUTTER: "flutter",
 } as const;
 
 export { LINK, PACKAGE_MANAGER, SITE };
