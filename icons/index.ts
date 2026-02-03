@@ -196,6 +196,7 @@ import { LockKeyholeOpenIcon } from "@/icons/lock-keyhole-open";
 import { LockOpenIcon } from "@/icons/lock-open";
 import { LogoutIcon } from "@/icons/logout";
 import { MailCheckIcon } from "@/icons/mail-check";
+import { MailPlusIcon } from "@/icons/mail-plus";
 import { MapPinIcon } from "@/icons/map-pin";
 import { MapPinCheckIcon } from "@/icons/map-pin-check";
 import { MapPinCheckInsideIcon } from "@/icons/map-pin-check-inside";
@@ -381,6 +382,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "mail-plus",
+    icon: MailPlusIcon,
+    keywords: ["mail", "email", "plus", "add", "inbox"],
+  },
   {
     name: "truck",
     icon: TruckIcon,

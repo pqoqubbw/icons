@@ -20,13 +20,20 @@ const andaleMonoLocal = localFont({
   src: "../fonts/ANDALEMO.woff",
   variable: "--font-mono",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const gtCinetypeLocal = localFont({
-  src: "../fonts/GT-Cinetype-Regular.woff",
+  src: [
+    {
+      path: "../fonts/GT-Cinetype-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
   variable: "--font-sans",
   display: "swap",
-  weight: "400",
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({
