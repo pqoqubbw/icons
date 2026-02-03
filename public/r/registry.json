@@ -4877,6 +4877,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "mail-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mail-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
