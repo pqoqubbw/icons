@@ -4762,14 +4762,14 @@
       ]
     },
     {
-      "name": "wrench",
+      "name": "eye",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wrench.tsx",
+          "path": "eye.tsx",
           "type": "registry:ui"
         }
       ]
