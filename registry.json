@@ -784,6 +784,19 @@
       ]
     },
     {
+      "name": "brain",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "brain.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "calendar-check-2",
       "type": "registry:ui",
       "registryDependencies": [],

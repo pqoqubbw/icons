@@ -63,6 +63,7 @@ import { BotIcon } from "@/icons/bot";
 import { BotMessageSquareIcon } from "@/icons/bot-message-square";
 import { BoxIcon } from "@/icons/box";
 import { BoxesIcon } from "@/icons/boxes";
+import { BrainIcon } from "@/icons/brain";
 import { CalendarCheckIcon } from "@/icons/calendar-check";
 import { CalendarCheck2Icon } from "@/icons/calendar-check-2";
 import { CalendarCogIcon } from "@/icons/calendar-cog";
@@ -381,6 +382,26 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "brain",
+    icon: BrainIcon,
+    keywords: [
+      "medical",
+      "mind",
+      "mental",
+      "intellect",
+      "cerebral",
+      "consciousness",
+      "genius",
+      "artificial intelligence",
+      "ai",
+      "think",
+      "thought",
+      "insight",
+      "intelligent",
+      "smart",
+    ],
+  },
   {
     name: "truck",
     icon: TruckIcon,
