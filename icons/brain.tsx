@@ -19,8 +19,8 @@ interface BrainIconProps extends HTMLAttributes<HTMLDivElement> {
 const BRAIN_STEM_VARIANTS: Variants = {
   normal: { pathLength: 1, pathOffset: 0 },
   animate: {
-    pathLength: [0.4, 1, 0.4],
-    pathOffset: [0.25, 0, 0.25],
+    pathLength: [1, 0.4, 1],
+    pathOffset: [0, 0.25, 0],
     transition: {
       duration: 1.4,
       repeat: Number.POSITIVE_INFINITY,
@@ -33,8 +33,8 @@ const BRAIN_STEM_VARIANTS: Variants = {
 const BRAIN_SIDE_VARIANTS: Variants = {
   normal: { pathLength: 1, pathOffset: 0 },
   animate: {
-    pathLength: [0.5, 1, 0.5],
-    pathOffset: [0.25, 0, 0.25],
+    pathLength: [1, 0.5, 1],
+    pathOffset: [0, 0.25, 0],
     transition: {
       duration: 1.4,
       repeat: Number.POSITIVE_INFINITY,
@@ -47,8 +47,8 @@ const BRAIN_SIDE_VARIANTS: Variants = {
 const BRAIN_TOP_ARC_VARIANTS: Variants = {
   normal: { pathLength: 1, pathOffset: 0 },
   animate: {
-    pathLength: [0.9, 1, 0.9],
-    pathOffset: [0.07, 0, 0.07],
+    pathLength: [1, 0.8, 1],
+    pathOffset: [0, 0.07, 0],
     transition: {
       duration: 1.4,
       repeat: Number.POSITIVE_INFINITY,
@@ -61,8 +61,8 @@ const BRAIN_TOP_ARC_VARIANTS: Variants = {
 const BRAIN_LOWER_ARC_VARIANTS: Variants = {
   normal: { pathLength: 1, pathOffset: 0 },
   animate: {
-    pathLength: [0.8, 1, 0.8],
-    pathOffset: [0.14, 0, 0.14],
+    pathLength: [1, 0.8, 1],
+    pathOffset: [0, 0.14, 0],
     transition: {
       duration: 1.4,
       repeat: Number.POSITIVE_INFINITY,
@@ -156,11 +156,16 @@ const BrainIcon = forwardRef<BrainIconHandle, BrainIconProps>(
 
           <motion.path
             animate={controls}
-            d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"
+            d="M12 5A3 3 0 1 1 17.598 6.5"
+            variants={BRAIN_TOP_ARC_VARIANTS}
+          />
+          <motion.path
+            animate={controls}
+            d="M12 5A3 3 0 1 0 6.402 6.5"
             variants={BRAIN_TOP_ARC_VARIANTS}
           />
 
-          <motion.path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+          <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
 
           <motion.path
             animate={controls}
@@ -168,14 +173,14 @@ const BrainIcon = forwardRef<BrainIconHandle, BrainIconProps>(
             variants={BRAIN_LOWER_ARC_VARIANTS}
           />
 
-          <motion.path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+          <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
 
           <motion.path
             animate={controls}
             d="M6 18a4 4 0 0 1-2-7.464"
             variants={BRAIN_LOWER_ARC_VARIANTS}
           />
-          <motion.path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+          <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
         </motion.svg>
       </div>
     );
