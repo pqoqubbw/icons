@@ -1,8 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-import { PACKAGE_MANAGER } from "@/constants";
+import { PACKAGE_MANAGER, STORAGE_KEY } from "@/constants";
 
 type PackageManager = (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];
 
@@ -19,9 +25,24 @@ const PackageNameContext = createContext<PackageNameContextType>({
 });
 
 const PackageNameProvider = ({ children }: { children: React.ReactNode }) => {
-  const [packageName, setPackageName] = useState<PackageManager>(
+  const [packageName, setPackageNameState] = useState<PackageManager>(
     PACKAGE_MANAGER.PNPM
   );
+
+  useEffect(() => {
+    const stored = localStorage.getItem(STORAGE_KEY) as PackageManager | null;
+    if (stored && Object.values(PACKAGE_MANAGER).includes(stored)) {
+      setPackageNameState(stored);
+    }
+  }, []);
+
+  const setPackageName = useCallback((value: PackageManager) => {
+    setPackageNameState(value);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(STORAGE_KEY, value);
+    }
+  }, []);
+
 
   return (
     <PackageNameContext.Provider value={{ packageName, setPackageName }}>

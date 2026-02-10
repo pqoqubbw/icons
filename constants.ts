@@ -46,4 +46,6 @@ const PACKAGE_MANAGER = {
   BUN: "bun",
 } as const;
 
-export { LINK, PACKAGE_MANAGER, SITE };
+const STORAGE_KEY = "selectedPackageManager";
+
+export { LINK, PACKAGE_MANAGER, SITE, STORAGE_KEY };
