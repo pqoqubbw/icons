@@ -1,12 +1,10 @@
 "use client";
 
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { useHotkey } from "@tanstack/react-hotkeys";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useHotkeys } from "react-hotkeys-hook";
 
 type Theme = "light" | "dark" | "system";
-
-const KEYS = ["ctrl+u", "meta+u"];
 
 const ThemeToggle = () => {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
@@ -20,13 +18,9 @@ const ThemeToggle = () => {
     setTheme(theme);
   };
 
-  useHotkeys(
-    KEYS,
-    () => {
-      handleChangeTheme(nextTheme);
-    },
-    { preventDefault: true }
-  );
+  useHotkey("Mod+U", () => {
+    handleChangeTheme(nextTheme);
+  });
 
   return (
     <button

@@ -1,5 +1,5 @@
+import { useHotkey } from "@tanstack/react-hotkeys";
 import { SearchIcon } from "lucide-react";
-import { useHotkeys } from "react-hotkeys-hook";
 
 import { Portal } from "@/components/ui/portal";
 import { cn } from "@/lib/utils";
@@ -18,31 +18,25 @@ const SearchInput = ({
   searchOpen,
   setSearchOpen,
 }: SearchInputProps) => {
-  useHotkeys(
-    "mod+F",
+  useHotkey(
+    "Mod+F",
     () => {
       setSearchOpen(!searchOpen);
       setSearchValue("");
     },
     {
-      preventDefault: true,
-      enabled: true,
-      enableOnFormTags: true,
-      enableOnContentEditable: true,
+      ignoreInputs: false,
     }
   );
 
-  useHotkeys(
-    "escape",
+  useHotkey(
+    "Escape",
     () => {
       setSearchOpen(false);
       setSearchValue("");
     },
     {
-      preventDefault: true,
-      enabled: searchOpen,
-      enableOnFormTags: true,
-      enableOnContentEditable: true,
+      ignoreInputs: false,
     }
   );
 

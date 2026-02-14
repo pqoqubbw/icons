@@ -1,7 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { components } from "./registry-components";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function updateRegistryComponents() {
   const iconsDir = path.join(process.cwd(), "icons");

@@ -2,7 +2,6 @@ import type { Viewport } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
-
 import { CircleXIcon, TriangleAlertIcon } from "lucide-react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";

@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { SITE } from "../constants";
 import { components } from "./registry-components";
 import type { Schema } from "./registry-schema";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const registryComponents = path.join(__dirname, "../public/r");
 const registryIndexPath = path.join(__dirname, "../public/r/registry.json");
