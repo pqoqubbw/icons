@@ -374,6 +374,7 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { TruckIcon } from "./truck";
+import { GraduationCapIcon } from "./graduation-cap";
 
 type IconListItem = {
   name: string;
@@ -382,6 +383,25 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "graduation-cap",
+    icon: GraduationCapIcon,
+    keywords: [
+      "school",
+      "university",
+      "learn",
+      "study",
+      "mortarboard",
+      "education",
+      "ceremony",
+      "academic",
+      "hat",
+      "diploma",
+      "bachlor's",
+      "master's",
+      "doctorate",
+    ],
+  },
   {
     name: "brain",
     icon: BrainIcon,
