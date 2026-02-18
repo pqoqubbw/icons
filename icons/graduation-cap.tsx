@@ -18,7 +18,6 @@ interface GraduationCapIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const CAP_VARIANTS: Variants = {
   normal: {
-    y: 0,
     rotate: 0,
   },
   animate: {
@@ -32,11 +31,7 @@ const CAP_VARIANTS: Variants = {
 };
 
 const TASSEL_VARIANTS: Variants = {
-  normal: {
-    rotate: 0,
-    originY: 0,
-    originX: "100%",
-  },
+  normal: { rotate: 0 },
   animate: {
     rotate: [0, 15, -10, 5, 0],
     transition: {
@@ -102,22 +97,24 @@ const GraduationCapIcon = forwardRef<
         width={size}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <motion.path
+        <motion.g
           animate={controls}
-          d="M22 10v6M2 10l10-5 10 5-10 5z"
+          style={{ transformOrigin: "12px 12px" }}
           variants={CAP_VARIANTS}
-        />
-        <motion.path
-          animate={controls}
-          d="M6 12v5c3 3 9 3 12 0v-5"
-          variants={CAP_VARIANTS}
-        />
-        <motion.path
-          animate={controls}
-          d="M22 10v6"
-          style={{ originY: "10px", originX: "22px" }}
-          variants={TASSEL_VARIANTS}
-        />
+        >
+          <path d="M2 10l10-5 10 5-10 5z" />
+          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+
+          {/* Tassel now inherits cap movement */}
+          <motion.path
+            d="M22 10v6"
+            style={{
+              transformBox: "fill-box",
+              transformOrigin: "top center",
+            }}
+            variants={TASSEL_VARIANTS}
+          />
+        </motion.g>
       </svg>
     </div>
   );
