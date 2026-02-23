@@ -4890,6 +4890,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "graduation-cap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
