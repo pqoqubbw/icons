@@ -254,6 +254,7 @@ import { SaudiRiyalIcon } from "@/icons/saudi-riyal";
 import { ScanFaceIcon } from "@/icons/scan-face";
 import { ScanTextIcon } from "@/icons/scan-text";
 import { SearchIcon } from "@/icons/search";
+import { SendIcon } from "@/icons/send";
 import { SettingsIcon } from "@/icons/settings";
 import { ShieldCheckIcon } from "@/icons/shield-check";
 import { ShipIcon } from "@/icons/ship";
@@ -1187,6 +1188,11 @@ const ICON_LIST: IconListItem[] = [
     name: "search",
     icon: SearchIcon,
     keywords: ["find", "scan", "magnifier", "magnifying glass"],
+  },
+  {
+    name: "send",
+    icon: SendIcon,
+    keywords: ["send", "message", "email", "envelope", "plane"],
   },
   {
     name: "cloud-sun",
