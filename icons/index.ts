@@ -197,6 +197,7 @@ import { LockKeyholeOpenIcon } from "@/icons/lock-keyhole-open";
 import { LockOpenIcon } from "@/icons/lock-open";
 import { LogoutIcon } from "@/icons/logout";
 import { MailCheckIcon } from "@/icons/mail-check";
+import { MailboxIcon } from "@/icons/mailbox";
 import { MapPinIcon } from "@/icons/map-pin";
 import { MapPinCheckIcon } from "@/icons/map-pin-check";
 import { MapPinCheckInsideIcon } from "@/icons/map-pin-check-inside";
@@ -385,10 +386,14 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "mailbox",
+    icon: MailboxIcon,
+    keywords: ["emails", "messages", "letters", "mailing list", "newsletter"],
+  },
+  {
     name: "send",
     icon: SendIcon,
     keywords: [
-      "send",
       "email",
       "message",
       "mail",
