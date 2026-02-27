@@ -375,6 +375,8 @@ import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { TruckIcon } from "./truck";
 import { GraduationCapIcon } from "./graduation-cap";
+import { AlertTriangleIcon } from "./alert-triangle";
+import { PackageIcon } from "./package";
 
 type IconListItem = {
   name: string;
@@ -383,6 +385,36 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "alert-triangle",
+    icon: AlertTriangleIcon,
+    keywords: [
+      "alert",
+      "warning",
+      "danger",
+      "caution",
+      "error",
+      "important",
+      "notice",
+      "triangle",
+      "attention"
+    ],
+  },
+  {
+    name: "package",
+    icon: PackageIcon,
+    keywords: [
+      "box",
+      "package",
+      "shipping",
+      "delivery",
+      "parcel",
+      "order",
+      "container",
+      "logistics",
+      "cardboard"
+    ],
+  },
   {
     name: "graduation-cap",
     icon: GraduationCapIcon,
@@ -3303,7 +3335,7 @@ const ICON_LIST: IconListItem[] = [
       "concert",
       "horns",
     ],
-  },
+  }
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export { ICON_LIST };

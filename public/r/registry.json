@@ -7,7 +7,9 @@
       "name": "a-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -20,7 +22,9 @@
       "name": "a-arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -33,7 +37,9 @@
       "name": "accessibility",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -46,7 +52,9 @@
       "name": "activity",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -59,7 +67,9 @@
       "name": "air-vent",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -72,7 +82,9 @@
       "name": "airplane",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -85,7 +97,9 @@
       "name": "alarm-clock",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -98,7 +112,9 @@
       "name": "align-center",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -111,7 +127,9 @@
       "name": "align-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -124,7 +142,9 @@
       "name": "align-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -137,7 +157,9 @@
       "name": "angry",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -150,7 +172,9 @@
       "name": "annoyed",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -163,7 +187,9 @@
       "name": "archive",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -176,7 +202,9 @@
       "name": "arrow-big-down-dash",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -189,7 +217,9 @@
       "name": "arrow-big-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -202,7 +232,9 @@
       "name": "arrow-big-left-dash",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -215,7 +247,9 @@
       "name": "arrow-big-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -228,7 +262,9 @@
       "name": "arrow-big-right-dash",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -241,7 +277,9 @@
       "name": "arrow-big-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -254,7 +292,9 @@
       "name": "arrow-big-up-dash",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -267,7 +307,9 @@
       "name": "arrow-big-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -280,7 +322,9 @@
       "name": "arrow-down-0-1",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -293,7 +337,9 @@
       "name": "arrow-down-1-0",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -306,7 +352,9 @@
       "name": "arrow-down-a-z",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -319,7 +367,9 @@
       "name": "arrow-down-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -332,7 +382,9 @@
       "name": "arrow-down-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -345,7 +397,9 @@
       "name": "arrow-up-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -358,7 +412,9 @@
       "name": "arrow-up-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -371,7 +427,9 @@
       "name": "arrow-down-z-a",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -384,7 +442,9 @@
       "name": "arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -397,7 +457,9 @@
       "name": "arrow-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -410,7 +472,9 @@
       "name": "arrow-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -423,7 +487,9 @@
       "name": "arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -436,7 +502,9 @@
       "name": "at-sign",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -449,7 +517,9 @@
       "name": "attach-file",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -462,7 +532,9 @@
       "name": "audio-lines",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -475,7 +547,9 @@
       "name": "badge-alert",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -488,7 +562,9 @@
       "name": "badge-percent",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -501,7 +577,9 @@
       "name": "ban",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -514,7 +592,9 @@
       "name": "banana",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -527,7 +607,9 @@
       "name": "battery-full",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -540,7 +622,9 @@
       "name": "battery-low",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -553,7 +637,9 @@
       "name": "battery-medium",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -566,7 +652,9 @@
       "name": "bell",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -579,7 +667,9 @@
       "name": "blocks",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -592,7 +682,9 @@
       "name": "bluetooth-connected",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -605,7 +697,9 @@
       "name": "bluetooth-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -618,7 +712,9 @@
       "name": "bluetooth-searching",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -631,7 +727,9 @@
       "name": "bluetooth",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -644,7 +742,9 @@
       "name": "bold",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -657,7 +757,9 @@
       "name": "bone",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -670,7 +772,9 @@
       "name": "book-text",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -683,7 +787,9 @@
       "name": "bookmark-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -696,7 +802,9 @@
       "name": "bookmark-minus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -709,7 +817,9 @@
       "name": "bookmark-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -722,7 +832,9 @@
       "name": "bookmark-x",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -735,7 +847,9 @@
       "name": "bookmark",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -748,7 +862,9 @@
       "name": "bot-message-square",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -761,7 +877,9 @@
       "name": "bot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -774,7 +892,9 @@
       "name": "boxes",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -787,7 +907,9 @@
       "name": "brain",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -800,7 +922,9 @@
       "name": "calendar-check-2",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -813,7 +937,9 @@
       "name": "calendar-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -826,7 +952,9 @@
       "name": "calendar-cog",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -839,7 +967,9 @@
       "name": "calendar-days",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -852,7 +982,9 @@
       "name": "cart",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -865,7 +997,9 @@
       "name": "cast",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -878,7 +1012,9 @@
       "name": "cctv",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -891,7 +1027,9 @@
       "name": "chart-bar-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -904,7 +1042,9 @@
       "name": "chart-bar-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -917,7 +1057,9 @@
       "name": "chart-column-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -930,7 +1072,9 @@
       "name": "chart-column-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -943,7 +1087,9 @@
       "name": "chart-line",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -956,7 +1102,9 @@
       "name": "chart-no-axes-column-decreasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -969,7 +1117,9 @@
       "name": "chart-no-axes-column-increasing",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -982,7 +1132,9 @@
       "name": "chart-pie",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -995,7 +1147,9 @@
       "name": "chart-scatter",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1008,7 +1162,9 @@
       "name": "chart-spline",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1021,7 +1177,9 @@
       "name": "check-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1034,7 +1192,9 @@
       "name": "check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1047,7 +1207,9 @@
       "name": "chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1060,7 +1222,9 @@
       "name": "chevron-first",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1073,7 +1237,9 @@
       "name": "chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1086,7 +1252,9 @@
       "name": "chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1099,7 +1267,9 @@
       "name": "chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1112,7 +1282,9 @@
       "name": "chevrons-down-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1125,7 +1297,9 @@
       "name": "chevrons-left-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1138,7 +1312,9 @@
       "name": "chevrons-right-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1151,7 +1327,9 @@
       "name": "chevrons-up-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1164,7 +1342,9 @@
       "name": "chrome",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1177,7 +1357,9 @@
       "name": "circle-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1190,7 +1372,9 @@
       "name": "circle-chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1203,7 +1387,9 @@
       "name": "circle-chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1216,7 +1402,9 @@
       "name": "circle-chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1229,7 +1417,9 @@
       "name": "circle-chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1242,7 +1432,9 @@
       "name": "circle-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1255,7 +1447,9 @@
       "name": "circle-dollar-sign",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1268,7 +1462,9 @@
       "name": "circle-help",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1281,7 +1477,9 @@
       "name": "clap",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1294,7 +1492,9 @@
       "name": "clipboard-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1307,7 +1507,9 @@
       "name": "clock",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1320,7 +1522,9 @@
       "name": "cloud-cog",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1333,7 +1537,9 @@
       "name": "cloud-download",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1346,7 +1552,9 @@
       "name": "cloud-lightning",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1359,7 +1567,9 @@
       "name": "cloud-rain-wind",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1372,7 +1582,9 @@
       "name": "cloud-rain",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1385,7 +1597,9 @@
       "name": "cloud-snow",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1398,7 +1612,9 @@
       "name": "cloud-sun",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1411,7 +1627,9 @@
       "name": "cloud-upload",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1424,7 +1642,9 @@
       "name": "coffee",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1437,7 +1657,9 @@
       "name": "cog",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1450,7 +1672,9 @@
       "name": "compass",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1463,7 +1687,9 @@
       "name": "connect",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1476,7 +1702,9 @@
       "name": "construction",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1489,7 +1717,9 @@
       "name": "contrast",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1502,7 +1732,9 @@
       "name": "copy",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1515,7 +1747,9 @@
       "name": "cpu",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1528,7 +1762,9 @@
       "name": "cursor-click",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1541,7 +1777,9 @@
       "name": "delete",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1554,7 +1792,9 @@
       "name": "discord",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1567,7 +1807,9 @@
       "name": "dollar-sign",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1580,7 +1822,9 @@
       "name": "download",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1593,7 +1837,9 @@
       "name": "downvote",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1606,7 +1852,9 @@
       "name": "dribbble",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1619,7 +1867,9 @@
       "name": "droplet",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1632,7 +1882,9 @@
       "name": "drum",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1645,7 +1897,9 @@
       "name": "earth",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1658,7 +1912,9 @@
       "name": "euro",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1671,7 +1927,9 @@
       "name": "ev-charger",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1684,7 +1942,9 @@
       "name": "expand",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1697,7 +1957,9 @@
       "name": "eye-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1710,7 +1972,9 @@
       "name": "facebook",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1723,7 +1987,9 @@
       "name": "figma",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1736,7 +2002,9 @@
       "name": "file-chart-line",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1749,7 +2017,9 @@
       "name": "file-check-2",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1762,7 +2032,9 @@
       "name": "file-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1775,7 +2047,9 @@
       "name": "file-cog",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1788,7 +2062,9 @@
       "name": "file-pen-line",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1801,7 +2077,9 @@
       "name": "file-stack",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1814,7 +2092,9 @@
       "name": "file-text",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1827,7 +2107,9 @@
       "name": "fingerprint",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1840,7 +2122,9 @@
       "name": "fish-symbol",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1853,7 +2137,9 @@
       "name": "flame",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1866,7 +2152,9 @@
       "name": "flask",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1879,7 +2167,9 @@
       "name": "folders",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1892,7 +2182,9 @@
       "name": "frame",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1905,7 +2197,9 @@
       "name": "frown",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1918,7 +2212,9 @@
       "name": "gallery-horizontal-end",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1931,7 +2227,9 @@
       "name": "gallery-thumbnails",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1944,7 +2242,9 @@
       "name": "gallery-vertical-end",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1957,7 +2257,9 @@
       "name": "gauge",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1970,7 +2272,9 @@
       "name": "georgian-lari",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1983,7 +2287,9 @@
       "name": "git-commit-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -1996,7 +2302,9 @@
       "name": "git-commit-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2009,7 +2317,9 @@
       "name": "git-merge",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2022,7 +2332,9 @@
       "name": "git-pull-request",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2035,7 +2347,9 @@
       "name": "github",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2048,7 +2362,9 @@
       "name": "grip-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2061,7 +2377,9 @@
       "name": "grip-vertical",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2074,7 +2392,9 @@
       "name": "grip",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2087,7 +2407,9 @@
       "name": "hand-coins",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2100,7 +2422,9 @@
       "name": "hand-heart",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2113,7 +2437,9 @@
       "name": "hard-drive-download",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2126,7 +2452,9 @@
       "name": "hard-drive-upload",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2139,7 +2467,9 @@
       "name": "heart",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2152,7 +2482,9 @@
       "name": "history",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2165,7 +2497,9 @@
       "name": "home",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2178,7 +2512,9 @@
       "name": "id-card",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2191,7 +2527,9 @@
       "name": "indian-rupee",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2204,7 +2542,9 @@
       "name": "instagram",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2217,7 +2557,9 @@
       "name": "italic",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2230,7 +2572,9 @@
       "name": "japanese-yen",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2243,7 +2587,9 @@
       "name": "key-circle",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2256,7 +2602,9 @@
       "name": "key-square",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2269,7 +2617,9 @@
       "name": "key",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2282,7 +2632,9 @@
       "name": "keyboard",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2295,7 +2647,9 @@
       "name": "languages",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2308,7 +2662,9 @@
       "name": "laptop-minimal-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2321,7 +2677,9 @@
       "name": "laugh",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2334,7 +2692,9 @@
       "name": "layers",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2347,7 +2707,9 @@
       "name": "layout-panel-top",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2360,7 +2722,9 @@
       "name": "link",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2373,7 +2737,9 @@
       "name": "linkedin",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2386,7 +2752,9 @@
       "name": "loader-pinwheel",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2399,7 +2767,9 @@
       "name": "lock-keyhole-open",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2412,7 +2782,9 @@
       "name": "lock-keyhole",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2425,7 +2797,9 @@
       "name": "lock-open",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2438,7 +2812,9 @@
       "name": "lock",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2451,7 +2827,9 @@
       "name": "logout",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2464,7 +2842,9 @@
       "name": "mail-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2477,7 +2857,9 @@
       "name": "map-pin-check-inside",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2490,7 +2872,9 @@
       "name": "map-pin-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2503,7 +2887,9 @@
       "name": "map-pin-house",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2516,7 +2902,9 @@
       "name": "map-pin-minus-inside",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2529,7 +2917,9 @@
       "name": "map-pin-minus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2542,7 +2932,9 @@
       "name": "map-pin-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2555,7 +2947,9 @@
       "name": "map-pin-plus-inside",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2568,7 +2962,9 @@
       "name": "map-pin-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2581,7 +2977,9 @@
       "name": "map-pin-x-inside",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2594,7 +2992,9 @@
       "name": "map-pin",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2607,7 +3007,9 @@
       "name": "maximize-2",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2620,7 +3022,9 @@
       "name": "maximize",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2633,7 +3037,9 @@
       "name": "meh",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2646,7 +3052,9 @@
       "name": "menu",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2659,7 +3067,9 @@
       "name": "message-circle-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2672,7 +3082,9 @@
       "name": "message-circle-more",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2685,7 +3097,9 @@
       "name": "message-circle",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2698,7 +3112,9 @@
       "name": "message-square-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2711,7 +3127,9 @@
       "name": "message-square-more",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2724,7 +3142,9 @@
       "name": "message-square",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2737,7 +3157,9 @@
       "name": "minimize",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2750,7 +3172,9 @@
       "name": "monitor-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2763,7 +3187,9 @@
       "name": "moon",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2776,7 +3202,9 @@
       "name": "nfc",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2789,7 +3217,9 @@
       "name": "panel-left-close",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2802,7 +3232,9 @@
       "name": "panel-left-open",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2815,7 +3247,9 @@
       "name": "panel-right-open",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2828,7 +3262,9 @@
       "name": "party-popper",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2841,7 +3277,9 @@
       "name": "pause",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2854,7 +3292,9 @@
       "name": "pen-tool",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2867,7 +3307,9 @@
       "name": "philippine-peso",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2880,7 +3322,9 @@
       "name": "play",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2893,7 +3337,9 @@
       "name": "plug-zap",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2906,7 +3352,9 @@
       "name": "plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2919,7 +3367,9 @@
       "name": "pound-sterling",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2932,7 +3382,9 @@
       "name": "rabbit",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2945,7 +3397,9 @@
       "name": "radio-tower",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2958,7 +3412,9 @@
       "name": "radio",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2971,7 +3427,9 @@
       "name": "redo-dot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2984,7 +3442,9 @@
       "name": "redo",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -2997,7 +3457,9 @@
       "name": "refresh-ccw-dot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3010,7 +3472,9 @@
       "name": "refresh-ccw",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3023,7 +3487,9 @@
       "name": "refresh-cw-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3036,7 +3502,9 @@
       "name": "refresh-cw",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3049,7 +3517,9 @@
       "name": "rocket",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3062,7 +3532,9 @@
       "name": "rocking-chair",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3075,7 +3547,9 @@
       "name": "roller-coaster",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3088,7 +3562,9 @@
       "name": "rotate-ccw",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3101,7 +3577,9 @@
       "name": "rotate-cw",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3114,7 +3592,9 @@
       "name": "route",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3127,7 +3607,9 @@
       "name": "russian-ruble",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3140,7 +3622,9 @@
       "name": "saudi-riyal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3153,7 +3637,9 @@
       "name": "scan-face",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3166,7 +3652,9 @@
       "name": "scan-text",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3179,7 +3667,9 @@
       "name": "search",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3192,7 +3682,9 @@
       "name": "settings",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3205,7 +3697,9 @@
       "name": "sliders-horizontal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3218,7 +3712,9 @@
       "name": "shield-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3231,7 +3727,9 @@
       "name": "ship",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3244,7 +3742,9 @@
       "name": "shower-head",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3257,7 +3757,9 @@
       "name": "shrink",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3270,7 +3772,9 @@
       "name": "smartphone-charging",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3283,7 +3787,9 @@
       "name": "smartphone-nfc",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3296,7 +3802,9 @@
       "name": "smile-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3309,7 +3817,9 @@
       "name": "smile",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3322,7 +3832,9 @@
       "name": "snowflake",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3335,7 +3847,9 @@
       "name": "sparkles",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3348,7 +3862,9 @@
       "name": "square-activity",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3361,7 +3877,9 @@
       "name": "square-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3374,7 +3892,9 @@
       "name": "square-arrow-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3387,7 +3907,9 @@
       "name": "square-arrow-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3400,7 +3922,9 @@
       "name": "square-arrow-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3413,7 +3937,9 @@
       "name": "square-chevron-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3426,7 +3952,9 @@
       "name": "square-chevron-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3439,7 +3967,9 @@
       "name": "square-chevron-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3452,7 +3982,9 @@
       "name": "square-chevron-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3465,7 +3997,9 @@
       "name": "square-pen",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3478,7 +4012,9 @@
       "name": "square-stack",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3491,7 +4027,9 @@
       "name": "stethoscope",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3504,7 +4042,9 @@
       "name": "sun-dim",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3517,7 +4057,9 @@
       "name": "sun-medium",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3530,7 +4072,9 @@
       "name": "sun-moon",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3543,7 +4087,9 @@
       "name": "sun",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3556,7 +4102,9 @@
       "name": "sunset",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3569,7 +4117,9 @@
       "name": "swiss-franc",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3582,7 +4132,9 @@
       "name": "syringe",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3595,7 +4147,9 @@
       "name": "telescope",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3608,7 +4162,9 @@
       "name": "terminal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3621,7 +4177,9 @@
       "name": "thermometer",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3634,7 +4192,9 @@
       "name": "timer",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3647,7 +4207,9 @@
       "name": "tornado",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3660,7 +4222,9 @@
       "name": "train-track",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3673,7 +4237,9 @@
       "name": "trending-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3686,7 +4252,9 @@
       "name": "trending-up-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3699,7 +4267,9 @@
       "name": "trending-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3712,7 +4282,9 @@
       "name": "turkish-lira",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3725,7 +4297,9 @@
       "name": "twitch",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3738,7 +4312,9 @@
       "name": "twitter",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3751,7 +4327,9 @@
       "name": "underline",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3764,7 +4342,9 @@
       "name": "undo-dot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3777,7 +4357,9 @@
       "name": "undo",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3790,7 +4372,9 @@
       "name": "upload",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3803,7 +4387,9 @@
       "name": "upvote",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3816,7 +4402,9 @@
       "name": "user-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3829,7 +4417,9 @@
       "name": "user-round-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3842,7 +4432,9 @@
       "name": "user-round-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3855,7 +4447,9 @@
       "name": "user",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3868,7 +4462,9 @@
       "name": "users",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3881,7 +4477,9 @@
       "name": "vibrate",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3894,7 +4492,9 @@
       "name": "volume",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3907,7 +4507,9 @@
       "name": "washing-machine",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3920,7 +4522,9 @@
       "name": "waves-ladder",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3933,7 +4537,9 @@
       "name": "waves",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3946,7 +4552,9 @@
       "name": "waypoints",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3959,7 +4567,9 @@
       "name": "webhook",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3972,7 +4582,9 @@
       "name": "wifi",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3985,7 +4597,9 @@
       "name": "wind-arrow-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -3998,7 +4612,9 @@
       "name": "wind",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4011,7 +4627,9 @@
       "name": "workflow",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4024,7 +4642,9 @@
       "name": "x",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4037,7 +4657,9 @@
       "name": "youtube",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4050,7 +4672,9 @@
       "name": "hourglass",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4063,7 +4687,9 @@
       "name": "git-branch",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4076,7 +4702,9 @@
       "name": "git-compare-arrows",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4089,7 +4717,9 @@
       "name": "git-compare",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4102,7 +4732,9 @@
       "name": "git-fork",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4115,7 +4747,9 @@
       "name": "git-graph",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4128,7 +4762,9 @@
       "name": "git-pull-request-closed",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4141,7 +4777,9 @@
       "name": "git-pull-request-create",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4154,7 +4792,9 @@
       "name": "gitlab",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4167,7 +4807,9 @@
       "name": "feather",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4180,7 +4822,9 @@
       "name": "corner-down-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4193,7 +4837,9 @@
       "name": "corner-down-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4206,7 +4852,9 @@
       "name": "corner-left-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4219,7 +4867,9 @@
       "name": "corner-left-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4232,7 +4882,9 @@
       "name": "corner-right-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4245,7 +4897,9 @@
       "name": "corner-right-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4258,7 +4912,9 @@
       "name": "corner-up-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4271,7 +4927,9 @@
       "name": "corner-up-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4284,7 +4942,9 @@
       "name": "bell-electric",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4297,7 +4957,9 @@
       "name": "airplay",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4310,7 +4972,9 @@
       "name": "atom",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4323,7 +4987,9 @@
       "name": "zap-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4336,7 +5002,9 @@
       "name": "zap",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4349,7 +5017,9 @@
       "name": "folder-archive",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4362,7 +5032,9 @@
       "name": "folder-check",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4375,7 +5047,9 @@
       "name": "folder-clock",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4388,7 +5062,9 @@
       "name": "folder-code",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4401,7 +5077,9 @@
       "name": "folder-cog",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4414,7 +5092,9 @@
       "name": "folder-dot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4427,7 +5107,9 @@
       "name": "folder-down",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4440,7 +5122,9 @@
       "name": "folder-git-2",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4453,7 +5137,9 @@
       "name": "folder-git",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4466,7 +5152,9 @@
       "name": "folder-heart",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4479,7 +5167,9 @@
       "name": "folder-input",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4492,7 +5182,9 @@
       "name": "folder-kanban",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4505,7 +5197,9 @@
       "name": "folder-key",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4518,7 +5212,9 @@
       "name": "folder-lock",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4531,7 +5227,9 @@
       "name": "folder-minus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4544,7 +5242,9 @@
       "name": "folder-open",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4557,7 +5257,9 @@
       "name": "folder-output",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4570,7 +5272,9 @@
       "name": "folder-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4583,7 +5287,9 @@
       "name": "folder-root",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4596,7 +5302,9 @@
       "name": "folder-sync",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4609,7 +5317,9 @@
       "name": "folder-tree",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4622,7 +5332,9 @@
       "name": "folder-up",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4635,7 +5347,9 @@
       "name": "folder-x",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4648,7 +5362,9 @@
       "name": "battery-charging",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4661,7 +5377,9 @@
       "name": "battery",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4674,7 +5392,9 @@
       "name": "battery-plus",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4687,7 +5407,9 @@
       "name": "battery-warning",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4700,7 +5422,9 @@
       "name": "align-left",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4713,7 +5437,9 @@
       "name": "align-right",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4726,7 +5452,9 @@
       "name": "eye",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4739,7 +5467,9 @@
       "name": "box",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4752,7 +5482,9 @@
       "name": "cooking-pot",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4765,7 +5497,9 @@
       "name": "wrench",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4778,7 +5512,9 @@
       "name": "hand-fist",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4791,7 +5527,9 @@
       "name": "hand-grab",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4804,7 +5542,9 @@
       "name": "hand-helping",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4817,7 +5557,9 @@
       "name": "hand-metal",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4830,7 +5572,9 @@
       "name": "hand",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4843,7 +5587,9 @@
       "name": "heart-handshake",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4856,7 +5602,9 @@
       "name": "mic-off",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4869,7 +5617,9 @@
       "name": "mic",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
@@ -4882,11 +5632,58 @@
       "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": ["motion"],
+      "dependencies": [
+        "motion"
+      ],
       "devDependencies": [],
       "files": [
         {
           "path": "truck.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "graduation-cap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-triangle",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "alert-triangle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "package",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": [
+        "motion"
+      ],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "package.tsx",
           "type": "registry:ui"
         }
       ]
