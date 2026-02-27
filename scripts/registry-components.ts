@@ -2290,4 +2290,16 @@ export const components: ComponentDefinition[] = [
     'registryDependencies': [],
     'dependencies': ['motion'],
   },
+  {
+    'name': 'alert-triangle',
+    'path': path.join(__dirname, '../icons/alert-triangle.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
+  {
+    'name': 'package',
+    'path': path.join(__dirname, '../icons/package.tsx'),
+    'registryDependencies': [],
+    'dependencies': ['motion'],
+  },
 ];
