@@ -317,6 +317,7 @@ import { WavesLadderIcon } from "@/icons/waves-ladder";
 import { WaypointsIcon } from "@/icons/waypoints";
 import { WebhookIcon } from "@/icons/webhook";
 import { WifiIcon } from "@/icons/wifi";
+import { WifiLowIcon } from "@/icons/wifi-low";
 import { WindIcon } from "@/icons/wind";
 import { WindArrowDownIcon } from "@/icons/wind-arrow-down";
 import { WorkflowIcon } from "@/icons/workflow";
@@ -3322,6 +3323,11 @@ const ICON_LIST: IconListItem[] = [
       "concert",
       "horns",
     ],
+  },
+  {
+    name: "wifi-low",
+    icon: WifiLowIcon,
+    keywords: ["internet", "electronic", "connection", "data"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
