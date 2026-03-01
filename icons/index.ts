@@ -198,6 +198,7 @@ import { LockKeyholeOpenIcon } from "@/icons/lock-keyhole-open";
 import { LockOpenIcon } from "@/icons/lock-open";
 import { LogoutIcon } from "@/icons/logout";
 import { MailCheckIcon } from "@/icons/mail-check";
+import { MailboxIcon } from "@/icons/mailbox";
 import { MapPinIcon } from "@/icons/map-pin";
 import { MapPinCheckIcon } from "@/icons/map-pin-check";
 import { MapPinCheckInsideIcon } from "@/icons/map-pin-check-inside";
@@ -255,6 +256,7 @@ import { SaudiRiyalIcon } from "@/icons/saudi-riyal";
 import { ScanFaceIcon } from "@/icons/scan-face";
 import { ScanTextIcon } from "@/icons/scan-text";
 import { SearchIcon } from "@/icons/search";
+import { SendIcon } from "@/icons/send";
 import { SettingsIcon } from "@/icons/settings";
 import { ShieldCheckIcon } from "@/icons/shield-check";
 import { ShipIcon } from "@/icons/ship";
@@ -384,6 +386,23 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "mailbox",
+    icon: MailboxIcon,
+    keywords: ["emails", "messages", "letters", "mailing list", "newsletter"],
+  },
+  {
+    name: "send",
+    icon: SendIcon,
+    keywords: [
+      "email",
+      "message",
+      "mail",
+      "paper airplane",
+      "paper aeroplane",
+      "submit",
+    ],
+  },
   {
     name: "graduation-cap",
     icon: GraduationCapIcon,
