@@ -4905,6 +4905,32 @@
       ]
     },
     {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mailbox",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mailbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "wifi-low",
       "type": "registry:ui",
       "registryDependencies": [],
