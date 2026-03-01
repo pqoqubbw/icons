@@ -387,6 +387,23 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "mailbox",
+    icon: MailboxIcon,
+    keywords: ["emails", "messages", "letters", "mailing list", "newsletter"],
+  },
+  {
+    name: "send",
+    icon: SendIcon,
+    keywords: [
+      "email",
+      "message",
+      "mail",
+      "paper airplane",
+      "paper aeroplane",
+      "submit",
+    ],
+  },
+  {
     name: "heart-pulse",
     icon: HeartPulseIcon,
     keywords: [
