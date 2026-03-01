@@ -376,6 +376,7 @@ import { HandGrabIcon } from "./hand-grab";
 import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
+import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
 
 type IconListItem = {
@@ -400,6 +401,19 @@ const ICON_LIST: IconListItem[] = [
       "paper airplane",
       "paper aeroplane",
       "submit",
+    ],
+  },
+  {
+    name: "heart-pulse",
+    icon: HeartPulseIcon,
+    keywords: [
+      "heartbeat",
+      "pulse",
+      "health",
+      "medical",
+      "cardiac",
+      "ecg",
+      "vital",
     ],
   },
   {
