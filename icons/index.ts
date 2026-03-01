@@ -1,3 +1,4 @@
+import { WifiLowIcon } from "@/icons/wifi-low";
 import { AArrowDownIcon } from "@/icons/a-arrow-down";
 import { AArrowUpIcon } from "@/icons/a-arrow-up";
 import { AccessibilityIcon } from "@/icons/accessibility";
@@ -3322,6 +3323,11 @@ const ICON_LIST: IconListItem[] = [
       "concert",
       "horns",
     ],
+  },
+  {
+    name: "wifi-low",
+    icon: WifiLowIcon,
+    keywords: ["internet", "electronic", "connection", "data"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
