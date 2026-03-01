@@ -2,7 +2,13 @@
 
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -138,8 +144,6 @@ const WifiLowIcon = forwardRef<WifiLowIconHandle, WifiLowIconProps>(
             stroke="none"
             style={{ transformOrigin: "12px 8px" }}
             textAnchor="middle"
-            x="12"
-            y="8"
             variants={{
               hide: {
                 opacity: 0,
@@ -157,6 +161,8 @@ const WifiLowIcon = forwardRef<WifiLowIconHandle, WifiLowIconProps>(
                 },
               },
             }}
+            x="12"
+            y="8"
           >
             ?
           </motion.text>
