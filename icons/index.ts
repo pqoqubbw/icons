@@ -1,4 +1,3 @@
-import { WifiLowIcon } from "@/icons/wifi-low";
 import { AArrowDownIcon } from "@/icons/a-arrow-down";
 import { AArrowUpIcon } from "@/icons/a-arrow-up";
 import { AccessibilityIcon } from "@/icons/accessibility";
@@ -318,6 +317,7 @@ import { WavesLadderIcon } from "@/icons/waves-ladder";
 import { WaypointsIcon } from "@/icons/waypoints";
 import { WebhookIcon } from "@/icons/webhook";
 import { WifiIcon } from "@/icons/wifi";
+import { WifiLowIcon } from "@/icons/wifi-low";
 import { WindIcon } from "@/icons/wind";
 import { WindArrowDownIcon } from "@/icons/wind-arrow-down";
 import { WorkflowIcon } from "@/icons/workflow";
