@@ -1,3 +1,4 @@
+import { HeartPulseIcon } from "./heart-pulse";
 import { AArrowDownIcon } from "@/icons/a-arrow-down";
 import { AArrowUpIcon } from "@/icons/a-arrow-up";
 import { AccessibilityIcon } from "@/icons/accessibility";
@@ -367,6 +368,7 @@ import { GitGraphIcon } from "./git-graph";
 import { GitPullRequestClosedIcon } from "./git-pull-request-closed";
 import { GitPullRequestCreateIcon } from "./git-pull-request-create";
 import { GitlabIcon } from "./gitlab";
+import { GraduationCapIcon } from "./graduation-cap";
 import { HandIcon } from "./hand";
 import { HandFistIcon } from "./hand-fist";
 import { HandGrabIcon } from "./hand-grab";
@@ -374,7 +376,6 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { TruckIcon } from "./truck";
-import { GraduationCapIcon } from "./graduation-cap";
 
 type IconListItem = {
   name: string;
@@ -383,6 +384,19 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "heart-pulse",
+    icon: HeartPulseIcon,
+    keywords: [
+      "heartbeat",
+      "pulse",
+      "health",
+      "medical",
+      "cardiac",
+      "ecg",
+      "vital",
+    ],
+  },
   {
     name: "graduation-cap",
     icon: GraduationCapIcon,

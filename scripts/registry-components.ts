@@ -2285,9 +2285,15 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
-    'name': 'graduation-cap',
-    'path': path.join(__dirname, '../icons/graduation-cap.tsx'),
-    'registryDependencies': [],
-    'dependencies': ['motion'],
+    name: "graduation-cap",
+    path: path.join(__dirname, "../icons/graduation-cap.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "heart-pulse",
+    path: path.join(__dirname, "../icons/heart-pulse.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
   },
 ];
