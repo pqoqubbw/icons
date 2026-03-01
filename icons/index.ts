@@ -1,4 +1,3 @@
-import { HeartPulseIcon } from "./heart-pulse";
 import { AArrowDownIcon } from "@/icons/a-arrow-down";
 import { AArrowUpIcon } from "@/icons/a-arrow-up";
 import { AccessibilityIcon } from "@/icons/accessibility";
@@ -377,6 +376,7 @@ import { HandGrabIcon } from "./hand-grab";
 import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
+import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
 
 type IconListItem = {

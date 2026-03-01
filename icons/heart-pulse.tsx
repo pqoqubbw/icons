@@ -16,7 +16,6 @@ interface HeartPulseIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-
 const HEART_DRAW_VARIANTS: Variants = {
   normal: { pathLength: 1, opacity: 1 },
   hidden: { pathLength: 0, opacity: 0 },
@@ -112,19 +111,19 @@ const HeartPulseIcon = forwardRef<HeartPulseIconHandle, HeartPulseIconProps>(
         >
           <motion.g
             animate={heartPulseControls}
-            variants={HEART_PULSE_VARIANTS}
             style={{ originX: "12px", originY: "12px" }}
+            variants={HEART_PULSE_VARIANTS}
           >
             <motion.path
               animate={heartDrawControls}
-              variants={HEART_DRAW_VARIANTS}
               d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+              variants={HEART_DRAW_VARIANTS}
             />
           </motion.g>
           <motion.path
             animate={lineControls}
-            variants={LINE_VARIANTS}
             d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"
+            variants={LINE_VARIANTS}
           />
         </svg>
       </div>
@@ -135,4 +134,3 @@ const HeartPulseIcon = forwardRef<HeartPulseIconHandle, HeartPulseIconProps>(
 HeartPulseIcon.displayName = "HeartPulseIcon";
 
 export { HeartPulseIcon };
-
