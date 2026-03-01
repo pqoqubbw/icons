@@ -4891,19 +4891,30 @@
         }
       ]
     },
-    {
-      "name": "graduation-cap",
+     {
+      "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "graduation-cap.tsx",
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]
     },
+    {
+      "name": "mailbox",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mailbox.tsx",
+          "type": "registry:ui"
+        },
     {
       "name": "heart-pulse",
       "type": "registry:ui",
