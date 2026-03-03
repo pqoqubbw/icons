@@ -377,6 +377,8 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { TruckIcon } from "./truck";
+import { PackageIcon } from "./package";
+import { AlertTriangleIcon } from "./alert-triangle";
 
 type IconListItem = {
   name: string;
@@ -385,6 +387,34 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "alert-triangle",
+    icon: AlertTriangleIcon,
+    keywords: [
+      "warning",
+      "alert",
+      "danger",
+      "caution",
+      "error",
+      "exclamation",
+      "attention",
+      "notice",
+    ],
+  },
+  {
+    name: "package",
+    icon: PackageIcon,
+    keywords: [
+      "box",
+      "delivery",
+      "shipping",
+      "parcel",
+      "container",
+      "order",
+      "inventory",
+      "supply",
+    ],
+  },
   {
     name: "mailbox",
     icon: MailboxIcon,
