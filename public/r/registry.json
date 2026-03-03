@@ -5647,9 +5647,7 @@
       "name": "graduation-cap",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
@@ -5659,31 +5657,27 @@
       ]
     },
     {
-      "name": "alert-triangle",
+      "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "alert-triangle.tsx",
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "package",
+      "name": "mailbox",
       "type": "registry:ui",
       "registryDependencies": [],
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "package.tsx",
+          "path": "mailbox.tsx",
           "type": "registry:ui"
         }
       ]
