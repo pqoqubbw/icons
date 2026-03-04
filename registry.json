@@ -4929,6 +4929,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "heart-off",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "heart-off.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

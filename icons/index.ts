@@ -376,6 +376,7 @@ import { HandGrabIcon } from "./hand-grab";
 import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
+import { HeartOffIcon } from "./heart-off";
 import { TruckIcon } from "./truck";
 
 type IconListItem = {
@@ -3322,6 +3323,11 @@ const ICON_LIST: IconListItem[] = [
       "concert",
       "horns",
     ],
+  },
+  {
+    name: "heart-off",
+    icon: HeartOffIcon,
+    keywords: ["heart", "off", "heart off", "heart off", "heart off"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
