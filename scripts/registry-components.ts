@@ -2302,4 +2302,34 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "phone-call",
+    path: path.join(__dirname, "../icons/phone-call.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "phone-forwarded",
+    path: path.join(__dirname, "../icons/phone-forwarded.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "phone-incoming",
+    path: path.join(__dirname, "../icons/phone-incoming.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "phone-missed",
+    path: path.join(__dirname, "../icons/phone-missed.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "phone-outgoing",
+    path: path.join(__dirname, "../icons/phone-outgoing.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];

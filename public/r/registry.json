@@ -4929,6 +4929,71 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "phone-call",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-call.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-forwarded",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-forwarded.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-incoming",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-incoming.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-missed",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-missed.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-outgoing",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-outgoing.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

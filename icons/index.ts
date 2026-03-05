@@ -231,6 +231,10 @@ import { PartyPopperIcon } from "@/icons/party-popper";
 import { PauseIcon } from "@/icons/pause";
 import { PenToolIcon } from "@/icons/pen-tool";
 import { PhilippinePesoIcon } from "@/icons/philippine-peso";
+import { PhoneCallIcon } from "@/icons/phone-call";
+import { PhoneIncomingIcon } from "@/icons/phone-incoming";
+import { PhoneMissedIcon } from "@/icons/phone-missed";
+import { PhoneOutgoingIcon } from "@/icons/phone-outgoing";
 import { PlayIcon } from "@/icons/play";
 import { PlugZapIcon } from "@/icons/plug-zap";
 import { PlusIcon } from "@/icons/plus";
@@ -376,6 +380,7 @@ import { HandGrabIcon } from "./hand-grab";
 import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
+import { PhoneForwardedIcon } from "./phone-forwarded";
 import { TruckIcon } from "./truck";
 
 type IconListItem = {
@@ -3322,6 +3327,31 @@ const ICON_LIST: IconListItem[] = [
       "concert",
       "horns",
     ],
+  },
+  {
+    name: "phone-outgoing",
+    icon: PhoneOutgoingIcon,
+    keywords: ["phone", "outgoing", "call", "call", "call", "outgoing"],
+  },
+  {
+    name: "phone-incoming",
+    icon: PhoneIncomingIcon,
+    keywords: ["phone", "incoming", "call", "call", "call", "incoming"],
+  },
+  {
+    name: "phone-call",
+    icon: PhoneCallIcon,
+    keywords: ["phone", "call", "call", "call", "call"],
+  },
+  {
+    name: "phone-missed",
+    icon: PhoneMissedIcon,
+    keywords: ["phone", "missed", "call", "call", "call", "missed"],
+  },
+  {
+    name: "phone-forwarded",
+    icon: PhoneForwardedIcon,
+    keywords: ["phone", "forwarded", "call", "call", "call", "forwarded"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
