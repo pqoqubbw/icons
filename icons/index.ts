@@ -219,6 +219,7 @@ import { MessageSquareIcon } from "@/icons/message-square";
 import { MessageSquareCheckIcon } from "@/icons/message-square-check";
 import { MessageSquareDashedIcon } from "@/icons/message-square-dashed";
 import { MessageSquareMoreIcon } from "@/icons/message-square-more";
+import { MessageSquarePlusIcon } from "@/icons/message-square-plus";
 import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
@@ -1494,6 +1495,19 @@ const ICON_LIST: IconListItem[] = [
       "responding",
       "ellipsis",
       "etc",
+    ],
+  },
+  {
+    name: "message-square-plus",
+    icon: MessageSquarePlusIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "add",
     ],
   },
   {
