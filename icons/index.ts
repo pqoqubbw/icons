@@ -2792,8 +2792,11 @@ const ICON_LIST: IconListItem[] = [
       "hospital",
       "vehicle",
       "rescue",
-      "health",
       "siren",
+      "healthcare",
+      "transportation",
+      "urgent",
+      "first aid",
     ],
   },
   {
