@@ -1283,6 +1283,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "message-square-plus",
+    path: path.join(__dirname, "../icons/message-square-plus.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "message-square",
     path: path.join(__dirname, "../icons/message-square.tsx"),
     registryDependencies: [],
