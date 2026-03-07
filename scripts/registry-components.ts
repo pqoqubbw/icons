@@ -2302,4 +2302,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "message-square-check",
+    path: path.join(__dirname, "../icons/message-square-check.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
