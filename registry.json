@@ -4957,14 +4957,22 @@
       ]
     },
     {
+<<<<<<< HEAD
       "name": "send",
+=======
+      "name": "message-square-check",
+>>>>>>> 857afc5 (feat: add message-square-check icon)
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
+<<<<<<< HEAD
           "path": "send.tsx",
+=======
+          "path": "message-square-check.tsx",
+>>>>>>> 857afc5 (feat: add message-square-check icon)
           "type": "registry:ui"
         }
       ]
