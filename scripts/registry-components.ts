@@ -1283,6 +1283,18 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "message-square-plus",
+    path: path.join(__dirname, "../icons/message-square-plus.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "message-square-x",
+    path: path.join(__dirname, "../icons/message-square-x.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "message-square",
     path: path.join(__dirname, "../icons/message-square.tsx"),
     registryDependencies: [],
@@ -2327,6 +2339,8 @@ export const components: ComponentDefinition[] = [
   {
     name: "chess-pawn",
     path: path.join(__dirname, "../icons/chess-pawn.tsx"),
+    name: "message-square-check",
+    path: path.join(__dirname, "../icons/message-square-check.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
