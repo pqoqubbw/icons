@@ -2721,32 +2721,6 @@
       ]
     },
     {
-      "name": "message-square-plus",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "message-square-plus.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "message-square-x",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "message-square-x.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "message-square",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4931,40 +4905,14 @@
       ]
     },
     {
-      "name": "graduation-cap",
+      "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "graduation-cap.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "wifi-low",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "wifi-low.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "graduation-cap",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "graduation-cap.tsx",
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4981,6 +4929,7 @@
           "type": "registry:ui"
         }
       ]
+<<<<<<< HEAD
     },
     {
 <<<<<<< HEAD
@@ -5002,6 +4951,8 @@
           "type": "registry:ui"
         }
       ]
+=======
+>>>>>>> b378882 (fix: restore graduation-cap icon deleted by mistake)
     }
   ]
 }
