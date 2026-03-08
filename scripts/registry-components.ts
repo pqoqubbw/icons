@@ -2291,6 +2291,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "mailbox",
+    path: path.join(__dirname, "../icons/mailbox.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "truck",
     path: path.join(__dirname, "../icons/truck.tsx"),
     registryDependencies: [],
@@ -2303,10 +2309,14 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
-    name: "chess-bishop",
-    path: path.join(__dirname, "../icons/chess-bishop.tsx"),
     name: "send",
     path: path.join(__dirname, "../icons/send.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "chess-bishop",
+    path: path.join(__dirname, "../icons/chess-bishop.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
@@ -2325,8 +2335,6 @@ export const components: ComponentDefinition[] = [
   {
     name: "chess-pawn",
     path: path.join(__dirname, "../icons/chess-pawn.tsx"),
-    name: "mailbox",
-    path: path.join(__dirname, "../icons/mailbox.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
