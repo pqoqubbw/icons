@@ -4985,9 +4985,12 @@
     {
 <<<<<<< HEAD
       "name": "send",
+<<<<<<< HEAD
 =======
       "name": "message-square-check",
 >>>>>>> 857afc5 (feat: add message-square-check icon)
+=======
+>>>>>>> 90857ed (finally)
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
@@ -4996,9 +4999,37 @@
         {
 <<<<<<< HEAD
           "path": "send.tsx",
+<<<<<<< HEAD
 =======
+=======
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-square-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+>>>>>>> 90857ed (finally)
           "path": "message-square-check.tsx",
 >>>>>>> 857afc5 (feat: add message-square-check icon)
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]

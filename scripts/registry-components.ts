@@ -2330,10 +2330,23 @@ export const components: ComponentDefinition[] = [
 <<<<<<< HEAD
     name: "send",
     path: path.join(__dirname, "../icons/send.tsx"),
+<<<<<<< HEAD
 =======
+=======
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+>>>>>>> 90857ed (finally)
     name: "message-square-check",
     path: path.join(__dirname, "../icons/message-square-check.tsx"),
 >>>>>>> 857afc5 (feat: add message-square-check icon)
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "send",
+    path: path.join(__dirname, "../icons/send.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },

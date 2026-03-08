@@ -2721,6 +2721,32 @@
       ]
     },
     {
+      "name": "message-square-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-square-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-square-x",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-square-x.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "message-square",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4905,14 +4931,40 @@
       ]
     },
     {
-      "name": "send",
+      "name": "graduation-cap",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "send.tsx",
+          "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wifi-low",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "wifi-low.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "graduation-cap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "graduation-cap.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4930,6 +4982,7 @@
         }
       ]
 <<<<<<< HEAD
+<<<<<<< HEAD
     },
     {
 <<<<<<< HEAD
@@ -4937,12 +4990,18 @@
 =======
       "name": "message-square-check",
 >>>>>>> 857afc5 (feat: add message-square-check icon)
+=======
+    },
+    {
+      "name": "send",
+>>>>>>> 90857ed (finally)
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
           "path": "send.tsx",
 =======
@@ -4953,6 +5012,38 @@
       ]
 =======
 >>>>>>> b378882 (fix: restore graduation-cap icon deleted by mistake)
+=======
+          "path": "send.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-square-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-square-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
+          "type": "registry:ui"
+        }
+      ]
+>>>>>>> 90857ed (finally)
     }
   ]
 }
