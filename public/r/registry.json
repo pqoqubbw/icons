@@ -4892,32 +4892,6 @@
       ]
     },
     {
-      "name": "send",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "send.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "mailbox",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "mailbox.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "graduation-cap",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4931,27 +4905,14 @@
       ]
     },
     {
-      "name": "send",
+      "name": "graduation-cap",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "send.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "mailbox",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "mailbox.tsx",
+          "path": "graduation-cap.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4978,6 +4939,32 @@
       "files": [
         {
           "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "mailbox",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mailbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]

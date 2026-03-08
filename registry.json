@@ -4892,14 +4892,53 @@
       ]
     },
     {
-      "name": "send",
+      "name": "graduation-cap",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "send.tsx",
+          "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "graduation-cap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "graduation-cap.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "wifi-low",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "wifi-low.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "graduation-cap",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "graduation-cap.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4918,14 +4957,14 @@
       ]
     },
     {
-      "name": "wifi-low",
+      "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi-low.tsx",
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]
