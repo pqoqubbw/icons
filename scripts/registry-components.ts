@@ -2345,8 +2345,6 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
-    name: "chess-pawn",
-    path: path.join(__dirname, "../icons/chess-pawn.tsx"),
     name: "message-square-check",
     path: path.join(__dirname, "../icons/message-square-check.tsx"),
     registryDependencies: [],
