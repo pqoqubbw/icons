@@ -4930,7 +4930,7 @@
         }
       ]
     },
-     {
+    {
       "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4953,7 +4953,9 @@
         {
           "path": "mailbox.tsx",
           "type": "registry:ui"
-        },
+        }
+      ]
+    },
     {
       "name": "heart-pulse",
       "type": "registry:ui",
@@ -4976,6 +4978,19 @@
       "files": [
         {
           "path": "message-square-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heart-pulse",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "heart-pulse.tsx",
           "type": "registry:ui"
         }
       ]

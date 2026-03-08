@@ -2296,14 +2296,13 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
-   {
+  {
     name: "graduation-cap",
     path: path.join(__dirname, "../icons/graduation-cap.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
   {
-   {
     name: "send",
     path: path.join(__dirname, "../icons/send.tsx"),
     registryDependencies: [],
@@ -2318,8 +2317,18 @@ export const components: ComponentDefinition[] = [
   {
     name: "heart-pulse",
     path: path.join(__dirname, "../icons/heart-pulse.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "message-square-check",
     path: path.join(__dirname, "../icons/message-square-check.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "heart-pulse",
+    path: path.join(__dirname, "../icons/heart-pulse.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },

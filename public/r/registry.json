@@ -4930,7 +4930,7 @@
         }
       ]
     },
-       {
+    {
       "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4958,7 +4958,6 @@
     },
     {
       "name": "heart-pulse",
-      "name": "message-square-check",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
@@ -4966,7 +4965,32 @@
       "files": [
         {
           "path": "heart-pulse.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-square-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
           "path": "message-square-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heart-pulse",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "heart-pulse.tsx",
           "type": "registry:ui"
         }
       ]
