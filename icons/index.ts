@@ -11,6 +11,7 @@ import { AlignHorizontalIcon } from "@/icons/align-horizontal";
 import { AlignLeftIcon } from "@/icons/align-left";
 import { AlignRightIcon } from "@/icons/align-right";
 import { AlignVerticalIcon } from "@/icons/align-vertical";
+import { AmbulanceIcon } from "@/icons/ambulance";
 import { AngryIcon } from "@/icons/angry";
 import { AnnoyedIcon } from "@/icons/annoyed";
 import { ArchiveIcon } from "@/icons/archive";
@@ -213,8 +214,11 @@ import { Maximize2Icon } from "@/icons/maximize-2";
 import { MehIcon } from "@/icons/meh";
 import { MenuIcon } from "@/icons/menu";
 import { MessageCircleIcon } from "@/icons/message-circle";
+import { MessageCircleCheckIcon } from "@/icons/message-circle-check";
 import { MessageCircleDashedIcon } from "@/icons/message-circle-dashed";
 import { MessageCircleMoreIcon } from "@/icons/message-circle-more";
+import { MessageCirclePlusIcon } from "@/icons/message-circle-plus";
+import { MessageCircleXIcon } from "@/icons/message-circle-x";
 import { MessageSquareIcon } from "@/icons/message-square";
 import { MessageSquareCheckIcon } from "@/icons/message-square-check";
 import { MessageSquareDashedIcon } from "@/icons/message-square-dashed";
@@ -380,6 +384,7 @@ import { HandGrabIcon } from "./hand-grab";
 import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
+import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
 
 type IconListItem = {
@@ -404,6 +409,19 @@ const ICON_LIST: IconListItem[] = [
       "paper airplane",
       "paper aeroplane",
       "submit",
+    ],
+  },
+  {
+    name: "heart-pulse",
+    icon: HeartPulseIcon,
+    keywords: [
+      "heartbeat",
+      "pulse",
+      "health",
+      "medical",
+      "cardiac",
+      "ecg",
+      "vital",
     ],
   },
   {
@@ -1435,6 +1453,23 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: "message-circle-check",
+    icon: MessageCircleCheckIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "moderate",
+      "check",
+      "done",
+      "todo",
+      "complete",
+    ],
+  },
+  {
     name: "message-circle-more",
     icon: MessageCircleMoreIcon,
     keywords: [
@@ -1449,6 +1484,39 @@ const ICON_LIST: IconListItem[] = [
       "responding",
       "ellipsis",
       "etc",
+    ],
+  },
+  {
+    name: "message-circle-plus",
+    icon: MessageCirclePlusIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "add",
+    ],
+  },
+  {
+    name: "message-circle-x",
+    icon: MessageCircleXIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "clear",
+      "close",
+      "delete",
+      "remove",
+      "cancel",
+      "silence",
+      "mute",
+      "moderate",
     ],
   },
   {
@@ -2834,6 +2902,23 @@ const ICON_LIST: IconListItem[] = [
     name: "angry",
     icon: AngryIcon,
     keywords: ["mad", "upset", "angry", "furious", "emotion", "face"],
+  },
+  {
+    name: "ambulance",
+    icon: AmbulanceIcon,
+    keywords: [
+      "ambulance",
+      "emergency",
+      "medical",
+      "hospital",
+      "vehicle",
+      "rescue",
+      "siren",
+      "healthcare",
+      "transportation",
+      "urgent",
+      "first aid",
+    ],
   },
   {
     name: "cctv",
