@@ -2333,8 +2333,8 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
-    name: "send",
-    path: path.join(__dirname, "../icons/send.tsx"),
+    name: "wifi-low",
+    path: path.join(__dirname, "../icons/wifi-low.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
@@ -2365,6 +2365,12 @@ export const components: ComponentDefinition[] = [
   {
     name: "chess-bishop",
     path: path.join(__dirname, "../icons/chess-bishop.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+   {
+    name: "send",
+    path: path.join(__dirname, "../icons/send.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },

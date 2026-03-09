@@ -4970,6 +4970,19 @@
       ]
     },
     {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4996,14 +5009,14 @@
       ]
     },
     {
-      "name": "send",
+      "name": "wifi-low",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "send.tsx",
+          "path": "wifi-low.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5021,6 +5034,7 @@
         }
       ]
     },
+    
     {
       "name": "chess-king",
       "type": "registry:ui",
