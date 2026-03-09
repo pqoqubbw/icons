@@ -4957,19 +4957,6 @@
       ]
     },
     {
-      "name": "message-square-check",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "message-square-check.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "send",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4978,6 +4965,19 @@
       "files": [
         {
           "path": "send.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-square-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-square-check.tsx",
           "type": "registry:ui"
         }
       ]

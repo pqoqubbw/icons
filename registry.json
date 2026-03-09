@@ -4931,19 +4931,6 @@
       ]
     },
     {
-      "name": "graduation-cap",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "graduation-cap.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "wifi-low",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4952,19 +4939,6 @@
       "files": [
         {
           "path": "wifi-low.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "graduation-cap",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "graduation-cap.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4981,38 +4955,15 @@
           "type": "registry:ui"
         }
       ]
-<<<<<<< HEAD
-<<<<<<< HEAD
-    },
-    {
-<<<<<<< HEAD
-      "name": "send",
-=======
-      "name": "message-square-check",
->>>>>>> 857afc5 (feat: add message-square-check icon)
-=======
     },
     {
       "name": "send",
->>>>>>> 90857ed (finally)
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "path": "send.tsx",
-=======
-          "path": "message-square-check.tsx",
->>>>>>> 857afc5 (feat: add message-square-check icon)
-          "type": "registry:ui"
-        }
-      ]
-=======
->>>>>>> b378882 (fix: restore graduation-cap icon deleted by mistake)
-=======
           "path": "send.tsx",
           "type": "registry:ui"
         }
@@ -5030,20 +4981,6 @@
           "type": "registry:ui"
         }
       ]
-    },
-    {
-      "name": "send",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "send.tsx",
-          "type": "registry:ui"
-        }
-      ]
->>>>>>> 90857ed (finally)
     }
   ]
 }
