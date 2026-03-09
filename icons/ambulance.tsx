@@ -168,16 +168,15 @@ const AmbulanceIcon = forwardRef<AmbulanceIconHandle, AmbulanceIconProps>(
             initial="normal"
             variants={BODY_VARIANTS}
           >
-            <motion.g
+            <motion.circle
               animate={controls}
+              cx="7"
+              cy="18"
               initial="normal"
+              r="2"
               style={{ transformOrigin: "7px 18px" }}
               variants={WHEEL_VARIANTS}
-            >
-              <circle cx="7" cy="18" r="2" />
-              <line strokeWidth="1.5" x1="7" x2="7" y1="16.5" y2="19.5" />
-              <line strokeWidth="1.5" x1="5.5" x2="8.5" y1="18" y2="18" />
-            </motion.g>
+            />
           </motion.g>
 
           <motion.g
@@ -185,16 +184,15 @@ const AmbulanceIcon = forwardRef<AmbulanceIconHandle, AmbulanceIconProps>(
             initial="normal"
             variants={BODY_VARIANTS}
           >
-            <motion.g
+            <motion.circle
               animate={controls}
+              cx="17"
+              cy="18"
               initial="normal"
+              r="2"
               style={{ transformOrigin: "17px 18px" }}
               variants={WHEEL_VARIANTS}
-            >
-              <circle cx="17" cy="18" r="2" />
-              <line strokeWidth="1.5" x1="17" x2="17" y1="16.5" y2="19.5" />
-              <line strokeWidth="1.5" x1="15.5" x2="18.5" y1="18" y2="18" />
-            </motion.g>
+            />
           </motion.g>
         </svg>
       </div>
