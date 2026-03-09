@@ -2350,10 +2350,4 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
-  {
-    name: "heart-pulse",
-    path: path.join(__dirname, "../icons/heart-pulse.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
 ];
