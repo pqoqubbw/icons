@@ -4957,6 +4957,19 @@
       ]
     },
     {
+      "name": "mailbox",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "mailbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -4996,14 +5009,53 @@
       ]
     },
     {
-      "name": "mailbox",
+      "name": "chess-king",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "mailbox.tsx",
+          "path": "chess-king.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chess-knight",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "chess-knight.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chess-pawn",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "chess-pawn.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chess-bishop",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "chess-bishop.tsx",
           "type": "registry:ui"
         }
       ]
