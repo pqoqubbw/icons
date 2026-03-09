@@ -11,6 +11,7 @@ import { AlignHorizontalIcon } from "@/icons/align-horizontal";
 import { AlignLeftIcon } from "@/icons/align-left";
 import { AlignRightIcon } from "@/icons/align-right";
 import { AlignVerticalIcon } from "@/icons/align-vertical";
+import { AmbulanceIcon } from "@/icons/ambulance";
 import { AngryIcon } from "@/icons/angry";
 import { AnnoyedIcon } from "@/icons/annoyed";
 import { ArchiveIcon } from "@/icons/archive";
@@ -2886,6 +2887,23 @@ const ICON_LIST: IconListItem[] = [
     name: "angry",
     icon: AngryIcon,
     keywords: ["mad", "upset", "angry", "furious", "emotion", "face"],
+  },
+  {
+    name: "ambulance",
+    icon: AmbulanceIcon,
+    keywords: [
+      "ambulance",
+      "emergency",
+      "medical",
+      "hospital",
+      "vehicle",
+      "rescue",
+      "siren",
+      "healthcare",
+      "transportation",
+      "urgent",
+      "first aid",
+    ],
   },
   {
     name: "cctv",
