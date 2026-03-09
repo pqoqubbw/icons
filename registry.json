@@ -4970,19 +4970,6 @@
       ]
     },
     {
-      "name": "send",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "send.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "truck",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5034,7 +5021,6 @@
         }
       ]
     },
-    
     {
       "name": "chess-king",
       "type": "registry:ui",
@@ -5083,6 +5069,19 @@
       "files": [
         {
           "path": "chess-bishop.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "send",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "send.tsx",
           "type": "registry:ui"
         }
       ]
