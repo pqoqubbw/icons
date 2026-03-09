@@ -213,8 +213,11 @@ import { Maximize2Icon } from "@/icons/maximize-2";
 import { MehIcon } from "@/icons/meh";
 import { MenuIcon } from "@/icons/menu";
 import { MessageCircleIcon } from "@/icons/message-circle";
+import { MessageCircleCheckIcon } from "@/icons/message-circle-check";
 import { MessageCircleDashedIcon } from "@/icons/message-circle-dashed";
 import { MessageCircleMoreIcon } from "@/icons/message-circle-more";
+import { MessageCirclePlusIcon } from "@/icons/message-circle-plus";
+import { MessageCircleXIcon } from "@/icons/message-circle-x";
 import { MessageSquareIcon } from "@/icons/message-square";
 import { MessageSquareCheckIcon } from "@/icons/message-square-check";
 import { MessageSquareDashedIcon } from "@/icons/message-square-dashed";
@@ -1434,6 +1437,23 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: "message-circle-check",
+    icon: MessageCircleCheckIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "moderate",
+      "check",
+      "done",
+      "todo",
+      "complete",
+    ],
+  },
+  {
     name: "message-circle-more",
     icon: MessageCircleMoreIcon,
     keywords: [
@@ -1448,6 +1468,39 @@ const ICON_LIST: IconListItem[] = [
       "responding",
       "ellipsis",
       "etc",
+    ],
+  },
+  {
+    name: "message-circle-plus",
+    icon: MessageCirclePlusIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "add",
+    ],
+  },
+  {
+    name: "message-circle-x",
+    icon: MessageCircleXIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "clear",
+      "close",
+      "delete",
+      "remove",
+      "cancel",
+      "silence",
+      "mute",
+      "moderate",
     ],
   },
   {
