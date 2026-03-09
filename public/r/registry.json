@@ -2695,6 +2695,19 @@
       ]
     },
     {
+      "name": "message-circle-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-circle-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "message-square-dashed",
       "type": "registry:ui",
       "registryDependencies": [],

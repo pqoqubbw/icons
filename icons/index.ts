@@ -213,6 +213,7 @@ import { Maximize2Icon } from "@/icons/maximize-2";
 import { MehIcon } from "@/icons/meh";
 import { MenuIcon } from "@/icons/menu";
 import { MessageCircleIcon } from "@/icons/message-circle";
+import { MessageCircleCheckIcon } from "@/icons/message-circle-check";
 import { MessageCircleDashedIcon } from "@/icons/message-circle-dashed";
 import { MessageCircleMoreIcon } from "@/icons/message-circle-more";
 import { MessageSquareIcon } from "@/icons/message-square";
@@ -1431,6 +1432,23 @@ const ICON_LIST: IconListItem[] = [
       "dialog",
       "feedback",
       "speech bubble",
+    ],
+  },
+  {
+    name: "message-circle-check",
+    icon: MessageCircleCheckIcon,
+    keywords: [
+      "comment",
+      "chat",
+      "conversation",
+      "dialog",
+      "feedback",
+      "speech bubble",
+      "moderate",
+      "check",
+      "done",
+      "todo",
+      "complete",
     ],
   },
   {
