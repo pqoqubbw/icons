@@ -134,6 +134,19 @@
       ]
     },
     {
+      "name": "ambulance",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "ambulance.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "angry",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -2695,6 +2708,45 @@
       ]
     },
     {
+      "name": "message-circle-check",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-circle-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-circle-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-circle-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-circle-x",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "message-circle-x.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "message-square-dashed",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5017,6 +5069,19 @@
       "files": [
         {
           "path": "message-square-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heart-pulse",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "heart-pulse.tsx",
           "type": "registry:ui"
         }
       ]

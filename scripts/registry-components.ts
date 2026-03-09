@@ -89,6 +89,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "ambulance",
+    path: path.join(__dirname, "../icons/ambulance.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "angry",
     path: path.join(__dirname, "../icons/angry.tsx"),
     registryDependencies: [],
@@ -1271,6 +1277,24 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "message-circle-check",
+    path: path.join(__dirname, "../icons/message-circle-check.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "message-circle-plus",
+    path: path.join(__dirname, "../icons/message-circle-plus.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "message-circle-x",
+    path: path.join(__dirname, "../icons/message-circle-x.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "message-square-dashed",
     path: path.join(__dirname, "../icons/message-square-dashed.tsx"),
     registryDependencies: [],
@@ -2341,6 +2365,12 @@ export const components: ComponentDefinition[] = [
   {
     name: "chess-bishop",
     path: path.join(__dirname, "../icons/chess-bishop.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "heart-pulse",
+    path: path.join(__dirname, "../icons/heart-pulse.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
