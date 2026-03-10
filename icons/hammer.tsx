@@ -27,7 +27,7 @@ const HAMMER_VARIANTS: Variants = {
   animate: {
     rotate: [0, -20, 25, 0],
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       times: [0, 0.6, 0.8, 1],
       ease: ["easeInOut", "easeOut", "easeOut"],
     },
