@@ -5137,6 +5137,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "axe",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "axe.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

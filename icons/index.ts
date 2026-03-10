@@ -39,6 +39,7 @@ import { AtSignIcon } from "@/icons/at-sign";
 import { AtomIcon } from "@/icons/atom";
 import { AttachFileIcon } from "@/icons/attach-file";
 import { AudioLinesIcon } from "@/icons/audio-lines";
+import { AxeIcon } from "@/icons/axe";
 import { BadgeAlertIcon } from "@/icons/badge-alert";
 import { BadgePercentIcon } from "@/icons/badge-percent";
 import { BanIcon } from "@/icons/ban";
@@ -400,6 +401,24 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "axe",
+    icon: AxeIcon,
+    keywords: [
+      "hatchet",
+      "weapon",
+      "chop",
+      "sharp",
+      "equipment",
+      "fireman",
+      "firefighter",
+      "brigade",
+      "lumberjack",
+      "woodcutter",
+      "logger",
+      "forestry",
+    ],
+  },
   {
     name: "hammer",
     icon: HammerIcon,
