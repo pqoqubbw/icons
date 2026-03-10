@@ -5150,6 +5150,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "pickaxe",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "pickaxe.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

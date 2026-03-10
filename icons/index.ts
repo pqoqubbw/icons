@@ -240,6 +240,7 @@ import { PartyPopperIcon } from "@/icons/party-popper";
 import { PauseIcon } from "@/icons/pause";
 import { PenToolIcon } from "@/icons/pen-tool";
 import { PhilippinePesoIcon } from "@/icons/philippine-peso";
+import { PickaxeIcon } from "@/icons/pickaxe";
 import { PlayIcon } from "@/icons/play";
 import { PlugZapIcon } from "@/icons/plug-zap";
 import { PlusIcon } from "@/icons/plus";
@@ -417,6 +418,23 @@ const ICON_LIST: IconListItem[] = [
       "woodcutter",
       "logger",
       "forestry",
+    ],
+  },
+  {
+    name: "pickaxe",
+    icon: PickaxeIcon,
+    keywords: [
+      "mining",
+      "mine",
+      "land worker",
+      "extraction",
+      "labor",
+      "construction",
+      "progress",
+      "advancement",
+      "crafting",
+      "building",
+      "creation",
     ],
   },
   {
