@@ -390,6 +390,7 @@ import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
+import { GavelIcon } from "./gavel";
 
 type IconListItem = {
   name: string;
@@ -398,6 +399,23 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "gavel",
+    icon: GavelIcon,
+    keywords: [
+      "justice",
+      "law",
+      "court",
+      "judgment",
+      "legal",
+      "hands",
+      "penalty",
+      "decision",
+      "authority",
+      "hammer",
+      "mallet",
+    ],
+  },
   {
     name: "mailbox",
     icon: MailboxIcon,

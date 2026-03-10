@@ -2386,4 +2386,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "gavel",
+    path: path.join(__dirname, "../icons/gavel.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];

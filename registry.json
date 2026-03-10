@@ -5111,6 +5111,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "gavel",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "gavel.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
