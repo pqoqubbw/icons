@@ -167,6 +167,7 @@ import { GithubIcon } from "@/icons/github";
 import { GripIcon } from "@/icons/grip";
 import { GripHorizontalIcon } from "@/icons/grip-horizontal";
 import { GripVerticalIcon } from "@/icons/grip-vertical";
+import { HammerIcon } from "@/icons/hammer";
 import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
@@ -373,6 +374,7 @@ import { FolderSyncIcon } from "./folder-sync";
 import { FolderTreeIcon } from "./folder-tree";
 import { FolderUpIcon } from "./folder-up";
 import { FolderXIcon } from "./folder-x";
+import { GavelIcon } from "./gavel";
 import { GitBranchIcon } from "./git-branch";
 import { GitCompareIcon } from "./git-compare";
 import { GitCompareArrowsIcon } from "./git-compare-arrows";
@@ -390,7 +392,6 @@ import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
-import { GavelIcon } from "./gavel";
 
 type IconListItem = {
   name: string;
@@ -399,6 +400,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "hammer",
+    icon: HammerIcon,
+    keywords: ["mallet", "nails", "diy", "toolbox", "build", "construction"],
+  },
   {
     name: "gavel",
     icon: GavelIcon,

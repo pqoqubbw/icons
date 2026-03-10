@@ -2392,4 +2392,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "hammer",
+    path: path.join(__dirname, "../icons/hammer.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];

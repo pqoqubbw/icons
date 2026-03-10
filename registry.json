@@ -5124,6 +5124,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "hammer",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hammer.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
