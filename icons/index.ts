@@ -126,6 +126,7 @@ import { CpuIcon } from "@/icons/cpu";
 import { CursorClickIcon } from "@/icons/cursor-click";
 import { DeleteIcon } from "@/icons/delete";
 import { DatabaseBackupIcon } from "@/icons/desktop-backup";
+import { Disc3Icon } from "@/icons/disc-3";
 import { DiscordIcon } from "@/icons/discord";
 import { DollarSignIcon } from "@/icons/dollar-sign";
 import { DownloadIcon } from "@/icons/download";
@@ -3605,6 +3606,22 @@ const ICON_LIST: IconListItem[] = [
       "sync",
       "recovery",
       "data",
+    ],
+  },
+  {
+    name: "disc-3",
+    icon: Disc3Icon,
+    keywords: [
+      "disc",
+      "vinyl",
+      "record",
+      "music",
+      "audio",
+      "spin",
+      "rotate",
+      "cd",
+      "dvd",
+      "media",
     ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));

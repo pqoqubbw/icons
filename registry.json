@@ -5176,6 +5176,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "disc-3",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "disc-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
