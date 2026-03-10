@@ -2386,4 +2386,28 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "gavel",
+    path: path.join(__dirname, "../icons/gavel.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "hammer",
+    path: path.join(__dirname, "../icons/hammer.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "axe",
+    path: path.join(__dirname, "../icons/axe.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "pickaxe",
+    path: path.join(__dirname, "../icons/pickaxe.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];

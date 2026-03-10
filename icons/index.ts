@@ -39,6 +39,7 @@ import { AtSignIcon } from "@/icons/at-sign";
 import { AtomIcon } from "@/icons/atom";
 import { AttachFileIcon } from "@/icons/attach-file";
 import { AudioLinesIcon } from "@/icons/audio-lines";
+import { AxeIcon } from "@/icons/axe";
 import { BadgeAlertIcon } from "@/icons/badge-alert";
 import { BadgePercentIcon } from "@/icons/badge-percent";
 import { BanIcon } from "@/icons/ban";
@@ -167,6 +168,7 @@ import { GithubIcon } from "@/icons/github";
 import { GripIcon } from "@/icons/grip";
 import { GripHorizontalIcon } from "@/icons/grip-horizontal";
 import { GripVerticalIcon } from "@/icons/grip-vertical";
+import { HammerIcon } from "@/icons/hammer";
 import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
@@ -238,6 +240,7 @@ import { PartyPopperIcon } from "@/icons/party-popper";
 import { PauseIcon } from "@/icons/pause";
 import { PenToolIcon } from "@/icons/pen-tool";
 import { PhilippinePesoIcon } from "@/icons/philippine-peso";
+import { PickaxeIcon } from "@/icons/pickaxe";
 import { PlayIcon } from "@/icons/play";
 import { PlugZapIcon } from "@/icons/plug-zap";
 import { PlusIcon } from "@/icons/plus";
@@ -373,6 +376,7 @@ import { FolderSyncIcon } from "./folder-sync";
 import { FolderTreeIcon } from "./folder-tree";
 import { FolderUpIcon } from "./folder-up";
 import { FolderXIcon } from "./folder-x";
+import { GavelIcon } from "./gavel";
 import { GitBranchIcon } from "./git-branch";
 import { GitCompareIcon } from "./git-compare";
 import { GitCompareArrowsIcon } from "./git-compare-arrows";
@@ -398,6 +402,63 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "axe",
+    icon: AxeIcon,
+    keywords: [
+      "hatchet",
+      "weapon",
+      "chop",
+      "sharp",
+      "equipment",
+      "fireman",
+      "firefighter",
+      "brigade",
+      "lumberjack",
+      "woodcutter",
+      "logger",
+      "forestry",
+    ],
+  },
+  {
+    name: "pickaxe",
+    icon: PickaxeIcon,
+    keywords: [
+      "mining",
+      "mine",
+      "land worker",
+      "extraction",
+      "labor",
+      "construction",
+      "progress",
+      "advancement",
+      "crafting",
+      "building",
+      "creation",
+    ],
+  },
+  {
+    name: "hammer",
+    icon: HammerIcon,
+    keywords: ["mallet", "nails", "diy", "toolbox", "build", "construction"],
+  },
+  {
+    name: "gavel",
+    icon: GavelIcon,
+    keywords: [
+      "justice",
+      "law",
+      "court",
+      "judgment",
+      "legal",
+      "hands",
+      "penalty",
+      "decision",
+      "authority",
+      "hammer",
+      "mallet",
+    ],
+  },
   {
     name: "mailbox",
     icon: MailboxIcon,
