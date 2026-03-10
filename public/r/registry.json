@@ -5163,6 +5163,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "desktop-backup",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "desktop-backup.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

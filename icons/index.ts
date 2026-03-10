@@ -125,6 +125,7 @@ import { CopyIcon } from "@/icons/copy";
 import { CpuIcon } from "@/icons/cpu";
 import { CursorClickIcon } from "@/icons/cursor-click";
 import { DeleteIcon } from "@/icons/delete";
+import { DatabaseBackupIcon } from "@/icons/desktop-backup";
 import { DiscordIcon } from "@/icons/discord";
 import { DollarSignIcon } from "@/icons/dollar-sign";
 import { DownloadIcon } from "@/icons/download";
@@ -3591,6 +3592,20 @@ const ICON_LIST: IconListItem[] = [
     name: "wifi-low",
     icon: WifiLowIcon,
     keywords: ["internet", "electronic", "connection", "data"],
+  },
+  {
+    name: "database-backup",
+    icon: DatabaseBackupIcon,
+    keywords: [
+      "database",
+      "backup",
+      "restore",
+      "storage",
+      "reload",
+      "sync",
+      "recovery",
+      "data",
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

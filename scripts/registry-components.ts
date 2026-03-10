@@ -2410,4 +2410,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "desktop-backup",
+    path: path.join(__dirname, "../icons/desktop-backup.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
