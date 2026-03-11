@@ -193,6 +193,8 @@ import { LayersIcon } from "@/icons/layers";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
 import { LinkIcon } from "@/icons/link";
 import { LinkedinIcon } from "@/icons/linkedin";
+import { Loader } from "@/icons/loader";
+import { LoaderCircle } from "@/icons/loader-circle";
 import { LoaderPinwheelIcon } from "@/icons/loader-pinwheel";
 import { LockIcon } from "@/icons/lock";
 import { LockKeyholeIcon } from "@/icons/lock-keyhole";
@@ -3591,6 +3593,34 @@ const ICON_LIST: IconListItem[] = [
     name: "wifi-low",
     icon: WifiLowIcon,
     keywords: ["internet", "electronic", "connection", "data"],
+  },
+  {
+    name: "loader",
+    icon: Loader,
+    keywords: [
+      "loader",
+      "loading",
+      "spinner",
+      "spin",
+      "rotate",
+      "progress",
+      "wait",
+      "processing",
+    ],
+  },
+  {
+    name: "loader-circle",
+    icon: LoaderCircle,
+    keywords: [
+      "loader",
+      "loading",
+      "spinner",
+      "spin",
+      "circle",
+      "progress",
+      "wait",
+      "processing",
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
