@@ -2411,14 +2411,14 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
-    name: "desktop-backup",
-    path: path.join(__dirname, "../icons/desktop-backup.tsx"),
+    name: "disc-3",
+    path: path.join(__dirname, "../icons/disc-3.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
   {
-    name: "disc-3",
-    path: path.join(__dirname, "../icons/disc-3.tsx"),
+    name: "database-backup",
+    path: path.join(__dirname, "../icons/database-backup.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
