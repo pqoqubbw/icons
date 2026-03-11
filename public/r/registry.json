@@ -5165,19 +5165,6 @@
       ]
     },
     {
-      "name": "desktop-backup",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "desktop-backup.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "disc-3",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5186,6 +5173,45 @@
       "files": [
         {
           "path": "disc-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "database-backup",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "database-backup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loader-circle",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "loader-circle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "loader",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "loader.tsx",
           "type": "registry:ui"
         }
       ]
