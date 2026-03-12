@@ -26,8 +26,8 @@ const STRAW_VARIANTS: Variants = {
     },
   },
   animate: {
-    y: [0, -2.2, 0.5, 0],
-    scaleY: [1, 1.18, 0.97, 1],
+    y: [0, -0.85, 0.15, 0],
+    scaleY: [1, 1.06, 0.99, 1],
     transition: {
       duration: 0.5,
       ease: [0.34, 1.56, 0.64, 1],
