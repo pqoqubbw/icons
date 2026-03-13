@@ -3,6 +3,7 @@ import { CliBlock } from "@/components/cli-block";
 import { CommentBlock } from "@/components/comment";
 import { IconsList } from "@/components/list";
 import { LINK } from "@/constants";
+import { Suspense } from "react";
 
 const Home = () => {
   const icons = getIcons();
@@ -50,9 +51,13 @@ const Home = () => {
           Lucide
         </a>
       </p>
-      <CliBlock icons={icons.filter((icon) => icon.name.length <= 20)} />
-      <CommentBlock />
-      <IconsList icons={icons} />
+        <Suspense>
+          <CliBlock icons={icons.filter((icon) => icon.name.length <= 20)} />
+        </Suspense>
+        <CommentBlock />
+        <Suspense>
+          <IconsList icons={icons} />
+        </Suspense>
     </section>
   );
 };

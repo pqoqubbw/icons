@@ -46,4 +46,8 @@ const PACKAGE_MANAGER = {
   BUN: "bun",
 } as const;
 
-export { LINK, PACKAGE_MANAGER, SITE };
+export type PackageManager = (typeof PACKAGE_MANAGER)[keyof typeof PACKAGE_MANAGER];
+
+const PACKAGE_MANAGERS = Object.values(PACKAGE_MANAGER);
+
+export { LINK, PACKAGE_MANAGER, PACKAGE_MANAGERS, SITE };

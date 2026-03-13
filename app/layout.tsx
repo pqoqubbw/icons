@@ -10,7 +10,6 @@ import { Toaster } from "sonner";
 import { Analytics } from "@/components/analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { PackageNameProvider } from "@/providers/package-name";
 import { ThemeProvider } from "@/providers/theme";
 import { JsonLdScripts } from "@/seo/json-ld";
 import { baseMetadata } from "@/seo/metadata";
@@ -81,7 +80,6 @@ export default function RootLayout({
             disableTransitionOnChange
             enableSystem
           >
-            <PackageNameProvider>
               <Header />
               <main className="flex-1">
                 <NuqsAdapter>
@@ -113,7 +111,6 @@ export default function RootLayout({
               </main>
               <Analytics />
               <Footer />
-            </PackageNameProvider>
           </ThemeProvider>
         </div>
       </body>

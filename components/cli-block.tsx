@@ -10,10 +10,10 @@ import type { IconStatus } from "@/components/ui/icon-state";
 import { IconState } from "@/components/ui/icon-state";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TextLoop } from "@/components/ui/text-loop";
-import { PACKAGE_MANAGER } from "@/constants";
+import { PACKAGE_MANAGER, PACKAGE_MANAGERS } from "@/constants";
 import { getPackageManagerPrefix } from "@/lib/get-package-manager-prefix";
 import { cn } from "@/lib/utils";
-import { usePackageNameContext } from "@/providers/package-name";
+import { parseAsStringLiteral, useQueryState } from "nuqs";
 
 type CliBlockProps = {
   icons?: Icon[];
@@ -26,7 +26,12 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
   const [_, startTransition] = useTransition();
   const currentIconName = useRef(staticIconName || "");
 
-  const { packageName, setPackageName } = usePackageNameContext();
+    const [packageName, setPackageName] = useQueryState(
+    "pm",
+    parseAsStringLiteral(PACKAGE_MANAGERS)
+      .withDefault(PACKAGE_MANAGER.PNPM)
+      .withOptions({ shallow: true })
+  );
 
   const isStatic = !!staticIconName;
 
@@ -60,17 +65,17 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
     >
       <Tabs
         className="w-full"
-        onValueChange={setPackageName}
+        onValueChange={(v)=> setPackageName(v)}
         value={packageName}
       >
         <TabsList className="w-full" onClick={(e) => e.stopPropagation()}>
-          {Object.values(PACKAGE_MANAGER).map((pm) => (
+          {PACKAGE_MANAGERS.map((pm) => (
             <TabsTrigger key={pm} value={pm}>
               {pm}
             </TabsTrigger>
           ))}
         </TabsList>
-        {Object.values(PACKAGE_MANAGER).map((pm) => (
+        {PACKAGE_MANAGERS.map((pm) => (
           <TabsContent
             className="supports-[corner-shape:squircle]:corner-tr-squircle supports-[corner-shape:squircle]:corner-br-squircle supports-[corner-shape:squircle]:corner-bl-squircle mt-px overflow-hidden rounded-tr-[10px] rounded-br-[10px] rounded-bl-[10px] focus-within:outline-offset-0 focus-visible:outline-1 focus-visible:outline-primary supports-[corner-shape:squircle]:rounded-tr-[14px] supports-[corner-shape:squircle]:rounded-br-[14px] supports-[corner-shape:squircle]:rounded-bl-[14px]"
             key={pm}

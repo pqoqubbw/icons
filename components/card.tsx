@@ -3,7 +3,7 @@
 import { useOpenPanel } from "@openpanel/nextjs";
 import { Copy, PauseIcon, PlayIcon, Terminal } from "lucide-react";
 import type { RefObject } from "react";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { getIconContent } from "@/actions/get-icon-content";
 import type { Icon } from "@/actions/get-icons";
@@ -17,11 +17,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { SITE } from "@/constants";
+import { PACKAGE_MANAGER, PackageManager, SITE } from "@/constants";
 import { useTouchDevice } from "@/hooks/use-touch-device";
 import { getPackageManagerPrefix } from "@/lib/get-package-manager-prefix";
 import { cn } from "@/lib/utils";
-import { usePackageNameContext } from "@/providers/package-name";
+import { useQueryState } from "nuqs";
 
 const V0Icon = ({ className }: { className?: string }) => {
   return (
@@ -125,7 +125,7 @@ const Title = ({ children }: { children: React.ReactNode }) => {
 
 const CopyCLIAction = ({ name }: Pick<Icon, "name">) => {
   const op = useOpenPanel();
-  const { packageName } = usePackageNameContext();
+    const [packageName] = useQueryState("pm");
 
   const [state, setState] = useState<IconStatus>("idle");
 
@@ -135,7 +135,7 @@ const CopyCLIAction = ({ name }: Pick<Icon, "name">) => {
     try {
       op.track(ANALYTIC_EVENT.ICON_COPY_TERMINAL, { icon: `${name}.tsx` });
       await navigator.clipboard.writeText(
-        `${getPackageManagerPrefix(packageName)} shadcn@latest add "${SITE.URL}/r/${name}.json"`
+        `${getPackageManagerPrefix(packageName as PackageManager ?? PACKAGE_MANAGER.PNPM)} shadcn@latest add "${SITE.URL}/r/${name}.json"`
       );
       setState("done");
       setTimeout(() => setState("idle"), 2000);

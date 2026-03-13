@@ -2,6 +2,7 @@ import { ArrowLeftIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import { CliBlock } from "@/components/cli-block";
 import { LINK, SITE } from "@/constants";
@@ -132,7 +133,9 @@ const IconPage = async ({ params }: Props) => {
         </Link>
 
         <div className="flex w-full flex-col gap-6 min-[880px]:flex-row min-[880px]:items-center">
-          <IconCard icon={icon} />
+          <Suspense>
+            <IconCard icon={icon} />
+          </Suspense>
 
           <div className="flex h-full flex-col gap-1">
             <h1 className="font-sans text-[28px] min-[640px]:text-[36px]">
@@ -141,17 +144,21 @@ const IconPage = async ({ params }: Props) => {
             <p className="font-mono text-secondary text-sm">
               Animated {icon.name.replace(/-/g, " ")} icon for React
             </p>
-            <CliBlock
-              className="mt-7 hidden px-0 min-[880px]:flex"
-              staticIconName={slug}
-            />
+            <Suspense>
+              <CliBlock
+                className="mt-7 hidden px-0 min-[880px]:flex"
+                staticIconName={slug}
+              />
+            </Suspense>
           </div>
         </div>
 
-        <CliBlock
-          className="mt-8 flex px-0 min-[880px]:hidden"
-          staticIconName={slug}
-        />
+        <Suspense>
+          <CliBlock
+            className="mt-8 flex px-0 min-[880px]:hidden"
+            staticIconName={slug}
+          />
+        </Suspense>
 
         <div className="mt-12">
           <h2 className="mb-3 font-sans text-xl">Keywords</h2>
@@ -167,7 +174,9 @@ const IconPage = async ({ params }: Props) => {
           </div>
         </div>
 
-        <SimilarIcons currentIcon={icon} />
+        <Suspense>
+          <SimilarIcons currentIcon={icon} />
+        </Suspense>
       </section>
     </>
   );
