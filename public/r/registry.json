@@ -5202,6 +5202,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "concierge-bell",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "concierge-bell.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

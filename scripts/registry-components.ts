@@ -2428,4 +2428,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "concierge-bell",
+    path: path.join(__dirname, "../icons/concierge-bell.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
