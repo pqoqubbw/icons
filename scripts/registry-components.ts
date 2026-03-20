@@ -695,6 +695,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "cup-soda",
+    path: path.join(__dirname, "../icons/cup-soda.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "cog",
     path: path.join(__dirname, "../icons/cog.tsx"),
     registryDependencies: [],
