@@ -123,6 +123,7 @@ import { ContrastIcon } from "@/icons/contrast";
 import { CookingPotIcon } from "@/icons/cooking-pot";
 import { CopyIcon } from "@/icons/copy";
 import { CpuIcon } from "@/icons/cpu";
+import { CupSodaIcon } from "@/icons/cup-soda";
 import { CursorClickIcon } from "@/icons/cursor-click";
 import { DatabaseBackupIcon } from "@/icons/database-backup";
 import { DeleteIcon } from "@/icons/delete";
@@ -3080,6 +3081,11 @@ const ICON_LIST: IconListItem[] = [
       "hot",
       "beverage",
     ],
+  },
+  {
+    name: "cup-soda",
+    icon: CupSodaIcon,
+    keywords: ["beverage", "cup", "drink", "soda", "straw", "water"],
   },
   {
     name: "arrow-down-a-z",

@@ -1447,6 +1447,19 @@
       ]
     },
     {
+      "name": "cup-soda",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cup-soda.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cog",
       "type": "registry:ui",
       "registryDependencies": [],
