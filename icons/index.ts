@@ -196,6 +196,8 @@ import { LayersIcon } from "@/icons/layers";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
 import { LinkIcon } from "@/icons/link";
 import { LinkedinIcon } from "@/icons/linkedin";
+import { LoaderIcon } from "@/icons/loader";
+import { LoaderCircleIcon } from "@/icons/loader-circle";
 import { LoaderPinwheelIcon } from "@/icons/loader-pinwheel";
 import { LockIcon } from "@/icons/lock";
 import { LockKeyholeIcon } from "@/icons/lock-keyhole";
@@ -3628,6 +3630,34 @@ const ICON_LIST: IconListItem[] = [
       "cd",
       "dvd",
       "media",
+    ],
+  },
+  {
+    name: "loader-circle",
+    icon: LoaderCircleIcon,
+    keywords: [
+      "loader",
+      "loading",
+      "spinner",
+      "spin",
+      "circle",
+      "progress",
+      "wait",
+      "processing",
+    ],
+  },
+  {
+    name: "loader",
+    icon: LoaderIcon,
+    keywords: [
+      "loader",
+      "loading",
+      "spinner",
+      "spin",
+      "rotate",
+      "progress",
+      "wait",
+      "processing",
     ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
