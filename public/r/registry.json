@@ -5204,27 +5204,14 @@
       ]
     },
     {
-      "name": "loader-circle",
+      "name": "layout-grid",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "loader-circle.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "loader",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "loader.tsx",
+          "path": "layout-grid.tsx",
           "type": "registry:ui"
         }
       ]
