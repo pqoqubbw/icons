@@ -26,10 +26,10 @@ const STEM_VARIANTS: Variants = {
 const BELL_VARIANTS: Variants = {
   normal: { rotate: 0 },
   animate: {
-    rotate: [0, -4, 4, -4, 4, -3, 3, 0],
+    rotate: [0, -2, 2, -2, 2, -1, 1, 0],
     transition: {
       delay: 0.1,
-      duration: 0.4,
+      duration: 0.28,
       ease: "easeInOut",
     },
   },
@@ -92,7 +92,7 @@ const ConciergeBellIcon = forwardRef<ConciergeBellHandle, ConciergeBellProps>(
           <motion.g
             animate={controls}
             initial="normal"
-            style={{ originX: "12px", originY: "16px" }}
+            style={{ originX: "50%", originY: "100%" }}
             variants={BELL_VARIANTS}
           >
             <path d="M20 16a8 8 0 1 0-16 0" />
