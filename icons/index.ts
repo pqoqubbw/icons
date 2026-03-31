@@ -204,6 +204,7 @@ import { LockIcon } from "@/icons/lock";
 import { LockKeyholeIcon } from "@/icons/lock-keyhole";
 import { LockKeyholeOpenIcon } from "@/icons/lock-keyhole-open";
 import { LockOpenIcon } from "@/icons/lock-open";
+import { LogInIcon } from "@/icons/login";
 import { LogoutIcon } from "@/icons/logout";
 import { MailCheckIcon } from "@/icons/mail-check";
 import { MailboxIcon } from "@/icons/mailbox";
@@ -422,6 +423,11 @@ const ICON_LIST: IconListItem[] = [
       "window",
       "interface",
     ],
+  },
+  {
+    name: "login",
+    icon: LogInIcon,
+    keywords: ["sign in", "arrow", "enter", "auth"],
   },
   {
     name: "axe",
