@@ -7,7 +7,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type ComponentDefinition = Partial<
   Pick<
-    Schema,
     | "dependencies"
     | "devDependencies"
     | "registryDependencies"
@@ -2429,6 +2428,7 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+<<<<<<< HEAD
     name: "loader-circle",
     path: path.join(__dirname, "../icons/loader-circle.tsx"),
     registryDependencies: [],
@@ -2437,6 +2437,10 @@ export const components: ComponentDefinition[] = [
   {
     name: "loader",
     path: path.join(__dirname, "../icons/loader.tsx"),
+=======
+    name: "concierge-bell",
+    path: path.join(__dirname, "../icons/concierge-bell.tsx"),
+>>>>>>> 241ca59 (Add concierge-bell-icon animated icon)
     registryDependencies: [],
     dependencies: ["motion"],
   },

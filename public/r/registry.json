@@ -146,7 +146,6 @@
         }
       ]
     },
-    {
       "name": "angry",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5204,13 +5203,18 @@
       ]
     },
     {
+<<<<<<< HEAD
       "name": "loader-circle",
+=======
+      "name": "concierge-bell",
+>>>>>>> 241ca59 (Add concierge-bell-icon animated icon)
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
+<<<<<<< HEAD
           "path": "loader-circle.tsx",
           "type": "registry:ui"
         }
@@ -5225,6 +5229,9 @@
       "files": [
         {
           "path": "loader.tsx",
+=======
+          "path": "concierge-bell.tsx",
+>>>>>>> 241ca59 (Add concierge-bell-icon animated icon)
           "type": "registry:ui"
         }
       ]

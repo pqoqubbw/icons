@@ -350,6 +350,7 @@ import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
+import { ConciergeBellIcon } from "./concierge-bell";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
 import { CornerLeftDownIcon } from "./corner-left-down";
@@ -689,6 +690,11 @@ const ICON_LIST: IconListItem[] = [
     name: "bell-electric",
     icon: BellElectricIcon,
     keywords: ["bell", "electric", "notification", "alert"],
+  },
+  {
+    name: "concierge-bell",
+    icon: ConciergeBellIcon,
+    keywords: ["bell", "icon-bell", "notification", "alert"],
   },
   {
     name: "corner-up-right",
