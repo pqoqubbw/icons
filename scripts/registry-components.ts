@@ -2440,4 +2440,16 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "loader-circle",
+    path: path.join(__dirname, "../icons/loader-circle.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "loader",
+    path: path.join(__dirname, "../icons/loader.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
