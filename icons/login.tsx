@@ -18,8 +18,8 @@ interface LogInIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const PATH_VARIANTS: Variants = {
   animate: {
-    x: 2,
-    translateX: [0, -3, 0],
+    x: -2,
+    translateX: [0, 3, 0],
     transition: {
       duration: 0.4,
     },
@@ -83,14 +83,14 @@ const LogInIcon = forwardRef<LogInIconHandle, LogInIconProps>(
           <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
           <motion.polyline
             animate={controls}
-            points="8 17 12 12 8 7"
+            points="10 17 15 12 10 7"
             variants={PATH_VARIANTS}
           />
           <motion.line
             animate={controls}
             variants={PATH_VARIANTS}
-            x1="2"
-            x2="12"
+            x1="3"
+            x2="15"
             y1="12"
             y2="12"
           />
