@@ -2429,6 +2429,18 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "layout-grid",
+    path: path.join(__dirname, "../icons/layout-grid.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "concierge-bell",
+    path: path.join(__dirname, "../icons/concierge-bell.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "loader-circle",
     path: path.join(__dirname, "../icons/loader-circle.tsx"),
     registryDependencies: [],
@@ -2437,12 +2449,6 @@ export const components: ComponentDefinition[] = [
   {
     name: "loader",
     path: path.join(__dirname, "../icons/loader.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
-  {
-    name: "concierge-bell",
-    path: path.join(__dirname, "../icons/concierge-bell.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },

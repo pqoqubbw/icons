@@ -193,6 +193,7 @@ import { LanguagesIcon } from "@/icons/languages";
 import { LaptopMinimalCheckIcon } from "@/icons/laptop-minimal-check";
 import { LaughIcon } from "@/icons/laugh";
 import { LayersIcon } from "@/icons/layers";
+import { LayoutGridIcon } from "@/icons/layout-grid";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
 import { LinkIcon } from "@/icons/link";
 import { LinkedinIcon } from "@/icons/linkedin";
@@ -408,6 +409,20 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "layout-grid",
+    icon: LayoutGridIcon,
+    keywords: [
+      "layout",
+      "grid",
+      "dashboard",
+      "tiles",
+      "panels",
+      "gallery",
+      "window",
+      "interface",
+    ],
+  },
   {
     name: "axe",
     icon: AxeIcon,

@@ -5204,6 +5204,32 @@
       ]
     },
     {
+      "name": "layout-grid",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "layout-grid.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "concierge-bell",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "concierge-bell.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "loader-circle",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -5225,19 +5251,6 @@
       "files": [
         {
           "path": "loader.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "concierge-bell",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "concierge-bell.tsx",
           "type": "registry:ui"
         }
       ]
