@@ -5254,6 +5254,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "login",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "login.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

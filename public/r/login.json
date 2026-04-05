@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login",
+  "type": "registry:ui",
+  "registryDependencies": [],
+  "dependencies": ["motion"],
+  "devDependencies": [],
+  "files": [
+    {
+      "path": "login.tsx",
+      "content": "\"use client\";\n\nimport type { Variants } from \"motion/react\";\nimport { motion, useAnimation } from \"motion/react\";\nimport type { HTMLAttributes } from \"react\";\nimport { forwardRef, useCallback, useImperativeHandle, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface LogInIconHandle {\n  startAnimation: () => void;\n  stopAnimation: () => void;\n}\n\ninterface LogInIconProps extends HTMLAttributes<HTMLDivElement> {\n  size?: number;\n}\n\nconst PATH_VARIANTS: Variants = {\n  animate: {\n    x: -2,\n    translateX: [0, 3, 0],\n    transition: {\n      duration: 0.4,\n    },\n  },\n};\n\nconst LogInIcon = forwardRef<LogInIconHandle, LogInIconProps>(\n  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {\n    const controls = useAnimation();\n    const isControlledRef = useRef(false);\n\n    useImperativeHandle(ref, () => {\n      isControlledRef.current = true;\n\n      return {\n        startAnimation: () => controls.start(\"animate\"),\n        stopAnimation: () => controls.start(\"normal\"),\n      };\n    });\n\n    const handleMouseEnter = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseEnter?.(e);\n        } else {\n          controls.start(\"animate\");\n        }\n      },\n      [controls, onMouseEnter]\n    );\n\n    const handleMouseLeave = useCallback(\n      (e: React.MouseEvent<HTMLDivElement>) => {\n        if (isControlledRef.current) {\n          onMouseLeave?.(e);\n        } else {\n          controls.start(\"normal\");\n        }\n      },\n      [controls, onMouseLeave]\n    );\n\n    return (\n      <div\n        className={cn(className)}\n        onMouseEnter={handleMouseEnter}\n        onMouseLeave={handleMouseLeave}\n        {...props}\n      >\n        <svg\n          fill=\"none\"\n          height={size}\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n          width={size}\n          xmlns=\"http://www.w3.org/2000/svg\"\n        >\n          <path d=\"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4\" />\n          <motion.polyline\n            animate={controls}\n            points=\"10 17 15 12 10 7\"\n            variants={PATH_VARIANTS}\n          />\n          <motion.line\n            animate={controls}\n            variants={PATH_VARIANTS}\n            x1=\"3\"\n            x2=\"15\"\n            y1=\"12\"\n            y2=\"12\"\n          />\n        </svg>\n      </div>\n    );\n  }\n);\n\nLogInIcon.displayName = \"LogInIcon\";\n\nexport { LogInIcon };\n",
+      "type": "registry:ui"
+    }
+  ]
+}
