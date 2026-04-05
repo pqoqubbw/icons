@@ -109,4 +109,5 @@ const WavesIcon = forwardRef<WavesIconHandle, WavesIconProps>(
 );
 
 WavesIcon.displayName = "WavesIcon";
+
 export { WavesIcon };

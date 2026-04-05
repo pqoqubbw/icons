@@ -12,5 +12,5 @@ const getIcons = (): Icon[] => {
   }));
 };
 
-export { getIcons };
 export type { Icon };
+export { getIcons };

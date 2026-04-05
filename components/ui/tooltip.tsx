@@ -93,10 +93,10 @@ const TooltipContent = ({
 
 export {
   Tooltip,
-  TooltipTrigger,
+  TooltipArrow,
   TooltipContent,
   TooltipPortal,
   TooltipPositioner,
-  TooltipArrow,
   TooltipProvider,
+  TooltipTrigger,
 };

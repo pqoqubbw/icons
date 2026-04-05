@@ -125,4 +125,5 @@ const GripVerticalIcon = forwardRef<
 });
 
 GripVerticalIcon.displayName = "GripVerticalIcon";
+
 export { GripVerticalIcon };

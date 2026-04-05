@@ -83,7 +83,7 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
                 selectedAmount === amount.price.toString() ? "" : undefined
               }
               data-unchecked={
-                selectedAmount !== amount.price.toString() ? "" : undefined
+                selectedAmount === amount.price.toString() ? undefined : ""
               }
               htmlFor={amount.price.toString()}
               key={amount.price}

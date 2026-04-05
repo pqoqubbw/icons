@@ -33,8 +33,8 @@
 
 @layer base {
   * {
-    scrollbar-width: thin;
     scrollbar-color: var(--color-neutral-700) transparent;
+    scrollbar-width: thin;
   }
 
   html {
@@ -49,21 +49,21 @@
   }
 
   body {
-    background-color: var(--background);
-    color: var(--foreground);
     overscroll-behavior: none;
+    color: var(--foreground);
+    background-color: var(--background);
   }
 
   ::selection {
-    background-color: var(--primary);
     color: white;
+    background-color: var(--primary);
   }
 
   .root {
-    isolation: isolate;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    isolation: isolate;
   }
 
   ::-webkit-scrollbar {

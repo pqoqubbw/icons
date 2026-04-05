@@ -10,7 +10,7 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const fontsDir = path.join(__dirname, "..", "fonts");
+const fontsDir = path.join(import.meta.dirname, "..", "fonts");
 
 // Ensure fonts directory exists
 if (!fs.existsSync(fontsDir)) {

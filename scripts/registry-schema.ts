@@ -11,10 +11,10 @@ export type RegistryType =
   | "registry:item";
 
 export interface RegistryFile {
-  path: string;
   content?: string;
-  type: RegistryType;
+  path: string;
   target?: string;
+  type: RegistryType;
 }
 
 export interface TailwindConfig {
@@ -22,27 +22,27 @@ export interface TailwindConfig {
 }
 
 export interface CssVars {
-  theme?: Record<string, string>;
-  light?: Record<string, string>;
   dark?: Record<string, string>;
+  light?: Record<string, string>;
+  theme?: Record<string, string>;
 }
 
 export interface Schema {
   $schema?: string;
-  name: string;
-  type: RegistryType;
-  title?: string;
-  description?: string;
   author?: string;
-  registryDependencies?: string[];
-  dependencies?: string[];
-  devDependencies?: string[];
-  files: RegistryFile[];
-  tailwind?: TailwindConfig;
-  cssVars?: CssVars;
-  css?: Record<string, object>;
-  envVars?: Record<string, string>;
-  docs?: string;
   categories?: string[];
+  css?: Record<string, object>;
+  cssVars?: CssVars;
+  dependencies?: string[];
+  description?: string;
+  devDependencies?: string[];
+  docs?: string;
+  envVars?: Record<string, string>;
+  files: RegistryFile[];
   meta?: Record<string, unknown>;
+  name: string;
+  registryDependencies?: string[];
+  tailwind?: TailwindConfig;
+  title?: string;
+  type: RegistryType;
 }

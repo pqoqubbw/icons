@@ -77,11 +77,11 @@ const Vector = () => {
 };
 
 interface CircularTextProps {
-  text: string;
-  radius: number;
-  position: "top" | "bottom";
   angleSpan?: number;
   className?: string;
+  position: "top" | "bottom";
+  radius: number;
+  text: string;
 }
 
 const CircularText = ({

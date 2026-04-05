@@ -128,4 +128,5 @@ const GripHorizontalIcon = forwardRef<
 });
 
 GripHorizontalIcon.displayName = "GripHorizontalIcon";
+
 export { GripHorizontalIcon };

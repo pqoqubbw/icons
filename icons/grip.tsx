@@ -127,4 +127,5 @@ const GripIcon = forwardRef<GripIconHandle, GripProps>(
 );
 
 GripIcon.displayName = "GripIcon";
+
 export { GripIcon };

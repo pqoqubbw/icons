@@ -87,4 +87,5 @@ const WavesLadderIcon = forwardRef<WavesLadderIconHandle, WavesLadderIconProps>(
 );
 
 WavesLadderIcon.displayName = "WavesLadderIcon";
+
 export { WavesLadderIcon };
