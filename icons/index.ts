@@ -192,6 +192,7 @@ import { KeyboardIcon } from "@/icons/keyboard";
 import { LanguagesIcon } from "@/icons/languages";
 import { LaptopMinimalCheckIcon } from "@/icons/laptop-minimal-check";
 import { LaughIcon } from "@/icons/laugh";
+import { LeafIcon } from "@/icons/leaf";
 import { LayersIcon } from "@/icons/layers";
 import { LayoutGridIcon } from "@/icons/layout-grid";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
@@ -402,6 +403,56 @@ import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
+import { LeafyGreenIcon } from "./leafy-green";
+import { RecycleIcon } from "./recycle";
+import { WavesArrowDownIcon } from "./waves-arrow-down";
+import { WavesArrowUpIcon } from "./waves-arrow-up";
+import { TreePineIcon } from "./tree-pine";
+import { TreeDeciduousIcon } from "./tree-deciduous";
+import { UtilityPoleIcon } from "./utility-pole";
+import { DamIcon } from "./dam";
+import { FlowerIcon } from "./flower";
+import { Flower2Icon } from "./flower-2";
+import { AlarmClockCheckIcon } from "./alarm-clock-check";
+import { AlarmClockMinusIcon } from "./alarm-clock-minus";
+import { AlarmClockPlusIcon } from "./alarm-clock-plus";
+import { AlarmSmokeIcon } from "./alarm-smoke";
+import { AntennaIcon } from "./antenna";
+import { PhoneIcon } from "./phone";
+import { PhoneCallIcon } from "./phone-call";
+import { PhoneForwardedIcon } from "./phone-forwarded";
+import { PhoneIncomingIcon } from "./phone-incoming";
+import { PhoneMissedIcon } from "./phone-missed";
+import { PhoneOffIcon } from "./phone-off";
+import { PhoneOutgoingIcon } from "./phone-outgoing";
+import { RouterIcon } from "./router";
+import { SatelliteDishIcon } from "./satellite-dish";
+import { ProjectorIcon } from "./projector";
+import { SpotlightIcon } from "./spotlight";
+import { SwitchCameraIcon } from "./switch-camera";
+import { WifiCogIcon } from "./wifi-cog";
+import { WifiSyncIcon } from "./wifi-sync";
+import { WifiPenIcon } from "./wifi-pen";
+import { ServerIcon } from "./server";
+import { ServerCogIcon } from "./server-cog";
+import { ServerCrashIcon } from "./server-crash";
+import { ServerOffIcon } from "./server-off";
+import { GamepadDirectionalIcon } from "./gamepad-directional";
+import { CigaretteIcon } from "./cigarette";
+import { CigaretteOffIcon } from "./cigarette-off";
+import { ReceiptIcon } from "./receipt";
+import { ReceiptCentIcon } from "./receipt-cent";
+import { ReceiptEuroIcon } from "./receipt-euro";
+import { ReceiptIndianRupeeIcon } from "./receipt-indian-rupee";
+import { ReceiptJapaneseYenIcon } from "./receipt-japanese-yen";
+import { ReceiptPoundSterlingIcon } from "./receipt-pound-sterling";
+import { ReceiptRussianRubleIcon } from "./receipt-russian-ruble";
+import { ReceiptSwissFrancIcon } from "./receipt-swiss-franc";
+import { ReceiptTextIcon } from "./receipt-text";
+import { ReceiptTurkishLiraIcon } from "./receipt-turkish-lira";
+import { ShipWheelIcon } from "./ship-wheel";
+import { PlaneTakeoffIcon } from "./plane-takeoff";
+import { PlaneLandingIcon } from "./plane-landing";
 
 type IconListItem = {
   name: string;
@@ -410,6 +461,267 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "leaf",
+    icon: LeafIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "leafy-green",
+    icon: LeafyGreenIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "recycle",
+    icon: RecycleIcon,
+    keywords: ["recycle", "trash", "garbage", "waste", "recycling"],
+  },
+  {
+    name: "tree-pine",
+    icon: TreePineIcon,
+    keywords: ["tree", "pine", "forest", "nature", "green"],
+  },
+  {
+    name: "waves-arrow-down",
+    icon: WavesArrowDownIcon,
+    keywords: ["waves", "arrow", "down", "navigation", "scroll"],
+  },
+  {
+    name: "waves-arrow-up",
+    icon: WavesArrowUpIcon,
+    keywords: ["waves", "arrow", "up", "navigation", "scroll"],
+  },
+  {
+    name: "tree-deciduous",
+    icon: TreeDeciduousIcon,
+    keywords: ["tree", "deciduous", "forest", "nature", "green"],
+  },
+  {
+    name: "utility-pole",
+    icon: UtilityPoleIcon,
+    keywords: ["utility", "pole", "power", "line", "electricity"],
+  },
+  {
+    name: "dam",
+    icon: DamIcon,
+    keywords: ["dam", "water", "reservoir", "storage", "hydroelectric"],
+  },
+  {
+    name: "flower",
+    icon: FlowerIcon,
+    keywords: ["flower", "plant", "nature", "green"],
+  },
+  {
+    name: "flower-2",
+    icon: Flower2Icon,
+    keywords: ["flower", "plant", "nature", "green"],
+  },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke", "fire", "smoke", "fire alarm"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "antenna",
+    icon: AntennaIcon,
+    keywords: ["antenna", "radio", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone",
+    icon: PhoneIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-call",
+    icon: PhoneCallIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-forward",
+    icon: PhoneForwardedIcon,
+    keywords: ["phone", "forward", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-incoming",
+    icon: PhoneIncomingIcon,
+    keywords: ["phone", "incoming", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-missed",
+    icon: PhoneMissedIcon,
+    keywords: ["phone", "missed", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-off",
+    icon: PhoneOffIcon,
+    keywords: ["phone", "off", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-outgoing",
+    icon: PhoneOutgoingIcon,
+    keywords: ["phone", "outgoing", "communication", "signal", "wireless"],
+  },
+  {
+    name: "router",
+    icon: RouterIcon,
+    keywords: ["router", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "satellite-dish",
+    icon: SatelliteDishIcon,
+    keywords: ["satellite", "dish", "communication", "signal", "wireless"],
+  },
+  {
+    name: "projector",
+    icon: ProjectorIcon,
+    keywords: ["projector", "screen", "display", "video", "projection"],
+  },
+  {
+    name: "spotlight",
+    icon: SpotlightIcon,
+    keywords: [
+      "spotlight",
+      "light",
+      "brightness",
+      "illumination",
+      "brightness",
+    ],
+  },
+  {
+    name: "switch-camera",
+    icon: SwitchCameraIcon,
+    keywords: ["switch", "camera", "video", "photo", "capture"],
+  },
+  {
+    name: "wifi-cog",
+    icon: WifiCogIcon,
+    keywords: ["wifi", "cog", "settings", "configuration"],
+  },
+  {
+    name: "wifi-sync",
+    icon: WifiSyncIcon,
+    keywords: ["wifi", "sync", "synchronize", "update"],
+  },
+  {
+    name: "wifi-pen",
+    icon: WifiPenIcon,
+    keywords: ["wifi", "pen", "edit", "write"],
+  },
+  {
+    name: "server",
+    icon: ServerIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-cog",
+    icon: ServerCogIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-crash",
+    icon: ServerCrashIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-off",
+    icon: ServerOffIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "gamepad-directional",
+    icon: GamepadDirectionalIcon,
+    keywords: ["gamepad", "controller", "directional", "navigation", "input"],
+  },
+  {
+    name: "cigarette",
+    icon: CigaretteIcon,
+    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
+  },
+  {
+    name: "cigarette-off",
+    icon: CigaretteOffIcon,
+    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
+  },
+  {
+    name: "receipt",
+    icon: ReceiptIcon,
+    keywords: ["receipt", "invoice", "receipt icon"],
+  },
+  {
+    name: "receipt-cent",
+    icon: ReceiptCentIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "cent", "currency"],
+  },
+  {
+    name: "receipt-euro",
+    icon: ReceiptEuroIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "euro", ],
+  },
+  {
+    name: "receipt-indian-rupee",
+    icon: ReceiptIndianRupeeIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "indian rupee", "rupee"],
+  },
+  {
+    name: "receipt-japanese-yen",
+    icon: ReceiptJapaneseYenIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "japanese yen", "yen"],
+  },
+  {
+    name: "receipt-pound-sterling",
+    icon: ReceiptPoundSterlingIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "pound sterling", "sterling"],
+  },
+  {
+    name: "receipt-russian-ruble",
+    icon: ReceiptRussianRubleIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "russian ruble", "ruble"],
+  },
+  {
+    name: "receipt-swiss-franc",
+    icon: ReceiptSwissFrancIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "swiss franc", "franc"],
+  },
+  {
+    name: "receipt-text",
+    icon: ReceiptTextIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "text"],
+  },
+  {
+    name: "receipt-turkish-lira",
+    icon: ReceiptTurkishLiraIcon,
+    keywords: ["receipt", "invoice", "receipt icon", "turkish lira", "lira"],
+  },
+  {
+    name: "ship-wheel",
+    icon: ShipWheelIcon,
+    keywords: ["ship", "wheel", "navigation", "transportation"],
+  },
+  {
+    name: "plane-takeoff",
+    icon: PlaneTakeoffIcon,
+    keywords: ["plane", "takeoff", "flight", "airplane", "aircraft"],
+  },
+  {
+    name: "plane-landing",
+    icon: PlaneLandingIcon,
+    keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
+  },
   {
     name: "layout-grid",
     icon: LayoutGridIcon,
