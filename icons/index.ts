@@ -402,6 +402,16 @@ import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
+import { PlaneLandingIcon } from "./plane-landing";
+import { PlaneTakeoffIcon } from "./plane-takeoff";
+import { ShipWheelIcon } from "./ship-wheel";
+import { CigaretteOffIcon } from "./cigarette-off";
+import { CigaretteIcon } from "./cigarette";
+import { GamepadDirectionalIcon } from "./gamepad-directional";
+import { ServerOffIcon } from "./server-off";
+import { ServerCrashIcon } from "./server-crash";
+import { ServerCogIcon } from "./server-cog";
+import { ServerIcon } from "./server";
 
 type IconListItem = {
   name: string;
@@ -410,6 +420,57 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  
+  {
+    name: "server",
+    icon: ServerIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-cog",
+    icon: ServerCogIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-crash",
+    icon: ServerCrashIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-off",
+    icon: ServerOffIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "gamepad-directional",
+    icon: GamepadDirectionalIcon,
+    keywords: ["gamepad", "controller", "directional", "navigation", "input"],
+  },
+  {
+    name: "cigarette",
+    icon: CigaretteIcon,
+    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
+  },
+  {
+    name: "cigarette-off",
+    icon: CigaretteOffIcon,
+    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
+  },
+  {
+    name: "ship-wheel",
+    icon: ShipWheelIcon,
+    keywords: ["ship", "wheel", "navigation", "transportation"],
+  },
+  {
+    name: "plane-takeoff",
+    icon: PlaneTakeoffIcon,
+    keywords: ["plane", "takeoff", "flight", "airplane", "aircraft"],
+  },
+  {
+    name: "plane-landing",
+    icon: PlaneLandingIcon,
+    keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
+  },
   {
     name: "layout-grid",
     icon: LayoutGridIcon,
