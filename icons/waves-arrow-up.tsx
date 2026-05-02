@@ -1,10 +1,9 @@
 "use client";
 
-import { useAnimation, Variants } from "motion/react";
+import { motion, useAnimation, Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 
 export interface WavesArrowUpIconHandle {
   startAnimation: () => void;
@@ -16,14 +15,17 @@ interface WavesArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ARROW_VARIANTS: Variants = {
-  normal: { y: 0 },
+  normal: {
+    y: 0,
+    opacity: 1,
+  },
   animate: {
-    y: -1,
+    y: [5, -1.5, 0],
+    opacity: [0, 1, 0],
     transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 10,
-      mass: 1,
+      duration: 1.5,
+      ease: "easeInOut",
+      repeat: Infinity,
     },
   },
 };
@@ -74,44 +76,23 @@ const WavesArrowUpIcon = forwardRef<
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width={size}
+        height={size}
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        animate={controls}
         style={{ overflow: "visible" }}
       >
-        <motion.g animate={controls} variants={ARROW_VARIANTS}>
+        <motion.g animate={controls} initial="normal" variants={ARROW_VARIANTS}>
           <path d="M12 2v8" />
           <path d="m8 6 4-4 4 4" />
         </motion.g>
-        <motion.path
-          d="M2 15c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
-          animate={controls}
-          initial={{ pathLength: 1 }}
-          variants={{
-            normal: { pathLength: 1 },
-            animate: {
-              pathLength: [0, 1],
-              transition: { duration: 0.4, ease: "linear" },
-            },
-          }}
-        />
-        <motion.path
-          d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
-          animate={controls}
-          initial={{ pathLength: 1 }}
-          variants={{
-            normal: { pathLength: 1 },
-            animate: {
-              pathLength: [0, 1],
-              transition: { duration: 0.4, ease: "linear" },
-            },
-          }}
-        />
+        <path d="M2 15c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+        <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
       </motion.svg>
     </div>
   );

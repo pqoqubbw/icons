@@ -404,14 +404,14 @@ import { HeartPulseIcon } from "./heart-pulse";
 import { TruckIcon } from "./truck";
 import { LeafIcon } from "./leaf";
 import { LeafyGreenIcon } from "./leafy-green";
-import { RecycleIcon } from "./recycle";
 import { TreePineIcon } from "./tree-pine";
 import { WavesArrowDownIcon } from "./waves-arrow-down";
 import { WavesArrowUpIcon } from "./waves-arrow-up";
 import { TreeDeciduousIcon } from "./tree-deciduous";
-import { UtilityPoleIcon } from "./utility-pole";
-import { FlowerIcon } from "./flower";
-import { Flower2Icon } from "./flower-2";
+import { CircleGaugeIcon } from "./circle-gauge";
+import { SprayCanIcon } from "./spray-can";
+import { ShredderIcon } from "./shredder";
+import { SoupIcon } from "./soup";
 
 type IconListItem = {
   name: string;
@@ -431,16 +431,6 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["leaf", "tree", "plant", "nature", "green"],
   },
   {
-    name: "recycle",
-    icon: RecycleIcon,
-    keywords: ["recycle", "trash", "garbage", "waste", "recycling"],
-  },
-  {
-    name: "tree-pine",
-    icon: TreePineIcon,
-    keywords: ["tree", "pine", "forest", "nature", "green"],
-  },
-  {
     name: "waves-arrow-down",
     icon: WavesArrowDownIcon,
     keywords: ["waves", "arrow", "down", "navigation", "scroll"],
@@ -456,19 +446,29 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["tree", "deciduous", "forest", "nature", "green"],
   },
   {
-    name: "utility-pole",
-    icon: UtilityPoleIcon,
-    keywords: ["utility", "pole", "power", "line", "electricity"],
+    name: "tree-pine",
+    icon: TreePineIcon,
+    keywords: ["tree", "pine", "forest", "nature", "green"],
   },
   {
-    name: "flower",
-    icon: FlowerIcon,
-    keywords: ["flower", "plant", "nature", "green"],
+    name: "circle-gauge",
+    icon: CircleGaugeIcon,
+    keywords: ["gauge", "meter", "speed", "pressure", "measure", "circle"],
   },
   {
-    name: "flower-2",
-    icon: Flower2Icon,
-    keywords: ["flower", "plant", "nature", "green"],
+    name: "spray-can",
+    icon: SprayCanIcon,
+    keywords: ["spray", "can", "paint", "color", "art"],
+  },
+  {
+    name: "shredder",
+    icon: ShredderIcon,
+    keywords: ["shredder", "trash", "garbage", "waste", "recycling"],
+  },
+  {
+    name: "soup",
+    icon: SoupIcon,
+    keywords: ["soup", "food", "meal", "bowl", "hot"],
   },
   {
     name: "layout-grid",

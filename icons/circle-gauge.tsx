@@ -1,42 +1,27 @@
 "use client";
 
-import { useAnimation, Variants } from "motion/react";
+import { motion, Transition, useAnimation, Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 
-export interface UtilityPoleIconHandle {
+export interface CircleGaugeIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-const UTILITY_POLE_VARIANTS: Variants = {
-  normal: {
-    rotateY: 0,
-    scale: 1,
-  },
-  animate: {
-    rotateY: 180,
-    scale: [1, 1.2, 1.1, 1],
-    transition: {
-      rotateX: {
-        duration: 0.8,
-        ease: "easeInOut",
-      },
-      scale: {
-        duration: 0.6,
-        ease: "easeInOut",
-      },
-    },
-  },
-};
-
-interface UtilityPoleIconProps extends HTMLAttributes<HTMLDivElement> {
+interface CircleGaugeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const UtilityPoleIcon = forwardRef<UtilityPoleIconHandle, UtilityPoleIconProps>(
+const DEFAULT_TRANSITION: Transition = {
+  type: "spring",
+  stiffness: 160,
+  damping: 17,
+  mass: 1,
+};
+
+const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -80,8 +65,8 @@ const UtilityPoleIcon = forwardRef<UtilityPoleIconHandle, UtilityPoleIconProps>(
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width={size}
+          height={size}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -89,21 +74,27 @@ const UtilityPoleIcon = forwardRef<UtilityPoleIconHandle, UtilityPoleIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
           animate={controls}
-          variants={UTILITY_POLE_VARIANTS}
+          initial="normal"
+          transition={DEFAULT_TRANSITION}
+          variants={{
+            animate: { translateX: 0.5, translateY: 3, rotate: 72, scale: 1.2 },
+            normal: {
+              translateX: 0,
+              rotate: 0,
+              translateY: 0,
+              scale: 1,
+            },
+          }}
         >
-          <path d="M12 2v20" />
-          <path d="M2 5h20" />
-          <path d="M3 3v2" />
-          <path d="M7 3v2" />
-          <path d="M17 3v2" />
-          <path d="M21 3v2" />
-          <path d="m19 5-7 7-7-7" />
+          <path d="M15.6 2.7a10 10 0 1 0 5.7 5.7" />
+          <circle cx="12" cy="12" r="2" />
+          <path d="M13.4 10.6 19 5" />
         </motion.svg>
       </div>
     );
   },
 );
 
-UtilityPoleIcon.displayName = "UtilityPoleIcon";
+CircleGaugeIcon.displayName = "CircleGaugeIcon";
 
-export { UtilityPoleIcon };
+export { CircleGaugeIcon };

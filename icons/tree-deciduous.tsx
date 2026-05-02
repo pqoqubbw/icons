@@ -1,10 +1,9 @@
 "use client";
 
-import { useAnimation } from "motion/react";
+import { motion, useAnimation, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
 
 export interface TreeDeciduousIconHandle {
   startAnimation: () => void;
@@ -14,6 +13,17 @@ export interface TreeDeciduousIconHandle {
 interface TreeDeciduousIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
+
+const TREE_DECIDUOUS_VARIANTS: Variants = {
+  normal: { rotate: 0 },
+  animate: {
+    rotate: [0, -10, 10, -10, 0],
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const TreeDeciduousIcon = forwardRef<
   TreeDeciduousIconHandle,
@@ -70,19 +80,11 @@ const TreeDeciduousIcon = forwardRef<
         strokeLinecap="round"
         strokeLinejoin="round"
         animate={controls}
+        initial="normal"
+        variants={TREE_DECIDUOUS_VARIANTS}
+        style={{ transformOrigin: "12px 21px" }}
       >
-        <motion.path
-          d="M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z"
-          animate={controls}
-          initial={{ pathLength: 1 }}
-          variants={{
-            normal: { pathLength: 1 },
-            animate: {
-              pathLength: [0, 1],
-              transition: { duration: 0.4, ease: "linear" },
-            },
-          }}
-        />
+        <motion.path d="M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z" />
         <path d="M12 19v3" />
       </motion.svg>
     </div>
