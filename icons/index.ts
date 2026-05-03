@@ -421,57 +421,6 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
-  
-  {
-    name: "receipt",
-    icon: ReceiptIcon,
-    keywords: ["receipt", "invoice", "receipt icon"],
-  },
-  {
-    name: "receipt-cent",
-    icon: ReceiptCentIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "cent", "currency"],
-  },
-  {
-    name: "receipt-euro",
-    icon: ReceiptEuroIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "euro", ],
-  },
-  {
-    name: "receipt-indian-rupee",
-    icon: ReceiptIndianRupeeIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "indian rupee", "rupee"],
-  },
-  {
-    name: "receipt-japanese-yen",
-    icon: ReceiptJapaneseYenIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "japanese yen", "yen"],
-  },
-  {
-    name: "receipt-pound-sterling",
-    icon: ReceiptPoundSterlingIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "pound sterling", "sterling"],
-  },
-  {
-    name: "receipt-russian-ruble",
-    icon: ReceiptRussianRubleIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "russian ruble", "ruble"],
-  },
-  {
-    name: "receipt-swiss-franc",
-    icon: ReceiptSwissFrancIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "swiss franc", "franc"],
-  },
-  {
-    name: "receipt-text",
-    icon: ReceiptTextIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "text"],
-  },
-  {
-    name: "receipt-turkish-lira",
-    icon: ReceiptTurkishLiraIcon,
-    keywords: ["receipt", "invoice", "receipt icon", "turkish lira", "lira"],
-  },
   {
     name: "stamp",
     icon: StampIcon,
