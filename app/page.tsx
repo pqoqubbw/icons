@@ -1,12 +1,9 @@
-import { getIcons } from "@/actions/get-icons";
 import { CliBlock } from "@/components/cli-block";
 import { CommentBlock } from "@/components/comment";
 import { IconsList } from "@/components/list";
 import { LINK } from "@/constants";
 
 const Home = () => {
-  const icons = getIcons();
-
   return (
     <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center">
       <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
@@ -50,9 +47,9 @@ const Home = () => {
           Lucide
         </a>
       </p>
-      <CliBlock icons={icons.filter((icon) => icon.name.length <= 20)} />
+      <CliBlock />
       <CommentBlock />
-      <IconsList icons={icons} />
+      <IconsList />
     </section>
   );
 };

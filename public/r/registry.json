@@ -5267,6 +5267,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "stamp",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "stamp.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

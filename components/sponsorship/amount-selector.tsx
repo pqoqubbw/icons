@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { SUPPORT_LIST } from "@/app/sponsorship/page";
 
 import { Radio, RadioGroup } from "@/components/ui/radio";
+import type { SUPPORT_LIST } from "@/lib/data/support-list";
 import { cn } from "@/lib/utils";
 import { Stamp } from "./stamp";
 

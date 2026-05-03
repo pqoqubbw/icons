@@ -2458,4 +2458,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "stamp",
+    path: path.join(__dirname, "../icons/stamp.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
