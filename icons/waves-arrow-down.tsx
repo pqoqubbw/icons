@@ -14,21 +14,37 @@ interface WavesArrowDownIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const ARROW_VARIANTS: Variants = {
-  normal: {
-    y: 0,
-    opacity: 1,
-  },
+
+const HEAD_VARIANTS: Variants = {
+  normal: { 
+    translateY: 0 },
   animate: {
-    y: [-5, 1.5, 0],
-    opacity: [0, 1, 0],
+    translateY: [0, 3, 0],
     transition: {
-      duration: 1.5,
+      duration: 0.5,
       ease: "easeInOut",
-      repeat: Infinity,
     },
   },
 };
+
+const SHAFT_VARIANTS: Variants = {
+  normal: { 
+    translateX: 0, 
+    translateY: 0, 
+    scale: 1 
+  },
+  animate: {
+    translateY: [0, 3, 0],
+    scale: [1, 0.85, 1],
+    originX: 1,
+    originY: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
 
 const WavesArrowDownIcon = forwardRef<
   WavesArrowDownIconHandle,
@@ -86,14 +102,16 @@ const WavesArrowDownIcon = forwardRef<
         strokeLinejoin="round"
         style={{ overflow: "visible" }}
       >
-        <motion.g
+          <motion.path d="M12 10L12 2"
           animate={controls}
-          initial={{ y: 0, opacity: 1 }}
-          variants={ARROW_VARIANTS}
-        >
-          <path d="M12 10L12 2" />
-          <path d="M16 6L12 10L8 6" />
-        </motion.g>
+          initial="normal"
+          variants={SHAFT_VARIANTS}
+          />
+          <motion.path d="M16 6L12 10L8 6"
+          animate={controls}
+          initial="normal"
+          variants={HEAD_VARIANTS}
+          />
         <path d="M2 15C2.6 15.5 3.2 16 4.5 16C7 16 7 14 9.5 14C12.1 14 11.9 16 14.5 16C17 16 17 14 19.5 14C20.8 14 21.4 14.5 22 15" />
         <path d="M2 21C2.6 21.5 3.2 22 4.5 22C7 22 7 20 9.5 20C12.1 20 11.9 22 14.5 22C17 22 17 20 19.5 20C20.8 20 21.4 20.5 22 21" />
       </motion.svg>

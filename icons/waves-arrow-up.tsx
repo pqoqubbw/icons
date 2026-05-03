@@ -14,18 +14,32 @@ interface WavesArrowUpIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const ARROW_VARIANTS: Variants = {
-  normal: {
-    y: 0,
-    opacity: 1,
+const HEAD_VARIANTS: Variants = {
+  normal: { 
+    translateY: 0 },
+  animate: {
+    translateY: [0, -3, 0],
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const SHAFT_VARIANTS: Variants = {
+  normal: { 
+    translateX: 0, 
+    translateY: 0, 
+    scale: 1 
   },
   animate: {
-    y: [5, -1.5, 0],
-    opacity: [0, 1, 0],
+    translateY: [0, -3, 0],
+    scale: [1, 0.85, 1],
+    originX: 1,
+    originY: 1,
     transition: {
-      duration: 1.5,
+      duration: 0.5,
       ease: "easeInOut",
-      repeat: Infinity,
     },
   },
 };
@@ -87,10 +101,18 @@ const WavesArrowUpIcon = forwardRef<
         animate={controls}
         style={{ overflow: "visible" }}
       >
-        <motion.g animate={controls} initial="normal" variants={ARROW_VARIANTS}>
-          <path d="M12 2v8" />
-          <path d="m8 6 4-4 4 4" />
-        </motion.g>
+        {/* <motion.g animate={controls} initial="normal" variants={ARROW_VARIANTS}>  */}
+          <motion.path d="M12 2v8" 
+          animate={controls}
+          initial="normal"
+          variants={SHAFT_VARIANTS}
+          />
+          <motion.path d="m8 6 4-4 4 4"
+          animate={controls}
+          initial="normal"
+          variants={HEAD_VARIANTS}
+          />
+        {/* </motion.g> */}
         <path d="M2 15c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
         <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
       </motion.svg>

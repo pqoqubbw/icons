@@ -77,12 +77,11 @@ const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
           initial="normal"
           transition={DEFAULT_TRANSITION}
           variants={{
-            animate: { translateX: 0.5, translateY: 3, rotate: 72, scale: 1.2 },
+            animate: { translateX: 0.5, translateY: 3, rotate: 72 },
             normal: {
               translateX: 0,
               rotate: 0,
               translateY: 0,
-              scale: 1,
             },
           }}
         >
