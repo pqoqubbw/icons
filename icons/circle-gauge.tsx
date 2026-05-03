@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Transition, useAnimation, Variants } from "motion/react";
+import { motion, useAnimation, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -14,11 +14,13 @@ interface CircleGaugeIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const DEFAULT_TRANSITION: Transition = {
-  type: "spring",
-  stiffness: 160,
-  damping: 17,
-  mass: 1,
+const CIRCLE_GAUGE_VARIANTS: Variants = {
+  normal: {
+    rotate: 0,
+  },
+  animate: {
+    rotate: 72,
+  },
 };
 
 const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
@@ -36,24 +38,24 @@ const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("animate");
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
-      [controls, onMouseEnter],
+      [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("normal");
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
-      [controls, onMouseLeave],
+      [controls, onMouseLeave]
     );
 
     return (
@@ -64,26 +66,18 @@ const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
+          animate={controls}
           fill="none"
+          height={size}
+          initial="normal"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          animate={controls}
-          initial="normal"
-          transition={DEFAULT_TRANSITION}
-          variants={{
-            animate: { translateX: 0.5, translateY: 3, rotate: 72 },
-            normal: {
-              translateX: 0,
-              rotate: 0,
-              translateY: 0,
-            },
-          }}
+          strokeWidth="2"
+          variants={CIRCLE_GAUGE_VARIANTS}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M15.6 2.7a10 10 0 1 0 5.7 5.7" />
           <circle cx="12" cy="12" r="2" />
@@ -91,7 +85,7 @@ const CircleGaugeIcon = forwardRef<CircleGaugeIconHandle, CircleGaugeIconProps>(
         </motion.svg>
       </div>
     );
-  },
+  }
 );
 
 CircleGaugeIcon.displayName = "CircleGaugeIcon";
