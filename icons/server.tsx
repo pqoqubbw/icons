@@ -16,28 +16,26 @@ interface ServerIconProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const TOP_RECT_VARIANTS: Variants = {
-  normal: { translateX: 0, translateY: 0 },
+  normal: { y: 0 },
   animate: {
-    translateX: [0, 0, 0, 0],
-    translateY: [0, 11, 11, 0],
+    y: [0, 12, 12, 0],
     transition: {
       duration: 0.9,
       ease: "easeInOut",
-      repeat: Number.POSITIVE_INFINITY,
+      repeat: 1,
       times: [0, 0.35, 0.65, 1],
     },
   },
 };
 
 const BOTTOM_RECT_VARIANTS: Variants = {
-  normal: { translateX: 0, translateY: 0 },
+  normal: { y: 0 },
   animate: {
-    translateX: [0, 0, 0, 0],
-    translateY: [0, -11, -11, 0],
+    y: [0, -12, -12, 0],
     transition: {
       duration: 0.9,
       ease: "easeInOut",
-      repeat: Number.POSITIVE_INFINITY,
+      repeat: 1,
       times: [0, 0.35, 0.65, 1],
     },
   },

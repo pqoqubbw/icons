@@ -352,6 +352,8 @@ import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
+import { CigaretteIcon } from "./cigarette";
+import { CigaretteOffIcon } from "./cigarette-off";
 import { ConciergeBellIcon } from "./concierge-bell";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
@@ -384,6 +386,7 @@ import { FolderSyncIcon } from "./folder-sync";
 import { FolderTreeIcon } from "./folder-tree";
 import { FolderUpIcon } from "./folder-up";
 import { FolderXIcon } from "./folder-x";
+import { GamepadDirectionalIcon } from "./gamepad-directional";
 import { GavelIcon } from "./gavel";
 import { GitBranchIcon } from "./git-branch";
 import { GitCompareIcon } from "./git-compare";
@@ -401,17 +404,14 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
-import { TruckIcon } from "./truck";
 import { PlaneLandingIcon } from "./plane-landing";
 import { PlaneTakeoffIcon } from "./plane-takeoff";
-import { ShipWheelIcon } from "./ship-wheel";
-import { CigaretteOffIcon } from "./cigarette-off";
-import { CigaretteIcon } from "./cigarette";
-import { GamepadDirectionalIcon } from "./gamepad-directional";
-import { ServerOffIcon } from "./server-off";
-import { ServerCrashIcon } from "./server-crash";
-import { ServerCogIcon } from "./server-cog";
 import { ServerIcon } from "./server";
+import { ServerCogIcon } from "./server-cog";
+import { ServerCrashIcon } from "./server-crash";
+import { ServerOffIcon } from "./server-off";
+import { ShipWheelIcon } from "./ship-wheel";
+import { TruckIcon } from "./truck";
 
 type IconListItem = {
   name: string;
@@ -420,7 +420,6 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
-  
   {
     name: "server",
     icon: ServerIcon,
