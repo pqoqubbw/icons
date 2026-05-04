@@ -66,6 +66,16 @@
     isolation: isolate;
   }
 
+  .root > header {
+    order: 1;
+  }
+  .root > main {
+    order: 2;
+  }
+  .root > footer {
+    order: 3;
+  }
+
   ::-webkit-scrollbar {
     width: 2px;
   }

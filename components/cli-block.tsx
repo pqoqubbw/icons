@@ -2,26 +2,32 @@
 
 import { ScrollArea as BaseScrollArea } from "@base-ui/react/scroll-area";
 import { CopyIcon } from "lucide-react";
-import { useRef, useState, useTransition } from "react";
+import { useMemo, useRef, useState, useTransition } from "react";
 import { toast } from "sonner";
-import type { Icon } from "@/actions/get-icons";
 import type { IconStatus } from "@/components/ui/icon-state";
 
 import { IconState } from "@/components/ui/icon-state";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TextLoop } from "@/components/ui/text-loop";
 import { PACKAGE_MANAGER } from "@/constants";
+import { ICON_LIST } from "@/icons";
 import { getPackageManagerPrefix } from "@/lib/get-package-manager-prefix";
 import { cn } from "@/lib/utils";
 import { usePackageNameContext } from "@/providers/package-name";
 
 type CliBlockProps = {
-  icons?: Icon[];
   staticIconName?: string;
   className?: string;
 };
 
-const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
+const CliBlock = ({ staticIconName, className }: CliBlockProps) => {
+  const rotatingNames = useMemo(
+    () =>
+      ICON_LIST.filter((icon) => icon.name.length <= 20).map(
+        (icon) => icon.name
+      ),
+    []
+  );
   const [state, setState] = useState<IconStatus>("idle");
   const [_, startTransition] = useTransition();
   const currentIconName = useRef(staticIconName || "");
@@ -33,7 +39,7 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
   const handleCopyToClipboard = () => {
     startTransition(async () => {
       const iconName =
-        staticIconName || currentIconName.current || icons?.[0]?.name || "";
+        staticIconName || currentIconName.current || rotatingNames[0] || "";
 
       try {
         await navigator.clipboard.writeText(
@@ -115,7 +121,7 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
                   <TextLoop
                     interval={1.5}
                     onIndexChange={(index) => {
-                      currentIconName.current = icons?.[index]?.name || "";
+                      currentIconName.current = rotatingNames[index] || "";
                     }}
                     transition={{
                       duration: 0.25,
@@ -141,13 +147,11 @@ const CliBlock = ({ icons, staticIconName, className }: CliBlockProps) => {
                       },
                     }}
                   >
-                    {(icons || [])
-                      .filter((icon) => icon.name.length <= 20)
-                      .map((icon) => (
-                        <span className="shrink-0 text-primary" key={icon.name}>
-                          {icon.name}
-                        </span>
-                      ))}
+                    {rotatingNames.map((name) => (
+                      <span className="shrink-0 text-primary" key={name}>
+                        {name}
+                      </span>
+                    ))}
                   </TextLoop>
                 )}
               </BaseScrollArea.Viewport>

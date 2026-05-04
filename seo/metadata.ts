@@ -21,12 +21,21 @@ const createMetadata = (options: CreateMetadataOptions = {}): Metadata => {
     noIndex = false,
   } = options;
 
+  const markdownHref = canonical
+    ? `${canonical === "/" ? "/index" : canonical}.md`
+    : undefined;
+
   return {
     ...(title && { title }),
     description,
     ...(canonical && {
       alternates: {
         canonical,
+        ...(markdownHref && {
+          types: {
+            "text/markdown": markdownHref,
+          },
+        }),
       },
     }),
     openGraph: {
@@ -52,6 +61,9 @@ const baseMetadata: Metadata = {
   metadataBase: new URL(SITE.URL),
   alternates: {
     canonical: "/",
+    types: {
+      "text/markdown": "/index.md",
+    },
   },
   openGraph: {
     title: SITE.NAME,

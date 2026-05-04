@@ -1,64 +1,63 @@
-import { getIcons } from "@/actions/get-icons";
 import { LINK, SITE } from "@/constants";
+import { ICON_LIST } from "@/icons";
+import { SERVER_EVENT, trackServer } from "@/lib/server-analytics";
 
-export function GET() {
-  const icons = getIcons();
-  const iconNames = icons.map((icon) => icon.name).join(", ");
-
+export function GET(req: Request) {
+  trackServer(SERVER_EVENT.LLMS_VIEW, {
+    page: "llms.txt",
+    userAgent: req.headers.get("user-agent") ?? "",
+  });
   const content = `# ${SITE.NAME}
 
-> Beautifully crafted animated icons
+> Open-source collection of ${ICON_LIST.length}+ beautifully crafted animated React icons based on Lucide, powered by Motion. MIT licensed and copy-paste ready.
 
-${SITE.NAME} is an open-source (MIT License) collection of smooth animated icons for React projects.
+## Docs
 
-## Overview
+- [Home](${SITE.URL}/index.md): Browse all icons and copy install commands
+- [Sponsorship](${SITE.URL}/sponsorship.md): Support the project
+- [Contributing Guide](${LINK.GITHUB}/blob/main/CONTRIBUTING.md): How to add or improve icons
+- [License (MIT)](${LINK.LICENSE}): License terms
+- [GitHub Repository](${LINK.GITHUB}): Source code and issue tracker
 
-- Website: ${SITE.URL}
-- GitHub: ${LINK.GITHUB}
-- Author: ${SITE.AUTHOR.TWITTER} (${LINK.TWITTER})
+## Skills
 
-## Tech Stack
+- [Agent Skill](${SITE.URL}/skill.md): Operating guide for installing and using icons
+- [Full Documentation](${SITE.URL}/llms-full.txt): Complete corpus of every icon and usage
 
-- React components with TypeScript
-- Animations powered by Motion (${LINK.MOTION})
-- Based on Lucide icons (${LINK.LUCIDE})
+## Icons
+
+- [All icons (nested index)](${SITE.URL}/icons/llms.txt): Full list of ${ICON_LIST.length} animated icons with per-icon markdown links
+
+## MCP
+
+A Model Context Protocol endpoint is available at \`${SITE.URL}/mcp\` (Streamable HTTP) and exposes \`search_icons\`, \`list_icons\`, and \`get_icon\` tools. Configure your MCP-compatible client to connect there directly. See \`${SITE.URL}/skill.md\` for usage notes.
 
 ## Installation
 
+Install a single icon via the shadcn CLI. Replace \`<icon-name>\` with the desired icon name in kebab-case (e.g. \`activity\`, \`arrow-right\`):
+
 \`\`\`bash
-npx shadcn@latest add "${SITE.URL}/r/{icon-name}.json"
+npx shadcn@latest add "${SITE.URL}/r/<icon-name>.json"
 \`\`\`
-
-Replace {icon-name} with the desired icon name (kebab-case).
-
-## Available Icons (${icons.length} total)
-
-${iconNames}
 
 ## Usage
 
-Each icon is a React component that animates on hover. Example:
-
 \`\`\`tsx
-import { Activity } from '@/components/icons/activity';
+import { Activity } from "@/components/icons/activity";
 
-export function MyComponent() {
+export function Demo() {
   return <Activity className="size-6" />;
 }
 \`\`\`
 
-## Ports
+Each icon is a React component that animates on hover. All standard SVG props are forwarded.
 
-- Svelte: https://www.movingicons.dev/ by @jis3r
-- Vue: https://imfenghuang.github.io/icons/ by @imfenghuang
+## Optional
 
-## License
-
-MIT License - free for personal and commercial use.
-
-## Contributing
-
-Contributions welcome! See CONTRIBUTING.md for guidelines.
+- [Svelte port](https://www.movingicons.dev/): by @jis3r
+- [Vue port](https://imfenghuang.github.io/icons/): by @imfenghuang
+- [Angular port](https://github.com/ajitzero/animated-icons): by @ajitzero
+- [Flutter port](https://pub.dev/packages/flutter_lucide_animated): by @ravikovind
 `;
 
   return new Response(content, {
