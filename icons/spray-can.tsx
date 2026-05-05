@@ -26,7 +26,7 @@ const SPRAY_DOT_VARIANTS: Variants = {
     transition: {
       delay: index * 0.07,
       duration: 1.05 + index * 0.06,
-      repeat: Infinity,
+      repeat: Number.POSITIVE_INFINITY,
       ease: "easeInOut",
       times: [0, 0.45, 1],
     },
@@ -52,7 +52,9 @@ const SprayCanIcon = forwardRef<SprayCanIconHandle, SprayCanIconProps>(
     const startAnimation = useCallback(() => {
       if (isAnimatingRef.current) return;
       isAnimatingRef.current = true;
-      void controls.start("animate");
+      controls.start("animate").catch(() => {
+        // ignore when interrupted by a new animation
+      });
     }, [controls]);
 
     const stopAnimation = useCallback(async () => {
@@ -66,7 +68,7 @@ const SprayCanIcon = forwardRef<SprayCanIconHandle, SprayCanIconProps>(
         startAnimation,
         stopAnimation,
       }),
-      [startAnimation, stopAnimation],
+      [startAnimation, stopAnimation]
     );
 
     const handleMouseEnter = useCallback(
@@ -77,7 +79,7 @@ const SprayCanIcon = forwardRef<SprayCanIconHandle, SprayCanIconProps>(
           startAnimation();
         }
       },
-      [isRefControlled, startAnimation, onMouseEnter],
+      [isRefControlled, startAnimation, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
@@ -88,39 +90,39 @@ const SprayCanIcon = forwardRef<SprayCanIconHandle, SprayCanIconProps>(
           stopAnimation();
         }
       },
-      [isRefControlled, stopAnimation, onMouseLeave],
+      [isRefControlled, stopAnimation, onMouseLeave]
     );
 
     return (
       <div
         className={cn("inline-flex items-center justify-center", className)}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={onMouseLeave}
+        onMouseLeave={handleMouseLeave}
         {...props}
       >
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="4" height="4" x="15" y="5" />
+          <rect height="4" width="4" x="15" y="5" />
           <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
           <path d="m13 14 8-2" />
           <path d="m13 19 8-2" />
           <g>
             {DOT_PATHS_RTL.map((item, index) => (
               <motion.path
-                key={item.key}
                 animate={controls}
                 custom={index}
                 d={item.d}
                 initial="normal"
+                key={item.key}
                 variants={SPRAY_DOT_VARIANTS}
               />
             ))}
@@ -128,7 +130,7 @@ const SprayCanIcon = forwardRef<SprayCanIconHandle, SprayCanIconProps>(
         </svg>
       </div>
     );
-  },
+  }
 );
 
 SprayCanIcon.displayName = "SprayCanIcon";

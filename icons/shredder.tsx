@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimation, Variants } from "motion/react";
+import { motion, useAnimation, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ const PAPER_PATH: Variants = {
     transition: {
       duration: 1.5,
       ease: "easeInOut",
-      repeat: Infinity,
+      repeat: Number.POSITIVE_INFINITY,
     },
   },
 };
@@ -60,24 +60,24 @@ const ShredderIcon = forwardRef<ShredderIconHandle, ShredderIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("animate");
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
-      [controls, onMouseEnter],
+      [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("normal");
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
-      [controls, onMouseLeave],
+      [controls, onMouseLeave]
     );
 
     return (
@@ -88,53 +88,53 @@ const ShredderIcon = forwardRef<ShredderIconHandle, ShredderIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
           style={{ overflow: "visible" }}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.g animate={controls} initial="normal" variants={PAPER_PATH}>
             <path d="M4 13V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v5" />
             <path d="M14 2v5a1 1 0 0 0 1 1h5" />
           </motion.g>
           <motion.path
-            d="M10 22v-5"
             animate={controls}
-            initial="normal"
-            variants={SHRED_PATH_VARIANTS}
             custom={0.2}
-          />
-          <motion.path
-            d="M14 19v-2"
-            animate={controls}
+            d="M10 22v-5"
             initial="normal"
             variants={SHRED_PATH_VARIANTS}
+          />
+          <motion.path
+            animate={controls}
             custom={0.4}
-          />
-          <motion.path
-            d="M18 20v-3"
-            animate={controls}
+            d="M14 19v-2"
             initial="normal"
             variants={SHRED_PATH_VARIANTS}
+          />
+          <motion.path
+            animate={controls}
             custom={0.6}
+            d="M18 20v-3"
+            initial="normal"
+            variants={SHRED_PATH_VARIANTS}
           />
           <path d="M2 13h20" />
           <motion.path
-            d="M6 20v-3"
             animate={controls}
+            d="M6 20v-3"
             initial="normal"
             variants={SHRED_PATH_VARIANTS}
           />
         </motion.svg>
       </div>
     );
-  },
+  }
 );
 
 ShredderIcon.displayName = "ShredderIcon";

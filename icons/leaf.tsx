@@ -54,7 +54,7 @@ const LeafIcon = forwardRef<LeafIconHandle, LeafIconProps>(
           controls.start("animate");
         }
       },
-      [controls, onMouseEnter],
+      [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
@@ -65,7 +65,7 @@ const LeafIcon = forwardRef<LeafIconHandle, LeafIconProps>(
           controls.start("normal");
         }
       },
-      [controls, onMouseLeave],
+      [controls, onMouseLeave]
     );
 
     return (
@@ -76,26 +76,26 @@ const LeafIcon = forwardRef<LeafIconHandle, LeafIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
-          fill="none"
           animate={controls}
+          fill="none"
+          height={size}
           initial="normal"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
+          style={{ overflow: "visible" }}
           variants={LEAF_VARIANTS}
-          style={{ overflow:"visible"}}
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
           <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
         </motion.svg>
       </div>
     );
-  },
+  }
 );
 
 LeafIcon.displayName = "LeafIcon";
