@@ -2464,4 +2464,22 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "briefcase-business",
+    path: path.join(__dirname, "../icons/briefcase-business.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "credit-card",
+    path: path.join(__dirname, "../icons/credit-card.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "wallet",
+    path: path.join(__dirname, "../icons/wallet.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
