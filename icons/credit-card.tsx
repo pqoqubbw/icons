@@ -89,7 +89,11 @@ const CreditCardIcon = forwardRef<CreditCardIconHandle, CreditCardIconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.g animate={controls} initial="normal" variants={CARD_VARIANTS}>
+          <motion.g
+            animate={controls}
+            initial="normal"
+            variants={CARD_VARIANTS}
+          >
             <rect height="14" rx="2" width="20" x="2" y="5" />
             <line x1="2" x2="22" y1="10" y2="10" />
           </motion.g>
