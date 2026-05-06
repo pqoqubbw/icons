@@ -255,6 +255,16 @@ import { PoundSterlingIcon } from "@/icons/pound-sterling";
 import { RabbitIcon } from "@/icons/rabbit";
 import { RadioIcon } from "@/icons/radio";
 import { RadioTowerIcon } from "@/icons/radio-tower";
+import { ReceiptIcon } from "@/icons/receipt";
+import { ReceiptCentIcon } from "@/icons/receipt-cent";
+import { ReceiptEuroIcon } from "@/icons/receipt-euro";
+import { ReceiptIndianRupeeIcon } from "@/icons/receipt-indian-rupee";
+import { ReceiptJapaneseYenIcon } from "@/icons/receipt-japanese-yen";
+import { ReceiptPoundSterlingIcon } from "@/icons/receipt-pound-sterling";
+import { ReceiptRussianRubleIcon } from "@/icons/receipt-russian-ruble";
+import { ReceiptSwissFrancIcon } from "@/icons/receipt-swiss-franc";
+import { ReceiptTextIcon } from "@/icons/receipt-text";
+import { ReceiptTurkishLiraIcon } from "@/icons/receipt-turkish-lira";
 import { RedoIcon } from "@/icons/redo";
 import { RedoDotIcon } from "@/icons/redo-dot";
 import { RefreshCCWIcon } from "@/icons/refresh-ccw";
@@ -296,7 +306,6 @@ import { SquareChevronRightIcon } from "@/icons/square-chevron-right";
 import { SquareChevronUpIcon } from "@/icons/square-chevron-up";
 import { SquarePenIcon } from "@/icons/square-pen";
 import { SquareStackIcon } from "@/icons/square-stack";
-import { StampIcon } from "@/icons/stamp";
 import { StethoscopeIcon } from "@/icons/stethoscope";
 import { SunIcon } from "@/icons/sun";
 import { SunDimIcon } from "@/icons/sun-dim";
@@ -349,7 +358,6 @@ import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
-import { BriefcaseBusinessIcon } from "./briefcase-business";
 import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
@@ -365,7 +373,6 @@ import { CornerRightDownIcon } from "./corner-right-down";
 import { CornerRightUpIcon } from "./corner-right-up";
 import { CornerUpLeftIcon } from "./corner-up-left";
 import { CornerUpRightIcon } from "./corner-up-right";
-import { CreditCardIcon } from "./credit-card";
 import { FolderArchiveIcon } from "./folder-archive";
 import { FolderCheckIcon } from "./folder-check";
 import { FolderClockIcon } from "./folder-clock";
@@ -415,7 +422,6 @@ import { ServerCrashIcon } from "./server-crash";
 import { ServerOffIcon } from "./server-off";
 import { ShipWheelIcon } from "./ship-wheel";
 import { TruckIcon } from "./truck";
-import { WalletIcon } from "./wallet";
 
 type IconListItem = {
   name: string;
@@ -424,6 +430,132 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "receipt",
+    icon: ReceiptIcon,
+    keywords: [
+      "receipt",
+      "bill",
+      "voucher",
+      "slip",
+      "check",
+      "counterfoil",
+      "invoice",
+      "details",
+      "transaction",
+      "purchase",
+      "expense",
+    ],
+  },
+  {
+    name: "receipt-cent",
+    icon: ReceiptCentIcon,
+    keywords: [
+      "receipt",
+      "cent",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+      "invoice",
+    ],
+  },
+  {
+    name: "receipt-euro",
+    icon: ReceiptEuroIcon,
+    keywords: [
+      "receipt",
+      "euro",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+      "invoice",
+    ],
+  },
+  {
+    name: "receipt-indian-rupee",
+    icon: ReceiptIndianRupeeIcon,
+    keywords: [
+      "receipt",
+      "indian rupee",
+      "inr",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
+  {
+    name: "receipt-japanese-yen",
+    icon: ReceiptJapaneseYenIcon,
+    keywords: [
+      "receipt",
+      "japanese yen",
+      "yen",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
+  {
+    name: "receipt-pound-sterling",
+    icon: ReceiptPoundSterlingIcon,
+    keywords: [
+      "receipt",
+      "pound sterling",
+      "gbp",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
+  {
+    name: "receipt-russian-ruble",
+    icon: ReceiptRussianRubleIcon,
+    keywords: [
+      "receipt",
+      "russian ruble",
+      "ruble",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
+  {
+    name: "receipt-swiss-franc",
+    icon: ReceiptSwissFrancIcon,
+    keywords: [
+      "receipt",
+      "swiss franc",
+      "chf",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
+  {
+    name: "receipt-text",
+    icon: ReceiptTextIcon,
+    keywords: ["receipt", "text", "details", "invoice", "bill", "purchase"],
+  },
+  {
+    name: "receipt-turkish-lira",
+    icon: ReceiptTurkishLiraIcon,
+    keywords: [
+      "receipt",
+      "turkish lira",
+      "try",
+      "currency",
+      "money",
+      "payment",
+      "bill",
+    ],
+  },
   {
     name: "server",
     icon: ServerIcon,

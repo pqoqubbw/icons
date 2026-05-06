@@ -46,7 +46,7 @@ const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
           controls.start("animate");
         }
       },
-      [controls, onMouseEnter],
+      [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
@@ -57,7 +57,7 @@ const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
           controls.start("normal");
         }
       },
-      [controls, onMouseLeave],
+      [controls, onMouseLeave]
     );
 
     return (
@@ -92,7 +92,7 @@ const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
         </motion.svg>
       </div>
     );
-  },
+  }
 );
 
 ServerOffIcon.displayName = "ServerOffIcon";

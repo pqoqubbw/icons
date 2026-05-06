@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimation, Variants } from "motion/react";
+import { motion, useAnimation, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -73,24 +73,24 @@ const ReceiptTurkishLiraIcon = forwardRef<
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start("animate");
-      } else {
+      if (isControlledRef.current) {
         onMouseEnter?.(e);
+      } else {
+        controls.start("animate");
       }
     },
-    [controls, onMouseEnter],
+    [controls, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!isControlledRef.current) {
-        controls.start("normal");
-      } else {
+      if (isControlledRef.current) {
         onMouseLeave?.(e);
+      } else {
+        controls.start("normal");
       }
     },
-    [controls, onMouseLeave],
+    [controls, onMouseLeave]
   );
 
   return (
@@ -101,25 +101,25 @@ const ReceiptTurkishLiraIcon = forwardRef<
       {...props}
     >
       <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill="none"
+        height={size}
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width={size}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          d="M10 7v10a5 5 0 0 0 5-5"
           animate={controls}
+          d="M10 7v10a5 5 0 0 0 5-5"
           initial="normal"
           variants={LIRA_MAIN_VARIANTS}
         />
         <motion.path
-          d="m14 8-6 3"
           animate={controls}
+          d="m14 8-6 3"
           initial="normal"
           variants={LIRA_SECONDARY_VARIANTS}
         />

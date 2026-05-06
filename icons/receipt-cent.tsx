@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimation, Variants } from "motion/react";
+import { motion, useAnimation, type Variants } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -71,24 +71,24 @@ const ReceiptCentIcon = forwardRef<ReceiptCentIconHandle, ReceiptCentIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("animate");
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
         }
       },
-      [controls, onMouseEnter],
+      [controls, onMouseEnter]
     );
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start("normal");
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
         }
       },
-      [controls, onMouseLeave],
+      [controls, onMouseLeave]
     );
 
     return (
@@ -99,25 +99,25 @@ const ReceiptCentIcon = forwardRef<ReceiptCentIconHandle, ReceiptCentIconProps>(
         {...props}
       >
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={size}
-          height={size}
-          viewBox="0 0 24 24"
           fill="none"
+          height={size}
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <motion.path
-            d="M12 7v10"
             animate={controls}
+            d="M12 7v10"
             initial="normal"
             variants={CENT_SECONDARY_VARIANTS}
           />
           <motion.path
-            d="M14.828 14.829a4 4 0 0 1-5.656 0 4 4 0 0 1 0-5.657 4 4 0 0 1 5.656 0"
             animate={controls}
+            d="M14.828 14.829a4 4 0 0 1-5.656 0 4 4 0 0 1 0-5.657 4 4 0 0 1 5.656 0"
             initial="normal"
             variants={CENT_MAIN_VARIANTS}
           />
@@ -125,7 +125,7 @@ const ReceiptCentIcon = forwardRef<ReceiptCentIconHandle, ReceiptCentIconProps>(
         </motion.svg>
       </div>
     );
-  },
+  }
 );
 
 ReceiptCentIcon.displayName = "ReceiptCentIcon";

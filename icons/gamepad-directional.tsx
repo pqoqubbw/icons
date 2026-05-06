@@ -85,7 +85,7 @@ const GamepadDirectionalIcon = forwardRef<
         controls.start("animate");
       }
     },
-    [controls, onMouseEnter],
+    [controls, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
@@ -96,7 +96,7 @@ const GamepadDirectionalIcon = forwardRef<
         controls.start("normal");
       }
     },
-    [controls, onMouseLeave],
+    [controls, onMouseLeave]
   );
 
   return (
