@@ -66,6 +66,7 @@ import { BotMessageSquareIcon } from "@/icons/bot-message-square";
 import { BoxIcon } from "@/icons/box";
 import { BoxesIcon } from "@/icons/boxes";
 import { BrainIcon } from "@/icons/brain";
+import { BriefcaseBusinessIcon } from "@/icons/briefcase-business";
 import { CalendarCheckIcon } from "@/icons/calendar-check";
 import { CalendarCheck2Icon } from "@/icons/calendar-check-2";
 import { CalendarCogIcon } from "@/icons/calendar-cog";
@@ -122,6 +123,7 @@ import { ConstructionIcon } from "@/icons/construction";
 import { ContrastIcon } from "@/icons/contrast";
 import { CookingPotIcon } from "@/icons/cooking-pot";
 import { CopyIcon } from "@/icons/copy";
+import { CreditCardIcon } from "@/icons/credit-card";
 import { CpuIcon } from "@/icons/cpu";
 import { CupSodaIcon } from "@/icons/cup-soda";
 import { CursorClickIcon } from "@/icons/cursor-click";
@@ -306,6 +308,7 @@ import { SquareChevronRightIcon } from "@/icons/square-chevron-right";
 import { SquareChevronUpIcon } from "@/icons/square-chevron-up";
 import { SquarePenIcon } from "@/icons/square-pen";
 import { SquareStackIcon } from "@/icons/square-stack";
+import { StampIcon } from "@/icons/stamp";
 import { StethoscopeIcon } from "@/icons/stethoscope";
 import { SunIcon } from "@/icons/sun";
 import { SunDimIcon } from "@/icons/sun-dim";
@@ -339,6 +342,7 @@ import { UsersIcon } from "@/icons/users";
 import { VibrateIcon } from "@/icons/vibrate";
 import { VolumeIcon } from "@/icons/volume";
 import { WashingMachineIcon } from "@/icons/washing-machine";
+import { WalletIcon } from "@/icons/wallet";
 import { WavesIcon } from "@/icons/waves";
 import { WavesLadderIcon } from "@/icons/waves-ladder";
 import { WaypointsIcon } from "@/icons/waypoints";
@@ -554,6 +558,60 @@ const ICON_LIST: IconListItem[] = [
       "money",
       "payment",
       "bill",
+    ],
+  },
+  {
+    name: "briefcase-business",
+    icon: BriefcaseBusinessIcon,
+    keywords: [
+      "briefcase",
+      "business",
+      "work",
+      "office",
+      "case",
+      "luggage",
+      "job",
+      "career",
+    ],
+  },
+  {
+    name: "wallet",
+    icon: WalletIcon,
+    keywords: [
+      "wallet",
+      "money",
+      "purse",
+      "billfold",
+      "cash",
+      "finance",
+      "payment",
+    ],
+  },
+  {
+    name: "credit-card",
+    icon: CreditCardIcon,
+    keywords: [
+      "credit card",
+      "card",
+      "payment",
+      "debit",
+      "money",
+      "finance",
+      "bank",
+    ],
+  },
+  {
+    name: "stamp",
+    icon: StampIcon,
+    keywords: [
+      "stamp",
+      "seal",
+      "postage",
+      "letter",
+      "mail",
+      "mark",
+      "official",
+      "document",
     ],
   },
   {
