@@ -123,8 +123,8 @@ import { ConstructionIcon } from "@/icons/construction";
 import { ContrastIcon } from "@/icons/contrast";
 import { CookingPotIcon } from "@/icons/cooking-pot";
 import { CopyIcon } from "@/icons/copy";
-import { CreditCardIcon } from "@/icons/credit-card";
 import { CpuIcon } from "@/icons/cpu";
+import { CreditCardIcon } from "@/icons/credit-card";
 import { CupSodaIcon } from "@/icons/cup-soda";
 import { CursorClickIcon } from "@/icons/cursor-click";
 import { DatabaseBackupIcon } from "@/icons/database-backup";
@@ -341,8 +341,8 @@ import { UserRoundPlusIcon } from "@/icons/user-round-plus";
 import { UsersIcon } from "@/icons/users";
 import { VibrateIcon } from "@/icons/vibrate";
 import { VolumeIcon } from "@/icons/volume";
-import { WashingMachineIcon } from "@/icons/washing-machine";
 import { WalletIcon } from "@/icons/wallet";
+import { WashingMachineIcon } from "@/icons/washing-machine";
 import { WavesIcon } from "@/icons/waves";
 import { WavesLadderIcon } from "@/icons/waves-ladder";
 import { WaypointsIcon } from "@/icons/waypoints";
@@ -366,12 +366,15 @@ import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
+import { BicepsFlexedIcon } from "./biceps-flexed";
 import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
 import { CigaretteIcon } from "./cigarette";
 import { CigaretteOffIcon } from "./cigarette-off";
+import { CloudBackupIcon } from "./cloud-backup";
+import { CloudSyncIcon } from "./cloud-sync";
 import { ConciergeBellIcon } from "./concierge-bell";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
@@ -404,7 +407,6 @@ import { FolderSyncIcon } from "./folder-sync";
 import { FolderTreeIcon } from "./folder-tree";
 import { FolderUpIcon } from "./folder-up";
 import { FolderXIcon } from "./folder-x";
-import { GamepadDirectionalIcon } from "./gamepad-directional";
 import { GavelIcon } from "./gavel";
 import { GitBranchIcon } from "./git-branch";
 import { GitCompareIcon } from "./git-compare";
@@ -422,12 +424,16 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
+import { PhoneIcon } from "./phone";
+import { PhoneCallIcon } from "./phone-call";
+import { PhoneForwardedIcon } from "./phone-forwarded";
+import { PhoneIncomingIcon } from "./phone-incoming";
+import { PhoneMissedIcon } from "./phone-missed";
 import { PlaneLandingIcon } from "./plane-landing";
 import { PlaneTakeoffIcon } from "./plane-takeoff";
 import { ServerIcon } from "./server";
 import { ServerCogIcon } from "./server-cog";
 import { ServerCrashIcon } from "./server-crash";
-import { ServerOffIcon } from "./server-off";
 import { ShipWheelIcon } from "./ship-wheel";
 import { TruckIcon } from "./truck";
 
@@ -634,14 +640,14 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["server", "network", "communication", "signal", "wireless"],
   },
   {
-    name: "server-off",
-    icon: ServerOffIcon,
-    keywords: ["server", "network", "communication", "signal", "wireless"],
+    name: "cloud-backup",
+    icon: CloudBackupIcon,
+    keywords: ["cloud", "backup", "synchronize", "cloud backup"],
   },
   {
-    name: "gamepad-directional",
-    icon: GamepadDirectionalIcon,
-    keywords: ["gamepad", "controller", "directional", "navigation", "input"],
+    name: "cloud-sync",
+    icon: CloudSyncIcon,
+    keywords: ["cloud", "sync", "synchronize", "cloud sync"],
   },
   {
     name: "cigarette",

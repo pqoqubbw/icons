@@ -1,31 +1,35 @@
 "use client";
 
-import { motion, useAnimation, type Variants } from "motion/react";
+import {
+  motion,
+  type Transition,
+  useAnimation,
+  type Variants,
+} from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export interface ServerOffIconHandle {
+export interface CloudBackupIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface ServerOffIconProps extends HTMLAttributes<HTMLDivElement> {
+interface CloudBackupIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const LINE_VARIANTS: Variants = {
-  normal: { pathLength: 1 },
-  animate: {
-    pathLength: [0, 1],
-    transition: {
-      duration: 0.35,
-      ease: "easeOut",
-    },
-  },
+const BACKUP_VARIANTS: Variants = {
+  normal: { rotate: 0 },
+  animate: { rotate: -360 },
 };
 
-const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
+const BACKUP_TRANSITION: Transition = {
+  duration: 0.8,
+  ease: "easeInOut",
+};
+
+const CloudBackupIcon = forwardRef<CloudBackupIconHandle, CloudBackupIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -67,7 +71,7 @@ const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
         onMouseLeave={handleMouseLeave}
         {...props}
       >
-        <motion.svg
+        <svg
           fill="none"
           height={size}
           stroke="currentColor"
@@ -78,23 +82,22 @@ const ServerOffIcon = forwardRef<ServerOffIconHandle, ServerOffIconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M7 2h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-5" />
-          <path d="M10 10 2.5 2.5C2 2 2 2.5 2 5v3a2 2 0 0 0 2 2h6z" />
-          <path d="M22 17v-1a2 2 0 0 0-2-2h-1" />
-          <path d="M4 14a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16.5l1-.5.5.5-8-8H4z" />
-          <path d="M6 18h.01" />
-          <motion.path
+          <path d="M21 15.251A4.5 4.5 0 0 0 17.5 8h-1.79A7 7 0 1 0 3 13.607" />
+          <motion.g
             animate={controls}
-            d="m2 2 20 20"
-            initial={{ pathLength: 1 }}
-            variants={LINE_VARIANTS}
-          />
-        </motion.svg>
+            initial="normal"
+            transition={BACKUP_TRANSITION}
+            variants={BACKUP_VARIANTS}
+          >
+            <path d="M7 11v4h4" />
+            <path d="M8 19a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5 4.82 4.82 0 0 0-3.41 1.41L7 15" />
+          </motion.g>
+        </svg>
       </div>
     );
   }
 );
 
-ServerOffIcon.displayName = "ServerOffIcon";
+CloudBackupIcon.displayName = "CloudBackupIcon";
 
-export { ServerOffIcon };
+export { CloudBackupIcon };
