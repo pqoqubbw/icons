@@ -357,6 +357,10 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
+import { AlarmClockCheckIcon } from "./alarm-clock-check";
+import { AlarmClockMinusIcon } from "./alarm-clock-minus";
+import { AlarmClockPlusIcon } from "./alarm-clock-plus";
+import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -663,6 +667,56 @@ const ICON_LIST: IconListItem[] = [
     name: "plane-landing",
     icon: PlaneLandingIcon,
     keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
+  },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke", "fire", "smoke", "fire alarm"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "biceps-flexed",
+    icon: BicepsFlexedIcon,
+    keywords: ["biceps", "flexed", "arm", "muscle", "strength"],
+  },
+  {
+    name: "phone",
+    icon: PhoneIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-call",
+    icon: PhoneCallIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-forward",
+    icon: PhoneForwardedIcon,
+    keywords: ["phone", "forward", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-incoming",
+    icon: PhoneIncomingIcon,
+    keywords: ["phone", "incoming", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-missed",
+    icon: PhoneMissedIcon,
+    keywords: ["phone", "missed", "communication", "signal", "wireless"],
   },
   {
     name: "layout-grid",
