@@ -425,6 +425,8 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
+import { PlaneLandingIcon } from "./plane-landing";
+import { PlaneTakeoffIcon } from "./plane-takeoff";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
 import { PhoneForwardedIcon } from "./phone-forwarded";
@@ -434,6 +436,10 @@ import { PhoneOffIcon } from "./phone-off";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
+import { ServerIcon } from "./server";
+import { ServerCogIcon } from "./server-cog";
+import { ServerCrashIcon } from "./server-crash";
+import { ShipWheelIcon } from "./ship-wheel";
 import { SwitchCameraIcon } from "./switch-camera";
 import { TruckIcon } from "./truck";
 import { UserRoundCogIcon } from "./user-round-cog";
@@ -674,6 +680,21 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["phone", "off", "communication", "signal", "wireless"],
   },
   {
+    name: "server",
+    icon: ServerIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-cog",
+    icon: ServerCogIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-crash",
+    icon: ServerCrashIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
     name: "router",
     icon: RouterIcon,
     keywords: ["router", "network", "communication", "signal", "wireless"],
@@ -687,6 +708,21 @@ const ICON_LIST: IconListItem[] = [
     name: "projector",
     icon: ProjectorIcon,
     keywords: ["projector", "screen", "display", "video", "projection"],
+  },
+  {
+    name: "ship-wheel",
+    icon: ShipWheelIcon,
+    keywords: ["ship", "wheel", "navigation", "transportation"],
+  },
+  {
+    name: "plane-takeoff",
+    icon: PlaneTakeoffIcon,
+    keywords: ["plane", "takeoff", "flight", "airplane", "aircraft"],
+  },
+  {
+    name: "plane-landing",
+    icon: PlaneLandingIcon,
+    keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
   },
   {
     name: "fan",
