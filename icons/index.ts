@@ -384,6 +384,7 @@ import { CornerRightDownIcon } from "./corner-right-down";
 import { CornerRightUpIcon } from "./corner-right-up";
 import { CornerUpLeftIcon } from "./corner-up-left";
 import { CornerUpRightIcon } from "./corner-up-right";
+import { FanIcon } from "./fan";
 import { FolderArchiveIcon } from "./folder-archive";
 import { FolderCheckIcon } from "./folder-check";
 import { FolderClockIcon } from "./folder-clock";
@@ -429,13 +430,17 @@ import { PhoneCallIcon } from "./phone-call";
 import { PhoneForwardedIcon } from "./phone-forwarded";
 import { PhoneIncomingIcon } from "./phone-incoming";
 import { PhoneMissedIcon } from "./phone-missed";
-import { PlaneLandingIcon } from "./plane-landing";
-import { PlaneTakeoffIcon } from "./plane-takeoff";
-import { ServerIcon } from "./server";
-import { ServerCogIcon } from "./server-cog";
-import { ServerCrashIcon } from "./server-crash";
-import { ShipWheelIcon } from "./ship-wheel";
+import { PhoneOffIcon } from "./phone-off";
+import { ProjectorIcon } from "./projector";
+import { RouterIcon } from "./router";
+import { SatelliteDishIcon } from "./satellite-dish";
+import { SwitchCameraIcon } from "./switch-camera";
 import { TruckIcon } from "./truck";
+import { UserRoundCogIcon } from "./user-round-cog";
+import { UsersRoundIcon } from "./users-round";
+import { WifiCogIcon } from "./wifi-cog";
+import { WifiPenIcon } from "./wifi-pen";
+import { WifiSyncIcon } from "./wifi-sync";
 
 type IconListItem = {
   name: string;
@@ -625,79 +630,18 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: "server",
-    icon: ServerIcon,
-    keywords: ["server", "network", "communication", "signal", "wireless"],
-  },
-  {
-    name: "server-cog",
-    icon: ServerCogIcon,
-    keywords: ["server", "network", "communication", "signal", "wireless"],
-  },
-  {
-    name: "server-crash",
-    icon: ServerCrashIcon,
-    keywords: ["server", "network", "communication", "signal", "wireless"],
-  },
-  {
-    name: "cloud-backup",
-    icon: CloudBackupIcon,
-    keywords: ["cloud", "backup", "synchronize", "cloud backup"],
-  },
-  {
-    name: "cloud-sync",
-    icon: CloudSyncIcon,
-    keywords: ["cloud", "sync", "synchronize", "cloud sync"],
-  },
-  {
-    name: "cigarette",
-    icon: CigaretteIcon,
-    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
-  },
-  {
-    name: "cigarette-off",
-    icon: CigaretteOffIcon,
-    keywords: ["cigarette", "smoke", "smoking", "smoke", "smoke icon"],
-  },
-  {
-    name: "ship-wheel",
-    icon: ShipWheelIcon,
-    keywords: ["ship", "wheel", "navigation", "transportation"],
-  },
-  {
-    name: "plane-takeoff",
-    icon: PlaneTakeoffIcon,
-    keywords: ["plane", "takeoff", "flight", "airplane", "aircraft"],
-  },
-  {
-    name: "plane-landing",
-    icon: PlaneLandingIcon,
-    keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
-  },
-  {
-    name: "alarm-clock-check",
-    icon: AlarmClockCheckIcon,
-    keywords: ["alarm", "clock", "check", "time", "schedule"],
-  },
-  {
-    name: "alarm-clock-minus",
-    icon: AlarmClockMinusIcon,
-    keywords: ["alarm", "clock", "check", "time", "schedule"],
-  },
-  {
-    name: "alarm-smoke",
-    icon: AlarmSmokeIcon,
-    keywords: ["alarm", "smoke", "fire", "smoke", "fire alarm"],
-  },
-  {
-    name: "alarm-clock-plus",
-    icon: AlarmClockPlusIcon,
-    keywords: ["alarm", "clock", "check", "time", "schedule"],
-  },
-  {
     name: "biceps-flexed",
     icon: BicepsFlexedIcon,
-    keywords: ["biceps", "flexed", "arm", "muscle", "strength"],
+    keywords: [
+      "biceps",
+      "flexed",
+      "muscle",
+      "arm",
+      "strong",
+      "fitness",
+      "workout",
+      "gym",
+    ],
   },
   {
     name: "phone",
@@ -710,9 +654,9 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["phone", "call", "communication", "signal", "wireless"],
   },
   {
-    name: "phone-forward",
+    name: "phone-forwarded",
     icon: PhoneForwardedIcon,
-    keywords: ["phone", "forward", "communication", "signal", "wireless"],
+    keywords: ["phone", "forwarded", "communication", "signal", "wireless"],
   },
   {
     name: "phone-incoming",
@@ -723,6 +667,61 @@ const ICON_LIST: IconListItem[] = [
     name: "phone-missed",
     icon: PhoneMissedIcon,
     keywords: ["phone", "missed", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-off",
+    icon: PhoneOffIcon,
+    keywords: ["phone", "off", "communication", "signal", "wireless"],
+  },
+  {
+    name: "router",
+    icon: RouterIcon,
+    keywords: ["router", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "satellite-dish",
+    icon: SatelliteDishIcon,
+    keywords: ["satellite", "dish", "communication", "signal", "wireless"],
+  },
+  {
+    name: "projector",
+    icon: ProjectorIcon,
+    keywords: ["projector", "screen", "display", "video", "projection"],
+  },
+  {
+    name: "fan",
+    icon: FanIcon,
+    keywords: ["fan", "air", "ventilation", "breeze"],
+  },
+  {
+    name: "switch-camera",
+    icon: SwitchCameraIcon,
+    keywords: ["switch", "camera", "video", "photo", "capture"],
+  },
+  {
+    name: "wifi-cog",
+    icon: WifiCogIcon,
+    keywords: ["wifi", "cog", "settings", "configuration"],
+  },
+  {
+    name: "wifi-sync",
+    icon: WifiSyncIcon,
+    keywords: ["wifi", "sync", "synchronize", "update"],
+  },
+  {
+    name: "wifi-pen",
+    icon: WifiPenIcon,
+    keywords: ["wifi", "pen", "edit", "write"],
+  },
+  {
+    name: "user-round-cog",
+    icon: UserRoundCogIcon,
+    keywords: ["user", "cog", "settings", "configuration"],
+  },
+  {
+    name: "users-round",
+    icon: UsersRoundIcon,
+    keywords: ["users", "group", "team", "people"],
   },
   {
     name: "layout-grid",
