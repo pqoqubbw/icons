@@ -125,6 +125,7 @@ import { CookingPotIcon } from "@/icons/cooking-pot";
 import { CopyIcon } from "@/icons/copy";
 import { CreditCardIcon } from "@/icons/credit-card";
 import { CpuIcon } from "@/icons/cpu";
+import { CreditCardIcon } from "@/icons/credit-card";
 import { CupSodaIcon } from "@/icons/cup-soda";
 import { CursorClickIcon } from "@/icons/cursor-click";
 import { DatabaseBackupIcon } from "@/icons/database-backup";
@@ -341,6 +342,7 @@ import { UserRoundPlusIcon } from "@/icons/user-round-plus";
 import { UsersIcon } from "@/icons/users";
 import { VibrateIcon } from "@/icons/vibrate";
 import { VolumeIcon } from "@/icons/volume";
+import { WalletIcon } from "@/icons/wallet";
 import { WashingMachineIcon } from "@/icons/washing-machine";
 import { WalletIcon } from "@/icons/wallet";
 import { WavesIcon } from "@/icons/waves";
@@ -357,11 +359,16 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
+import { AlarmClockCheckIcon } from "./alarm-clock-check";
+import { AlarmClockMinusIcon } from "./alarm-clock-minus";
+import { AlarmClockPlusIcon } from "./alarm-clock-plus";
+import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
+import { BicepsFlexedIcon } from "./biceps-flexed";
 import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
@@ -376,6 +383,7 @@ import { CornerRightDownIcon } from "./corner-right-down";
 import { CornerRightUpIcon } from "./corner-right-up";
 import { CornerUpLeftIcon } from "./corner-up-left";
 import { CornerUpRightIcon } from "./corner-up-right";
+import { FanIcon } from "./fan";
 import { FolderArchiveIcon } from "./folder-archive";
 import { FolderCheckIcon } from "./folder-check";
 import { FolderClockIcon } from "./folder-clock";
@@ -416,16 +424,22 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
-import { LeafIcon } from "./leaf";
-import { LeafyGreenIcon } from "./leafy-green";
-import { ShredderIcon } from "./shredder";
-import { SoupIcon } from "./soup";
-import { SprayCanIcon } from "./spray-can";
-import { TreeDeciduousIcon } from "./tree-deciduous";
-import { TreePineIcon } from "./tree-pine";
+import { PhoneIcon } from "./phone";
+import { PhoneCallIcon } from "./phone-call";
+import { PhoneForwardedIcon } from "./phone-forwarded";
+import { PhoneIncomingIcon } from "./phone-incoming";
+import { PhoneMissedIcon } from "./phone-missed";
+import { PhoneOffIcon } from "./phone-off";
+import { ProjectorIcon } from "./projector";
+import { RouterIcon } from "./router";
+import { SatelliteDishIcon } from "./satellite-dish";
+import { SwitchCameraIcon } from "./switch-camera";
 import { TruckIcon } from "./truck";
-import { WavesArrowDownIcon } from "./waves-arrow-down";
-import { WavesArrowUpIcon } from "./waves-arrow-up";
+import { UserRoundCogIcon } from "./user-round-cog";
+import { UsersRoundIcon } from "./users-round";
+import { WifiCogIcon } from "./wifi-cog";
+import { WifiPenIcon } from "./wifi-pen";
+import { WifiSyncIcon } from "./wifi-sync";
 
 type IconListItem = {
   name: string;
@@ -434,46 +448,6 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
-  {
-    name: "briefcase-business",
-    icon: BriefcaseBusinessIcon,
-    keywords: [
-      "briefcase",
-      "business",
-      "work",
-      "office",
-      "case",
-      "luggage",
-      "job",
-      "career",
-    ],
-  },
-  {
-    name: "wallet",
-    icon: WalletIcon,
-    keywords: [
-      "wallet",
-      "money",
-      "purse",
-      "billfold",
-      "cash",
-      "finance",
-      "payment",
-    ],
-  },
-  {
-    name: "credit-card",
-    icon: CreditCardIcon,
-    keywords: [
-      "credit card",
-      "card",
-      "payment",
-      "debit",
-      "money",
-      "finance",
-      "bank",
-    ],
-  },
   {
     name: "receipt",
     icon: ReceiptIcon,
@@ -585,14 +559,7 @@ const ICON_LIST: IconListItem[] = [
   {
     name: "receipt-text",
     icon: ReceiptTextIcon,
-    keywords: [
-      "receipt",
-      "text",
-      "details",
-      "invoice",
-      "bill",
-      "purchase",
-    ],
+    keywords: ["receipt", "text", "details", "invoice", "bill", "purchase"],
   },
   {
     name: "receipt-turkish-lira",
@@ -608,18 +575,152 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: "briefcase-business",
+    icon: BriefcaseBusinessIcon,
+    keywords: [
+      "briefcase",
+      "business",
+      "work",
+      "office",
+      "case",
+      "luggage",
+      "job",
+      "career",
+    ],
+  },
+  {
+    name: "wallet",
+    icon: WalletIcon,
+    keywords: [
+      "wallet",
+      "money",
+      "purse",
+      "billfold",
+      "cash",
+      "finance",
+      "payment",
+    ],
+  },
+  {
+    name: "credit-card",
+    icon: CreditCardIcon,
+    keywords: [
+      "credit card",
+      "card",
+      "payment",
+      "debit",
+      "money",
+      "finance",
+      "bank",
+    ],
+  },
+  {
     name: "stamp",
     icon: StampIcon,
     keywords: [
       "stamp",
-      "seal",
-      "approve",
+      "postage",
+      "letter",
+      "mail",
       "mark",
-      "ink",
-      "press",
+      "seal",
       "official",
-      "validate",
+      "document",
     ],
+  },
+  {
+    name: "biceps-flexed",
+    icon: BicepsFlexedIcon,
+    keywords: [
+      "biceps",
+      "flexed",
+      "muscle",
+      "arm",
+      "strong",
+      "fitness",
+      "workout",
+      "gym",
+    ],
+  },
+  {
+    name: "phone",
+    icon: PhoneIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-call",
+    icon: PhoneCallIcon,
+    keywords: ["phone", "call", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-forwarded",
+    icon: PhoneForwardedIcon,
+    keywords: ["phone", "forwarded", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-incoming",
+    icon: PhoneIncomingIcon,
+    keywords: ["phone", "incoming", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-missed",
+    icon: PhoneMissedIcon,
+    keywords: ["phone", "missed", "communication", "signal", "wireless"],
+  },
+  {
+    name: "phone-off",
+    icon: PhoneOffIcon,
+    keywords: ["phone", "off", "communication", "signal", "wireless"],
+  },
+  {
+    name: "router",
+    icon: RouterIcon,
+    keywords: ["router", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "satellite-dish",
+    icon: SatelliteDishIcon,
+    keywords: ["satellite", "dish", "communication", "signal", "wireless"],
+  },
+  {
+    name: "projector",
+    icon: ProjectorIcon,
+    keywords: ["projector", "screen", "display", "video", "projection"],
+  },
+  {
+    name: "fan",
+    icon: FanIcon,
+    keywords: ["fan", "air", "ventilation", "breeze"],
+  },
+  {
+    name: "switch-camera",
+    icon: SwitchCameraIcon,
+    keywords: ["switch", "camera", "video", "photo", "capture"],
+  },
+  {
+    name: "wifi-cog",
+    icon: WifiCogIcon,
+    keywords: ["wifi", "cog", "settings", "configuration"],
+  },
+  {
+    name: "wifi-sync",
+    icon: WifiSyncIcon,
+    keywords: ["wifi", "sync", "synchronize", "update"],
+  },
+  {
+    name: "wifi-pen",
+    icon: WifiPenIcon,
+    keywords: ["wifi", "pen", "edit", "write"],
+  },
+  {
+    name: "user-round-cog",
+    icon: UserRoundCogIcon,
+    keywords: ["user", "cog", "settings", "configuration"],
+  },
+  {
+    name: "users-round",
+    icon: UsersRoundIcon,
+    keywords: ["users", "group", "team", "people"],
   },
   {
     name: "leaf",
