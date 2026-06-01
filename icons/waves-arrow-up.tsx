@@ -102,7 +102,6 @@ const WavesArrowUpIcon = forwardRef<
         width={size}
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* <motion.g animate={controls} initial="normal" variants={ARROW_VARIANTS}>  */}
         <motion.path
           animate={controls}
           d="M12 2v8"
@@ -115,7 +114,6 @@ const WavesArrowUpIcon = forwardRef<
           initial="normal"
           variants={HEAD_VARIANTS}
         />
-        {/* </motion.g> */}
         <path d="M2 15c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
         <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
       </motion.svg>
