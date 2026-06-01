@@ -2686,4 +2686,46 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "shredder",
+    path: path.join(__dirname, "../icons/shredder.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "soup",
+    path: path.join(__dirname, "../icons/soup.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "spray-can",
+    path: path.join(__dirname, "../icons/spray-can.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "tree-deciduous",
+    path: path.join(__dirname, "../icons/tree-deciduous.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "tree-pine",
+    path: path.join(__dirname, "../icons/tree-pine.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "waves-arrow-down",
+    path: path.join(__dirname, "../icons/waves-arrow-down.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "waves-arrow-up",
+    path: path.join(__dirname, "../icons/waves-arrow-up.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
