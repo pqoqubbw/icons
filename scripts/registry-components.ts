@@ -2668,4 +2668,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "palette",
+    path: path.join(__dirname, "../icons/palette.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
