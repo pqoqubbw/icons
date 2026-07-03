@@ -336,6 +336,7 @@ import { UploadIcon } from "@/icons/upload";
 import { UpvoteIcon } from "@/icons/upvote";
 import { UserIcon } from "@/icons/user";
 import { UserCheckIcon } from "@/icons/user-check";
+import { UserPlusIcon } from "@/icons/user-plus";
 import { UserRoundCheckIcon } from "@/icons/user-round-check";
 import { UserRoundPlusIcon } from "@/icons/user-round-plus";
 import { UsersIcon } from "@/icons/users";
@@ -357,10 +358,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { AlarmClockCheckIcon } from "./alarm-clock-check";
-import { AlarmClockMinusIcon } from "./alarm-clock-minus";
-import { AlarmClockPlusIcon } from "./alarm-clock-plus";
-import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -445,6 +442,11 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "user-plus",
+    icon: UserPlusIcon,
+    keywords: ["user", "plus", "add", "new", "person", "account", "signup"],
+  },
   {
     name: "receipt",
     icon: ReceiptIcon,

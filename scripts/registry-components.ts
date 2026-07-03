@@ -2668,4 +2668,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "user-plus",
+    path: path.join(__dirname, "../icons/user-plus.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
