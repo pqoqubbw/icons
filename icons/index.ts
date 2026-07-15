@@ -141,6 +141,7 @@ import { EarthIcon } from "@/icons/earth";
 import { EuroIcon } from "@/icons/euro";
 import { EvChargerIcon } from "@/icons/ev-charger";
 import { ExpandIcon } from "@/icons/expand";
+import { ExternalLinkIcon } from "@/icons/external-link";
 import { EyeIcon } from "@/icons/eye";
 import { EyeOffIcon } from "@/icons/eye-off";
 import { FacebookIcon } from "@/icons/facebook";
@@ -357,10 +358,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { AlarmClockCheckIcon } from "./alarm-clock-check";
-import { AlarmClockMinusIcon } from "./alarm-clock-minus";
-import { AlarmClockPlusIcon } from "./alarm-clock-plus";
-import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -445,6 +442,19 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "external-link",
+    icon: ExternalLinkIcon,
+    keywords: [
+      "external",
+      "link",
+      "outbound",
+      "open",
+      "share",
+      "north-east",
+      "diagonal",
+    ],
+  },
   {
     name: "receipt",
     icon: ReceiptIcon,
