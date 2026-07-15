@@ -178,6 +178,7 @@ import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
 import { HardDriveUploadIcon } from "@/icons/hard-drive-upload";
+import { HatGlassesIcon } from "@/icons/hat-glasses";
 import { HeartIcon } from "@/icons/heart";
 import { HistoryIcon } from "@/icons/history";
 import { HomeIcon } from "@/icons/home";
@@ -445,6 +446,36 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "hat-glasses",
+    icon: HatGlassesIcon,
+    keywords: [
+      "incognito",
+      "disguise",
+      "costume",
+      "masked",
+      "anonymous",
+      "anonymity",
+      "privacy",
+      "private browsing",
+      "stealth",
+      "hidden",
+      "undercover",
+      "cloak",
+      "invisible",
+      "ghost",
+      "spy",
+      "agent",
+      "detective",
+      "identity",
+      "cap",
+      "fedora",
+      "spectacles",
+      "shades",
+      "sunglasses",
+      "eyewear",
+    ],
+  },
   {
     name: "receipt",
     icon: ReceiptIcon,
