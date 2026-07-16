@@ -240,6 +240,7 @@ import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
+import { MonitorCogIcon } from "@/icons/monitor-cog";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
@@ -357,10 +358,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { AlarmClockCheckIcon } from "./alarm-clock-check";
-import { AlarmClockMinusIcon } from "./alarm-clock-minus";
-import { AlarmClockPlusIcon } from "./alarm-clock-plus";
-import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -445,6 +442,28 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "monitor-cog",
+    icon: MonitorCogIcon,
+    keywords: [
+      "tv",
+      "screen",
+      "display",
+      "virtual machine",
+      "vm",
+      "executable",
+      "settings",
+      "cog",
+      "edit",
+      "gear",
+      "configuration",
+      "preferences",
+      "system",
+      "control panel",
+      "network",
+      "computing",
+    ],
+  },
   {
     name: "receipt",
     icon: ReceiptIcon,
