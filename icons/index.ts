@@ -6,6 +6,10 @@ import { AirVentIcon } from "@/icons/air-vent";
 import { AirplaneIcon } from "@/icons/airplane";
 import { AirplayIcon } from "@/icons/airplay";
 import { AlarmClockIcon } from "@/icons/alarm-clock";
+import { AlarmClockCheckIcon } from "@/icons/alarm-clock-check";
+import { AlarmClockMinusIcon } from "@/icons/alarm-clock-minus";
+import { AlarmClockPlusIcon } from "@/icons/alarm-clock-plus";
+import { AlarmSmokeIcon } from "@/icons/alarm-smoke";
 import { AlignCenterIcon } from "@/icons/align-center";
 import { AlignHorizontalIcon } from "@/icons/align-horizontal";
 import { AlignLeftIcon } from "@/icons/align-left";
@@ -2265,6 +2269,22 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["attachment", "file"],
   },
   { name: "alarm-clock", icon: AlarmClockIcon, keywords: ["morning"] },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["morning", "checked"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["morning", "minus"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["morning", "plus"],
+  },
+  { name: "alarm-smoke", icon: AlarmSmokeIcon, keywords: ["alarm", "smoke"] },
   { name: "bold", icon: BoldIcon, keywords: ["text", "strong", "format"] },
   {
     name: "italic",
