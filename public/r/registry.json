@@ -5722,6 +5722,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "cherry",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cherry.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

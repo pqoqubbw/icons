@@ -86,6 +86,7 @@ import { ChartScatterIcon } from "@/icons/chart-scatter";
 import { ChartSplineIcon } from "@/icons/chart-spline";
 import { CheckIcon } from "@/icons/check";
 import { CheckCheckIcon } from "@/icons/check-check";
+import { CherryIcon } from "@/icons/cherry";
 import { ChevronDownIcon } from "@/icons/chevron-down";
 import { ChevronFirstIcon } from "@/icons/chevron-first";
 import { ChevronLeftIcon } from "@/icons/chevron-left";
@@ -357,10 +358,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { AlarmClockCheckIcon } from "./alarm-clock-check";
-import { AlarmClockMinusIcon } from "./alarm-clock-minus";
-import { AlarmClockPlusIcon } from "./alarm-clock-plus";
-import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -2828,6 +2825,11 @@ const ICON_LIST: IconListItem[] = [
     name: "rocking-chair",
     icon: RockingChairIcon,
     keywords: ["furniture", "seat", "rock", "relax", "sit", "chair"],
+  },
+  {
+    name: "cherry",
+    icon: CherryIcon,
+    keywords: ["fruit", "food", "red", "tropical"],
   },
   {
     name: "banana",
