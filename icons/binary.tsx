@@ -1,6 +1,6 @@
 "use client";
 
-import type { Transition, Variants } from "motion/react";
+import type { Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
 import type { HTMLAttributes } from "react";
 import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
@@ -18,18 +18,12 @@ interface BinaryIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const FLIP_DURATION = 0.12;
 const FLIP_STAGGER = 0.06;
-const SWAP_TRANSITION: Transition = {
-  type: "spring",
-  stiffness: 240,
-  damping: 24,
-};
 
 const FLIP_OUT_VARIANTS: Variants = {
   normal: (custom: number) => ({
     rotateX: 0,
     opacity: 1,
     transition: {
-      transition: SWAP_TRANSITION,
       duration: FLIP_DURATION,
       delay: custom * FLIP_STAGGER + FLIP_DURATION,
     },
@@ -38,7 +32,6 @@ const FLIP_OUT_VARIANTS: Variants = {
     rotateX: -90,
     opacity: 0,
     transition: {
-      transition: SWAP_TRANSITION,
       duration: FLIP_DURATION,
       delay: custom * FLIP_STAGGER,
     },
@@ -50,7 +43,6 @@ const FLIP_IN_VARIANTS: Variants = {
     rotateX: 90,
     opacity: 0,
     transition: {
-      transition: SWAP_TRANSITION,
       duration: FLIP_DURATION,
       delay: custom * FLIP_STAGGER,
     },
@@ -59,7 +51,6 @@ const FLIP_IN_VARIANTS: Variants = {
     rotateX: 0,
     opacity: 1,
     transition: {
-      transition: SWAP_TRANSITION,
       duration: FLIP_DURATION,
       delay: custom * FLIP_STAGGER + FLIP_DURATION,
     },
