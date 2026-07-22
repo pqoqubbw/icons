@@ -446,6 +446,35 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["done", "todo", "tick", "complete", "task"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["remove"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["add"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: [
+      "fire",
+      "alert",
+      "warning",
+      "detector",
+      "carbon monoxide",
+      "safety",
+      "equipment",
+      "amenities",
+    ],
+  },
+  {
     name: "receipt",
     icon: ReceiptIcon,
     keywords: [
