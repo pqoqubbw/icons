@@ -242,6 +242,7 @@ import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
+import { PaletteIcon } from "@/icons/palette";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
 import { PanelLeftOpenIcon } from "@/icons/panel-left-open";
 import { PanelRightOpenIcon } from "@/icons/panel-right-open";
@@ -445,6 +446,21 @@ type IconListItem = {
 };
 
 const ICON_LIST: IconListItem[] = [
+  {
+    name: "palette",
+    icon: PaletteIcon,
+    keywords: [
+      "palette",
+      "colors",
+      "colours",
+      "theme",
+      "scheme",
+      "paint",
+      "watercolor",
+      "watercolour",
+      "artist",
+    ],
+  },
   {
     name: "receipt",
     icon: ReceiptIcon,
