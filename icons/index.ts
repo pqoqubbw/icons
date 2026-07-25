@@ -376,6 +376,7 @@ import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
+import { CircleGaugeIcon } from "./circle-gauge";
 import { ConciergeBellIcon } from "./concierge-bell";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
@@ -426,6 +427,8 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
+import { LeafIcon } from "./leaf";
+import { LeafyGreenIcon } from "./leafy-green";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
 import { PhoneForwardedIcon } from "./phone-forwarded";
@@ -435,10 +438,17 @@ import { PhoneOffIcon } from "./phone-off";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
+import { ShredderIcon } from "./shredder";
+import { SoupIcon } from "./soup";
+import { SprayCanIcon } from "./spray-can";
 import { SwitchCameraIcon } from "./switch-camera";
+import { TreeDeciduousIcon } from "./tree-deciduous";
+import { TreePineIcon } from "./tree-pine";
 import { TruckIcon } from "./truck";
 import { UserRoundCogIcon } from "./user-round-cog";
 import { UsersRoundIcon } from "./users-round";
+import { WavesArrowDownIcon } from "./waves-arrow-down";
+import { WavesArrowUpIcon } from "./waves-arrow-up";
 import { WifiCogIcon } from "./wifi-cog";
 import { WifiPenIcon } from "./wifi-pen";
 import { WifiSyncIcon } from "./wifi-sync";
@@ -700,6 +710,26 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "minus", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "plus", "time", "schedule"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke", "fire", "detector", "fire alarm"],
+  },
+  {
     name: "biceps-flexed",
     icon: BicepsFlexedIcon,
     keywords: [
@@ -792,6 +822,56 @@ const ICON_LIST: IconListItem[] = [
     name: "users-round",
     icon: UsersRoundIcon,
     keywords: ["users", "group", "team", "people"],
+  },
+  {
+    name: "leaf",
+    icon: LeafIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "leafy-green",
+    icon: LeafyGreenIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "waves-arrow-down",
+    icon: WavesArrowDownIcon,
+    keywords: ["waves", "arrow", "down", "navigation", "scroll"],
+  },
+  {
+    name: "waves-arrow-up",
+    icon: WavesArrowUpIcon,
+    keywords: ["waves", "arrow", "up", "navigation", "scroll"],
+  },
+  {
+    name: "tree-deciduous",
+    icon: TreeDeciduousIcon,
+    keywords: ["tree", "deciduous", "forest", "nature", "green"],
+  },
+  {
+    name: "tree-pine",
+    icon: TreePineIcon,
+    keywords: ["tree", "pine", "forest", "nature", "green"],
+  },
+  {
+    name: "circle-gauge",
+    icon: CircleGaugeIcon,
+    keywords: ["gauge", "meter", "speed", "pressure", "measure", "circle"],
+  },
+  {
+    name: "spray-can",
+    icon: SprayCanIcon,
+    keywords: ["spray", "can", "paint", "color", "art"],
+  },
+  {
+    name: "shredder",
+    icon: ShredderIcon,
+    keywords: ["shredder", "trash", "garbage", "waste", "recycling"],
+  },
+  {
+    name: "soup",
+    icon: SoupIcon,
+    keywords: ["soup", "food", "meal", "bowl", "hot"],
   },
   {
     name: "layout-grid",

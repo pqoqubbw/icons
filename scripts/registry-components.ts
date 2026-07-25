@@ -2040,6 +2040,24 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "circle-gauge",
+    path: path.join(__dirname, "../icons/circle-gauge.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "leaf",
+    path: path.join(__dirname, "../icons/leaf.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "leafy-green",
+    path: path.join(__dirname, "../icons/leafy-green.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "receipt-cent",
     path: path.join(__dirname, "../icons/receipt-cent.tsx"),
     registryDependencies: [],
@@ -2690,6 +2708,48 @@ export const components: ComponentDefinition[] = [
   {
     name: "link-2",
     path: path.join(__dirname, "../icons/link-2.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "shredder",
+    path: path.join(__dirname, "../icons/shredder.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "soup",
+    path: path.join(__dirname, "../icons/soup.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "spray-can",
+    path: path.join(__dirname, "../icons/spray-can.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "tree-deciduous",
+    path: path.join(__dirname, "../icons/tree-deciduous.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "tree-pine",
+    path: path.join(__dirname, "../icons/tree-pine.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "waves-arrow-down",
+    path: path.join(__dirname, "../icons/waves-arrow-down.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "waves-arrow-up",
+    path: path.join(__dirname, "../icons/waves-arrow-up.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
