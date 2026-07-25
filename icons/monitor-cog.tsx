@@ -7,34 +7,21 @@ import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-export interface MenuIconHandle {
+export interface MonitorCogIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface MenuIconProps extends HTMLAttributes<HTMLDivElement> {
+interface MonitorCogIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const LINE_VARIANTS: Variants = {
-  normal: {
-    rotate: 0,
-    y: 0,
-    opacity: 1,
-  },
-  animate: (custom: number) => ({
-    rotate: custom === 1 ? 45 : custom === 3 ? -45 : 0,
-    y: custom === 1 ? 6 : custom === 3 ? -6 : 0,
-    opacity: custom === 2 ? 0 : 1,
-    transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 20,
-    },
-  }),
+const G_VARIANTS: Variants = {
+  normal: { rotate: 0 },
+  animate: { rotate: 180 },
 };
 
-const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
+const MonitorCogIcon = forwardRef<MonitorCogIconHandle, MonitorCogIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
     const controls = useAnimation();
     const isControlledRef = useRef(false);
@@ -69,6 +56,7 @@ const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
       },
       [controls, onMouseLeave]
     );
+
     return (
       <div
         className={cn(className)}
@@ -83,46 +71,36 @@ const MenuIcon = forwardRef<MenuIconHandle, MenuIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
+          style={{ overflow: "visible" }}
           viewBox="0 0 24 24"
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.line
+          <path d="M12 17v4" />
+          <path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" />
+          <path d="M8 21h8" />
+
+          <motion.g
             animate={controls}
-            custom={1}
-            initial="normal"
-            variants={LINE_VARIANTS}
-            x1="4"
-            x2="20"
-            y1="6"
-            y2="6"
-          />
-          <motion.line
-            animate={controls}
-            custom={2}
-            initial="normal"
-            variants={LINE_VARIANTS}
-            x1="4"
-            x2="20"
-            y1="12"
-            y2="12"
-          />
-          <motion.line
-            animate={controls}
-            custom={3}
-            initial="normal"
-            variants={LINE_VARIANTS}
-            x1="4"
-            x2="20"
-            y1="18"
-            y2="18"
-          />
+            transition={{ type: "spring", stiffness: 50, damping: 10 }}
+            variants={G_VARIANTS}
+          >
+            <path d="m14.305 7.53.923-.382" />
+            <path d="m15.228 4.852-.923-.383" />
+            <path d="m16.852 3.228-.383-.924" />
+            <path d="m16.852 8.772-.383.923" />
+            <path d="m19.148 3.228.383-.924" />
+            <path d="m19.53 9.696-.382-.924" />
+            <path d="m20.772 4.852.924-.383" />
+            <path d="m20.772 7.148.924.383" />
+            <circle cx="18" cy="6" r="3" />
+          </motion.g>
         </svg>
       </div>
     );
   }
 );
 
-MenuIcon.displayName = "MenuIcon";
+MonitorCogIcon.displayName = "MonitorCogIcon";
 
-export { MenuIcon };
+export { MonitorCogIcon };

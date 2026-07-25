@@ -6,6 +6,7 @@ interface CheckResult {
   missingInList: string[];
   totalIconFiles: number;
   totalImports: number;
+  totalInList: number;
 }
 
 const getAllIconFiles = (): string[] => {
@@ -62,18 +63,16 @@ const checkImports = (): CheckResult => {
 
   const missingImports = iconFiles.filter((file) => !imports.has(file));
 
-  const missingInList: string[] = [];
-  for (const importedFile of imports) {
-    if (!iconsInList.has(importedFile)) {
-      missingInList.push(importedFile);
-    }
-  }
+  const missingInList = iconFiles.filter(
+    (file) => imports.has(file) && !iconsInList.has(file)
+  );
 
   return {
     missingImports,
     missingInList,
     totalIconFiles: iconFiles.length,
     totalImports: imports.size,
+    totalInList: iconsInList.size,
   };
 };
 
@@ -84,17 +83,37 @@ const printReport = () => {
 
   console.log(`   Total icon files (.tsx): ${result.totalIconFiles}`);
   console.log(`   Total imports in index.ts: ${result.totalImports}`);
+  console.log(`   Total entries in ICON_LIST: ${result.totalInList}`);
+
+  let failed = false;
 
   if (result.missingImports.length > 0) {
+    failed = true;
     console.log("❌ MISSING IMPORTS:");
-    result.missingImports.forEach((file) => {
+    for (const file of result.missingImports) {
       console.log(`  - icons/${file}.tsx`);
-    });
+    }
     console.log("");
-    process.exit(1);
   } else {
     console.log("✅ All icon files are imported");
   }
+
+  if (result.missingInList.length > 0) {
+    failed = true;
+    console.log("❌ MISSING IN ICON_LIST:");
+    for (const file of result.missingInList) {
+      console.log(`  - "${file}" is imported but has no ICON_LIST entry`);
+    }
+    console.log("");
+  } else {
+    console.log("✅ All imported icons are in ICON_LIST");
+  }
+
+  if (failed) {
+    process.exit(1);
+  }
+
+  console.log("");
 };
 
 printReport();

@@ -48,6 +48,7 @@ import { BatteryFullIcon } from "@/icons/battery-full";
 import { BatteryLowIcon } from "@/icons/battery-low";
 import { BatteryMediumIcon } from "@/icons/battery-medium";
 import { BellIcon } from "@/icons/bell";
+import { BinaryIcon } from "@/icons/binary";
 import { BlocksIcon } from "@/icons/blocks";
 import { BluetoothIcon } from "@/icons/bluetooth";
 import { BluetoothConnectedIcon } from "@/icons/bluetooth-connected";
@@ -141,6 +142,7 @@ import { EarthIcon } from "@/icons/earth";
 import { EuroIcon } from "@/icons/euro";
 import { EvChargerIcon } from "@/icons/ev-charger";
 import { ExpandIcon } from "@/icons/expand";
+import { ExternalLinkIcon } from "@/icons/external-link";
 import { EyeIcon } from "@/icons/eye";
 import { EyeOffIcon } from "@/icons/eye-off";
 import { FacebookIcon } from "@/icons/facebook";
@@ -178,6 +180,7 @@ import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
 import { HardDriveUploadIcon } from "@/icons/hard-drive-upload";
+import { HatGlassesIcon } from "@/icons/hat-glasses";
 import { HeartIcon } from "@/icons/heart";
 import { HistoryIcon } from "@/icons/history";
 import { HomeIcon } from "@/icons/home";
@@ -241,6 +244,7 @@ import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
+import { MonitorCogIcon } from "@/icons/monitor-cog";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
@@ -450,6 +454,70 @@ const ICON_LIST: IconListItem[] = [
     name: "link-2",
     icon: Link2Icon,
     keywords: ["link", "connect", "chain", "url", "hyperlink"],
+  },{
+    name: "external-link",
+    icon: ExternalLinkIcon,
+    keywords: [
+      "external",
+      "link",
+      "outbound",
+      "open",
+      "share",
+      "north-east",
+      "diagonal",
+    ],
+  },
+  {
+    name: "hat-glasses",
+    icon: HatGlassesIcon,
+    keywords: [
+      "incognito",
+      "disguise",
+      "costume",
+      "masked",
+      "anonymous",
+      "anonymity",
+      "privacy",
+      "private browsing",
+      "stealth",
+      "hidden",
+      "undercover",
+      "cloak",
+      "invisible",
+      "ghost",
+      "spy",
+      "agent",
+      "detective",
+      "identity",
+      "cap",
+      "fedora",
+      "spectacles",
+      "shades",
+      "sunglasses",
+      "eyewear",
+    ],
+  },
+  {
+    name: "monitor-cog",
+    icon: MonitorCogIcon,
+    keywords: [
+      "tv",
+      "screen",
+      "display",
+      "virtual machine",
+      "vm",
+      "executable",
+      "settings",
+      "cog",
+      "edit",
+      "gear",
+      "configuration",
+      "preferences",
+      "system",
+      "control panel",
+      "network",
+      "computing",
+    ],
   },
   {
     name: "receipt",
@@ -2770,7 +2838,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
@@ -4001,6 +4068,31 @@ const ICON_LIST: IconListItem[] = [
       "wait",
       "processing",
     ],
+  },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "minus"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "plus"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke"],
+  },
+  {
+    name: "binary",
+    icon: BinaryIcon,
+    keywords: ["binary"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

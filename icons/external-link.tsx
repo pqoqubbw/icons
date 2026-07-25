@@ -7,44 +7,37 @@ import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-export interface GraduationCapIconHandle {
+export interface ExternalLinkIconHandle {
   startAnimation: () => void;
   stopAnimation: () => void;
 }
 
-interface GraduationCapIconProps extends HTMLAttributes<HTMLDivElement> {
+interface ExternalLinkIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const CAP_VARIANTS: Variants = {
+const ARROW_VARIANTS: Variants = {
   normal: {
-    rotate: 0,
+    scale: 1,
+    translateX: 0,
+    translateY: 0,
   },
   animate: {
-    y: [0, -2, 0],
-    rotate: [0, -2, 2, 0],
+    scale: [1, 0.92, 1],
+    translateX: [0, 2, 0],
+    translateY: [0, -2, 0],
+    originX: 1,
+    originY: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
 };
 
-const TASSEL_VARIANTS: Variants = {
-  normal: { rotate: 0 },
-  animate: {
-    rotate: [0, 15, -10, 5, 0],
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut",
-      delay: 0.1,
-    },
-  },
-};
-
-const GraduationCapIcon = forwardRef<
-  GraduationCapIconHandle,
-  GraduationCapIconProps
+const ExternalLinkIcon = forwardRef<
+  ExternalLinkIconHandle,
+  ExternalLinkIconProps
 >(({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
   const controls = useAnimation();
   const isControlledRef = useRef(false);
@@ -59,22 +52,16 @@ const GraduationCapIcon = forwardRef<
 
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (isControlledRef.current) {
-        onMouseEnter?.(e);
-      } else {
-        controls.start("animate");
-      }
+      if (!isControlledRef.current) controls.start("animate");
+      onMouseEnter?.(e);
     },
     [controls, onMouseEnter]
   );
 
   const handleMouseLeave = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (isControlledRef.current) {
-        onMouseLeave?.(e);
-      } else {
-        controls.start("normal");
-      }
+      if (!isControlledRef.current) controls.start("normal");
+      onMouseLeave?.(e);
     },
     [controls, onMouseLeave]
   );
@@ -97,28 +84,16 @@ const GraduationCapIcon = forwardRef<
         width={size}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <motion.g
-          animate={controls}
-          style={{ transformOrigin: "12px 12px" }}
-          variants={CAP_VARIANTS}
-        >
-          <path d="M2 10l10-5 10 5-10 5z" />
-          <path d="M6 12v5c3 3 9 3 12 0v-5" />
-
-          <motion.path
-            d="M22 10v6"
-            style={{
-              transformBox: "fill-box",
-              transformOrigin: "top center",
-            }}
-            variants={TASSEL_VARIANTS}
-          />
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+        <motion.g animate={controls} variants={ARROW_VARIANTS}>
+          <path d="M15 3h6v6" />
+          <path d="M10 14 21 3" />
         </motion.g>
       </svg>
     </div>
   );
 });
 
-GraduationCapIcon.displayName = "GraduationCapIcon";
+ExternalLinkIcon.displayName = "ExternalLinkIcon";
 
-export { GraduationCapIcon };
+export { ExternalLinkIcon };
