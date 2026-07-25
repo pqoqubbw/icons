@@ -474,7 +474,7 @@ const ICON_LIST: IconListItem[] = [
       "equipment",
       "amenities",
     ],
-},
+  },
   {
     name: "binary",
     icon: BinaryIcon,
@@ -659,26 +659,6 @@ const ICON_LIST: IconListItem[] = [
       "official",
       "document",
     ],
-  },
-  {
-    name: "alarm-clock-check",
-    icon: AlarmClockCheckIcon,
-    keywords: ["alarm", "clock", "time", "check", "done", "reminder"],
-  },
-  {
-    name: "alarm-clock-minus",
-    icon: AlarmClockMinusIcon,
-    keywords: ["alarm", "clock", "time", "minus", "remove", "reminder"],
-  },
-  {
-    name: "alarm-clock-plus",
-    icon: AlarmClockPlusIcon,
-    keywords: ["alarm", "clock", "time", "plus", "add", "reminder"],
-  },
-  {
-    name: "alarm-smoke",
-    icon: AlarmSmokeIcon,
-    keywords: ["alarm", "smoke", "fire", "detector", "safety", "warning"],
   },
   {
     name: "biceps-flexed",
