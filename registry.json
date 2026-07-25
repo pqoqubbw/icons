@@ -5722,6 +5722,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "binary",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "binary.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
