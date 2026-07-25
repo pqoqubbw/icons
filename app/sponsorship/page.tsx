@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { AmountSelector } from "@/components/sponsorship/amount-selector";
 import { SUPPORT_LIST } from "@/lib/data/support-list";
 import { createMetadata } from "@/seo/metadata";
@@ -10,7 +11,19 @@ export const metadata = createMetadata({
   ogTitle: "Sponsor lucide-animated | Support Open Source",
 });
 
-const Sponsorship = () => {
+const getStampDate = async () => {
+  "use cache";
+  cacheLife("days");
+
+  return new Date().toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+};
+
+const Sponsorship = async () => {
+  const stampDate = await getStampDate();
+
   return (
     <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center overflow-hidden pb-20">
       <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
@@ -27,7 +40,7 @@ const Sponsorship = () => {
         Choose amount you want to support the project with:
       </p>
 
-      <AmountSelector amounts={SUPPORT_LIST} />
+      <AmountSelector amounts={SUPPORT_LIST} stampDate={stampDate} />
     </section>
   );
 };

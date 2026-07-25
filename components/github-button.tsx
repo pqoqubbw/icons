@@ -1,10 +1,13 @@
-import { unstable_cache } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import { LINK } from "@/constants";
 
 const DEFAULT_STARS = 6077;
-const CACHE_TIME = 86_400; // 1 day
 
 const fetchGithubStars = async (): Promise<number> => {
+  "use cache";
+  cacheLife("days");
+  cacheTag("github-stars");
+
   try {
     const res = await fetch("https://api.github.com/repos/pqoqubbw/icons", {
       headers: {
@@ -27,14 +30,10 @@ const fetchGithubStars = async (): Promise<number> => {
   }
 };
 
-const getGithubStars = unstable_cache(fetchGithubStars, ["github-stars"], {
-  revalidate: CACHE_TIME,
-});
-
 const GithubStartsButton = async () => {
   const stars =
     process.env.NODE_ENV === "production"
-      ? await getGithubStars()
+      ? await fetchGithubStars()
       : DEFAULT_STARS;
 
   return (

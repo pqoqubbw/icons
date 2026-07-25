@@ -1,3 +1,4 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { getIcons } from "@/actions/get-icons";
 import { LINK, SITE } from "@/constants";
 import { ICON_LIST } from "@/icons";
@@ -9,13 +10,28 @@ type Params = { params: Promise<{ path?: string[] }> };
 
 const markdownResponse = (body: string) =>
   new Response(body, {
-    headers: { "Content-Type": "text/markdown; charset=utf-8" },
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=0, must-revalidate",
+    },
   });
 
-const LLMS_DIRECTIVE = `> For the complete documentation index, see [llms.txt](${SITE.URL}/llms.txt). Per-icon markdown is at \`${SITE.URL}/icons/<name>.md\`. An MCP server is available at \`${SITE.URL}/mcp\`.`;
+const LLMS_DIRECTIVE = `> For the complete documentation index, see [llms.txt](${SITE.URL}/llms.txt). Per-icon markdown is at \`/icons/<name>.md\` — for example ${SITE.URL}/icons/activity.md. An MCP server is available at \`/mcp\`.`;
 
-const renderHome = () => {
+const renderHome = async () => {
+  "use cache";
+  cacheLife("max");
+  cacheTag("icons");
+
   const icons = getIcons();
+  const featured = icons
+    .slice(0, 18)
+    .map(
+      (icon) =>
+        `- [${kebabToPascalCase(icon.name)}](${SITE.URL}/icons/${icon.name}.md)`
+    )
+    .join("\n");
+
   return `# ${SITE.NAME}
 
 ${LLMS_DIRECTIVE}
@@ -43,10 +59,10 @@ ${SITE.DESCRIPTION.LONG}
 
 ## Installation
 
-Install a single icon via the shadcn CLI. Replace \`<icon-name>\` with the desired icon name in kebab-case:
+Install a single icon via the shadcn CLI. The example below installs \`activity\`; swap it for any icon name in kebab-case:
 
 \`\`\`bash
-npx shadcn@latest add "${SITE.URL}/r/<icon-name>.json"
+npx shadcn@latest add "${SITE.URL}/r/activity.json"
 \`\`\`
 
 Supported package managers: npm, pnpm, yarn, bun. The CLI drops a single React component file into \`components/icons/<icon-name>.tsx\` and adds \`motion\` to dependencies if missing.
@@ -69,11 +85,11 @@ Each icon is a React component that animates on hover. All standard SVG props ar
 - Full corpus for long-context agents: ${SITE.URL}/llms-full.txt
 - Agent skill: ${SITE.URL}/skill.md
 - Nested icons index: ${SITE.URL}/icons/llms.txt
-- Per-icon markdown: ${SITE.URL}/icons/<name>.md
+- Per-icon markdown: \`/icons/<name>.md\` — for example ${SITE.URL}/icons/activity.md
 
 ## MCP
 
-A Model Context Protocol server is available at \`${SITE.URL}/mcp\` (Streamable HTTP). Tools: \`search_icons\`, \`list_icons\`, \`get_icon\`. Connect any MCP-compatible client (Cursor, Claude Desktop, etc.) directly to this URL.
+A Model Context Protocol server is available at \`/mcp\` (Streamable HTTP). Tools: \`search_icons\`, \`list_icons\`, \`get_icon\`. Connect any MCP-compatible client (Cursor, Claude Desktop, etc.) directly to that path.
 
 ## Ports
 
@@ -82,6 +98,12 @@ A Model Context Protocol server is available at \`${SITE.URL}/mcp\` (Streamable 
 - Angular: https://github.com/ajitzero/animated-icons by @ajitzero
 - Flutter: https://pub.dev/packages/flutter_lucide_animated by @ravikovind
 
+## Icons
+
+A selection of the ${icons.length} available icons — the complete index is at ${SITE.URL}/icons/llms.txt
+
+${featured}
+
 ## Stats
 
 - ${icons.length} animated icons available
@@ -89,7 +111,11 @@ A Model Context Protocol server is available at \`${SITE.URL}/mcp\` (Streamable 
 `;
 };
 
-const renderSponsorship = () => {
+const renderSponsorship = async () => {
+  "use cache";
+  cacheLife("max");
+  cacheTag("icons");
+
   const tiers = SUPPORT_LIST.map(
     (tier) => `- $${tier.price}: ${tier.link}`
   ).join("\n");
@@ -131,7 +157,11 @@ const findSimilarIcons = (icon: { name: string; keywords: string[] }) => {
     .map((item) => item.icon);
 };
 
-const renderIcon = (slug: string) => {
+const renderIcon = async (slug: string) => {
+  "use cache";
+  cacheLife("max");
+  cacheTag("icons");
+
   const icon = ICON_LIST.find((i) => i.name === slug);
   if (!icon) return null;
 
@@ -187,7 +217,7 @@ export async function GET(req: Request, { params }: Params) {
 
   if (path.length === 0) {
     trackServer(SERVER_EVENT.MARKDOWN_VIEW, { page: "home", userAgent });
-    return markdownResponse(renderHome());
+    return markdownResponse(await renderHome());
   }
 
   if (path.length === 1 && path[0] === "sponsorship") {
@@ -195,11 +225,11 @@ export async function GET(req: Request, { params }: Params) {
       page: "sponsorship",
       userAgent,
     });
-    return markdownResponse(renderSponsorship());
+    return markdownResponse(await renderSponsorship());
   }
 
   if (path.length === 2 && path[0] === "icons") {
-    const md = renderIcon(path[1]);
+    const md = await renderIcon(path[1]);
     if (md) {
       trackServer(SERVER_EVENT.MARKDOWN_VIEW, {
         page: "icon",

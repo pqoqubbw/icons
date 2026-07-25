@@ -16,15 +16,13 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-const getIconBySlug = (slug: string) => {
-  return ICON_LIST.find((icon) => icon.name === slug);
-};
+const getIconBySlug = (slug: string) =>
+  ICON_LIST.find((icon) => icon.name === slug);
 
-export const generateStaticParams = () => {
-  return ICON_LIST.map((icon) => ({
+export const generateStaticParams = () =>
+  ICON_LIST.map((icon) => ({
     slug: icon.name,
   }));
-};
 
 export const generateMetadata = async ({
   params,
@@ -167,7 +165,6 @@ const IconPage = async ({ params }: Props) => {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: SITE.URL },
-          { name: "Icons", url: `${SITE.URL}/icons` },
           { name: pascalName, url: `${SITE.URL}/icons/${slug}` },
         ]}
       />

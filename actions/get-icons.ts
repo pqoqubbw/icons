@@ -5,12 +5,11 @@ type Icon = {
   keywords: string[];
 };
 
-const getIcons = (): Icon[] => {
-  return ICON_LIST.map(({ name, keywords }) => ({
+const getIcons = (): Icon[] =>
+  ICON_LIST.map(({ name, keywords }) => ({
     name,
     keywords,
   }));
-};
 
 export type { Icon };
 export { getIcons };

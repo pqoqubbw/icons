@@ -2,9 +2,10 @@ import { CliBlock } from "@/components/cli-block";
 import { CommentBlock } from "@/components/comment";
 import { IconsList } from "@/components/list";
 import { LINK } from "@/constants";
+import { FAQJsonLd, SoftwareSourceCodeJsonLd } from "@/seo/json-ld";
 
-const Home = () => {
-  return (
+const Home = () => (
+  <>
     <section className="mx-auto mt-[60px] flex w-full flex-col items-center justify-center">
       <h1 className="px-4 text-center font-sans text-[32px] min-[640px]:text-[42px]">
         Beautifully crafted <br />
@@ -51,7 +52,9 @@ const Home = () => {
       <CommentBlock />
       <IconsList />
     </section>
-  );
-};
+    <SoftwareSourceCodeJsonLd />
+    <FAQJsonLd />
+  </>
+);
 
 export default Home;

@@ -1,10 +1,13 @@
 import type { MetadataRoute } from "next";
+import { cacheLife } from "next/cache";
 
 import { SITE } from "@/constants";
 import { ICON_LIST } from "@/icons";
 
-// biome-ignore lint/suspicious/useAwait: ignore
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+const buildSitemap = async (): Promise<MetadataRoute.Sitemap> => {
+  "use cache";
+  cacheLife("days");
+
   const iconPages: MetadataRoute.Sitemap = ICON_LIST.map((icon) => ({
     url: `${SITE.URL}/icons/${icon.name}`,
     lastModified: new Date(),
@@ -27,4 +30,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...iconPages,
   ];
+};
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  return await buildSitemap();
 }
