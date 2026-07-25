@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  check-imports:
-    name: Check Imports
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
 
     steps:
@@ -29,30 +29,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check imports
-        run: pnpm check-imports
-
-  check-duplicates:
-    name: Check Duplicates
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Check duplicates
-        run: pnpm check-duplicates
+      # Runs every check `pnpm gen-cli` runs, without writing anything:
+      # icon style, imports, ICON_LIST, duplicates, registry, types, lint.
+      - name: Verify icons, index and registry
+        run: pnpm gen-cli:check
