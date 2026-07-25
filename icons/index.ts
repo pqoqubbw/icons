@@ -378,6 +378,7 @@ import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
 import { CigaretteIcon } from "./cigarette";
 import { CigaretteOffIcon } from "./cigarette-off";
+import { CircleGaugeIcon } from "./circle-gauge";
 import { CloudBackupIcon } from "./cloud-backup";
 import { CloudSyncIcon } from "./cloud-sync";
 import { ConciergeBellIcon } from "./concierge-bell";
@@ -430,14 +431,16 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
-import { PlaneLandingIcon } from "./plane-landing";
-import { PlaneTakeoffIcon } from "./plane-takeoff";
+import { LeafIcon } from "./leaf";
+import { LeafyGreenIcon } from "./leafy-green";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
 import { PhoneForwardedIcon } from "./phone-forwarded";
 import { PhoneIncomingIcon } from "./phone-incoming";
 import { PhoneMissedIcon } from "./phone-missed";
 import { PhoneOffIcon } from "./phone-off";
+import { PlaneLandingIcon } from "./plane-landing";
+import { PlaneTakeoffIcon } from "./plane-takeoff";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
@@ -445,6 +448,9 @@ import { ServerIcon } from "./server";
 import { ServerCogIcon } from "./server-cog";
 import { ServerCrashIcon } from "./server-crash";
 import { ShipWheelIcon } from "./ship-wheel";
+import { ShredderIcon } from "./shredder";
+import { SoupIcon } from "./soup";
+import { SprayCanIcon } from "./spray-can";
 import { SwitchCameraIcon } from "./switch-camera";
 import { TreeDeciduousIcon } from "./tree-deciduous";
 import { TreePineIcon } from "./tree-pine";
@@ -468,7 +474,8 @@ const ICON_LIST: IconListItem[] = [
     name: "link-2",
     icon: Link2Icon,
     keywords: ["link", "connect", "chain", "url", "hyperlink"],
-  },{
+  },
+  {
     name: "external-link",
     icon: ExternalLinkIcon,
     keywords: [
@@ -4184,29 +4191,29 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
-    name: "alarm-clock-check",
-    icon: AlarmClockCheckIcon,
-    keywords: ["alarm", "clock", "check"],
-  },
-  {
-    name: "alarm-clock-minus",
-    icon: AlarmClockMinusIcon,
-    keywords: ["alarm", "clock", "minus"],
-  },
-  {
-    name: "alarm-clock-plus",
-    icon: AlarmClockPlusIcon,
-    keywords: ["alarm", "clock", "plus"],
-  },
-  {
-    name: "alarm-smoke",
-    icon: AlarmSmokeIcon,
-    keywords: ["alarm", "smoke"],
-  },
-  {
     name: "binary",
     icon: BinaryIcon,
     keywords: ["binary"],
+  },
+  {
+    name: "cigarette",
+    icon: CigaretteIcon,
+    keywords: ["cigarette"],
+  },
+  {
+    name: "cigarette-off",
+    icon: CigaretteOffIcon,
+    keywords: ["cigarette", "off"],
+  },
+  {
+    name: "cloud-backup",
+    icon: CloudBackupIcon,
+    keywords: ["cloud", "backup"],
+  },
+  {
+    name: "cloud-sync",
+    icon: CloudSyncIcon,
+    keywords: ["cloud", "sync"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
