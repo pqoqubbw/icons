@@ -111,7 +111,6 @@ const BinaryIcon = forwardRef<BinaryIconHandle, BinaryIconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* top-left: 0 flips out, 1 flips in */}
           <motion.rect
             animate={controls}
             custom={0}
@@ -133,7 +132,6 @@ const BinaryIcon = forwardRef<BinaryIconHandle, BinaryIconProps>(
             <path d="M6 10h4" />
           </motion.g>
 
-          {/* top-right: 1 flips out, 0 flips in */}
           <motion.g
             animate={controls}
             custom={1}
@@ -155,7 +153,6 @@ const BinaryIcon = forwardRef<BinaryIconHandle, BinaryIconProps>(
             y="4"
           />
 
-          {/* bottom-left: 1 flips out, 0 flips in */}
           <motion.g
             animate={controls}
             custom={2}
@@ -177,7 +174,6 @@ const BinaryIcon = forwardRef<BinaryIconHandle, BinaryIconProps>(
             y="14"
           />
 
-          {/* bottom-right: 0 flips out, 1 flips in */}
           <motion.rect
             animate={controls}
             custom={3}

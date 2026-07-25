@@ -132,27 +132,29 @@ We welcome contributions to our project! Please follow these steps to contribute
 
    e. Add your animation logic using Framer Motion's `motion` components and the `controls` object to create engaging hover animations.
 
-7. **Add your icon to the icon list:**
+7. **Register your icon:**
 
-   a. Open the `icons/index.tsx` file.
-
-   b. Import your new icon component at the top of the file:
-
-   ```tsx
-   import { [YourIconName]Icon } from './[icon-name]';
+   ```
+   pnpm gen-cli
    ```
 
-   c. Add your icon to the `ICON_LIST` array at the very beginning (top) of the list in this format:
+   This is the only command you need. It does everything:
 
-   ```tsx
-   {
-     name: '[icon-name]',
-     icon: [YourIconName]Icon,
-     keywords: ['keyword1', 'keyword2', 'keyword3'],
-   },
-   ```
+   - registers the icon in `icons/index.ts` (import + `ICON_LIST` entry)
+   - syncs `scripts/registry-components.ts`
+   - builds `public/r/*.json` and `registry.json` for the shadcn CLI
+   - removes entries and JSON files for icons that no longer exist
+   - drops duplicate imports and `ICON_LIST` entries
+   - formats and lints everything
+   - verifies the result and fails if anything is still out of sync
 
-   For example:
+   Re-run it after any change to `/icons/` — it is idempotent and self-healing, so you never have to edit `icons/index.ts` or the registry by hand.
+
+   `pnpm gen-cli:check` runs the same verification without writing anything. This is what CI runs.
+
+8. **Improve the generated keywords:**
+
+   `gen-cli` derives keywords from the file name, which is usually not enough for search. Open `icons/index.ts`, find your icon in `ICON_LIST`, and replace them with the keywords from [lucide.dev](https://lucide.dev/):
 
    ```tsx
    {
@@ -162,42 +164,24 @@ We welcome contributions to our project! Please follow these steps to contribute
    },
    ```
 
-   Note: Use the exact icon name, keywords, and other data from the [lucide.dev](https://lucide.dev/) website for your specific icon.
-
-8. **Update the registry (for new icons):**
-
-   After creating a new icon, you need to update the registry so it can be used with the shadcn CLI:
-
-   ```
-   pnpm run gen-cli
-   ```
-
-   This command will automatically sync your new icon to the registry and build the necessary JSON files.
-
 9. Build the project to check for errors:
 
 ```
 pnpm build
 ```
 
-10. Test the application to ensure your changes work as expected:
-
-    ```
-    pnpm lint
-    ```
-
-11. Commit your changes:
+10. Commit your changes:
 
     ```
     git commit -m "Add [icon-name] animated icon"
     ```
 
-12. Push your changes to your fork:
+11. Push your changes to your fork:
 
     ```
     git push origin your-branch-name
     ```
 
-13. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
+12. Open a pull request on the original repository with a clear description of the icon you've added and the animation you've implemented.
 
 Thank you for contributing to our project!

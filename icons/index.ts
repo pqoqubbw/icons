@@ -632,6 +632,26 @@ const ICON_LIST: IconListItem[] = [
     ],
   },
   {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "time", "check", "done", "reminder"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "time", "minus", "remove", "reminder"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "time", "plus", "add", "reminder"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke", "fire", "detector", "safety", "warning"],
+  },
+  {
     name: "biceps-flexed",
     icon: BicepsFlexedIcon,
     keywords: [
@@ -2770,7 +2790,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
