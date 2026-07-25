@@ -48,6 +48,7 @@ import { BatteryFullIcon } from "@/icons/battery-full";
 import { BatteryLowIcon } from "@/icons/battery-low";
 import { BatteryMediumIcon } from "@/icons/battery-medium";
 import { BellIcon } from "@/icons/bell";
+import { BinaryIcon } from "@/icons/binary";
 import { BlocksIcon } from "@/icons/blocks";
 import { BluetoothIcon } from "@/icons/bluetooth";
 import { BluetoothConnectedIcon } from "@/icons/bluetooth-connected";
@@ -241,6 +242,7 @@ import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
+import { MonitorCogIcon } from "@/icons/monitor-cog";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
@@ -358,10 +360,6 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
-import { AlarmClockCheckIcon } from "./alarm-clock-check";
-import { AlarmClockMinusIcon } from "./alarm-clock-minus";
-import { AlarmClockPlusIcon } from "./alarm-clock-plus";
-import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -474,6 +472,27 @@ const ICON_LIST: IconListItem[] = [
       "shades",
       "sunglasses",
       "eyewear",
+      ],  },
+  {
+    name: "monitor-cog",
+    icon: MonitorCogIcon,
+    keywords: [
+      "tv",
+      "screen",
+      "display",
+      "virtual machine",
+      "vm",
+      "executable",
+      "settings",
+      "cog",
+      "edit",
+      "gear",
+      "configuration",
+      "preferences",
+      "system",
+      "control panel",
+      "network",
+      "computing",
     ],
   },
   {
@@ -2795,7 +2814,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
