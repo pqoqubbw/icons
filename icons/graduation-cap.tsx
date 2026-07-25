@@ -105,7 +105,6 @@ const GraduationCapIcon = forwardRef<
           <path d="M2 10l10-5 10 5-10 5z" />
           <path d="M6 12v5c3 3 9 3 12 0v-5" />
 
-          {/* Tassel now inherits cap movement */}
           <motion.path
             d="M22 10v6"
             style={{

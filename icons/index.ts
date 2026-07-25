@@ -48,6 +48,7 @@ import { BatteryFullIcon } from "@/icons/battery-full";
 import { BatteryLowIcon } from "@/icons/battery-low";
 import { BatteryMediumIcon } from "@/icons/battery-medium";
 import { BellIcon } from "@/icons/bell";
+import { BinaryIcon } from "@/icons/binary";
 import { BlocksIcon } from "@/icons/blocks";
 import { BluetoothIcon } from "@/icons/bluetooth";
 import { BluetoothConnectedIcon } from "@/icons/bluetooth-connected";
@@ -179,6 +180,7 @@ import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
 import { HardDriveUploadIcon } from "@/icons/hard-drive-upload";
+import { HatGlassesIcon } from "@/icons/hat-glasses";
 import { HeartIcon } from "@/icons/heart";
 import { HistoryIcon } from "@/icons/history";
 import { HomeIcon } from "@/icons/home";
@@ -241,6 +243,7 @@ import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
+import { MonitorCogIcon } from "@/icons/monitor-cog";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
@@ -453,6 +456,55 @@ const ICON_LIST: IconListItem[] = [
       "share",
       "north-east",
       "diagonal",
+      ],},{
+    name: "hat-glasses",
+    icon: HatGlassesIcon,
+    keywords: [
+      "incognito",
+      "disguise",
+      "costume",
+      "masked",
+      "anonymous",
+      "anonymity",
+      "privacy",
+      "private browsing",
+      "stealth",
+      "hidden",
+      "undercover",
+      "cloak",
+      "invisible",
+      "ghost",
+      "spy",
+      "agent",
+      "detective",
+      "identity",
+      "cap",
+      "fedora",
+      "spectacles",
+      "shades",
+      "sunglasses",
+      "eyewear",
+      ],  },
+  {
+    name: "monitor-cog",
+    icon: MonitorCogIcon,
+    keywords: [
+      "tv",
+      "screen",
+      "display",
+      "virtual machine",
+      "vm",
+      "executable",
+      "settings",
+      "cog",
+      "edit",
+      "gear",
+      "configuration",
+      "preferences",
+      "system",
+      "control panel",
+      "network",
+      "computing",
     ],
   },
   {
@@ -2774,7 +2826,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
