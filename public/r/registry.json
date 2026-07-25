@@ -5503,261 +5503,391 @@
       ]
     },
     {
-      "name": "users",
+      "name": "cigarette-off",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "users.tsx",
+          "path": "cigarette-off.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "users-round",
+      "name": "cigarette",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "users-round.tsx",
+          "path": "cigarette.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "vibrate",
+      "name": "plane-landing",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "vibrate.tsx",
+          "path": "plane-landing.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "volume",
+      "name": "plane-takeoff",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "volume.tsx",
+          "path": "plane-takeoff.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wallet",
+      "name": "receipt-cent",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wallet.tsx",
+          "path": "receipt-cent.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "washing-machine",
+      "name": "receipt-euro",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "washing-machine.tsx",
+          "path": "receipt-euro.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "waves",
+      "name": "receipt-indian-rupee",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "waves.tsx",
+          "path": "receipt-indian-rupee.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "waves-ladder",
+      "name": "receipt-japanese-yen",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "waves-ladder.tsx",
+          "path": "receipt-japanese-yen.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "waypoints",
+      "name": "receipt-pound-sterling",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "waypoints.tsx",
+          "path": "receipt-pound-sterling.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "webhook",
+      "name": "receipt-russian-ruble",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "webhook.tsx",
+          "path": "receipt-russian-ruble.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wifi",
+      "name": "receipt-swiss-franc",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi.tsx",
+          "path": "receipt-swiss-franc.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wifi-cog",
+      "name": "receipt-text",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi-cog.tsx",
+          "path": "receipt-text.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wifi-low",
+      "name": "receipt-turkish-lira",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi-low.tsx",
+          "path": "receipt-turkish-lira.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wifi-pen",
+      "name": "receipt",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi-pen.tsx",
+          "path": "receipt.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wifi-sync",
+      "name": "server-cog",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wifi-sync.tsx",
+          "path": "server-cog.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wind",
+      "name": "server-crash",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wind.tsx",
+          "path": "server-crash.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wind-arrow-down",
+      "name": "server",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wind-arrow-down.tsx",
+          "path": "server.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "workflow",
+      "name": "ship-wheel",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "workflow.tsx",
+          "path": "ship-wheel.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "wrench",
+      "name": "alarm-clock-check",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "wrench.tsx",
+          "path": "alarm-clock-check.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "x",
+      "name": "alarm-clock-minus",
       "type": "registry:ui",
       "registryDependencies": [],
       "dependencies": ["motion"],
       "devDependencies": [],
       "files": [
         {
-          "path": "x.tsx",
+          "path": "alarm-clock-minus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alarm-clock-plus",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "alarm-clock-plus.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alarm-smoke",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "alarm-smoke.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "biceps-flexed",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "biceps-flexed.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cloud-backup",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cloud-backup.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cloud-sync",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cloud-sync.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-call",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-call.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-forwarded",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-forwarded.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-incoming",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-incoming.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone-missed",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone-missed.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "phone",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "phone.tsx",
           "type": "registry:ui"
         }
       ]
