@@ -5761,6 +5761,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "link-2",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "link-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

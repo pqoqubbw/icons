@@ -201,6 +201,7 @@ import { LayersIcon } from "@/icons/layers";
 import { LayoutGridIcon } from "@/icons/layout-grid";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
 import { LinkIcon } from "@/icons/link";
+import { Link2Icon } from "@/icons/link-2";
 import { LinkedinIcon } from "@/icons/linkedin";
 import { LoaderIcon } from "@/icons/loader";
 import { LoaderCircleIcon } from "@/icons/loader-circle";
@@ -450,6 +451,10 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "link-2",
+    icon: Link2Icon,
+    keywords: ["link", "connect", "chain", "url", "hyperlink"],
+  },{
     name: "external-link",
     icon: ExternalLinkIcon,
     keywords: [
