@@ -75,5 +75,19 @@ const registryIndexJson = JSON.stringify(registryIndex, null, 2);
 fs.writeFileSync(registryIndexPath, registryIndexJson);
 fs.writeFileSync(registryRootPath, registryIndexJson);
 
+const expectedFiles = new Set([
+  "registry.json",
+  ...components.map((component) => `${component.name}.json`),
+]);
+
+const orphans = fs
+  .readdirSync(registryComponents)
+  .filter((file) => file.endsWith(".json") && !expectedFiles.has(file));
+
+for (const orphan of orphans) {
+  fs.unlinkSync(path.join(registryComponents, orphan));
+  console.log(`   - public/r/${orphan} (no matching icon)`);
+}
+
 console.log(`✅ Built ${components.length} registry components`);
 console.log("✅ Updated registry.json\n");
