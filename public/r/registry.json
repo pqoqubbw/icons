@@ -5722,6 +5722,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "monitor-cog",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "monitor-cog.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

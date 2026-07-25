@@ -2669,4 +2669,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "monitor-cog",
+    path: path.join(__dirname, "../icons/monitor-cog.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];
