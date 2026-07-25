@@ -2681,4 +2681,10 @@ export const components: ComponentDefinition[] = [
     registryDependencies: [],
     dependencies: ["motion"],
   },
+  {
+    name: "external-link",
+    path: path.join(__dirname, "../icons/external-link.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
 ];

@@ -142,6 +142,7 @@ import { EarthIcon } from "@/icons/earth";
 import { EuroIcon } from "@/icons/euro";
 import { EvChargerIcon } from "@/icons/ev-charger";
 import { ExpandIcon } from "@/icons/expand";
+import { ExternalLinkIcon } from "@/icons/external-link";
 import { EyeIcon } from "@/icons/eye";
 import { EyeOffIcon } from "@/icons/eye-off";
 import { FacebookIcon } from "@/icons/facebook";
@@ -445,6 +446,17 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "external-link",
+    icon: ExternalLinkIcon,
+    keywords: [
+      "external",
+      "link",
+      "outbound",
+      "open",
+      "share",
+      "north-east",
+      "diagonal",
+      ],},{
     name: "hat-glasses",
     icon: HatGlassesIcon,
     keywords: [

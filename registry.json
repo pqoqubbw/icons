@@ -5748,6 +5748,19 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "external-link",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "external-link.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
