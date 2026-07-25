@@ -48,6 +48,7 @@ import { BatteryFullIcon } from "@/icons/battery-full";
 import { BatteryLowIcon } from "@/icons/battery-low";
 import { BatteryMediumIcon } from "@/icons/battery-medium";
 import { BellIcon } from "@/icons/bell";
+import { BinaryIcon } from "@/icons/binary";
 import { BlocksIcon } from "@/icons/blocks";
 import { BluetoothIcon } from "@/icons/bluetooth";
 import { BluetoothConnectedIcon } from "@/icons/bluetooth-connected";
@@ -2783,7 +2784,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
