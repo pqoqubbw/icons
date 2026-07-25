@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { GithubStartsButton } from "@/components/github-button";
+import { SearchInput } from "@/components/search-input";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -118,8 +120,8 @@ const Logo = ({ className, type = "default" }: LogoProps) => {
 };
 
 const Header = () => (
-  <header className="mx-auto mt-[25px] w-full max-w-[1292px] px-4 font-mono">
-    <div className="flex h-full w-full justify-between gap-4">
+  <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md">
+    <div className="mx-auto flex h-full w-full max-w-[1292px] items-center justify-between gap-4 px-4 py-[25px] font-mono">
       <Link
         aria-label="Lucide Animated - Home"
         className="mr-auto flex h-[42px] items-center gap-2 font-sans text-base focus-within:outline-offset-4 focus-visible:outline-1 focus-visible:outline-primary max-[524px]:translate-y-[-2px] min-[395px]:text-xl"
@@ -132,7 +134,12 @@ const Header = () => (
         />
         lucide-animated
       </Link>
-      <div className="ml-auto flex w-full flex-1 flex-wrap-reverse items-center justify-end gap-2">
+      <div className="hidden flex-1 justify-center md:flex">
+        <Suspense fallback={<div className="h-9 w-full max-w-[280px]" />}>
+          <SearchInput />
+        </Suspense>
+      </div>
+      <div className="ml-auto flex w-full flex-1 flex-wrap-reverse items-center justify-end gap-2 md:w-auto md:flex-none">
         <Link
           aria-label="Sponsor Project"
           className="flex items-center gap-1 pr-1 font-sans text-[#3F3F47] text-sm underline-offset-4 focus-within:outline-offset-4 hover:underline focus-visible:outline-1 focus-visible:outline-primary dark:text-[#FAFAFA]"

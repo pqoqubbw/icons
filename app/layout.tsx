@@ -78,14 +78,16 @@ export default function RootLayout({
             enableSystem
           >
             <PackageNameProvider>
-              <main className="flex-1">
-                <blockquote className="sr-only">
-                  <a href="/llms.txt">llms.txt</a>
-                </blockquote>
-                <NuqsAdapter>{children}</NuqsAdapter>
-                <Toaster />
-              </main>
-              <Header />
+              <NuqsAdapter>
+                <main className="flex-1">
+                  <blockquote className="sr-only">
+                    <a href="/llms.txt">llms.txt</a>
+                  </blockquote>
+                  {children}
+                  <Toaster />
+                </main>
+                <Header />
+              </NuqsAdapter>
               <Analytics />
               <Footer />
               <WebsiteJsonLd />

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { CliBlock } from "@/components/cli-block";
 import { CommentBlock } from "@/components/comment";
 import { IconsList } from "@/components/list";
@@ -50,7 +51,9 @@ const Home = () => (
       </p>
       <CliBlock />
       <CommentBlock />
-      <IconsList />
+      <Suspense>
+        <IconsList />
+      </Suspense>
     </section>
     <SoftwareSourceCodeJsonLd />
     <FAQJsonLd />

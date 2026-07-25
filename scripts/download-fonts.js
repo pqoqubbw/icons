@@ -12,6 +12,7 @@ const path = require("node:path");
 
 // biome-ignore lint/correctness/noGlobalDirnameFilename: this script runs in CommonJS
 const fontsDir = path.join(__dirname, "..", "fonts");
+const fallbackDir = path.join(fontsDir, "fallback");
 
 // Ensure fonts directory exists
 if (!fs.existsSync(fontsDir)) {
@@ -22,29 +23,36 @@ const fonts = [
   {
     url: process.env.FONT_DOWNLOAD_URL_GT_CINETYPE,
     filename: "GT-Cinetype-Regular.woff",
+    fallback: "gt-cinetype-fallback.woff",
     name: "GT Cinetype Regular",
   },
   {
     url: process.env.FONT_DOWNLOAD_URL_ANDALE_MONO,
     filename: "ANDALEMO.woff",
+    fallback: "andale-mono-fallback.woff",
     name: "Andale Mono",
   },
 ];
 
-function downloadFont(url, filepath, name) {
+// next/font/local resolves its `src` path at build time regardless of
+// whether the result is actually used at runtime, so the target file must
+// always exist on disk or every build (including dev) crashes outright.
+function useFallback(filepath, fallbackFilename, name) {
+  const fallbackPath = path.join(fallbackDir, fallbackFilename);
+  fs.copyFileSync(fallbackPath, filepath);
+  console.log(`⚠️  ${name} not found, using bundled fallback font`);
+}
+
+function downloadFont(url, filepath, fallbackFilename, name) {
   return new Promise((resolve, reject) => {
     // Skip if no URL provided
     if (!url) {
-      console.log(
-        `⚠️  No download URL for ${name}, checking if file exists locally...`
-      );
-
       if (fs.existsSync(filepath)) {
         console.log(`✓ ${name} found locally`);
         return resolve();
       }
 
-      console.log(`⚠️  ${name} not found, build will use fallback fonts`);
+      useFallback(filepath, fallbackFilename, name);
       return resolve();
     }
 
@@ -62,15 +70,21 @@ function downloadFont(url, filepath, name) {
       .get(url, (response) => {
         // Handle redirects
         if (response.statusCode === 302 || response.statusCode === 301) {
-          return downloadFont(response.headers.location, filepath, name)
+          return downloadFont(
+            response.headers.location,
+            filepath,
+            fallbackFilename,
+            name
+          )
             .then(resolve)
             .catch(reject);
         }
 
         if (response.statusCode !== 200) {
           console.log(
-            `⚠️  Failed to download ${name} (${response.statusCode}), continuing with local version if available`
+            `⚠️  Failed to download ${name} (${response.statusCode}), using bundled fallback font`
           );
+          useFallback(filepath, fallbackFilename, name);
           return resolve();
         }
 
@@ -84,13 +98,15 @@ function downloadFont(url, filepath, name) {
         });
 
         fileStream.on("error", (err) => {
-          fs.unlink(filepath);
+          fs.unlink(filepath, () => {});
           console.log(`⚠️  Error downloading ${name}:`, err.message);
+          useFallback(filepath, fallbackFilename, name);
           resolve(); // Don't fail the build
         });
       })
       .on("error", (err) => {
         console.log(`⚠️  Network error downloading ${name}:`, err.message);
+        useFallback(filepath, fallbackFilename, name);
         resolve(); // Don't fail the build
       });
   });
@@ -102,7 +118,12 @@ async function downloadAllFonts() {
   try {
     await Promise.all(
       fonts.map((font) =>
-        downloadFont(font.url, path.join(fontsDir, font.filename), font.name)
+        downloadFont(
+          font.url,
+          path.join(fontsDir, font.filename),
+          font.fallback,
+          font.name
+        )
       )
     );
 

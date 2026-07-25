@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/download-fonts.js",
     "dev": "next dev",
     "prebuild": "node scripts/download-fonts.js",
     "build": "next build",

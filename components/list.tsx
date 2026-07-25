@@ -1,12 +1,12 @@
 "use client";
 
 import Fuse from "fuse.js";
+import { parseAsString, useQueryState } from "nuqs";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import type { Icon } from "@/actions/get-icons";
 
 import { Card, CardActions, CardTitle } from "@/components/card";
 import { ICON_LIST } from "@/icons";
-import { SearchInput } from "./search-input";
 
 const INITIAL_VISIBLE = 18;
 const CHUNK_SIZE = 50;
@@ -52,8 +52,10 @@ const IconItem = ({
 };
 
 const IconsList = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchValue] = useQueryState(
+    "q",
+    parseAsString.withDefault("").withOptions({ clearOnDefault: true, shallow: true })
+  );
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
   const deferredSearchValue = useDeferredValue(searchValue);
   const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -110,12 +112,6 @@ const IconsList = () => {
 
   return (
     <div className="mb-20 w-full">
-      <SearchInput
-        searchOpen={searchOpen}
-        searchValue={searchValue}
-        setSearchOpen={setSearchOpen}
-        setSearchValue={setSearchValue}
-      />
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[3px]">
         {visibleIcons.length === 0 && (
           <div className="col-span-full pt-10 text-center text-neutral-500 text-sm">
