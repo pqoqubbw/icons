@@ -2175,6 +2175,19 @@
       ]
     },
     {
+      "name": "external-link",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "external-link.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "eye",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3163,6 +3176,19 @@
       ]
     },
     {
+      "name": "hat-glasses",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "hat-glasses.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "heart",
       "type": "registry:ui",
       "registryDependencies": [],
@@ -3990,6 +4016,19 @@
       "files": [
         {
           "path": "monitor-check.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "monitor-cog",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "monitor-cog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -5719,45 +5758,6 @@
       "files": [
         {
           "path": "zap-off.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "monitor-cog",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "monitor-cog.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "hat-glasses",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "hat-glasses.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "external-link",
-      "type": "registry:ui",
-      "registryDependencies": [],
-      "dependencies": ["motion"],
-      "devDependencies": [],
-      "files": [
-        {
-          "path": "external-link.tsx",
           "type": "registry:ui"
         }
       ]

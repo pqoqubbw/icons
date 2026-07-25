@@ -1032,6 +1032,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "external-link",
+    path: path.join(__dirname, "../icons/external-link.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "eye",
     path: path.join(__dirname, "../icons/eye.tsx"),
     registryDependencies: [],
@@ -1488,6 +1494,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "hat-glasses",
+    path: path.join(__dirname, "../icons/hat-glasses.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "heart",
     path: path.join(__dirname, "../icons/heart.tsx"),
     registryDependencies: [],
@@ -1868,6 +1880,12 @@ export const components: ComponentDefinition[] = [
   {
     name: "monitor-check",
     path: path.join(__dirname, "../icons/monitor-check.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
+    name: "monitor-cog",
+    path: path.join(__dirname, "../icons/monitor-cog.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
@@ -2666,24 +2684,6 @@ export const components: ComponentDefinition[] = [
   {
     name: "zap-off",
     path: path.join(__dirname, "../icons/zap-off.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
-  {
-    name: "monitor-cog",
-    path: path.join(__dirname, "../icons/monitor-cog.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
-  {
-    name: "hat-glasses",
-    path: path.join(__dirname, "../icons/hat-glasses.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
-  {
-    name: "external-link",
-    path: path.join(__dirname, "../icons/external-link.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },

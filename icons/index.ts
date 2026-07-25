@@ -361,6 +361,10 @@ import { XIcon } from "@/icons/x";
 import { YoutubeIcon } from "@/icons/youtube";
 import { ZapIcon } from "@/icons/zap";
 import { ZapOffIcon } from "@/icons/zap-off";
+import { AlarmClockCheckIcon } from "./alarm-clock-check";
+import { AlarmClockMinusIcon } from "./alarm-clock-minus";
+import { AlarmClockPlusIcon } from "./alarm-clock-plus";
+import { AlarmSmokeIcon } from "./alarm-smoke";
 import { BatteryIcon } from "./battery";
 import { BatteryChargingIcon } from "./battery-charging";
 import { BatteryPlusIcon } from "./battery-plus";
@@ -456,7 +460,9 @@ const ICON_LIST: IconListItem[] = [
       "share",
       "north-east",
       "diagonal",
-      ],},{
+    ],
+  },
+  {
     name: "hat-glasses",
     icon: HatGlassesIcon,
     keywords: [
@@ -484,7 +490,8 @@ const ICON_LIST: IconListItem[] = [
       "shades",
       "sunglasses",
       "eyewear",
-      ],  },
+    ],
+  },
   {
     name: "monitor-cog",
     icon: MonitorCogIcon,
@@ -4056,6 +4063,31 @@ const ICON_LIST: IconListItem[] = [
       "wait",
       "processing",
     ],
+  },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "minus"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "plus"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke"],
+  },
+  {
+    name: "binary",
+    icon: BinaryIcon,
+    keywords: ["binary"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
