@@ -7,8 +7,9 @@ import { ICON_LIST } from "@/icons";
 import { kebabToPascalCase } from "@/lib/kebab-to-pascal";
 import { SERVER_EVENT, trackServer } from "@/lib/server-analytics";
 
-export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+// No route segment config: `cacheComponents` rejects `runtime`/`dynamic`.
+// Node.js is the default runtime, and this route is inherently request-time —
+// it reads the JSON-RPC body and streams a response.
 
 type IconRecord = (typeof ICON_LIST)[number];
 

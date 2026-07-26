@@ -10,7 +10,12 @@
       "style": {
         "useBlockStatements": "off",
         "useConsistentTypeDefinitions": "off",
-        "noNestedTernary": "off"
+        "noNestedTernary": "off",
+        // Promoted to error in ultracite 7.9. Both are style preferences the
+        // codebase does not follow; adopting them would be a wide rewrite of
+        // working code for no functional gain.
+        "noIncrementDecrement": "off",
+        "useDestructuring": "off"
       },
       "complexity": {
         "noForEach": "off"
@@ -22,10 +27,40 @@
       },
       "suspicious": {
         "noArrayIndexKey": "off",
-        "noSparseArray": "off"
+        "noSparseArray": "off",
+        // Cache Components: a `"use cache"` function must be async, but its
+        // body has nothing to await. The rule fires on every cached builder.
+        "useAwait": "off",
+        // Every icon in `icons/` is a published registry component built on
+        // forwardRef. Dropping it is a breaking API change for consumers who
+        // already installed them, not a lint autofix.
+        "noReactForwardRef": "off",
+        // `ref != null` is the deliberate null-or-undefined guard in the icon
+        // components. The suggested `!== null` is a behaviour change: an
+        // uncontrolled icon receives `undefined`, which would then be treated
+        // as controlled and stop animating on hover.
+        "noEqualsToNull": "off",
+        // Every `cond && <jsx/>` in this codebase guards on a boolean or a
+        // ReactNode, never a number, so there is nothing for `0` to leak.
+        "noLeakedRender": "off",
+        // Fires on `const { name } = match` style locals that intentionally
+        // reuse an outer name; no real shadowing bug in this repo.
+        "noShadow": "off"
       },
       "performance": {
-        "noNamespaceImport": "off"
+        "noNamespaceImport": "off",
+        // Inline handlers in JSX props are idiomatic here and the React
+        // Compiler (enabled in next.config.ts) already memoizes them.
+        "noJsxPropsBind": "off"
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        // Would reorder object keys inside every icon component and therefore
+        // rewrite the published registry JSON in public/r on the next build.
+        "useSortedKeys": "off"
       }
     }
   }

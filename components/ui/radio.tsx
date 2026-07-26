@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 const RadioGroup = ({
   className,
   ...props
-}: React.ComponentProps<typeof BaseRadioGroup>) => {
-  return <BaseRadioGroup className={cn("grid", className)} {...props} />;
-};
+}: React.ComponentProps<typeof BaseRadioGroup>) => (
+  <BaseRadioGroup className={cn("grid", className)} {...props} />
+);
 
 const Radio = {
   Root: React.forwardRef<

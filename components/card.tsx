@@ -23,19 +23,17 @@ import { getPackageManagerPrefix } from "@/lib/get-package-manager-prefix";
 import { cn } from "@/lib/utils";
 import { usePackageNameContext } from "@/providers/package-name";
 
-const V0Icon = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      className={className}
-      fill="currentColor"
-      viewBox="0 0 40 20"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M23.3919 0H32.9188C36.7819 0 39.9136 3.13165 39.9136 6.99475V16.0805H36.0006V6.99475C36.0006 6.90167 35.9969 6.80925 35.9898 6.71766L26.4628 16.079C26.4949 16.08 26.5272 16.0805 26.5595 16.0805H36.0006V19.7762H26.5595C22.6964 19.7762 19.4788 16.6139 19.4788 12.7508V3.68923H23.3919V12.7508C23.3919 12.9253 23.4054 13.0977 23.4316 13.2668L33.1682 3.6995C33.0861 3.6927 33.003 3.68923 32.9188 3.68923H23.3919V0Z" />
-      <path d="M13.7688 19.0956L0 3.68759H5.53933L13.6231 12.7337V3.68759H17.7535V17.5746C17.7535 19.6705 15.1654 20.6584 13.7688 19.0956Z" />
-    </svg>
-  );
-};
+const V0Icon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    fill="currentColor"
+    viewBox="0 0 40 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M23.3919 0H32.9188C36.7819 0 39.9136 3.13165 39.9136 6.99475V16.0805H36.0006V6.99475C36.0006 6.90167 35.9969 6.80925 35.9898 6.71766L26.4628 16.079C26.4949 16.08 26.5272 16.0805 26.5595 16.0805H36.0006V19.7762H26.5595C22.6964 19.7762 19.4788 16.6139 19.4788 12.7508V3.68923H23.3919V12.7508C23.3919 12.9253 23.4054 13.0977 23.4316 13.2668L33.1682 3.6995C33.0861 3.6927 33.003 3.68923 32.9188 3.68923H23.3919V0Z" />
+    <path d="M13.7688 19.0956L0 3.68759H5.53933L13.6231 12.7337V3.68759H17.7535V17.5746C17.7535 19.6705 15.1654 20.6584 13.7688 19.0956Z" />
+  </svg>
+);
 
 interface CardProps extends React.ComponentPropsWithoutRef<"div"> {
   animationRef?: RefObject<{
@@ -50,13 +48,14 @@ const Card = ({ children, animationRef, className, ...props }: CardProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
-    };
-  }, []);
+    },
+    []
+  );
 
   const handlePlayClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -115,13 +114,11 @@ const Card = ({ children, animationRef, className, ...props }: CardProps) => {
   );
 };
 
-const Title = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <p className="mt-[36px] text-center font-mono text-[#9F9FA9] text-xs dark:text-[#D4D4D4]">
-      {children}
-    </p>
-  );
-};
+const Title = ({ children }: { children: React.ReactNode }) => (
+  <p className="mt-[36px] text-center font-mono text-[#9F9FA9] text-xs dark:text-[#D4D4D4]">
+    {children}
+  </p>
+);
 
 const CopyCLIAction = ({ name }: Pick<Icon, "name">) => {
   const op = useOpenPanel();
@@ -261,7 +258,7 @@ const OpenInV0Action = ({ name }: Pick<Icon, "name">) => {
       }
 
       setTimeout(() => setState("idle"), 2000);
-    } catch (_error) {
+    } catch {
       toast.error("Failed to open in v0", {
         description: "Please try again later.",
       });
@@ -301,24 +298,22 @@ type ActionsProps = Pick<Icon, "name"> & {
   alwaysVisible?: boolean;
 };
 
-const Actions = ({ name, alwaysVisible = false }: ActionsProps) => {
-  return (
-    <TooltipProvider>
-      <div
-        className={cn(
-          "my-6 flex items-center justify-center gap-2 transition-opacity duration-100",
-          alwaysVisible
-            ? "opacity-100"
-            : "opacity-0 group-hover/card:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 has-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
-        )}
-      >
-        <CopyCodeAction name={name} />
-        <CopyCLIAction name={name} />
-        <OpenInV0Action name={name} />
-      </div>
-    </TooltipProvider>
-  );
-};
+const Actions = ({ name, alwaysVisible = false }: ActionsProps) => (
+  <TooltipProvider>
+    <div
+      className={cn(
+        "my-6 flex items-center justify-center gap-2 transition-opacity duration-100",
+        alwaysVisible
+          ? "opacity-100"
+          : "opacity-0 group-hover/card:opacity-100 has-data-busy:opacity-100 has-data-popup-open:opacity-100 has-focus-visible:opacity-100 [@media(hover:none)]:opacity-100"
+      )}
+    >
+      <CopyCodeAction name={name} />
+      <CopyCLIAction name={name} />
+      <OpenInV0Action name={name} />
+    </div>
+  </TooltipProvider>
+);
 
 const CardTitle = Title;
 const CardActions = Actions;

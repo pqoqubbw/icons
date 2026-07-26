@@ -13,9 +13,8 @@ type PackageNameContextType = {
 
 const PackageNameContext = createContext<PackageNameContextType>({
   packageName: PACKAGE_MANAGER.PNPM,
-  setPackageName: (_packageName: PackageManager) => {
-    return;
-  },
+  // biome-ignore lint/suspicious/noEmptyBlockStatements: default context value, replaced by the provider
+  setPackageName: (_packageName: PackageManager) => {},
 });
 
 const PackageNameProvider = ({ children }: { children: React.ReactNode }) => {

@@ -11,7 +11,7 @@ import { Header } from "@/components/header";
 import { Toaster } from "@/components/toaster";
 import { PackageNameProvider } from "@/providers/package-name";
 import { ThemeProvider } from "@/providers/theme";
-import { JsonLdScripts } from "@/seo/json-ld";
+import { OrganizationJsonLd, WebsiteJsonLd } from "@/seo/json-ld";
 import { baseMetadata } from "@/seo/metadata";
 
 const andaleMonoLocal = localFont({
@@ -88,7 +88,8 @@ export default function RootLayout({
               <Header />
               <Analytics />
               <Footer />
-              <JsonLdScripts />
+              <WebsiteJsonLd />
+              <OrganizationJsonLd />
             </PackageNameProvider>
           </ThemeProvider>
         </div>

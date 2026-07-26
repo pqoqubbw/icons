@@ -1,19 +1,20 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { LINK, SITE } from "@/constants";
 import { SERVER_EVENT, trackServer } from "@/lib/server-analytics";
 
-export function GET(req: Request) {
-  trackServer(SERVER_EVENT.LLMS_VIEW, {
-    page: "skill.md",
-    userAgent: req.headers.get("user-agent") ?? "",
-  });
-  const content = `---
+const buildSkillMd = async () => {
+  "use cache";
+  cacheLife("max");
+  cacheTag("icons");
+
+  return `---
 name: ${SITE.NAME}
 description: Install and use animated React icons from ${SITE.URL}
 ---
 
 # ${SITE.NAME} skill
 
-> For the complete documentation index, see [llms.txt](${SITE.URL}/llms.txt). Per-icon markdown is at \`${SITE.URL}/icons/<name>.md\`. An MCP server is available at \`${SITE.URL}/mcp\`.
+> For the complete documentation index, see [llms.txt](${SITE.URL}/llms.txt). Per-icon markdown is at \`/icons/<name>.md\` — for example ${SITE.URL}/icons/activity.md. An MCP server is available at \`/mcp\`.
 
 Use this skill when a user asks to add an animated icon to a React or Next.js project, or when they reference ${SITE.NAME}.
 
@@ -21,7 +22,7 @@ Use this skill when a user asks to add an animated icon to a React or Next.js pr
 
 - Index of all icons: ${SITE.URL}/llms.txt
 - Full corpus (long-context): ${SITE.URL}/llms-full.txt
-- Per-icon docs: ${SITE.URL}/icons/<name>.md (replace \`<name>\` with kebab-case icon name)
+- Per-icon docs: \`/icons/<name>.md\` where \`<name>\` is the kebab-case icon name — for example ${SITE.URL}/icons/activity.md
 
 Icon names follow Lucide's kebab-case convention (\`activity\`, \`arrow-right\`, \`circle-check\`, etc.).
 
@@ -30,7 +31,7 @@ Icon names follow Lucide's kebab-case convention (\`activity\`, \`arrow-right\`,
 Use the shadcn CLI:
 
 \`\`\`bash
-npx shadcn@latest add "${SITE.URL}/r/<icon-name>.json"
+npx shadcn@latest add "${SITE.URL}/r/activity.json"
 \`\`\`
 
 This drops a single React component file into the user's project under \`components/icons/<icon-name>.tsx\` and adds \`motion\` to dependencies if missing.
@@ -56,7 +57,7 @@ The component name is the PascalCase form of the icon's kebab-case name. Compone
 
 ## MCP tools (optional)
 
-An MCP server is available at \`${SITE.URL}/mcp\` (Streamable HTTP). Tools: \`search_icons\` (fuzzy lookup by name/keyword), \`list_icons\` (paginated list), \`get_icon\` (install command + usage snippet for one icon). Use these when you have an MCP-compatible host instead of fetching markdown.
+An MCP server is available at \`/mcp\` (Streamable HTTP). Tools: \`search_icons\` (fuzzy lookup by name/keyword), \`list_icons\` (paginated list), \`get_icon\` (install command + usage snippet for one icon). Use these when you have an MCP-compatible host instead of fetching markdown.
 
 ## Common pitfalls
 
@@ -70,10 +71,18 @@ An MCP server is available at \`${SITE.URL}/mcp\` (Streamable HTTP). Tools: \`se
 - Repository: ${LINK.GITHUB}
 - Author: ${SITE.AUTHOR.TWITTER} (${LINK.TWITTER})
 `;
+};
 
-  return new Response(content, {
+export async function GET(req: Request) {
+  trackServer(SERVER_EVENT.LLMS_VIEW, {
+    page: "skill.md",
+    userAgent: req.headers.get("user-agent") ?? "",
+  });
+
+  return new Response(await buildSkillMd(), {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=0, must-revalidate",
     },
   });
 }

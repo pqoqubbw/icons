@@ -34,7 +34,7 @@ const CommentButtonClient = () => {
       tabIndex={0}
       target="_blank"
     >
-      Join the waitlist
+      Get the course
       <ExternalLinkIcon className="size-3" strokeWidth={2.5} />
     </a>
   );

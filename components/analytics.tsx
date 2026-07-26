@@ -1,4 +1,4 @@
-import { OpenPanelComponent } from "@openpanel/nextjs";
+import { AnalyticsClient } from "./analytics.client";
 
 const ANALYTIC_EVENT = {
   HEADER_GITHUB: "header-github",
@@ -13,10 +13,9 @@ const Analytics = () => {
   if (process.env.NODE_ENV !== "production") return null;
 
   return (
-    <OpenPanelComponent
+    <AnalyticsClient
       clientId={process.env.CLIENT_ID ?? ""}
       clientSecret={process.env.SECRET_KEY ?? ""}
-      trackScreenViews
     />
   );
 };

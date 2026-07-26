@@ -16,9 +16,10 @@ const IconCard = ({ icon }: Props) => {
     stopAnimation: () => void;
   }>(null);
 
-  const IconComponent = useMemo(() => {
-    return ICON_LIST.find((item) => item.name === icon.name)?.icon;
-  }, [icon.name]);
+  const IconComponent = useMemo(
+    () => ICON_LIST.find((item) => item.name === icon.name)?.icon,
+    [icon.name]
+  );
 
   if (!IconComponent) {
     return null;

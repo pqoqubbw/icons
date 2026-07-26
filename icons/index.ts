@@ -48,6 +48,7 @@ import { BatteryFullIcon } from "@/icons/battery-full";
 import { BatteryLowIcon } from "@/icons/battery-low";
 import { BatteryMediumIcon } from "@/icons/battery-medium";
 import { BellIcon } from "@/icons/bell";
+import { BinaryIcon } from "@/icons/binary";
 import { BlocksIcon } from "@/icons/blocks";
 import { BluetoothIcon } from "@/icons/bluetooth";
 import { BluetoothConnectedIcon } from "@/icons/bluetooth-connected";
@@ -141,6 +142,7 @@ import { EarthIcon } from "@/icons/earth";
 import { EuroIcon } from "@/icons/euro";
 import { EvChargerIcon } from "@/icons/ev-charger";
 import { ExpandIcon } from "@/icons/expand";
+import { ExternalLinkIcon } from "@/icons/external-link";
 import { EyeIcon } from "@/icons/eye";
 import { EyeOffIcon } from "@/icons/eye-off";
 import { FacebookIcon } from "@/icons/facebook";
@@ -178,6 +180,7 @@ import { HandCoinsIcon } from "@/icons/hand-coins";
 import { HandHeartIcon } from "@/icons/hand-heart";
 import { HardDriveDownloadIcon } from "@/icons/hard-drive-download";
 import { HardDriveUploadIcon } from "@/icons/hard-drive-upload";
+import { HatGlassesIcon } from "@/icons/hat-glasses";
 import { HeartIcon } from "@/icons/heart";
 import { HistoryIcon } from "@/icons/history";
 import { HomeIcon } from "@/icons/home";
@@ -198,6 +201,7 @@ import { LayersIcon } from "@/icons/layers";
 import { LayoutGridIcon } from "@/icons/layout-grid";
 import { LayoutPanelTopIcon } from "@/icons/layout-panel-top";
 import { LinkIcon } from "@/icons/link";
+import { Link2Icon } from "@/icons/link-2";
 import { LinkedinIcon } from "@/icons/linkedin";
 import { LoaderIcon } from "@/icons/loader";
 import { LoaderCircleIcon } from "@/icons/loader-circle";
@@ -240,6 +244,7 @@ import { MicIcon } from "@/icons/mic";
 import { MicOffIcon } from "@/icons/mic-off";
 import { MinimizeIcon } from "@/icons/minimize";
 import { MonitorCheckIcon } from "@/icons/monitor-check";
+import { MonitorCogIcon } from "@/icons/monitor-cog";
 import { MoonIcon } from "@/icons/moon";
 import { NfcIcon } from "@/icons/nfc";
 import { PanelLeftCloseIcon } from "@/icons/panel-left-close";
@@ -368,6 +373,11 @@ import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
 import { ChessPawnIcon } from "./chess-pawn";
+import { CigaretteIcon } from "./cigarette";
+import { CigaretteOffIcon } from "./cigarette-off";
+import { CircleGaugeIcon } from "./circle-gauge";
+import { CloudBackupIcon } from "./cloud-backup";
+import { CloudSyncIcon } from "./cloud-sync";
 import { ConciergeBellIcon } from "./concierge-bell";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
@@ -418,19 +428,34 @@ import { HandHelpingIcon } from "./hand-helping";
 import { HandMetalIcon } from "./hand-metal";
 import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
+import { LeafIcon } from "./leaf";
+import { LeafyGreenIcon } from "./leafy-green";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
 import { PhoneForwardedIcon } from "./phone-forwarded";
 import { PhoneIncomingIcon } from "./phone-incoming";
 import { PhoneMissedIcon } from "./phone-missed";
 import { PhoneOffIcon } from "./phone-off";
+import { PlaneLandingIcon } from "./plane-landing";
+import { PlaneTakeoffIcon } from "./plane-takeoff";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
+import { ServerIcon } from "./server";
+import { ServerCogIcon } from "./server-cog";
+import { ServerCrashIcon } from "./server-crash";
+import { ShipWheelIcon } from "./ship-wheel";
+import { ShredderIcon } from "./shredder";
+import { SoupIcon } from "./soup";
+import { SprayCanIcon } from "./spray-can";
 import { SwitchCameraIcon } from "./switch-camera";
+import { TreeDeciduousIcon } from "./tree-deciduous";
+import { TreePineIcon } from "./tree-pine";
 import { TruckIcon } from "./truck";
 import { UserRoundCogIcon } from "./user-round-cog";
 import { UsersRoundIcon } from "./users-round";
+import { WavesArrowDownIcon } from "./waves-arrow-down";
+import { WavesArrowUpIcon } from "./waves-arrow-up";
 import { WifiCogIcon } from "./wifi-cog";
 import { WifiPenIcon } from "./wifi-pen";
 import { WifiSyncIcon } from "./wifi-sync";
@@ -446,6 +471,76 @@ const ICON_LIST: IconListItem[] = [
     name: "user-plus",
     icon: UserPlusIcon,
     keywords: ["user", "plus", "add", "new", "person", "account", "signup"],
+  },
+  {
+    name: "link-2",
+    icon: Link2Icon,
+    keywords: ["link", "connect", "chain", "url", "hyperlink"],
+  },
+  {
+    name: "external-link",
+    icon: ExternalLinkIcon,
+    keywords: [
+      "external",
+      "link",
+      "outbound",
+      "open",
+      "share",
+      "north-east",
+      "diagonal",
+    ],
+  },
+  {
+    name: "hat-glasses",
+    icon: HatGlassesIcon,
+    keywords: [
+      "incognito",
+      "disguise",
+      "costume",
+      "masked",
+      "anonymous",
+      "anonymity",
+      "privacy",
+      "private browsing",
+      "stealth",
+      "hidden",
+      "undercover",
+      "cloak",
+      "invisible",
+      "ghost",
+      "spy",
+      "agent",
+      "detective",
+      "identity",
+      "cap",
+      "fedora",
+      "spectacles",
+      "shades",
+      "sunglasses",
+      "eyewear",
+    ],
+  },
+  {
+    name: "monitor-cog",
+    icon: MonitorCogIcon,
+    keywords: [
+      "tv",
+      "screen",
+      "display",
+      "virtual machine",
+      "vm",
+      "executable",
+      "settings",
+      "cog",
+      "edit",
+      "gear",
+      "configuration",
+      "preferences",
+      "system",
+      "control panel",
+      "network",
+      "computing",
+    ],
   },
   {
     name: "receipt",
@@ -618,14 +713,34 @@ const ICON_LIST: IconListItem[] = [
     icon: StampIcon,
     keywords: [
       "stamp",
+      "seal",
       "postage",
       "letter",
       "mail",
       "mark",
-      "seal",
       "official",
       "document",
     ],
+  },
+  {
+    name: "alarm-clock-check",
+    icon: AlarmClockCheckIcon,
+    keywords: ["alarm", "clock", "check", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-minus",
+    icon: AlarmClockMinusIcon,
+    keywords: ["alarm", "clock", "minus", "time", "schedule"],
+  },
+  {
+    name: "alarm-clock-plus",
+    icon: AlarmClockPlusIcon,
+    keywords: ["alarm", "clock", "plus", "time", "schedule"],
+  },
+  {
+    name: "alarm-smoke",
+    icon: AlarmSmokeIcon,
+    keywords: ["alarm", "smoke", "fire", "detector", "fire alarm"],
   },
   {
     name: "biceps-flexed",
@@ -672,6 +787,21 @@ const ICON_LIST: IconListItem[] = [
     keywords: ["phone", "off", "communication", "signal", "wireless"],
   },
   {
+    name: "server",
+    icon: ServerIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-cog",
+    icon: ServerCogIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
+    name: "server-crash",
+    icon: ServerCrashIcon,
+    keywords: ["server", "network", "communication", "signal", "wireless"],
+  },
+  {
     name: "router",
     icon: RouterIcon,
     keywords: ["router", "network", "communication", "signal", "wireless"],
@@ -685,6 +815,21 @@ const ICON_LIST: IconListItem[] = [
     name: "projector",
     icon: ProjectorIcon,
     keywords: ["projector", "screen", "display", "video", "projection"],
+  },
+  {
+    name: "ship-wheel",
+    icon: ShipWheelIcon,
+    keywords: ["ship", "wheel", "navigation", "transportation"],
+  },
+  {
+    name: "plane-takeoff",
+    icon: PlaneTakeoffIcon,
+    keywords: ["plane", "takeoff", "flight", "airplane", "aircraft"],
+  },
+  {
+    name: "plane-landing",
+    icon: PlaneLandingIcon,
+    keywords: ["plane", "landing", "flight", "airplane", "aircraft"],
   },
   {
     name: "fan",
@@ -720,6 +865,56 @@ const ICON_LIST: IconListItem[] = [
     name: "users-round",
     icon: UsersRoundIcon,
     keywords: ["users", "group", "team", "people"],
+  },
+  {
+    name: "leaf",
+    icon: LeafIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "leafy-green",
+    icon: LeafyGreenIcon,
+    keywords: ["leaf", "tree", "plant", "nature", "green"],
+  },
+  {
+    name: "waves-arrow-down",
+    icon: WavesArrowDownIcon,
+    keywords: ["waves", "arrow", "down", "navigation", "scroll"],
+  },
+  {
+    name: "waves-arrow-up",
+    icon: WavesArrowUpIcon,
+    keywords: ["waves", "arrow", "up", "navigation", "scroll"],
+  },
+  {
+    name: "tree-deciduous",
+    icon: TreeDeciduousIcon,
+    keywords: ["tree", "deciduous", "forest", "nature", "green"],
+  },
+  {
+    name: "tree-pine",
+    icon: TreePineIcon,
+    keywords: ["tree", "pine", "forest", "nature", "green"],
+  },
+  {
+    name: "circle-gauge",
+    icon: CircleGaugeIcon,
+    keywords: ["gauge", "meter", "speed", "pressure", "measure", "circle"],
+  },
+  {
+    name: "spray-can",
+    icon: SprayCanIcon,
+    keywords: ["spray", "can", "paint", "color", "art"],
+  },
+  {
+    name: "shredder",
+    icon: ShredderIcon,
+    keywords: ["shredder", "trash", "garbage", "waste", "recycling"],
+  },
+  {
+    name: "soup",
+    icon: SoupIcon,
+    keywords: ["soup", "food", "meal", "bowl", "hot"],
   },
   {
     name: "layout-grid",
@@ -2766,7 +2961,6 @@ const ICON_LIST: IconListItem[] = [
     icon: AArrowDownIcon,
     keywords: ["arrow", "down", "a"],
   },
-
   {
     name: "circle-dashed",
     icon: CircleDashedIcon,
@@ -3997,6 +4191,31 @@ const ICON_LIST: IconListItem[] = [
       "wait",
       "processing",
     ],
+  },
+  {
+    name: "binary",
+    icon: BinaryIcon,
+    keywords: ["binary"],
+  },
+  {
+    name: "cigarette",
+    icon: CigaretteIcon,
+    keywords: ["cigarette"],
+  },
+  {
+    name: "cigarette-off",
+    icon: CigaretteOffIcon,
+    keywords: ["cigarette", "off"],
+  },
+  {
+    name: "cloud-backup",
+    icon: CloudBackupIcon,
+    keywords: ["cloud", "backup"],
+  },
+  {
+    name: "cloud-sync",
+    icon: CloudSyncIcon,
+    keywords: ["cloud", "sync"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

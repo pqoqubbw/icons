@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { getIcons } from "@/actions/get-icons";
 import { LINK, SITE } from "@/constants";
 
@@ -28,7 +29,10 @@ const WebsiteJsonLd = () => {
   );
 };
 
-const SoftwareSourceCodeJsonLd = () => {
+const SoftwareSourceCodeJsonLd = async () => {
+  "use cache";
+  cacheLife("days");
+
   const icons = getIcons();
 
   const jsonLd = {
@@ -164,21 +168,9 @@ const FAQJsonLd = () => {
   );
 };
 
-const JsonLdScripts = () => {
-  return (
-    <>
-      <WebsiteJsonLd />
-      <SoftwareSourceCodeJsonLd />
-      <OrganizationJsonLd />
-      <FAQJsonLd />
-    </>
-  );
-};
-
 export {
   BreadcrumbJsonLd,
   FAQJsonLd,
-  JsonLdScripts,
   OrganizationJsonLd,
   SoftwareSourceCodeJsonLd,
   WebsiteJsonLd,

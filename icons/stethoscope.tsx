@@ -17,9 +17,7 @@ interface StethoscopeIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const DURATION = 0.25;
 
-const CALCULATE_DELAY = (i: number) => {
-  return i === 0 ? 0.1 : i * DURATION + 0.1;
-};
+const CALCULATE_DELAY = (i: number) => (i === 0 ? 0.1 : i * DURATION + 0.1);
 
 const StethoscopeIcon = forwardRef<StethoscopeIconHandle, StethoscopeIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {

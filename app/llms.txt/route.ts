@@ -1,13 +1,35 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { LINK, SITE } from "@/constants";
 import { ICON_LIST } from "@/icons";
+import { kebabToPascalCase } from "@/lib/kebab-to-pascal";
 import { SERVER_EVENT, trackServer } from "@/lib/server-analytics";
 
-export function GET(req: Request) {
-  trackServer(SERVER_EVENT.LLMS_VIEW, {
-    page: "llms.txt",
-    userAgent: req.headers.get("user-agent") ?? "",
-  });
-  const content = `# ${SITE.NAME}
+const FEATURED_ICONS = [
+  "activity",
+  "arrow-right",
+  "bell",
+  "circle-check",
+  "heart",
+  "settings",
+  "sun",
+  "trash",
+];
+
+const buildLlmsTxt = async () => {
+  "use cache";
+  cacheLife("max");
+  cacheTag("icons");
+
+  const featured = FEATURED_ICONS.filter((name) =>
+    ICON_LIST.some((icon) => icon.name === name)
+  )
+    .map(
+      (name) =>
+        `- [${kebabToPascalCase(name)}](${SITE.URL}/icons/${name}.md): Animated ${name.replace(/-/g, " ")} icon`
+    )
+    .join("\n");
+
+  return `# ${SITE.NAME}
 
 > Open-source collection of ${ICON_LIST.length}+ beautifully crafted animated React icons based on Lucide, powered by Motion. MIT licensed and copy-paste ready.
 
@@ -28,16 +50,20 @@ export function GET(req: Request) {
 
 - [All icons (nested index)](${SITE.URL}/icons/llms.txt): Full list of ${ICON_LIST.length} animated icons with per-icon markdown links
 
+Featured icons:
+
+${featured}
+
 ## MCP
 
-A Model Context Protocol endpoint is available at \`${SITE.URL}/mcp\` (Streamable HTTP) and exposes \`search_icons\`, \`list_icons\`, and \`get_icon\` tools. Configure your MCP-compatible client to connect there directly. See \`${SITE.URL}/skill.md\` for usage notes.
+A Model Context Protocol endpoint is available at \`/mcp\` (Streamable HTTP) and exposes \`search_icons\`, \`list_icons\`, and \`get_icon\` tools. Configure your MCP-compatible client to connect there directly. See [skill.md](${SITE.URL}/skill.md) for usage notes.
 
 ## Installation
 
-Install a single icon via the shadcn CLI. Replace \`<icon-name>\` with the desired icon name in kebab-case (e.g. \`activity\`, \`arrow-right\`):
+Install a single icon via the shadcn CLI. The example below installs \`activity\`; swap it for any icon name in kebab-case (e.g. \`arrow-right\`):
 
 \`\`\`bash
-npx shadcn@latest add "${SITE.URL}/r/<icon-name>.json"
+npx shadcn@latest add "${SITE.URL}/r/activity.json"
 \`\`\`
 
 ## Usage
@@ -59,10 +85,18 @@ Each icon is a React component that animates on hover. All standard SVG props ar
 - [Angular port](https://github.com/ajitzero/animated-icons): by @ajitzero
 - [Flutter port](https://pub.dev/packages/flutter_lucide_animated): by @ravikovind
 `;
+};
 
-  return new Response(content, {
+export async function GET(req: Request) {
+  trackServer(SERVER_EVENT.LLMS_VIEW, {
+    page: "llms.txt",
+    userAgent: req.headers.get("user-agent") ?? "",
+  });
+
+  return new Response(await buildLlmsTxt(), {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=0, must-revalidate",
     },
   });
 }

@@ -12,9 +12,10 @@ const DESIGN_HEIGHT = 460;
 
 type AmountSelectorProps = {
   amounts: typeof SUPPORT_LIST;
+  stampDate: string;
 };
 
-const AmountSelector = ({ amounts }: AmountSelectorProps) => {
+const AmountSelector = ({ amounts, stampDate }: AmountSelectorProps) => {
   const [selectedAmount, setSelectedAmount] = useState(
     amounts[0].price.toString()
   );
@@ -38,14 +39,13 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
     return () => resizeObserver.disconnect();
   }, []);
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-US", {
+  const formatCurrency = (amount: number) =>
+    new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
-  };
 
   const isLastItemOdd = amounts.length % 2 !== 0;
   const buyLink = amounts.find(
@@ -274,7 +274,10 @@ const AmountSelector = ({ amounts }: AmountSelectorProps) => {
                 Sponsor
               </a>
             </div>
-            <Stamp className="absolute -right-[56px] -bottom-[48px] size-[230px]" />
+            <Stamp
+              className="absolute -right-[56px] -bottom-[48px] size-[230px]"
+              dateText={stampDate}
+            />
           </div>
         </div>
       </div>
