@@ -16,24 +16,6 @@ interface UserPlusIconProps extends HTMLAttributes<HTMLDivElement> {
   size?: number;
 }
 
-const PERSON_VARIANTS: Variants = {
-  normal: {
-    scale: 1,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-  animate: {
-    scale: [1, 1.06, 1],
-    transition: {
-      duration: 0.45,
-      ease: "easeInOut",
-      times: [0, 0.5, 1],
-    },
-  },
-};
-
 const PLUS_VARIANTS: Variants = {
   normal: {
     scale: 1,
@@ -111,15 +93,8 @@ const UserPlusIcon = forwardRef<UserPlusIconHandle, UserPlusIconProps>(
           width={size}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.g
-            animate={controls}
-            initial="normal"
-            style={{ transformOrigin: "9px 12px" }}
-            variants={PERSON_VARIANTS}
-          >
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-          </motion.g>
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
           <motion.g
             animate={controls}
             initial="normal"

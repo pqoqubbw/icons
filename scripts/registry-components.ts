@@ -2646,6 +2646,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "user-plus",
+    path: path.join(__dirname, "../icons/user-plus.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "user-round-check",
     path: path.join(__dirname, "../icons/user-round-check.tsx"),
     registryDependencies: [],
@@ -2810,12 +2816,6 @@ export const components: ComponentDefinition[] = [
   {
     name: "zap-off",
     path: path.join(__dirname, "../icons/zap-off.tsx"),
-    registryDependencies: [],
-    dependencies: ["motion"],
-  },
-  {
-    name: "user-plus",
-    path: path.join(__dirname, "../icons/user-plus.tsx"),
     registryDependencies: [],
     dependencies: ["motion"],
   },
