@@ -5425,6 +5425,19 @@
       ]
     },
     {
+      "name": "ticket",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "ticket.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "timer",
       "type": "registry:ui",
       "registryDependencies": [],
