@@ -342,6 +342,7 @@ import { UploadIcon } from "@/icons/upload";
 import { UpvoteIcon } from "@/icons/upvote";
 import { UserIcon } from "@/icons/user";
 import { UserCheckIcon } from "@/icons/user-check";
+import { UserPlusIcon } from "@/icons/user-plus";
 import { UserRoundCheckIcon } from "@/icons/user-round-check";
 import { UserRoundPlusIcon } from "@/icons/user-round-plus";
 import { UsersIcon } from "@/icons/users";
@@ -475,6 +476,11 @@ const ICON_LIST: IconListItem[] = [
     name: "ticket",
     icon: TicketIcon,
     keywords: ["voucher", "event", "admission", "coupon"],
+  },
+    {
+    name: "user-plus",
+    icon: UserPlusIcon,
+    keywords: ["user", "plus", "add", "new", "person", "account", "signup"],
   },
   {
     name: "link-2",
