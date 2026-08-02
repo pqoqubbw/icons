@@ -325,6 +325,7 @@ import { SyringeIcon } from "@/icons/syringe";
 import { TelescopeIcon } from "@/icons/telescope";
 import { TerminalIcon } from "@/icons/terminal";
 import { ThermometerIcon } from "@/icons/thermometer";
+import { TicketIcon } from "@/icons/ticket";
 import { TimerIcon } from "@/icons/timer";
 import { TornadoIcon } from "@/icons/tornado";
 import { TrainTrackIcon } from "@/icons/train-track";
@@ -472,6 +473,11 @@ type IconListItem = {
 
 const ICON_LIST: IconListItem[] = [
   {
+    name: "ticket",
+    icon: TicketIcon,
+    keywords: ["voucher", "event", "admission", "coupon"],
+  },
+    {
     name: "user-plus",
     icon: UserPlusIcon,
     keywords: ["user", "plus", "add", "new", "person", "account", "signup"],
