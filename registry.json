@@ -4840,6 +4840,19 @@
       ]
     },
     {
+      "name": "scissors",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "scissors.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "search",
       "type": "registry:ui",
       "registryDependencies": [],
