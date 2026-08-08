@@ -446,6 +446,7 @@ import { PlaneTakeoffIcon } from "./plane-takeoff";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
+import { ScissorsIcon } from "./scissors";
 import { ServerIcon } from "./server";
 import { ServerCogIcon } from "./server-cog";
 import { ServerCrashIcon } from "./server-crash";
@@ -4226,6 +4227,11 @@ const ICON_LIST: IconListItem[] = [
     name: "cloud-sync",
     icon: CloudSyncIcon,
     keywords: ["cloud", "sync"],
+  },
+  {
+    name: "scissors",
+    icon: ScissorsIcon,
+    keywords: ["scissors", "cut", "snip", "chop", "stationery", "crafts"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

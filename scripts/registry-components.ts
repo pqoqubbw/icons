@@ -2262,6 +2262,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "scissors",
+    path: path.join(__dirname, "../icons/scissors.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "search",
     path: path.join(__dirname, "../icons/search.tsx"),
     registryDependencies: [],
