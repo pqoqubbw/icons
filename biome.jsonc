@@ -45,7 +45,12 @@
         "noLeakedRender": "off",
         // Fires on `const { name } = match` style locals that intentionally
         // reuse an outer name; no real shadowing bug in this repo.
-        "noShadow": "off"
+        "noShadow": "off",
+        // New in ultracite 7.10. Its type inference sees `useRef(false)` and
+        // decides `.current` can never be truthy, flagging every animation
+        // guard in `icons/` (~935 false positives) — the refs are mutated in
+        // sibling callbacks the analysis doesn't follow.
+        "noUnnecessaryConditions": "off"
       },
       "performance": {
         "noNamespaceImport": "off",

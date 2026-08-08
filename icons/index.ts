@@ -477,7 +477,7 @@ const ICON_LIST: IconListItem[] = [
     icon: TicketIcon,
     keywords: ["voucher", "event", "admission", "coupon"],
   },
-    {
+  {
     name: "user-plus",
     icon: UserPlusIcon,
     keywords: ["user", "plus", "add", "new", "person", "account", "signup"],
