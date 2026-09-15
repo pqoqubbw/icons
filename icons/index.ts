@@ -384,6 +384,7 @@ import { CircleGaugeIcon } from "./circle-gauge";
 import { CloudBackupIcon } from "./cloud-backup";
 import { CloudSyncIcon } from "./cloud-sync";
 import { ConciergeBellIcon } from "./concierge-bell";
+import { CookieIcon } from "./cookie";
 import { CornerDownLeftIcon } from "./corner-down-left";
 import { CornerDownRightIcon } from "./corner-down-right";
 import { CornerLeftDownIcon } from "./corner-left-down";
@@ -4232,6 +4233,19 @@ const ICON_LIST: IconListItem[] = [
     name: "palette",
     icon: PaletteIcon,
     keywords: ["palette", "color", "colour", "paint", "art", "brush", "theme"],
+  },
+  {
+    name: "cookie",
+    icon: CookieIcon,
+    keywords: [
+      "cookie",
+      "biscuit",
+      "snack",
+      "dessert",
+      "food",
+      "sweet",
+      "bakery",
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

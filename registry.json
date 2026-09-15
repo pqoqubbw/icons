@@ -1876,6 +1876,19 @@
       ]
     },
     {
+      "name": "cookie",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "cookie.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cooking-pot",
       "type": "registry:ui",
       "registryDependencies": [],
