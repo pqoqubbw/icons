@@ -1096,6 +1096,19 @@
       ]
     },
     {
+      "name": "car",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "car.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "cart",
       "type": "registry:ui",
       "registryDependencies": [],
