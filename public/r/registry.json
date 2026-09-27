@@ -3644,6 +3644,19 @@
       ]
     },
     {
+      "name": "locate",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "locate.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "lock",
       "type": "registry:ui",
       "registryDependencies": [],
