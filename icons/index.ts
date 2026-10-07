@@ -374,6 +374,7 @@ import { BatteryPlusIcon } from "./battery-plus";
 import { BatteryWarningIcon } from "./battery-warning";
 import { BellElectricIcon } from "./bell-electric";
 import { BicepsFlexedIcon } from "./biceps-flexed";
+import { CarIcon } from "./car";
 import { ChessBishopIcon } from "./chess-bishop";
 import { ChessKingIcon } from "./chess-king";
 import { ChessKnightIcon } from "./chess-knight";
@@ -4232,6 +4233,11 @@ const ICON_LIST: IconListItem[] = [
     name: "palette",
     icon: PaletteIcon,
     keywords: ["palette", "color", "colour", "paint", "art", "brush", "theme"],
+  },
+  {
+    name: "car",
+    icon: CarIcon,
+    keywords: ["car", "vehicle", "drive", "trip", "journey"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
