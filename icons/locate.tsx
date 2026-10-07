@@ -18,21 +18,13 @@ interface LocateIconProps extends HTMLAttributes<HTMLDivElement> {
 
 const CENTER = 12;
 const FULL_RADIUS = 7;
-// Outer ends of the tick marks at rest (x/y = 2 on the near side, 22 on the far side).
 const TICK_OUTER_NEAR = 2;
 const TICK_OUTER_FAR = 22;
-// How far the tick marks' outer ends get pulled toward the center while the
-// ring is collapsed, and how far they overshoot outward on the final bounce.
 const TICK_PULL = 0.75;
 const TICK_OVERSHOOT = 0.25;
 
-// Ring radius over time: collapse to a dot, hold a beat, bounce out to half
-// size, then bounce out to full size. Each bounce slightly overshoots its
-// target before settling, giving a "locating" pulse.
 const RADIUS_KEYFRAMES = [7, 1, 1, 4.25, 3.5, 7.7, 7];
 
-// Tick outer-end inset on the same timeline: pulled in as the ring collapses,
-// held through the half-size bounce, released with the final bounce.
 const TICK_INSET_KEYFRAMES = [
   0,
   TICK_PULL,
@@ -54,16 +46,14 @@ const NORMAL_TRANSITION: Transition = {
   ease: "easeOut",
 };
 
-// The tick marks' inner ends ride along with the ring so they stretch inward
-// as it shrinks, while their outer ends are gently drawn in and then released.
-const INNER_BEFORE_CENTER = RADIUS_KEYFRAMES.map((r) => CENTER - r); // west x2, north y2
-const INNER_AFTER_CENTER = RADIUS_KEYFRAMES.map((r) => CENTER + r); // east x1, south y1
+const INNER_BEFORE_CENTER = RADIUS_KEYFRAMES.map((r) => CENTER - r);
+const INNER_AFTER_CENTER = RADIUS_KEYFRAMES.map((r) => CENTER + r);
 const OUTER_BEFORE_CENTER = TICK_INSET_KEYFRAMES.map(
   (inset) => TICK_OUTER_NEAR + inset
-); // west x1, north y1
+);
 const OUTER_AFTER_CENTER = TICK_INSET_KEYFRAMES.map(
   (inset) => TICK_OUTER_FAR - inset
-); // east x2, south y2
+);
 
 const CIRCLE_VARIANTS: Variants = {
   normal: { r: FULL_RADIUS, transition: NORMAL_TRANSITION },
