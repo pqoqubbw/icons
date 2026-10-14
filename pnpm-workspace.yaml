@@ -11,3 +11,6 @@ minimumReleaseAgeExclude:
   - next@16.4.1
   - react-dom@19.2.9
   - react@19.2.9
+
+allowBuilds:
+  esbuild: true
