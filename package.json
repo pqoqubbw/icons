@@ -55,5 +55,6 @@
     "tsx": "^4.23.12",
     "typescript": "^7.0.2",
     "ultracite": "7.10.6"
-  }
+  },
+  "packageManager": "pnpm@12.9.1"
 }
