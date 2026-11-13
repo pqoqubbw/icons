@@ -3605,6 +3605,19 @@
       ]
     },
     {
+      "name": "list-todo",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "list-todo.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "loader",
       "type": "registry:ui",
       "registryDependencies": [],

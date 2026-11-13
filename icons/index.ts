@@ -436,6 +436,7 @@ import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { LeafIcon } from "./leaf";
 import { LeafyGreenIcon } from "./leafy-green";
+import { ListTodoIcon } from "./list-todo";
 import { PaletteIcon } from "./palette";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
@@ -4238,6 +4239,11 @@ const ICON_LIST: IconListItem[] = [
     name: "car",
     icon: CarIcon,
     keywords: ["car", "vehicle", "drive", "trip", "journey"],
+  },
+  {
+    name: "list-todo",
+    icon: ListTodoIcon,
+    keywords: ["list", "todo", "done", "check", "tick", "complete", "tasks", "items", "pending"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

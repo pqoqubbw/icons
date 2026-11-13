@@ -1,0 +1,112 @@
+"use client";
+
+import { motion, useAnimation, type Variants } from "motion/react";
+import type { HTMLAttributes } from "react";
+import { forwardRef, useCallback, useImperativeHandle, useRef } from "react";
+import { cn } from "@/lib/utils";
+
+export interface ListTodoIconHandle {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+}
+
+interface ListTodoIconProps extends HTMLAttributes<HTMLDivElement> {
+  size?: number;
+}
+
+const BOX_PATH =
+  "M5.39 4 L5.04 4 L4.7 4 L4.35 4 L4 4 L3.66 4.06 L3.36 4.23 L3.14 4.5 L3.02 4.82 L3 5.17 L3 5.52 L3 5.87 L3 6.21 L3 6.56 L3 6.91 L3 7.26 L3 7.61 L3 7.96 L3 8.3 L3 8.65 L3 9 L3.06 9.34 L3.23 9.64 L3.5 9.86 L3.82 9.98 L4.17 10 L4.52 10 L4.87 10 L5.21 10 L5.56 10 L5.91 10 L6.26 10 L6.61 10 L6.96 10 L7.3 10 L7.65 10 L8 10 L8.34 9.94 L8.64 9.77 L8.86 9.5 L8.98 9.18 L9 8.83 L9 8.48 L9 8.11 L9 7.79 L9 7.44 L9 7.09 L9 6.74 L9 6.39 L9 6.04 L9 5.7 L9 5.35 L9 5 L8.94 4.66 L8.77 4.36 L8.5 4.14 L8.18 4.02 L7.83 4 L7.48 4 L7.13 4 L6.79 4 L6.44 4 L6.09 4 L5.74 4 L5.39 4";
+
+const TICK_PATH =
+  "M3 7 L3.1 7.1 L3.19 7.19 L3.29 7.29 L3.38 7.38 L3.48 7.48 L3.57 7.57 L3.67 7.67 L3.76 7.76 L3.86 7.86 L3.95 7.95 L4.05 8.05 L4.14 8.14 L4.24 8.24 L4.33 8.33 L4.43 8.43 L4.52 8.52 L4.62 8.62 L4.71 8.71 L4.81 8.81 L4.9 8.9 L5 9 L5.09 8.91 L5.19 8.81 L5.28 8.72 L5.37 8.63 L5.47 8.53 L5.56 8.44 L5.65 8.35 L5.74 8.26 L5.84 8.16 L5.93 8.07 L6.02 7.98 L6.12 7.88 L6.21 7.79 L6.3 7.7 L6.4 7.6 L6.49 7.51 L6.58 7.42 L6.67 7.33 L6.77 7.23 L6.86 7.14 L6.95 7.05 L7.05 6.95 L7.14 6.86 L7.23 6.77 L7.33 6.67 L7.42 6.58 L7.51 6.49 L7.6 6.4 L7.7 6.3 L7.79 6.21 L7.88 6.12 L7.98 6.02 L8.07 5.93 L8.16 5.84 L8.26 5.74 L8.35 5.65 L8.44 5.56 L8.53 5.47 L8.63 5.37 L8.72 5.28 L8.81 5.19 L8.91 5.09 L9 5";
+
+const CHECK_BOX_VARIANTS: Variants = {
+  normal: {
+    d: BOX_PATH,
+  },
+  animate: {
+    d: TICK_PATH,
+    scale: [1, 1.2, 0.95, 1],
+    transition: {
+      d: { duration: 0.4, ease: "anticipate" },
+      scale: {
+        delay: 0.32,
+        duration: 0.35,
+        times: [0, 0.4, 0.75, 1],
+        ease: "easeOut",
+      },
+    },
+  },
+};
+
+const ListTodoIcon = forwardRef<ListTodoIconHandle, ListTodoIconProps>(
+  ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
+    const controls = useAnimation();
+    const isControlledRef = useRef(false);
+
+    useImperativeHandle(ref, () => {
+      isControlledRef.current = true;
+      return {
+        startAnimation: () => controls.start("animate"),
+        stopAnimation: () => controls.start("normal"),
+      };
+    });
+
+    const handleMouseEnter = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isControlledRef.current) {
+          onMouseEnter?.(e);
+        } else {
+          controls.start("animate");
+        }
+      },
+      [controls, onMouseEnter]
+    );
+
+    const handleMouseLeave = useCallback(
+      (e: React.MouseEvent<HTMLDivElement>) => {
+        if (isControlledRef.current) {
+          onMouseLeave?.(e);
+        } else {
+          controls.start("normal");
+        }
+      },
+      [controls, onMouseLeave]
+    );
+
+    return (
+      <div
+        className={cn(className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...props}
+      >
+        <svg
+          fill="none"
+          height={size}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={size}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M13 5h8" />
+          <path d="M13 12h8" />
+          <path d="M13 19h8" />
+          <path d="m3 17 2 2 4-4" />
+          <motion.path
+            animate={controls}
+            initial="normal"
+            variants={CHECK_BOX_VARIANTS}
+          />
+        </svg>
+      </div>
+    );
+  }
+);
+
+ListTodoIcon.displayName = "ListTodoIcon";
+
+export { ListTodoIcon };
