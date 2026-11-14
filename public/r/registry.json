@@ -4450,6 +4450,19 @@
       ]
     },
     {
+      "name": "presentation",
+      "type": "registry:ui",
+      "registryDependencies": [],
+      "dependencies": ["motion"],
+      "devDependencies": [],
+      "files": [
+        {
+          "path": "presentation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "projector",
       "type": "registry:ui",
       "registryDependencies": [],

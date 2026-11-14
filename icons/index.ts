@@ -445,6 +445,7 @@ import { PhoneMissedIcon } from "./phone-missed";
 import { PhoneOffIcon } from "./phone-off";
 import { PlaneLandingIcon } from "./plane-landing";
 import { PlaneTakeoffIcon } from "./plane-takeoff";
+import { PresentationIcon } from "./presentation";
 import { ProjectorIcon } from "./projector";
 import { RouterIcon } from "./router";
 import { SatelliteDishIcon } from "./satellite-dish";
@@ -4238,6 +4239,23 @@ const ICON_LIST: IconListItem[] = [
     name: "car",
     icon: CarIcon,
     keywords: ["car", "vehicle", "drive", "trip", "journey"],
+  },
+  {
+    name: "presentation",
+    icon: PresentationIcon,
+    keywords: [
+      "presentation",
+      "screen",
+      "whiteboard",
+      "easel",
+      "school",
+      "learning",
+      "lesson",
+      "office",
+      "meeting",
+      "project",
+      "planning",
+    ],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
