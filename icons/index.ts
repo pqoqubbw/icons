@@ -436,6 +436,7 @@ import { HeartHandshakeIcon } from "./heart-handshake";
 import { HeartPulseIcon } from "./heart-pulse";
 import { LeafIcon } from "./leaf";
 import { LeafyGreenIcon } from "./leafy-green";
+import { LocateIcon } from "./locate";
 import { PaletteIcon } from "./palette";
 import { PhoneIcon } from "./phone";
 import { PhoneCallIcon } from "./phone-call";
@@ -4238,6 +4239,11 @@ const ICON_LIST: IconListItem[] = [
     name: "car",
     icon: CarIcon,
     keywords: ["car", "vehicle", "drive", "trip", "journey"],
+  },
+  {
+    name: "locate",
+    icon: LocateIcon,
+    keywords: ["map", "gps", "location", "cross", "navigation", "target"],
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
 

@@ -1710,6 +1710,12 @@ export const components: ComponentDefinition[] = [
     dependencies: ["motion"],
   },
   {
+    name: "locate",
+    path: path.join(__dirname, "../icons/locate.tsx"),
+    registryDependencies: [],
+    dependencies: ["motion"],
+  },
+  {
     name: "lock",
     path: path.join(__dirname, "../icons/lock.tsx"),
     registryDependencies: [],
